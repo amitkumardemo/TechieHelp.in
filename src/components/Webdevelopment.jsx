@@ -61,7 +61,7 @@ const Webdevelopment = () => {
         <p>
           Join TechieHelp's industry-aligned internship designed to turn beginners into confident developers. Get hands-on training in web development, real-world project experience, and one-on-one mentorship from experts.
         </p>
-        <a href="https://pages.razorpay.com/techiehelp" target="_blank" rel="noopener noreferrer">
+        <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer">
           <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
             Apply Now
           </button>
