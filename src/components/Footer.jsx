@@ -80,21 +80,19 @@ const Footer = () => {
           <p className="text-gray-400 mt-1">Empowering Your Business & Tech Journey</p>
 
           <div className="flex justify-center gap-4 text-white text-2xl mt-4">
-            <a href="https://www.facebook.com/techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61564958817014" target="_blank" rel="noopener noreferrer">
               <Facebook />
             </a>
-            <a href="https://www.instagram.com/techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/techiehelp.in/" target="_blank" rel="noopener noreferrer">
               <Instagram />
             </a>
-            <a href="https://www.linkedin.com/company/techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://in.linkedin.com/company/techiehelp" target="_blank" rel="noopener noreferrer">
               <Linkedin />
             </a>
-            <a href="https://www.youtube.com/@techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@TechieHelp" target="_blank" rel="noopener noreferrer">
               <Youtube />
             </a>
-            <a href="https://twitter.com/techiehelp" target="_blank" rel="noopener noreferrer">
-              <Twitter />
-            </a>
+            
           </div>
 
           <ul className="mt-4">
