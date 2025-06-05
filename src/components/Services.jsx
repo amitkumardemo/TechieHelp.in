@@ -38,7 +38,7 @@ const servicesData = [
     title: "Web Development",
     description: `- High-performance & scalable\n- Responsive UI\n- Business-focused designs`,
     image: webDevelopment,
-    link: "/webdevelopment",
+    link: "/web-development-services",
   },
   {
     id: 2,
