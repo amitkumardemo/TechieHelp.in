@@ -77,7 +77,7 @@ const Python = () => {
         <p>
           Develop scripts, automation, and backend logic using Python frameworks like Django or Flask. Gain hands-on experience with real projects and expert mentorship.
         </p>
-        <a href="https://pages.razorpay.com/techiehelp" target="_blank" rel="noopener noreferrer">
+        <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer">
   <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
     Apply Now
   </button>
