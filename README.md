@@ -59,7 +59,7 @@ Jodhpur, Rajasthan, India
 
 ## 📬 Want to Get Started?
 
-If you’re interested in working with us or have an idea to build — [Let's Connect!](mailto:techiehelpindia@gmail.com)
+If you’re interested in working with us or have an idea to build — [Let's Connect!](mailto:techiehelp57@gmail.com)
 
 ---
 
