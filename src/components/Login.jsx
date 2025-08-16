@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { db, storage } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { google as googleIcon, github as githubIcon } from "../assets";
 
 const Login = () => {
   const { loginWithGoogle, loginWithGithub, loginWithEmail, signup, updateUserProfile } = useAuth();
@@ -152,7 +153,7 @@ const Login = () => {
       className="min-h-screen bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/src/assets/home-background.jpg')" }}
     >
-      <div className="min-h-screen flex justify-center items-center bg-black bg-opacity-20 text-black">
+      <div className="min-h-screen flex justify-center items-center bg-transparent pt-10"> {/* Made background transparent */}
         <div
           className={`flex flex-col md:flex-row bg-white rounded-lg shadow-lg max-w-5xl w-full mx-4 p-6 perspective pt-10`}
         >
@@ -223,14 +224,16 @@ const Login = () => {
                 </form>
                 <button
                   onClick={handleGoogleLogin}
-                  className="w-full mt-4 py-2 px-4 bg-red-600 text-white rounded hover:bg-red-700 transition"
+                  className="w-full mt-4 py-2 px-4 bg-red-600 text-white rounded hover:bg-red-700 transition flex items-center justify-center"
                 >
+                  <img src={googleIcon} alt="Google" className="w-6 h-6 mr-2" />
                   Continue with Google
                 </button>
                 <button
                   onClick={handleGithubLogin}
-                  className="w-full mt-2 py-2 px-4 bg-gray-800 text-white rounded hover:bg-gray-900 transition"
+                  className="w-full mt-2 py-2 px-4 bg-gray-800 text-white rounded hover:bg-gray-900 transition flex items-center justify-center"
                 >
+                  <img src={githubIcon} alt="GitHub" className="w-6 h-6 mr-2" />
                   Continue with GitHub
                 </button>
                 <p className="mt-4 text-center text-black">
@@ -242,7 +245,7 @@ const Login = () => {
               </>
             ) : (
               <>
-                <h2 className="text-3xl font-bold mb-6 text-center text-black pt-6 block">Sign Up</h2>
+                <h2 className="text-3xl font-bold mb-6 text-center text-black pt-6 block"></h2>
                 {error && <p className="text-red-600 mb-4">{error}</p>}
             <form onSubmit={handleSignupSubmit} className="space-y-4 text-black">
               <div>

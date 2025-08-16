@@ -61,7 +61,7 @@ const Signup = () => {
 
   return (
     <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/src/assets/signup.png')" }}>
-      <div className="min-h-screen flex justify-center items-center bg-black bg-opacity-20 text-black">
+      <div className="min-h-screen flex justify-center items-center bg-transparent pt-10"> {/* Added padding-top and made background transparent */}
         <div className="flex flex-col md:flex-row rounded-lg shadow-lg max-w-5xl w-full mx-4 p-6 pt-10 bg-black bg-opacity-20 text-black">
           <div className="md:w-1/2 flex justify-center items-center p-4">
             <img src="/src/assets/signup.png" alt="Signup" className="rounded-lg max-w-full h-auto" />

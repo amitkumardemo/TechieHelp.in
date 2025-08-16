@@ -44,44 +44,56 @@ export const navLinks = [
 export const features = [
   {
     id: "feature-1",
-    icon: star,
-    title: "Client-First Approach",
+    icon: star, // replace with your AI/rocket icon import
+    title: "AI-First Approach",
     content:
-      "Unlike traditional service providers, we prioritize understanding your goals deeply and build tailor-made solutions aligned with your vision.",
+      "We deeply understand your business challenges and craft AI-driven solutions tailored to your exact needs, ensuring measurable results.",
   },
   {
     id: "feature-2",
-    icon: shield,
-    title: "All-in-One Tech Partner",
+    icon: shield, // replace with your handshake icon import
+    title: "Your Complete AI Partner",
     content:
-      "From web and app development to UI/UX, SEO, and digital marketing — we provide complete tech solutions under one roof, saving time and cost.",
+      "From AI chatbots and predictive analytics to computer vision, automation, and custom software — we provide all-in-one AI solutions under one roof, saving you time, cost, and effort.",
   },
   {
     id: "feature-3",
-    icon: send,
-    title: "Real-Time Support & Scalability",
+    icon: send, // replace with your lightning icon import
+    title: "Always-On Support & Scalability",
     content:
-      "We stand apart with 24/7 technical support and scalable solutions that grow with your business, ensuring long-term reliability.",
+      "We offer 24/7 technical assistance and build scalable AI systems that grow alongside your business, ensuring long-term success.",
   },
 ];
+
 
 export const stats = [
   {
     id: "stats-1",
     title: "Services Provided",
     value: "100+",
+    description: "High-quality services tailored to your needs.",
   },
   {
     id: "stats-2",
-    title: "Trusted by Company",
+    title: "Trusted by Companies",
     value: "100+",
+    description: "Companies rely on us for their tech solutions.",
   },
   {
     id: "stats-3",
-    title: "Satisfied Clients",
-    value: "100+",
+    title: "Unique Visitors",
+    value: "18,000+",
+    description: "A growing audience engaging with our content.",
+  },
+  {
+    id: "stats-4",
+    title: "Featured In",
+    value: "Tech Times",
+    description: "Recognized for our innovative solutions.",
   },
 ];
+
+
 
 export const clients = [
   {

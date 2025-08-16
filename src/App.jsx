@@ -1,5 +1,5 @@
 import styles from "./style";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero } from "./components";
+import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre } from "./components";
 import OurServices from "./components/OurServices";
 import Services from "./components/Services";
 import WebDevelopmentServices from "./components/WebDevelopmentServices";
@@ -48,12 +48,26 @@ import SpeechVoiceAIServices from "./components/SpeechVoiceAIServices";
 import Job from "./components/job";
 import HiringFAQ from "./components/hiringFAQ";
 import Intern from "./components/Intern";
+import InternProfile from "./components/InternProfile";
+import SasvanthuG from "./components/students/SasvanthuG";
+import RitikaKasat from "./components/students/RitikaKasat";
+import AbhayRajSingh from "./components/students/AbhayRajSingh";
+import AarshdeepKaur from "./components/students/AarshdeepKaur";
+import SagarKumar from "./components/students/SagarKumar";
+import SimranKanwar from "./components/students/SimranKanwar";
+import TanuSingh from "./components/students/TanuSingh";
+import RohitSharma from "./components/students/RohitSharma";
+import RohanT from "./components/students/RohanT";
+import TejaBhuvaneswariDevi from "./components/students/TejaBhuvaneswariDevi";
 
 import { useState, useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
+import GalaxyBackground from "./components/GalaxyBackground";
+
+
 
 // Register GSAP plugins
 if (typeof window !== "undefined") {
@@ -122,6 +136,7 @@ const App = () => {
               <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
                 <div className={`${styles.boxWidth}`}>
                   <Stats className="stats" />
+                  <WhoWeAre />
                   <Business className="business" />
                   <Billing className="billing" />
                   <CardDeal className="cardDeal" />
@@ -176,6 +191,28 @@ const App = () => {
           <Route path="/speechvoiceaiservices" element={<SpeechVoiceAIServices />} />
           <Route path="/hiring-faq" element={<HiringFAQ />} />
           <Route path="/contacts" element={<Contacts />} />
+          
+          {/* Student Profile Routes */}
+          <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
+          <Route path="/intern/sasvanthu-g" element={<SasvanthuG />} />
+          <Route path="/students/ritika-kasat" element={<RitikaKasat />} />
+          <Route path="/intern/ritika-kasat" element={<RitikaKasat />} />
+          <Route path="/students/abhay-raj-singh" element={<AbhayRajSingh />} />
+          <Route path="/intern/abhay-raj-singh" element={<AbhayRajSingh />} />
+          <Route path="/students/aarshdeep-kaur" element={<AarshdeepKaur />} />
+          <Route path="/intern/aarshdeep-kaur" element={<AarshdeepKaur />} />
+          <Route path="/students/sagar-kumar" element={<SagarKumar />} />
+          <Route path="/intern/sagar-kumar" element={<SagarKumar />} />
+          <Route path="/students/simran-kanwar" element={<SimranKanwar />} />
+          <Route path="/intern/simran-kanwar" element={<SimranKanwar />} />
+          <Route path="/students/tanu-singh" element={<TanuSingh />} />
+          <Route path="/intern/tanu-singh" element={<TanuSingh />} />
+          <Route path="/students/rohit-sharma" element={<RohitSharma />} />
+          <Route path="/intern/rohit-sharma" element={<RohitSharma />} />
+          <Route path="/students/rohan-t" element={<RohanT />} />
+          <Route path="/intern/rohan-t" element={<RohanT />} />
+          <Route path="/students/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
+          <Route path="/intern/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
 
         {/* Authentication Routes */}
 
@@ -183,7 +220,9 @@ const App = () => {
         <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/profile" />} />
         <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
         <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
-        
+
+        {/* Intern Profile Route */}
+          <Route path="/interns/:internId" element={<InternProfile />} />
       </Routes>
         <Footer />
       </div>

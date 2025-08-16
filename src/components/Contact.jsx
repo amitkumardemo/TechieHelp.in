@@ -24,7 +24,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="py-16 px-6 bg-primary text-white max-w-7xl mx-auto">
+    <section className="py-16 px-6 text-white max-w-7xl mx-auto">
       <h2 className="text-4xl font-bold mb-4 text-center">Contact TechieHelp</h2>
       <p className="text-center mb-12 text-gray-300">
         Have questions or ideas? Let’s connect and build something amazing together.
@@ -55,7 +55,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Contact Info</h3>
-                <p className="text-gray-400">Phone: +91 8947822458<br />Email: techiehelpindia@gmail.com</p>
+                <p className="text-gray-400">Phone: +91 7673825079<br />Email: techiehelp57@gmail.com</p>
               </div>
             </div>
 

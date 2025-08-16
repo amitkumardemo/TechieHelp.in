@@ -11,7 +11,7 @@ import shield from "./Shield.svg";
 import star from "./Star.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
-import google from "./google.svg";
+import googleSvg from "./google.svg";
 import apple from "./apple.svg";
 import arrowUp from "./arrow-up.svg";
 import discount from "./Discount.svg";
@@ -75,6 +75,54 @@ import work from "./work.webp";
 import process from "./process.webp";
 import alert from "./alert.webp";
 import earn from "./earn.webp";
+import googleWebp from "./google.webp";
+import githubPng from "./github.png";
+import cards from "./cards.webp";
+
+// Import intern photos from InternPhotos folder
+import aarshdeepKaur from "./Aarshdepp_kaur.jpg";
+import abhayRajSingh from "./Abhay_singh.jpg";
+import ritikaKasat from "./Ritika_kasat.jpg";
+import rohanThurady from "./Rohan_thurady.jpg";
+import rohitSharm from "./Rohit_sharma.jpg";
+import sagarKumar from "./Sagar_kumar.jpg";
+import sasvanthuG from "./Sasvanthu_g.jpg";
+import simranKanwar from "./Simran_kaur.jpg";
+import tanuSingh from "./Tanu_singh.jpg";
+import tejabhuvaneswarideviDuba from "./Tejabhuvaneswaridevi_duba.jpg";
+
+// Import ServiceDone Mockups Images
+
+import gamedevelopment from "./game.png";
+import library from "./library.png";
+import portfolio from "./portfolio.png";
+import product from "./product.png";
+import restaurant from "./restaurant.png";
+import food from "./food.webp";
+import web from "./web.jpeg";
+import custom from "./custom.webp";
+import organic from "./organic.webp";
+import portfoli from "./portfoli.webp";
+import doctor from "./doctor.webp";
+import home from "./home.webp";
+import zym from "./zym.webp";
+import sports from "./sports.webp";
+import er from "./er.webp";
+import junk from "./junk.webp";
+import face from "./face.webp";
+import plant from "./plant.webp";
+import store from "./store.webp";
+import health from "./health.webp";
+import ecom from "./ecom.webp";
+import producer from "./producer.webp";
+
+
+
+// Interns Photos
+import simran from "./simran_kaur.png";
+import sasvanthu from "./sasvanthu_g.png";
+
+import banner from "./banner.png";
 
 export {
   internship as airbnb,
@@ -91,7 +139,7 @@ export {
   star,
   menu,
   close,
-  google,
+  googleSvg as google,
   apple,
   arrowUp,
   discount,
@@ -153,4 +201,42 @@ export {
   process,
   alert,
   earn,
+  // Removed duplicate export of google
+  githubPng as github,
+  aarshdeepKaur,
+  abhayRajSingh,
+  ritikaKasat,
+  rohanThurady,
+  rohitSharm,
+  sagarKumar,
+  sasvanthuG,
+  simranKanwar,
+  tanuSingh,
+  tejabhuvaneswarideviDuba,
+  gamedevelopment,
+  library,
+  portfolio,
+  product,
+  restaurant,
+  simran,
+  sasvanthu,
+  banner,
+  food,
+  web,
+  custom,
+  organic,
+  portfoli,
+  doctor,
+  home,
+  zym,
+  sports,
+  er,
+  junk,
+  face,
+  plant,
+  store,
+  health,
+  ecom,
+  producer,
+  cards
 };

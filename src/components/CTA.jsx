@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from "../style";
 import Button from "./Button";
 
@@ -11,7 +12,7 @@ const CTA = () => (
     </div>
 
     <div className={`${styles.flexCenter} sm:ml-10 ml-0 sm:mt-0 mt-10`}>
-      <Button />
+      <Button styles="py-2 px-4 text-[16px]" />
     </div>
   </section>
 );

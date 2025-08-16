@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   FaDesktop,
   FaMobileAlt,
@@ -48,7 +49,7 @@ const Platforms = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   return (
-    <section className="py-16 bg-black text-white px-6 md:px-12 lg:px-20">
+    <section className="py-16 text-white px-6 md:px-12 lg:px-20">
       <h2 className="text-4xl font-bold text-center mb-8 text-blue-500">Platforms We Use</h2>
       <p className="text-center mb-12 text-gray-300 text-lg">
         Powering modern development with secure, scalable, and AI-driven technologies.

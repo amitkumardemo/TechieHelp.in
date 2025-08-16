@@ -22,11 +22,10 @@ const Business = () =>  (
   <section id="features" className={layout.section}>
     <div className={layout.sectionInfo}>
       <h2 className={styles.heading2}>
-        You Focus on Innovation, <br className="sm:block hidden" /> We Handle the Tech Support.
+        You Focus on Innovation, <br className="sm:block hidden" /> We Handle the AI Technology.
       </h2>
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-At TechieHelp, we empower your growth by providing tailored tech solutions, expert guidance, and reliable support—so you can scale efficiently and confidently.
-
+At TechieHelp, we accelerate your growth by delivering AI-powered software solutions, intelligent automation, and real-time insights—so you can scale smarter, faster, and with confidence.
 
       </p>
 

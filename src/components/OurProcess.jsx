@@ -73,7 +73,7 @@ const OurProcess = () => {
   const rows = [steps.slice(0, 4), steps.slice(4)];
 
   return (
-    <section className="bg-black text-white py-20 px-6 md:px-12 lg:px-20">
+    <section className="text-white py-20 px-6 md:px-12 lg:px-20">
       <div className="text-center mb-16">
         <h2 className="text-blue-500 text-sm tracking-widest font-semibold uppercase mb-2">
           Our Process

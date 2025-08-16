@@ -6,60 +6,61 @@ const faqData = [
   {
     question: "What services does TechieHelp specialize in?",
     answer:
-      "TechieHelp offers end-to-end technology solutions including web and mobile app development, UI/UX design, SEO optimization, AI integration, cloud services, and digital marketing tailored to your business goals.",
+      "TechieHelp is an AI-first software development company, offering AI-powered solutions including intelligent automation, AI chatbots, predictive analytics, computer vision systems, custom web and mobile apps, cloud AI integration, and digital transformation strategies tailored to your business goals.",
   },
   {
     question: "How do I initiate a project with TechieHelp?",
     answer:
-      "Simply reach out through our website’s contact form or directly via phone or email. Our team will schedule a consultation to understand your needs and propose the best strategy for your project.",
+      "Simply reach out through our website’s contact form or directly via phone or email. Our AI experts will schedule a discovery session to understand your business challenges and design a custom AI roadmap for you.",
   },
   {
-    question: "What is the typical turnaround time for projects?",
+    question: "What is the typical turnaround time for AI projects?",
     answer:
-      "Project durations vary based on complexity and scope. After understanding your requirements, we provide a clear timeline with milestones to ensure transparency and timely delivery.",
+      "Project timelines vary based on complexity and data availability. After analyzing your requirements, we provide a detailed timeline with milestones, ensuring rapid development without compromising quality.",
   },
   {
-    question: "Does TechieHelp provide post-launch support?",
+    question: "Does TechieHelp provide post-launch AI model support?",
     answer:
-      "Yes, we provide 24/7 maintenance and technical support to ensure your solutions stay secure, updated, and scalable as your business grows.",
+      "Yes, we offer 24/7 AI model monitoring, optimization, and retraining services to ensure accuracy, scalability, and consistent performance over time.",
   },
   {
-    question: "Can TechieHelp assist in integrating AI technologies?",
+    question: "Can TechieHelp help me integrate AI into my existing systems?",
     answer:
-      "Absolutely. We help businesses leverage AI-powered solutions like intelligent automation, AI agents, and data-driven analytics to enhance efficiency and decision-making.",
+      "Absolutely. We specialize in embedding AI capabilities—such as natural language processing, image recognition, and intelligent data analytics—seamlessly into your current software and workflows.",
   },
   {
-    question: "How does TechieHelp ensure the security of my data?",
+    question: "How does TechieHelp ensure the security of AI-driven solutions?",
     answer:
-      "We implement industry-leading security protocols, including encryption, secure cloud infrastructure, and regular audits to safeguard your sensitive information.",
+      "We follow strict security protocols including encrypted data pipelines, secure cloud environments, regular audits, and compliance with GDPR and other global data privacy regulations.",
   },
   {
     question: "What industries does TechieHelp serve?",
     answer:
-      "We serve a wide range of industries including e-commerce, healthcare, finance, education, startups, and enterprises, customizing solutions to meet unique sector requirements.",
+      "We deliver AI solutions for industries including e-commerce, healthcare, finance, manufacturing, logistics, education, and startups, customizing each solution to specific industry needs.",
   },
   {
     question: "How does TechieHelp handle project confidentiality?",
     answer:
-      "We sign Non-Disclosure Agreements (NDAs) to ensure that all your project details and data remain confidential and secure throughout our collaboration.",
+      "We sign Non-Disclosure Agreements (NDAs) for all AI projects to ensure your intellectual property, data, and algorithms remain fully secure and confidential.",
   },
   {
-    question: "Can TechieHelp help with digital transformation strategies?",
+    question: "Can TechieHelp assist with AI-driven digital transformation?",
     answer:
-      "Yes, we assist organizations in embracing digital transformation by modernizing legacy systems, integrating cloud technologies, and optimizing workflows for enhanced productivity.",
+      "Yes, we help organizations modernize by integrating AI, automating manual processes, enabling real-time decision-making, and optimizing workflows for maximum efficiency.",
   },
   {
-    question: "What technologies and tools does TechieHelp use?",
+    question: "What AI technologies and tools does TechieHelp use?",
     answer:
-      "We use a wide range of modern technologies such as React, Node.js, Python, AWS, Azure, TensorFlow, and more, selecting the best tools to meet your project goals efficiently.",
+      "We work with cutting-edge AI frameworks and tools including TensorFlow, PyTorch, OpenAI APIs, LangChain, AWS AI/ML, Azure Cognitive Services, and custom ML pipelines to deliver scalable, high-performance solutions.",
   },
 ];
+
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section className={`${styles.paddingY} ${styles.flexCenter} bg-primary text-white`}>
+    <section className={`${styles.paddingY} ${styles.flexCenter} text-white`}>
       <div className={`${styles.boxWidth} w-full max-w-4xl`}>
         <h2 className={`${styles.heading2} text-center mb-8`}>Frequently Asked Questions</h2>
         <div className="space-y-4">
