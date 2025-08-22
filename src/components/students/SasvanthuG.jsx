@@ -21,14 +21,14 @@ const SasvanthuG = () => {
     profileImage: sasvanthuG,
     verified: true,
     resumeLink: "#",
-    offerLetterLink: "#",
-    completionCertificationsLink: "#",
+    offerLetterLink: "https://drive.google.com/file/d/1ka6aB1cofWFtvDkNvj8jicOPp2uPI2vx/view?usp=sharing",
+    completionCertificationsLink: "https://drive.google.com/file/d/1tlIQjBCGoXbDMWaTcE_u3kPRCNtZbtUl/view?usp=sharing",
     feedback: "Creative and dedicated frontend developer.",
     workDone: [
-      "Created responsive web pages using HTML5 and CSS3",
-      "Developed interactive components with JavaScript",
-      "Worked with modern CSS frameworks like Tailwind CSS",
-      "Collaborated on team projects and code reviews"
+      "Game Development Agency – A fully animated gaming-style website with interactive UI, smooth animations, and responsive design using HTML, CSS, and JavaScript",
+      "Portfolio Website – A modern developer portfolio built with React JS & Tailwind CSS, featuring auto-updated GitHub & LeetCode achievements",
+      "Restaurant Website – A responsive and animated website for restaurants using HTML, CSS, and JavaScript, with sections for menu, gallery, and contact",
+      
     ]
   };
 

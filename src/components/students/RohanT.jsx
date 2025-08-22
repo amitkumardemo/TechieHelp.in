@@ -20,16 +20,15 @@ const RohanT = () => {
     personalQuote: "Optional",
     profileImage: rohanThurady,
     verified: true,
-    resumeLink: "#",
-    offerLetterLink: "#",
-    completionCertificationsLink: "#",
+    resumeLink: "https://drive.google.com/file/d/1NQyiBfjF3UoXYc59z5RIAMOgw3X-Akkt/view?usp=sharing",
+    offerLetterLink: "https://drive.google.com/file/d/1aRvQ41XML_-EhuUgkatAR36aLHIjjpzB/view?usp=sharing",
+    completionCertificationsLink: "https://drive.google.com/file/d/1PT5ZTRYP7jpW381oSYInoB54PKClI13z/view?usp=sharing",
     feedback: "Skilled frontend developer with strong Java and Python programming skills.",
     workDone: [
-      "Developed frontend applications using Java and Python",
-      "Created responsive web interfaces",
-      "Worked with modern frontend frameworks",
-      "Implemented user-friendly designs",
-      "Collaborated on team development projects"
+      "Game Development Agency – A fully animated gaming-style website with interactive UI, smooth animations, and responsive design using HTML, CSS, and JavaScript",
+      "Portfolio Website – A modern developer portfolio built with React JS & Tailwind CSS, featuring auto-updated GitHub & LeetCode achievements",
+      "Restaurant Website – A responsive and animated website for restaurants using HTML, CSS, and JavaScript, with sections for menu, gallery, and contact",
+      
     ]
   };
 

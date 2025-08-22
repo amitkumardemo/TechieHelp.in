@@ -20,17 +20,15 @@ const AbhayRajSingh = () => {
     personalQuote: "Motivated Computer Science undergraduate with practical experience in web development, software engineering, and artificial intelligence. Passionate about building secure, efficient, and responsive applications.",
     profileImage: abhayRajSingh,
     verified: true,
-    resumeLink: "#",
-    offerLetterLink: "#",
-    completionCertificationsLink: "#",
+    resumeLink: "https://drive.google.com/file/d/1YJ1-i0jqbQBg5InHfKFYBkMMZpmYzeEr/view?usp=sharing",
+    offerLetterLink: "https://drive.google.com/file/d/1xHhG6ZMghz587pKFNJdktF4kgwAdZYEi/view?usp=sharing",
+    completionCertificationsLink: "https://drive.google.com/file/d/1zUvrfR3oMvVmJRCkESkWrheMajPCK587/view?usp=sharing",
     feedback: "Highly motivated and skilled developer.",
     projectsGitHubLink: "https://github.com/ABHAYRAJSINGH11/projects",
     workDone: [
-      "Built full-stack MERN applications with MongoDB, Express.js, React, and Node.js",
-      "Developed RESTful APIs with authentication and authorization",
-      "Created responsive web applications with modern UI/UX design",
-      "Implemented real-time features using Socket.io",
-      "Deployed applications on cloud platforms like Heroku and Netlify"
+      "Doctors Appointment Platform – Built a Full Stack Doctors Appointment App with Video Call in React 19 + Next JS 15 with Tailwind CSS, NeonDB, Prisma, Clerk Authentication, Vonage Shadcn UI",
+      "Job Portal – Built a Full Stack Job Portal in React JS with Tailwind CSS, Supabase, Clerk Authentication Shadcn UI",
+      "AI Finance Platform – Built a Full Stack AI Finance Platform in React 19 + Next JS 15 with Tailwind CSS, Supabase, Prisma, Clerk Authentication, Inngest, Arcjet Shadcn UI",
     ]
   };
 

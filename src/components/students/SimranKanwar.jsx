@@ -20,14 +20,14 @@ const SimranKanwar = () => {
     personalQuote: "SIMRAN KANWAR – Web Developer | Python Enthusiast | NCC Cadet",
     profileImage: simranKanwar,
     verified: true,
-    resumeLink: "#",
-    offerLetterLink: "#",
-    completionCertificationsLink: "#",
+    resumeLink: "https://docs.google.com/document/d/1T63_9en0fovycgyWzerkAPkcLO0swfCs/edit?usp=sharing&ouid=107759550110218559812&rtpof=true&sd=true",
+    offerLetterLink: "https://drive.google.com/file/d/13e3pM5Zm1cawGxzhK74opUrH8OAfltb1/view?usp=sharing",
+    completionCertificationsLink: "https://drive.google.com/file/d/15Sn5Tqvx2gCuV9Ww2dqtKqV-n2X7w11Q/view?usp=sharing",
     feedback: "Enthusiastic web developer with strong Python and C programming skills.",
     workDone: [
-      "Technical Skills: HTML, CSS, JavaScript (Basics) ;Python ;Programming C Language ; WordPress ; Video Editing ; Starting DSA (Data Structures & Algorithms)",
-      "Technical Skills: HTML, CSS, JavaScript (Basics) ;Python ;Programming C Language ; WordPress ; Video Editing ; Starting DSA (Data Structures & Algorithms)",
-      "Technical Skills: HTML, CSS, JavaScript (Basics) ;Python ;Programming C Language ; WordPress ; Video Editing ; Starting DSA (Data Structures & Algorithms)"
+      "Game Development Agency – A fully animated gaming-style website with interactive UI, smooth animations, and responsive design using HTML, CSS, and JavaScript",
+      "Portfolio Website – A modern developer portfolio built with React JS & Tailwind CSS, featuring auto-updated GitHub & LeetCode achievements",
+      "Restaurant Website – A responsive and animated website for restaurants using HTML, CSS, and JavaScript, with sections for menu, gallery, and contact"
     ]
   };
 

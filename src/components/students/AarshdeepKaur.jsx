@@ -20,16 +20,14 @@ const AarshdeepKaur = () => {
     personalQuote: "Discipline and consistency is the key that opens every door",
     profileImage: aarshdeepKaur,
     verified: true,
-    resumeLink: "#",
-    offerLetterLink: "#",
-    completionCertificationsLink: "#",
+    resumeLink: "https://drive.google.com/file/d/1f8XEfsXM5VXNqeUw0NFWMR1SWMsSjFyw/view?usp=sharing",
+    offerLetterLink: "https://drive.google.com/file/d/1zlAODoApjUEQDFrNpRf_UqDsphdNsoR2/view?usp=sharing",
+    completionCertificationsLink: "https://drive.google.com/file/d/1s4PLnXUaV8wp94e_Zz3C4ZS3bTDu72Bs/view?usp=sharing",
     feedback: "Dedicated frontend developer with strong technical and soft skills.",
     workDone: [
-      "Learned basics of C programming",
-      "Worked with Dev C++ platform",
-      "Gained experience in video and photo editing",
-      "Developed frontend web development skills",
-      "Applied problem-solving and creative thinking"
+      "Game Development Agency – A fully animated gaming-style website with interactive UI, smooth animations, and responsive design using HTML, CSS, and JavaScript",
+      "Portfolio Website – A modern developer portfolio built with React JS & Tailwind CSS, featuring auto-updated GitHub & LeetCode achievements",
+      "Restaurant Website – A responsive and animated website for restaurants using HTML, CSS, and JavaScript, with sections for menu, gallery, and contact"
     ]
   };
 

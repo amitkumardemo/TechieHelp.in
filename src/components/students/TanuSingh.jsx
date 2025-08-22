@@ -20,11 +20,16 @@ const TanuSingh = () => {
     personalQuote: "Completed B.Voc in IT from Ewing Christian College, passionate about creativity and innovation.",
     profileImage: tanuSingh,
     verified: true,
-    resumeLink: "#",
-    offerLetterLink: "#",
-    completionCertificationsLink: "#",
+    resumeLink: "https://drive.google.com/file/d/1nzJ5tWxTfB8nWN9RM95CJ7g46oXhpomT/view?usp=sharing",
+    offerLetterLink: "https://drive.google.com/file/d/1cdFKmirN6TSJjbJGXy0uiFHqPB1I3MPx/view?usp=sharing",
+    completionCertificationsLink: "https://drive.google.com/file/d/1EJc8NQxVurPI_QqFzaPvzL4Ncb33rmAo/view?usp=sharing",
     feedback: "Experienced IT professional with strong technical foundation.",
-    projectsGitHubLink: "https://github.com/Tanucoder-stack/projects"
+    projectsGitHubLink: "https://github.com/Tanucoder-stack/projects",
+    workDone: [
+      "Game Development Agency – A fully animated gaming-style website with interactive UI, smooth animations, and responsive design using HTML, CSS, and JavaScript",
+      "Portfolio Website – A modern developer portfolio built with React JS & Tailwind CSS, featuring auto-updated GitHub & LeetCode achievements",
+      "Restaurant Website – A responsive and animated website for restaurants using HTML, CSS, and JavaScript, with sections for menu, gallery, and contact"
+    ]
   };
 
   return <StudentProfileTemplate student={studentData} />;
