@@ -1,7 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCheck } from "react-icons/fa";
-import { webDevelopment, webdevelopmentservices, technology, basic, classic, premium } from "../assets";
+import { 
+  FaCheck, 
+  FaUsers, 
+  FaHeadset, 
+  FaMoneyBillWave, 
+  FaClock, 
+  FaMobile, 
+  FaServer, 
+  FaTools, 
+  FaGraduationCap, 
+  FaLaptopCode, 
+  FaHeart,
+  FaCode
+} from "react-icons/fa";
+import { webDevelopment, webdevelopmentservices, technology, basic, classic, premium, choose , apps } from "../assets";
 import Platform from "./Platform";
 import OurProcess from "./OurProcess";
 import ServiceFAQ from "./ServiceFAQ";
@@ -13,67 +26,78 @@ const features = [
     title: "Experienced & Skilled Team",
     description:
       "Our developers, designers, and strategists are well-versed in modern technologies and frameworks, delivering high-quality solutions with industry best practices.",
+    icon: <FaUsers className="w-6 h-6" />
   },
   {
     id: 2,
     title: "Client-Centric Approach",
     description:
       "We listen first. Every project is customized to your specific goals, vision, and target audience — ensuring a personalized and impactful web presence.",
+    icon: <FaHeadset className="w-6 h-6" />
   },
   {
     id: 3,
     title: "Affordable & Transparent Pricing",
     description:
       "We offer competitive pricing for startups, students, and businesses — with no hidden charges and clear deliverables.",
+    icon: <FaMoneyBillWave className="w-6 h-6" />
   },
   {
     id: 4,
     title: "Fast Turnaround Time",
     description:
       "We value your time. Our streamlined development process ensures timely delivery without compromising on quality.",
+    icon: <FaClock className="w-6 h-6" />
   },
   {
     id: 5,
     title: "Mobile & SEO-Friendly Designs",
     description:
       "We build websites that look great and perform well across all devices — with built-in SEO practices to help your site rank better on search engines.",
+    icon: <FaMobile className="w-6 h-6" />
   },
   {
     id: 6,
     title: "End-to-End Service",
     description:
       "From design to deployment, domain to hosting, and code to content, we provide full-stack web development solutions — so you don't have to go anywhere else.",
+    icon: <FaServer className="w-6 h-6" />
   },
   {
     id: 7,
     title: "Support & Maintenance",
     description:
-      "We don’t leave after deployment. Enjoy free bug fixes, content updates, and premium post-launch support for a smooth experience.",
+      "We don't leave after deployment. Enjoy free bug fixes, content updates, and premium post-launch support for a smooth experience.",
+    icon: <FaTools className="w-6 h-6" />
   },
   {
-    id: 8,
-    title: "Internship & Student-Friendly",
-    description:
-      "Special services for students, freshers, and interns — including academic projects, affordable portfolio sites, and resume builder tools.",
-  },
+  id: 8,
+  title: "Custom Web Development",
+  description:
+    "We design and develop responsive, SEO-friendly, and high-performance websites tailored to your business needs, using the latest technologies and modern UI/UX practices.",
+  icon: <FaCode className="w-6 h-6" />
+},
+
   {
     id: 9,
     title: "Modern Tools & Tech Stack",
     description:
       "We use the latest and secure technologies like React, Node.js, Firebase, MongoDB, Tailwind CSS, and more to deliver blazing-fast performance and scalability.",
+    icon: <FaLaptopCode className="w-6 h-6" />
   },
   {
     id: 10,
     title: "100% Satisfaction Guarantee",
     description:
-      "We work with the goal of building long-term relationships. We don’t stop until you’re completely satisfied.",
+      "We work with the goal of building long-term relationships. We don't stop until you're completely satisfied.",
+    icon: <FaHeart className="w-6 h-6" />
   },
 ];
 
 const webServices = [
   {
     title: "Static Website Development",
-    desc: `A simple, fast, and secure website for individuals and small businesses that don’t require frequent updates.
+    desc: `A simple, fast, and secure website for individuals and small businesses that don't require frequent updates.
 
 Includes:
 
@@ -356,7 +380,7 @@ SMS/Email integration (optional)`,
   },
   {
     title: "Website Redesign & Revamp",
-    desc: `Already have a site but it looks outdated? We’ll redesign it to improve performance, design, and user experience.
+    desc: `Already have a site but it looks outdated? We'll redesign it to improve performance, design, and user experience.
 
 Includes:
 
@@ -395,7 +419,7 @@ const WebDevelopmentServices = () => {
               We Build Websites That Will Build Your Business!
             </h1>
             <p className="text-lg mb-6">
-              Great things in business are never done by one person. They’re done by a team of people.
+              In today’s digital-first world, your website is the face of your brand. At TechieHelp, we craft high-performing, responsive, and scalable websites that don’t just look stunning — they work seamlessly to convert visitors into loyal customers. Our team blends creativity with technology to deliver solutions that drive measurable business growth.
             </p>
             <a
               href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details."
@@ -417,30 +441,151 @@ const WebDevelopmentServices = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="max-w-7xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          Why Choose <span className="text-red-600">Us?</span>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map(({ id, title, description }) => (
+      {/* Why Choose Us Section - Enhanced with Animations */}
+      <section className="max-w-7xl mx-auto py-20 px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-center mb-16"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
             <motion.div
-              key={id}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              variants={cardVariants}
-              custom={id}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
+              transition={{ duration: 0.8 }}
+              className="md:w-1/2"
             >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600">{description}</p>
+              <img
+                src={choose}
+                alt="Why Choose TechieHelp"
+                className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
+              />
             </motion.div>
-          ))}
-        </div>
+            
+            <motion.div
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-8 relative overflow-hidden md:w-1/2"
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="absolute inset-0 bg-white opacity-10 animate-pulse"></div>
+              <motion.h2 
+                className="text-3xl font-bold text-center"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                Why Choose Us?
+              </motion.h2>
+              <motion.p 
+                className="mt-4 text-center text-lg"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+              >
+                We provide exceptional services tailored to your needs with cutting-edge technology and expert team
+              </motion.p>
+            </motion.div>
+          </div>
+
+          <div className="relative w-full">
+            {/* Animated background elements */}
+            <motion.div
+              className="absolute -top-8 -left-8 w-24 h-24 bg-purple-300 rounded-full opacity-20"
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+            <motion.div
+              className="absolute -bottom-8 -right-8 w-16 h-16 bg-blue-300 rounded-full opacity-20"
+              animate={{
+                scale: [1, 1.3, 1],
+                rotate: [360, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+              {features.map(({ id, title, description, icon }) => (
+                <motion.div
+                  key={id}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    rotate: 2,
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                  }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={{
+                    hidden: { opacity: 0, y: 60, scale: 0.8 },
+                    visible: { 
+                      opacity: 1, 
+                      y: 0, 
+                      scale: 1,
+                      transition: {
+                        delay: id * 0.1,
+                        duration: 0.6,
+                        ease: "backOut"
+                      }
+                    }
+                  }}
+                  className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
+                >
+                  <motion.div
+                    className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                    whileHover={{ 
+                      scale: 1.1,
+                      rotate: 360
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {icon}
+                  </motion.div>
+                  <motion.h3 
+                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {title}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: id * 0.1 + 0.3, duration: 0.5 }}
+                  >
+                    {description}
+                  </motion.p>
+                  
+                  {/* Hover effect line */}
+                  <motion.div
+                    className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                    whileHover={{ width: "50%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Web App Development Section */}
@@ -459,7 +604,7 @@ const WebDevelopmentServices = () => {
           </div>
           <div className="md:w-1/2">
             <img
-              src={webdevelopmentservices}
+              src={apps}
               alt="Web Development Illustration"
               className="w-full rounded-lg shadow-lg"
             />

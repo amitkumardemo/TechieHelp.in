@@ -216,8 +216,50 @@ const studentData = [
     idCardStyle: "cyan-gradient",
     cardColor: "from-cyan-600 to-cyan-800",
     profilePath: "/intern/rohan-t"
-  }
+  },
+  {
+  "timestamp": "20/08/2025",
+  "fullName": "KAVIYARASAN P",
+  "email": "",
+  "collegeName": "PUDUCHERRY TECHNOLOGICAL UNIVERSITY",
+  "techieHelpStudentID": "TECHIE418413",
+  "linkedInProfile": "",
+  "githubProfile": "",
+  "address": "",
+  "phoneNumber": "",
+  "internshipDomain": "Front End Development",
+  "currentYearBatch": "July 2025 Batch",
+  "passingYear": "2025",
+  "skills": "",
+  "personalQuote": "",
+  "profileImage": "",
+  "idCardStyle": "default",
+  "cardColor": "from-gray-600 to-gray-800",
+  "profilePath": "/intern/kaviyaran-p"
+},
+  {
+  "timestamp": "20/08/2025",
+  "fullName": "GANGA DHAR SHARMA",
+  "email": "2401109070@ptuniv.edu.in",
+  "collegeName": "PUDUCHERRY TECHNOLOGICAL UNIVERSITY",
+  "techieHelpStudentID": "TECHIE426947",
+  "linkedInProfile": "",
+  "githubProfile": "https://github.com/monkeykavi",
+  "address": "Pondicherry ",
+  "phoneNumber": "8883802327",
+  "internshipDomain": "Front End Development",
+  "currentYearBatch": "July 2025 Batch",
+  "passingYear": "2025",
+  "skills": "",
+  "personalQuote": "",
+  "profileImage": "",
+  "idCardStyle": "default",
+  "cardColor": "from-gray-600 to-gray-800",
+  "profilePath": "/intern/ganga-dhar-sharma"
+}
+
 ];
+
 
 const Intern = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
@@ -392,4 +434,3 @@ const Intern = () => {
 };
 
 export default Intern;
-

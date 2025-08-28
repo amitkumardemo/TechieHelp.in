@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { close, menu, logo } from "../assets";
+import { useLocation } from "react-router-dom";
 import styles from "../style";
 import { navLinks } from "../constants";
 import { Link } from "react-router-dom";
@@ -9,6 +10,7 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const [toggle, setToggle] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const location = useLocation();
 
   const handleLogout = async () => {
     try {
@@ -30,7 +32,7 @@ const Navbar = () => {
               key={nav.id}
               className={`relative font-poppins font-normal cursor-pointer text-[16px] transition duration-300 ease-in-out transform hover:text-secondary hover:scale-110 ${
                 index === navLinks.length - 1 ? "mr-0" : "mr-10"
-              } text-white drop-shadow-md`}
+              } text-white drop-shadow-md ${location.pathname === nav.path ? "text-secondary" : ""}`}
               onMouseEnter={() => nav.subLinks && setDropdownOpen(nav.id)}
               onMouseLeave={() => nav.subLinks && setDropdownOpen(null)}
             >

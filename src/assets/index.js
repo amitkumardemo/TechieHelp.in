@@ -78,6 +78,9 @@ import earn from "./earn.webp";
 import googleWebp from "./google.webp";
 import githubPng from "./github.png";
 import cards from "./cards.webp";
+import choose from "./choose.png";
+import android from "./android.png";
+import apps from "./apps.png";
 
 // Import intern photos from InternPhotos folder
 import aarshdeepKaur from "./Aarshdepp_kaur.jpg";
@@ -238,5 +241,8 @@ export {
   health,
   ecom,
   producer,
-  cards
+  cards,
+  choose,
+  android,
+  apps
 };

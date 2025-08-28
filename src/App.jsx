@@ -8,7 +8,7 @@ import FAQ from "./components/FAQ";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Contacts from "./components/contacts";
-import Internship from "./components/Internship";
+import Internship from "./components/intern"; // Correcting casing for import
 import Webdevelopment from "./components/Webdevelopment";
 import Androiddevelopment from "./components/Androiddevelopment";
 import UIUX from "./components/UIUX";
@@ -61,6 +61,7 @@ import RohanT from "./components/students/RohanT";
 import TejaBhuvaneswariDevi from "./components/students/TejaBhuvaneswariDevi";
 
 import { useState, useEffect } from "react";
+import KaviyaranP from "./components/students/KaviyaranP"; // Importing KaviyaranP
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
@@ -213,6 +214,10 @@ const App = () => {
           <Route path="/intern/rohan-t" element={<RohanT />} />
           <Route path="/students/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
           <Route path="/intern/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
+          <Route path="/students/kaviyaran-p" element={<KaviyaranP />} />
+          <Route path="/intern/kaviyaran-p" element={<KaviyaranP />} />
+          <Route path="/students/ganga-dhar-sharma" element={<KaviyaranP />} />
+          <Route path="/intern/ganga-dhar-sharma" element={<KaviyaranP />} />
 
         {/* Authentication Routes */}
 

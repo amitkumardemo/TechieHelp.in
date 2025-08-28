@@ -1,7 +1,20 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCheck } from "react-icons/fa";
-import { appDevelopment, technology, basic, classic, premium } from "../assets";
+import { 
+  FaCheck, 
+  FaUsers, 
+  FaHeadset, 
+  FaMoneyBillWave, 
+  FaClock, 
+  FaMobile, 
+  FaServer, 
+  FaTools, 
+  FaGraduationCap, 
+  FaLaptopCode, 
+  FaHeart,
+  FaCode
+} from "react-icons/fa";
+import { appDevelopment, technology, basic, classic, premium, android, apps } from "../assets";
 import Platform from "./Platform";
 import OurProcess from "./OurProcess";
 import ServiceFAQ from "./ServiceFAQ";
@@ -12,60 +25,70 @@ const features = [
     title: "Expert Mobile Developers",
     description:
       "Our team specializes in building high-quality native and cross-platform mobile applications tailored to your business needs.",
+    icon: <FaUsers className="w-6 h-6" />
   },
   {
     id: 2,
     title: "User-Centered Design",
     description:
       "We focus on creating intuitive and engaging mobile experiences that delight users and drive engagement.",
+    icon: <FaHeadset className="w-6 h-6" />
   },
   {
     id: 3,
     title: "Transparent Pricing",
     description:
       "Competitive and clear pricing models with no hidden fees, designed to fit startups, enterprises, and individual clients.",
+    icon: <FaMoneyBillWave className="w-6 h-6" />
   },
   {
     id: 4,
     title: "Rapid Development Cycles",
     description:
       "Agile methodologies ensure fast delivery without compromising quality or performance.",
+    icon: <FaClock className="w-6 h-6" />
   },
   {
     id: 5,
     title: "Performance & Security",
     description:
       "We build apps optimized for speed, reliability, and security across all devices and platforms.",
+    icon: <FaMobile className="w-6 h-6" />
   },
   {
     id: 6,
     title: "End-to-End Solutions",
     description:
       "From concept and design to deployment and maintenance, we provide comprehensive app development services.",
+    icon: <FaServer className="w-6 h-6" />
   },
   {
     id: 7,
     title: "Ongoing Support",
     description:
       "Post-launch support including updates, bug fixes, and feature enhancements to keep your app competitive.",
+    icon: <FaTools className="w-6 h-6" />
   },
   {
     id: 8,
     title: "Student & Startup Friendly",
     description:
       "Special packages and mentorship for students and startups to help bring ideas to life affordably.",
+    icon: <FaGraduationCap className="w-6 h-6" />
   },
   {
     id: 9,
     title: "Modern Tech Stack",
     description:
       "We use React Native, Flutter, Swift, Kotlin, Firebase, and other cutting-edge technologies for scalable apps.",
+    icon: <FaLaptopCode className="w-6 h-6" />
   },
   {
     id: 10,
     title: "Satisfaction Guaranteed",
     description:
       "Our commitment is to deliver apps that exceed expectations and foster long-term partnerships.",
+    icon: <FaHeart className="w-6 h-6" />
   },
 ];
 
@@ -173,7 +196,7 @@ const AppDevelopmentServices = () => {
               We Build Mobile Apps That Drive Your Business Forward!
             </h1>
             <p className="text-lg mb-6">
-              From startups to enterprises, we deliver high-quality mobile applications tailored to your unique needs.
+              From startups to enterprises, we design and develop high-quality mobile applications tailored to your unique business needs. Our team specializes in creating intuitive, scalable, and feature-rich apps that provide seamless user experiences across iOS and Android. With a focus on performance, security, and innovation, we transform your ideas into powerful mobile solutions that engage users and accelerate growth.
             </p>
             <a
               href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20app%20development%20services.%20Please%20provide%20more%20details."
@@ -188,37 +211,158 @@ const AppDevelopmentServices = () => {
           <div className="md:w-1/2">
             <img
               src={appDevelopment}
-              alt="App Development Illustration"
-              className="w-full rounded-lg shadow-lg"
+              alt="Apps Illustration"
+              className="w-full max-w-md mx-auto rounded-lg shadow-lg"
             />
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="max-w-7xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          Why Choose <span className="text-blue-500">Us?</span>
-        </h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map(({ id, title, description }) => (
+      {/* Why Choose Us Section - Enhanced with Animations */}
+      <section className="max-w-7xl mx-auto py-20 px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-center mb-16"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
             <motion.div
-              key={id}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              variants={cardVariants}
-              custom={id}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
+              transition={{ duration: 0.8 }}
+              className="md:w-1/2"
             >
-              <div className="bg-blue-100 text-blue-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600">{description}</p>
+              <img
+                src={android}
+                alt="Why Choose Us"
+                className="w-full max-w-xs mx-auto rounded-2xl shadow-2xl"
+              />
             </motion.div>
-          ))}
-        </div>
+            
+            <motion.div
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-8 relative overflow-hidden md:w-1/2"
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="absolute inset-0 bg-white opacity-10 animate-pulse"></div>
+              <motion.h2 
+                className="text-3xl font-bold text-center"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                Why Choose Us?
+              </motion.h2>
+              <motion.p 
+                className="mt-4 text-center text-lg"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+              >
+                We provide exceptional services tailored to your needs with cutting-edge technology and expert team
+              </motion.p>
+            </motion.div>
+          </div>
+
+          <div className="relative w-full">
+            {/* Animated background elements */}
+            <motion.div
+              className="absolute -top-8 -left-8 w-24 h-24 bg-purple-300 rounded-full opacity-20"
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+            <motion.div
+              className="absolute -bottom-8 -right-8 w-16 h-16 bg-blue-300 rounded-full opacity-20"
+              animate={{
+                scale: [1, 1.3, 1],
+                rotate: [360, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+              {features.map(({ id, title, description, icon }) => (
+                <motion.div
+                  key={id}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover={{ 
+                    scale: 1.05, 
+                    rotate: 2,
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                  }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={{
+                    hidden: { opacity: 0, y: 60, scale: 0.8 },
+                    visible: { 
+                      opacity: 1, 
+                      y: 0, 
+                      scale: 1,
+                      transition: {
+                        delay: id * 0.1,
+                        duration: 0.6,
+                        ease: "backOut"
+                      }
+                    }
+                  }}
+                  className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
+                >
+                  <motion.div
+                    className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                    whileHover={{ 
+                      scale: 1.1,
+                      rotate: 360
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {icon}
+                  </motion.div>
+                  <motion.h3 
+                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {title}
+                  </motion.h3>
+                  <motion.p 
+                    className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: id * 0.1 + 0.3, duration: 0.5 }}
+                  >
+                    {description}
+                  </motion.p>
+                  
+                  {/* Hover effect line */}
+                  <motion.div
+                    className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                    whileHover={{ width: "50%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* App Services Section */}
@@ -237,9 +381,9 @@ const AppDevelopmentServices = () => {
           </div>
           <div className="md:w-1/2">
             <img
-              src={appDevelopment}
-              alt="App Development Illustration"
-              className="w-full rounded-lg shadow-lg"
+              src={apps}
+              alt="Apps Illustration"
+              className="w-full max-w-lg mx-auto rounded-lg shadow-lg"
             />
           </div>
         </div>
