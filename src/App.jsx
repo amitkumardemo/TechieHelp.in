@@ -8,7 +8,7 @@ import FAQ from "./components/FAQ";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Contacts from "./components/contacts";
-import Internship from "./components/Intern"; // Correcting casing for import
+import Internship from "./components/Internship"; // Correcting casing for import
 import Webdevelopment from "./components/Webdevelopment";
 import Androiddevelopment from "./components/Androiddevelopment";
 import UIUX from "./components/UIUX";
