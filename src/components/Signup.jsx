@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { storage } from "../firebase";
+import { signup as signupImage } from "../assets";
 
 const Signup = () => {
   const { signup, updateUserProfile, logout } = useAuth();
@@ -16,6 +17,7 @@ const Signup = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleChange = (e) => {
     if (e.target.name === "photo") {
@@ -60,11 +62,11 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: "url('/src/assets/signup.png')" }}>
-      <div className="min-h-screen flex justify-center items-center bg-transparent pt-10"> {/* Added padding-top and made background transparent */}
+    <div className="min-h-screen bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${signupImage})` }}>
+      <div className="min-h-screen flex justify-center items-center bg-transparent pt-28"> {/* Increased padding-top further */}
         <div className="flex flex-col md:flex-row rounded-lg shadow-lg max-w-5xl w-full mx-4 p-6 pt-10 bg-black bg-opacity-20 text-black">
           <div className="md:w-1/2 flex justify-center items-center p-4">
-            <img src="/src/assets/signup.png" alt="Signup" className="rounded-lg max-w-full h-auto" />
+            <img src={signupImage} alt="Signup" className="rounded-lg max-w-full h-auto" />
           </div>
           <div className="md:w-1/2 p-6">
             <h2 className="text-3xl font-bold mb-6 text-center text-black">Sign Up</h2>
@@ -102,15 +104,36 @@ const Signup = () => {
                 <label htmlFor="password" className="block mb-1 font-semibold">
                   Password
                 </label>
-                <input
-                  type="password"
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-text pt-1"
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    id="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                    className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-text pt-1"
+                    style={{ paddingRight: "2.5rem" }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setShowPassword(!showPassword)}
+                    className="absolute right-2 top-2 text-gray-600"
+                    tabIndex={-1}
+                  >
+                    {showPassword ? (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-5.523 0-10-4.477-10-10 0-1.042.168-2.04.475-2.975M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 2l20 20" />
+                      </svg>
+                    ) : (
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                      </svg>
+                    )}
+                  </button>
+                </div>
               </div>
               <div>
                 <label htmlFor="photo" className="block mb-1 font-semibold">

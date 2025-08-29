@@ -81,6 +81,9 @@ import cards from "./cards.webp";
 import choose from "./choose.png";
 import android from "./android.png";
 import apps from "./apps.png";
+import sign from "./sign.webp";
+import signup from "./signup.png";
+import icon from "./icon.png";
 
 // Import intern photos from InternPhotos folder
 import aarshdeepKaur from "./Aarshdepp_kaur.jpg";
@@ -244,5 +247,8 @@ export {
   cards,
   choose,
   android,
-  apps
+  apps,
+  sign,
+  signup,
+  icon
 };

@@ -129,7 +129,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={
             <>
-              <div className={`${styles.flexStart} pt-16`}>
+              <div className={`${styles.flexStart} pt-0`}>
                 <div className={`${styles.boxWidth}`}>
                   <Hero className="hero" />
                 </div>

@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { close, menu, logo } from "../assets";
 import { useLocation } from "react-router-dom";
@@ -22,10 +23,10 @@ const Navbar = () => {
 
   return (
 <nav
-      className={`${styles.paddingX} fixed top-0 left-0 right-0 w-screen flex items-center py-2 z-20 bg-black bg-opacity-50 backdrop-blur-md`}
+      className={`${styles.paddingX} fixed top-0 left-0 right-0 w-screen flex items-center py-1 z-20 bg-black bg-opacity-50 backdrop-blur-md`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
-<img src={logo} alt="logo" width="220" height="300" className="w-[220px] h-[100px]" />
+<img src={logo} alt="logo" width="220" height="300" className="w-[200px] h-[80px]" />
         <ul className="list-none sm:flex hidden justify-end items-center flex-1">
           {navLinks.map((nav, index) => (
             <li

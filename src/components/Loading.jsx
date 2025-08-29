@@ -1,11 +1,12 @@
 import React from "react";
+import { icon } from "../assets";
 
 const Loading = () => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black z-50">
       <div className="relative w-24 h-24">
         <img
-          src="/src/assets/icon.png"
+          src={icon}
           alt="icon"
           className="w-full h-full object-contain"
         />
