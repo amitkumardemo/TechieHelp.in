@@ -130,6 +130,20 @@ import sasvanthu from "./sasvanthu_g.png";
 
 import banner from "./banner.png";
 
+
+// Interns of Months Photo 
+import aarshdeepcertificate from "./aarshdeep-cert.jpg";
+import aarshdeepdiary from "./aarshdeep-diary.jpg";
+import aarshdeeptrophy from "./aarshdeep-tropht.jpg";
+import groups from "./groupps.jpg";
+import hod from "./hod.jpg";
+import rohitdiary from "./rohit-diary.jpg";
+import rohittrophy from "./rohit-trohpy.jpg";
+import simrancertificate from "./simran-certificate.jpg";
+import simrandiary from "./simran-diary.jpg";
+import simrantrophy from "./simran-trophy.jpg";
+import simrantshirt from "./simran-tshirt.jpg";
+
 export {
   internship as airbnb,
   bill,
@@ -250,5 +264,16 @@ export {
   apps,
   sign,
   signup,
-  icon
+  icon,
+  aarshdeepcertificate,
+  aarshdeepdiary,
+  aarshdeeptrophy,
+  groups,
+  hod,
+  rohitdiary,
+  rohittrophy,
+  simrancertificate,
+  simrandiary,
+  simrantrophy,
+  simrantshirt
 };
