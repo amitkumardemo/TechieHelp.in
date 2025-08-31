@@ -164,169 +164,856 @@ const Internship = () => {
             Our Internship Programs
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: {
+                  staggerChildren: 0.15,
+                  delayChildren: 0.2
+                }
+              }
+            }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
             {internships.map((item, index) => (
               <motion.div
                 key={item.id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white text-gray-900 rounded-2xl shadow-lg p-6"
+                variants={{
+                  hidden: { opacity: 0, y: 60, scale: 0.8 },
+                  visible: { opacity: 1, y: 0, scale: 1 }
+                }}
+                whileHover={{
+                  scale: 1.05,
+                  y: -10,
+                  rotateY: 5,
+                  transition: { duration: 0.3 }
+                }}
+                className="group relative bg-gradient-to-br from-white via-gray-50 to-blue-50 text-gray-900 rounded-3xl shadow-xl hover:shadow-2xl p-6 cursor-pointer transition-all duration-500 border border-gray-200 hover:border-blue-400 overflow-hidden"
               >
-                <img src={item.image} alt={item.title} className="w-full h-48 object-cover rounded-lg mb-4" />
-                <h3 className="text-xl font-semibold text-blue-700 mb-2">{item.title}</h3>
-                <p className="text-gray-600 mb-4 whitespace-pre-line">{item.description}</p>
-                <Link to={item.link} className="text-blue-500 hover:underline font-medium">more details</Link>
+                {/* Animated background gradient */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-purple-100/30 to-cyan-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                {/* Floating geometric shapes */}
+                <div className="absolute top-4 right-4 w-3 h-3 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce"></div>
+                <div className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse delay-200"></div>
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 border-2 border-cyan-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping delay-100"></div>
+
+                {/* Tech pattern overlay */}
+                <div className="absolute top-0 right-0 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                  <svg viewBox="0 0 100 100" className="w-full h-full">
+                    <defs>
+                      <pattern id={`tech-pattern-${index}`} patternUnits="userSpaceOnUse" width="20" height="20">
+                        <rect width="20" height="20" fill="none"/>
+                        <circle cx="10" cy="10" r="1" fill="currentColor"/>
+                        <rect x="5" y="5" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+                      </pattern>
+                    </defs>
+                    <rect width="100" height="100" fill={`url(#tech-pattern-${index})`}/>
+                  </svg>
+                </div>
+
+                <div className="relative z-10">
+                  <motion.div
+                    className="relative mb-4 overflow-hidden rounded-2xl"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    {/* Image overlay gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                    {/* Category badge */}
+                    <div className="absolute top-3 left-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                      {item.title.split(' ')[0]}
+                    </div>
+                  </motion.div>
+
+                  <motion.h3
+                    className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-800 transition-colors duration-300"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    {item.title}
+                  </motion.h3>
+
+                  <motion.p
+                    className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-800 transition-colors duration-300 line-clamp-3"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    {item.description}
+                  </motion.p>
+
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-block"
+                  >
+                    <Link
+                      to={item.link}
+                      className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                    >
+                      <span>Explore More</span>
+                      <motion.span
+                        className="text-lg"
+                        whileHover={{ x: 3 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        →
+                      </motion.span>
+                    </Link>
+                  </motion.div>
+                </div>
+
+                {/* Shine effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+
+                {/* Hover border effect */}
+                <div className="absolute inset-0 rounded-3xl border-2 border-blue-400 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
-          {/* Detailed Internship Domains & Flexible Duration Options Section */}
-          <div className="text-white pt-20 px-4 mt-20">
-            <div className="container mx-auto space-y-20">
-              {/* Section 1 */}
-              <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
-                <div className="w-full md:w-1/2 text-center md:text-left">
-                  <h2 className="text-4xl font-bold mb-6">
-                    🎯 Internship Domains & Flexible Duration Options
-                  </h2>
-                  <p className="text-lg mb-6 whitespace-pre-line">
-                    We offer comprehensive internship programs across diverse technical and professional domains. Participants may choose from 1-month, 2-months, or 3-months durations, enabling customized learning aligned with individual career goals. Each program comprises:
-                  </p>
-                  <ul className="list-disc list-inside space-y-3 text-lg">
-                    <li>📚 Live Interactive Sessions: Delivered by industry experts to cover core concepts and practical skills.</li>
-                    <li>🛠️ Project-Based Learning: Real-world projects designed to develop problem-solving and technical proficiency.</li>
-                    <li>❓ Doubt Clearing Sessions: Regular interactive sessions to address queries and reinforce learning.</li>
-                    <li>👨‍🏫 Dedicated Mentorship: Continuous guidance from seasoned professionals and founders.</li>
-                    <li>🏆 Hackathons & Competitions: Access to curated hackathon resources and challenges to stimulate innovation.</li>
-                  </ul>
-                </div>
-                <div className="w-full md:w-1/2">
-                  <motion.img
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
-                    src={domain}
-                    alt="Internship Domains"
-                    className="w-full rounded-xl shadow-xl object-cover"
-                  />
-                </div>
-              </div>
+              {/* Detailed Internship Domains & Flexible Duration Options Section */}
+              <div className="text-white pt-20 px-4 mt-20">
+                <div className="container mx-auto space-y-20">
+                  {/* Section Heading */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="text-center mb-12"
+                  >
+                    <motion.h2
+                      className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      Internship Domains & Flexible Duration Options
+                    </motion.h2>
+                    <motion.p
+                      className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      We offer comprehensive internship programs across diverse technical and professional domains. Participants may choose from 1-month, 2-months, or 3-months durations, enabling customized learning aligned with individual career goals. Each program comprises:
+                    </motion.p>
+                  </motion.div>
 
-              {/* Section 2 */}
-              <div className="max-w-6xl w-full">
-                <h2 className="text-4xl font-bold mb-6 text-center">
+                  {/* Section 1 */}
+                  <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={{
+                      hidden: { opacity: 0, y: 50 },
+                      visible: {
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                          duration: 0.8,
+                          staggerChildren: 0.2
+                        }
+                      }
+                    }}
+                    className="max-w-6xl w-full flex flex-col lg:flex-row items-center justify-center gap-10"
+                  >
+                    {/* Left Features */}
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, x: -50 },
+                        visible: { opacity: 1, x: 0 }
+                      }}
+                      className="w-full lg:w-1/3"
+                    >
+                      <motion.h3
+                        className="text-2xl font-bold mb-4 text-blue-400 text-center"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        🚀 Key Features
+                      </motion.h3>
+                      <motion.div
+                        className="space-y-6"
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                          visible: {
+                            transition: {
+                              staggerChildren: 0.15
+                            }
+                          }
+                        }}
+                      >
+                        {[
+                          { icon: "📚", text: "Live Interactive Sessions" },
+                          { icon: "💡", text: "Project-Based Learning" },
+                          { icon: "❓", text: "Doubt Clearing Sessions" }
+                        ].map((item, index) => (
+                          <motion.div
+                            key={index}
+                            className="bg-white bg-opacity-20 rounded-xl p-6 shadow-lg cursor-pointer hover:bg-opacity-40 transition-colors flex items-center gap-4"
+                            whileHover={{ scale: 1.05, x: 10 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                          >
+                            <span className="text-3xl">{item.icon}</span>
+                            <span className="text-lg font-semibold">{item.text}</span>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    </motion.div>
+
+                    {/* Center Image */}
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, scale: 0.8 },
+                        visible: { opacity: 1, scale: 1 }
+                      }}
+                      className="w-full lg:w-1/3 flex justify-center"
+                    >
+                      <motion.div
+                        className="relative"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 200 }}
+                      >
+                        <motion.img
+                          initial={{ opacity: 0, scale: 0.9, rotate: -10 }}
+                          animate={{
+                            opacity: 1,
+                            scale: 1,
+                            rotate: 0,
+                            y: [0, -10, 0]
+                          }}
+                          transition={{
+                            duration: 1,
+                            y: {
+                              duration: 3,
+                              repeat: Infinity,
+                              ease: "easeInOut"
+                            }
+                          }}
+                          src={domain}
+                          alt="Internship Domains"
+                          className="w-80 h-80 rounded-2xl shadow-2xl object-cover border-4 border-blue-500"
+                        />
+                        {/* Floating elements */}
+                        <motion.div
+                          className="absolute -top-4 -right-4 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-2xl"
+                          animate={{
+                            rotate: 360,
+                            scale: [1, 1.2, 1]
+                          }}
+                          transition={{
+                            rotate: { duration: 4, repeat: Infinity, ease: "linear" },
+                            scale: { duration: 2, repeat: Infinity }
+                          }}
+                        >
+                          ⭐
+                        </motion.div>
+                        <motion.div
+                          className="absolute -bottom-4 -left-4 w-6 h-6 bg-pink-400 rounded-full flex items-center justify-center text-lg"
+                          animate={{
+                            y: [0, -10, 0],
+                            rotate: [0, 180, 360]
+                          }}
+                          transition={{
+                            duration: 3,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                          }}
+                        >
+                          🎯
+                        </motion.div>
+                        {/* Glow effect */}
+                        <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/20 to-purple-500/20 blur-xl -z-10"></div>
+                      </motion.div>
+                    </motion.div>
+
+                    {/* Right Features */}
+                    <motion.div
+                      variants={{
+                        hidden: { opacity: 0, x: 50 },
+                        visible: { opacity: 1, x: 0 }
+                      }}
+                      className="w-full lg:w-1/3"
+                    >
+                      <motion.h3
+                        className="text-2xl font-bold mb-4 text-green-400 text-center"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        🌟 More Benefits
+                      </motion.h3>
+                      <motion.div
+                        className="space-y-6"
+                        initial="hidden"
+                        animate="visible"
+                        variants={{
+                          visible: {
+                            transition: {
+                              staggerChildren: 0.15
+                            }
+                          }
+                        }}
+                      >
+                        {[
+                          { icon: "👨‍🏫", text: "Dedicated Mentorship" },
+                          { icon: "🏆", text: "Hackathons & Competitions" },
+                          { icon: "⏰", text: "Choose from 1, 2, or 3 months flexible durations tailored to your career goals!" }
+                        ].map((item, index) => (
+                          <motion.div
+                            key={index}
+                            className="bg-white bg-opacity-20 rounded-xl p-6 shadow-lg cursor-pointer hover:bg-opacity-40 transition-colors flex items-center gap-4"
+                            whileHover={{ scale: 1.05, x: -10 }}
+                            transition={{ type: "spring", stiffness: 300 }}
+                          >
+                            <span className="text-3xl">{item.icon}</span>
+                            <span className="text-lg font-semibold">{item.text}</span>
+                          </motion.div>
+                        ))}
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Section 2 */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="max-w-6xl w-full"
+              >
+                <motion.h2
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-4xl md:text-5xl font-bold mb-12 text-center bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent"
+                >
                   🎁 Exclusive Internship Benefits
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-lg">
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🏅</span>
-                    <p className="text-center">AICTE-Verified Internship Certificate: Official recognition ensuring your internship meets national educational standards.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">✅</span>
-                    <p className="text-center">Verified Certificate and LinkedIn Digital Badge: Validate your internship experience to potential employers.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">💻</span>
-                    <p className="text-center">Access to GitHub Student Developer Pack: Unlock powerful development tools and resources free of cost.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🎓</span>
-                    <p className="text-center">Comprehensive Live Training: Sessions covering essential tools and technologies such as Git, GitHub, Docker, and Open Source contributions.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🌟</span>
-                    <p className="text-center">Leadership Development: Opportunities to join renowned programs like Microsoft Learn Student Ambassadors (MLSA), Google Developer Student Clubs (GDSC), and GeeksforGeeks Campus Mantri.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🚀</span>
-                    <p className="text-center">Hands-On Project Hosting: Showcase your projects with GitHub repositories integrated into your professional portfolio.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🤝</span>
-                    <p className="text-center">Personalized Mentorship: One-on-one mentoring sessions directly from TechieHelp founders to foster professional growth.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">📄</span>
-                    <p className="text-center">Industry-Standard Resume Review: Critical evaluation and feedback by experienced industry professionals to optimize your job prospects.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🆔</span>
-                    <p className="text-center">Trackable Internship & Student IDs: Unique identification for each participant to maintain transparent and verifiable internship records.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🎉</span>
-                    <p className="text-center">Final Hackathon & Awards: Participate in a grand hackathon with prizes including ₹2000 cash, branded merchandise, and featured exposure on TechieHelp's official YouTube and LinkedIn channels.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🛠️</span>
-                    <p className="text-center">Specialized Workshops: No-code Website Builder Workshop featuring 3D animations and an API Masterclass with deployment guidance.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🌐</span>
-                    <p className="text-center">Open Source Contribution Guidance: Detailed roadmap and support for participation in prominent open-source programs like Google Summer of Code (GSoC), Google Season of Docs (GSSOC), Summer of Student Code (SSOC), and Winter of Student Code (WSOC).</p>
-                  </motion.div>
-                </div>
-              </div>
+                </motion.h2>
 
-              {/* Section 3 */}
-              <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
-                <div className="w-full md:w-1/2 text-center md:text-left">
-                  <h2 className="text-4xl font-bold mb-6">
-                    🏆 Recognition & Rewards for Top Performers
-                  </h2>
-                  <ul className="list-disc list-inside space-y-3 text-lg">
-                    <li>🎁 Exclusive TechieHelp Merchandise and Swag</li>
-                    <li>⭐ Featured Portfolio Placement on the TechieHelp Platform and Partner Networks</li>
-                    <li>📝 Permanent Letter of Recommendation highlighting achievements and skills</li>
-                    <li>🏅 Certificate of Excellence recognizing outstanding performance</li>
-                  </ul>
-                </div>
-                <div className="w-full md:w-1/2">
-                  <motion.img
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
-                    src={swag}
-                    alt="Recognition & Rewards"
-                    className="w-full rounded-xl shadow-xl object-cover"
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.1,
+                        delayChildren: 0.3
+                      }
+                    }
+                  }}
+                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-lg"
+                >
+                  {[
+                    { emoji: "🏅", title: "AICTE-Verified Certificate", desc: "Official recognition ensuring your internship meets national educational standards." },
+                    { emoji: "✅", title: "LinkedIn Digital Badge", desc: "Validate your internship experience to potential employers with verified credentials." },
+                    { emoji: "💻", title: "GitHub Student Pack", desc: "Unlock powerful development tools and resources free of cost for students." },
+                    { emoji: "🎓", title: "Live Training Sessions", desc: "Comprehensive sessions covering Git, GitHub, Docker, and Open Source contributions." },
+                    { emoji: "🌟", title: "Leadership Programs", desc: "Join MLSA, GDSC, and GeeksforGeeks Campus Mantri for career advancement." },
+                    { emoji: "🚀", title: "Project Portfolio", desc: "Showcase projects with GitHub repositories integrated into your professional portfolio." },
+                    { emoji: "🤝", title: "Founder Mentorship", desc: "One-on-one mentoring sessions directly from TechieHelp founders." },
+                    { emoji: "📄", title: "Resume Review", desc: "Industry-standard resume evaluation and feedback from professionals." },
+                    { emoji: "🆔", title: "Trackable IDs", desc: "Unique identification for transparent and verifiable internship records." },
+                    { emoji: "🎉", title: "Hackathon & Awards", desc: "Grand hackathon with ₹2000 cash prizes and featured exposure on social media." },
+                    { emoji: "🛠️", title: "Specialized Workshops", desc: "No-code website builder and API masterclass with deployment guidance." },
+                    { emoji: "🌐", title: "Open Source Guidance", desc: "Support for GSoC, GSSOC, SSOC, and WSOC participation." }
+                  ].map((benefit, index) => (
+                    <motion.div
+                      key={index}
+                      variants={{
+                        hidden: { opacity: 0, y: 30, scale: 0.9 },
+                        visible: { opacity: 1, y: 0, scale: 1 }
+                      }}
+                      whileHover={{
+                        scale: 1.05,
+                        y: -8,
+                        transition: { duration: 0.2 }
+                      }}
+                      whileTap={{ scale: 0.95 }}
+                      className="group relative bg-gradient-to-br from-white via-gray-50 to-gray-100 text-gray-800 rounded-2xl p-6 cursor-pointer transition-all duration-300 shadow-lg hover:shadow-2xl border border-gray-200 hover:border-blue-300 overflow-hidden"
+                    >
+                      {/* Background gradient on hover */}
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                      {/* Floating particles effect */}
+                      <div className="absolute top-2 right-2 w-2 h-2 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                      <div className="absolute bottom-2 left-2 w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse delay-100"></div>
+
+                      <div className="relative z-10">
+                        <motion.div
+                          className="text-5xl mb-4 text-center"
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                          {benefit.emoji}
+                        </motion.div>
+
+                        <motion.h3
+                          className="text-lg font-bold mb-3 text-center text-gray-900 group-hover:text-blue-700 transition-colors duration-300"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.2 }}
+                        >
+                          {benefit.title}
+                        </motion.h3>
+
+                        <motion.p
+                          className="text-sm text-center text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          transition={{ delay: 0.3 }}
+                        >
+                          {benefit.desc}
+                        </motion.p>
+                      </div>
+
+                      {/* Shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </motion.div>
+
+              {/* Section 3: Recognition & Rewards for Top Performers */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="max-w-6xl w-full relative"
+              >
+                {/* Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-yellow-500/10 via-orange-500/10 to-red-500/10 rounded-3xl blur-3xl -z-10"></div>
+                <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-br from-orange-400 to-red-500 rounded-full opacity-20 animate-bounce"></div>
+
+                {/* Floating particles */}
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-2 h-2 bg-yellow-400 rounded-full opacity-60"
+                    style={{
+                      top: `${Math.random() * 100}%`,
+                      left: `${Math.random() * 100}%`,
+                    }}
+                    animate={{
+                      y: [0, -20, 0],
+                      opacity: [0.6, 1, 0.6],
+                    }}
+                    transition={{
+                      duration: 2 + Math.random() * 2,
+                      repeat: Infinity,
+                      delay: Math.random() * 2,
+                    }}
                   />
+                ))}
+
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 bg-gradient-to-br from-white/10 via-yellow-500/5 to-orange-500/5 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
+                  {/* Left Content */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="w-full lg:w-1/2 text-center lg:text-left"
+                  >
+                    {/* Animated Heading */}
+                    <motion.div
+                      className="relative mb-8"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <motion.h2
+                        className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 bg-clip-text text-transparent"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        whileHover={{
+                          backgroundPosition: "200% center",
+                          transition: { duration: 0.5 }
+                        }}
+                      >
+                        🏆 Recognition & Rewards for Top Performers
+                      </motion.h2>
+
+                      {/* Animated underline */}
+                      <motion.div
+                        className="h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        viewport={{ once: true }}
+                      />
+                    </motion.div>
+
+                    {/* Animated List */}
+                    <motion.ul
+                      className="space-y-4"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={{
+                        visible: {
+                          transition: {
+                            staggerChildren: 0.2,
+                            delayChildren: 0.6
+                          }
+                        }
+                      }}
+                    >
+                      {[
+                        { icon: "🎁", text: "Exclusive TechieHelp Merchandise and Swag", color: "from-pink-400 to-rose-500" },
+                        { icon: "⭐", text: "Featured Portfolio Placement on the TechieHelp Platform and Partner Networks", color: "from-yellow-400 to-orange-500" },
+                        { icon: "📝", text: "Permanent Letter of Recommendation highlighting achievements and skills", color: "from-blue-400 to-cyan-500" },
+                        { icon: "🏅", text: "Certificate of Excellence recognizing outstanding performance", color: "from-purple-400 to-pink-500" }
+                      ].map((item, index) => (
+                        <motion.li
+                          key={index}
+                          variants={{
+                            hidden: { opacity: 0, x: -30, scale: 0.9 },
+                            visible: { opacity: 1, x: 0, scale: 1 }
+                          }}
+                          whileHover={{
+                            scale: 1.05,
+                            x: 10,
+                            transition: { duration: 0.2 }
+                          }}
+                          className="group relative"
+                        >
+                          <motion.div
+                            className={`flex items-center gap-4 p-4 bg-gradient-to-r ${item.color} bg-opacity-10 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl`}
+                            whileHover={{
+                              backgroundColor: "rgba(255, 255, 255, 0.1)",
+                              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)"
+                            }}
+                          >
+                            {/* Animated Icon */}
+                            <motion.span
+                              className="text-3xl"
+                              whileHover={{
+                                scale: 1.2,
+                                rotate: [0, -10, 10, 0],
+                                transition: { duration: 0.5 }
+                              }}
+                            >
+                              {item.icon}
+                            </motion.span>
+
+                            {/* Text */}
+                            <motion.span
+                              className="text-lg font-semibold text-white group-hover:text-yellow-200 transition-colors duration-300"
+                              initial={{ opacity: 0.8 }}
+                              whileHover={{ opacity: 1 }}
+                            >
+                              {item.text}
+                            </motion.span>
+
+                            {/* Hover effect line */}
+                            <motion.div
+                              className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r ${item.color}`}
+                              initial={{ width: 0 }}
+                              whileHover={{ width: "100%" }}
+                              transition={{ duration: 0.3 }}
+                            />
+                          </motion.div>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+
+                    {/* Call to Action */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.2 }}
+                      viewport={{ once: true }}
+                      className="mt-8"
+                    >
+                      <motion.button
+                        whileHover={{
+                          scale: 1.05,
+                          boxShadow: "0 10px 30px rgba(251, 191, 36, 0.3)"
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-8 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        🚀 Aim for Excellence
+                      </motion.button>
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Right Image */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 50, scale: 0.8 }}
+                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    className="w-full lg:w-1/2 flex justify-center relative"
+                  >
+                    <motion.div
+                      className="relative group"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      {/* Yellow Box */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400 via-orange-500 to-red-500 shadow-xl"></div>
+
+                      {/* Swag Image inside Yellow Box */}
+                      <motion.img
+                        src={swag}
+                        alt="Recognition & Rewards"
+                        className="relative w-full max-w-md h-auto rounded-2xl object-cover border-4 border-transparent"
+                        whileHover={{
+                          rotate: [0, -2, 2, 0],
+                          transition: { duration: 0.6 }
+                        }}
+                      />
+
+                      {/* Floating Trophy */}
+                      <motion.div
+                        className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-xl"
+                        animate={{
+                          y: [0, -10, 0],
+                          rotate: [0, 5, -5, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                        whileHover={{
+                          scale: 1.1,
+                          rotate: 360,
+                          transition: { duration: 0.6 }
+                        }}
+                      >
+                        <span className="text-2xl">🏆</span>
+                      </motion.div>
+
+                      {/* Floating Star */}
+                      <motion.div
+                        className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-pink-400 to-purple-500 rounded-full flex items-center justify-center shadow-xl"
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          rotate: 360,
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      >
+                        <span className="text-xl">⭐</span>
+                      </motion.div>
+
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-500/20 to-orange-500/20 blur-xl -z-10 group-hover:blur-2xl transition-all duration-300"></div>
+                    </motion.div>
+                  </motion.div>
                 </div>
-              </div>
+
+                {/* Bottom motivational text */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.4 }}
+                  viewport={{ once: true }}
+                  className="text-center mt-8"
+                >
+                  <motion.p
+                    className="text-xl font-semibold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"
+                    animate={{
+                      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    style={{ backgroundSize: "200% 200%" }}
+                  >
+                    🌟 Excellence is not just rewarded, it's celebrated! 🌟
+                  </motion.p>
+                </motion.div>
+              </motion.div>
 
               {/* Section 4 */}
-              <div className="max-w-6xl w-full">
-                <h2 className="text-4xl font-bold mb-6 text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="max-w-6xl w-full"
+              >
+                <motion.h2
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-600 bg-clip-text text-transparent"
+                >
                   🎓 Why Partner with TechieHelp?
-                </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 text-lg">
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">✅</span>
-                    <p className="text-center">Official AICTE and MSME Recognition: Ensuring credibility and acceptance of your internship credentials across academia and industry.</p>
+                </motion.h2>
+
+                <motion.div
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true }}
+                  variants={{
+                    hidden: { opacity: 0 },
+                    visible: {
+                      opacity: 1,
+                      transition: {
+                        staggerChildren: 0.2,
+                        delayChildren: 0.3
+                      }
+                    }
+                  }}
+                  className="relative h-96 md:h-[500px] flex items-center justify-center"
+                >
+                  {/* Central hub */}
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
+                  >
+                    <div className="w-20 h-20 bg-gradient-to-br from-teal-400 via-cyan-500 to-blue-600 rounded-full shadow-2xl flex items-center justify-center">
+                      <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
+                        className="w-16 h-16 bg-gradient-to-br from-cyan-300 to-teal-400 rounded-full flex items-center justify-center"
+                      >
+                        <span className="text-2xl">🎯</span>
+                      </motion.div>
+                    </div>
+                    <div className="text-center mt-2">
+                      <p className="text-sm font-bold text-teal-300">TechieHelp</p>
+                      <p className="text-xs text-cyan-400">Excellence</p>
+                    </div>
                   </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">👨‍💼</span>
-                    <p className="text-center">Mentorship from Founders & Industry Experts: Access to leadership and domain experts committed to your professional success.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🔍</span>
-                    <p className="text-center">Transparent & Trackable Internship Records: Publicly verifiable internship documentation for academic and career use.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">📜</span>
-                    <p className="text-center">Formal Offer Letters & Certificates: Empowering your job applications with official documentation.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🎓</span>
-                    <p className="text-center">Access to Premium Career Resources: Including free and paid tools, learning materials, and exclusive networking opportunities.</p>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} className="flex flex-col items-center p-4 border border-white rounded-lg bg-white text-black cursor-pointer transition-shadow shadow-md hover:shadow-xl">
-                    <span className="text-4xl mb-2">🌐</span>
-                    <p className="text-center">Vibrant Community Engagement: Active participation on LinkedIn, Discord, GitHub, and YouTube to foster continuous learning and professional networking.</p>
-                  </motion.div>
-                </div>
-              </div>
+
+                  {/* Orbiting elements */}
+                  {[
+                    { emoji: "✅", title: "Recognition", desc: "AICTE & MSME verified credentials", angle: 0, color: "from-green-400 to-emerald-500", delay: 0.8 },
+                    { emoji: "👨‍💼", title: "Mentorship", desc: "Direct founder guidance", angle: 60, color: "from-blue-400 to-cyan-500", delay: 1.0 },
+                    { emoji: "🔍", title: "Transparency", desc: "Verifiable records", angle: 120, color: "from-purple-400 to-pink-500", delay: 1.2 },
+                    { emoji: "📜", title: "Certificates", desc: "Official documentation", angle: 180, color: "from-orange-400 to-red-500", delay: 1.4 },
+                    { emoji: "🎓", title: "Resources", desc: "Premium tools & materials", angle: 240, color: "from-indigo-400 to-purple-500", delay: 1.6 },
+                    { emoji: "🌐", title: "Community", desc: "Active tech networking", angle: 300, color: "from-teal-400 to-green-500", delay: 1.8 }
+                  ].map((item, index) => (
+                    <motion.div
+                      key={index}
+                      variants={{
+                        hidden: { opacity: 0, scale: 0, x: 0, y: 0 },
+                        visible: { opacity: 1, scale: 1, x: 0, y: 0 }
+                      }}
+                      className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 group cursor-pointer"
+                      style={{
+                        transform: `translate(-50%, -50%) rotate(${item.angle}deg) translateY(-140px) rotate(-${item.angle}deg)`
+                      }}
+                    >
+                      {/* Connecting line */}
+                      <motion.div
+                        initial={{ scaleX: 0 }}
+                        animate={{ scaleX: 1 }}
+                        transition={{ duration: 0.8, delay: item.delay }}
+                        className="absolute top-1/2 left-1/2 w-20 h-0.5 bg-gradient-to-r from-teal-300 to-cyan-300 origin-left opacity-60"
+                        style={{
+                          transform: `translate(-50%, -50%) rotate(${item.angle}deg)`,
+                          transformOrigin: 'left center'
+                        }}
+                      ></motion.div>
+
+                      {/* Orbital element */}
+                      <motion.div
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ duration: 0.6, delay: item.delay }}
+                        whileHover={{
+                          scale: 1.2,
+                          rotate: [0, -10, 10, 0],
+                          transition: { duration: 0.6 }
+                        }}
+                        className={`w-16 h-16 bg-gradient-to-br ${item.color} rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 relative overflow-hidden flex items-center justify-center`}
+                      >
+                        {/* Animated background */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                        {/* Floating particles */}
+                        <div className="absolute top-1 right-1 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping"></div>
+                        <div className="absolute bottom-1 left-1 w-1 h-1 bg-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse delay-100"></div>
+
+                        <motion.span
+                          className="text-2xl relative z-10"
+                          whileHover={{ scale: 1.3, rotate: 360 }}
+                          transition={{ duration: 0.6 }}
+                        >
+                          {item.emoji}
+                        </motion.span>
+
+                        {/* Shine effect */}
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></div>
+                      </motion.div>
+
+                      {/* Tooltip */}
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.8 }}
+                        whileHover={{ opacity: 1, y: 0, scale: 1 }}
+                        className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 bg-gray-900 text-white text-xs px-3 py-2 rounded-lg shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all duration-300 z-30"
+                      >
+                        <div className="font-bold text-cyan-300">{item.title}</div>
+                        <div className="text-gray-300">{item.desc}</div>
+                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rotate-45 w-2 h-2 bg-gray-900"></div>
+                      </motion.div>
+                    </motion.div>
+                  ))}
+
+                  {/* Orbital rings */}
+                  <motion.div
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 0.3 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 border-2 border-cyan-400 rounded-full"
+                  ></motion.div>
+                  <motion.div
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 0.2 }}
+                    transition={{ duration: 1, delay: 0.7 }}
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 border border-teal-400 rounded-full"
+                  ></motion.div>
+                </motion.div>
+
+                {/* Bottom description */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 2.2 }}
+                  viewport={{ once: true }}
+                  className="text-center mt-8"
+                >
+                  <p className="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                    Experience a revolutionary approach to internships where technology meets opportunity.
+                    Our orbital system represents the interconnected benefits that will launch your career into orbit! 🚀
+                  </p>
+                </motion.div>
+              </motion.div>
 
               {/* Section 5: Claim Your Internship Badge */}
               <div className="max-w-6xl w-full bg-blue-900 rounded-2xl p-10 mt-20 mx-auto text-white shadow-lg">
