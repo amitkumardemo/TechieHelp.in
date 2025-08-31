@@ -4,10 +4,11 @@ import emailjs from "emailjs-com"; // or "emailjs/browser"
 const Contact = () => {
   const formRef = useRef(null);
   const [status, setStatus] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
-  const SERVICE_ID = "service_59ec1vh";
-  const TEMPLATE_ID = "template_lu9xdl5";
-  const PUBLIC_KEY = "WEweiJ8aiK4vXq3d8";
+  const SERVICE_ID = "service_qpkvjaa";
+  const TEMPLATE_ID = "template_i2ir334";
+  const PUBLIC_KEY = "lD0Mvi6Nqbvb1pF01";
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -15,7 +16,7 @@ const Contact = () => {
     emailjs
       .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
       .then(() => {
-        setStatus("✅ Message sent successfully!");
+        setShowPopup(true);
         formRef.current.reset();
       })
       .catch(() => {
@@ -100,6 +101,24 @@ const Contact = () => {
           {status && <p className="mt-4 text-sm text-green-400">{status}</p>}
         </form>
       </div>
+
+      {/* Success Popup Modal */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-gray-900 p-8 rounded-lg shadow-lg max-w-md w-full mx-4 text-center">
+            <h3 className="text-2xl font-bold text-white mb-4">Thank You!</h3>
+            <p className="text-gray-300 mb-6">
+              Thank you for contacting TechieHelp! Your message has been sent successfully. We will get back to you soon.
+            </p>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
