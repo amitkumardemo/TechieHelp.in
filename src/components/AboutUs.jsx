@@ -32,7 +32,7 @@ const Pill = ({ children }) => (
 
 const AboutUs = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white px-6 py-20">
+    <div className="min-h-screen bg-black text-white px-6 py-20">
       <div className="max-w-7xl mx-auto">
 
         {/* Hero / About */}

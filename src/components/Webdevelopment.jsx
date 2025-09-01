@@ -56,7 +56,7 @@ const Webdevelopment = () => {
   if (loading) return <LoadingSpinner />;
 
   return (
-    <div className="bg-black-gradient min-h-screen pt-36 pb-12 px-6">
+    <div className="bg-black min-h-screen pt-36 pb-12 px-6">
       <Section imgSrc={intern} imgLeft={true} title="TechieHelp Web Development Internship Program">
         <p>
           Join TechieHelp's industry-aligned internship designed to turn beginners into confident developers. Get hands-on training in web development, real-world project experience, and one-on-one mentorship from experts.
