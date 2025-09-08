@@ -9,7 +9,7 @@ import {
   FaVrCardboard,
 } from 'react-icons/fa';
 import { MdDesignServices } from 'react-icons/md';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 const platforms = [
   { name: 'Design', icon: <MdDesignServices />, category: 'design' },
@@ -47,6 +47,13 @@ const platformDetails = {
 
 const Platforms = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const detailsRef = useRef(null);
+
+  useEffect(() => {
+    if (detailsRef.current) {
+      detailsRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [selectedCategory]);
 
   return (
     <section className="py-16 text-white px-6 md:px-12 lg:px-20">
@@ -69,7 +76,7 @@ const Platforms = () => {
       </div>
 
       {selectedCategory && (
-        <div className="max-w-4xl mx-auto text-center">
+        <div ref={detailsRef} className="max-w-4xl mx-auto text-center">
           <h3 className="text-2xl font-semibold text-blue-400 capitalize mb-6">
             {selectedCategory.replace(/&/g, 'and')}
           </h3>
