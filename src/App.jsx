@@ -60,6 +60,7 @@ import RohitSharma from "./components/students/RohitSharma";
 import RohanT from "./components/students/RohanT";
 import TejaBhuvaneswariDevi from "./components/students/TejaBhuvaneswariDevi";
 import GangadharSharma from "./components/students/GangadharSharma"; // Importing GangadharSharma
+import HackathonLandingPage from "./components/hackahton";
 
 import { useState, useEffect } from "react";
 import KaviyaranP from "./components/students/KaviyaranP"; // Importing KaviyaranP
@@ -154,6 +155,7 @@ const App = () => {
           } />
           
           <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/hackathon" element={<HackathonLandingPage />} />
           <Route path="/services" element={<Services />} />
           <Route path="/web-development-services" element={<WebDevelopmentServices />} />
           <Route path="/careers/training-internships" element={<Internship />} />

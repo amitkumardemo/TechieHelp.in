@@ -32,6 +32,11 @@ export const navLinks = [
     path: "/about-us"
   },
   {
+    id: "hackathon",
+    title: "Hackathon",
+    path: "/hackathon"
+  },
+  {
     id: "contact",
     title: "Contact",
     path: "/contacts"
