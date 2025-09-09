@@ -22,7 +22,7 @@ const RohanT = () => {
     verified: true,
     resumeLink: "https://drive.google.com/file/d/1NQyiBfjF3UoXYc59z5RIAMOgw3X-Akkt/view?usp=sharing",
     offerLetterLink: "https://drive.google.com/file/d/1aRvQ41XML_-EhuUgkatAR36aLHIjjpzB/view?usp=sharing",
-    completionCertificationsLink: "https://drive.google.com/file/d/1PT5ZTRYP7jpW381oSYInoB54PKClI13z/view?usp=sharing",
+    completionCertificationsLink: "https://drive.google.com/file/d/1o3APtKWOxm5Hx4_W1YZybr8-ORMehSuv/view?usp=sharing",
     feedback: "Skilled frontend developer with strong Java and Python programming skills.",
     workDone: [
       "Game Development Agency – A fully animated gaming-style website with interactive UI, smooth animations, and responsive design using HTML, CSS, and JavaScript",
