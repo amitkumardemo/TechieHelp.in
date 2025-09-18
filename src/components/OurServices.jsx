@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import Loading from "./Loading";
 import Particles from '../../Reactsbit/Particles/Particles';
 
+// Updated links to actual routes
+
 import { arrowUp, webDevelopment,appDevelopment,seo,uiux,digital,tech,maintance,agents, chatbot, automation, computer,predictive,generative,education,voice, gamedevelopment, library, portfolio, product, restaurant,food,web,custom,organic,portfoli,doctor,home,zym,sports,er,junk,face, plant,store, health, ecom, producer} from "../assets";
 
 const services = [
