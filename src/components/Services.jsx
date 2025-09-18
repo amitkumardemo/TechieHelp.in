@@ -205,27 +205,29 @@ const Services = () => {
   return (
     <>
       {/* --------------------- Top Intro Section --------------------- */}
-      <section className="pt-24 px-6 bg-black text-white flex flex-col items-center">
-        <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10">
-          <div className="w-full md:w-1/2">
-            <motion.img
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              src={servicePage}
-              alt="TechieHelp Services"
-              className="w-full rounded-xl shadow-xl object-cover"
-            />
-          </div>
-          <div className="w-full md:w-1/2 text-center md:text-left">
-  <motion.h2
-    initial={{ opacity: 0, y: -20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
-    className="text-4xl font-bold mb-4"
-  >
-    Our <span className="text-blue-500">Services</span>
-  </motion.h2>
+      <section className="pt-24 px-6 bg-black text-white flex flex-col items-center relative overflow-hidden">
+      {/* Animated Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-cyan-900 opacity-20 animate-gradient-x"></div>
+      <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
+        <div className="w-full md:w-1/2">
+          <motion.img
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1 }}
+            src={servicePage}
+            alt="TechieHelp Services"
+            className="w-full rounded-xl shadow-xl object-cover"
+          />
+        </div>
+        <div className="w-full md:w-1/2 text-center md:text-left">
+<motion.h2
+  initial={{ opacity: 0, y: -20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="text-4xl font-bold mb-4"
+>
+  Our <span className="text-blue-500">Services</span>
+</motion.h2>
 
   <motion.p
     initial={{ opacity: 0 }}
@@ -281,7 +283,7 @@ const Services = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={cardVariants}
-            className="bg-[#101827] rounded-xl p-6 shadow-xl hover:shadow-blue-500/40 transition duration-300 flex flex-col items-center text-center"
+          className="bg-[#101827] rounded-xl p-6 shadow-xl hover:shadow-blue-500/50 hover:shadow-2xl transition duration-300 flex flex-col items-center text-center hover:bg-[#1a202c] hover:border hover:border-blue-500"
           >
             <img
               src={image}

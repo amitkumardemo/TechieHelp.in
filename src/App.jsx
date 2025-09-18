@@ -5,6 +5,7 @@ import Services from "./components/Services";
 import WebDevelopmentServices from "./components/WebDevelopmentServices";
 import Loading from "./components/Loading";
 import FAQ from "./components/FAQ";
+import Testimonials from "./components/Testimonials";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Contacts from "./components/contacts";
@@ -147,6 +148,7 @@ const App = () => {
                   
                   <Clients className="clients" />
                   <CTA className="cta" />
+                  <Testimonials className="testimonials" />
                   <FAQ />
                   <Contact />
                 </div>

@@ -9,135 +9,134 @@ import { arrowUp, webDevelopment,appDevelopment,seo,uiux,digital,tech,maintance,
 const services = [
   {
     id: 1,
-    icon: webDevelopment,
-    title: "Web Development",
+
+    icon: chatbot,
+    title: "AI Software Development",
     description: [
-      "High-performance & scalable",
-      "Responsive UI",
-      "Business-focused designs"
+      "Custom AI solutions & applications",
+      "Machine learning integration",
+      "Intelligent automation systems"
     ],
-    link: "/webdevelopment",
+    link: "/ai",
   },
   {
     id: 2,
-    icon: appDevelopment,
-    title: "App Development",
-    description: [
-      "Cross-platform apps",
-      "Native Android/iOS",
-      "Seamless UX"
-    ],
-    link: "/app-development-services",
-  },
-  {
-    id: 3,
-    icon: uiux,
-    title: "UI/UX Design",
-    description: [
-      "Engaging interfaces",
-      "Figma & Adobe XD",
-      "Brand identity design"
-    ],
-    link: "/uiuxservices",
-  },
-  {
-    id: 4,
-    icon: seo,
-    title: "SEO Optimization",
-    description:
-      "Enhancing your website's visibility, traffic, and ranking through strategic keyword optimization and technical SEO.",
-    link: "/seooptimizationservices",
-  },
-  {
-    id: 5,
-    icon: digital,
-    title: "Digital Marketing",
-    description:
-      "Driving growth with targeted digital marketing campaigns, content strategies, and performance analytics.",
-    link: "/digitalmarketingservices",
-  },
-
-  {
-    id: 7,
-    icon: tech,
-    title: "Tech Consulting",
-    description:
-      "Empowering businesses with strategic technology insights and solutions for digital transformation.",
-    link: "/techconsultingservices",
-  },
-  {
-    id: 8,
-    icon: maintance,
-    title: "Maintenance & Support",
-    description:
-      "Providing reliable, ongoing technical support and maintenance to ensure business continuity.",
-    link: "/maintenancesupportservices",
-  },
-  {
-    id: 9,
-    icon: agents,
-    title: "AI Agents",
-    description:
-      "Deploying intelligent AI agents to automate tasks, conduct research, and enhance operational efficiency.",
-    link: "/aiagentsservices",
-  },
-  {
-    id: 10,
-    icon: chatbot,
-    title: "AI Chatbots & Virtual Assistants",
-    description:
-      "Building conversational AI bots for customer service, lead generation, and business automation.",
-    link: "/aichatbotsservices",
-  },
-  {
-    id: 11,
-    icon: automation,
-    title: "AI Automation Solutions",
-    description:
-      "Streamlining workflows with AI-driven automation for email processing, HR, CRM, and more.",
-    link: "/aiautomationservices",
-  },
-  {
-    id: 12,
-    icon: computer,
-    title: "Computer Vision",
-    description:
-      "Creating smart visual recognition systems for object detection, facial recognition, and document scanning.",
-    link: "/computervisionservices",
-  },
-  
-  {
-    id: 14,
-    icon: predictive,
-    title: "Predictive Analytics",
-    description:
-      "Building intelligent models to forecast trends, customer behavior, and business outcomes.",
-    link: "/predictiveanalyticsservices",
-  },
-  {
-    id: 15,
     icon: generative,
     title: "Generative AI Solutions",
-    description:
-      "Delivering cutting-edge AI tools for text generation, image synthesis, and content automation.",
+    description: [
+      "Text generation & content creation",
+      "Image synthesis & processing",
+      "Creative AI applications"
+    ],
     link: "/generativeaiservices",
   },
   {
-    id: 16,
-    icon: education,
-    title: "AI for Education",
-    description:
-      "Developing AI-based educational tools including tutors, quiz generators, and automatic graders for smarter learning.",
-    link: "/aieducationservices",
+    id: 3,
+    icon: predictive,
+    title: "Predictive Analytics",
+    description: [
+      "Data-driven insights & forecasting",
+      "Business intelligence tools",
+      "Advanced analytics platforms"
+    ],
+    link: "/predictiveanalyticsservices",
   },
   {
-    id: 17,
+    id: 4,
+    icon: computer,
+    title: "Computer Vision",
+    description:
+      "Building intelligent visual recognition systems for object detection, facial recognition, and automated image analysis.",
+    link: "/computervisionservices",
+  },
+  {
+    id: 5,
+    icon: automation,
+    title: "AI Automation Solutions",
+    description:
+      "Streamlining workflows with AI-driven automation for process optimization, task automation, and efficiency gains.",
+    link: "/aiautomationservices",
+  },
+  {
+    id: 6,
+    icon: agents,
+    title: "Intelligent AI Agents",
+    description:
+      "Deploying autonomous AI agents for research, data analysis, customer service, and operational intelligence.",
+    link: "/aiagentsservices",
+  },
+  {
+    id: 7,
     icon: voice,
     title: "Speech & Voice AI",
     description:
-      "Enabling voice-based applications through speech recognition, transcription, and voice command technologies.",
+      "Developing voice-enabled applications with speech recognition, natural language processing, and voice synthesis.",
     link: "/speechvoiceaiservices",
   },
+  {
+    id: 8,
+    icon: webDevelopment,
+    title: "AI-Powered Web Applications",
+    description:
+      "Creating intelligent web platforms with AI integration, smart recommendations, and automated user experiences.",
+    link: "/web-development-services",
+  },
+  {
+    id: 9,
+    icon: appDevelopment,
+    title: "AI Mobile Applications",
+    description:
+      "Building smart mobile apps with AI capabilities, personalized experiences, and intelligent features.",
+    link: "/app-development-services",
+  },
+  {
+    id: 10,
+    icon: tech,
+    title: "AI Consulting & Strategy",
+    description:
+      "Strategic AI implementation guidance, technology roadmap planning, and digital transformation consulting.",
+    link: "/techconsultingservices",
+  },
+  {
+    id: 11,
+    icon: maintance,
+    title: "AI Model Training & Deployment",
+    description:
+      "End-to-end AI model development, training, optimization, and production deployment with monitoring.",
+    link: "/maintenancesupportservices",
+  },
+  {
+    id: 12,
+    icon: education,
+    title: "AI for Enterprise Solutions",
+    description:
+      "Custom AI solutions for healthcare, finance, retail, manufacturing, and other enterprise applications.",
+    link: "/aieducationservices",
+  },
+  {
+    id: 13,
+    icon: uiux,
+    title: "AI-Enhanced UX Design",
+    description:
+      "Designing user experiences with AI-powered personalization, adaptive interfaces, and intelligent interactions.",
+    link: "/uiuxservices",
+  },
+  {
+    id: 14,
+    icon: seo,
+    title: "AI Content & Marketing",
+    description:
+      "AI-driven content creation, personalized marketing campaigns, and automated customer engagement solutions.",
+    link: "/digitalmarketingservices",
+  },
+  {
+    id: 15,
+    icon: digital,
+    title: "AI Data Analytics",
+    description:
+      "Advanced data processing, pattern recognition, anomaly detection, and actionable business insights.",
+    link: "/predictiveanalyticsservices",
+  }
 ];
 
 const OurServices = () => {
@@ -231,9 +230,9 @@ const OurServices = () => {
       <div className={`${styles.boxWidth} mx-auto relative z-10`}>
         {/* New What we offer section */}
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold mb-2">Our Delivered Solutions</h2>
-          <p className="text-lg text-gray-300 mb-6">
-            Industry-ready SaaS, responsive websites, and intuitive mobile apps.
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Our Delivered Solutions</h2>
+          <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
+            Industry-ready SaaS, responsive websites, and intuitive mobile apps crafted with cutting-edge technology.
           </p>
           <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
             <div className="relative">
@@ -243,13 +242,20 @@ const OurServices = () => {
                 style={{ transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)` }}
               >
                 {mockupImages.map((image, index) => (
-                  <div key={index} className="flex-shrink-0 w-full md:w-1/3 px-2">
+                  <motion.div
+                    key={index}
+                    className="flex-shrink-0 w-full md:w-1/3 px-2"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                  >
                     <img
                       src={image}
                       alt={`Mockup ${index + 1}`}
-                      className="w-full h-64 object-cover rounded-lg"
+                      className="w-full h-64 object-cover rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
                     />
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -270,68 +276,93 @@ const OurServices = () => {
           </div>
         </div>
         {/* Existing Our Services content */}
-        <h2 className={`${styles.heading2} text-center text-blue-400 mb-4`}>
-          Our Services
+        <h2 className={`${styles.heading2} text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6`}>
+          AI Software Development Services
         </h2>
-        <p className="text-center text-gray-300 mb-8 text-lg font-light">
-          Empowering Your Vision with Scalable Tech Solutions
+        <p className="text-center text-gray-200 mb-12 text-xl font-light max-w-4xl mx-auto leading-relaxed">
+          Transforming Businesses with Cutting-Edge AI Solutions, Intelligent Automation, and Next-Generation Software Development
         </p>
-        <div className="flex items-center">
-          <button
-            onClick={() => scroll("left")}
-            aria-label="Scroll Left"
-            className="text-white p-2 focus:outline-none"
+        <div className="relative overflow-hidden">
+          <motion.div
+            className="flex space-x-6 pb-4"
+            animate={{
+              x: [0, -100 * (services.length - 3)], // Adjust based on number of visible items
+            }}
+            transition={{
+              x: {
+                repeat: Infinity,
+                repeatType: "loop",
+                duration: 20,
+                ease: "linear",
+              },
+            }}
           >
-            &#8249;
-          </button>
-          <div
-            ref={scrollRef}
-            className="flex overflow-x-auto space-x-6 scrollbar-hide scroll-smooth no-scrollbar"
-            style={{ scrollBehavior: "smooth" }}
-          >
-            {services.map(({ id, icon, title, description, link }, index) => (
+            {[...services, ...services].map(({ id, icon, title, description, link }, index) => (
               <motion.div
-                key={id}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="min-w-[320px] max-w-[320px] flex-shrink-0 rounded-2xl p-6 text-left cursor-pointer bg-white shadow-lg"
+                key={`${id}-${index}`}
+                whileHover={{
+                  scale: 1.05,
+                  y: -10,
+                  transition: { duration: 0.3 }
+                }}
+                onMouseEnter={() => {
+                  // Pause animation on hover
+                  const container = document.querySelector('.services-container');
+                  if (container) {
+                    container.style.animationPlayState = 'paused';
+                  }
+                }}
+                onMouseLeave={() => {
+                  // Resume animation when mouse leaves
+                  const container = document.querySelector('.services-container');
+                  if (container) {
+                    container.style.animationPlayState = 'running';
+                  }
+                }}
+                className="w-[320px] h-[400px] flex-shrink-0 rounded-2xl p-6 text-left cursor-pointer bg-gradient-to-br from-white via-gray-50 to-gray-100 shadow-xl hover:shadow-2xl border border-gray-200 hover:border-blue-300 transition-all duration-300 flex flex-col justify-between"
               >
-                <img
-                  src={icon}
-                  alt={title}
-                  className="w-full h-48 object-cover rounded-t-2xl mb-4"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = arrowUp;
-                  }}
-                />
-                <h3 className="text-xl font-semibold mb-2 text-blue-600">{title}</h3>
-                {Array.isArray(description) ? (
-                  <ul className="text-gray-700 text-sm list-disc list-inside space-y-1">
-                    {description.map((item, idx) => (
-                      <li key={idx}>{item}</li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-gray-700 text-sm">{description}</p>
-                )}
+                <div className="flex flex-col h-full">
+                  <div className="relative mb-6">
+                    <img
+                      src={icon}
+                      alt={title}
+                      className="w-full h-48 object-cover rounded-2xl shadow-md"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = arrowUp;
+                      }}
+                    />
+                    {id <= 3 && (
+                      <div className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                        Popular
+                      </div>
+                    )}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-gray-800 hover:text-blue-600 transition-colors duration-300 flex-shrink-0">{title}</h3>
+                  <div className="flex-1 mb-4">
+                    {Array.isArray(description) ? (
+                      <ul className="text-gray-600 text-sm list-disc list-inside space-y-1 leading-relaxed">
+                        {description.map((item, idx) => (
+                          <li key={idx} className="hover:text-gray-800 transition-colors duration-200">{item}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{description}</p>
+                    )}
+                  </div>
                 <a
-                  href={link}
-                  className="text-blue-600 mt-3 inline-block hover:underline font-medium"
+                  href={link.startsWith('/') ? link : `/${link}`}
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold inline-flex items-center justify-center px-5 py-2 rounded-full transition-all duration-300 group text-sm shadow-lg hover:shadow-xl transform hover:scale-105 w-full"
                 >
-                  more details
+                  Learn More
+                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
                 </a>
+                </div>
               </motion.div>
             ))}
-          </div>
-          <button
-            onClick={() => scroll("right")}
-            aria-label="Scroll Right"
-            className="text-white p-2 focus:outline-none"
-          >
-            &#8250;
-          </button>
+          </motion.div>
         </div>
       </div>
     </section>
