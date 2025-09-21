@@ -144,6 +144,8 @@ import simrandiary from "./simran-diary.jpg";
 import simrantrophy from "./simran-trophy.jpg";
 import simrantshirt from "./simran-tshirt.jpg";
 
+import winner from "./winner.png";
+
 export {
   internship as airbnb,
   bill,
@@ -275,5 +277,6 @@ export {
   simrancertificate,
   simrandiary,
   simrantrophy,
-  simrantshirt
+  simrantshirt,
+  winner
 };
