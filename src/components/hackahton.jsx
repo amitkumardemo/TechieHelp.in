@@ -77,10 +77,16 @@ const HackathonLandingPage = () => {
           {/* Winner Announcement at the top */}
           <div className="text-center mb-12 animate-fade-in-up">
             <div className="mb-6">
-              <span className="inline-block bg-gradient-to-r from-yellow-500 to-red-500 text-white font-bold px-6 py-2 rounded-full text-sm animate-bounce shadow-lg">
-                🏆 CHAMPION SPOTLIGHT
-              </span>
-            </div>
+  <a
+    href="https://drive.google.com/drive/folders/1S1wMC2V4lXcTv35lcwHT5sJpVxQFKsWF?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-block bg-gradient-to-r from-yellow-500 to-red-500 text-white font-bold px-6 py-2 rounded-full text-sm animate-bounce shadow-lg"
+  >
+    📄 Download Certificate
+  </a>
+</div>
+
 
             <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white bg-gradient-to-r from-yellow-400 via-red-400 to-yellow-400 bg-clip-text text-transparent animate-pulse">
               🏆 Hackathon 2025 Winner Announcement
@@ -307,6 +313,10 @@ const HackathonLandingPage = () => {
                 <li className="flex items-start">
                   <span className="text-yellow-400 mr-3">🎖️</span>
                   <span><strong>Certificates of Participation</strong> for all shortlisted interns</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-green-400 mr-3">📜</span>
+                  <span><strong>Download Certificates:</strong> <a href="https://drive.google.com/drive/folders/1S1wMC2V4lXcTv35lcwHT5sJpVxQFKsWF?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:text-blue-300 underline transition-colors">Click here to download</a></span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-blue-400 mr-3">🌟</span>
