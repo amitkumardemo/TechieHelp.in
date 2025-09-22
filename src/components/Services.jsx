@@ -37,105 +37,105 @@ const servicesData = [
   {
     id: 1,
     title: "Web Development",
-    description: `- High-performance & scalable\n- Responsive UI\n- Business-focused designs`,
+    description: `🚀 High-performance & scalable web solutions\n✨ Modern responsive UI/UX design\n💼 Business-focused development approach\n⚡ Lightning-fast loading speeds\n🔒 Enterprise-grade security\n📱 Mobile-first responsive design`,
     image: webDevelopment,
     link: "/web-development-services",
   },
   {
     id: 2,
     title: "App Development",
-    description: `- Cross-platform apps\n- Native Android/iOS\n- Seamless UX`,
+    description: `📱 Cross-platform mobile applications\n🍎 Native iOS & Android development\n🎨 Seamless user experience design\n⚡ High-performance app optimization\n🔄 Real-time synchronization\n🛡️ Advanced security protocols`,
     image: appDevelopment,
     link: "/app-development-services",
   },
   {
     id: 3,
     title: "UI/UX Design",
-    description: `- Engaging interfaces\n- Figma & Adobe XD\n- Brand identity design`,
+    description: `🎯 Engaging & intuitive interfaces\n🛠️ Professional Figma & Adobe XD designs\n🎨 Complete brand identity solutions\n👥 User-centered design approach\n📊 Data-driven design decisions\n✨ Premium visual experiences`,
     image: uiux,
     link: "/uiuxservices",
   },
   {
     id: 4,
     title: "SEO Optimization",
-    description: `- Organic traffic boost\n- Keyword strategy\n- Technical SEO`,
+    description: `📈 Organic traffic boost strategies\n🎯 Advanced keyword research & analysis\n⚡ Technical SEO optimization\n📊 Performance monitoring & analytics\n🔍 Local & global SEO campaigns\n🏆 First-page ranking guarantee`,
     image: seo,
     link: "/seooptimizationservices",
   },
   {
     id: 5,
     title: "Digital Marketing",
-    description: `- Campaign strategy\n- Social media & email\n- Analytics reporting`,
+    description: `📢 Strategic campaign planning & execution\n📱 Social media marketing mastery\n📧 Email marketing automation\n📊 Advanced analytics & reporting\n🎯 Targeted audience engagement\n💰 ROI-driven marketing solutions`,
     image: digital,
     link: "/digitalmarketingservices",
   },
   {
     id: 6,
     title: "Tech Consulting",
-    description: `- Digital transformation\n- Scalable tech stack\n- Strategic planning`,
+    description: `🔄 Complete digital transformation\n🏗️ Scalable technology architecture\n📋 Strategic technology roadmaps\n💡 Innovation & modernization\n🔧 System optimization & integration\n📈 Business growth acceleration`,
     image: tech,
     link: "/techconsultingservices",
   },
   {
     id: 7,
     title: "Maintenance & Support",
-    description: `- Ongoing technical help\n- Site uptime monitoring\n- Bug fixes`,
+    description: `🔧 24/7 technical support & monitoring\n🛡️ Proactive system maintenance\n🐛 Bug fixes & security updates\n⚡ Performance optimization\n📞 Dedicated support team\n🔄 Continuous system improvements`,
     image: maintance,
     link: "/maintenancesupportservices",
   },
   {
     id: 8,
     title: "AI Agents",
-    description: `- Research bots\n- Data automation\n- Custom task agents`,
+    description: `🤖 Intelligent research automation\n📊 Smart data processing & analysis\n🎯 Custom task automation\n⚡ AI-powered workflow optimization\n🔄 Autonomous system operations\n📈 Business intelligence enhancement`,
     image: agents,
     link: "/aiagentsservices",
   },
   {
     id: 9,
     title: "AI Chatbots & Virtual Assistants",
-    description: `- Smart Q&A bots\n- Lead gen bots\n- Multichannel integration`,
+    description: `💬 Smart conversational AI interfaces\n🎯 Intelligent lead generation systems\n🔄 Multi-channel integration\n📞 24/7 customer support automation\n🧠 Natural language processing\n💼 Business process automation`,
     image: chatbot,
     link: "/aichatbotsservices",
   },
   {
     id: 10,
     title: "AI Automation Solutions",
-    description: `- Workflow automation\n- CRM, HR tools\n- Email & task bots`,
+    description: `⚙️ Intelligent workflow automation\n🔄 CRM & HR system optimization\n📧 Smart email & task management\n🤖 Robotic process automation\n⚡ Productivity enhancement\n💰 Cost reduction & efficiency gains`,
     image: automation,
     link: "/aiautomationservices",
   },
   {
     id: 11,
     title: "Computer Vision",
-    description: `- Object detection\n- Face recognition\n- Smart scanning tools`,
+    description: `👁️ Advanced object detection systems\n📸 Facial recognition technology\n🔍 Smart image analysis & processing\n📊 Visual data interpretation\n🤖 Automated quality control\n🛡️ Security & surveillance solutions`,
     image: computer,
     link: "/computervisionservices",
   },
   {
     id: 12,
     title: "Predictive Analytics",
-    description: `- Data modeling\n- Forecasting trends\n- Behavior insights`,
+    description: `📊 Advanced data modeling & forecasting\n🔮 Future trend prediction\n📈 Business intelligence insights\n⚡ Real-time analytics dashboards\n🎯 Strategic decision support\n💡 Competitive advantage insights`,
     image: predictive,
     link: "/predictiveanalyticsservices",
   },
   {
     id: 13,
     title: "Generative AI Solutions",
-    description: `- Text & image generation\n- Content automation\n- AI creativity tools`,
+    description: `🎨 AI-powered content creation\n📝 Smart text & image generation\n🎵 Creative content automation\n💡 Innovation acceleration\n⚡ Rapid prototyping\n🚀 Next-generation creative tools`,
     image: generative,
     link: "/generativeaiservices",
   },
   {
     id: 14,
     title: "AI for Education",
-    description: `- AI tutors & quiz bots\n- Smart grading tools\n- Personalized learning`,
+    description: `🎓 Personalized learning experiences\n📚 AI tutoring & quiz systems\n📊 Smart grading automation\n👨‍🏫 Adaptive learning platforms\n📈 Student performance analytics\n🔄 Continuous learning optimization`,
     image: education,
     link: "/aieducationservices",
   },
   {
     id: 15,
     title: "Speech & Voice AI",
-    description: `- Voice commands\n- Speech-to-text\n- Smart transcription`,
+    description: `🎤 Advanced voice command systems\n📝 Speech-to-text automation\n🎧 Smart audio processing\n📞 Voice-enabled applications\n🔊 Natural language interfaces\n🤖 Conversational AI technology`,
     image: voice,
     link: "/speechvoiceaiservices",
   },
@@ -147,14 +147,14 @@ const whyTechieHelp = [
     id: 1,
     title: "Expert Team, Proven Expertise",
     description:
-      "Our skilled professionals bring years of experience across web, app, AI, and cloud technologies. At TechieHelp, we don’t just deliver code—we build future-proof solutions with confidence and creativity.",
+      "Our skilled professionals bring years of experience across web, app, AI, and cloud technologies. At TechieHelp, we don't just deliver code—we build future-proof solutions with confidence and creativity.",
     image: expertise,
   },
   {
     id: 2,
     title: "Tailored to Your Business",
     description:
-      "We understand that no two businesses are alike. That’s why we create custom solutions that align perfectly with your vision, operations, and long-term goals—ensuring you stand out from competitors.",
+      "We understand that no two businesses are alike. That's why we create custom solutions that align perfectly with your vision, operations, and long-term goals—ensuring you stand out from competitors.",
     image: customSolutions,
   },
   {
@@ -168,7 +168,7 @@ const whyTechieHelp = [
     id: 4,
     title: "Uncompromised Quality",
     description:
-      "Quality is not optional—it’s built into everything we do. Our QA experts rigorously test each feature for functionality, performance, and security so you launch with confidence.",
+      "Quality is not optional—it's built into everything we do. Our QA experts rigorously test each feature for functionality, performance, and security so you launch with confidence.",
     image: quality,
   },
   {
@@ -182,7 +182,7 @@ const whyTechieHelp = [
     id: 6,
     title: "Reliable Post-Launch Support",
     description:
-      "Your journey doesn’t end at deployment. We offer ongoing support, updates, and system monitoring to keep your product running smoothly and securely 24/7.",
+      "Your journey doesn't end at deployment. We offer ongoing support, updates, and system monitoring to keep your product running smoothly and securely 24/7.",
     image: support,
   },
 ];
@@ -255,6 +255,102 @@ const Services = () => {
         </div>
       </section>
 
+      {/* --------------------- How We Handle Your Services Section --------------------- */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-16 bg-black text-white"
+      >
+        <div className="text-center mb-12 px-6">
+          <h2 className="text-4xl font-bold text-blue-500 mb-4">How We Handle Your Services</h2>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+            Our comprehensive approach ensures your digital transformation journey is smooth, effective, and results-driven.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
+          {[
+            {
+              id: 1,
+              icon: "🌐",
+              title: "Business Profile Creation",
+              description: "Setting up professional online presence with modern, responsive websites and digital identity that represents your brand effectively."
+            },
+            {
+              id: 2,
+              icon: "📝",
+              title: "Smart Contact Forms",
+              description: "Automatically transferring form data to email/CRM systems with intelligent lead capture and instant notifications."
+            },
+            {
+              id: 3,
+              icon: "⚙️",
+              title: "Automation Setup",
+              description: "Handling workflows like email follow-ups, lead management, and notifications to streamline your business processes."
+            },
+            {
+              id: 4,
+              icon: "🔍",
+              title: "SEO & Google Ranking",
+              description: "Strategies to rank on the first page of Google and grow traffic through proven optimization techniques and content strategies."
+            },
+            {
+              id: 5,
+              icon: "🎨",
+              title: "Branding & Development",
+              description: "Building unique digital identity and solutions with custom designs, user experience optimization, and brand consistency."
+            },
+            {
+              id: 6,
+              icon: "🔄",
+              title: "Ongoing Support",
+              description: "Regular updates, monitoring, and client communication to ensure your digital presence stays current and effective."
+            }
+          ].map((step, i) => (
+            <motion.div
+              key={step.id}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={cardVariants}
+              className="bg-[#101827] shadow-lg rounded-2xl p-6 hover:shadow-blue-500/50 transition-all duration-300 border border-gray-700 hover:border-blue-500"
+            >
+              <div className="text-center">
+                <div className="text-5xl mb-4">
+                  {step.icon}
+                </div>
+                <div className="bg-blue-500 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                  Step {step.id}
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-gray-400 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Flow connector line */}
+        <div className="hidden lg:flex justify-center items-center mt-12 px-6">
+          <div className="flex items-center space-x-4">
+            {[1, 2, 3, 4, 5, 6].map((_, index) => (
+              <React.Fragment key={index}>
+                <div className="w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
+                {index < 5 && (
+                  <div className="w-12 h-0.5 bg-blue-500"></div>
+                )}
+              </React.Fragment>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* --------------------- Offer Section --------------------- */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -283,23 +379,31 @@ const Services = () => {
             whileInView="visible"
             viewport={{ once: true }}
             variants={cardVariants}
-          className="bg-[#101827] rounded-xl p-6 shadow-xl hover:shadow-blue-500/50 hover:shadow-2xl transition duration-300 flex flex-col items-center text-center hover:bg-[#1a202c] hover:border hover:border-blue-500"
+            className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] rounded-2xl p-8 shadow-2xl hover:shadow-blue-500/30 hover:shadow-2xl transition-all duration-500 flex flex-col items-center text-center hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-blue-500/50 backdrop-blur-sm"
           >
-            <img
-              src={image}
-              alt={title}
-              className="w-20 h-20 mb-4 object-cover rounded-full border border-gray-500"
-            />
-            <h3 className="text-lg font-semibold text-white mb-2">{title}</h3>
-          <p className="text-gray-400 text-sm whitespace-pre-line mb-3 line-clamp-5">
+            <div className="relative mb-6">
+              <img
+                src={image}
+                alt={title}
+                className="w-24 h-24 object-cover rounded-2xl border-2 border-blue-500/30 shadow-lg"
+              />
+              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">
+                {id}
+              </div>
+            </div>
+            <h3 className="text-xl font-bold text-white mb-4 leading-tight">{title}</h3>
+            <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
               {description}
             </p>
             <Link
               to={link}
-              className="text-blue-500 hover:underline mt-auto"
+              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group"
               aria-label={`More details about ${title}`}
             >
-              More details
+              Learn More
+              <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
             </Link>
           </motion.div>
         ))}
@@ -471,7 +575,7 @@ const Services = () => {
       {/* --------------------- Call to Action --------------------- */}
       <CTA />
       <Contact />
-      
+
 
     </>
   );

@@ -141,6 +141,45 @@ const services = [
   }
 ];
 
+const serviceFlowSteps = [
+  {
+    id: 1,
+    icon: "🌐",
+    title: "Business Profile Creation",
+    description: "Setting up professional online presence with modern, responsive websites and digital identity that represents your brand effectively."
+  },
+  {
+    id: 2,
+    icon: "📝",
+    title: "Smart Contact Forms",
+    description: "Automatically transferring form data to email/CRM systems with intelligent lead capture and instant notifications."
+  },
+  {
+    id: 3,
+    icon: "⚙️",
+    title: "Automation Setup",
+    description: "Handling workflows like email follow-ups, lead management, and notifications to streamline your business processes."
+  },
+  {
+    id: 4,
+    icon: "🔍",
+    title: "SEO & Google Ranking",
+    description: "Strategies to rank on the first page of Google and grow traffic through proven optimization techniques and content strategies."
+  },
+  {
+    id: 5,
+    icon: "🎨",
+    title: "Branding & Development",
+    description: "Building unique digital identity and solutions with custom designs, user experience optimization, and brand consistency."
+  },
+  {
+    id: 6,
+    icon: "🔄",
+    title: "Ongoing Support",
+    description: "Regular updates, monitoring, and client communication to ensure your digital presence stays current and effective."
+  }
+];
+
 const OurServices = () => {
   const [loading, setLoading] = useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -192,10 +231,10 @@ const OurServices = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -238,7 +277,7 @@ const OurServices = () => {
           </p>
           <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
             <div className="relative">
-              <div 
+              <div
                 ref={scrollRef}
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentIndex * (100 / slidesPerView)}%)` }}
@@ -261,7 +300,7 @@ const OurServices = () => {
                 ))}
               </div>
             </div>
-            
+
             {/* Dot indicators for mockup carousel */}
             <div className="flex justify-center space-x-2 mt-4">
               {Array.from({ length: maxIndex + 1 }).map((_, index) => (
@@ -277,6 +316,74 @@ const OurServices = () => {
             </div>
           </div>
         </div>
+
+        {/* How We Handle Your Services Section */}
+        <div className="mb-16 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+              How We Handle Your Services
+            </h2>
+            <p className="text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Our comprehensive approach ensures your digital transformation journey is smooth, effective, and results-driven.
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            {serviceFlowSteps.map((step, index) => (
+              <motion.div
+                key={step.id}
+                className="bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300 group"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                whileHover={{
+                  scale: 1.03,
+                  y: -5,
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <div className="text-center">
+                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {step.icon}
+                  </div>
+                  <div className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                    Step {step.id}
+                  </div>
+                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  <p className="text-gray-300 leading-relaxed text-sm">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Flow connector line */}
+          <motion.div
+            className="hidden lg:block mt-12"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+          >
+            <div className="flex justify-center items-center space-x-4">
+              {serviceFlowSteps.map((_, index) => (
+                <React.Fragment key={index}>
+                  <div className="w-3 h-3 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse"></div>
+                  {index < serviceFlowSteps.length - 1 && (
+                    <div className="w-12 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500"></div>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
         {/* Existing Our Services content */}
         <h2 className={`${styles.heading2} text-center bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent mb-6`}>
           AI Software Development Services
@@ -372,4 +479,3 @@ const OurServices = () => {
 };
 
 export default OurServices;
-
