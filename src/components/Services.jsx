@@ -409,6 +409,141 @@ const Services = () => {
         ))}
       </section>
 
+      {/* --------------------- Popular Services Section --------------------- */}
+      <motion.section
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="py-16 bg-black text-white"
+      >
+        <div className="text-center mb-12 px-6">
+          <h2 className="text-4xl font-bold text-blue-500 mb-4">Popular Services</h2>
+          <p className="text-gray-300 text-lg max-w-3xl mx-auto">
+            Discover our most sought-after AI-powered solutions that are transforming industries
+          </p>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            {/* Featured Service - AI Education */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="bg-gradient-to-br from-blue-600/20 to-purple-600/20 backdrop-blur-sm border border-blue-500/30 rounded-2xl p-8 shadow-xl hover:shadow-blue-500/30 transition-all duration-300"
+            >
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full p-4">
+                  <span className="text-2xl">🎓</span>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-white">AI for Education</h3>
+                  <p className="text-blue-300 text-sm">Most Popular</p>
+                </div>
+              </div>
+
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Transform your educational institution with cutting-edge AI solutions. From intelligent tutoring systems to automated grading and personalized learning paths, we build comprehensive AI-powered educational tools.
+              </p>
+
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>
+                  <span className="text-sm text-gray-300">AI Tutors & Quiz Bots</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>
+                  <span className="text-sm text-gray-300">Smart Grading Tools</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>
+                  <span className="text-sm text-gray-300">Personalized Learning</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="text-green-400">✓</span>
+                  <span className="text-sm text-gray-300">Learning Analytics</span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-between">
+                <div className="text-left">
+                  <p className="text-sm text-gray-400">Starting from</p>
+                  <p className="text-2xl font-bold text-green-400">₹15,000</p>
+                </div>
+                <Link
+                  to="/aieducationservices"
+                  className="px-6 py-3 bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </motion.div>
+
+            {/* Service Image */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <img
+                src={education}
+                alt="AI for Education"
+                className="w-full rounded-2xl shadow-2xl border-2 border-blue-500/30"
+              />
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full opacity-20 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full opacity-30 animate-bounce"></div>
+            </motion.div>
+          </div>
+
+          {/* Additional Popular Services Preview */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {[
+              {
+                icon: "🤖",
+                title: "AI Agents",
+                description: "Intelligent automation for research and data processing",
+                link: "/aiagentsservices"
+              },
+              {
+                icon: "💬",
+                title: "AI Chatbots",
+                description: "Smart conversational interfaces for customer support",
+                link: "/aichatbotsservices"
+              },
+              {
+                icon: "⚙️",
+                title: "AI Automation",
+                description: "Workflow optimization and process automation",
+                link: "/aiautomationservices"
+              }
+            ].map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                className="bg-[#101827] rounded-xl p-6 hover:bg-[#1e293b] transition-all duration-300 border border-gray-700 hover:border-blue-500/50"
+              >
+                <div className="text-3xl mb-4">{service.icon}</div>
+                <h4 className="text-lg font-semibold text-white mb-2">{service.title}</h4>
+                <p className="text-gray-400 text-sm mb-4">{service.description}</p>
+                <Link
+                  to={service.link}
+                  className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
+                >
+                  Explore →
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </motion.section>
+
       {/* --------------------- Why Choose TechieHelp --------------------- */}
 <motion.section
   initial={{ opacity: 0, y: 40 }}

@@ -403,9 +403,9 @@ const Intern = () => {
                   transition={{ duration: 1, delay: 1.5 }}
                 >
                   {[
-                    { number: "100+", label: "Interns Trained", color: "from-blue-500 to-cyan-500" },
-                    { number: "50+", label: "Projects Completed", color: "from-purple-500 to-pink-500" },
-                    { number: "95%", label: "Success Rate", color: "from-green-500 to-teal-500" }
+                    { number: "1000+", label: "Interns Trained", color: "from-blue-500 to-cyan-500" },
+                    { number: "100+", label: "Projects Completed", color: "from-purple-500 to-pink-500" },
+                    { number: "99%", label: "Success Rate", color: "from-green-500 to-teal-500" }
                   ].map((stat, index) => (
                     <motion.div
                       key={index}
@@ -455,6 +455,15 @@ const Intern = () => {
                   ))}
                 </motion.div>
               </motion.div>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition mt-4"
+              >
+                <a href="https://drive.google.com/drive/folders/1RZNZqh30r5m22BulrzJthEnrb9aTiQrI?usp=sharing" target="_blank" rel="noopener noreferrer">
+                  Download Completion Certificate
+                </a>
+              </motion.button>
             </motion.div>
           </motion.div>
 
