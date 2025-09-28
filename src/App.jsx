@@ -10,6 +10,7 @@ import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Contacts from "./components/contacts";
 import Internship from "./components/Internship"; // Correcting casing for import
+import SpecialBatch from "./components/SpecialBatch";
 import Webdevelopment from "./components/Webdevelopment";
 import Androiddevelopment from "./components/Androiddevelopment";
 import UIUX from "./components/UIUX";
@@ -161,6 +162,7 @@ const App = () => {
           <Route path="/services" element={<Services />} />
           <Route path="/web-development-services" element={<WebDevelopmentServices />} />
           <Route path="/careers/training-internships" element={<Internship />} />
+          <Route path="/special-batch" element={<SpecialBatch />} />
           <Route path="/careers/jobs" element={<Job />} />
           <Route path="/interns" element={<Intern />} />
           <Route path="/webdevelopment" element={<Webdevelopment />} />

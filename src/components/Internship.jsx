@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -75,6 +75,8 @@ const internships = [
 ];
 
 const Internship = () => {
+  const specialBatchRef = useRef(null);
+
   // Interns of Months photos array
   const internsOfMonths = [
     aarshdeepcertificate,
@@ -150,13 +152,27 @@ const Internship = () => {
               >
                 Welcome to the TechieHelp Internship and Training Program, a premier platform designed to bridge the gap between academic learning and industry requirements by providing hands-on experience, expert mentorship, and professional development opportunities.
               </motion.p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-              >
-                Join Our Team
-              </motion.button>
+              <div className="flex gap-4">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+                >
+                  Join Our Team
+                </motion.button>
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="inline-block"
+                >
+                  <Link
+                    to="/special-batch"
+                    className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-full hover:from-purple-700 hover:to-blue-700 transition inline-block"
+                  >
+                    Special Batch
+                  </Link>
+                </motion.div>
+              </div>
             </div>
           </div>
 
@@ -854,6 +870,270 @@ const Internship = () => {
                     style={{ backgroundSize: "200% 200%" }}
                   >
                     🌟 Excellence is not just rewarded, it's celebrated! 🌟
+                  </motion.p>
+                </motion.div>
+              </motion.div>
+
+              {/* Special Batch Section */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="max-w-6xl w-full relative"
+                ref={specialBatchRef}
+              >
+                {/* Background Effects */}
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-indigo-500/10 rounded-3xl blur-3xl -z-10"></div>
+                <div className="absolute top-10 right-10 w-20 h-20 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full opacity-20 animate-pulse"></div>
+                <div className="absolute bottom-10 left-10 w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full opacity-20 animate-bounce"></div>
+
+                {/* Floating particles */}
+                {[...Array(8)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute w-2 h-2 bg-purple-400 rounded-full opacity-60"
+                    style={{
+                      top: `${Math.random() * 100}%`,
+                      left: `${Math.random() * 100}%`,
+                    }}
+                    animate={{
+                      y: [0, -20, 0],
+                      opacity: [0.6, 1, 0.6],
+                    }}
+                    transition={{
+                      duration: 2 + Math.random() * 2,
+                      repeat: Infinity,
+                      delay: Math.random() * 2,
+                    }}
+                  />
+                ))}
+
+                <div className="flex flex-col lg:flex-row items-center justify-between gap-12 bg-gradient-to-br from-white/10 via-purple-500/5 to-blue-500/5 backdrop-blur-sm rounded-3xl p-8 border border-white/20 shadow-2xl">
+                  {/* Left Content */}
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    viewport={{ once: true }}
+                    className="w-full lg:w-1/2 text-center lg:text-left"
+                  >
+                    {/* Animated Heading */}
+                    <motion.div
+                      className="relative mb-8"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <motion.h2
+                        className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
+                        viewport={{ once: true }}
+                        whileHover={{
+                          backgroundPosition: "200% center",
+                          transition: { duration: 0.5 }
+                        }}
+                      >
+                        🚀 Special Batch Program
+                      </motion.h2>
+
+                      {/* Animated underline */}
+                      <motion.div
+                        className="h-1 bg-gradient-to-r from-purple-400 to-blue-500 rounded-full"
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        transition={{ duration: 0.8, delay: 0.5 }}
+                        viewport={{ once: true }}
+                      />
+                    </motion.div>
+
+                    {/* Animated List */}
+                    <motion.ul
+                      className="space-y-4"
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      variants={{
+                        visible: {
+                          transition: {
+                            staggerChildren: 0.2,
+                            delayChildren: 0.6
+                          }
+                        }
+                      }}
+                    >
+                      {[
+                        { icon: "⚡", text: "Accelerated Learning Path with Intensive Training", color: "from-purple-400 to-blue-500" },
+                        { icon: "👥", text: "Small Batch Size for Personalized Attention", color: "from-blue-400 to-indigo-500" },
+                        { icon: "🎯", text: "Focused on Real-World Projects and Industry Standards", color: "from-indigo-400 to-purple-500" },
+                        { icon: "🏆", text: "Priority Access to Premium Opportunities and Networking", color: "from-pink-400 to-purple-500" }
+                      ].map((item, index) => (
+                        <motion.li
+                          key={index}
+                          variants={{
+                            hidden: { opacity: 0, x: -30, scale: 0.9 },
+                            visible: { opacity: 1, x: 0, scale: 1 }
+                          }}
+                          whileHover={{
+                            scale: 1.05,
+                            x: 10,
+                            transition: { duration: 0.2 }
+                          }}
+                          className="group relative"
+                        >
+                          <motion.div
+                            className={`flex items-center gap-4 p-4 bg-gradient-to-r ${item.color} bg-opacity-10 rounded-xl border border-white/20 hover:border-white/40 transition-all duration-300 cursor-pointer shadow-lg hover:shadow-xl`}
+                            whileHover={{
+                              backgroundColor: "rgba(255, 255, 255, 0.1)",
+                              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.1)"
+                            }}
+                          >
+                            {/* Animated Icon */}
+                            <motion.span
+                              className="text-3xl"
+                              whileHover={{
+                                scale: 1.2,
+                                rotate: [0, -10, 10, 0],
+                                transition: { duration: 0.5 }
+                              }}
+                            >
+                              {item.icon}
+                            </motion.span>
+
+                            {/* Text */}
+                            <motion.span
+                              className="text-lg font-semibold text-white group-hover:text-purple-200 transition-colors duration-300"
+                              initial={{ opacity: 0.8 }}
+                              whileHover={{ opacity: 1 }}
+                            >
+                              {item.text}
+                            </motion.span>
+
+                            {/* Hover effect line */}
+                            <motion.div
+                              className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r ${item.color}`}
+                              initial={{ width: 0 }}
+                              whileHover={{ width: "100%" }}
+                              transition={{ duration: 0.3 }}
+                            />
+                          </motion.div>
+                        </motion.li>
+                      ))}
+                    </motion.ul>
+
+                    {/* Call to Action */}
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 1.2 }}
+                      viewport={{ once: true }}
+                      className="mt-8"
+                    >
+                      <motion.button
+                        whileHover={{
+                          scale: 1.05,
+                          boxShadow: "0 10px 30px rgba(147, 51, 234, 0.3)"
+                        }}
+                        whileTap={{ scale: 0.95 }}
+                        className="px-8 py-3 bg-gradient-to-r from-purple-500 to-blue-500 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                      >
+                        🚀 Join Special Batch
+                      </motion.button>
+                    </motion.div>
+                  </motion.div>
+
+                  {/* Right Image */}
+                  <motion.div
+                    initial={{ opacity: 0, x: 50, scale: 0.8 }}
+                    whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                    viewport={{ once: true }}
+                    className="w-full lg:w-1/2 flex justify-center relative"
+                  >
+                    <motion.div
+                      className="relative group"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ type: "spring", stiffness: 300 }}
+                    >
+                      {/* Purple Box */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-400 via-blue-500 to-indigo-500 shadow-xl"></div>
+
+                      {/* Special Batch Image inside Purple Box */}
+                      <motion.img
+                        src={groups}
+                        alt="Special Batch Program"
+                        className="relative w-full max-w-md h-auto rounded-2xl object-cover border-4 border-transparent"
+                        whileHover={{
+                          rotate: [0, -2, 2, 0],
+                          transition: { duration: 0.6 }
+                        }}
+                      />
+
+                      {/* Floating Rocket */}
+                      <motion.div
+                        className="absolute -top-6 -right-6 w-16 h-16 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full flex items-center justify-center shadow-xl"
+                        animate={{
+                          y: [0, -10, 0],
+                          rotate: [0, 5, -5, 0],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          ease: "easeInOut"
+                        }}
+                        whileHover={{
+                          scale: 1.1,
+                          rotate: 360,
+                          transition: { duration: 0.6 }
+                        }}
+                      >
+                        <span className="text-2xl">🚀</span>
+                      </motion.div>
+
+                      {/* Floating Star */}
+                      <motion.div
+                        className="absolute -bottom-4 -left-4 w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-full flex items-center justify-center shadow-xl"
+                        animate={{
+                          scale: [1, 1.2, 1],
+                          rotate: 360,
+                        }}
+                        transition={{
+                          duration: 3,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      >
+                        <span className="text-xl">⭐</span>
+                      </motion.div>
+
+                      {/* Glow Effect */}
+                      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 to-blue-500/20 blur-xl -z-10 group-hover:blur-2xl transition-all duration-300"></div>
+                    </motion.div>
+                  </motion.div>
+                </div>
+
+                {/* Bottom motivational text */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.4 }}
+                  viewport={{ once: true }}
+                  className="text-center mt-8"
+                >
+                  <motion.p
+                    className="text-xl font-semibold bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent"
+                    animate={{
+                      backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    style={{ backgroundSize: "200% 200%" }}
+                  >
+                    🌟 Unleash your potential with our Special Batch! 🌟
                   </motion.p>
                 </motion.div>
               </motion.div>
