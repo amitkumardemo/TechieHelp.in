@@ -1,5 +1,7 @@
 import React from 'react';
 import StudentProfileTemplate from '../StudentProfileTemplate';
+import { Ankit } from '../../assets';
+
 
 const AnkitKumarKeshari = () => {
   const student = {
@@ -17,7 +19,7 @@ const AnkitKumarKeshari = () => {
     passingYear: "2027",
     skills: "Html ,CSS, Javascript,ReactJs, Tailwind Css, Bootstrap",
     personalQuote: "Web development is about solving problems step by step and making ideas work on the screen.",
-    profileImage: "",
+    profileImage: Ankit,
     idCardStyle: "default",
     cardColor: "from-teal-600 to-teal-800",
     profilePath: "/intern/ankit-kumar-keshari",

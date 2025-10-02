@@ -66,6 +66,7 @@ import HackathonLandingPage from "./components/hackahton";
 
 import { useState, useEffect } from "react";
 import KaviyaranP from "./components/students/KaviyaranP"; // Importing KaviyaranP
+import AnkitKumarKeshari from "./components/students/AnkitKumarKeshari";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
@@ -225,6 +226,8 @@ const App = () => {
           <Route path="/intern/kaviyaran-p" element={<KaviyaranP />} />
           <Route path="/students/ganga-dhar-sharma" element={<GangadharSharma />} /> // Ensure this points to the correct component
           <Route path="/intern/ganga-dhar-sharma" element={<GangadharSharma />} /> // Ensure this points to the correct component
+          <Route path="/students/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
+          <Route path="/intern/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
 
         {/* Authentication Routes */}
 

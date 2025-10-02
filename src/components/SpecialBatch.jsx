@@ -53,27 +53,57 @@ const SpecialBatch = () => {
               >
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">✓</span>
+                    <span className="text-white text-sm">🎁</span>
                   </div>
-                  <span className="text-gray-300">Live Client Projects</span>
+                  <span className="text-gray-300">Welcome Kit upon enrollment</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">✓</span>
+                    <span className="text-white text-sm">💻</span>
                   </div>
-                  <span className="text-gray-300">Expert Mentorship</span>
+                  <span className="text-gray-300">Work on real client projects (no dummy tasks)</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">✓</span>
+                    <span className="text-white text-sm">🚀</span>
                   </div>
-                  <span className="text-gray-300">Industry Certification</span>
+                  <span className="text-gray-300">Industry-ready skills through practical exposure</span>
                 </div>
                 <div className="flex items-center space-x-3">
                   <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">✓</span>
+                    <span className="text-white text-sm">👨‍🏫</span>
                   </div>
-                  <span className="text-gray-300">Welcome Kit Included</span>
+                  <span className="text-gray-300">Mentorship from experienced professionals</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm">📜</span>
+                  </div>
+                  <span className="text-gray-300">Internship Certificate from TechieHelp</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm">💰</span>
+                  </div>
+                  <span className="text-gray-300">Stipend opportunity (based on client satisfaction)</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm">🌐</span>
+                  </div>
+                  <span className="text-gray-300">Your Profile Featured on TechieHelp's Official Website</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm">🔗</span>
+                  </div>
+                  <span className="text-gray-300">Exclusive LinkedIn Badge</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
+                    <span className="text-white text-sm">🆔</span>
+                  </div>
+                  <span className="text-gray-300">TechieHelp Student ID Card</span>
                 </div>
               </motion.div>
 

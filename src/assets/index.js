@@ -143,6 +143,7 @@ import simrancertificate from "./simran-certificate.jpg";
 import simrandiary from "./simran-diary.jpg";
 import simrantrophy from "./simran-trophy.jpg";
 import simrantshirt from "./simran-tshirt.jpg";
+import Ankit from "./Ankit.jpg";
 
 import winner from "./winner.png";
 
@@ -278,5 +279,6 @@ export {
   simrandiary,
   simrantrophy,
   simrantshirt,
-  winner
+  winner,
+  Ankit
 };
