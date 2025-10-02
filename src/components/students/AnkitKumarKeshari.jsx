@@ -25,8 +25,8 @@ const AnkitKumarKeshari = () => {
     profilePath: "/intern/ankit-kumar-keshari",
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1mPw0nkrK3vFApxdGQ3vG5_fcBPRgXHHc",
-    offerLetterLink: "",
-    completionCertificationsLink: "",
+    offerLetterLink: "https://drive.google.com/file/d/1z6aMfKxD9VLC5p5yep1PbJYlhttNWjto/view?usp=sharing",
+    completionCertificationsLink: "https://drive.google.com/file/d/1FKime_OowGG0vufynRrgbtHYkFwqJVBP/view?usp=sharing",
     feedback: "",
     workDone: [],
     internshipTenure: ""
