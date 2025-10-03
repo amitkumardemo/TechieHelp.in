@@ -27,6 +27,7 @@ const AnkitKumarKeshari = () => {
     resumeLink: "https://drive.google.com/open?id=1mPw0nkrK3vFApxdGQ3vG5_fcBPRgXHHc",
     offerLetterLink: "https://drive.google.com/file/d/1z6aMfKxD9VLC5p5yep1PbJYlhttNWjto/view?usp=sharing",
     completionCertificationsLink: "https://drive.google.com/file/d/1FKime_OowGG0vufynRrgbtHYkFwqJVBP/view?usp=sharing",
+    HakcathonCertificateLink: "https://drive.google.com/file/d/18uOgbCr6n4wiLeU8NF4w_F_SE0kZ1Mm1/view?usp=sharing",
     feedback: "",
     workDone: [],
     internshipTenure: ""
