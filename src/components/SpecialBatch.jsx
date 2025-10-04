@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import Footer from "./Footer"; // Assuming Footer is exported from Footer.jsx
 import { hod, swag } from "../assets"; // Reusing existing assets for consistency
 
 const SpecialBatch = () => {
@@ -463,8 +462,6 @@ const SpecialBatch = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
