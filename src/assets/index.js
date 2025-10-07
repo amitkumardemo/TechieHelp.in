@@ -121,6 +121,7 @@ import store from "./store.webp";
 import health from "./health.webp";
 import ecom from "./ecom.webp";
 import producer from "./producer.webp";
+import placement from "./place.png";
 
 
 
@@ -281,5 +282,6 @@ export {
   simrantrophy,
   simrantshirt,
   winner,
-  Ankit
+  Ankit,
+  placement
 };

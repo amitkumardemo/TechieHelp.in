@@ -1,4 +1,4 @@
-import styles from "./style";
+import styles, { layout } from "./style";
 import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre } from "./components";
 import OurServices from "./components/OurServices";
 import Services from "./components/Services";
@@ -63,13 +63,15 @@ import RohanT from "./components/students/RohanT";
 import TejaBhuvaneswariDevi from "./components/students/TejaBhuvaneswariDevi";
 import GangadharSharma from "./components/students/GangadharSharma"; // Importing GangadharSharma
 import HackathonLandingPage from "./components/hackahton";
+import PlacementBoosterLanding from "./components/placement";
 
 import { useState, useEffect } from "react";
 import KaviyaranP from "./components/students/KaviyaranP"; // Importing KaviyaranP
 import AnkitKumarKeshari from "./components/students/AnkitKumarKeshari";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
+import { placement } from "./assets";
 import { useAuth } from "./contexts/AuthContext";
 import GalaxyBackground from "./components/GalaxyBackground";
 
@@ -146,6 +148,21 @@ const App = () => {
                   <Business className="business" />
                   <Billing className="billing" />
                   <CardDeal className="cardDeal" />
+                  {/* Placement Booster Section */}
+                  <section className={`${layout.section} gap-10`}>
+                    <div className={layout.sectionImg}>
+                      <img src={placement} alt="Placement Booster" className="w-[100%] h-[90%]" />
+                    </div>
+                    <div className={layout.sectionInfo}>
+                      <h2 className={styles.heading2}>Placement Booster Program</h2>
+                      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
+                        Crack your dream job with our A→Z Interview Program at ₹999. Includes LinkedIn enhancement, resume makeover, DSA training, mock interviews, and paid internship opportunities.
+                      </p>
+                      <Link to="/placement-booster" className="py-4 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none mt-10">
+                        Learn More
+                      </Link>
+                    </div>
+                  </section>
                   <OurServices />
                   
                   <Clients className="clients" />
@@ -200,6 +217,7 @@ const App = () => {
           <Route path="/speechvoiceaiservices" element={<SpeechVoiceAIServices />} />
           <Route path="/hiring-faq" element={<HiringFAQ />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/placement-booster" element={<PlacementBoosterLanding />} />
           
           {/* Student Profile Routes */}
           <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
