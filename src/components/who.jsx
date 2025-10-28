@@ -25,7 +25,7 @@ const WhoWeAre = () => (
 
       <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
         Founded by <span className="font-semibold text-white">Amit Kumar</span> 
-        and , 
+         , 
         we blend <span className="text-gradient">cutting-edge AI</span> with deep business expertise 
         to deliver solutions that are innovative, impactful, and built to last.
       </p>
