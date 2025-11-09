@@ -61,7 +61,7 @@ const Contact = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-lg">Contact Info</h3>
-                <p className="text-gray-400">Phone: +91 7673825079<br />Email: support@techiehelp.in</p>
+                <p className="text-gray-400">Phone: +91 7073130165 <br />Email: support@techiehelp.in</p>
               </div>
             </div>
 
