@@ -100,7 +100,7 @@ const Footer = () => {
           <ul className="mt-4">
             <li>
               <a
-                href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20becoming%20a%20partner%20with%20TechieHelp."
+                href="https://wa.me/7073130165?text=Hello%2C%20I%20am%20interested%20in%20becoming%20a%20partner%20with%20TechieHelp."
                 className="hover:underline text-blue-400"
                 target="_blank"
                 rel="noopener noreferrer"
