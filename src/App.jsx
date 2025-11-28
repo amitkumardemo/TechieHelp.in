@@ -68,6 +68,15 @@ import PlacementBoosterLanding from "./components/placement";
 import { useState, useEffect } from "react";
 import KaviyaranP from "./components/students/KaviyaranP"; // Importing KaviyaranP
 import AnkitKumarKeshari from "./components/students/AnkitKumarKeshari";
+import KhiasuthongT from "./components/students/KhiasuthongT";
+import SenchumbeniCErui from "./components/students/SenchumbeniCErui";
+import KajolSunar from "./components/students/KajolSunar";
+import SushetoZhimo from "./components/students/SushetoZhimo";
+import NehaBegum from "./components/students/NehaBegum";
+import EmanuelThangthazo from "./components/students/EmanuelThangthazo";
+import AnutaluRhakho from "./components/students/AnutaluRhakho";
+import BeloKapfo from "./components/students/BeloKapfo";
+import Bsdenephom from "./components/students/Bsdenephom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
@@ -246,6 +255,24 @@ const App = () => {
           <Route path="/intern/ganga-dhar-sharma" element={<GangadharSharma />} /> // Ensure this points to the correct component
           <Route path="/students/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
           <Route path="/intern/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
+          <Route path="/students/khiasuthong-t" element={<KhiasuthongT />} />
+          <Route path="/intern/khiasuthong-t" element={<KhiasuthongT />} />
+          <Route path="/students/senchumbeni-c-erui" element={<SenchumbeniCErui />} />
+          <Route path="/intern/senchumbeni-c-erui" element={<SenchumbeniCErui />} />
+          <Route path="/students/kajol-sunar" element={<KajolSunar />} />
+          <Route path="/intern/kajol-sunar" element={<KajolSunar />} />
+          <Route path="/students/susheto-zhimo" element={<SushetoZhimo />} />
+          <Route path="/intern/susheto-zhimo" element={<SushetoZhimo />} />
+          <Route path="/students/neha-begum" element={<NehaBegum />} />
+          <Route path="/intern/neha-begum" element={<NehaBegum />} />
+          <Route path="/students/emanuel-thangthazo" element={<EmanuelThangthazo />} />
+          <Route path="/intern/emanuel-thangthazo" element={<EmanuelThangthazo />} />
+          <Route path="/students/anutalu-rhakho" element={<AnutaluRhakho />} />
+          <Route path="/intern/anutalu-rhakho" element={<AnutaluRhakho />} />
+          <Route path="/students/belo-kapfo" element={<BeloKapfo />} />
+          <Route path="/intern/belo-kapfo" element={<BeloKapfo />} />
+          <Route path="/students/bsden-ephom" element={<Bsdenephom />} />
+          <Route path="/intern/bsden-ephom" element={<Bsdenephom />} />
 
         {/* Authentication Routes */}
 

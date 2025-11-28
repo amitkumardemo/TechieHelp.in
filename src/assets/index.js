@@ -96,6 +96,7 @@ import sasvanthuG from "./Sasvanthu_g.jpg";
 import simranKanwar from "./Simran_kaur.jpg";
 import tanuSingh from "./Tanu_singh.jpg";
 import tejabhuvaneswarideviDuba from "./Tejabhuvaneswaridevi_duba.jpg";
+import kiasu from "./kiasu.jpg";
 
 // Import ServiceDone Mockups Images
 
@@ -146,6 +147,19 @@ import simrandiary from "./simran-diary.jpg";
 import simrantrophy from "./simran-trophy.jpg";
 import simrantshirt from "./simran-tshirt.jpg";
 import Ankit from "./Ankit.jpg";
+
+// New student images
+import khiasuthongT from "./kiasu.jpg";
+import senchumbeniCErui from "./Senchumbeni C Erui1.jpg";
+import kajolSunar from "./Kajal Sunar.jpg";
+import sushetoZhimo from "./Susheto Zhimo.jpg";
+import nehaBegum from "./Neha Begum.jpg";
+import emanuelThangthazo from "./Emanuel Thangthazo.jpg";
+import anutaluRhakho from "./Anutalu Rhakho.jpg";
+import beloKapfo from "./Bendangakum Hoki.jpg";
+import bsdenephom from "./Pulovi k Chishi.png";
+
+
 
 import winner from "./winner.png";
 
@@ -283,5 +297,15 @@ export {
   simrantshirt,
   winner,
   Ankit,
-  placement
+  placement,
+  // New student images
+  khiasuthongT,
+  senchumbeniCErui,
+  kajolSunar,
+  sushetoZhimo,
+  nehaBegum,
+  emanuelThangthazo,
+  anutaluRhakho,
+  beloKapfo,
+  bsdenephom
 };
