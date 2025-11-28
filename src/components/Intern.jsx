@@ -16,6 +16,15 @@ import {
   simran,
   sasvanthu,
   Ankit,
+  khiasuthongT,
+  senchumbeniCErui,
+  kajolSunar,
+  sushetoZhimo,
+  nehaBegum,
+  emanuelThangthazo,
+  anutaluRhakho,
+  beloKapfo,
+  bsdenephom,
 } from '../assets/index.js';
 
 const studentData = [
@@ -278,6 +287,189 @@ const studentData = [
     idCardStyle: "default",
     cardColor: "from-teal-600 to-teal-800",
     profilePath: "/intern/ankit-kumar-keshari"
+  },
+  {
+    timestamp: "11/26/2025 22:55:20",
+    fullName: "Khiasuthong T",
+    email: "khiasu2vis@gmail.com",
+    collegeName: "St Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE100988",
+    linkedInProfile: "https://www.linkedin.com/in/khiasu2vis",
+    githubProfile: "https://github.com/khiasu2vis",
+    address: "Chumoukedima, Nagaland",
+    phoneNumber: "9863765861",
+    internshipDomain: "Full stack developer",
+    currentYearBatch: "3rd year 5th semester (2023)",
+    passingYear: "2027",
+    skills: "Python, C, Javascript, html, css, MySQL, AI/ML, Computer Networks, Linux, Tailwind css",
+    personalQuote: "Tech Enthusiast",
+    profileImage: khiasuthongT,
+    idCardStyle: "blue-gradient",
+    cardColor: "from-blue-600 to-blue-800",
+    profilePath: "/intern/khiasuthong-t",
+    isNew: true
+  },
+  {
+    timestamp: "11/26/2025 23:00:00",
+    fullName: "Senchumbeni C Erui",
+    email: "senchumbeni@gmail.com",
+    collegeName: "St. Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE101234",
+    linkedInProfile: "https://www.linkedin.com/in/senchumbeni-c-erui",
+    githubProfile: "https://github.com/senchumbeni",
+    address: "Dimapur, Nagaland",
+    phoneNumber: "9876543210",
+    internshipDomain: "Full Stack Developer",
+    currentYearBatch: "3rd year (2023-2027)",
+    passingYear: "2027",
+    skills: "HTML, CSS, JavaScript, React, Node.js, MongoDB, Python",
+    personalQuote: "Passionate about creating innovative solutions",
+    profileImage: senchumbeniCErui,
+    idCardStyle: "purple-gradient",
+    cardColor: "from-purple-600 to-purple-800",
+    profilePath: "/intern/senchumbeni-c-erui",
+    isNew: true
+  },
+  {
+    timestamp: "11/26/2025 23:05:00",
+    fullName: "Kajol Sunar",
+    email: "kajol.sunar@gmail.com",
+    collegeName: "St. Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE101235",
+    linkedInProfile: "https://www.linkedin.com/in/kajol-sunar",
+    githubProfile: "https://github.com/kajol-sunar",
+    address: "Kohima, Nagaland",
+    phoneNumber: "9876543211",
+    internshipDomain: "Frontend Developer",
+    currentYearBatch: "3rd year (2023-2027)",
+    passingYear: "2027",
+    skills: "HTML, CSS, JavaScript, React, Tailwind CSS, Figma",
+    personalQuote: "Design meets development",
+    profileImage: kajolSunar,
+    idCardStyle: "green-gradient",
+    cardColor: "from-green-600 to-green-800",
+    profilePath: "/intern/kajol-sunar",
+    isNew: true
+  },
+  {
+    timestamp: "11/26/2025 23:10:00",
+    fullName: "Susheto Zhimo",
+    email: "susheto.zhimo@gmail.com",
+    collegeName: "St. Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE101236",
+    linkedInProfile: "https://www.linkedin.com/in/susheto-zhimo",
+    githubProfile: "https://github.com/susheto-zhimo",
+    address: "Mokokchung, Nagaland",
+    phoneNumber: "9876543212",
+    internshipDomain: "Backend Developer",
+    currentYearBatch: "3rd year (2023-2027)",
+    passingYear: "2027",
+    skills: "Python, Django, Node.js, Express, MongoDB, SQL",
+    personalQuote: "Building robust backend systems",
+    profileImage: sushetoZhimo,
+    idCardStyle: "orange-gradient",
+    cardColor: "from-orange-600 to-orange-800",
+    profilePath: "/intern/susheto-zhimo"
+  },
+  {
+    timestamp: "11/26/2025 23:15:00",
+    fullName: "Neha Begum",
+    email: "neha.begum@gmail.com",
+    collegeName: "St. Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE101237",
+    linkedInProfile: "https://www.linkedin.com/in/neha-begum",
+    githubProfile: "https://github.com/neha-begum",
+    address: "Wokha, Nagaland",
+    phoneNumber: "9876543213",
+    internshipDomain: "UI/UX Designer",
+    currentYearBatch: "3rd year (2023-2027)",
+    passingYear: "2027",
+    skills: "Figma, Adobe XD, Sketch, User Research, Prototyping",
+    personalQuote: "Creating beautiful and intuitive user experiences",
+    profileImage: nehaBegum,
+    idCardStyle: "pink-gradient",
+    cardColor: "from-pink-600 to-pink-800",
+    profilePath: "/intern/neha-begum"
+  },
+  {
+    timestamp: "11/26/2025 23:20:00",
+    fullName: "Emanuel Thangthazo",
+    email: "emanuel.thangthazo@gmail.com",
+    collegeName: "St. Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE101238",
+    linkedInProfile: "https://www.linkedin.com/in/emanuel-thangthazo",
+    githubProfile: "https://github.com/emanuel-thangthazo",
+    address: "Phek, Nagaland",
+    phoneNumber: "9876543214",
+    internshipDomain: "Mobile App Developer",
+    currentYearBatch: "3rd year (2023-2027)",
+    passingYear: "2027",
+    skills: "React Native, Flutter, JavaScript, Firebase",
+    personalQuote: "Bringing ideas to mobile devices",
+    profileImage: emanuelThangthazo,
+    idCardStyle: "indigo-gradient",
+    cardColor: "from-indigo-600 to-indigo-800",
+    profilePath: "/intern/emanuel-thangthazo"
+  },
+  {
+    timestamp: "11/26/2025 23:25:00",
+    fullName: "Anutalu Rhakho",
+    email: "anutalu.rhakho@gmail.com",
+    collegeName: "St. Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE101239",
+    linkedInProfile: "https://www.linkedin.com/in/anutalu-rhakho",
+    githubProfile: "https://github.com/anutalu-rhakho",
+    address: "Tuensang, Nagaland",
+    phoneNumber: "9876543215",
+    internshipDomain: "Data Analyst",
+    currentYearBatch: "3rd year (2023-2027)",
+    passingYear: "2027",
+    skills: "Python, R, SQL, Tableau, Excel, Statistics",
+    personalQuote: "Turning data into insights",
+    profileImage: anutaluRhakho,
+    idCardStyle: "teal-gradient",
+    cardColor: "from-teal-600 to-teal-800",
+    profilePath: "/intern/anutalu-rhakho"
+  },
+  {
+    timestamp: "11/26/2025 23:30:00",
+    fullName: "Belo Kapfo",
+    email: "belo.kapfo@gmail.com",
+    collegeName: "St. Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE101240",
+    linkedInProfile: "https://www.linkedin.com/in/belo-kapfo",
+    githubProfile: "https://github.com/belo-kapfo",
+    address: "Zunheboto, Nagaland",
+    phoneNumber: "9876543216",
+    internshipDomain: "DevOps Engineer",
+    currentYearBatch: "3rd year (2023-2027)",
+    passingYear: "2027",
+    skills: "Docker, Kubernetes, AWS, Jenkins, Linux, Python",
+    personalQuote: "Automating the development lifecycle",
+    profileImage: beloKapfo,
+    idCardStyle: "red-gradient",
+    cardColor: "from-red-600 to-red-800",
+    profilePath: "/intern/belo-kapfo"
+  },
+  {
+    timestamp: "11/27/2025 17:00:02",
+    fullName: "B S DEN E PHOM",
+    email: "bsdenephom@gmail.com",
+    collegeName: "St. Joseph University, Nagaland",
+    techieHelpStudentID: "TECHIE111066",
+    linkedInProfile: "https://www.linkedin.com/in/bsden-ephom-49695039b/",
+    githubProfile: "https://github.com/bsdenephom",
+    address: "Ward-7, Chumukedima,Nagaland",
+    phoneNumber: "9362795347",
+    internshipDomain: "Full Stack",
+    currentYearBatch: "3rd year (2023-2027)",
+    passingYear: "2027",
+    skills: "C, Python, MySQL, HTML, CSS, DBMS, DS, Algorithms",
+    personalQuote: "Motivated to learn new stuffs and technologies",
+    profileImage: bsdenephom,
+    idCardStyle: "yellow-gradient",
+    cardColor: "from-yellow-600 to-yellow-800",
+    profilePath: "/intern/bsden-ephom"
   }
 
 ];
@@ -393,102 +585,6 @@ const Intern = () => {
               >
                 Welcome to the TechieHelp Internship and Training Program, a premier platform designed to bridge the gap between academic learning and industry requirements by providing hands-on experience, expert mentorship, and professional development opportunities.
               </motion.p>
-
-              {/* Join Our Team Section with Unique Animations */}
-              <motion.div
-                className="relative"
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 1.2, type: "spring", stiffness: 100 }}
-              >
-                <motion.h3
-                  className="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 bg-clip-text text-transparent"
-                  animate={{
-                    backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-                  }}
-                  transition={{
-                    duration: 3,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  style={{ backgroundSize: "200% 200%" }}
-                >
-
-
-
-
-                  Join Our Team
-                </motion.h3>
-
-                {/* Animated Stats Cards */}
-                <motion.div
-                  className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12"
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 1.5 }}
-                >
-                  {[
-                    { number: "1000+", label: "Interns Trained", color: "from-blue-500 to-cyan-500" },
-                    { number: "100+", label: "Projects Completed", color: "from-purple-500 to-pink-500" },
-                    { number: "99%", label: "Success Rate", color: "from-green-500 to-teal-500" }
-                  ].map((stat, index) => (
-                    <motion.div
-                      key={index}
-                      className={`p-6 rounded-xl bg-gradient-to-r ${stat.color} shadow-2xl relative overflow-hidden`}
-                      whileHover={{
-                        scale: 1.05,
-                        boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
-                      }}
-                      initial={{ opacity: 0, y: 30 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.8, delay: 1.8 + index * 0.2 }}
-                    >
-                      {/* Animated Background Pattern */}
-                      <motion.div
-                        className="absolute inset-0 opacity-20"
-                        animate={{
-                          backgroundPosition: ["0% 0%", "100% 100%"],
-                        }}
-                        transition={{
-                          duration: 4,
-                          repeat: Infinity,
-                          ease: "linear",
-                        }}
-                        style={{
-                          backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px)",
-                          backgroundSize: "20px 20px",
-                        }}
-                      />
-
-                      <motion.div
-                        className="text-center relative z-10"
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ duration: 0.5, delay: 2 + index * 0.2, type: "spring" }}
-                      >
-                        <motion.div
-                          className="text-4xl md:text-5xl font-bold text-white mb-2"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ delay: 2.2 + index * 0.2 }}
-                        >
-                          {stat.number}
-                        </motion.div>
-                        <div className="text-white/90 font-medium">{stat.label}</div>
-                      </motion.div>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition mt-4"
-              >
-                <a href="https://drive.google.com/drive/folders/1RZNZqh30r5m22BulrzJthEnrb9aTiQrI?usp=sharing" target="_blank" rel="noopener noreferrer">
-                  Download Completion Certificate
-                </a>
-              </motion.button>
             </motion.div>
           </motion.div>
 
@@ -926,6 +1022,16 @@ const Intern = () => {
                 transition={{ duration: 0.3 }}
               >
                 <div className="mb-4 flex flex-col items-center rounded-lg p-6 border border-blue-700 bg-gradient-to-r from-purple-700 via-blue-700 to-black shadow-lg relative">
+                  {/* NEW Tag for new students */}
+                  {student.isNew && (
+                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-xs px-3 py-1 rounded-full font-bold shadow-lg">
+                      NEW
+                    </div>
+                  )}
+                  {/* Winter Internship Batch 2025 Tag */}
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
+                    Winter Internship Batch 2025
+                  </div>
                   <div className="relative">
                     <img
                       src={student.profileImage}
