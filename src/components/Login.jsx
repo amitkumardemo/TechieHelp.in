@@ -7,7 +7,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { google as googleIcon, github as githubIcon, signup as signupImage, sign } from "../assets";
 
 const Login = () => {
-  const { loginWithGoogle, loginWithGithub, loginWithEmail, signup, updateUserProfile } = useAuth();
+  const { loginWithGoogle, loginWithGithub, loginWithEmail, signup, updateUserProfile, user, userProfile } = useAuth();
   const navigate = useNavigate();
 
   const [isSignup, setIsSignup] = useState(false);
@@ -25,6 +25,24 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+  // Role-based redirection
+  useEffect(() => {
+    if (user && userProfile) {
+      const redirectBasedOnRole = () => {
+        if (userProfile.role === 'admin') {
+          navigate('/admin/dashboard');
+        } else if (userProfile.role === 'student') {
+          if (userProfile.batchId) {
+            navigate('/student/dashboard');
+          } else {
+            navigate('/batch-selection');
+          }
+        }
+      };
+      redirectBasedOnRole();
+    }
+  }, [user, userProfile, navigate]);
+
   const generateStudentId = () => {
     return "TECHIE" + Math.floor(100000 + Math.random() * 900000);
   };
@@ -32,7 +50,6 @@ const Login = () => {
   const handleGoogleLogin = async () => {
     try {
       await loginWithGoogle();
-      navigate("/profile");
     } catch (error) {
       console.error("Google login error:", error);
       setError(error.message || "Google login failed");
@@ -42,7 +59,6 @@ const Login = () => {
   const handleGithubLogin = async () => {
     try {
       await loginWithGithub();
-      navigate("/profile");
     } catch (error) {
       console.error("GitHub login error:", error);
       setError(error.message || "GitHub login failed");
@@ -65,7 +81,6 @@ const Login = () => {
     setLoading(true);
     try {
       await loginWithEmail(formData.email, formData.password);
-      navigate("/profile");
     } catch (err) {
       setError(err.message || "Failed to login");
     }

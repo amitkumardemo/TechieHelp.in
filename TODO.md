@@ -1,10 +1,11 @@
-# TODO: Add Special Batch Section to Internship.jsx
+# LMS Admin Course Management Enhancement
 
 ## Tasks
-- [ ] Import `useRef` from React (if not already).
-- [ ] Add `useRef` hook for special batch section reference.
-- [ ] Update hero section: Add "Special Batch" button next to "Join Our Team" with click handler to scroll to special batch section.
-- [ ] Insert new "Special Batch" section after "Recognition & Rewards for Top Performers" section.
-- [ ] Implement section content: Heading, description, key features (client projects, mentorship, duration), welcome kit (adapted rewards design), pricing (₹5000 crossed, ₹3000 offer), and "Join Now" button.
-- [ ] Test: Run locally, verify scroll, rendering, and responsiveness.
-- [ ] Finalize: Confirm no errors, update TODO as completed.
+- [ ] Add batch creation functionality to AdminCourseManagement
+- [ ] Add module management to courses (add/edit/delete modules)
+- [ ] Add video management to modules (support YouTube links)
+- [ ] Create YouTube embed component for playing videos on site
+- [ ] Update VideoPlayer to handle YouTube embeds
+- [ ] Make UI more professional with better styling
+- [ ] Test batch creation and course/module/video management
+- [ ] Update Firestore rules if needed for batch/course writes
