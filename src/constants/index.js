@@ -41,6 +41,11 @@ export const navLinks = [
     title: "Contact",
     path: "/contacts"
   },
+  {
+    id: "lms",
+    title: "LMS",
+    path: "/lms"
+  },
   
 ];
 

@@ -77,12 +77,25 @@ import EmanuelThangthazo from "./components/students/EmanuelThangthazo";
 import AnutaluRhakho from "./components/students/AnutaluRhakho";
 import BeloKapfo from "./components/students/BeloKapfo";
 import Bsdenephom from "./components/students/Bsdenephom";
+import ThujozoRhakho from "./components/students/ThujozoRhakho";
+import DotsuTYimchunger from "./components/students/DotsuTYimchunger";
+import BendangakumHoki from "./components/students/BendangakumHoki";
+import PuloviKChishi from "./components/students/PuloviKChishi";
+import KengimheingNampeung from "./components/students/KengimheingNampeung";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
 import { placement } from "./assets";
 import { useAuth } from "./contexts/AuthContext";
 import GalaxyBackground from "./components/GalaxyBackground";
+import LMSLogin from "./components/lms/LMSLogin";
+import BatchSelection from "./components/lms/BatchSelection";
+import StudentDashboard from "./components/lms/StudentDashboard";
+import AdminDashboard from "./components/lms/AdminDashboard";
+import AdminCourseManagement from "./components/lms/AdminCourseManagement";
+import CourseView from "./components/lms/CourseView";
+import InitializeProfiles from "./components/lms/InitializeProfiles";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 
 
@@ -100,16 +113,37 @@ const App = () => {
       setLoading(false);
     }, 2000);
 
-    gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
-    gsap.from(".hero", { duration: 1, x: -100, opacity: 0, delay: 0.5 });
-    gsap.from(".stats", { duration: 1, x: 100, opacity: 0, delay: 1 });
-    gsap.from(".business", { duration: 1, y: 100, opacity: 0, delay: 1.5 });
-    gsap.from(".billing", { duration: 1, x: -100, opacity: 0, delay: 2 });
-    gsap.from(".cardDeal", { duration: 1, x: 100, opacity: 0, delay: 2.5 });
-    gsap.from(".testimonials", { duration: 1, y: 100, opacity: 0, delay: 3 });
-    gsap.from(".clients", { duration: 1, x: -100, opacity: 0, delay: 3.5 });
-    gsap.from(".cta", { duration: 1, y: 100, opacity: 0, delay: 4 });
-    gsap.from(".footer", { duration: 1, y: 100, opacity: 0, delay: 4.5 });
+    // Only animate if elements exist (on home page)
+    if (document.querySelector(".navbar")) {
+      gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
+    }
+    if (document.querySelector(".hero")) {
+      gsap.from(".hero", { duration: 1, x: -100, opacity: 0, delay: 0.5 });
+    }
+    if (document.querySelector(".stats")) {
+      gsap.from(".stats", { duration: 1, x: 100, opacity: 0, delay: 1 });
+    }
+    if (document.querySelector(".business")) {
+      gsap.from(".business", { duration: 1, y: 100, opacity: 0, delay: 1.5 });
+    }
+    if (document.querySelector(".billing")) {
+      gsap.from(".billing", { duration: 1, x: -100, opacity: 0, delay: 2 });
+    }
+    if (document.querySelector(".cardDeal")) {
+      gsap.from(".cardDeal", { duration: 1, x: 100, opacity: 0, delay: 2.5 });
+    }
+    if (document.querySelector(".testimonials")) {
+      gsap.from(".testimonials", { duration: 1, y: 100, opacity: 0, delay: 3 });
+    }
+    if (document.querySelector(".clients")) {
+      gsap.from(".clients", { duration: 1, x: -100, opacity: 0, delay: 3.5 });
+    }
+    if (document.querySelector(".cta")) {
+      gsap.from(".cta", { duration: 1, y: 100, opacity: 0, delay: 4 });
+    }
+    if (document.querySelector(".footer")) {
+      gsap.from(".footer", { duration: 1, y: 100, opacity: 0, delay: 4.5 });
+    }
 
     // Animate images and icons on scroll
     gsap.utils.toArray("img, svg").forEach((element) => {
@@ -142,6 +176,49 @@ const App = () => {
         </div>
 
         <Routes>
+          {/* LMS Routes */}
+          <Route path="/lms" element={user && userProfile ? (
+            userProfile.role === 'admin' ? <Navigate to="/lms/admin/dashboard" replace /> :
+            userProfile.batchId ? <Navigate to="/lms/student/dashboard" replace /> :
+            <Navigate to="/lms/batch-selection" replace />
+          ) : <LMSLogin />} />
+          <Route path="/lms/login" element={user && userProfile ? (
+            userProfile.role === 'admin' ? <Navigate to="/lms/admin/dashboard" replace /> :
+            userProfile.batchId ? <Navigate to="/lms/student/dashboard" replace /> :
+            <Navigate to="/lms/batch-selection" replace />
+          ) : <LMSLogin />} />
+          <Route path="/lms/batch-selection" element={
+            <ProtectedRoute>
+              <BatchSelection />
+            </ProtectedRoute>
+          } />
+          <Route path="/lms/student/dashboard" element={
+            <ProtectedRoute requiredRole="student">
+              <StudentDashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/lms/student/courses/:courseId" element={
+            <ProtectedRoute requiredRole="student">
+              <CourseView />
+            </ProtectedRoute>
+          } />
+          <Route path="/lms/admin/dashboard" element={
+            <ProtectedRoute requiredRole="admin">
+              <AdminDashboard />
+            </ProtectedRoute>
+          } />
+          <Route path="/lms/admin/courses" element={
+            <ProtectedRoute requiredRole="admin">
+              <AdminCourseManagement />
+            </ProtectedRoute>
+          } />
+          <Route path="/admin/courses" element={
+            <ProtectedRoute requiredRole="admin">
+              <AdminCourseManagement />
+            </ProtectedRoute>
+          } />
+          <Route path="/lms/init-profiles" element={<InitializeProfiles />} />
+
           <Route path="/" element={
             <>
               <div className={`${styles.flexStart} pt-0`}>
@@ -173,7 +250,7 @@ const App = () => {
                     </div>
                   </section>
                   <OurServices />
-                  
+
                   <Clients className="clients" />
                   <CTA className="cta" />
                   <Testimonials className="testimonials" />
@@ -273,6 +350,16 @@ const App = () => {
           <Route path="/intern/belo-kapfo" element={<BeloKapfo />} />
           <Route path="/students/bsden-ephom" element={<Bsdenephom />} />
           <Route path="/intern/bsden-ephom" element={<Bsdenephom />} />
+          <Route path="/students/thujozo-rhakho" element={<ThujozoRhakho />} />
+          <Route path="/intern/thujozo-rhakho" element={<ThujozoRhakho />} />
+          <Route path="/students/dotsu-t-yimchunger" element={<DotsuTYimchunger />} />
+          <Route path="/intern/dotsu-t-yimchunger" element={<DotsuTYimchunger />} />
+          <Route path="/students/bendangakum-hoki" element={<BendangakumHoki />} />
+          <Route path="/intern/bendangakum-hoki" element={<BendangakumHoki />} />
+          <Route path="/students/pulovi-k-chishi" element={<PuloviKChishi />} />
+          <Route path="/intern/pulovi-k-chishi" element={<PuloviKChishi />} />
+          <Route path="/students/kengimheing-nampeung" element={<KengimheingNampeung />} />
+          <Route path="/intern/kengimheing-nampeung" element={<KengimheingNampeung />} />
 
         {/* Authentication Routes */}
 

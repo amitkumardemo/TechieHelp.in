@@ -157,7 +157,12 @@ import nehaBegum from "./Neha Begum.jpg";
 import emanuelThangthazo from "./Emanuel Thangthazo.jpg";
 import anutaluRhakho from "./Anutalu Rhakho.jpg";
 import beloKapfo from "./Bendangakum Hoki.jpg";
-import bsdenephom from "./Pulovi k Chishi.png";
+import bsdenephom from "./B S DEN E PHOM.jpg";
+import thujozoRhakho from "./Thujozo Rhakho.jpg";
+import dotsuTYimchunger from "./Dotsu T Yimchunger.jpg";
+import bendangakumHoki from "./Bendangakum Hoki.jpg";
+import puloviKChishi from "./Pulovi k Chishi.png";
+import kengimheingNampeung from "./kengimheing Nampeung.jpg";
 
 
 
@@ -307,5 +312,10 @@ export {
   emanuelThangthazo,
   anutaluRhakho,
   beloKapfo,
-  bsdenephom
+  bsdenephom,
+  thujozoRhakho,
+  dotsuTYimchunger,
+  bendangakumHoki,
+  puloviKChishi,
+  kengimheingNampeung
 };
