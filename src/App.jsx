@@ -106,7 +106,7 @@ if (typeof window !== "undefined") {
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const { user } = useAuth();
+  const { user, userProfile } = useAuth();
 
   useEffect(() => {
     const timer = setTimeout(() => {
