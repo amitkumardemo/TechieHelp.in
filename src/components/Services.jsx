@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -202,10 +202,37 @@ const cardVariants = {
 };
 
 const Services = () => {
+  const [showArrow, setShowArrow] = useState(true);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroHeight = heroRef.current.offsetHeight;
+        setShowArrow(window.scrollY < heroHeight);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Custom blink animation style
+  const blinkStyle = `
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .blink {
+      animation: blink 2s infinite;
+    }
+  `;
+
   return (
     <>
+      <style>{blinkStyle}</style>
       {/* --------------------- Top Intro Section --------------------- */}
-      <section className="pt-24 px-6 bg-black text-white flex flex-col items-center relative overflow-hidden">
+      <section ref={heroRef} className="pt-24 px-6 bg-black text-white flex flex-col items-center relative overflow-hidden">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
         <div className="w-full md:w-1/2">
           <img
@@ -242,8 +269,24 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Downscroll Arrow */}
+      {showArrow && (
+        <div className="flex justify-center py-4 bg-black">
+          <button
+            onClick={() => document.getElementById('how-we-handle').scrollIntoView({ behavior: 'smooth' })}
+            className="text-white hover:text-blue-500 transition duration-300 blink"
+            aria-label="Scroll to next section"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       {/* --------------------- How We Handle Your Services Section --------------------- */}
       <motion.section
+        id="how-we-handle"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -374,9 +417,6 @@ const Services = () => {
                 alt={title}
                 className="w-24 h-24 object-cover rounded-2xl border-2 border-blue-500/30 shadow-lg"
               />
-              <div className="absolute -top-2 -right-2 w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center text-white text-xs font-bold shadow-lg">
-                {id}
-              </div>
             </div>
             <h3 className="text-xl font-bold text-white mb-4 leading-tight">{title}</h3>
             <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
