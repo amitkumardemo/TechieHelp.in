@@ -206,110 +206,37 @@ const Services = () => {
     <>
       {/* --------------------- Top Intro Section --------------------- */}
       <section className="pt-24 px-6 bg-black text-white flex flex-col items-center relative overflow-hidden">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-cyan-900 opacity-20 animate-gradient-x"></div>
-
-      {/* Diwali Discount Banner */}
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="w-full max-w-6xl mb-8 relative z-10"
-      >
-        <div className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 text-white text-center py-4 px-6 rounded-2xl shadow-2xl border-2 border-yellow-400">
-          <h1 className="text-2xl md:text-3xl font-bold animate-pulse">
-            🎉 Diwali Special: 10% Discount on All Services! 🎉
-          </h1>
-          <p className="text-lg md:text-xl mt-2 font-semibold">
-            Celebrate the festival of lights with amazing savings on our premium tech solutions!
-          </p>
-        </div>
-      </motion.div>
-
-      {/* Flying Diwali Firecrackers */}
-      <motion.div
-        initial={{ y: 100, opacity: 1 }}
-        animate={{ y: -250, opacity: 0 }}
-        transition={{ duration: 3.5, repeat: Infinity, delay: 0, ease: "easeOut" }}
-        className="absolute bottom-0 left-10 text-5xl z-5"
-      >
-        🎆
-      </motion.div>
-      <motion.div
-        initial={{ y: 100, opacity: 1 }}
-        animate={{ y: -250, opacity: 0 }}
-        transition={{ duration: 3.5, repeat: Infinity, delay: 1, ease: "easeOut" }}
-        className="absolute bottom-0 left-1/4 text-5xl z-5"
-      >
-        🎇
-      </motion.div>
-      <motion.div
-        initial={{ y: 100, opacity: 1 }}
-        animate={{ y: -250, opacity: 0 }}
-        transition={{ duration: 3.5, repeat: Infinity, delay: 2, ease: "easeOut" }}
-        className="absolute bottom-0 right-1/4 text-5xl z-5"
-      >
-        🪔
-      </motion.div>
-      <motion.div
-        initial={{ y: 100, opacity: 1 }}
-        animate={{ y: -250, opacity: 0 }}
-        transition={{ duration: 3.5, repeat: Infinity, delay: 0.5, ease: "easeOut" }}
-        className="absolute bottom-0 right-10 text-5xl z-5"
-      >
-        💥
-      </motion.div>
-      <motion.div
-        initial={{ y: 100, opacity: 1 }}
-        animate={{ y: -250, opacity: 0 }}
-        transition={{ duration: 3.5, repeat: Infinity, delay: 1.5, ease: "easeOut" }}
-        className="absolute bottom-0 left-1/2 text-5xl z-5"
-      >
-        🌟
-      </motion.div>
-
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
         <div className="w-full md:w-1/2">
-          <motion.img
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+          <img
             src={servicePage}
             alt="TechieHelp Services"
             className="w-full rounded-xl shadow-xl object-cover"
           />
         </div>
         <div className="w-full md:w-1/2 text-center md:text-left">
-<motion.h2
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
+<h2
   className="text-4xl font-bold mb-4"
 >
   Our <span className="text-blue-500">Services</span>
-</motion.h2>
+</h2>
 
-  <motion.p
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 0.3 }}
+  <p
     className="text-lg mb-6"
   >
     At TechieHelp, we provide a comprehensive suite of services including web development, app development, AI-powered solutions, and digital strategy. Our team combines innovation with technical expertise to build scalable, user-centric products that align with your business goals and deliver measurable results.
 
 
-  </motion.p>
+  </p>
 
-  <motion.a
+  <a
     href="https://wa.me/917673825079?text=Hello%20Team%20TechieHelp%2C%20I%20am%20interested%20in%20your%20services.%20Kindly%20share%20more%20details."
     target="_blank"
     rel="noopener noreferrer"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
     className="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
   >
     Connect with Our Team
-  </motion.a>
+  </a>
 </div>
 
         </div>
