@@ -163,7 +163,8 @@ import dotsuTYimchunger from "./Dotsu T Yimchunger.jpg";
 import bendangakumHoki from "./Bendangakum Hoki.jpg";
 import puloviKChishi from "./Pulovi k Chishi.png";
 import kengimheingNampeung from "./kengimheing Nampeung.jpg";
-
+import kameshwarPatel from "./Kameshwar_patel.jpg";
+import ashok from "./Ashok.jpeg";
 
 
 
@@ -320,5 +321,7 @@ export {
   bendangakumHoki,
   puloviKChishi,
   kengimheingNampeung,
+  kameshwarPatel,
+  ashok,
   AmitPhoto
 };
