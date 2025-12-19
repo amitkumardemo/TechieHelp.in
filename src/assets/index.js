@@ -319,5 +319,8 @@ export {
   bendangakumHoki,
   puloviKChishi,
   kengimheingNampeung,
+  kameshwarPatel,
+  ashok,
+  supriyaJalani,
   AmitPhoto
 };
