@@ -30,9 +30,6 @@ import {
   bendangakumHoki,
   puloviKChishi,
   kengimheingNampeung,
-  kameshwarPatel,
-  ashok,
-  supriyaJalani,
 } from '../assets/index.js';
 
 const studentData = [
@@ -583,70 +580,8 @@ const studentData = [
     cardColor: "from-blue-600 to-blue-800",
     profilePath: "/intern/kengimheing-nampeung",
     isNew: true
-  },
-  {
-    timestamp: "12/17/2025 15:00:00",
-    fullName: "Kameshwar Patel",
-    email: "patelkameshwar01@gmail.com",
-    collegeName: "Jodhpur Institute of Engineering & Technology",
-    techieHelpStudentID: "TECHIE161085",
-    linkedInProfile: "https://www.linkedin.com/in/patelkameshwar/",
-    githubProfile: "https://github.com/patelkameshwar",
-    address: "Jodhpur, Rajasthan",
-    phoneNumber: "8877396336",
-    internshipDomain: "Mern Stack",
-    currentYearBatch: "2nd Year, 2024-2026",
-    passingYear: "2026",
-    skills: "ReactJs, HTML5, CSS, JavaScript, MS Office, Canva, Git & Github",
-    personalQuote: "Aspiring Frontend-focused Full Stack Developer with a strong foundation in UI development and a good understanding of Backend technologies. A quick learner with hands-on coding experience and a strong problem-solving mindset, passionate about building responsive and user-friendly web applications.",
-    profileImage: kameshwarPatel,
-    idCardStyle: "green-gradient",
-    cardColor: "from-green-600 to-green-800",
-    profilePath: "/intern/kameshwar-patel",
-    isNew: true
-  },
-  {
-    timestamp: "12/17/2025 00:00:00",
-    fullName: "Ashok",
-    email: "ashokbishnoi0408@gmail.com",
-    collegeName: "Jodhpur Institute of Engineering & Technology",
-    techieHelpStudentID: "TECHIE117045",
-    linkedInProfile: "https://www.linkedin.com/in/ashok-bishnoi-b19389257/",
-    githubProfile: "https://github.com/ashok",
-    address: "Jodhpur, Rajasthan",
-    phoneNumber: "1234567890",
-    internshipDomain: "Frontend Developer",
-    currentYearBatch: "3rd Year",
-    passingYear: "2026",
-    skills: "HTML, CSS, JavaScript, Python, Mysql",
-    personalQuote: "Passionate about technology and innovation.",
-    profileImage: ashok,
-    idCardStyle: "blue-gradient",
-    cardColor: "from-blue-600 to-blue-800",
-    profilePath: "/intern/ashok",
-    isNew: true
-  },
-  {
-    timestamp: "12/20/2025 10:00:00",
-    fullName: "Supriya Jalani",
-    email: "Supriyaj66705@gmail.com",
-    collegeName: "Jodhpur Institute of Engineering & Technology",
-    techieHelpStudentID: "TH-EMP-25-002",
-    linkedInProfile: "https://www.linkedin.com/in/supriya-jalani/",
-    githubProfile: "https://github.com/Suprirya-Jalani",
-    address: "Jodhpur, Rajasthan",
-    phoneNumber: "7014245775",
-    internshipDomain: "UI/UX Designer",
-    currentYearBatch: "CSE 3rd Year",
-    passingYear: "2027",
-    skills: "Python, Java, HTML, CSS, Javascript, Unity, Blender, Figma",
-    personalQuote: "A Computer Science student and tech enthusiast with a passion for AI/ML, 3D modeling, and UI/UX design. Possesses basic knowledge of Unity and Blender, along with hands-on experience in immersive technologies and low-level programming. A proactive learner, problem-solver, and disciplined team player eager to create impactful digital experiences.",
-    profileImage: supriyaJalani,
-    idCardStyle: "blue-gradient",
-    cardColor: "from-blue-600 to-blue-800",
-    profilePath: "/employee/supriya-jalani",
-    isNew: true
-  },
+  }
+
 ];
 
 
@@ -1203,9 +1138,9 @@ const Intern = () => {
                       NEW
                     </div>
                   )}
-                  {/* Internship Batch Tag */}
+                  {/* Winter Internship Batch 2025 Tag */}
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
-                    {student.fullName === "Supriya Jalani" ? "Employee" : (student.fullName === "Ashok" || student.fullName === "Kameshwar Patel" ? "JIET MCA Intern" : "Winter Internship Batch 2025")}
+                    Winter Internship Batch 2025
                   </div>
                   <div className="relative">
                     <img
@@ -1233,8 +1168,8 @@ const Intern = () => {
                   </div>
                   <h3 className="text-xl font-bold text-white">{`Name: ${student.fullName}`}</h3>
                   <p className="text-gray-300">{`College Name: ${student.collegeName}`}</p>
-                  <p className="text-gray-300">{`${student.fullName === "Supriya Jalani" ? "TechieHelp Employee Id" : "TechieHelp Student Id"}: ${student.techieHelpStudentID}`}</p>
-                  <p className="text-gray-300">{`${student.fullName === "Supriya Jalani" ? "Job Role" : "Internship Domain"}: ${student.internshipDomain}`}</p>
+                  <p className="text-gray-300">{`TechieHelp Student Id: ${student.techieHelpStudentID}`}</p>
+                  <p className="text-gray-300">{`Internship Domain: ${student.internshipDomain}`}</p>
                 </div>
                 <div className="flex justify-center gap-4 mt-4">
                   <a
