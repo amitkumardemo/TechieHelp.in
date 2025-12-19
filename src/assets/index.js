@@ -165,7 +165,7 @@ import puloviKChishi from "./Pulovi k Chishi.png";
 import kengimheingNampeung from "./kengimheing Nampeung.jpg";
 import kameshwarPatel from "./Kameshwar_patel.jpg";
 import ashok from "./Ashok.jpeg";
-import supriyaJalani from "./supriya_jalani.jpg";
+import supriyaJalani from "./supriya_jalani.jpeg";
 
 
 
