@@ -1,18 +1,35 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FaCheck, 
-  FaUsers, 
-  FaHeadset, 
-  FaMoneyBillWave, 
-  FaClock, 
-  FaMobile, 
-  FaServer, 
-  FaTools, 
-  FaGraduationCap, 
-  FaLaptopCode, 
+import {
+  FaCheck,
+  FaUsers,
+  FaHeadset,
+  FaMoneyBillWave,
+  FaClock,
+  FaMobile,
+  FaServer,
+  FaTools,
+  FaGraduationCap,
+  FaLaptopCode,
   FaHeart,
-  FaCode
+  FaCode,
+  FaGlobe,
+  FaDatabase,
+  FaShoppingCart,
+  FaRocket,
+  FaUser,
+  FaNewspaper,
+  FaLaptop,
+  FaBuilding,
+  FaChartBar,
+  FaCalendar,
+  FaFileAlt,
+  FaUtensils,
+  FaHome,
+  FaBriefcase,
+  FaPlane,
+  FaCalendarCheck,
+  FaPaintBrush
 } from "react-icons/fa";
 import { webDevelopment, webdevelopmentservices, technology, basic, classic, premium, choose , apps } from "../assets";
 import Platform from "./Platform";
@@ -109,6 +126,7 @@ Social media links
 
 Mobile & SEO-friendly design`,
     price: "₹ 10,000",
+    icon: <FaGlobe className="w-6 h-6" />
   },
   {
     title: "Dynamic Website Development",
@@ -124,6 +142,7 @@ Blog or news section
 
 Login/Signup system`,
     price: "₹ 20,000",
+    icon: <FaDatabase className="w-6 h-6" />
   },
   {
     title: "E-Commerce Website Development",
@@ -139,6 +158,7 @@ Payment gateway integration (Razorpay, PayPal, etc.)
 
 Order and user management system`,
     price: "₹ 30,000",
+    icon: <FaShoppingCart className="w-6 h-6" />
   },
   {
     title: "Custom Web Application Development",
@@ -152,6 +172,7 @@ Booking/Appointment Systems
 
 Dashboards & Analytics Panels`,
     price: "₹ 40,000",
+    icon: <FaRocket className="w-6 h-6" />
   },
   {
     title: "Landing Page Design",
@@ -167,6 +188,7 @@ Call-to-Action (CTA) buttons
 
 Email integration (Mailchimp, etc.)`,
     price: "₹ 15,000",
+    icon: <FaUser className="w-6 h-6" />
   },
   {
     title: "Portfolio Website Development",
@@ -182,6 +204,7 @@ Contact section
 
 Social links integration`,
     price: "₹ 15,000",
+    icon: <FaLaptop className="w-6 h-6" />
   },
   {
     title: "Blog or News Website",
@@ -197,6 +220,7 @@ Admin panel to manage posts
 
 SEO and sharing features`,
     price: "₹ 20,000",
+    icon: <FaNewspaper className="w-6 h-6" />
   },
   {
     title: "Educational/Coaching Website",
@@ -212,6 +236,7 @@ Payment integration for classes
 
 Video embedding (YouTube/Vimeo)`,
     price: "₹ 25,000",
+    icon: <FaGraduationCap className="w-6 h-6" />
   },
   {
     title: "Internship/Student Project Website",
@@ -227,6 +252,7 @@ GitHub or Resume links
 
 Mobile-responsive and clean UI`,
     price: "₹ 15,000",
+    icon: <FaLaptop className="w-6 h-6" />
   },
   {
     title: "Business or Startup Website",
@@ -242,6 +268,7 @@ Team section
 
 Call-to-action and contact options`,
     price: "₹ 20,000",
+    icon: <FaBuilding className="w-6 h-6" />
   },
   {
     title: "Admin Dashboard Panel",
@@ -257,6 +284,7 @@ Data tables with filters
 
 Authentication system`,
     price: "₹ 30,000",
+    icon: <FaChartBar className="w-6 h-6" />
   },
   {
     title: "Event/Conference Website",
@@ -272,6 +300,7 @@ Registration form
 
 Countdown timers`,
     price: "₹ 25,000",
+    icon: <FaCalendar className="w-6 h-6" />
   },
   {
     title: "NGO/Charity Website",
@@ -287,6 +316,7 @@ Gallery and blog
 
 Contact and feedback form`,
     price: "₹ 20,000",
+    icon: <FaHeart className="w-6 h-6" />
   },
   {
     title: "Resume Builder Website",
@@ -302,6 +332,7 @@ Resume download (PDF)
 
 Admin analytics panel (optional)`,
     price: "₹ 15,000",
+    icon: <FaFileAlt className="w-6 h-6" />
   },
   {
     title: "Restaurant or Cafe Website",
@@ -317,6 +348,7 @@ Online table booking
 
 Customer feedback form`,
     price: "₹ 20,000",
+    icon: <FaUtensils className="w-6 h-6" />
   },
   {
     title: "Real Estate Website",
@@ -332,6 +364,7 @@ Contact agent feature
 
 Map integration (Google Maps)`,
     price: "₹ 25,000",
+    icon: <FaHome className="w-6 h-6" />
   },
   {
     title: "Job/Internship Portal",
@@ -347,6 +380,7 @@ Resume uploads
 
 Admin approval system`,
     price: "₹ 30,000",
+    icon: <FaBriefcase className="w-6 h-6" />
   },
   {
     title: "Travel & Tourism Website",
@@ -362,6 +396,7 @@ Booking inquiry form
 
 Customer reviews`,
     price: "₹ 20,000",
+    icon: <FaPlane className="w-6 h-6" />
   },
   {
     title: "Appointment Booking Website",
@@ -377,6 +412,7 @@ Admin panel for schedules
 
 SMS/Email integration (optional)`,
     price: "₹ 20,000",
+    icon: <FaCalendarCheck className="w-6 h-6" />
   },
   {
     title: "Website Redesign & Revamp",
@@ -392,6 +428,7 @@ Speed improvement
 
 Mobile responsiveness`,
     price: "₹ 15,000",
+    icon: <FaPaintBrush className="w-6 h-6" />
   },
 ];
 
@@ -593,7 +630,7 @@ const WebDevelopmentServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Services We <span className="text-red-600">offer?</span>
+              Services We <span className="text-blue-600">offer?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Our Web Development Services
@@ -610,25 +647,104 @@ const WebDevelopmentServices = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {webServices.map(({ title, desc, price }, index) => (
-            <motion.div
-              key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
-              custom={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
-            >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600 whitespace-pre-line mb-2">{desc}</p>
-              <div className="font-bold text-green-600">{price}</div>
-            </motion.div>
-          ))}
+        <div className="relative w-full">
+          {/* Animated background elements */}
+          <motion.div
+            className="absolute -top-8 -left-8 w-24 h-24 bg-purple-300 rounded-full opacity-20"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-8 -right-8 w-16 h-16 bg-blue-300 rounded-full opacity-20"
+            animate={{
+              scale: [1, 1.3, 1],
+              rotate: [360, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {webServices.map(({ title, desc, price, icon }, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                whileHover={{
+                  scale: 1.05,
+                  rotate: 2,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                  hidden: { opacity: 0, y: 60, scale: 0.8 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      delay: index * 0.1,
+                      duration: 0.6,
+                      ease: "backOut"
+                    }
+                  }
+                }}
+                className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
+              >
+                <motion.div
+                  className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 360
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {icon}
+                </motion.div>
+                <motion.h3
+                  className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {title}
+                </motion.h3>
+                <motion.p
+                  className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300 mb-3"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
+                >
+                  {desc}
+                </motion.p>
+
+                {/* Hover effect line */}
+                <motion.div
+                  className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                  whileHover={{ width: "50%" }}
+                  transition={{ duration: 0.3 }}
+                />
+                <div className="font-bold text-green-600 mt-3 mb-2.5">{price}</div>
+                <a
+                  href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition duration-300 inline-block text-center text-sm"
+                >
+                  Book a Strategy Call
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -636,7 +752,7 @@ const WebDevelopmentServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Technology We <span className="text-red-600">use?</span>
+              Technology We <span className="text-blue-600">use?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Driving Performance, Innovation, and Growth
@@ -645,7 +761,7 @@ const WebDevelopmentServices = () => {
               At TechieHelp, we use cutting-edge technologies and modern frameworks to deliver fast, responsive, and scalable web solutions tailored to your needs.
             </p>
             <a
-              href="https://wa.me/919876543210?text=Hello%2C%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details."
+              href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details."
               target="_blank"
               rel="noopener noreferrer"
             >

@@ -9,7 +9,7 @@ import Testimonials from "./components/Testimonials";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Contacts from "./components/contacts";
-import Internship from "./components/Internship"; // Correcting casing for import
+import Internship from "./components/Internship"; 
 import SpecialBatch from "./components/SpecialBatch";
 import Webdevelopment from "./components/Webdevelopment";
 import Androiddevelopment from "./components/Androiddevelopment";
@@ -73,8 +73,11 @@ import SenchumbeniCErui from "./components/students/SenchumbeniCErui";
 import KajolSunar from "./components/students/KajolSunar";
 import SushetoZhimo from "./components/students/SushetoZhimo";
 import NehaBegum from "./components/students/NehaBegum";
+import KameshwarPatel from "./components/students/KameshwarPatel";
+import SupriyaJalani from "./components/students/SupriyaJalani";
 import EmanuelThangthazo from "./components/students/EmanuelThangthazo";
 import AnutaluRhakho from "./components/students/AnutaluRhakho";
+import Ashok from "./components/students/Ashok";
 import BeloKapfo from "./components/students/BeloKapfo";
 import Bsdenephom from "./components/students/Bsdenephom";
 import ThujozoRhakho from "./components/students/ThujozoRhakho";
@@ -82,6 +85,7 @@ import DotsuTYimchunger from "./components/students/DotsuTYimchunger";
 import BendangakumHoki from "./components/students/BendangakumHoki";
 import PuloviKChishi from "./components/students/PuloviKChishi";
 import KengimheingNampeung from "./components/students/KengimheingNampeung";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
@@ -96,6 +100,7 @@ import AdminCourseManagement from "./components/lms/AdminCourseManagement";
 import CourseView from "./components/lms/CourseView";
 import InitializeProfiles from "./components/lms/InitializeProfiles";
 import ProtectedRoute from "./components/ProtectedRoute";
+
 
 
 
@@ -308,7 +313,10 @@ const App = () => {
           {/* Student Profile Routes */}
           <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
           <Route path="/intern/sasvanthu-g" element={<SasvanthuG />} />
+          <Route path="/intern/kameshwar-patel" element={<KameshwarPatel />} />
+          <Route path="/employee/supriya-jalani" element={<SupriyaJalani />} />
           <Route path="/students/ritika-kasat" element={<RitikaKasat />} />
+          <Route path="/intern/ashok" element={<Ashok />} />
           <Route path="/intern/ritika-kasat" element={<RitikaKasat />} />
           <Route path="/students/abhay-raj-singh" element={<AbhayRajSingh />} />
           <Route path="/intern/abhay-raj-singh" element={<AbhayRajSingh />} />
