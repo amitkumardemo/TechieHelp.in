@@ -124,7 +124,7 @@ const studentData = [
     techieHelpStudentID: "TECHIE650134",
     linkedInProfile: "https://www.linkedin.com/in/ritika-kasat-296a86333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
     githubProfile: "",
-    address: "Jodhpur",
+    address: "Jodhpur, Rajasthan",
     phoneNumber: "lala laj pat rai colony,chotti idgha road,jodhpur",
     internshipDomain: "Frontend Development",
     currentYearBatch: "2 year 2C3 batch",
