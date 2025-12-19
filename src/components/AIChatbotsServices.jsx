@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCheck } from "react-icons/fa";
-import { chatbot, technology, basic, classic, premium } from "../assets";
+import { FaCheck, FaRocket, FaEye, FaBug, FaShieldAlt, FaClock, FaChartLine, FaWrench, FaBrain, FaRobot, FaMagic, FaCog, FaDatabase, FaUserCog, FaLightbulb, FaCode } from "react-icons/fa";
+import { chatbot, technology, basic, classic, premium, logo } from "../assets";
 import Platform from "./Platform";
 import OurProcess from "./OurProcess";
 import ServiceFAQ from "./ServiceFAQ";
@@ -12,48 +12,56 @@ const features = [
     title: "Smart Q&A Bots",
     description:
       "Develop intelligent question and answer bots to enhance customer support.",
+    icon: <FaBrain className="w-6 h-6" />
   },
   {
     id: 2,
     title: "Lead Generation Bots",
     description:
       "Create bots that capture and qualify leads automatically across channels.",
+    icon: <FaRocket className="w-6 h-6" />
   },
   {
     id: 3,
     title: "Multichannel Integration",
     description:
       "Integrate chatbots seamlessly across multiple platforms for consistent user experience.",
+    icon: <FaDatabase className="w-6 h-6" />
   },
   {
     id: 4,
     title: "Natural Language Processing",
     description:
       "Leverage NLP to understand and respond to user queries effectively.",
+    icon: <FaMagic className="w-6 h-6" />
   },
   {
     id: 5,
     title: "24/7 Customer Support",
     description:
       "Provide round-the-clock assistance to your customers with AI chatbots.",
+    icon: <FaClock className="w-6 h-6" />
   },
   {
     id: 6,
     title: "Customizable Workflows",
     description:
       "Design chatbot workflows tailored to your business needs.",
+    icon: <FaLightbulb className="w-6 h-6" />
   },
   {
     id: 7,
     title: "Analytics & Reporting",
     description:
       "Track chatbot interactions and performance to optimize user experience.",
+    icon: <FaChartLine className="w-6 h-6" />
   },
   {
     id: 8,
     title: "Security & Compliance",
     description:
       "Ensure data privacy and compliance with industry standards.",
+    icon: <FaShieldAlt className="w-6 h-6" />
   },
 ];
 
@@ -70,6 +78,7 @@ Ticketing integration
 
 Live chat handoff`,
     price: "₹ 20,000",
+    icon: <FaBrain className="w-6 h-6" />
   },
   {
     title: "Lead Generation Chatbots",
@@ -83,6 +92,7 @@ Lead scoring
 
 CRM integration`,
     price: "₹ 18,000",
+    icon: <FaRocket className="w-6 h-6" />
   },
   {
     title: "E-commerce Chatbots",
@@ -96,6 +106,7 @@ Order tracking
 
 Payment integration`,
     price: "₹ 22,000",
+    icon: <FaMagic className="w-6 h-6" />
   },
   {
     title: "Multilingual Chatbots",
@@ -109,6 +120,7 @@ Translation services
 
 Localized responses`,
     price: "₹ 25,000",
+    icon: <FaDatabase className="w-6 h-6" />
   },
   {
     title: "Voice-enabled Chatbots",
@@ -122,6 +134,7 @@ Text-to-speech
 
 Voice commands`,
     price: "₹ 30,000",
+    icon: <FaUserCog className="w-6 h-6" />
   },
   {
     title: "Chatbot Analytics",
@@ -135,6 +148,7 @@ Conversion analysis
 
 User feedback collection`,
     price: "₹ 15,000",
+    icon: <FaChartLine className="w-6 h-6" />
   },
   {
     title: "Custom Chatbot Development",
@@ -148,6 +162,7 @@ Custom scripting
 
 Deployment & support`,
     price: "₹ 28,000",
+    icon: <FaCog className="w-6 h-6" />
   },
   {
     title: "Chatbot Maintenance & Support",
@@ -161,6 +176,7 @@ Feature enhancements
 
 Performance monitoring`,
     price: "₹ 12,000",
+    icon: <FaWrench className="w-6 h-6" />
   },
   {
     title: "Integration Services",
@@ -174,6 +190,7 @@ CRM and ERP connectivity
 
 Testing & validation`,
     price: "₹ 18,000",
+    icon: <FaLightbulb className="w-6 h-6" />
   },
   {
     title: "Consultation & Strategy",
@@ -187,6 +204,7 @@ Strategy development
 
 Roadmap planning`,
     price: "₹ 15,000",
+    icon: <FaRobot className="w-6 h-6" />
   },
 ];
 
@@ -237,24 +255,95 @@ const AIChatbotsServices = () => {
       {/* Why Choose Us Section */}
       <section className="max-w-7xl mx-auto py-16 px-6">
         <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Our AI Chatbots?</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map(({ id, title, description }) => (
-            <motion.div
-              key={id}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
-              custom={id}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
-            >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600">{description}</p>
-            </motion.div>
-          ))}
+        <div className="relative w-full">
+          {/* Animated background elements */}
+          <motion.div
+            className="absolute -top-8 -left-8 w-24 h-24 bg-purple-300 rounded-full opacity-20"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-8 -right-8 w-16 h-16 bg-blue-300 rounded-full opacity-20"
+            animate={{
+              scale: [1, 1.3, 1],
+              rotate: [360, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {features.map(({ id, title, description, icon }) => (
+              <motion.div
+                key={id}
+                initial="hidden"
+                whileInView="visible"
+                whileHover={{
+                  scale: 1.05,
+                  rotate: 2,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                  hidden: { opacity: 0, y: 60, scale: 0.8 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      delay: id * 0.1,
+                      duration: 0.6,
+                      ease: "backOut"
+                    }
+                  }
+                }}
+                className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
+              >
+                <motion.div
+                  className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 360
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {icon}
+                </motion.div>
+                <motion.h3
+                  className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {title}
+                </motion.h3>
+                <motion.p
+                  className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: id * 0.1 + 0.3, duration: 0.5 }}
+                >
+                  {description}
+                </motion.p>
+
+                {/* Hover effect line */}
+                <motion.div
+                  className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                  whileHover={{ width: "50%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -263,7 +352,7 @@ const AIChatbotsServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Services We <span className="text-red-600">offer?</span>
+              Services We <span className="text-blue-600">offer?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Our AI Chatbots Services
@@ -280,25 +369,101 @@ const AIChatbotsServices = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {aiChatbotsServices.map(({ title, desc, price }, index) => (
-            <motion.div
-              key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
-              custom={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
-            >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600 whitespace-pre-line mb-2">{desc}</p>
-              <div className="font-bold text-green-600">{price}</div>
-            </motion.div>
-          ))}
+        <div className="relative w-full">
+          {/* Animated background elements */}
+          <motion.div
+            className="absolute -top-8 -left-8 w-24 h-24 bg-purple-300 rounded-full opacity-20"
+            animate={{
+              scale: [1, 1.2, 1],
+              rotate: [0, 180, 360],
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+          <motion.div
+            className="absolute -bottom-8 -right-8 w-16 h-16 bg-blue-300 rounded-full opacity-20"
+            animate={{
+              scale: [1, 1.3, 1],
+              rotate: [360, 0],
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            {aiChatbotsServices.map(({ title, desc, price, icon }, index) => (
+              <motion.div
+                key={index}
+                initial="hidden"
+                whileInView="visible"
+                whileHover={{
+                  scale: 1.05,
+                  rotate: 2,
+                  boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                }}
+                viewport={{ once: true, margin: "-100px" }}
+                variants={{
+                  hidden: { opacity: 0, y: 60, scale: 0.8 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      delay: index * 0.1,
+                      duration: 0.6,
+                      ease: "backOut"
+                    }
+                  }
+                }}
+                className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
+              >
+                <motion.div
+                  className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 360
+                  }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {icon}
+                </motion.div>
+                <motion.h3
+                  className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {title}
+                </motion.h3>
+                <motion.p
+                  className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300 whitespace-pre-line"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
+                >
+                  {desc}
+                </motion.p>
+                <motion.div
+                  className="font-bold text-green-600 mt-3 group-hover:text-green-700 transition-colors duration-300"
+                  whileHover={{ scale: 1.05 }}
+                >
+                  {price}
+                </motion.div>
+
+                {/* Hover effect line */}
+                <motion.div
+                  className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                  whileHover={{ width: "50%" }}
+                  transition={{ duration: 0.3 }}
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -307,7 +472,7 @@ const AIChatbotsServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Technology We <span className="text-red-600">use?</span>
+              Technology We <span className="text-blue-600">use?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Leveraging AI and Automation Technologies
