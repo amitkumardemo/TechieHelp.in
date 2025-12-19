@@ -74,6 +74,7 @@ import KajolSunar from "./components/students/KajolSunar";
 import SushetoZhimo from "./components/students/SushetoZhimo";
 import NehaBegum from "./components/students/NehaBegum";
 import KameshwarPatel from "./components/students/KameshwarPatel";
+import SupriyaJalani from "./components/students/SupriyaJalani";
 import EmanuelThangthazo from "./components/students/EmanuelThangthazo";
 import AnutaluRhakho from "./components/students/AnutaluRhakho";
 import Ashok from "./components/students/Ashok";
@@ -99,6 +100,7 @@ import AdminCourseManagement from "./components/lms/AdminCourseManagement";
 import CourseView from "./components/lms/CourseView";
 import InitializeProfiles from "./components/lms/InitializeProfiles";
 import ProtectedRoute from "./components/ProtectedRoute";
+
 
 
 
@@ -312,6 +314,7 @@ const App = () => {
           <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
           <Route path="/intern/sasvanthu-g" element={<SasvanthuG />} />
           <Route path="/intern/kameshwar-patel" element={<KameshwarPatel />} />
+          <Route path="/employee/supriya-jalani" element={<SupriyaJalani />} />
           <Route path="/students/ritika-kasat" element={<RitikaKasat />} />
           <Route path="/intern/ashok" element={<Ashok />} />
           <Route path="/intern/ritika-kasat" element={<RitikaKasat />} />

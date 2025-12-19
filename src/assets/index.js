@@ -165,6 +165,7 @@ import puloviKChishi from "./Pulovi k Chishi.png";
 import kengimheingNampeung from "./kengimheing Nampeung.jpg";
 import kameshwarPatel from "./Kameshwar_patel.jpg";
 import ashok from "./Ashok.jpeg";
+import supriyaJalani from "./Supriya_Jalani.jpg";
 
 
 
@@ -323,5 +324,6 @@ export {
   kengimheingNampeung,
   kameshwarPatel,
   ashok,
+  supriyaJalani,
   AmitPhoto
 };
