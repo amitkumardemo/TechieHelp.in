@@ -257,7 +257,7 @@ const Services = () => {
   </p>
 
   <a
-    href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+    href="https://wa.me/917673825079?text=Hello%20Team%20TechieHelp%2C%20I%20am%20interested%20in%20your%20services.%20Kindly%20share%20more%20details."
     target="_blank"
     rel="noopener noreferrer"
     className="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
