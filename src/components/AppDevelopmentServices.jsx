@@ -610,12 +610,26 @@ const AppDevelopmentServices = () => {
               >
                 <img src={imgSrc} alt={alt} className="w-24 h-24 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <div className="font-bold text-green-600 mb-4">{price}</div>
                 <ul className="text-left list-disc list-inside space-y-1 mb-4">
                   {features.map((feature, i) => (
                     <li key={i}>{feature}</li>
                   ))}
                 </ul>
-                <div className="font-bold text-green-600">{price}</div>
+                <a
+                  href={
+                    index === 0
+                      ? "https://wa.me/917673825079?text=Hello%2C%20I%20am%20interested%20in%20TechieHelp%27s%20Basic%20Plan.%20Kindly%20share%20the%20details%20and%20how%20I%20can%20get%20started."
+                      : index === 1
+                      ? "https://wa.me/917673825079?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20TechieHelp%27s%20Standard%20Plan.%20Please%20provide%20the%20complete%20information%20and%20benefits."
+                      : "https://wa.me/917673825079?text=Hi%2C%20I%27m%20interested%20in%20TechieHelp%27s%20Premium%20Plan.%20Could%20you%20please%20guide%20me%20through%20the%20features%2C%20pricing%2C%20and%20enrollment%20process%3F"
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 inline-block text-center"
+                >
+                  Choose Plan
+                </a>
               </motion.div>
             ))}
           </div>
