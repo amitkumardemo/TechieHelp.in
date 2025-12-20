@@ -597,7 +597,7 @@ const studentData = [
     currentYearBatch: "2nd Year, 2024-2026",
     passingYear: "2026",
     skills: "ReactJs, HTML5, CSS, JavaScript, MS Office, Canva, Git & Github",
-    personalQuote: "Aspiring Frontend-focused Full Stack Developer with a strong foundation in UI development and a good understanding of Backend technologies.",
+    personalQuote: "Aspiring Frontend-focused Full Stack Developer with a strong foundation in UI development and a good understanding of Backend technologies. A quick learner with hands-on coding experience and a strong problem-solving mindset, passionate about building responsive and user-friendly web applications.",
     profileImage: kameshwarPatel,
     idCardStyle: "green-gradient",
     cardColor: "from-green-600 to-green-800",
