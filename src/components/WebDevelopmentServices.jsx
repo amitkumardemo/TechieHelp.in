@@ -109,7 +109,7 @@ const features = [
     icon: <FaHeart className="w-6 h-6" />
   },
 ];
-
+// web services
 const webServices = [
   {
     title: "Static Website Development",
