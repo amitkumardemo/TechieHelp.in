@@ -1,18 +1,24 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FaCheck, 
-  FaUsers, 
-  FaHeadset, 
-  FaMoneyBillWave, 
-  FaClock, 
-  FaMobile, 
-  FaServer, 
-  FaTools, 
-  FaGraduationCap, 
-  FaLaptopCode, 
+import {
+  FaCheck,
+  FaUsers,
+  FaHeadset,
+  FaMoneyBillWave,
+  FaClock,
+  FaMobile,
+  FaServer,
+  FaTools,
+  FaGraduationCap,
+  FaLaptopCode,
   FaHeart,
-  FaCode
+  FaCode,
+  FaApple,
+  FaAndroid,
+  FaBuilding,
+  FaGamepad,
+  FaPalette,
+  FaWrench
 } from "react-icons/fa";
 import { appDevelopment, technology, basic, classic, premium, android, apps } from "../assets";
 import Platform from "./Platform";
@@ -103,6 +109,7 @@ Includes:
 - Native performance
 - Fast development cycles`,
     price: "₹ 25,000",
+    icon: <FaMobile className="w-6 h-6" />
   },
   {
     title: "Native iOS App Development",
@@ -114,6 +121,7 @@ Includes:
 - Push notifications
 - In-app purchases`,
     price: "₹ 30,000",
+    icon: <FaApple className="w-6 h-6" />
   },
   {
     title: "Native Android App Development",
@@ -125,6 +133,7 @@ Includes:
 - Background services
 - Material Design UI`,
     price: "₹ 30,000",
+    icon: <FaAndroid className="w-6 h-6" />
   },
   {
     title: "Enterprise Mobile Solutions",
@@ -136,6 +145,7 @@ Includes:
 - Data synchronization
 - Offline capabilities`,
     price: "₹ 40,000",
+    icon: <FaBuilding className="w-6 h-6" />
   },
   {
     title: "Mobile Game Development",
@@ -147,6 +157,7 @@ Includes:
 - Multiplayer support
 - Monetization integration`,
     price: "₹ 35,000",
+    icon: <FaGamepad className="w-6 h-6" />
   },
   {
     title: "App UI/UX Design",
@@ -158,6 +169,7 @@ Includes:
 - User testing
 - Brand consistency`,
     price: "₹ 15,000",
+    icon: <FaPalette className="w-6 h-6" />
   },
   {
     title: "App Maintenance & Updates",
@@ -169,6 +181,7 @@ Includes:
 - Feature enhancements
 - Security patches`,
     price: "₹ 10,000 / month",
+    icon: <FaWrench className="w-6 h-6" />
   },
 ];
 
@@ -388,22 +401,73 @@ const AppDevelopmentServices = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {appServices.map(({ title, desc, price }, index) => (
+          {appServices.map(({ title, desc, price, icon }, index) => (
             <motion.div
               key={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
+              whileHover={{
+                scale: 1.05,
+                rotate: 2,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0, y: 60, scale: 0.8 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    delay: index * 0.1,
+                    duration: 0.6,
+                    ease: "backOut"
+                  }
+                }
+              }}
               custom={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
+              className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
             >
-              <div className="bg-blue-100 text-blue-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600 whitespace-pre-line mb-2">{desc}</p>
-              <div className="font-bold text-green-600">{price}</div>
+              <motion.div
+                className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 360
+                }}
+                transition={{ duration: 0.4 }}
+              >
+                {icon}
+              </motion.div>
+              <motion.h3
+                className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+              >
+                {title}
+              </motion.h3>
+              <motion.p
+                className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300 whitespace-pre-line mb-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
+              >
+                {desc}
+              </motion.p>
+                <div className="font-bold text-green-600 mb-3">{price}</div>
+                <a
+                  href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 inline-block text-center text-sm"
+                >
+                  Book a Strategy Call
+                </a>
+              {/* Hover effect line */}
+              <motion.div
+                className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                whileHover={{ width: "50%" }}
+                transition={{ duration: 0.3 }}
+              />
             </motion.div>
           ))}
         </div>
@@ -452,7 +516,7 @@ const AppDevelopmentServices = () => {
             Pricing Plans
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[ 
+            {[
               {
                 title: "Basic Plan",
                 price: "₹7999",
@@ -507,12 +571,26 @@ const AppDevelopmentServices = () => {
               >
                 <img src={imgSrc} alt={alt} className="w-24 h-24 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">{title}</h3>
+                <div className="font-bold text-green-600 mb-4">{price}</div>
                 <ul className="text-left list-disc list-inside space-y-1 mb-4">
                   {features.map((feature, i) => (
                     <li key={i}>{feature}</li>
                   ))}
                 </ul>
-                <div className="font-bold text-green-600">{price}</div>
+                <a
+                  href={
+                    index === 0
+                      ? "https://wa.me/917673825079?text=Hello%2C%20I%20am%20interested%20in%20TechieHelp%27s%20Basic%20Plan.%20Kindly%20share%20the%20details%20and%20how%20I%20can%20get%20started."
+                      : index === 1
+                      ? "https://wa.me/917673825079?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20TechieHelp%27s%20Standard%20Plan.%20Please%20provide%20the%20complete%20information%20and%20benefits."
+                      : "https://wa.me/917673825079?text=Hi%2C%20I%27m%20interested%20in%20TechieHelp%27s%20Premium%20Plan.%20Could%20you%20please%20guide%20me%20through%20the%20features%2C%20pricing%2C%20and%20enrollment%20process%3F"
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 inline-block text-center"
+                >
+                  Choose Plan
+                </a>
               </motion.div>
             ))}
           </div>
