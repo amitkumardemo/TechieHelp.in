@@ -1,18 +1,37 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  FaCheck, 
-  FaUsers, 
-  FaHeadset, 
-  FaMoneyBillWave, 
-  FaClock, 
-  FaMobile, 
-  FaServer, 
-  FaTools, 
-  FaGraduationCap, 
-  FaLaptopCode, 
+import {
+  FaCheck,
+  FaUsers,
+  FaHeadset,
+  FaMoneyBillWave,
+  FaClock,
+  FaMobile,
+  FaServer,
+  FaTools,
+  FaGraduationCap,
+  FaLaptopCode,
   FaHeart,
-  FaCode
+  FaCode,
+  FaGlobe,
+  FaDatabase,
+  FaShoppingCart,
+  FaCogs,
+  FaRocket,
+  FaUser,
+  FaNewspaper,
+  FaUserGraduate,
+  FaBuilding,
+  FaChartLine,
+  FaCalendarAlt,
+  FaHandsHelping,
+  FaFileAlt,
+  FaUtensils,
+  FaHome,
+  FaBriefcase,
+  FaPlane,
+  FaCalendarCheck,
+  FaRedo
 } from "react-icons/fa";
 import { webDevelopment, webdevelopmentservices, technology, basic, classic, premium, choose , apps } from "../assets";
 import Platform from "./Platform";
@@ -109,6 +128,7 @@ Social media links
 
 Mobile & SEO-friendly design`,
     price: "₹ 10,000",
+    icon: <FaGlobe className="w-6 h-6" />
   },
   {
     title: "Dynamic Website Development",
@@ -124,6 +144,7 @@ Blog or news section
 
 Login/Signup system`,
     price: "₹ 20,000",
+    icon: <FaDatabase className="w-6 h-6" />
   },
   {
     title: "E-Commerce Website Development",
@@ -139,6 +160,7 @@ Payment gateway integration (Razorpay, PayPal, etc.)
 
 Order and user management system`,
     price: "₹ 30,000",
+    icon: <FaShoppingCart className="w-6 h-6" />
   },
   {
     title: "Custom Web Application Development",
@@ -152,6 +174,7 @@ Booking/Appointment Systems
 
 Dashboards & Analytics Panels`,
     price: "₹ 40,000",
+    icon: <FaCogs className="w-6 h-6" />
   },
   {
     title: "Landing Page Design",
@@ -167,6 +190,7 @@ Call-to-Action (CTA) buttons
 
 Email integration (Mailchimp, etc.)`,
     price: "₹ 15,000",
+    icon: <FaRocket className="w-6 h-6" />
   },
   {
     title: "Portfolio Website Development",
@@ -182,6 +206,7 @@ Contact section
 
 Social links integration`,
     price: "₹ 15,000",
+    icon: <FaUser className="w-6 h-6" />
   },
   {
     title: "Blog or News Website",
@@ -197,6 +222,7 @@ Admin panel to manage posts
 
 SEO and sharing features`,
     price: "₹ 20,000",
+    icon: <FaNewspaper className="w-6 h-6" />
   },
   {
     title: "Educational/Coaching Website",
@@ -212,6 +238,7 @@ Payment integration for classes
 
 Video embedding (YouTube/Vimeo)`,
     price: "₹ 25,000",
+    icon: <FaUserGraduate className="w-6 h-6" />
   },
   {
     title: "Internship/Student Project Website",
@@ -227,6 +254,7 @@ GitHub or Resume links
 
 Mobile-responsive and clean UI`,
     price: "₹ 15,000",
+    icon: <FaGraduationCap className="w-6 h-6" />
   },
   {
     title: "Business or Startup Website",
@@ -242,6 +270,7 @@ Team section
 
 Call-to-action and contact options`,
     price: "₹ 20,000",
+    icon: <FaBuilding className="w-6 h-6" />
   },
   {
     title: "Admin Dashboard Panel",
@@ -257,6 +286,7 @@ Data tables with filters
 
 Authentication system`,
     price: "₹ 30,000",
+    icon: <FaChartLine className="w-6 h-6" />
   },
   {
     title: "Event/Conference Website",
@@ -272,6 +302,7 @@ Registration form
 
 Countdown timers`,
     price: "₹ 25,000",
+    icon: <FaCalendarAlt className="w-6 h-6" />
   },
   {
     title: "NGO/Charity Website",
@@ -287,6 +318,7 @@ Gallery and blog
 
 Contact and feedback form`,
     price: "₹ 20,000",
+    icon: <FaHandsHelping className="w-6 h-6" />
   },
   {
     title: "Resume Builder Website",
@@ -302,6 +334,7 @@ Resume download (PDF)
 
 Admin analytics panel (optional)`,
     price: "₹ 15,000",
+    icon: <FaFileAlt className="w-6 h-6" />
   },
   {
     title: "Restaurant or Cafe Website",
@@ -317,6 +350,7 @@ Online table booking
 
 Customer feedback form`,
     price: "₹ 20,000",
+    icon: <FaUtensils className="w-6 h-6" />
   },
   {
     title: "Real Estate Website",
@@ -332,6 +366,7 @@ Contact agent feature
 
 Map integration (Google Maps)`,
     price: "₹ 25,000",
+    icon: <FaHome className="w-6 h-6" />
   },
   {
     title: "Job/Internship Portal",
@@ -347,6 +382,7 @@ Resume uploads
 
 Admin approval system`,
     price: "₹ 30,000",
+    icon: <FaBriefcase className="w-6 h-6" />
   },
   {
     title: "Travel & Tourism Website",
@@ -362,6 +398,7 @@ Booking inquiry form
 
 Customer reviews`,
     price: "₹ 20,000",
+    icon: <FaPlane className="w-6 h-6" />
   },
   {
     title: "Appointment Booking Website",
@@ -377,6 +414,7 @@ Admin panel for schedules
 
 SMS/Email integration (optional)`,
     price: "₹ 20,000",
+    icon: <FaCalendarCheck className="w-6 h-6" />
   },
   {
     title: "Website Redesign & Revamp",
@@ -392,6 +430,7 @@ Speed improvement
 
 Mobile responsiveness`,
     price: "₹ 15,000",
+    icon: <FaRedo className="w-6 h-6" />
   },
 ];
 
@@ -593,7 +632,7 @@ const WebDevelopmentServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Services We <span className="text-red-600">offer?</span>
+              Services We <span className="text-blue-600">offer?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Our Web Development Services
@@ -611,22 +650,46 @@ const WebDevelopmentServices = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {webServices.map(({ title, desc, price }, index) => (
+          {webServices.map(({ title, desc, price, icon }, index) => (
             <motion.div
               key={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
-              custom={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
+              whileHover={{
+                scale: 1.05,
+                rotate: 2,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0, y: 60, scale: 0.8 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    delay: index * 0.1,
+                    duration: 0.6,
+                    ease: "backOut"
+                  }
+                }
+              }}
+              className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
             >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
+              <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
+                {icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{title}</h3>
               <p className="text-gray-600 whitespace-pre-line mb-2">{desc}</p>
-              <div className="font-bold text-green-600">{price}</div>
+              <div className="font-bold text-green-600 mb-4">{price}</div>
+              <a
+                href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 text-sm"
+              >
+                Book a Strategy Call
+              </a>
             </motion.div>
           ))}
         </div>
@@ -636,7 +699,7 @@ const WebDevelopmentServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Technology We <span className="text-red-600">use?</span>
+              Technology We <span className="text-blue-600">use?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Driving Performance, Innovation, and Growth
