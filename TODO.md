@@ -1,11 +1,6 @@
-# LMS Admin Course Management Enhancement
-
-## Tasks
-- [ ] Add batch creation functionality to AdminCourseManagement
-- [ ] Add module management to courses (add/edit/delete modules)
-- [ ] Add video management to modules (support YouTube links)
-- [ ] Create YouTube embed component for playing videos on site
-- [ ] Update VideoPlayer to handle YouTube embeds
-- [ ] Make UI more professional with better styling
-- [ ] Test batch creation and course/module/video management
-- [ ] Update Firestore rules if needed for batch/course writes
+- [ ] Update the className of the webServices cards to match the advanced styling from "Why Choose Us" cards (rounded-2xl, shadow-xl, border-2, hover effects, etc.)
+- [ ] Add whileHover prop to the motion.div for scale, rotate, and boxShadow effects
+- [ ] Update the icon div to use gradient background and hover transitions
+- [ ] Update h3 and p classes to include group-hover effects and transitions
+- [ ] Add the hover effect line (animated width on hover)
+- [ ] Verify the changes work as expected

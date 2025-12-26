@@ -1,7 +1,36 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCheck } from "react-icons/fa";
-import { uiux, technology, basic, classic, premium } from "../assets";
+import {
+  FaCheck,
+  FaUsers,
+  FaHeadset,
+  FaMoneyBillWave,
+  FaClock,
+  FaMobile,
+  FaServer,
+  FaTools,
+  FaGraduationCap,
+  FaLaptopCode,
+  FaHeart,
+  FaCode,
+  FaFileAlt,
+  FaSync,
+  FaShoppingCart,
+  FaCogs,
+  FaRocket,
+  FaUser,
+  FaNewspaper,
+  FaBuilding,
+  FaChartBar,
+  FaCalendarAlt,
+  FaUtensils,
+  FaHome,
+  FaBriefcase,
+  FaPlane,
+  FaCalendarCheck,
+  FaPaintBrush
+} from "react-icons/fa";
+import { uiux, technology, basic, classic, premium, choose, apps } from "../assets";
 import Platform from "./Platform";
 import OurProcess from "./OurProcess";
 import ServiceFAQ from "./ServiceFAQ";
@@ -12,24 +41,28 @@ const features = [
     title: "User-Centered Design",
     description:
       "We focus on creating intuitive and engaging user experiences tailored to your audience.",
+    icon: <FaUsers className="w-6 h-6" />
   },
   {
     id: 2,
     title: "Prototyping & Wireframing",
     description:
       "Using Figma and Adobe XD, we develop interactive prototypes to visualize your product.",
+    icon: <FaLaptopCode className="w-6 h-6" />
   },
   {
     id: 3,
     title: "Brand Identity & Visual Design",
     description:
       "Crafting cohesive brand identities that resonate and stand out in the market.",
+    icon: <FaPaintBrush className="w-6 h-6" />
   },
   {
     id: 4,
     title: "Responsive & Accessible",
     description:
       "Designs that work seamlessly across devices and are accessible to all users.",
+    icon: <FaMobile className="w-6 h-6" />
   },
 ];
 
@@ -46,6 +79,7 @@ Design system creation
 
 Interactive elements`,
     price: "₹ 12,000",
+    icon: <FaPaintBrush className="w-6 h-6" />
   },
   {
     title: "UX Research",
@@ -59,6 +93,7 @@ Persona development
 
 Journey mapping`,
     price: "₹ 15,000",
+    icon: <FaUsers className="w-6 h-6" />
   },
   {
     title: "Branding & Identity",
@@ -72,6 +107,7 @@ Color palette
 
 Typography`,
     price: "₹ 10,000",
+    icon: <FaRocket className="w-6 h-6" />
   },
   {
     title: "Prototyping & Testing",
@@ -85,6 +121,7 @@ User feedback sessions
 
 Iterative improvements`,
     price: "₹ 18,000",
+    icon: <FaLaptopCode className="w-6 h-6" />
   },
 ];
 
@@ -132,28 +169,151 @@ const UIUXServices = () => {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
-      <section className="max-w-7xl mx-auto py-16 px-6">
-        <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Our UI/UX Design?</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map(({ id, title, description }) => (
+      {/* Why Choose Us Section - Enhanced with Animations */}
+      <section className="max-w-7xl mx-auto py-20 px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="flex flex-col items-center mb-16"
+        >
+          <div className="flex flex-col md:flex-row items-center gap-8 mb-12">
             <motion.div
-              key={id}
-              initial="hidden"
-              whileInView="visible"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              variants={cardVariants}
-              custom={id}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
+              transition={{ duration: 0.8 }}
+              className="md:w-1/2"
             >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600">{description}</p>
+              <img
+                src={choose}
+                alt="Why Choose TechieHelp"
+                className="w-full max-w-md mx-auto rounded-2xl shadow-2xl"
+              />
             </motion.div>
-          ))}
-        </div>
+
+            <motion.div
+              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-8 relative overflow-hidden md:w-1/2"
+              whileHover={{ scale: 1.02 }}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="absolute inset-0 bg-white opacity-10 animate-pulse"></div>
+              <motion.h2
+                className="text-3xl font-bold text-center"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                Why Choose Us?
+              </motion.h2>
+              <motion.p
+                className="mt-4 text-center text-lg"
+                initial={{ y: 20, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, duration: 0.6 }}
+              >
+                We provide exceptional UI/UX design services tailored to your needs with cutting-edge technology and expert team
+              </motion.p>
+            </motion.div>
+          </div>
+
+          <div className="relative w-full">
+            {/* Animated background elements */}
+            <motion.div
+              className="absolute -top-8 -left-8 w-24 h-24 bg-purple-300 rounded-full opacity-20"
+              animate={{
+                scale: [1, 1.2, 1],
+                rotate: [0, 180, 360],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+            <motion.div
+              className="absolute -bottom-8 -right-8 w-16 h-16 bg-blue-300 rounded-full opacity-20"
+              animate={{
+                scale: [1, 1.3, 1],
+                rotate: [360, 0],
+              }}
+              transition={{
+                duration: 6,
+                repeat: Infinity,
+                ease: "linear"
+              }}
+            />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+              {features.map(({ id, title, description, icon }) => (
+                <motion.div
+                  key={id}
+                  initial="hidden"
+                  whileInView="visible"
+                  whileHover={{
+                    scale: 1.05,
+                    rotate: 2,
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                  }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  variants={{
+                    hidden: { opacity: 0, y: 60, scale: 0.8 },
+                    visible: {
+                      opacity: 1,
+                      y: 0,
+                      scale: 1,
+                      transition: {
+                        delay: id * 0.1,
+                        duration: 0.6,
+                        ease: "backOut"
+                      }
+                    }
+                  }}
+                  className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
+                >
+                  <motion.div
+                    className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                    whileHover={{
+                      scale: 1.1,
+                      rotate: 360
+                    }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    {icon}
+                  </motion.div>
+                  <motion.h3
+                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    {title}
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: id * 0.1 + 0.3, duration: 0.5 }}
+                  >
+                    {description}
+                  </motion.p>
+
+                  {/* Hover effect line */}
+                  <motion.div
+                    className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                    whileHover={{ width: "50%" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </section>
 
       {/* Services Offered Section */}
@@ -161,7 +321,7 @@ const UIUXServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Services We <span className="text-red-600">offer?</span>
+              Services We <span className="text-blue-600">offer?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Our UI/UX Design Services
@@ -178,34 +338,84 @@ const UIUXServices = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {uiuxServices.map(({ title, desc, price }, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+          {uiuxServices.map(({ title, desc, price, icon }, index) => (
             <motion.div
               key={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
+              whileHover={{
+                scale: 1.05,
+                rotate: 2,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0, y: 60, scale: 0.8 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    delay: index * 0.1,
+                    duration: 0.6,
+                    ease: "backOut"
+                  }
+                }
+              }}
               custom={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
+              className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
             >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-xl font-semibold mb-2">{title}</h3>
-              <p className="text-gray-600 whitespace-pre-line mb-2">{desc}</p>
-              <div className="font-bold text-green-600">{price}</div>
+              <motion.div
+                className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 360
+                }}
+                transition={{ duration: 0.4 }}
+              >
+                {icon}
+              </motion.div>
+              <motion.h3
+                className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+              >
+                {title}
+              </motion.h3>
+              <motion.p
+                className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300 whitespace-pre-line mb-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
+              >
+                {desc}
+              </motion.p>
+              <div className="font-bold text-green-600 mb-3">{price}</div>
+              <a
+                href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm"
+              >
+                Book a Strategy Call
+              </a>
+              {/* Hover effect line */}
+              <motion.div
+                className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                whileHover={{ width: "50%" }}
+                transition={{ duration: 0.3 }}
+              />
             </motion.div>
           ))}
         </div>
       </section>
 
-      {/* Technology Used Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Technology We <span className="text-red-600">use?</span>
+              Technology We <span className="text-blue-600">use?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Driving Innovation and User Engagement
@@ -214,7 +424,7 @@ const UIUXServices = () => {
               We leverage modern design tools and frameworks to deliver seamless and impactful UI/UX solutions.
             </p>
             <a
-              href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20UI%2FUX%20Design%20Services.%20Please%20provide%20more%20details."
+              href="https://wa.me/919876543210?text=Hello%2C%20I%20am%20interested%20in%20your%20services.%20Please%20provide%20more%20details."
               target="_blank"
               rel="noopener noreferrer"
             >

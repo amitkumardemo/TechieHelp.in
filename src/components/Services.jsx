@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -202,62 +202,95 @@ const cardVariants = {
 };
 
 const Services = () => {
+  const [showArrow, setShowArrow] = useState(true);
+  const heroRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (heroRef.current) {
+        const heroHeight = heroRef.current.offsetHeight;
+        setShowArrow(window.scrollY < heroHeight);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Custom blink animation style
+  const blinkStyle = `
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    .blink {
+      animation: blink 2s infinite;
+    }
+  `;
+
   return (
     <>
+      <style>{blinkStyle}</style>
       {/* --------------------- Top Intro Section --------------------- */}
       <section className="pt-24 px-6 bg-black text-white flex flex-col items-center relative overflow-hidden">
       {/* Animated Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-cyan-900 opacity-20 animate-gradient-x"></div>
 
+      <section ref={heroRef} className="pt-24 px-6 bg-black text-white flex flex-col items-center relative overflow-hidden">
       <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
         <div className="w-full md:w-1/2">
-          <motion.img
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
+          <img
             src={servicePage}
             alt="TechieHelp Services"
             className="w-full rounded-xl shadow-xl object-cover"
           />
         </div>
         <div className="w-full md:w-1/2 text-center md:text-left">
-<motion.h2
-  initial={{ opacity: 0, y: -20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8 }}
+<h2
   className="text-4xl font-bold mb-4"
 >
   Our <span className="text-blue-500">Services</span>
-</motion.h2>
+</h2>
 
-  <motion.p
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 0.3 }}
+  <p
     className="text-lg mb-6"
   >
     At TechieHelp, we provide a comprehensive suite of services including web development, app development, AI-powered solutions, and digital strategy. Our team combines innovation with technical expertise to build scalable, user-centric products that align with your business goals and deliver measurable results.
 
 
-  </motion.p>
+  </p>
 
-  <motion.a
+  <a
     href="https://wa.me/917673825079?text=Hello%20Team%20TechieHelp%2C%20I%20am%20interested%20in%20your%20services.%20Kindly%20share%20more%20details."
     target="_blank"
     rel="noopener noreferrer"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
     className="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
   >
     Connect with Our Team
-  </motion.a>
+  </a>
 </div>
 
         </div>
       </section>
 
+      {/* Downscroll Arrow */}
+      {showArrow && (
+        <div className="flex justify-center py-4 bg-black">
+          <button
+            onClick={() => document.getElementById('how-we-handle').scrollIntoView({ behavior: 'smooth' })}
+            className="text-white hover:text-blue-500 transition duration-300 blink"
+            aria-label="Scroll to next section"
+          >
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </button>
+        </div>
+      )}
+
       {/* --------------------- How We Handle Your Services Section --------------------- */}
       <motion.section
+        id="how-we-handle"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
