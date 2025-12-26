@@ -13,6 +13,24 @@ import {
   FaLaptopCode,
   FaHeart,
   FaCode,
+  FaGlobe,
+  FaDatabase,
+  FaShoppingCart,
+  FaCogs,
+  FaRocket,
+  FaUser,
+  FaNewspaper,
+  FaBuilding,
+  FaChartLine,
+  FaCalendarAlt,
+  FaHandsHelping,
+  FaFileAlt,
+  FaUtensils,
+  FaHome,
+  FaBriefcase,
+  FaPlane,
+  FaCalendarCheck,
+  FaRedo,
   FaApple,
   FaAndroid,
   FaBuilding,
@@ -109,6 +127,7 @@ Includes:
 - Native performance
 - Fast development cycles`,
     price: "₹ 25,000",
+    icon: <FaMobile className="w-6 h-6" />,
     icon: <FaMobile className="w-6 h-6" />
   },
   {
@@ -121,6 +140,7 @@ Includes:
 - Push notifications
 - In-app purchases`,
     price: "₹ 30,000",
+    icon: <FaCode className="w-6 h-6" />,
     icon: <FaApple className="w-6 h-6" />
   },
   {
@@ -133,6 +153,7 @@ Includes:
 - Background services
 - Material Design UI`,
     price: "₹ 30,000",
+    icon: <FaLaptopCode className="w-6 h-6" />,
     icon: <FaAndroid className="w-6 h-6" />
   },
   {
@@ -145,6 +166,7 @@ Includes:
 - Data synchronization
 - Offline capabilities`,
     price: "₹ 40,000",
+    icon: <FaBuilding className="w-6 h-6" />,
     icon: <FaBuilding className="w-6 h-6" />
   },
   {
@@ -157,6 +179,7 @@ Includes:
 - Multiplayer support
 - Monetization integration`,
     price: "₹ 35,000",
+    icon: <FaRocket className="w-6 h-6" />,
     icon: <FaGamepad className="w-6 h-6" />
   },
   {
@@ -169,6 +192,7 @@ Includes:
 - User testing
 - Brand consistency`,
     price: "₹ 15,000",
+    icon: <FaUser className="w-6 h-6" />,
     icon: <FaPalette className="w-6 h-6" />
   },
   {
@@ -181,6 +205,7 @@ Includes:
 - Feature enhancements
 - Security patches`,
     price: "₹ 10,000 / month",
+    icon: <FaTools className="w-6 h-6" />,
     icon: <FaWrench className="w-6 h-6" />
   },
 ];
@@ -409,6 +434,8 @@ const AppDevelopmentServices = () => {
               whileHover={{
                 scale: 1.05,
                 rotate: 2,
+                boxShadow:
+                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                 boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
               }}
               viewport={{ once: true, margin: "-100px" }}
@@ -421,6 +448,10 @@ const AppDevelopmentServices = () => {
                   transition: {
                     delay: index * 0.1,
                     duration: 0.6,
+                    ease: "backOut",
+                  },
+                },
+              }}
                     ease: "backOut"
                   }
                 }
@@ -432,6 +463,7 @@ const AppDevelopmentServices = () => {
                 className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
                 whileHover={{
                   scale: 1.1,
+                  rotate: 360,
                   rotate: 360
                 }}
                 transition={{ duration: 0.4 }}
@@ -445,6 +477,7 @@ const AppDevelopmentServices = () => {
                 {title}
               </motion.h3>
               <motion.p
+                className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300"
                 className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300 whitespace-pre-line mb-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -453,6 +486,17 @@ const AppDevelopmentServices = () => {
               >
                 {desc}
               </motion.p>
+              <div className="font-bold text-green-600 mb-4">{price}</div>
+              <a
+                href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
+                  Book a Strategy Call
+                </button>
+              </a>
+
                 <div className="font-bold text-green-600 mb-3">{price}</div>
                 <a
                   href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
