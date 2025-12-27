@@ -185,6 +185,17 @@ const AdminDashboard = () => {
                 <p className="text-sm text-gray-600 dark:text-gray-400">Detailed performance reports</p>
               </div>
             </a>
+
+            <a
+              href="/admin/youtube-resources"
+              className="flex items-center p-4 bg-red-50 dark:bg-red-900/20 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors"
+            >
+              <Youtube className="h-6 w-6 text-red-600 mr-3" />
+              <div>
+                <p className="font-medium text-gray-900 dark:text-white">YouTube Resources</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Manage YouTube video resources</p>
+              </div>
+            </a>
           </div>
         </div>
 

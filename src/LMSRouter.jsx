@@ -16,8 +16,10 @@ const LMSRouter = () => {
         <Route path="/batch-selection" element={<BatchSelection />} />
         <Route path="/student/dashboard" element={<StudentDashboard />} />
         <Route path="/student/courses/:courseId" element={<CourseView />} />
+        <Route path="/student/youtube-resources" element={<StudentYouTubeResources />} />
         <Route path="/admin/dashboard" element={<AdminDashboard />} />
         <Route path="/admin/courses" element={<AdminCourseManagement />} />
+        <Route path="/admin/youtube-resources" element={<AdminYouTubeManagement />} />
       </Routes>
     </Router>
   );

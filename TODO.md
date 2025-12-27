@@ -1,11 +1,12 @@
-# LMS Admin Course Management Enhancement
-
-## Tasks
-- [ ] Add batch creation functionality to AdminCourseManagement
-- [ ] Add module management to courses (add/edit/delete modules)
-- [ ] Add video management to modules (support YouTube links)
-- [ ] Create YouTube embed component for playing videos on site
-- [ ] Update VideoPlayer to handle YouTube embeds
-- [ ] Make UI more professional with better styling
-- [ ] Test batch creation and course/module/video management
-- [ ] Update Firestore rules if needed for batch/course writes
+- [x] Update FounderVerification.jsx component to match requirements:
+  - [x] Change import to import AmitPhoto from "../assets/AmitPhoto.jpg";
+  - [x] Create centered verification card with white background, soft shadow, rounded corners
+  - [x] Add circular profile photo (AmitPhoto.jpg)
+  - [x] Display founder details: Full Name, Role, Organization, Email
+  - [x] Add clickable LinkedIn and GitHub profiles
+  - [x] Include Verification Status with green checkmark
+  - [x] Add Issued By, Verification ID, Date of Issue (auto-generated)
+  - [x] Add green "Verified Badge" icon near name
+  - [x] Include security note at bottom
+  - [x] Ensure mobile responsive design with TechieHelp brand colors (dark blue/black)
+  - [x] Professional enterprise styling

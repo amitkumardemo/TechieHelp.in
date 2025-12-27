@@ -169,6 +169,11 @@ import kengimheingNampeung from "./kengimheing Nampeung.jpg";
 import winner from "./winner.png";
 import AmitPhoto from "./AmitPhoto.jpg";
 
+// New student images
+import supriyaJalani from "./supriya jalani.jpg";
+import ashok from "./ashok.jpg";
+import kameshwarPatel from "./kameshwar patel.jpg";
+
 export {
   internship as airbnb,
   bill,

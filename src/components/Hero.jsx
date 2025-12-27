@@ -8,12 +8,9 @@ const Hero = () => {
 <section id="home" className={`flex md:flex-row flex-col pt-36 ${styles.paddingY}`}>
       <div className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}>
         <div className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2 sm:mx-2 mx-0 mt-8">
-          <img src={discount} alt="discount" className="w-[32px] h-[32px]" />
-          <p className={`${styles.paragraph} ml-2 text-xs sm:text-sm`}>
-  <span className="text-white">Get 20% Off</span> on our{" "}
-  <span className="text-white">AI Implementation Plans</span> this month.
-</p>
-
+          <p className={`${styles.paragraph} text-xs sm:text-sm text-white text-center`}>
+            MSME Registered | ISO Certified | Incubated at JIET | Trusted by 100+ Clients
+          </p>
         </div>
 
         <div className="flex flex-row justify-between items-center w-full">
@@ -32,7 +29,7 @@ const Hero = () => {
           with AI
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-          From startups to enterprises, TechieHelp delivers AI-driven, scalable solutions that fuel growth, cut costs, and transform operations.
+          AI-powered software, intelligent automation, and AI agents that help businesses increase revenue, reduce operational costs, and scale faster.
         </p>
       </div>
 
