@@ -229,9 +229,9 @@ const Services = () => {
     <>
       <style>{blinkStyle}</style>
       {/* --------------------- Top Intro Section --------------------- */}
-      <section className="pt-24 px-6 bg-black text-white flex flex-col items-center relative overflow-hidden">
+      <section className="pt-24 px-6 bg-primary text-white flex flex-col items-center relative overflow-hidden">
         {/* Animated Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-cyan-900 opacity-20 animate-gradient-x"></div>
+        <div className="absolute inset-0  opacity-20 animate-gradient-x"></div>
 
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
           <div className="w-full md:w-1/2">

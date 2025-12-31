@@ -13,22 +13,31 @@ import {
   FaLaptopCode,
   FaHeart,
   FaCode,
-  FaFileAlt,
-  FaSync,
+  FaGlobe,
+  FaDatabase,
   FaShoppingCart,
   FaCogs,
   FaRocket,
   FaUser,
   FaNewspaper,
   FaBuilding,
-  FaChartBar,
+  FaChartLine,
   FaCalendarAlt,
+  FaHandsHelping,
+  FaFileAlt,
   FaUtensils,
   FaHome,
   FaBriefcase,
   FaPlane,
   FaCalendarCheck,
-  FaPaintBrush
+  FaRedo,
+  FaApple,
+  FaAndroid,
+  FaGamepad,
+  FaPalette,
+  FaWrench,
+  FaPaintBrush,
+  FaSync
 } from "react-icons/fa";
 import { uiux, technology, basic, classic, premium, choose, apps } from "../assets";
 import Platform from "./Platform";
@@ -41,28 +50,70 @@ const features = [
     title: "User-Centered Design",
     description:
       "We focus on creating intuitive and engaging user experiences tailored to your audience.",
-    icon: <FaUsers className="w-6 h-6" />
+    icon: <FaUsers className="w-6 h-6" />,
   },
   {
     id: 2,
     title: "Prototyping & Wireframing",
     description:
       "Using Figma and Adobe XD, we develop interactive prototypes to visualize your product.",
-    icon: <FaLaptopCode className="w-6 h-6" />
+    icon: <FaLaptopCode className="w-6 h-6" />,
   },
   {
     id: 3,
     title: "Brand Identity & Visual Design",
     description:
       "Crafting cohesive brand identities that resonate and stand out in the market.",
-    icon: <FaPaintBrush className="w-6 h-6" />
+    icon: <FaPaintBrush className="w-6 h-6" />,
   },
   {
     id: 4,
     title: "Responsive & Accessible",
     description:
       "Designs that work seamlessly across devices and are accessible to all users.",
-    icon: <FaMobile className="w-6 h-6" />
+    icon: <FaMobile className="w-6 h-6" />,
+  },
+  {
+    id: 5,
+    title: "Usability Testing",
+    description:
+      "Conducting thorough usability tests to ensure optimal user satisfaction and performance.",
+    icon: <FaHeadset className="w-6 h-6" />,
+  },
+  {
+    id: 6,
+    title: "Design System Creation",
+    description:
+      "Building scalable design systems for consistent and efficient UI/UX across platforms.",
+    icon: <FaCode className="w-6 h-6" />,
+  },
+  {
+    id: 7,
+    title: "Iterative Design Process",
+    description:
+      "Implementing agile design methodologies for continuous improvement and refinement.",
+    icon: <FaSync className="w-6 h-6" />,
+  },
+  {
+    id: 8,
+    title: "Cross-Platform Design",
+    description:
+      "Designing unified experiences that work flawlessly on web, mobile, and desktop.",
+    icon: <FaGlobe className="w-6 h-6" />,
+  },
+  {
+    id: 9,
+    title: "User Research & Analysis",
+    description:
+      "In-depth user research to inform design decisions and create data-driven solutions.",
+    icon: <FaChartLine className="w-6 h-6" />,
+  },
+  {
+    id: 10,
+    title: "Design Consultation",
+    description:
+      "Expert guidance and consultation to elevate your design strategy and execution.",
+    icon: <FaHandsHelping className="w-6 h-6" />,
   },
 ];
 
@@ -122,6 +173,48 @@ User feedback sessions
 Iterative improvements`,
     price: "₹ 18,000",
     icon: <FaLaptopCode className="w-6 h-6" />
+  },
+  {
+    title: "Mobile App UI/UX",
+    desc: `Designing intuitive mobile interfaces for iOS and Android applications.
+
+Includes:
+
+Touch-friendly designs
+
+Gesture interactions
+
+Platform-specific guidelines`,
+    price: "₹ 20,000",
+    icon: <FaMobile className="w-6 h-6" />
+  },
+  {
+    title: "Web Design",
+    desc: `Crafting responsive and engaging web experiences across all devices.
+
+Includes:
+
+Responsive layouts
+
+Cross-browser compatibility
+
+Performance optimization`,
+    price: "₹ 16,000",
+    icon: <FaGlobe className="w-6 h-6" />
+  },
+  {
+    title: "Design Consultation",
+    desc: `Expert guidance to improve your existing designs and user experience.
+
+Includes:
+
+Design audits
+
+Strategy recommendations
+
+Implementation support`,
+    price: "₹ 8,000",
+    icon: <FaHandsHelping className="w-6 h-6" />
   },
 ];
 
@@ -250,7 +343,7 @@ const UIUXServices = () => {
               }}
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
               {features.map(({ id, title, description, icon }) => (
                 <motion.div
                   key={id}
@@ -321,7 +414,7 @@ const UIUXServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Services We <span className="text-blue-600">offer?</span>
+              Services We <span className="text-blue-500">Offer</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Our UI/UX Design Services
@@ -396,9 +489,10 @@ const UIUXServices = () => {
                 href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm"
               >
-                Book a Strategy Call
+                <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
+                  Book a Strategy Call
+                </button>
               </a>
               {/* Hover effect line */}
               <motion.div
