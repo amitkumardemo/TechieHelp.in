@@ -1,6 +1,17 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaCheck } from "react-icons/fa";
+import {
+  FaCheck,
+  FaBullhorn,
+  FaEnvelope,
+  FaMousePointer,
+  FaPen,
+  FaChartLine,
+  FaUsers,
+  FaHeadset,
+  FaMoneyBillWave,
+  FaClock,
+} from "react-icons/fa";
 import { digital, technology, basic, classic, premium } from "../assets";
 import Platform from "./Platform";
 import OurProcess from "./OurProcess";
@@ -12,24 +23,28 @@ const features = [
     title: "Campaign Strategy",
     description:
       "Develop targeted marketing campaigns to maximize your reach and ROI.",
+    icon: <FaBullhorn className="w-6 h-6" />,
   },
   {
     id: 2,
     title: "Social Media & Email",
     description:
       "Engage your audience through social media platforms and effective email marketing.",
+    icon: <FaEnvelope className="w-6 h-6" />,
   },
   {
     id: 3,
     title: "Analytics Reporting",
     description:
       "Track and analyze campaign performance to optimize marketing efforts.",
+    icon: <FaChartLine className="w-6 h-6" />,
   },
   {
     id: 4,
     title: "Content Marketing",
     description:
       "Create compelling content that drives engagement and conversions.",
+    icon: <FaPen className="w-6 h-6" />,
   },
 ];
 
@@ -46,6 +61,7 @@ Ad campaigns
 
 Community management`,
     price: "₹ 15,000",
+    icon: <FaBullhorn className="w-6 h-6" />,
   },
   {
     title: "Email Marketing",
@@ -59,6 +75,7 @@ Automation setup
 
 Performance tracking`,
     price: "₹ 12,000",
+    icon: <FaEnvelope className="w-6 h-6" />,
   },
   {
     title: "Pay-Per-Click Advertising",
@@ -72,6 +89,7 @@ Keyword research
 
 Budget management`,
     price: "₹ 18,000",
+    icon: <FaMousePointer className="w-6 h-6" />,
   },
   {
     title: "SEO Content Marketing",
@@ -85,6 +103,7 @@ Landing pages
 
 Keyword integration`,
     price: "₹ 10,000",
+    icon: <FaPen className="w-6 h-6" />,
   },
 ];
 
@@ -136,7 +155,7 @@ const DigitalMarketingServices = () => {
       <section className="max-w-7xl mx-auto py-16 px-6">
         <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Our Digital Marketing?</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {features.map(({ id, title, description }) => (
+          {features.map(({ id, title, description, icon }) => (
             <motion.div
               key={id}
               initial="hidden"
@@ -146,8 +165,8 @@ const DigitalMarketingServices = () => {
               custom={id}
               className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
             >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
+              <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
+                {icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{title}</h3>
               <p className="text-gray-600">{description}</p>
@@ -161,7 +180,7 @@ const DigitalMarketingServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Services We <span className="text-red-600">offer?</span>
+              Services We <span className="text-blue-600">offer?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Our Digital Marketing Services
@@ -179,7 +198,7 @@ const DigitalMarketingServices = () => {
           </div>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {digitalMarketingServices.map(({ title, desc, price }, index) => (
+          {digitalMarketingServices.map(({ title, desc, price, icon }, index) => (
             <motion.div
               key={index}
               initial="hidden"
@@ -187,14 +206,23 @@ const DigitalMarketingServices = () => {
               viewport={{ once: true }}
               variants={cardVariants}
               custom={index}
-              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
+              className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800 relative"
             >
-              <div className="bg-red-100 text-red-600 rounded-full p-4 mb-4">
-                <FaCheck className="w-6 h-6" />
+              <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300">
+                {icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{title}</h3>
               <p className="text-gray-600 whitespace-pre-line mb-2">{desc}</p>
-              <div className="font-bold text-green-600">{price}</div>
+              <div className="font-bold text-green-600 mb-4">{price}</div>
+              <a
+                href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
+                  Book a Strategy Call
+                </button>
+              </a>
             </motion.div>
           ))}
         </div>
@@ -205,7 +233,7 @@ const DigitalMarketingServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Technology We <span className="text-red-600">use?</span>
+              Technology We <span className="text-blue-600">use?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Leveraging Modern Tools for Maximum Impact
