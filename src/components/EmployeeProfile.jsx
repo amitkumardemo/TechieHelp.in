@@ -1,0 +1,94 @@
+import React from 'react';
+
+const NAVBAR_HEIGHT = 'pt-28'; 
+
+const EmployeeProfile = ({ employee }) => {
+  if (!employee) {
+    return (
+      <div className="min-h-screen flex items-center justify-center text-white">
+        Employee not found
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className={`${NAVBAR_HEIGHT} bg-gradient-to-br from-purple-900 via-blue-900 to-black text-white px-6 pb-8`}
+    >
+      <div className="max-w-4xl mx-auto">
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl">
+
+          {/* Profile Header */}
+          <div className="text-center mb-10">
+            <img
+              src={employee.profileImage}
+              alt={employee.fullName}
+              className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-500 object-cover"
+            />
+            <h1 className="text-4xl font-bold mb-2">{employee.fullName}</h1>
+            <p className="text-xl text-gray-300">{employee.role}</p>
+            <p className="text-sm text-gray-400">
+              Employee ID: {employee.id}
+            </p>
+          </div>
+
+          {/* Info Grid */}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-2xl font-semibold mb-4 border-b border-blue-500 pb-2">
+                Contact Information
+              </h2>
+              <p><strong>Email:</strong> {employee.email}</p>
+              <p><strong>Phone:</strong> {employee.phoneNumber}</p>
+              <p><strong>Address:</strong> {employee.address}</p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-semibold mb-4 border-b border-blue-500 pb-2">
+                Professional Details
+              </h2>
+              <p><strong>Experience:</strong> {employee.experience}</p>
+              <p><strong>Skills:</strong> {employee.skills}</p>
+            </div>
+          </div>
+
+          {/* Quote */}
+          <div className="mt-10">
+            <h2 className="text-2xl font-semibold mb-4">Personal Quote</h2>
+            <blockquote className="text-lg italic text-gray-300 border-l-4 border-blue-500 pl-4">
+              “{employee.personalQuote}”
+            </blockquote>
+          </div>
+
+          {/* Social Links */}
+          <div className="mt-10 flex justify-center gap-4">
+            {employee.linkedInProfile && (
+              <a
+                href={employee.linkedInProfile}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-blue-600 rounded-full hover:bg-blue-700 transition"
+              >
+                LinkedIn
+              </a>
+            )}
+
+            {employee.githubProfile && (
+              <a
+                href={employee.githubProfile}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 bg-gray-800 rounded-full hover:bg-gray-900 transition"
+              >
+                GitHub
+              </a>
+            )}
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default EmployeeProfile;
