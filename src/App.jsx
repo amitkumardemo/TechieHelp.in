@@ -50,7 +50,10 @@ import SpeechVoiceAIServices from "./components/SpeechVoiceAIServices";
 import Job from "./components/job";
 import HiringFAQ from "./components/hiringFAQ";
 import Intern from "./components/Intern";
+import Employee from "./components/Employee";
 import InternProfile from "./components/InternProfile";
+import EmployeeProfile from "./components/EmployeeProfile";
+import AmitKumar from "./components/employees/AmitKumar";
 import SasvanthuG from "./components/students/SasvanthuG";
 import RitikaKasat from "./components/students/RitikaKasat";
 import AbhayRajSingh from "./components/students/AbhayRajSingh";
@@ -268,7 +271,10 @@ const App = () => {
           <Route path="/careers/training-internships" element={<Internship />} />
           <Route path="/special-batch" element={<SpecialBatch />} />
           <Route path="/careers/jobs" element={<Job />} />
+          <Route path="/employees" element={<Employee />} />
           <Route path="/interns" element={<Intern />} />
+          <Route path="/employees/:employeeId" element={<EmployeeProfile />} />
+          <Route path="/employee/amit-kumar" element={<AmitKumar />} />
           <Route path="/webdevelopment" element={<Webdevelopment />} />
           <Route path="/androiddevelopment" element={<Androiddevelopment />} />
           <Route path="/uiux" element={<UIUX />} />

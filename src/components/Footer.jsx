@@ -71,7 +71,7 @@ const serviceLinks = [
 
 const Footer = () => {
   return (
-    <footer className="footer bg-gray-900 text-white py-10 mt-12">
+    <footer className="footer bg-gray-900 text-white py-10">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
         
         {/* Logo & Social */}

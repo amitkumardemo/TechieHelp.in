@@ -22,9 +22,20 @@ export const navLinks = [
     path: "/careers/jobs"
   },
   {
-    id: "interns",
-    title: "Interns",
-    path: "/interns"
+    id: "team",
+    title: "Team",
+    subLinks: [
+      {
+        id: "interns",
+        title: "Interns",
+        path: "/interns"
+      },
+      {
+        id: "employees",
+        title: "Employees",
+        path: "/employees"
+      }
+    ]
   },
   {
     id: "aboutus",

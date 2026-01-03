@@ -11,6 +11,7 @@ const Navbar = () => {
   const { user, logout } = useAuth();
   const [toggle, setToggle] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [timeoutId, setTimeoutId] = useState(null);
   const location = useLocation();
 
   const handleLogout = async () => {
@@ -34,19 +35,25 @@ const Navbar = () => {
               className={`relative font-poppins font-normal cursor-pointer text-[16px] transition duration-300 ease-in-out transform hover:text-secondary hover:scale-110 ${
                 index === navLinks.length - 1 ? "mr-0" : "mr-10"
               } text-white drop-shadow-md ${location.pathname === nav.path ? "text-secondary" : ""}`}
-              onMouseEnter={() => nav.subLinks && setDropdownOpen(nav.id)}
-              onMouseLeave={() => nav.subLinks && setDropdownOpen(null)}
             >
               {nav.subLinks ? (
-                <>
+                <div
+                  className="relative inline-block"
+                  onMouseEnter={() => {
+                    if (timeoutId) clearTimeout(timeoutId);
+                    setDropdownOpen(nav.id);
+                  }}
+                  onMouseLeave={() => {
+                    const id = setTimeout(() => setDropdownOpen(null), 200);
+                    setTimeoutId(id);
+                  }}
+                >
                   <span
                     className="flex items-center cursor-pointer select-none"
                     onClick={(e) => {
                       e.preventDefault();
                       setDropdownOpen(dropdownOpen === nav.id ? null : nav.id);
                     }}
-                    onMouseEnter={null}
-                    onMouseLeave={null}
                   >
                     {nav.title}
                     <svg
@@ -58,7 +65,7 @@ const Navbar = () => {
                     </svg>
                   </span>
                   <ul
-                    className={`absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50 text-black ${
+                    className={`absolute top-full left-0 mt-2 w-48 bg-black rounded-md shadow-lg py-2 z-50 text-white ${
                       dropdownOpen === nav.id ? "block" : "hidden"
                     }`}
                     onClick={(e) => e.stopPropagation()}
@@ -66,15 +73,15 @@ const Navbar = () => {
                     {nav.subLinks.map((subLink) => (
                       <li
                         key={subLink.id}
-                        className="px-4 py-2 hover:bg-gray-200 cursor-pointer"
+                        className="px-4 py-2 hover:bg-gray-700 cursor-pointer"
                       >
-                        <Link to={subLink.path} onClick={() => setToggle(false)}>
+                        <Link to={subLink.path} onClick={() => { setToggle(false); setDropdownOpen(null); }}>
                           {subLink.title}
                         </Link>
                       </li>
                     ))}
                   </ul>
-                </>
+                </div>
               ) : (
                 <Link to={nav.path} onClick={() => setToggle(false)}>
                   {nav.title}
