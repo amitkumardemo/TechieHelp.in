@@ -1,4 +1,5 @@
 import React from 'react';
+import Squares from '../../Reactsbit/Squares/Squares';
 
 const NAVBAR_HEIGHT = 'pt-28'; 
 
@@ -12,11 +13,18 @@ const EmployeeProfile = ({ employee }) => {
   }
 
   return (
-    <div
-      className={`${NAVBAR_HEIGHT} bg-gradient-to-br from-purple-900 via-blue-900 to-black text-white px-6 pb-8`}
-    >
-      <div className="max-w-4xl mx-auto">
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl">
+    <div className="relative min-h-screen bg-black">
+      <div className="absolute inset-0 z-0">
+        <Squares
+          speed={0.5}
+          squareSize={40}
+          direction="diagonal"
+          borderColor="rgb(39, 30, 55)"
+          hoverFillColor="rgb(34, 34, 34)"
+        />
+      </div>
+      <div className={`${NAVBAR_HEIGHT} relative z-10 min-h-screen flex items-center justify-center px-6 pb-8 text-white`}>
+        <div className="bg-white/10 backdrop-blur-md rounded-2xl p-8 shadow-2xl max-w-4xl mx-auto">
 
           {/* Profile Header */}
           <div className="text-center mb-10">
@@ -56,7 +64,7 @@ const EmployeeProfile = ({ employee }) => {
           <div className="mt-10">
             <h2 className="text-2xl font-semibold mb-4">Personal Quote</h2>
             <blockquote className="text-lg italic text-gray-300 border-l-4 border-blue-500 pl-4">
-              “{employee.personalQuote}”
+              "{employee.personalQuote}"
             </blockquote>
           </div>
 
@@ -84,7 +92,6 @@ const EmployeeProfile = ({ employee }) => {
               </a>
             )}
           </div>
-
         </div>
       </div>
     </div>
