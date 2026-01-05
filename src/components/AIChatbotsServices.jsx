@@ -369,7 +369,7 @@ const AIChatbotsServices = () => {
             />
           </div>
         </div>
-        <div className="relative w-full">
+        <div className="relative w-full mt-8">
           {/* Animated background elements */}
           <motion.div
             className="absolute -top-8 -left-8 w-24 h-24 bg-purple-300 rounded-full opacity-20"
@@ -448,13 +448,16 @@ const AIChatbotsServices = () => {
                 >
                   {desc}
                 </motion.p>
-                <motion.div
-                  className="font-bold text-green-600 mt-3 group-hover:text-green-700 transition-colors duration-300"
-                  whileHover={{ scale: 1.05 }}
+                <div className="font-bold text-green-600 mb-4">{price}</div>
+                <a
+                  href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  {price}
-                </motion.div>
-
+                  <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
+                    Book a Strategy Call
+                  </button>
+                </a>
                 {/* Hover effect line */}
                 <motion.div
                   className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
