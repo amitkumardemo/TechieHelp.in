@@ -10,7 +10,38 @@ import {
   FaShieldAlt,
   FaHandsHelping,
   FaClipboardCheck,
-  FaLightbulb
+  FaLightbulb,
+  FaCheck,
+  FaUsers,
+  FaHeadset,
+  FaMoneyBillWave,
+  FaClock,
+  FaMobile,
+  FaServer,
+  FaTools,
+  FaLaptopCode,
+  FaHeart,
+  FaCode,
+  FaGlobe,
+  FaDatabase,
+  FaShoppingCart,
+  FaRocket,
+  FaUser,
+  FaNewspaper,
+  FaBuilding,
+  FaCalendarAlt,
+  FaFileAlt,
+  FaUtensils,
+  FaHome,
+  FaBriefcase,
+  FaPlane,
+  FaCalendarCheck,
+  FaRedo,
+  FaApple,
+  FaAndroid,
+  FaGamepad,
+  FaPalette,
+  FaWrench
 } from "react-icons/fa";
 import { education, technology, basic, classic, premium } from "../assets";
 import Platform from "./Platform";
@@ -23,56 +54,56 @@ const features = [
     title: "AI Tutors & Quiz Bots",
     description:
       "Develop AI-powered tutors and quiz bots to enhance personalized learning experiences.",
-    icon: FaRobot,
+    icon: <FaRobot className="w-6 h-6" />,
   },
   {
     id: 2,
     title: "Smart Grading Tools",
     description:
       "Implement intelligent grading systems to automate assessments and feedback.",
-    icon: FaGraduationCap,
+    icon: <FaGraduationCap className="w-6 h-6" />,
   },
   {
     id: 3,
     title: "Personalized Learning",
     description:
       "Create adaptive learning paths tailored to individual student needs and progress.",
-    icon: FaBookOpen,
+    icon: <FaBookOpen className="w-6 h-6" />,
   },
   {
     id: 4,
     title: "Content Recommendation",
     description:
       "Provide personalized content recommendations to improve learning outcomes.",
-    icon: FaChartLine,
+    icon: <FaChartLine className="w-6 h-6" />,
   },
   {
     id: 5,
     title: "Learning Analytics",
     description:
       "Analyze student data to identify trends and optimize teaching strategies.",
-    icon: FaCogs,
+    icon: <FaCogs className="w-6 h-6" />,
   },
   {
     id: 6,
     title: "Integration Support",
     description:
       "Integrate AI education tools with existing learning management systems.",
-    icon: FaShieldAlt,
+    icon: <FaShieldAlt className="w-6 h-6" />,
   },
   {
     id: 7,
     title: "Scalability & Performance",
     description:
       "Design scalable AI education solutions optimized for performance.",
-    icon: FaCogs,
+    icon: <FaCogs className="w-6 h-6" />,
   },
   {
     id: 8,
     title: "Security & Compliance",
     description:
       "Ensure data privacy and compliance with educational standards.",
-    icon: FaShieldAlt,
+    icon: <FaShieldAlt className="w-6 h-6" />,
   },
 ];
 
@@ -89,7 +120,7 @@ Interactive lessons
 
 Performance tracking`,
     price: "₹ 25,000",
-    icon: FaRobot,
+    icon: <FaRobot className="w-6 h-6" />,
   },
   {
     title: "Quiz Bot Solutions",
@@ -103,7 +134,7 @@ Automated grading
 
 Result analytics`,
     price: "₹ 20,000",
-    icon: FaQuestionCircle,
+    icon: <FaQuestionCircle className="w-6 h-6" />,
   },
   {
     title: "Smart Grading Systems",
@@ -117,7 +148,7 @@ Multiple-choice grading
 
 Plagiarism detection`,
     price: "₹ 22,000",
-    icon: FaGraduationCap,
+    icon: <FaGraduationCap className="w-6 h-6" />,
   },
   {
     title: "Personalized Learning Paths",
@@ -131,7 +162,7 @@ Progress monitoring
 
 Content recommendations`,
     price: "₹ 28,000",
-    icon: FaBookOpen,
+    icon: <FaBookOpen className="w-6 h-6" />,
   },
   {
     title: "Content Recommendation Engines",
@@ -145,7 +176,7 @@ Recommendation algorithms
 
 Feedback loops`,
     price: "₹ 18,000",
-    icon: FaChartLine,
+    icon: <FaChartLine className="w-6 h-6" />,
   },
   {
     title: "Learning Analytics Dashboards",
@@ -159,7 +190,7 @@ KPI tracking
 
 User access control`,
     price: "₹ 20,000",
-    icon: FaCogs,
+    icon: <FaCogs className="w-6 h-6" />,
   },
   {
     title: "Integration Services",
@@ -173,7 +204,7 @@ System compatibility
 
 Testing & validation`,
     price: "₹ 15,000",
-    icon: FaShieldAlt,
+    icon: <FaShieldAlt className="w-6 h-6" />,
   },
   {
     title: "Training & Support",
@@ -187,7 +218,7 @@ Technical support
 
 Updates & upgrades`,
     price: "₹ 12,000",
-    icon: FaHandsHelping,
+    icon: <FaHandsHelping className="w-6 h-6" />,
   },
   {
     title: "Security & Compliance Audits",
@@ -201,7 +232,7 @@ Risk assessment
 
 Remediation`,
     price: "₹ 18,000",
-    icon: FaShieldAlt,
+    icon: <FaShieldAlt className="w-6 h-6" />,
   },
   {
     title: "Consultation & Strategy",
@@ -215,7 +246,7 @@ Roadmap development
 
 Implementation planning`,
     price: "₹ 15,000",
-    icon: FaLightbulb,
+    icon: <FaLightbulb className="w-6 h-6" />,
   },
 ];
 
@@ -409,8 +440,8 @@ const AIEducationServices = () => {
               }}
             />
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
-              {features.map(({ id, title, description, icon: Icon }) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative z-10">
+              {features.map(({ id, title, description, icon }) => (
                 <motion.div
                   key={id}
                   initial="hidden"
@@ -418,7 +449,8 @@ const AIEducationServices = () => {
                   whileHover={{
                     scale: 1.05,
                     rotate: 2,
-                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+                    boxShadow:
+                      "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                   }}
                   viewport={{ once: true, margin: "-100px" }}
                   variants={{
@@ -430,24 +462,24 @@ const AIEducationServices = () => {
                       transition: {
                         delay: id * 0.1,
                         duration: 0.6,
-                        ease: "backOut"
-                      }
-                    }
+                        ease: "backOut",
+                      },
+                    },
                   }}
-                  className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-blue-200 transition-all duration-300 cursor-pointer group"
+                  className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
                 >
                   <motion.div
                     className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
                     whileHover={{
                       scale: 1.1,
-                      rotate: 360
+                      rotate: 360,
                     }}
                     transition={{ duration: 0.4 }}
                   >
-                    <Icon className="w-6 h-6" />
+                    {icon}
                   </motion.div>
                   <motion.h3
-                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-blue-600 transition-colors duration-300"
+                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                   >
                     {title}
@@ -480,7 +512,7 @@ const AIEducationServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Services We <span className="text-red-600">offer?</span>
+              Services We <span className="text-blue-600">offer?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Our AI for Education Services
@@ -497,57 +529,75 @@ const AIEducationServices = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {aiEducationServices.map(({ title, desc, price, icon: Icon }, index) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {aiEducationServices.map(({ title, desc, price, icon }, index) => (
             <motion.div
               key={index}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
-              custom={index}
               whileHover={{
                 scale: 1.05,
-                y: -10,
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
+                rotate: 2,
+                boxShadow:
+                  "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
               }}
-              className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border border-gray-100 hover:border-blue-200 transition-all duration-300 group cursor-pointer"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={{
+                hidden: { opacity: 0, y: 60, scale: 0.8 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  scale: 1,
+                  transition: {
+                    delay: index * 0.1,
+                    duration: 0.6,
+                    ease: "easeOut",
+                  },
+                },
+              }}
+              custom={index}
+              className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
             >
               <motion.div
-                className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-6 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300 group-hover:scale-110 group-hover:rotate-6"
-                whileHover={{ rotate: 360 }}
-                transition={{ duration: 0.6 }}
+                className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 360,
+                }}
+                transition={{ duration: 0.4 }}
               >
-                <Icon className="w-6 h-6" />
+                {icon}
               </motion.div>
-
               <motion.h3
-                className="text-xl font-bold mb-4 text-gray-800 group-hover:text-blue-600 transition-colors duration-300"
+                className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
               >
                 {title}
               </motion.h3>
-
-              <motion.div
-                className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow"
+              <motion.p
+                className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-800 transition-colors duration-300 whitespace-pre-line mb-2"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
                 transition={{ delay: index * 0.1 + 0.3, duration: 0.5 }}
               >
-                <div className="whitespace-pre-line">{desc}</div>
-              </motion.div>
-
-              <motion.div
-                className="font-bold text-2xl text-green-600 bg-green-50 px-4 py-2 rounded-full border-2 border-green-200 group-hover:border-green-400 transition-all duration-300"
-                whileHover={{ scale: 1.1 }}
+                {desc}
+              </motion.p>
+              <div className="font-bold text-green-600 mb-4">{price}</div>
+              <a
+                href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                {price}
-              </motion.div>
-
-              {/* Animated bottom border */}
+                <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
+                  Book a Strategy Call
+                </button>
+              </a>
+              {/* Hover effect line */}
               <motion.div
-                className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-4 rounded-full group-hover:w-full transition-all duration-300"
-                whileHover={{ width: "100%" }}
+                className="w-0 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mt-3 rounded-full"
+                whileHover={{ width: "50%" }}
+                transition={{ duration: 0.3 }}
               />
             </motion.div>
           ))}
@@ -559,7 +609,7 @@ const AIEducationServices = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           <div className="md:w-1/2">
             <h2 className="text-3xl font-bold mb-12 text-center">
-              Technology We <span className="text-red-600">use?</span>
+              Technology We <span className="text-blue-600">use?</span>
             </h2>
             <h1 className="text-4xl font-bold mb-4">
               Leveraging AI Technologies for Education
