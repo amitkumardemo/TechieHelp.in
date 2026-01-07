@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { close, menu, logo } from "../assets";
 import { useLocation } from "react-router-dom";
 import styles from "../style";
@@ -12,6 +12,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
+  const [mobileTeamOpen, setMobileTeamOpen] = useState(false);
   const location = useLocation();
 
   const handleLogout = async () => {
@@ -150,25 +151,30 @@ const Navbar = () => {
                   >
                     {nav.subLinks ? (
                       <>
-                        <span className="flex items-center justify-between w-full">
+                        <span
+                          className="flex items-center justify-between w-full cursor-pointer"
+                          onClick={() => setMobileTeamOpen(!mobileTeamOpen)}
+                        >
                           {nav.title}
                           <svg
-                            className="ml-1 w-4 h-4 fill-current"
+                            className={`ml-1 w-4 h-4 fill-current transition-transform ${mobileTeamOpen ? 'rotate-180' : ''}`}
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                           >
                             <path d="M5.516 7.548l4.484 4.484 4.484-4.484L15.484 9l-5.484 5.484L4.516 9z" />
                           </svg>
                         </span>
-                        <ul className="mt-2 ml-4">
-                          {nav.subLinks.map((subLink) => (
-                            <li key={subLink.id} className="mb-2">
-                              <Link to={subLink.path} onClick={() => setToggle(false)}>
-                                {subLink.title}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                        {mobileTeamOpen && (
+                          <ul className="mt-2 ml-4">
+                            {nav.subLinks.map((subLink) => (
+                              <li key={subLink.id} className="mb-2">
+                                <Link to={subLink.path} onClick={() => { setToggle(false); setMobileTeamOpen(false); }}>
+                                  {subLink.title}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
                       </>
                     ) : (
                       <Link to={nav.path} onClick={() => setToggle(false)}>
@@ -208,5 +214,5 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
 
+export default Navbar;
