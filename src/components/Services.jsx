@@ -418,53 +418,67 @@ const Services = () => {
       </motion.div>
 
       {/* --------------------- Services Grid --------------------- */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-16 bg-black">
-        {servicesData.map(({ id, title, description, image, link }, i) => (
-          <motion.div
-            key={id}
-            custom={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={cardVariants}
-            className="bg-gradient-to-br from-[#0f172a] to-[#1e293b] rounded-2xl p-8 shadow-2xl hover:shadow-blue-500/30 hover:shadow-2xl transition-all duration-500 flex flex-col items-center text-center hover:scale-105 hover:-translate-y-2 border border-gray-700/50 hover:border-blue-500/50 backdrop-blur-sm"
-          >
-            <div className="relative mb-6">
-              <img
-                src={image}
-                alt={title}
-                className="w-24 h-24 object-cover rounded-2xl border-2 border-blue-500/30 shadow-lg"
-              />
-            </div>
-            <h3 className="text-xl font-bold text-white mb-4 leading-tight">
-              {title}
-            </h3>
-            <p className="text-gray-300 text-sm leading-relaxed mb-6 flex-grow">
-              {description}
-            </p>
-            <Link
-              to={link}
-              className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 group"
-              aria-label={`More details about ${title}`}
-            >
-              Learn More
-              <svg
-                className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
-            </Link>
-          </motion.div>
-        ))}
-      </section>
+      {/* --------------------- Services Grid --------------------- */}
+<section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-16 bg-black">
+  {servicesData.map(({ id, title, description, image, link }, i) => (
+    <motion.div
+      key={id}
+      custom={i}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={cardVariants}
+      whileHover={{ y: -6, transition: { duration: 0.3 } }}
+      className="
+        group relative
+        bg-white
+        text-gray-800
+        rounded-2xl
+        shadow-lg hover:shadow-xl
+        border border-gray-200 hover:border-blue-400
+        p-6
+        transition-all duration-300
+        flex flex-col
+        overflow-hidden
+      "
+    >
+      {/* Image */}
+      <div className="relative mb-4 overflow-hidden rounded-xl">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+      </div>
+
+      {/* Title */}
+      <h3 className="text-xl font-bold mb-3 text-gray-900">
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">
+        {description}
+      </p>
+
+      {/* Explore Button */}
+      <Link
+        to={link}
+        className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+      >
+        <span>Learn More</span>
+        <motion.span
+          className="text-lg"
+          whileHover={{ x: 3 }}
+          transition={{ duration: 0.2 }}
+        >
+          →
+        </motion.span>
+      </Link>
+    </motion.div>
+  ))}
+</section>
+
 
       {/* --------------------- Popular Services Section --------------------- */}
       <motion.section
