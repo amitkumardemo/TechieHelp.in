@@ -12,14 +12,25 @@ export const navLinks = [
     path: "/services"
   },
   {
-    id: "training-internships",
-    title: "Training + Internships",
-    path: "/careers/training-internships"
-  },
-  {
-    id: "jobs",
-    title: "Jobs",
-    path: "/careers/jobs"
+    id: "careers",
+    title: "Careers",
+    subLinks: [
+      {
+        id: "training-internships",
+        title: "Training + Internships",
+        path: "/careers/training-internships"
+      },
+      {
+        id: "jobs",
+        title: "Jobs",
+        path: "/careers/jobs"
+      },
+      {
+        id: "hackathon",
+        title: "Hackathon",
+        path: "/hackathon"
+      }
+    ]
   },
   {
     id: "team",
@@ -41,11 +52,6 @@ export const navLinks = [
     id: "aboutus",
     title: "About Us",
     path: "/about-us"
-  },
-  {
-    id: "hackathon",
-    title: "Hackathon",
-    path: "/hackathon"
   },
   {
     id: "contact",

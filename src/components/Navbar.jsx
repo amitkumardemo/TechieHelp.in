@@ -12,7 +12,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [timeoutId, setTimeoutId] = useState(null);
-  const [mobileTeamOpen, setMobileTeamOpen] = useState(false);
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
   const location = useLocation();
 
   const handleLogout = async () => {
@@ -100,14 +100,13 @@ const Navbar = () => {
             <>
           <li className="mr-10 relative group ml-6">
             <img
-              src={user.photoURL || "/default-profile.png"}
+              src={user.photoURL || "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMjAiIGN5PSIyMCIgcj0iMjAiIGZpbGw9IiM2MzY2RjEiLz4KPHBhdGggZD0iTTIwIDIwQzIyLjc2MTQgMjAgMjUgMTcuNzYxNCAyNSAxNUMyNSAxMi4yMzg2IDIyLjc2MTQgMTAgMjAgMTBDMTcuMjM4NiAxMCAxNSAxMi4yMzg2IDE1IDE1QzE1IDE3Ljc2MTQgMTcuNzYxNCAyMCAyMFoiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo="}
               alt="profile"
               className="w-10 h-10 rounded-full cursor-pointer object-cover"
-              onClick={() => setToggle(false)}
+              onClick={() => { setToggle(false); window.location.href = "/profile"; }}
               onKeyDown={() => setToggle(false)}
               role="button"
               tabIndex={0}
-              onClickCapture={() => window.location.href = "/profile"}
             />
             <ul className="absolute right-0 mt-2 w-32 bg-black rounded-md shadow-lg py-2 opacity-0 group-hover:opacity-100 transition-opacity text-white z-50">
               <li
@@ -153,22 +152,22 @@ const Navbar = () => {
                       <>
                         <span
                           className="flex items-center justify-between w-full cursor-pointer"
-                          onClick={() => setMobileTeamOpen(!mobileTeamOpen)}
+                          onClick={() => setMobileDropdownOpen(mobileDropdownOpen === nav.id ? null : nav.id)}
                         >
                           {nav.title}
                           <svg
-                            className={`ml-1 w-4 h-4 fill-current transition-transform ${mobileTeamOpen ? 'rotate-180' : ''}`}
+                            className={`ml-1 w-4 h-4 fill-current transition-transform ${mobileDropdownOpen === nav.id ? 'rotate-180' : ''}`}
                             xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 20 20"
                           >
                             <path d="M5.516 7.548l4.484 4.484 4.484-4.484L15.484 9l-5.484 5.484L4.516 9z" />
                           </svg>
                         </span>
-                        {mobileTeamOpen && (
+                        {mobileDropdownOpen === nav.id && (
                           <ul className="mt-2 ml-4">
                             {nav.subLinks.map((subLink) => (
                               <li key={subLink.id} className="mb-2">
-                                <Link to={subLink.path} onClick={() => { setToggle(false); setMobileTeamOpen(false); }}>
+                                <Link to={subLink.path} onClick={() => { setToggle(false); setMobileDropdownOpen(null); }}>
                                   {subLink.title}
                                 </Link>
                               </li>
