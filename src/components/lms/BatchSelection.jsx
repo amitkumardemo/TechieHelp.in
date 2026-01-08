@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import { db } from '../../firebase';
@@ -10,6 +10,15 @@ const BatchSelection = () => {
   const navigate = useNavigate();
   const [selectedBatch, setSelectedBatch] = useState('');
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (userProfile && userProfile.role === 'student') {
+      const timer = setTimeout(() => {
+        navigate('/lms/student/dashboard', { replace: true });
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+  }, [userProfile, navigate]);
 
   const batches = [
     {

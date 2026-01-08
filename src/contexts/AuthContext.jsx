@@ -73,10 +73,9 @@ export const AuthProvider = ({ children }) => {
       if (currentUser) {
         let profile = await getUserProfile(currentUser.uid);
         console.log('Profile from DB:', profile);
+        const isAdmin = currentUser.email === "support@techiehelp.in";
+        console.log('Is admin email?', isAdmin);
         if (!profile) {
-          // Check if this is the admin email
-          const isAdmin = currentUser.email === "support@techiehelp.in";
-          console.log('Is admin email?', isAdmin);
           // Create profile for new users (admin or student)
           profile = {
             role: isAdmin ? 'admin' : 'student',
@@ -85,6 +84,15 @@ export const AuthProvider = ({ children }) => {
           };
           console.log('Creating new profile:', profile);
           await setDoc(doc(db, "profiles", currentUser.uid), profile);
+        } else {
+          // Update role if email matches admin email
+          if (isAdmin && profile.role !== 'admin') {
+            profile.role = 'admin';
+            await updateDoc(doc(db, "profiles", currentUser.uid), { role: 'admin' });
+          } else if (!isAdmin && profile.role === 'admin') {
+            profile.role = 'student';
+            await updateDoc(doc(db, "profiles", currentUser.uid), { role: 'student' });
+          }
         }
         console.log('Setting user profile:', profile);
         setUserProfile(profile);
