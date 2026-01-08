@@ -180,16 +180,8 @@ const App = () => {
 
         <Routes>
           {/* LMS Routes */}
-          <Route path="/lms" element={user && userProfile ? (
-            userProfile.role === 'admin' ? <Navigate to="/lms/admin/dashboard" replace /> :
-            userProfile.batchId ? <Navigate to="/lms/student/dashboard" replace /> :
-            <Navigate to="/lms/batch-selection" replace />
-          ) : <LMSLogin />} />
-          <Route path="/lms/login" element={user && userProfile ? (
-            userProfile.role === 'admin' ? <Navigate to="/lms/admin/dashboard" replace /> :
-            userProfile.batchId ? <Navigate to="/lms/student/dashboard" replace /> :
-            <Navigate to="/lms/batch-selection" replace />
-          ) : <LMSLogin />} />
+          <Route path="/lms" element={<LMSLogin />} />
+          <Route path="/lms/login" element={<LMSLogin />} />
           <Route path="/lms/batch-selection" element={
             <ProtectedRoute>
               <BatchSelection />

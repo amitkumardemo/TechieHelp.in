@@ -10,7 +10,7 @@ const LMSLayout = ({ children }) => {
   const handleLogout = async () => {
     try {
       await logout();
-      navigate('/lms/login');
+      navigate('/');
     } catch (error) {
       console.error('Error logging out:', error);
     }

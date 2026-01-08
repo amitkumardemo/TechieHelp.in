@@ -23,23 +23,19 @@ const LMSLogin = () => {
       console.log('LMSLogin - User Role:', userProfile.role);
       console.log('LMSLogin - User Email:', user.email);
       
-      // Add a small delay to ensure profile is fully loaded
+      // Add a delay to ensure profile is fully loaded
       const timer = setTimeout(() => {
         if (userProfile.role === 'admin') {
           console.log('LMSLogin - Redirecting admin to admin dashboard');
           navigate('/lms/admin/dashboard', { replace: true });
         } else if (userProfile.role === 'student') {
           console.log('LMSLogin - Redirecting student to student dashboard');
-          if (userProfile.batchId) {
-            navigate('/lms/student/dashboard', { replace: true });
-          } else {
-            navigate('/lms/batch-selection', { replace: true });
-          }
+          navigate('/lms/student/dashboard', { replace: true });
         } else {
-          console.log('LMSLogin - Unknown role, redirecting to student batch selection');
-          navigate('/lms/batch-selection', { replace: true });
+          console.log('LMSLogin - Unknown role, redirecting to student dashboard');
+          navigate('/lms/student/dashboard', { replace: true });
         }
-      }, 100);
+      }, 1000);
 
       return () => clearTimeout(timer);
     } else {
@@ -67,8 +63,8 @@ const LMSLogin = () => {
   const getPlaceholderCredentials = () => {
     if (activeTab === 'admin') {
       return {
-        email: "support@techiehelp.in",
-        password: "amitkumar12@"
+        email: "Enter your email",
+        password: "Enter your password"
       };
     }
     return {
@@ -155,7 +151,7 @@ const LMSLogin = () => {
                   onChange={handleChange}
                   required
                   className="w-full pl-10 pr-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  placeholder={activeTab === 'admin' ? "support@techiehelp.in" : "Enter your email"}
+                  placeholder={getPlaceholderCredentials().email || "Enter your email"}
                 />
               </div>
             </div>
@@ -174,7 +170,7 @@ const LMSLogin = () => {
                   onChange={handleChange}
                   required
                   className="w-full pl-10 pr-10 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent dark:bg-gray-700 dark:text-white"
-                  placeholder={activeTab === 'admin' ? "amitkumar12@" : "Enter your password"}
+                  placeholder={getPlaceholderCredentials().password || "Enter your password"}
                 />
                 <button
                   type="button"
