@@ -58,6 +58,12 @@ const Profile = () => {
           projects: Array.isArray(data.projects) ? data.projects : [{ name: "", link: "" }],
           experience: Array.isArray(data.experience) ? data.experience : [""],
           location: data.location || "",
+          socialLinks: data.socialLinks || {
+            linkedin: "",
+            github: "",
+            twitter: "",
+            facebook: "",
+          },
         });
       } else {
         // Create new profile with studentId
