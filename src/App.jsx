@@ -376,7 +376,7 @@ const App = () => {
           href="https://wa.me/917073130165?text=Hello%20TechieHelp%20Team,%20I%20would%20like%20to%20connect%20regarding%20your%20services%20and%20opportunities.%20Please%20guide%20me%20further."
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-colors duration-200"
+          className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-colors duration-200 animate-pulse"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
