@@ -109,12 +109,25 @@ if (typeof window !== "undefined") {
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [buttonBg, setButtonBg] = useState('bg-primary/90');
+  const [showScrollButton, setShowScrollButton] = useState(false);
   const { user, userProfile } = useAuth();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
+
+    // Scroll event listener for scroll to top button visibility
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
 
     // Only animate if elements exist (on home page)
     if (document.querySelector(".navbar")) {
@@ -163,7 +176,10 @@ const App = () => {
       });
     });
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   if (loading) {
@@ -372,19 +388,27 @@ const App = () => {
         <Footer />
 
         {/* Scroll to Top Button */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-24 right-6 z-50 bg-blue-500 hover:bg-blue-600 text-white p-3 rounded-full shadow-lg transition-colors duration-200"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="currentColor"
-            className="w-6 h-6"
+        {showScrollButton && (
+          <button
+            onMouseDown={() => setButtonBg('bg-blue-600')}
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setTimeout(() => setButtonBg('bg-primary/90'), 150);
+            }}
+            onTouchStart={() => setButtonBg('bg-blue-600')}
+            onTouchEnd={() => setTimeout(() => setButtonBg('bg-primary/90'), 150)}
+            className={`fixed bottom-24 right-6 z-50 ${buttonBg} text-white p-3 rounded-full shadow-lg transition-all duration-300`}
           >
-            <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/>
-          </svg>
-        </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6"
+            >
+              <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/>
+            </svg>
+          </button>
+        )}
 
         {/* WhatsApp Icon */}
         <a
