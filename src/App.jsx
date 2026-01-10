@@ -9,7 +9,7 @@ import Testimonials from "./components/Testimonials";
 import AboutUs from "./components/AboutUs";
 import Contact from "./components/Contact";
 import Contacts from "./components/contacts";
-import Internship from "./components/Internship"; // Correcting casing for import
+import Internship from "./components/Internship"; 
 import SpecialBatch from "./components/SpecialBatch";
 import Webdevelopment from "./components/Webdevelopment";
 import Androiddevelopment from "./components/Androiddevelopment";
@@ -64,12 +64,12 @@ import TanuSingh from "./components/students/TanuSingh";
 import RohitSharma from "./components/students/RohitSharma";
 import RohanT from "./components/students/RohanT";
 import TejaBhuvaneswariDevi from "./components/students/TejaBhuvaneswariDevi";
-import GangadharSharma from "./components/students/GangadharSharma"; // Importing GangadharSharma
+import GangadharSharma from "./components/students/GangadharSharma"; 
 import HackathonLandingPage from "./components/hackahton";
 import PlacementBoosterLanding from "./components/placement";
 
 import { useState, useEffect } from "react";
-import KaviyaranP from "./components/students/KaviyaranP"; // Importing KaviyaranP
+import KaviyaranP from "./components/students/KaviyaranP"; 
 import AnkitKumarKeshari from "./components/students/AnkitKumarKeshari";
 import KhiasuthongT from "./components/students/KhiasuthongT";
 import SenchumbeniCErui from "./components/students/SenchumbeniCErui";
@@ -109,12 +109,25 @@ if (typeof window !== "undefined") {
 
 const App = () => {
   const [loading, setLoading] = useState(true);
+  const [buttonBg, setButtonBg] = useState('bg-primary/90');
+  const [showScrollButton, setShowScrollButton] = useState(false);
   const { user, userProfile } = useAuth();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000);
+
+    // Scroll event listener for scroll to top button visibility
+    const handleScroll = () => {
+      if (window.scrollY > window.innerHeight) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
 
     // Only animate if elements exist (on home page)
     if (document.querySelector(".navbar")) {
@@ -163,7 +176,10 @@ const App = () => {
       });
     });
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   if (loading) {
@@ -326,8 +342,8 @@ const App = () => {
           <Route path="/intern/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
           <Route path="/students/kaviyaran-p" element={<KaviyaranP />} />
           <Route path="/intern/kaviyaran-p" element={<KaviyaranP />} />
-          <Route path="/students/ganga-dhar-sharma" element={<GangadharSharma />} /> // Ensure this points to the correct component
-          <Route path="/intern/ganga-dhar-sharma" element={<GangadharSharma />} /> // Ensure this points to the correct component
+          <Route path="/students/ganga-dhar-sharma" element={<GangadharSharma />} /> 
+          <Route path="/intern/ganga-dhar-sharma" element={<GangadharSharma />} /> 
           <Route path="/students/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
           <Route path="/intern/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
           <Route path="/students/khiasuthong-t" element={<KhiasuthongT />} />
@@ -370,6 +386,29 @@ const App = () => {
           <Route path="/interns/:internId" element={<InternProfile />} />
       </Routes>
         <Footer />
+
+        {/* Scroll to Top Button */}
+        {showScrollButton && (
+          <button
+            onMouseDown={() => setButtonBg('bg-blue-600')}
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setTimeout(() => setButtonBg('bg-primary/90'), 150);
+            }}
+            onTouchStart={() => setButtonBg('bg-blue-600')}
+            onTouchEnd={() => setTimeout(() => setButtonBg('bg-primary/90'), 150)}
+            className={`fixed bottom-24 right-6 z-50 ${buttonBg} text-white p-3 rounded-full shadow-lg transition-all duration-300 animate-bounce`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-6 h-6"
+            >
+              <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/>
+            </svg>
+          </button>
+        )}
 
         {/* WhatsApp Icon */}
         <a

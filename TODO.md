@@ -1,1 +1,1 @@
-- [x] Add "animate-pulse" class to WhatsApp icon in App.jsx for blinking effect on all pages
+- [x] Add scroll to top button with icon in bottom right for all pages
