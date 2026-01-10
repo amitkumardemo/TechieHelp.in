@@ -397,7 +397,7 @@ const App = () => {
             }}
             onTouchStart={() => setButtonBg('bg-blue-600')}
             onTouchEnd={() => setTimeout(() => setButtonBg('bg-primary/90'), 150)}
-            className={`fixed bottom-24 right-6 z-50 ${buttonBg} text-white p-3 rounded-full shadow-lg transition-all duration-300`}
+            className={`fixed bottom-24 right-6 z-50 ${buttonBg} text-white p-3 rounded-full shadow-lg transition-all duration-300 animate-bounce`}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
