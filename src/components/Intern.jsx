@@ -30,6 +30,7 @@ import {
   bendangakumHoki,
   puloviKChishi,
   kengimheingNampeung,
+  ashok,
 } from '../assets/index.js';
 
 const studentData = [
@@ -579,6 +580,27 @@ const studentData = [
     idCardStyle: "blue-gradient",
     cardColor: "from-blue-600 to-blue-800",
     profilePath: "/intern/kengimheing-nampeung",
+    isNew: true
+  },
+  {
+    timestamp: "12/17/2025 00:00:00",
+    fullName: "Ashok",
+    email: "ashokbishnoi0408@gmail.com",
+    collegeName: "Jodhpur Institute of Engineering & Technology",
+    techieHelpStudentID: "TECHIE117045",
+    linkedInProfile: "https://www.linkedin.com/in/ashok-bishnoi-b19389257/",
+    githubProfile: "https://github.com/Ashokmaal0051",
+    address: "Jodhpur, Rajasthan",
+    phoneNumber: "7877865977",
+    internshipDomain: "Frontend Developer",
+    currentYearBatch: "2nd Year",
+    passingYear: "2026",
+    skills: "HTML, CSS, JavaScript, Bootstrap",
+    personalQuote: "Passionate about technology and innovation.",
+    profileImage: ashok,
+    idCardStyle: "blue-gradient",
+    cardColor: "from-blue-600 to-blue-800",
+    profilePath: "/intern/ashok",
     isNew: true
   }
 
@@ -1138,9 +1160,9 @@ const Intern = () => {
                       NEW
                     </div>
                   )}
-                  {/* Winter Internship Batch 2025 Tag */}
+                  {/* JIET MCA Intern Tag */}
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
-                    Winter Internship Batch 2025
+                    JIET MCA Intern
                   </div>
                   <div className="relative">
                     <img

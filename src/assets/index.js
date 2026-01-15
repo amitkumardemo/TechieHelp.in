@@ -172,6 +172,7 @@ import kengimheingNampeung from "./kengimheing Nampeung.jpg";
 
 import winner from "./winner.png";
 import AmitPhoto from "./AmitPhoto.jpg";
+import ashok from "./Ashok.jpeg";
 
 export {
   internship as airbnb,
@@ -323,5 +324,6 @@ export {
   bendangakumHoki,
   puloviKChishi,
   kengimheingNampeung,
+  ashok,
   AmitPhoto
 };
