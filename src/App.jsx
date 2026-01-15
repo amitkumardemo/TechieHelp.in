@@ -86,6 +86,7 @@ import BendangakumHoki from "./components/students/BendangakumHoki";
 import PuloviKChishi from "./components/students/PuloviKChishi";
 import KengimheingNampeung from "./components/students/KengimheingNampeung";
 import Ashok from "./components/students/Ashok";
+import KameshwarPatel from "./components/students/KameshwarPatel";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
@@ -377,6 +378,8 @@ const App = () => {
           <Route path="/intern/kengimheing-nampeung" element={<KengimheingNampeung />} />
           <Route path="/students/ashok" element={<Ashok />} />
           <Route path="/intern/ashok" element={<Ashok />} />
+          <Route path="/students/kameshwar-patel" element={<KameshwarPatel />} />
+          <Route path="/intern/kameshwar-patel" element={<KameshwarPatel />} />
 
         {/* Authentication Routes */}
 

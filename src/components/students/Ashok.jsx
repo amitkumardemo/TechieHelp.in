@@ -14,7 +14,7 @@ const Ashok = () => {
     address: "Jodhpur, Rajasthan",
     phoneNumber: "7877865977",
     internshipDomain: "Frontend Developer",
-    currentYearBatch: "2nd Year",
+    currentYearBatch: "MCA 2nd Year",
     passingYear: "2026",
     skills: "HTML, CSS, JavaScript, Bootstrap",
     personalQuote: "Passionate about technology and innovation.",

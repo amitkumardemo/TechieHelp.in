@@ -31,6 +31,7 @@ import {
   puloviKChishi,
   kengimheingNampeung,
   ashok,
+  kameshwarPatel,
 } from '../assets/index.js';
 
 const studentData = [
@@ -593,7 +594,7 @@ const studentData = [
     address: "Jodhpur, Rajasthan",
     phoneNumber: "7877865977",
     internshipDomain: "Frontend Developer",
-    currentYearBatch: "2nd Year",
+    currentYearBatch: "MCA 2nd Year",
     passingYear: "2026",
     skills: "HTML, CSS, JavaScript, Bootstrap",
     personalQuote: "Passionate about technology and innovation.",
@@ -601,6 +602,27 @@ const studentData = [
     idCardStyle: "blue-gradient",
     cardColor: "from-blue-600 to-blue-800",
     profilePath: "/intern/ashok",
+    isNew: true
+  },
+  {
+    timestamp: "12/17/2025 00:00:00",
+    fullName: "Kameshwar Patel",
+    email: "patelkameshwar01@gmail.com",
+    collegeName: "Jodhpur Institute of Engineering & Technology",
+    techieHelpStudentID: "TECHIE161085",
+    linkedInProfile: "https://www.linkedin.com/in/patelkameshwar",
+    githubProfile: "https://github.com/patelkameshwar",
+    address: "Jodhpur, Rajasthan",
+    phoneNumber: "8877396336",
+    internshipDomain: "Frontend Developer",
+    currentYearBatch: "MCA 2nd Year",
+    passingYear: "2026",
+    skills: "HTML5, CSS3, JavaScript, React, Node.JS, Express.JS, Tailwind CSS, MySQL, Vite, Git & GitHub, MongoDB, Postman, Vercel, Render, Canva, MS Office",
+    personalQuote: "I live at the intersection of logic and design. As a Fullstack Developer, I don't just build websites; I craft digital experiences that work beautifully under the hood and look stunning on the surface. Whether I'm optimizing a SQL query or fine-tuning a CSS transition, I'm driven by a curiosity to understand how things work and a desire to make them better.",
+    profileImage: kameshwarPatel,
+    idCardStyle: "blue-gradient",
+    cardColor: "from-blue-600 to-blue-800",
+    profilePath: "/intern/kameshwar-patel",
     isNew: true
   }
 
