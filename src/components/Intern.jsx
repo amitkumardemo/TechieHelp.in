@@ -347,7 +347,7 @@ const studentData = [
     githubProfile: "https://github.com/kajol-sunar",
     address: "Kohima, Nagaland",
     phoneNumber: "9876543211",
-    internshipDomain: "Frontend Developer",
+    internshipDomain: "App Development",
     currentYearBatch: "3rd year (2023-2027)",
     passingYear: "2027",
     skills: "HTML, CSS, JavaScript, React, Tailwind CSS, Figma",
@@ -631,7 +631,7 @@ const studentData = [
 
 const Intern = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [viewMode, setViewMode] = React.useState('cards'); // 'cards' or 'id-cards'
+  const [viewMode, setViewMode] = React.useState('cards'); 
 
   const filteredStudents = React.useMemo(() => {
     return studentData.filter(student =>
@@ -659,7 +659,6 @@ const Intern = () => {
         />
       </div>
       
-      {/* Content Overlay - Higher z-index */}
       <div className="relative z-10 min-h-screen pt-32">
         <div className="container mx-auto px-4 py-12">
 
@@ -670,7 +669,6 @@ const Intern = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
           >
-            {/* Floating Background Elements */}
             <motion.div
               className="absolute inset-0 pointer-events-none"
               initial={{ opacity: 0 }}
@@ -699,7 +697,6 @@ const Intern = () => {
               ))}
             </motion.div>
 
-            {/* Main Title with Typing Effect */}
             <motion.div
               className="mb-8"
               initial={{ opacity: 0, y: 30 }}
@@ -715,7 +712,6 @@ const Intern = () => {
                 Our Internship & Training Program
               </motion.h2>
 
-              {/* Animated Underline */}
               <motion.div
                 className="w-32 h-1 bg-gradient-to-r from-cyan-400 to-purple-600 mx-auto rounded-full"
                 initial={{ width: 0 }}
@@ -724,7 +720,6 @@ const Intern = () => {
               />
             </motion.div>
 
-            {/* Description with Word-by-Word Animation */}
             <motion.div
               className="max-w-4xl mx-auto mb-12"
               initial={{ opacity: 0 }}
@@ -780,14 +775,13 @@ const Intern = () => {
               />
             </motion.div>
 
-            {/* Enhanced Sliding Images Section with Unique Animations */}
             <motion.div
               className="mt-16 relative"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
             >
-              {/* Background Wave Animation */}
+              
               <motion.div
                 className="absolute inset-0 pointer-events-none"
                 initial={{ opacity: 0 }}
@@ -808,7 +802,6 @@ const Intern = () => {
                 />
               </motion.div>
 
-              {/* Floating Particles */}
               <motion.div className="absolute inset-0 pointer-events-none">
                 {[...Array(8)].map((_, i) => (
                   <motion.div
@@ -834,7 +827,6 @@ const Intern = () => {
               </motion.div>
 
               <div className="flex justify-center items-center gap-12 overflow-hidden relative">
-                {/* Left sliding images with enhanced animations */}
                 <motion.div
                   className="flex gap-6"
                   initial={{ x: -300, opacity: 0 }}
@@ -860,7 +852,6 @@ const Intern = () => {
                       }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      {/* Glow Effect */}
                       <motion.div
                         className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-cyan-400 opacity-0 group-hover:opacity-30 blur-xl"
                         animate={{
@@ -895,7 +886,6 @@ const Intern = () => {
                         }}
                       />
 
-                      {/* Status Indicator with Pulse */}
                       <motion.div
                         className="absolute -top-2 -right-2 w-5 h-5 bg-green-400 rounded-full border-3 border-white z-20"
                         animate={{
@@ -922,7 +912,6 @@ const Intern = () => {
                         />
                       </motion.div>
 
-                      {/* Floating Name Tag */}
                       <motion.div
                         className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         initial={{ y: 10 }}
@@ -936,14 +925,12 @@ const Intern = () => {
                   ))}
                 </motion.div>
 
-                {/* Center animated element with enhanced effects */}
                 <motion.div
                   className="flex flex-col items-center relative"
                   initial={{ scale: 0, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 1, delay: 1.8, type: "spring", stiffness: 150 }}
                 >
-                  {/* Rotating Ring */}
                   <motion.div
                     className="absolute inset-0 rounded-full border-4 border-gradient-to-r from-blue-500 to-purple-500"
                     animate={{ rotate: 360 }}
@@ -956,7 +943,6 @@ const Intern = () => {
                     }}
                   />
 
-                  {/* Pulsing Center Circle */}
                   <motion.div
                     className="w-24 h-24 bg-gradient-to-r from-blue-500 via-purple-500 to-cyan-500 rounded-full flex items-center justify-center shadow-2xl relative z-10"
                     animate={{
@@ -1016,7 +1002,6 @@ const Intern = () => {
                   </motion.p>
                 </motion.div>
 
-                {/* Right sliding images with enhanced animations */}
                 <motion.div
                   className="flex gap-6"
                   initial={{ x: 300, opacity: 0 }}
@@ -1042,7 +1027,6 @@ const Intern = () => {
                       }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      {/* Glow Effect */}
                       <motion.div
                         className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-0 group-hover:opacity-30 blur-xl"
                         animate={{
@@ -1077,7 +1061,6 @@ const Intern = () => {
                         }}
                       />
 
-                      {/* Status Indicator with Pulse */}
                       <motion.div
                         className="absolute -top-2 -right-2 w-5 h-5 bg-green-400 rounded-full border-3 border-white z-20"
                         animate={{
@@ -1119,7 +1102,6 @@ const Intern = () => {
                 </motion.div>
               </div>
 
-              {/* Continuous Carousel Effect */}
               <motion.div
                 className="mt-8 text-center"
                 initial={{ opacity: 0 }}
@@ -1178,14 +1160,22 @@ const Intern = () => {
                 <div className="mb-4 flex flex-col items-center rounded-lg p-6 border border-blue-700 bg-gradient-to-r from-purple-700 via-blue-700 to-black shadow-lg relative">
                   {/* NEW Tag for new students */}
                   {student.isNew && (
-                    <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-xs px-3 py-1 rounded-full font-bold shadow-lg">
+                    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-xs px-3 py-1 rounded-full font-bold shadow-lg">
                       NEW
                     </div>
                   )}
-                  {/* JIET MCA Intern Tag */}
-                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
-                    JIET MCA Intern
-                  </div>
+
+                  {!(student.fullName === "Ashok" || student.fullName === "Kameshwar Patel") && (
+                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg text-center">
+                      Winter Internship Batch 2025
+                    </div>
+                  )}
+
+                  {(student.fullName === "Ashok" || student.fullName === "Kameshwar Patel") && (
+                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
+                      JIET MCA Intern
+                    </div>
+                  )}
                   <div className="relative">
                     <img
                       src={student.profileImage}
