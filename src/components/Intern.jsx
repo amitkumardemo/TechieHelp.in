@@ -1160,7 +1160,7 @@ const Intern = () => {
                 <div className="mb-4 flex flex-col items-center rounded-lg p-6 border border-blue-700 bg-gradient-to-r from-purple-700 via-blue-700 to-black shadow-lg relative">
                   {/* NEW Tag for new students */}
                   {student.isNew && (
-                    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-xs px-3 py-1 rounded-full font-bold shadow-lg">
+                    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-xs px-3 py-1 rounded-full font-bold shadow-lg z-20">
                       NEW
                     </div>
                   )}
