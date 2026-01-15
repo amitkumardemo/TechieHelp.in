@@ -1,1 +1,2 @@
-- [x] Add scroll to top button with icon in bottom right for all pages
+- [x] Remove the import for YashasviPhoto from AboutUs.jsx
+- [x] Remove the entire div block for Yashasvi Bhati from the founders section in AboutUs.jsx

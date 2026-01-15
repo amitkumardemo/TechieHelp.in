@@ -13,7 +13,6 @@ import {
 } from "lucide-react";
 
 import AmitPhoto from "../assets/AmitPhoto.jpg";
-import YashasviPhoto from "../assets/yashasvi photos.jpg";
 
 // Images (reuse your assets)
 import AboutImage from "../assets/About us.webp";
@@ -257,20 +256,7 @@ const AboutUs = () => {
         {/* Founders */}
         <section className="mb-20">
           <h2 className="text-3xl font-semibold mb-10 text-center">Meet the Founders</h2>
-          <div className="flex flex-col md:flex-row justify-center items-center gap-12 max-w-6xl mx-auto">
-            <div className="bg-gray-800 rounded-xl p-8 shadow-lg w-full md:w-1/2 flex flex-col items-center text-center">
-              <img
-                src={YashasviPhoto}
-                alt="Yashasvi Bhati"
-                className="w-40 h-40 rounded-full mb-6 object-cover"
-              />
-              <h3 className="text-2xl font-bold mb-1">Yashasvi Bhati</h3>
-              <p className="text-blue-300 italic mb-4">Co-Founder & CTO</p>
-              <p className="text-gray-300">
-                “Every AI system we deploy is engineered for security, reliability, and user impact—no buzzwords, just outcomes.”
-              </p>
-            </div>
-
+          <div className="flex justify-center items-center max-w-6xl mx-auto">
             <div className="bg-gray-800 rounded-xl p-8 shadow-lg w-full md:w-1/2 flex flex-col items-center text-center">
               <img
                 src={AmitPhoto}
