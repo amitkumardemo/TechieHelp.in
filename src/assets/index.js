@@ -327,5 +327,5 @@ export {
   kengimheingNampeung,
   ashok,
   kameshwarPatel,
-  AmitPhoto
+  AmitPhoto,
 };

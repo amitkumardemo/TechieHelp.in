@@ -1,24 +1,31 @@
 import React, { useState, useMemo } from 'react';
 import DotGrid from './DotGrid';
 import { motion } from 'framer-motion';
-import { AmitPhoto } from '../assets/index.js';
+import { AmitPhoto, kameshwarPatel } from '../assets/index.js';
 
 export const employeeData = [
   {
-    id: 2,
+    id: 1,
     fullName: "Amit Kumar",
     role: "Founder & CEO",
-    email: "amit@techiehelp.in",
-    phoneNumber: "+91-7673825079",
-    skills: "Leadership, Business Strategy, Technology Innovation",
-    personalQuote: "Building the future of tech education and innovation",
     profileImage: AmitPhoto,
     linkedInProfile: "https://www.linkedin.com/in/amit-kumar-686196225/",
     githubProfile: "https://github.com/amitkumardemo",
-    address: "Jodhpur, Rajasthan",
     experience: "2+ years in tech industry",
     profilePath: "/employee/amit-kumar"
-  }
+  },
+  {
+    id: 2,
+    fullName: "Kameshwar Patel",
+    role: "Frontend Developer",
+    profileImage: kameshwarPatel,
+    linkedInProfile: "https://www.linkedin.com/in/patelkameshwar",
+    githubProfile: "https://github.com/patelkameshwar",
+    experience: "Fresher",
+    profilePath: "/employee/kameshwar-patel"
+  },
+
+
 ];
 
 const Employee = () => {
@@ -219,7 +226,6 @@ const Employee = () => {
                   <p className="text-gray-300">{`Employee ID: ${employee.id}`}</p>
                   <p className="text-gray-300">{`Role: ${employee.role}`}</p>
                   <p className="text-gray-300">{`Experience: ${employee.experience}`}</p>
-                  <p className="text-gray-300">{`Skills: ${employee.skills}`}</p>
                 </div>
                 <div className="flex justify-center gap-4 mt-4">
                   <a
