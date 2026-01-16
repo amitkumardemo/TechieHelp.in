@@ -55,6 +55,7 @@ import InternProfile from "./components/InternProfile";
 import EmployeeProfile from "./components/EmployeeProfile";
 import AmitKumar from "./components/employees/AmitKumar";
 import AdityaKumarComponent from "./components/employees/AdityaKumar";
+import KameshwarPatelComponent from "./components/employees/KameshwarPatel";
 import SasvanthuG from "./components/students/SasvanthuG";
 import RitikaKasat from "./components/students/RitikaKasat";
 import AbhayRajSingh from "./components/students/AbhayRajSingh";
@@ -287,6 +288,7 @@ const App = () => {
           <Route path="/employees/:employeeId" element={<EmployeeProfile />} />
           <Route path="/employee/amit-kumar" element={<AmitKumar />} />
           <Route path="/employee/aditya-kumar" element={<AdityaKumarComponent />} />
+          <Route path="/employee/kameshwar-patel" element={<KameshwarPatelComponent />} />
           <Route path="/webdevelopment" element={<Webdevelopment />} />
           <Route path="/androiddevelopment" element={<Androiddevelopment />} />
           <Route path="/uiux" element={<UIUX />} />

@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import DotGrid from './DotGrid';
 import { motion } from 'framer-motion';
-import { AmitPhoto, AdityaKumar } from '../assets/index.js';
+import { AmitPhoto, AdityaKumar, kameshwarPatel } from '../assets/index.js';
 
 export const employeeData = [
   {
@@ -22,7 +22,7 @@ export const employeeData = [
   {
     id: 3,
     fullName: "Aditya Kumar",
-    role: "Placeholder Role",
+    role: "Content & Media Specialist",
     email: "aditya@techiehelp.in",
     phoneNumber: "+91-XXXXXXXXXX",
     skills: "Placeholder Skills",
@@ -31,8 +31,23 @@ export const employeeData = [
     linkedInProfile: "https://www.linkedin.com/in/aditya-kumar-placeholder/",
     githubProfile: "https://github.com/aditya-kumar-placeholder",
     address: "Placeholder Address",
-    experience: "Placeholder Experience",
+    experience: "Fresher",
     profilePath: "/employee/aditya-kumar"
+  },
+  {
+    id: 4,
+    fullName: "Kameshwar Patel",
+    role: "Frontend Developer",
+    email: "patelkameshwar01@gmail.com",
+    phoneNumber: "+91-8877396336",
+    skills: "HTML5, CSS3, JavaScript, React, Node.JS, Express.JS, Tailwind CSS, MySQL, Vite, Git & GitHub, MongoDB, Postman, Vercel, Render, Canva, MS Office",
+    personalQuote: "From UI to APIs — and everything in between.",
+    profileImage: kameshwarPatel,
+    linkedInProfile: "https://www.linkedin.com/in/patelkameshwar",
+    githubProfile: "https://github.com/patelkameshwar",
+    address: "Jodhpur, Rajasthan",
+    experience: "Fresher",
+    profilePath: "/employee/kameshwar-patel"
   }
 ];
 
@@ -234,7 +249,6 @@ const Employee = () => {
                   <p className="text-gray-300">{`Employee ID: ${employee.id}`}</p>
                   <p className="text-gray-300">{`Role: ${employee.role}`}</p>
                   <p className="text-gray-300">{`Experience: ${employee.experience}`}</p>
-                  <p className="text-gray-300">{`Skills: ${employee.skills}`}</p>
                 </div>
                 <div className="flex justify-center gap-4 mt-4">
                   <a

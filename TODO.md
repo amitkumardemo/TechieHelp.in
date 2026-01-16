@@ -1,5 +1,4 @@
-- [x] Add Aditya Kumar image import to src/assets/index.js
-- [x] Create src/components/employees/AdityaKumar.jsx component
-- [x] Add Aditya Kumar to employeeData in src/components/Employee.jsx
-- [x] Add import and route for AdityaKumar in src/App.jsx
-- [x] Run development server to test
+- [x] Add Kameshwar Patel image import to src/assets/index.js
+- [x] Create src/components/employees/KameshwarPatel.jsx component
+- [x] Add Kameshwar Patel to employeeData in src/components/Employee.jsx
+- [x] Add import and route for KameshwarPatel in src/App.jsx
