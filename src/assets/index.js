@@ -172,6 +172,7 @@ import kengimheingNampeung from "./kengimheing Nampeung.jpg";
 
 import winner from "./winner.png";
 import AmitPhoto from "./AmitPhoto.jpg";
+import AdityaKumar from "./Aditya_kumar.jpeg";
 import ashok from "./Ashok.jpeg";
 import kameshwarPatel from "./Kameshwar_patel.jpg";
 
@@ -327,5 +328,6 @@ export {
   kengimheingNampeung,
   ashok,
   kameshwarPatel,
-  AmitPhoto
+  AmitPhoto,
+  AdityaKumar
 };

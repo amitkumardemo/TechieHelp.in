@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import DotGrid from './DotGrid';
 import { motion } from 'framer-motion';
-import { AmitPhoto } from '../assets/index.js';
+import { AmitPhoto, AdityaKumar } from '../assets/index.js';
 
 export const employeeData = [
   {
@@ -18,6 +18,21 @@ export const employeeData = [
     address: "Jodhpur, Rajasthan",
     experience: "2+ years in tech industry",
     profilePath: "/employee/amit-kumar"
+  },
+  {
+    id: 3,
+    fullName: "Aditya Kumar",
+    role: "Placeholder Role",
+    email: "aditya@techiehelp.in",
+    phoneNumber: "+91-XXXXXXXXXX",
+    skills: "Placeholder Skills",
+    personalQuote: "Placeholder Quote",
+    profileImage: AdityaKumar,
+    linkedInProfile: "https://www.linkedin.com/in/aditya-kumar-placeholder/",
+    githubProfile: "https://github.com/aditya-kumar-placeholder",
+    address: "Placeholder Address",
+    experience: "Placeholder Experience",
+    profilePath: "/employee/aditya-kumar"
   }
 ];
 
