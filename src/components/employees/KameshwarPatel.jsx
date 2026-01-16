@@ -4,7 +4,7 @@ import { kameshwarPatel } from '../../assets';
 
 const KameshwarPatelComponent = () => {
   const employee = {
-    id: 4,
+    id: 3,
     fullName: "Kameshwar Patel",
     role: "Frontend Developer",
     email: "patelkameshwar01@gmail.com",

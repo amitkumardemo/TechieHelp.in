@@ -4,7 +4,7 @@ import { AmitPhoto } from '../../assets';
 
 const AmitKumar = () => {
   const employee = {
-    id: 2,
+    id: 1,
     fullName: "Amit Kumar",
     role: "Founder & CEO",
     email: "amit@techiehelp.in",

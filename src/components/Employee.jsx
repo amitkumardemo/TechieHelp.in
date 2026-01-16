@@ -1,53 +1,48 @@
 import React, { useState, useMemo } from 'react';
 import DotGrid from './DotGrid';
 import { motion } from 'framer-motion';
-import { AmitPhoto, AdityaKumar, kameshwarPatel } from '../assets/index.js';
+import { AmitPhoto, kameshwarPatel, SupriyaJalani, AdityaKumar } from '../assets/index.js';
 
 export const employeeData = [
   {
-    id: 2,
+    id: 1,
     fullName: "Amit Kumar",
     role: "Founder & CEO",
-    email: "amit@techiehelp.in",
-    phoneNumber: "+91-7673825079",
-    skills: "Leadership, Business Strategy, Technology Innovation",
-    personalQuote: "Building the future of tech education and innovation",
     profileImage: AmitPhoto,
     linkedInProfile: "https://www.linkedin.com/in/amit-kumar-686196225/",
     githubProfile: "https://github.com/amitkumardemo",
-    address: "Jodhpur, Rajasthan",
     experience: "2+ years in tech industry",
     profilePath: "/employee/amit-kumar"
   },
   {
-    id: 3,
-    fullName: "Aditya Kumar",
-    role: "Content & Media Specialist",
-    email: "aditya@techiehelp.in",
-    phoneNumber: "+91-XXXXXXXXXX",
-    skills: "Placeholder Skills",
-    personalQuote: "Placeholder Quote",
-    profileImage: AdityaKumar,
-    linkedInProfile: "https://www.linkedin.com/in/aditya-kumar-placeholder/",
-    githubProfile: "https://github.com/aditya-kumar-placeholder",
-    address: "Placeholder Address",
-    experience: "Fresher",
-    profilePath: "/employee/aditya-kumar"
-  },
-  {
-    id: 4,
+    id: 2,
     fullName: "Kameshwar Patel",
     role: "Frontend Developer",
-    email: "patelkameshwar01@gmail.com",
-    phoneNumber: "+91-8877396336",
-    skills: "HTML5, CSS3, JavaScript, React, Node.JS, Express.JS, Tailwind CSS, MySQL, Vite, Git & GitHub, MongoDB, Postman, Vercel, Render, Canva, MS Office",
-    personalQuote: "From UI to APIs — and everything in between.",
     profileImage: kameshwarPatel,
     linkedInProfile: "https://www.linkedin.com/in/patelkameshwar",
     githubProfile: "https://github.com/patelkameshwar",
-    address: "Jodhpur, Rajasthan",
     experience: "Fresher",
     profilePath: "/employee/kameshwar-patel"
+  },
+  {
+    id: 3,
+    fullName: "Supriya Jalani",
+    role: "Employee",
+    profileImage: SupriyaJalani,
+    linkedInProfile: "#",
+    githubProfile: "#",
+    experience: "Placeholder experience",
+    profilePath: "/employee/supriya-jalani"
+  },
+  {
+    id: 4,
+    fullName: "Aditya Kumar",
+    role: "Content & Media Specialist",
+    profileImage: AdityaKumar,
+    linkedInProfile: "https://www.linkedin.com/in/aditya-kumar-40a256291",
+    githubProfile: "https://github.com/adityakumr03",
+    experience: "Fresher",
+    profilePath: "/employee/aditya-kumar"
   }
 ];
 

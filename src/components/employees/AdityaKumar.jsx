@@ -4,7 +4,7 @@ import { AdityaKumar } from '../../assets';
 
 const AdityaKumarComponent = () => {
   const employee = {
-    id: 3,
+    id: 2,
     fullName: "Aditya Kumar",
     role: "Content & Media Specialist",
     email: "aditya@techiehelp.in",
@@ -12,9 +12,9 @@ const AdityaKumarComponent = () => {
     skills: "Placeholder Skills",
     personalQuote: "Quote",
     profileImage: AdityaKumar,
-    linkedInProfile: "https://www.linkedin.com/in/aditya-kumar-placeholder/",
+    linkedInProfile: "https://www.linkedin.com/in/aditya-kumar-40a256291",
     githubProfile: "https://github.com/adityakumr03",
-    address: "Placeholder Address",
+    address: "Jodhpur, Rajasthan",
     experience: "Fresher"
   };
 
