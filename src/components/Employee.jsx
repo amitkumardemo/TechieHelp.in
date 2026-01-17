@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import DotGrid from './DotGrid';
 import { motion } from 'framer-motion';
-import { AmitPhoto, kameshwarPatel } from '../assets/index.js';
+import { AmitPhoto, kameshwarPatel, supriyaJalani } from '../assets/index.js';
 
 export const employeeData = [
   {
@@ -23,6 +23,16 @@ export const employeeData = [
     githubProfile: "https://github.com/patelkameshwar",
     experience: "Fresher",
     profilePath: "/employee/kameshwar-patel"
+  },
+  {
+    id: 3,
+    fullName: "Supriya Jalani",
+    role: "UI/UX Designer",
+    profileImage: supriyaJalani,
+    linkedInProfile: "https://www.linkedin.com/in/supriya-jalani",
+    githubProfile: "https://github.com/Suprirya-Jalani",
+    experience: "Fresher",
+    profilePath: "/employee/supriya-jalani"
   },
 
 

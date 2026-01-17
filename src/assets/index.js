@@ -174,6 +174,7 @@ import winner from "./winner.png";
 import AmitPhoto from "./AmitPhoto.jpg";
 import ashok from "./Ashok.jpeg";
 import kameshwarPatel from "./Kameshwar_patel.jpg";
+import supriyaJalani from "./supriya_jalani.jpeg";
 
 export {
   internship as airbnb,
@@ -328,4 +329,5 @@ export {
   ashok,
   kameshwarPatel,
   AmitPhoto,
+  supriyaJalani,
 };
