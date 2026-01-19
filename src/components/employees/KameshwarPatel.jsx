@@ -6,7 +6,7 @@ const KameshwarPatelComponent = () => {
   const employee = {
     id: 3,
     fullName: "Kameshwar Patel",
-    role: "Frontend Developer",
+    role: "Full-Stack Developer",
     email: "patelkameshwar01@gmail.com",
     phoneNumber: "+91-8877396336",
     skills: "HTML5, CSS3, JavaScript, React, Node.JS, Express.JS, Tailwind CSS, MySQL, Vite, Git & GitHub, MongoDB, Postman, Vercel, Render, Canva, MS Office",
