@@ -5,7 +5,7 @@ import { mdAmzad } from '../../assets';
 const MdAmzadComponent = () => {
   const employee = {
     id: 6,
-    fullName: "Supriya Jalani",
+    fullName: "Md Amzad",
     role: "AI/ML Developer",
     email: "amzadcp8406@gmail.com",
     phoneNumber: "+91-8406841048",
