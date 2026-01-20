@@ -58,6 +58,7 @@ import KameshwarPatelComponent from "./components/employees/KameshwarPatel";
 import SupriyaJalaniComponent from "./components/employees/SupriyaJalani";
 import AdityaKumarComponent from "./components/employees/AdityaKumar";
 import AshokComponent from "./components/employees/Ashok";
+import MdAmzadComponent from "./components/employees/MdAmzad";
 import SasvanthuG from "./components/students/SasvanthuG";
 import RitikaKasat from "./components/students/RitikaKasat";
 import AbhayRajSingh from "./components/students/AbhayRajSingh";
@@ -293,6 +294,7 @@ const App = () => {
           <Route path="/employee/supriya-jalani" element={<SupriyaJalaniComponent />} />
           <Route path="/employee/aditya-kumar" element={<AdityaKumarComponent />} />
           <Route path="/employee/ashok" element={<AshokComponent />} />
+          <Route path="/employee/md-amzad" element={<MdAmzadComponent />} />
           <Route path="/webdevelopment" element={<Webdevelopment />} />
           <Route path="/androiddevelopment" element={<Androiddevelopment />} />
           <Route path="/uiux" element={<UIUX />} />

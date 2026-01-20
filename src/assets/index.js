@@ -176,6 +176,7 @@ import ashok from "./Ashok.jpeg";
 import kameshwarPatel from "./Kameshwar_patel.jpg";
 import supriyaJalani from "./supriya_jalani.jpeg";
 import adityaKumar from "./Aditya_kumar.jpeg";
+import mdAmzad from "./Amzad.jpeg";
 
 export {
   internship as airbnb,
@@ -332,4 +333,5 @@ export {
   AmitPhoto,
   supriyaJalani,
   adityaKumar,
+  mdAmzad,
 };

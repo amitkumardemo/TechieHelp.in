@@ -22,7 +22,8 @@ const Bsdenephom = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1y0WFB-_vLbfUtnvZhle2skrmIefTN8ky",
     offerLetterLink: "https://drive.google.com/open?id=17ZgYza3NdjQFkx4zgbWjqqKGKgCVjDXH",
-    completionCertificationsLink: "",
+    completionCertificationsLink: "https://drive.google.com/file/d/12Br-4Ch1YsELUv8vnfTVBkbmPzqA96L5/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1BpTJnm0y6rBs7pPKoTITVt5JOpMF9dsa/view?usp=drive_link",
     feedback: "Motivated full stack developer with comprehensive technical skills.",
     workDone: []
   };
