@@ -166,6 +166,11 @@ const StudentProfileTemplate = ({ student }) => {
                     <FaDownload className="mr-2" /> Certificates
                   </a>
                 )}
+                {student.recommendationLetterLink && (
+                  <a href={student.recommendationLetterLink} className="flex items-center text-blue-600 hover:text-blue-800">
+                    <FaDownload className="mr-2" /> Recommendation Letter
+                  </a>
+                )}
               </div>
             </div>
 

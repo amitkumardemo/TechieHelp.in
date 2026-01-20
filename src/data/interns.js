@@ -18,6 +18,7 @@ const studentData = [
     verified: true,
     resumeLink: "#",
     offerLetterLink: "#",
+    recommendationLetterLink: "#",
     completionCertificationsLink: "#",
     feedback: "Great intern with excellent skills.",
     projectsGitHubLink: "https://github.com/sasvanthu/projects"
@@ -42,6 +43,7 @@ const studentData = [
     resumeLink: "#",
     offerLetterLink: "#",
     completionCertificationsLink: "#",
+    recommendationLetterLink: "#",
     feedback: "Highly motivated and skilled developer.",
     projectsGitHubLink: "https://github.com/ABHAYRAJSINGH11/projects"
   }

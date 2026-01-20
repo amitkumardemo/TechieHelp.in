@@ -71,6 +71,7 @@ const InternProfile = () => {
             <li><a href={intern.resumeLink || '#'} target="_blank" rel="noopener noreferrer" style={{ color: '#4caf50' }}>Resume</a></li>
             <li><a href={intern.offerLetterLink || '#'} target="_blank" rel="noopener noreferrer" style={{ color: '#4caf50' }}>Offer Letter</a></li>
             <li><a href={intern.completionCertificationsLink || '#'} target="_blank" rel="noopener noreferrer" style={{ color: '#4caf50' }}>Completion Certifications</a></li>
+            <li><a href={intern.recommendationLetterLink || '#'} target="_blank" rel="noopener noreferrer" style={{ color: '#4caf50' }}>Recommendation Letter</a></li>
           </ul>
         </section>
 

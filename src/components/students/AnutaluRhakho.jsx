@@ -22,7 +22,8 @@ const AnutaluRhakho = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1QwbklIXnYZKoeIMxBRqulaUxpKfa773v",
     offerLetterLink: "https://drive.google.com/open?id=1JlA4oX8EFJM5mbBw-V0qE_spikJT2cfB",
-    completionCertificationsLink: "",
+    completionCertificationsLink: "https://drive.google.com/file/d/1nG2A1TfC8olej-Uz5jZBxeYhJS0-XiAJ/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1jcEAPyZpXgh1U1A4FkoIyEIUlOSLG2MB/view?usp=drive_link",
     feedback: "Adaptable frontend developer with diverse technical skills.",
     workDone: []
   };
