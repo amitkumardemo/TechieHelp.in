@@ -22,7 +22,8 @@ const BeloKapfo = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1y0WFB-_vLbfUtnvZhle2skrmIefTN8kx",
     offerLetterLink: "https://drive.google.com/open?id=17ZgYza3NdjQFkx4zgbWjqqKGKgCVjDXG",
-    completionCertificationsLink: "",
+    completionCertificationsLink: "https://drive.google.com/file/d/1ObS24pfjtWRiOPduA1ntQnRAJEXHi9I_/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1Qmz3rIOwc2SYMHsiRwEwy02z-Ayp_oha/view?usp=drive_link",
     feedback: "Motivated full stack developer with comprehensive technical skills.",
     workDone: []
   };
