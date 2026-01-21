@@ -22,7 +22,8 @@ const KengimheingNampeung = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=17Gc7qlcXj4uAUoDaDgiKtDn3yflpUQgo",
     offerLetterLink: "https://drive.google.com/open?id=1PG_a7zlkAH0akX0Tk_m1_xs7Af5BnfJ3",
-    completionCertificationsLink: "https://drive.google.com/open?id=1FAW2Ys8Yf2Z_os3FilYx0gikhUtbYeDA",
+    completionCertificationsLink: "https://drive.google.com/file/d/1XU4gHckrTT-DJyUF_WUZN0oDatMiGwPl/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1bkMjFZr1vs-3nAeJ_WxKMt2LIcNmw3fr/view?usp=drive_link",
     feedback: "Creative thinker with a unique perspective on technology.",
     projectsGitHubLink: "https://github.com/Newbie-arch-lab",
     workDone: [
