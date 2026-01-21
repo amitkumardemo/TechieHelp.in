@@ -22,7 +22,8 @@ const NehaBegum = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1Cf-1F91ZK7L1oJAsg391Ocgvgr4-unTZ",
     offerLetterLink: "https://drive.google.com/open?id=1Tm1sG0g7WeXN9JlifTQ829LQ4ALL5wZA",
-    completionCertificationsLink: "",
+    completionCertificationsLink: "https://drive.google.com/file/d/1-pveLXvg8pXDslL4esXmCssDEGLQ_DkU/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1okwxffCOepDNj1uyflN8zFpuJu8HzbI0/view?usp=drive_link",
     feedback: "Creative frontend developer with passion for beautiful web design.",
     workDone: []
   };
