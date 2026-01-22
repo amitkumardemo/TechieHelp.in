@@ -22,7 +22,8 @@ const DotsuTYimchunger = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1nTu5_OiFI_CmyUxOyZ0NnYbSTKHToSze",
     offerLetterLink: "https://drive.google.com/open?id=1PtWO95L3_v4ZZ38OnyEyD1HxtRVk6sX7",
-    completionCertificationsLink: "https://drive.google.com/open?id=1KKuvEjyEpBoBrxljaptbJL0mDFaqaaow",
+    completionCertificationsLink: "https://drive.google.com/file/d/1zO6hMNfEYcy63zg5VxomahS5cBiQElZt/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1IVYeil2dRGmjLgOhJXVaNW84OIA_r8Tr/view?usp=drive_link",
     feedback: "Enthusiastic student with a positive outlook on learning.",
     projectsGitHubLink: "https://github.com/Dotsu22",
     workDone: [

@@ -22,7 +22,8 @@ const BendangakumHoki = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=192KHQpjHcgEnedZ5WoGpXM-keDqgVpGG",
     offerLetterLink: "https://drive.google.com/open?id=1MFuHCu5-pyL7MIAG38TSblw0QzBT6tQN",
-    completionCertificationsLink: "https://drive.google.com/open?id=1_3xgAU_JL6sCQ0PRt3O-yRLp889pM_51",
+    completionCertificationsLink: "https://drive.google.com/file/d/1Y_mG_g3WdGpSBsFci0pv_JFs98v93car/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1P5h2KCJJpk4NL75cWi1wcwINEUK992NN/view?usp=drive_link",
     feedback: "Eager learner with strong enthusiasm for growth.",
     projectsGitHubLink: "https://github.com/Akum17",
     workDone: [

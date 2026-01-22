@@ -22,7 +22,8 @@ const SushetoZhimo = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=14drlMlZB896QNHGjNIUO4yiR-Zkg7lq3",
     offerLetterLink: "https://drive.google.com/open?id=19hueblmyFut4dCabLBa21kJS1yyyMNbW",
-    completionCertificationsLink: "",
+    completionCertificationsLink: "https://drive.google.com/file/d/1Ll1ocUslUhq4RUcfpEqH-pQj2z5J5ufC/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1XkRkURi6roFUjZcqS9tg5gOeWYSmSIcP/view?usp=drive_link",
     feedback: "Motivated frontend developer with strong foundational skills.",
     workDone: []
   };

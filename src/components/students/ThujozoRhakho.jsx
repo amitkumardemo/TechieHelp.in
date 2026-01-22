@@ -22,8 +22,8 @@ const ThujozoRhakho = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1IVr0vxZ3-3sIdguwR0e1FNJbcjAazks_",
     offerLetterLink: "https://drive.google.com/open?id=1EU-zULLyLEBcii0_G-eNCBt_f31rHtWC",
-    completionCertificationsLink: "https://drive.google.com/open?id=1FiF0J-Kuw0OnFuYHkwd8u2W7Dht1VqFB",
-    feedback: "Dedicated student with strong foundation in programming.",
+    completionCertificationsLink: "https://drive.google.com/file/d/1leaAhQVMx8rGTl-uzrdAtDvXPILEU4FJ/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/18YPopHMTPLPLWa9iSTln4aUGB4tJWT04/view?usp=drive_link",
     projectsGitHubLink: "https://github.com/thujozorhakho-stack",
     workDone: [
       "Learning and applying foundational knowledge in Computer Science",

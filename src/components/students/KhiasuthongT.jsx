@@ -22,7 +22,8 @@ const KhiasuthongT = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1t9y2AFyCPtf_izLEmTP45YoxLSfnFsWb",
     offerLetterLink: "https://drive.google.com/open?id=1531cK_sXekeyALF4YHeD1S6L8kJY4dWo",
-    completionCertificationsLink: "",
+    completionCertificationsLink: "https://drive.google.com/file/d/1Ede5yWYRUgw3dGo1ynZKU7BFQkJCvUCz/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1s2dpaKlMYu0eeREQVFJFqmhO2uKmO932/view?usp=drive_link",
     feedback: "Dedicated full stack developer with strong technical skills.",
     workDone: []
   };

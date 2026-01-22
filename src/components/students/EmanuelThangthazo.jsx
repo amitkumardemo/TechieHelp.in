@@ -22,7 +22,8 @@ const EmanuelThangthazo = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1QwbklIXnYZKoeIMxBRqulaUxpKfa773u",
     offerLetterLink: "https://drive.google.com/open?id=1JlA4oX8EFJM5mbBw-V0qE_spikJT2cfA",
-    completionCertificationsLink: "",
+    completionCertificationsLink: "https://drive.google.com/file/d/1INhvcl6-36GM-1k4qruxGe0sYZJw-wBK/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1CwkV3ow9HxRKhtTqkYuAh4w9852XnOi-/view?usp=drive_link",
     feedback: "Adaptable frontend developer with diverse technical skills.",
     workDone: []
   };

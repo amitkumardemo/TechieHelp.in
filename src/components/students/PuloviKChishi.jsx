@@ -22,7 +22,8 @@ const PuloviKChishi = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1quuvUQ2qiw1FD8VUbFoM7FG-jT27VGZS",
     offerLetterLink: "https://drive.google.com/open?id=1CxD2TOJqqTVZFL9ke31Pmr_zIaKCB05o",
-    completionCertificationsLink: "https://drive.google.com/open?id=1gNOdU0DVhLzgkTOox4kzQS_F9yFaggUB",
+    completionCertificationsLink: "https://drive.google.com/file/d/1cGi-QH0C3vqE9SmiU8VP2iND8fIElqLY/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1LKoXXDtDxlRrKmQ9gYOflmrRoLMtCrNM/view?usp=drive_link",
     feedback: "Passionate about learning and delivering quality work.",
     projectsGitHubLink: "https://github.com/Apulo-chishi",
     workDone: [
