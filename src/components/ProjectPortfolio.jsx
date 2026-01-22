@@ -163,12 +163,12 @@ const ProjectPortfolio = () => {
   return (
     <>
       {/* --------------------- Top Intro Section --------------------- */}
-      <section className="pt-24 pb-16 px-6 bg-primary text-white flex flex-col items-center relative overflow-hidden min-h-screen">
+      <section className="pt-24 pb-16 bg-primary text-white flex flex-col items-center relative overflow-hidden min-h-screen">
         {/* Animated Gradient Background */}
         <div className="absolute inset-0 opacity-20 animate-gradient-x"></div>
 
-        <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
-          <div className="w-full md:w-5/7 relative">
+        <div className="w-full flex flex-col items-center gap-10 relative z-10">
+          <div className="w-full relative">
             {/* Sliding Image Container */}
             <div className="relative w-full h-96 md:h-[500px] rounded-xl shadow-xl overflow-hidden">
               {slidingImages.map((image, index) => (
@@ -199,7 +199,7 @@ const ProjectPortfolio = () => {
               </div>
             </div>
           </div>
-          <div className="w-full md:w-1/2 text-center md:text-left">
+          <div className="w-full text-center">
             <motion.h2
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
