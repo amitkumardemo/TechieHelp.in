@@ -216,8 +216,10 @@ const ProjectPortfolio = () => {
               className="text-lg mb-6"
             >
               Explore our diverse collection of successful projects spanning web development,
-              mobile applications, and full-stack solutions. Each project showcases our
+              mobile applications, and full-stack solutions.  <br /> 
+              <br />  Each project showcases our
               commitment to innovation, quality, and client satisfaction.
+
             </motion.p>
 
             <motion.a
@@ -234,21 +236,6 @@ const ProjectPortfolio = () => {
         </div>
       </section>
 
-      {/* Downscroll Arrow */}
-      {showArrow && (
-        <div className="flex justify-center py-4 bg-black">
-          <button
-            onClick={() => document.getElementById('project-showcase').scrollIntoView({ behavior: 'smooth' })}
-            className="text-white hover:text-blue-500 transition duration-300"
-            aria-label="Scroll to projects"
-          >
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </button>
-        </div>
-      )}
-
       {/* --------------------- Project Categories Filter --------------------- */}
       <motion.section
         initial={{ opacity: 0, y: 40 }}
@@ -258,8 +245,8 @@ const ProjectPortfolio = () => {
         className="py-8 bg-black text-white"
       >
         <div className="text-center px-6">
-          <h2 className="text-3xl font-bold text-blue-500 mb-6">
-            Filter by Category
+          <h2 className="text-3xl font-bold mb-6">
+            Filter by <span className="text-blue-500">Category</span>
           </h2>
           <div className="flex flex-wrap justify-center gap-4">
             {categories.map((category) => (
