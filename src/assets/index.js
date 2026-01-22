@@ -123,6 +123,9 @@ import health from "./health.webp";
 import ecom from "./ecom.webp";
 import producer from "./producer.webp";
 import placement from "./place.png";
+import webdev from "./webdev.png";
+import mobileapp from "./mobileapp.png";
+import fullstack2 from "./fullstack2.png";
 
 
 
@@ -334,4 +337,9 @@ export {
   supriyaJalani,
   adityaKumar,
   mdAmzad,
+
+
+  webdev,
+  fullstack2,
+  mobileapp,
 };

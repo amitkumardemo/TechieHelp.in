@@ -30,6 +30,9 @@ import {
   quality,
   communication,
   support,
+  webdev,
+  fullstack2,
+  mobileapp,
 } from "../assets";
 import Contact from "./Contact";
 import Footer from "./Footer";
@@ -127,6 +130,17 @@ const ProjectPortfolio = () => {
   const [showArrow, setShowArrow] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState("All");
   const heroRef = useRef(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const slidingImages = [webdev, fullstack2, mobileapp, restaurant, web, custom, doctor];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % slidingImages.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [slidingImages.length]);
 
   const categories = ["All", ...new Set(projectsData.map(project => project.category))];
 
@@ -149,20 +163,41 @@ const ProjectPortfolio = () => {
   return (
     <>
       {/* --------------------- Top Intro Section --------------------- */}
-      <section className="pt-24 px-6 bg-primary text-white flex flex-col items-center relative overflow-hidden">
+      <section className="pt-24 pb-16 px-6 bg-primary text-white flex flex-col items-center relative overflow-hidden min-h-screen">
         {/* Animated Gradient Background */}
         <div className="absolute inset-0 opacity-20 animate-gradient-x"></div>
 
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-10 relative z-10">
-          <div className="w-full md:w-1/2">
-            <motion.img
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1 }}
-              src={portfoli}
-              alt="TechieHelp Project Portfolio"
-              className="w-full rounded-xl shadow-xl object-cover"
-            />
+          <div className="w-full md:w-5/7 relative">
+            {/* Sliding Image Container */}
+            <div className="relative w-full h-96 md:h-[500px] rounded-xl shadow-xl overflow-hidden">
+              {slidingImages.map((image, index) => (
+                <motion.img
+                  key={index}
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{
+                    opacity: index === currentImageIndex ? 1 : 0,
+                    scale: index === currentImageIndex ? 1 : 0.9
+                  }}
+                  transition={{ duration: 0.8 }}
+                  src={image}
+                  alt={`Project Portfolio ${index + 1}`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              ))}
+              {/* Image Indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {slidingImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex ? 'bg-blue-500' : 'bg-white/50'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
           <div className="w-full md:w-1/2 text-center md:text-left">
             <motion.h2
