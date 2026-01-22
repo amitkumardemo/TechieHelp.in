@@ -22,7 +22,8 @@ const SenchumbeniCErui = () => {
     verified: true,
     resumeLink: "https://drive.google.com/open?id=1Cf-1F91ZK7L1oJAsg391Ocgvgr4-unTX",
     offerLetterLink: "https://drive.google.com/open?id=1Tm1sG0g7WeXN9JlifTQ829LQ4ALL5wWZ",
-    completionCertificationsLink: "",
+    completionCertificationsLink: "https://drive.google.com/file/d/1zsYCQdP0qgYRnMuOWt4hmUubCXwshZr3/view?usp=drive_link",
+    recommendationLetterLink: "https://drive.google.com/file/d/1VWkQ7ctE0hi6ITk17ZwfND00nbiQvFwi/view?usp=drive_link",
     feedback: "Creative frontend developer with passion for beautiful web design.",
     workDone: []
   };
