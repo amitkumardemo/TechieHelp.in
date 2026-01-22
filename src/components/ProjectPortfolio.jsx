@@ -163,76 +163,72 @@ const ProjectPortfolio = () => {
   return (
     <>
       {/* --------------------- Top Intro Section --------------------- */}
-      <section className="pt-24 pb-16 bg-primary text-white flex flex-col items-center relative overflow-hidden min-h-screen">
+      <section className="bg-primary text-white flex flex-col items-center relative overflow-hidden h-screen">
         {/* Animated Gradient Background */}
         <div className="absolute inset-0 opacity-20 animate-gradient-x"></div>
 
-        <div className="w-full flex flex-col items-center gap-10 relative z-10">
-          <div className="w-full relative">
-            {/* Sliding Image Container */}
-            <div className="relative w-full h-96 md:h-[500px] rounded-xl shadow-xl overflow-hidden">
-              {slidingImages.map((image, index) => (
-                <motion.img
-                  key={index}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{
-                    opacity: index === currentImageIndex ? 1 : 0,
-                    scale: index === currentImageIndex ? 1 : 0.9
-                  }}
-                  transition={{ duration: 0.8 }}
-                  src={image}
-                  alt={`Project Portfolio ${index + 1}`}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              ))}
-              {/* Image Indicators */}
-              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
-                {slidingImages.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentImageIndex ? 'bg-blue-500' : 'bg-white/50'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="w-full text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
+        {/* Sliding Image Container */}
+        <div className="relative w-full h-full">
+          {slidingImages.map((image, index) => (
+            <motion.img
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{
+                opacity: index === currentImageIndex ? 1 : 0,
+                scale: index === currentImageIndex ? 1 : 0.9
+              }}
               transition={{ duration: 0.8 }}
-              className="text-4xl font-bold mb-4"
-            >
-              Our <span className="text-blue-500">Project Portfolio</span>
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}
-              className="text-lg mb-6"
-            >
-              Explore our diverse collection of successful projects spanning web development,
-              mobile applications, and full-stack solutions.  <br /> 
-              <br />  Each project showcases our
-              commitment to innovation, quality, and client satisfaction.
-
-            </motion.p>
-
-            <motion.a
-              href="https://wa.me/917673825079?text=Hello%20Team%20TechieHelp%2C%20I%20am%20interested%20in%20your%20project%20portfolio.%20Kindly%20share%20more%20details."
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
-            >
-              Discuss Your Project
-            </motion.a>
+              src={image}
+              alt={`Project Portfolio ${index + 1}`}
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          ))}
+          {/* Image Indicators */}
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            {slidingImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentImageIndex(index)}
+                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  index === currentImageIndex ? 'bg-blue-500' : 'bg-white/50'
+                }`}
+              />
+            ))}
           </div>
+        </div>
+
+        {/* Text Content Overlay */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 bg-black/40 backdrop-blur-sm">
+          <motion.h2
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl font-bold mb-4"
+          >
+            Our <span className="text-blue-500">Project Portfolio</span>
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-lg mb-6 max-w-2xl"
+          >
+            Explore our diverse collection of successful projects spanning web development,
+            mobile applications, and full-stack solutions. Each project showcases our
+            commitment to innovation, quality, and client satisfaction.
+          </motion.p>
+
+          <motion.a
+            href="https://wa.me/917673825079?text=Hello%20Team%20TechieHelp%2C%20I%20am%20interested%20in%20your%20project%20portfolio.%20Kindly%20share%20more%20details."
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+          >
+            Discuss Your Project
+          </motion.a>
         </div>
       </section>
 

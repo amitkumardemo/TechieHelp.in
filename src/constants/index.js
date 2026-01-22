@@ -60,7 +60,7 @@ export const navLinks = [
   },
   {
     id: "project-portfolio",
-    title: "Projects",
+    title: "Portfolio",
     path: "/project-portfolio"
   },
   {
