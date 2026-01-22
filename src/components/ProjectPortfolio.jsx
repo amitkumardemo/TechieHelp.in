@@ -68,50 +68,7 @@ const projectsData = [
   },
 ];
 
-const whyChooseTechieHelp = [
-  {
-    id: 1,
-    title: "Expert Development Team",
-    description:
-      "Our skilled developers bring cutting-edge technologies and best practices to every project, ensuring high-quality, scalable solutions that meet modern standards.",
-    image: expertise,
-  },
-  {
-    id: 2,
-    title: "Customized Solutions",
-    description:
-      "Each project is uniquely crafted to match your specific requirements, business goals, and target audience, delivering solutions that truly work for you.",
-    image: customSolutions,
-  },
-  {
-    id: 3,
-    title: "Agile Development Process",
-    description:
-      "We follow agile methodologies with regular updates, iterative development, and continuous feedback to ensure your project stays on track and meets expectations.",
-    image: agile,
-  },
-  {
-    id: 4,
-    title: "Quality Assurance",
-    description:
-      "Rigorous testing, code reviews, and quality checks are integrated throughout the development process to deliver bug-free, reliable applications.",
-    image: quality,
-  },
-  {
-    id: 5,
-    title: "Clear Communication",
-    description:
-      "Transparent communication, regular progress reports, and dedicated project managers ensure you're always informed about your project's status.",
-    image: communication,
-  },
-  {
-    id: 6,
-    title: "Ongoing Support",
-    description:
-      "Post-launch support, maintenance, updates, and technical assistance keep your project running smoothly and evolving with your business needs.",
-    image: support,
-  },
-];
+
 
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -338,49 +295,7 @@ const ProjectPortfolio = () => {
         ))}
       </section>
 
-      {/* --------------------- Why Choose TechieHelp --------------------- */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-16 bg-black text-white"
-      >
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-blue-500 mb-4">
-            Why Choose TechieHelp?
-          </h2>
-          <p className="text-gray-300 text-lg">
-            Innovation. Precision. Partnership. Discover why startups and enterprises trust us.
-          </p>
-        </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 px-6 md:px-12 lg:px-20">
-          {whyChooseTechieHelp.map((item, i) => (
-            <motion.div
-              key={item.id}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
-              className="bg-[#101827] shadow-lg rounded-2xl p-6 hover:shadow-blue-500 transition-all duration-300"
-            >
-              <img
-                src={item.image}
-                alt={item.title}
-                className="w-16 h-16 mb-4 mx-auto"
-              />
-              <h3 className="text-xl font-semibold text-center text-white">
-                {item.title}
-              </h3>
-              <p className="text-gray-400 text-sm text-center mt-3">
-                {item.description}
-              </p>
-            </motion.div>
-          ))}
-        </div>
-      </motion.section>
 
       {/* --------------------- Call to Action --------------------- */}
       <CTA />
