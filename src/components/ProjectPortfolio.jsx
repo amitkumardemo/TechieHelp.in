@@ -177,9 +177,7 @@ const ProjectPortfolio = () => {
           </motion.p>
 
           <motion.a
-            href="https://wa.me/917673825079?text=Hello%20Team%20TechieHelp%2C%20I%20am%20interested%20in%20your%20project%20portfolio.%20Kindly%20share%20more%20details."
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
