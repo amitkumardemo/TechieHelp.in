@@ -188,7 +188,8 @@ const ProjectPortfolio = () => {
         </div>
 
         <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-20">
-          <motion.button
+          <motion.a
+            href="#mobile-apps"
             onClick={() => setSelectedCategory("Mobile App")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -199,8 +200,9 @@ const ProjectPortfolio = () => {
             </svg>
             Mobile Apps
             <span className="text-lg">→</span>
-          </motion.button>
-          <motion.button
+          </motion.a>
+          <motion.a
+            href="#web-apps"
             onClick={() => setSelectedCategory("Web Development")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -211,117 +213,193 @@ const ProjectPortfolio = () => {
             </svg>
             Web Apps
             <span className="text-lg">→</span>
-          </motion.button>
+          </motion.a>
         </div>
       </section>
 
-      {/* --------------------- Project Categories Filter --------------------- */}
-      <motion.section
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-        className="py-8 bg-black text-white"
-      >
-        <div className="text-center px-6">
-          <h2 className="text-3xl font-bold mb-6">
-            Filter by <span className="text-blue-500">Category</span>
-          </h2>
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-2 rounded-full transition-all duration-300 ${
-                  selectedCategory === category
-                    ? "bg-blue-500 text-white"
-                    : "bg-gray-700 text-gray-300 hover:bg-gray-600"
-                }`}
+
+
+      {/* --------------------- Mobile Apps Section --------------------- */}
+      {(selectedCategory === "All" || selectedCategory === "Mobile App") && (
+        <section id="mobile-apps" className="py-16 bg-black text-white">
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl font-bold mb-4"
+            >
+              Our Featured <span className="text-green-500">Mobile Apps</span>
+            </motion.h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+            {projectsData.filter(project => project.category === "Mobile App").map(({ id, title, description, image, category, technologies, link }, i) => (
+            <motion.div
+              key={id}
+              custom={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={cardVariants}
+              whileHover={{ y: -6, transition: { duration: 0.3 } }}
+              className="
+                group relative
+                bg-white
+                text-gray-800
+                rounded-2xl
+                shadow-lg hover:shadow-xl
+                border border-gray-200 hover:border-blue-400
+                p-6
+                transition-all duration-300
+                flex flex-col
+                overflow-hidden
+              "
+            >
+              {/* Image */}
+              <div className="relative mb-4 overflow-hidden rounded-xl">
+                <img
+                  src={image}
+                  alt={title}
+                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                  {category}
+                </div>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                {title}
+              </h3>
+
+              {/* Technologies */}
+              <div className="flex flex-wrap gap-2 mb-3">
+                {technologies.map((tech, index) => (
+                  <span
+                    key={index}
+                    className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Description */}
+              <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">
+                {description}
+              </p>
+
+              {/* View Project Button */}
+              <Link
+                to={link}
+                className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
               >
-                {category}
-              </button>
+                <span>View Project</span>
+                <motion.span
+                  className="text-lg"
+                  whileHover={{ x: 3 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  →
+                </motion.span>
+              </Link>
+            </motion.div>
+          ))}
+          </div>
+        </section>
+      )}
+
+      {/* --------------------- Web Apps Section --------------------- */}
+      {(selectedCategory === "All" || selectedCategory === "Web Development") && (
+        <section id="web-apps" className="py-16 bg-gray-900 text-white">
+          <div className="text-center mb-12">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+              className="text-4xl font-bold mb-4"
+            >
+              Our Featured <span className="text-purple-500">Web Apps</span>
+            </motion.h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+            {projectsData.filter(project => project.category === "Web Development").map(({ id, title, description, image, category, technologies, link }, i) => (
+              <motion.div
+                key={id}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={cardVariants}
+                whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                className="
+                  group relative
+                  bg-white
+                  text-gray-800
+                  rounded-2xl
+                  shadow-lg hover:shadow-xl
+                  border border-gray-200 hover:border-blue-400
+                  p-6
+                  transition-all duration-300
+                  flex flex-col
+                  overflow-hidden
+                "
+              >
+                {/* Image */}
+                <div className="relative mb-4 overflow-hidden rounded-xl">
+                  <img
+                    src={image}
+                    alt={title}
+                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                    {category}
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold mb-3 text-gray-900">
+                  {title}
+                </h3>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mb-3">
+                  {technologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">
+                  {description}
+                </p>
+
+                {/* View Project Button */}
+                <Link
+                  to={link}
+                  className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <span>View Project</span>
+                  <motion.span
+                    className="text-lg"
+                    whileHover={{ x: 3 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    →
+                  </motion.span>
+                </Link>
+              </motion.div>
             ))}
           </div>
-        </div>
-      </motion.section>
-
-      {/* --------------------- Projects Showcase --------------------- */}
-      <section id="project-showcase" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 py-16 bg-black">
-        {filteredProjects.map(({ id, title, description, image, category, technologies, link }, i) => (
-          <motion.div
-            key={id}
-            custom={i}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={cardVariants}
-            whileHover={{ y: -6, transition: { duration: 0.3 } }}
-            className="
-              group relative
-              bg-white
-              text-gray-800
-              rounded-2xl
-              shadow-lg hover:shadow-xl
-              border border-gray-200 hover:border-blue-400
-              p-6
-              transition-all duration-300
-              flex flex-col
-              overflow-hidden
-            "
-          >
-            {/* Image */}
-            <div className="relative mb-4 overflow-hidden rounded-xl">
-              <img
-                src={image}
-                alt={title}
-                className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                {category}
-              </div>
-            </div>
-
-            {/* Title */}
-            <h3 className="text-xl font-bold mb-3 text-gray-900">
-              {title}
-            </h3>
-
-            {/* Technologies */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              {technologies.map((tech, index) => (
-                <span
-                  key={index}
-                  className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
-                >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            {/* Description */}
-            <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">
-              {description}
-            </p>
-
-            {/* View Project Button */}
-            <Link
-              to={link}
-              className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              <span>View Project</span>
-              <motion.span
-                className="text-lg"
-                whileHover={{ x: 3 }}
-                transition={{ duration: 0.2 }}
-              >
-                →
-              </motion.span>
-            </Link>
-          </motion.div>
-        ))}
-      </section>
-
-
+        </section>
+      )}
 
       {/* --------------------- Call to Action --------------------- */}
       <CTA />
