@@ -185,6 +185,26 @@ const ProjectPortfolio = () => {
             Discuss Your Project
           </motion.a>
         </div>
+
+        {/* Bottom Buttons */}
+        <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-20">
+          <motion.button
+            onClick={() => setSelectedCategory("Mobile App")}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition"
+          >
+            Mobile Apps
+          </motion.button>
+          <motion.button
+            onClick={() => setSelectedCategory("Web Development")}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition"
+          >
+            Web Apps
+          </motion.button>
+        </div>
       </section>
 
       {/* --------------------- Project Categories Filter --------------------- */}
