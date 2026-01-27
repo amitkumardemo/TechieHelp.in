@@ -48,15 +48,24 @@ const projectsData = [
     category: "Web Development",
     technologies: ["React", "Tailwind CSS", "JavaScript"],
     link: "#",
+    year: "2023",
+    headline: "Modern Developer Portfolio",
+    personality: "Creative and Interactive",
+    techStack: ["React", "Tailwind CSS", "JavaScript"],
+    industry: "Education",
   },
   {
     id: 2,
     title: "E-commerce Platform",
     description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
     image: ecom,
-    category: "Full Stack",
+    category: "Web Development",
     technologies: ["React", "Node.js", "MongoDB"],
     link: "#",
+    year: "2023",
+    headline: "Full-Featured E-commerce Store",
+    personality: "Robust and Secure",
+    techStack: ["React", "Node.js", "MongoDB"],
   },
   {
     id: 3,
@@ -66,6 +75,10 @@ const projectsData = [
     category: "Mobile App",
     technologies: ["React Native", "Firebase"],
     link: "#",
+    year: "2023",
+    headline: "Real-Time Food Delivery",
+    personality: "Efficient and User-Friendly",
+    techStack: ["React Native", "Firebase"],
   },
 ];
 
@@ -233,79 +246,125 @@ const ProjectPortfolio = () => {
               Our Featured <span className="text-green-500">Mobile Apps</span>
             </motion.h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-            {projectsData.filter(project => project.category === "Mobile App").map(({ id, title, description, image, category, technologies, link }, i) => (
-            <motion.div
-              key={id}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={cardVariants}
-              whileHover={{ y: -6, transition: { duration: 0.3 } }}
-              className="
-                group relative
-                bg-white
-                text-gray-800
-                rounded-2xl
-                shadow-lg hover:shadow-xl
-                border border-gray-200 hover:border-blue-400
-                p-6
-                transition-all duration-300
-                flex flex-col
-                overflow-hidden
-              "
-            >
-              {/* Image */}
-              <div className="relative mb-4 overflow-hidden rounded-xl">
-                <img
-                  src={image}
-                  alt={title}
-                  className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                  {category}
-                </div>
-              </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-bold mb-3 text-gray-900">
-                {title}
-              </h3>
-
-              {/* Technologies */}
-              <div className="flex flex-wrap gap-2 mb-3">
-                {technologies.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-
-              {/* Description */}
-              <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">
-                {description}
-              </p>
-
-              {/* View Project Button */}
-              <Link
-                to={link}
-                className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <span>View Project</span>
-                <motion.span
-                  className="text-lg"
-                  whileHover={{ x: 3 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  →
-                </motion.span>
-              </Link>
-            </motion.div>
-          ))}
+          <div className="px-6">
+            {(() => {
+              const filteredMobile = projectsData.filter(project => project.category === "Mobile App");
+              return (
+                <>
+                  {filteredMobile.length > 0 && (
+                    <div className="flex flex-col lg:flex-row gap-8 mb-8">
+                      <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={cardVariants}
+                        custom={0}
+                        className="bg-white text-gray-800 rounded-2xl shadow-lg p-8 flex-1"
+                      >
+                        {/* Large Image */}
+                        <div className="relative mb-6 overflow-hidden rounded-xl">
+                          <img src={filteredMobile[0].image} alt={filteredMobile[0].title} className="w-full h-64 object-cover" />
+                          <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            {filteredMobile[0].category}
+                          </div>
+                        </div>
+                        {/* Title */}
+                        <h3 className="text-2xl font-bold mb-4 text-gray-900">{filteredMobile[0].title}</h3>
+                        {/* Technologies */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {filteredMobile[0].technologies.map((tech, index) => (
+                            <span key={index} className="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">{tech}</span>
+                          ))}
+                        </div>
+                        {/* Description */}
+                        <p className="text-gray-600 text-base leading-relaxed mb-6 whitespace-pre-line">{filteredMobile[0].description}</p>
+                        {/* Button */}
+                        <Link to={filteredMobile[0].link} className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                          <span>View Project</span>
+                          <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
+                        </Link>
+                      </motion.div>
+                      <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={cardVariants}
+                        custom={1}
+                        className="bg-black text-white rounded-2xl shadow-lg p-6 lg:w-1/3"
+                      >
+                        <div className="mb-4 flex gap-2 justify-start">
+                          <div className="p-2 bg-green-100 border border-green-300 rounded-xl text-center w-20 flex items-center justify-center gap-1">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
+                            </svg>
+                            <p className="text-sm font-bold text-green-800">{filteredMobile[0].industry}</p>
+                          </div>
+                          <div className="p-2 bg-black/50 backdrop-blur-sm border border-green-200 rounded-xl text-center w-16 flex items-center justify-center">
+                            <p className="text-sm font-bold text-white">{filteredMobile[0].year}</p>
+                          </div>
+                        </div>
+                        <h4 className="text-xl font-bold mb-4">Project Details</h4>
+                        <div className="grid grid-cols-1 gap-4">
+                          <div>
+                            <p className="font-semibold">Headline:</p>
+                            <p>{filteredMobile[0].headline}</p>
+                          </div>
+                          <div>
+                            <p className="font-semibold">Personality:</p>
+                            <p>{filteredMobile[0].personality}</p>
+                          </div>
+                          <div>
+                            <p className="font-semibold">Tech Stack:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {filteredMobile[0].techStack.map((tech, index) => (
+                                <span key={index} className="bg-green-100 text-green-800 text-sm px-2 py-1 rounded-full">{tech}</span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  )}
+                  {filteredMobile.length > 1 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {filteredMobile.slice(1).map(({ id, title, description, image, category, technologies, link }, i) => (
+                        <motion.div
+                          key={id}
+                          custom={i + 1}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          variants={cardVariants}
+                          whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                          className="group relative bg-white text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-green-400 p-6 transition-all duration-300 flex flex-col overflow-hidden"
+                        >
+                          {/* Image */}
+                          <div className="relative mb-4 overflow-hidden rounded-xl">
+                            <img src={image} alt={title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{category}</div>
+                          </div>
+                          {/* Title */}
+                          <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
+                          {/* Technologies */}
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {technologies.map((tech, index) => (
+                              <span key={index} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">{tech}</span>
+                            ))}
+                          </div>
+                          {/* Description */}
+                          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">{description}</p>
+                          {/* Button */}
+                          <Link to={link} className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-5 py-2 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <span>View Project</span>
+                            <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              );
+            })()}
           </div>
         </section>
       )}
@@ -324,79 +383,140 @@ const ProjectPortfolio = () => {
               Our Featured <span className="text-purple-500">Web Apps</span>
             </motion.h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-            {projectsData.filter(project => project.category === "Web Development").map(({ id, title, description, image, category, technologies, link }, i) => (
-              <motion.div
-                key={id}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={cardVariants}
-                whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                className="
-                  group relative
-                  bg-white
-                  text-gray-800
-                  rounded-2xl
-                  shadow-lg hover:shadow-xl
-                  border border-gray-200 hover:border-blue-400
-                  p-6
-                  transition-all duration-300
-                  flex flex-col
-                  overflow-hidden
-                "
-              >
-                {/* Image */}
-                <div className="relative mb-4 overflow-hidden rounded-xl">
-                  <img
-                    src={image}
-                    alt={title}
-                    className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute top-2 right-2 bg-blue-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                    {category}
-                  </div>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold mb-3 text-gray-900">
-                  {title}
-                </h3>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {technologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded-full"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                {/* Description */}
-                <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">
-                  {description}
-                </p>
-
-                {/* View Project Button */}
-                <Link
-                  to={link}
-                  className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-5 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                >
-                  <span>View Project</span>
-                  <motion.span
-                    className="text-lg"
-                    whileHover={{ x: 3 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    →
-                  </motion.span>
-                </Link>
-              </motion.div>
-            ))}
+          <div className="px-6">
+            {(() => {
+              const filteredWeb = projectsData.filter(project => project.category === "Web Development");
+              return (
+                <>
+                  {filteredWeb.length > 0 && (
+                    <div className="flex flex-col lg:flex-row gap-8 mb-8">
+                      <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={cardVariants}
+                        custom={0}
+                        className="bg-white text-gray-800 rounded-2xl shadow-lg p-8 flex-1"
+                      >
+                        {/* Large Image */}
+                        <div className="relative mb-6 overflow-hidden rounded-xl">
+                          <img src={filteredWeb[0].image} alt={filteredWeb[0].title} className="w-full h-64 object-cover" />
+                          <div className="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                            {filteredWeb[0].category}
+                          </div>
+                        </div>
+                        {/* Title */}
+                        <h3 className="text-2xl font-bold mb-4 text-gray-900">{filteredWeb[0].title}</h3>
+                        {/* Technologies */}
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {filteredWeb[0].technologies.map((tech, index) => (
+                            <span key={index} className="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full flex items-center gap-1">
+                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                              </svg>
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                        {/* Description */}
+                        <p className="text-gray-600 text-base leading-relaxed mb-6 whitespace-pre-line">{filteredWeb[0].description}</p>
+                        {/* Button */}
+                        <Link to={filteredWeb[0].link} className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                          <span>View Project</span>
+                          <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
+                        </Link>
+                      </motion.div>
+                      <motion.div
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true }}
+                        variants={cardVariants}
+                        custom={1}
+                        className="bg-gray-900 text-white rounded-2xl shadow-lg p-6 lg:w-1/3"
+                      >
+                        <div className="mb-4 flex gap-2 justify-start">
+                          <div className="p-2 bg-green-100 border border-green-300 rounded-xl text-center w-20 flex items-center justify-center gap-1">
+                            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
+                            </svg>
+                            <p className="text-sm font-bold text-green-800">{filteredWeb[0].industry}</p>
+                          </div>
+                          <div className="p-2 bg-black/50 backdrop-blur-sm border border-green-200 rounded-xl text-center w-16 flex items-center justify-center">
+                            <p className="text-sm font-bold text-white">{filteredWeb[0].year}</p>
+                          </div>
+                        </div>
+                        <h4 className="text-xl font-bold mb-4">Project Details</h4>
+                        <div className="grid grid-cols-1 gap-4">
+                          <div>
+                            <p className="font-semibold">Headline:</p>
+                            <p>{filteredWeb[0].headline}</p>
+                          </div>
+                          <div>
+                            <p className="font-semibold">Personality:</p>
+                            <p>{filteredWeb[0].personality}</p>
+                          </div>
+                          <div>
+                            <p className="font-semibold">Tech Stack:</p>
+                            <div className="flex flex-wrap gap-2">
+                              {filteredWeb[0].techStack.map((tech, index) => (
+                                <span key={index} className="bg-purple-100 text-purple-800 text-sm px-2 py-1 rounded-full flex items-center gap-1">
+                                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                  </svg>
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    </div>
+                  )}
+                  {filteredWeb.length > 1 && (
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                      {filteredWeb.slice(1).map(({ id, title, description, image, category, technologies, link }, i) => (
+                        <motion.div
+                          key={id}
+                          custom={i + 1}
+                          initial="hidden"
+                          whileInView="visible"
+                          viewport={{ once: true }}
+                          variants={cardVariants}
+                          whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                          className="group relative bg-white text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-purple-400 p-6 transition-all duration-300 flex flex-col overflow-hidden"
+                        >
+                          {/* Image */}
+                          <div className="relative mb-4 overflow-hidden rounded-xl">
+                            <img src={image} alt={title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{category}</div>
+                          </div>
+                          {/* Title */}
+                          <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
+                          {/* Technologies */}
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {technologies.map((tech, index) => (
+                              <span key={index} className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full flex items-center gap-1">
+                                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                                </svg>
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+                          {/* Description */}
+                          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">{description}</p>
+                          {/* Button */}
+                          <Link to={link} className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-600 text-white px-5 py-2 rounded-full font-medium hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            <span>View Project</span>
+                            <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
+                          </Link>
+                        </motion.div>
+                      ))}
+                    </div>
+                  )}
+                </>
+              );
+            })()}
           </div>
         </section>
       )}
