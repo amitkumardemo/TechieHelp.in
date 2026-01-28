@@ -293,14 +293,14 @@ const ProjectPortfolio = () => {
                         className="bg-black text-white rounded-2xl shadow-lg p-6 lg:w-1/3"
                       >
                         <div className="mb-4 flex gap-2 justify-start">
-                          <div className="p-2 bg-green-100 border border-green-300 rounded-xl text-center w-20 flex items-center justify-center gap-1">
+                          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-gray-300 rounded-xl text-center w-20 flex items-center justify-center gap-1">
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
                             </svg>
-                            <p className="text-sm font-bold text-green-800">{filteredMobile[0].industry}</p>
+                            <p className="text-sm font-bold text-white">{filteredMobile[0].industry}</p>
                           </div>
-                          <div className="p-2 bg-black/50 backdrop-blur-sm border border-green-200 rounded-xl text-center w-16 flex items-center justify-center">
-                            <p className="text-sm font-bold text-white">{filteredMobile[0].year}</p>
+                          <div className="p-2 bg-gray-100/60 backdrop-blur-sm border border-gray-300 rounded-xl text-center w-16 flex items-center justify-center">
+                            <p className="text-sm font-bold text-gray-900">{filteredMobile[0].year}</p>
                           </div>
                         </div>
                         <h4 className="text-xl font-bold mb-4">Project Details</h4>
@@ -435,14 +435,14 @@ const ProjectPortfolio = () => {
                         className="bg-gray-900 text-white rounded-2xl shadow-lg p-6 lg:w-1/3"
                       >
                         <div className="mb-4 flex gap-2 justify-start">
-                          <div className="p-2 bg-green-100 border border-green-300 rounded-xl text-center w-20 flex items-center justify-center gap-1">
+                          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
                             </svg>
-                            <p className="text-sm font-bold text-green-800">{filteredWeb[0].industry}</p>
+                            <p className="text-sm font-bold text-white">{filteredWeb[0].industry}</p>
                           </div>
-                          <div className="p-2 bg-black/50 backdrop-blur-sm border border-green-200 rounded-xl text-center w-16 flex items-center justify-center">
-                            <p className="text-sm font-bold text-white">{filteredWeb[0].year}</p>
+                          <div className="p-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-center w-16 flex items-center justify-center">
+                            <p className="text-sm font-bold text-white-900">{filteredWeb[0].year}</p>
                           </div>
                         </div>
                         <h4 className="text-xl font-bold mb-4">Project Details</h4>
