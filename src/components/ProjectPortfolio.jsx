@@ -49,8 +49,6 @@ const projectsData = [
     technologies: ["React", "Tailwind CSS", "JavaScript"],
     link: "#",
     year: "2023",
-    headline: "Modern Developer Portfolio",
-    personality: "Creative and Interactive",
     techStack: ["React", "Tailwind CSS", "JavaScript"],
     industry: "Education",
   },
@@ -63,8 +61,6 @@ const projectsData = [
     technologies: ["React", "Node.js", "MongoDB"],
     link: "#",
     year: "2023",
-    headline: "Full-Featured E-commerce Store",
-    personality: "Robust and Secure",
     techStack: ["React", "Node.js", "MongoDB"],
   },
   {
@@ -303,7 +299,10 @@ const ProjectPortfolio = () => {
                             <p className="text-sm font-bold text-gray-900">{filteredMobile[0].year}</p>
                           </div>
                         </div>
-                        <h4 className="text-xl font-bold mb-4">Project Details</h4>
+                        <h4 className="text-2xl font-bold mb-4">{filteredMobile[0].title}</h4>
+                        <div className="mb-4 p-4 bg-gray-100 rounded-lg">
+                          <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{filteredMobile[0].description}</p>
+                        </div>
                         <div className="grid grid-cols-1 gap-4">
                           <div>
                             <p className="font-semibold">Headline:</p>
@@ -434,7 +433,7 @@ const ProjectPortfolio = () => {
                         custom={1}
                         className="bg-gray-900 text-white rounded-2xl shadow-lg p-6 lg:w-1/3"
                       >
-                        <div className="mb-4 flex gap-2 justify-start">
+                        <div className="mb-8 flex gap-2 justify-start">
                           <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
                             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clipRule="evenodd" />
@@ -445,16 +444,11 @@ const ProjectPortfolio = () => {
                             <p className="text-sm font-bold text-white-900">{filteredWeb[0].year}</p>
                           </div>
                         </div>
-                        <h4 className="text-xl font-bold mb-4">Project Details</h4>
+                        <h4 className="text-3xl font-bold mb-1">{filteredWeb[0].title}</h4>
+                        <div className="mb-8 p-4 bg-gray/10 rounded-lg">
+                          <p className="text-gray-300 text-sm leading-relaxed whitespace-pre-line">{filteredWeb[0].description}</p>
+                        </div>
                         <div className="grid grid-cols-1 gap-4">
-                          <div>
-                            <p className="font-semibold">Headline:</p>
-                            <p>{filteredWeb[0].headline}</p>
-                          </div>
-                          <div>
-                            <p className="font-semibold">Personality:</p>
-                            <p>{filteredWeb[0].personality}</p>
-                          </div>
                           <div>
                             <p className="font-semibold">Tech Stack:</p>
                             <div className="flex flex-wrap gap-2">
