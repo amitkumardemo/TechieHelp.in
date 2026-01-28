@@ -42,15 +42,15 @@ import CTA from "./CTA";
 const projectsData = [
   {
     id: 1,
-    title: "Portfolio Website",
-    description: `🎨 Modern developer portfolio with React & Tailwind CSS\n📊 Auto-updated GitHub & LeetCode achievements\n⚡ Responsive design with smooth animations\n🔗 Live project links and contact integration`,
+    title: "Rai Construction",
+    description: `To design and develop a modern, SEO-optimized corporate website along with a secure admin panel that allows the client to independently manage website content such as projects, services, and blog posts, while improving online and local visibility. `,
     image: portfolio,
     category: "Web Development",
     technologies: ["React", "Tailwind CSS", "JavaScript"],
-    link: "#",
+    link: "https://www.raiconstructionsolutions.com/",
     year: "2023",
-    techStack: ["React", "Tailwind CSS", "JavaScript"],
-    industry: "Education",
+    techStack: ["Html", "CSS", "JavaScript"],
+    industry: "Corporate",
   },
   {
     id: 2,
@@ -255,30 +255,21 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={0}
-                        className="bg-white text-gray-800 rounded-2xl shadow-lg p-8 flex-1"
+                        className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 flex-1"
                       >
                         {/* Large Image */}
-                        <div className="relative mb-6 overflow-hidden rounded-xl">
-                          <img src={filteredMobile[0].image} alt={filteredMobile[0].title} className="w-full h-64 object-cover" />
-                          <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        <div className="relative mt-6 overflow-hidden rounded-xl p-0">
+                          <img src={filteredMobile[0].image} alt={filteredMobile[0].title} className="w-full h-[480px] object-cover" />
+                          <div className="absolute top-1 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             {filteredMobile[0].category}
                           </div>
+                          <div className="absolute bottom-4 left-4">
+                            <Link to={filteredMobile[0].link} className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                              <span>Visit Live</span>
+                              <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
+                            </Link>
+                          </div>
                         </div>
-                        {/* Title */}
-                        <h3 className="text-2xl font-bold mb-4 text-gray-900">{filteredMobile[0].title}</h3>
-                        {/* Technologies */}
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {filteredMobile[0].technologies.map((tech, index) => (
-                            <span key={index} className="bg-green-100 text-green-800 text-sm px-3 py-1 rounded-full">{tech}</span>
-                          ))}
-                        </div>
-                        {/* Description */}
-                        <p className="text-gray-600 text-base leading-relaxed mb-6 whitespace-pre-line">{filteredMobile[0].description}</p>
-                        {/* Button */}
-                        <Link to={filteredMobile[0].link} className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                          <span>View Project</span>
-                          <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
-                        </Link>
                       </motion.div>
                       <motion.div
                         initial="hidden"
@@ -304,14 +295,6 @@ const ProjectPortfolio = () => {
                           <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{filteredMobile[0].description}</p>
                         </div>
                         <div className="grid grid-cols-1 gap-4">
-                          <div>
-                            <p className="font-semibold">Headline:</p>
-                            <p>{filteredMobile[0].headline}</p>
-                          </div>
-                          <div>
-                            <p className="font-semibold">Personality:</p>
-                            <p>{filteredMobile[0].personality}</p>
-                          </div>
                           <div>
                             <p className="font-semibold">Tech Stack:</p>
                             <div className="flex flex-wrap gap-2">
@@ -354,7 +337,7 @@ const ProjectPortfolio = () => {
                           <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">{description}</p>
                           {/* Button */}
                           <Link to={link} className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-5 py-2 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                            <span>View Project</span>
+                            <span>Visit Live</span>
                             <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
                           </Link>
                         </motion.div>
@@ -395,35 +378,21 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={0}
-                        className="bg-white text-gray-800 rounded-2xl shadow-lg p-8 flex-1"
+                        className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 flex-1"
                       >
                         {/* Large Image */}
-                        <div className="relative mb-6 overflow-hidden rounded-xl">
-                          <img src={filteredWeb[0].image} alt={filteredWeb[0].title} className="w-full h-64 object-cover" />
-                          <div className="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                        <div className="relative mt-6 overflow-hidden rounded-xl p-0">
+                          <img src={filteredWeb[0].image} alt={filteredWeb[0].title} className="w-full h-[480px] object-cover" />
+                          <div className="absolute top-1 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             {filteredWeb[0].category}
                           </div>
+                          <div className="absolute bottom-4 left-4">
+                            <Link to={filteredWeb[0].link} className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                              <span>Visit Live</span>
+                              <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
+                            </Link>
+                          </div>
                         </div>
-                        {/* Title */}
-                        <h3 className="text-2xl font-bold mb-4 text-gray-900">{filteredWeb[0].title}</h3>
-                        {/* Technologies */}
-                        <div className="flex flex-wrap gap-2 mb-4">
-                          {filteredWeb[0].technologies.map((tech, index) => (
-                            <span key={index} className="bg-purple-100 text-purple-800 text-sm px-3 py-1 rounded-full flex items-center gap-1">
-                              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                              </svg>
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                        {/* Description */}
-                        <p className="text-gray-600 text-base leading-relaxed mb-6 whitespace-pre-line">{filteredWeb[0].description}</p>
-                        {/* Button */}
-                        <Link to={filteredWeb[0].link} className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                          <span>View Project</span>
-                          <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
-                        </Link>
                       </motion.div>
                       <motion.div
                         initial="hidden"
@@ -431,7 +400,7 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={1}
-                        className="bg-gray-900 text-white rounded-2xl shadow-lg p-6 lg:w-1/3"
+                        className="bg-gray-900 text-white rounded-2xl shadow-lg p-2 lg:w-1/3"
                       >
                         <div className="mb-8 flex gap-2 justify-start">
                           <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
