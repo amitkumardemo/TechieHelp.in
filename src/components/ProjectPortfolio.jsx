@@ -125,6 +125,30 @@ const projectsData = [
     techStack: ["React", "Node.js", "MongoDB"],
     industry: "Education",
   },
+  {
+    id: 8,
+    title: "Ujjawal Library",
+    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
+    image: ecom,
+    category: "Web Development",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "#",
+    year: "2023",
+    techStack: ["React", "Node.js", "MongoDB"],
+    industry: "Education",
+  },
+  {
+    id: 9,
+    title: "Ujjawal Library",
+    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
+    image: ecom,
+    category: "Web Development",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "#",
+    year: "2023",
+    techStack: ["React", "Node.js", "MongoDB"],
+    industry: "Education",
+  },
 ];
 
 
@@ -147,6 +171,8 @@ const ProjectPortfolio = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const heroRef = useRef(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const gridRef = useRef(null);
 
   const slidingImages = [webdev, fullstack2, mobileapp, restaurant, web, custom, doctor];
 
@@ -174,6 +200,16 @@ const ProjectPortfolio = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (gridRef.current) {
+        gridRef.current.scrollLeft += 1; // Adjust speed as needed
+      }
+    }, 50); // Adjust interval as needed
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -357,7 +393,7 @@ const ProjectPortfolio = () => {
                     </div>
                   )}
                   {filteredMobile.length > 1 && (
-                    <div className="flex flex-wrap gap-8 max-w-6xl mx-auto">
+                    <div ref={gridRef} className="overflow-x-auto overflow-y-hidden flex flex-nowrap gap-8">
                       {filteredMobile.slice(1).map(({ id, title, description, image, category, technologies, link }, i) => (
                         <motion.div
                           key={id}
@@ -367,7 +403,7 @@ const ProjectPortfolio = () => {
                           viewport={{ once: true }}
                           variants={cardVariants}
                           whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                          className="group relative bg-white text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-green-400 p-6 transition-all duration-300 flex flex-col overflow-hidden"
+                          className="group relative bg-white text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-green-400 p-6 transition-all duration-300 flex flex-col overflow-hidden min-w-[250px]"
                         >
                           {/* Image */}
                           <div className="relative mb-4 overflow-hidden rounded-xl">
@@ -485,7 +521,7 @@ const ProjectPortfolio = () => {
                     </div>
                   )}
                   {filteredWeb.length > 1 && (
-                    <div className="flex flex-wrap gap-8 max-w-4xl mx-auto">
+                    <div ref={gridRef} className="overflow-x-auto overflow-y-hidden flex flex-nowrap gap-8">
                       {filteredWeb.slice(1).map(({ id, title, image, industry }, i) => (
                         <motion.div
                           key={id}
@@ -495,7 +531,7 @@ const ProjectPortfolio = () => {
                           viewport={{ once: true }}
                           variants={cardVariants}
                           whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                          className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden"
+                          className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[250px]"
                         >
                           {/* Image */}
                           <div className="relative mb-1 overflow-hidden rounded-xl">
