@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -38,6 +38,7 @@ import {
   react,
   aiml,
   devops,
+  cyber,
   // Interns of Months photos
   aarshdeepcertificate,
   aarshdeepdiary,
@@ -71,7 +72,8 @@ const internships = [
   { id: 15, title: "JavaScript Developer Internship", description: "Work on dynamic front-end projects using JavaScript, ES6+, and related libraries.", image: javascript, link: "/javascript" },
   { id: 16, title: "Node.js Developer Internship", description: "Build scalable server-side applications using Node.js and Express.", image: node, link: "/node" },
   { id: 17, title: "AI/ML Developer Internship", description: "Work on AI models, machine learning algorithms, and real-world datasets using Python and popular libraries.", image: aiml, link: "/aiml" },
-  { id: 18, title: "DevOps Internship", description: "Implement CI/CD pipelines, containerization with Docker, and deploy scalable apps with cloud platforms.", image: devops, link: "/devops" }
+  { id: 18, title: "DevOps Internship", description: "Implement CI/CD pipelines, containerization with Docker, and deploy scalable apps with cloud platforms.", image: devops, link: "/devops" },
+  { id: 19, title: "Cyber Security Internship", description: "Protect systems, networks, and applications from cyber threats. Learn ethical hacking basics, vulnerability assessment, penetration testing, network security, and cybersecurity best practices through hands-on labs and real-world scenarios.", image: cyber, link: "/cybersecurity" }
 ];
 
 const Internship = () => {
@@ -96,10 +98,18 @@ const Internship = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   // Filter internships based on search term
-  const filteredInternships = internships.filter(internship =>
-    internship.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    internship.description.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const [filteredInternships, setFilteredInternships] = useState(internships);
+
+  useEffect(() => {
+    if (searchTerm.trim() === '') {
+      setFilteredInternships(internships);
+    } else {
+      setFilteredInternships(internships.filter(internship =>
+        internship.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        internship.description.toLowerCase().includes(searchTerm.toLowerCase())
+      ));
+    }
+  }, [searchTerm]);
 
   // Auto-scroll functionality
   useEffect(() => {
@@ -183,7 +193,7 @@ const Internship = () => {
             </div>
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-white my-12 px-8 py-20">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-white my-8 px-8 py-10">
             Our Internship Programs
           </h2>
 
@@ -232,109 +242,124 @@ const Internship = () => {
             }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           >
-            {filteredInternships.map((item, index) => (
-              <motion.div
-                key={item.id}
-                variants={{
-                  hidden: { opacity: 0, y: 60, scale: 0.8 },
-                  visible: { opacity: 1, y: 0, scale: 1 }
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  y: -10,
-                  rotateY: 5,
-                  transition: { duration: 0.3 }
-                }}
-                className="group relative bg-gradient-to-br from-white via-gray-50 to-blue-50 text-gray-900 rounded-3xl shadow-xl hover:shadow-2xl p-6 cursor-pointer transition-all duration-500 border border-gray-200 hover:border-blue-400 overflow-hidden"
-              >
-                {/* Animated background gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-purple-100/30 to-cyan-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            {filteredInternships.length > 0 ? (
+              filteredInternships.map((item, index) => (
+                <motion.div
+                  key={item.id}
+                  variants={{
+                    hidden: { opacity: 0, y: 60, scale: 0.8 },
+                    visible: { opacity: 1, y: 0, scale: 1 }
+                  }}
+                  whileHover={{
+                    scale: 1.05,
+                    y: -10,
+                    rotateY: 5,
+                    transition: { duration: 0.3 }
+                  }}
+                  className="group relative bg-gradient-to-br from-white via-gray-50 to-blue-50 text-gray-900 rounded-3xl shadow-xl hover:shadow-2xl p-6 cursor-pointer transition-all duration-500 border border-gray-200 hover:border-blue-400 overflow-hidden"
+                >
+                  {/* Animated background gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-100/50 via-purple-100/30 to-cyan-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                {/* Floating geometric shapes */}
-                <div className="absolute top-4 right-4 w-3 h-3 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce"></div>
-                <div className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse delay-200"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 border-2 border-cyan-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping delay-100"></div>
+                  {/* Floating geometric shapes */}
+                  <div className="absolute top-4 right-4 w-3 h-3 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-bounce"></div>
+                  <div className="absolute bottom-4 left-4 w-2 h-2 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse delay-200"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 border-2 border-cyan-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping delay-100"></div>
 
-                {/* Tech pattern overlay */}
-                <div className="absolute top-0 right-0 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
-                  <svg viewBox="0 0 100 100" className="w-full h-full">
-                    <defs>
-                      <pattern id={`tech-pattern-${index}`} patternUnits="userSpaceOnUse" width="20" height="20">
-                        <rect width="20" height="20" fill="none"/>
-                        <circle cx="10" cy="10" r="1" fill="currentColor"/>
-                        <rect x="5" y="5" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
-                      </pattern>
-                    </defs>
-                    <rect width="100" height="100" fill={`url(#tech-pattern-${index})`}/>
-                  </svg>
-                </div>
+                  {/* Tech pattern overlay */}
+                  <div className="absolute top-0 right-0 w-20 h-20 opacity-5 group-hover:opacity-10 transition-opacity duration-300">
+                    <svg viewBox="0 0 100 100" className="w-full h-full">
+                      <defs>
+                        <pattern id={`tech-pattern-${index}`} patternUnits="userSpaceOnUse" width="20" height="20">
+                          <rect width="20" height="20" fill="none"/>
+                          <circle cx="10" cy="10" r="1" fill="currentColor"/>
+                          <rect x="5" y="5" width="10" height="10" fill="none" stroke="currentColor" strokeWidth="0.5"/>
+                        </pattern>
+                      </defs>
+                      <rect width="100" height="100" fill={`url(#tech-pattern-${index})`}/>
+                    </svg>
+                  </div>
 
-                <div className="relative z-10">
-                  <motion.div
-                    className="relative mb-4 overflow-hidden rounded-2xl"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                    {/* Image overlay gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                    {/* Category badge */}
-                    <div className="absolute top-3 left-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                      {item.title.split(' ')[0]}
-                    </div>
-                  </motion.div>
-
-                  <motion.h3
-                    className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-800 transition-colors duration-300"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.2 }}
-                  >
-                    {item.title}
-                  </motion.h3>
-
-                  <motion.p
-                    className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-800 transition-colors duration-300 line-clamp-3"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.3 }}
-                  >
-                    {item.description}
-                  </motion.p>
-
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="inline-block"
-                  >
-                    <Link
-                      to={item.link}
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                  <div className="relative z-10">
+                    <motion.div
+                      className="relative mb-4 overflow-hidden rounded-2xl"
+                      whileHover={{ scale: 1.02 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <span>Explore More</span>
-                      <motion.span
-                        className="text-lg"
-                        whileHover={{ x: 3 }}
-                        transition={{ duration: 0.2 }}
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                      {/* Image overlay gradient */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+                      {/* Category badge */}
+                      <div className="absolute top-3 left-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+                        {item.title.split(' ')[0]}
+                      </div>
+                    </motion.div>
+
+                    <motion.h3
+                      className="text-xl font-bold mb-3 text-gray-900 group-hover:text-blue-800 transition-colors duration-300"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.2 }}
+                    >
+                      {item.title}
+                    </motion.h3>
+
+                    <motion.p
+                      className="text-gray-600 mb-4 leading-relaxed group-hover:text-gray-800 transition-colors duration-300 line-clamp-3"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 0.3 }}
+                    >
+                      {item.description}
+                    </motion.p>
+
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="inline-block"
+                    >
+                      <Link
+                        to={item.link}
+                        className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-4 py-2 rounded-full font-medium hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl"
                       >
-                        →
-                      </motion.span>
-                    </Link>
-                  </motion.div>
-                </div>
+                        <span>Explore More</span>
+                        <motion.span
+                          className="text-lg"
+                          whileHover={{ x: 3 }}
+                          transition={{ duration: 0.2 }}
+                        >
+                          →
+                        </motion.span>
+                      </Link>
+                    </motion.div>
+                  </div>
 
-                {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
+                  {/* Shine effect */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
 
-                {/* Hover border effect */}
-                <div className="absolute inset-0 rounded-3xl border-2 border-blue-400 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
-              </motion.div>
-            ))}
+                  {/* Hover border effect */}
+                  <div className="absolute inset-0 rounded-3xl border-2 border-blue-400 opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></div>
+                </motion.div>
+              ))
+            ) : (
+              searchTerm.trim() !== '' && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="col-span-full text-center py-16"
+                >
+                  <div className="text-6xl mb-4">🔍</div>
+                  <h3 className="text-2xl font-bold text-white mb-2">No internships available</h3>
+                  <p className="text-gray-300">Try adjusting your search terms or browse all internships.</p>
+                </motion.div>
+              )
+            )}
           </motion.div>
 
               {/* Detailed Internship Domains & Flexible Duration Options Section */}

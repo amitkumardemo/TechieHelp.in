@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
-  webdevelopment,
+  cyber,
   intern,
   overview,
   swag,
@@ -45,7 +45,7 @@ const Section = ({ title, children, imgSrc, imgLeft = true }) => {
   );
 };
 
-const Webdevelopment = () => {
+const Cybersecurity = () => {
   const [loading, setLoading] = useState(true);
 
   // Calculate next batch start date (1st of next month in 2026)
@@ -75,17 +75,17 @@ const Webdevelopment = () => {
                 Most Popular Training Program
               </div>
               <h1 className="text-4xl md:text-5xl font-bold mb-2 leading-tight">
-                Full Stack Web Development Training & Internship Program in Rajasthan
+                Cyber Security Training & Internship Program in Rajasthan
               </h1>
               <h2 className="text-2xl md:text-3xl font-semibold mb-2">
-                Industry-Focused Training with Live Projects, Internship Experience, and Career Support
+                Industry-Focused Training with Ethical Hacking, Vulnerability Assessment, and Career Support
               </h2>
               <p className="text-lg mb-3 leading-tight">
-                Build real-world projects, gain internship experience, and get career support in Jodhpur, Jaipur, and Rajasthan.
+                Learn ethical hacking, protect systems from cyber threats, and get career support in Jodhpur, Jaipur, and Rajasthan.
               </p>
               <ul className="flex flex-wrap gap-4 mb-5">
-            
-                <li className="bg-white/10 px-4 py-2 rounded-full text-sm">Live Project-Based Training</li>
+
+                <li className="bg-white/10 px-4 py-2 rounded-full text-sm">Hands-on Ethical Hacking</li>
                 <li className="bg-white/10 px-4 py-2 rounded-full text-sm">Beginner Friendly</li>
                 <li className="bg-white/10 px-4 py-2 rounded-full text-sm">Career Support</li>
               </ul>
@@ -138,11 +138,11 @@ const Webdevelopment = () => {
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-blue-100 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-blue-900 mb-2">15+</div>
-                  <div className="text-sm text-blue-700">Live Projects</div>
+                  <div className="text-3xl font-bold text-blue-900 mb-2">12+</div>
+                  <div className="text-sm text-blue-700">Security Labs</div>
                 </div>
                 <div className="bg-green-100 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-green-900 mb-2">95%</div>
+                  <div className="text-3xl font-bold text-green-900 mb-2">90%</div>
                   <div className="text-sm text-green-700">Placement Rate</div>
                 </div>
                 <div className="bg-indigo-100 rounded-lg p-6 text-center">
@@ -150,7 +150,7 @@ const Webdevelopment = () => {
                   <div className="text-sm text-indigo-700">Mentor Support</div>
                 </div>
                 <div className="bg-yellow-100 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-yellow-900 mb-2">₹8L</div>
+                  <div className="text-3xl font-bold text-yellow-900 mb-2">₹10L</div>
                   <div className="text-sm text-yellow-700">Avg. Salary</div>
                 </div>
               </div>
@@ -185,47 +185,47 @@ const Webdevelopment = () => {
 
       <Section imgSrc={overview} imgLeft={false} title="🔥 Why Choose TechieHelp?">
         <p>
-          At TechieHelp, we believe in learning by building. Our internship program is designed for students, freshers, and aspiring developers who want to gain practical experience in web development under the guidance of experienced mentors.
+          At TechieHelp, we believe in learning by doing. Our cybersecurity internship program is designed for students, freshers, and aspiring security professionals who want to gain practical experience in ethical hacking and cybersecurity under the guidance of experienced mentors.
         </p>
         <ul className="list-disc list-inside mt-2 space-y-1">
           <li>✔️ Recognized by MSME & Verified on AICTE Internship Portal</li>
           <li>✔️ Offer Letter + Completion Certificate + LinkedIn Badge</li>
-          <li>✔️ Live Classes + Mentor Guidance + Hackathons + Projects</li>
-          <li>✔️ Resume Review & GitHub Hosting Support</li>
+          <li>✔️ Live Classes + Mentor Guidance + CTF Challenges + Labs</li>
+          <li>✔️ Resume Review & Portfolio Building Support</li>
           <li>✔️ Intern ID with Public Records on TechieHelp Website</li>
           <li>✔️ Best Interns Get Goodies + Certificate of Excellence + LinkedIn/YouTube Feature</li>
         </ul>
       </Section>
 
-      <Section imgSrc={webdevelopment} imgLeft={true} title="🚀 Internship Overview">
+      <Section imgSrc={cyber} imgLeft={true} title="🚀 Internship Overview">
         <p><strong>Internship Duration Options:</strong></p>
         <ul className="list-disc list-inside mt-2 space-y-1">
-          <li>1 Month (Beginner Level)</li>
-          <li>2 Months (Intermediate Level)</li>
-          <li>3 Months (Advanced + Full-Stack Level)</li>
+          <li>1 Month (Beginner Level - Fundamentals)</li>
+          <li>2 Months (Intermediate Level - Tools & Techniques)</li>
+          <li>3 Months (Advanced Level - Real-world Scenarios)</li>
         </ul>
         <p className="mt-4">
           <strong>Mode:</strong> Online<br />
-          <strong>Format:</strong> Live Sessions, Recordings, Doubt Solving, Hackathons<br />
-          <strong>Tools Covered:</strong> HTML, CSS, JavaScript, ReactJS, GitHub, Firebase, APIs, and More
+          <strong>Format:</strong> Live Sessions, Recordings, Doubt Solving, CTF Challenges<br />
+          <strong>Tools Covered:</strong> Kali Linux, Metasploit, Wireshark, Burp Suite, Nmap, and More
         </p>
       </Section>
 
       <Section imgSrc={swag} imgLeft={false} title="🌟 What You Will Achieve">
         <ul className="list-disc list-inside space-y-2 text-lg">
-          <li>📌 Real-World Web Dev Projects for Resume</li>
-          <li>🛠 GitHub Portfolio + Hosted Project Links</li>
+          <li>📌 Real-World Cybersecurity Projects for Resume</li>
+          <li>🛠 Ethical Hacking Portfolio + Lab Reports</li>
           <li>🎖 Certificate, Badge, and Offer Letter</li>
-          <li>🤝 Networking with Like-Minded Interns</li>
+          <li>🤝 Networking with Security Professionals</li>
           <li>🏁 Eligibility for Excellence Awards + Public Recognition</li>
         </ul>
       </Section>
 
       {/* 1-Month Internship */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 my-20 text-white">
-        <h2 className="text-3xl font-bold mb-8 text-center">🔥 1-Month Web Development Internship — ₹999</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">🔥 1-Month Cyber Security Internship — ₹999</h2>
         <p className="text-center mb-6 font-semibold">
-          Best for Beginners • Fast-Track Learning • Certificate + Badge
+          Best for Beginners • Learn Fundamentals • Certificate + Badge
         </p>
         <div className="overflow-x-auto mb-12">
           <table className="min-w-full text-left text-white border border-cyan-500 rounded-lg">
@@ -240,47 +240,49 @@ const Webdevelopment = () => {
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 1</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  🚀 Orientation & Platform Walkthrough<br />
-                  🛠️ HTML + CSS Hands-on Session
+                  🚀 Orientation & Platform Setup<br />
+                  🛠️ Introduction to Cyber Security & Ethical Hacking
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Set up your LMS & GitHub profile<br />
-                  ✅ Select your real-world project<br />
-                  ✅ Start building your first web page with HTML and CSS
+                  ✅ Set up your LMS & learning environment<br />
+                  ✅ Understand cybersecurity fundamentals<br />
+                  ✅ Learn about ethical hacking principles
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 2</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  💡 JavaScript for Beginners<br />
-                  🎯 Mentorship & AMA with Industry Experts
+                  💡 Network Security Basics<br />
+                  🎯 Footprinting & Reconnaissance
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Understand DOM, events & interactivity<br />
-                  ✅ Submit your project objective document with clear goals
+                  ✅ Learn network fundamentals<br />
+                  ✅ Practice information gathering techniques<br />
+                  ✅ Submit your first reconnaissance report
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 3</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ⚛️ ReactJS Basics Introduction<br />
-                  🌐 Website Hosting Workshop
+                  🔍 Scanning & Enumeration<br />
+                  🌐 Vulnerability Assessment Introduction
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Learn about React Components & JSX<br />
-                  ✅ Host your first live website using GitHub Pages
+                  ✅ Master scanning tools like Nmap<br />
+                  ✅ Learn enumeration techniques<br />
+                  ✅ Perform basic vulnerability scans
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 4</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  🏁 Final Project Review<br />
-                  🎓 Certificate & Badge Distribution + GitHub Showcase Walkthrough
+                  🏁 Final Project & Certification<br />
+                  🎓 Certificate Distribution + Portfolio Review
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Submit your full project<br />
+                  ✅ Complete your security assessment project<br />
                   ✅ Get personal review by mentors<br />
-                  ✅ Receive your verified certificate, badge & LinkedIn-ready GitHub project link
+                  ✅ Receive your verified certificate and badge
                 </td>
               </tr>
             </tbody>
@@ -290,9 +292,9 @@ const Webdevelopment = () => {
 
       {/* 2-Month Internship */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 my-20 text-white">
-        <h2 className="text-3xl font-bold mb-8 text-center">🚀 2-Month Web Development Internship — ₹1499</h2>
+        <h2 className="text-3xl font-bold mb-8 text-center">🚀 2-Month Cyber Security Internship — ₹1499</h2>
         <p className="text-center mb-6 font-semibold">
-          Ideal for Intermediate Learners • Build a Strong Portfolio • More Depth, More Projects
+          Intermediate Level • Advanced Tools • Build Strong Portfolio
         </p>
         <div className="overflow-x-auto mb-12">
           <table className="min-w-full text-left text-white border border-cyan-500 rounded-lg">
@@ -307,83 +309,89 @@ const Webdevelopment = () => {
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 1</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  🎯 Kick-off & Tool Setup<br />
-                  📦 Git, GitHub & Web Fundamentals
+                  🎯 Advanced Reconnaissance<br />
+                  📦 Kali Linux Environment Setup
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Set up development environment<br />
-                  ✅ Explore Git & GitHub basics<br />
-                  ✅ Learn to push your code like a pro
+                  ✅ Set up professional security environment<br />
+                  ✅ Master advanced information gathering<br />
+                  ✅ Learn OSINT techniques
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 2</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  🧠 JavaScript Deep Dive<br />
-                  🔁 Loops, Conditions, Arrays, Functions
+                  🧠 Web Application Security<br />
+                  🔁 SQL Injection & XSS Attacks
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Master JavaScript core concepts<br />
-                  ✅ Complete real coding assignments
+                  ✅ Understand web vulnerabilities<br />
+                  ✅ Practice common web attacks ethically<br />
+                  ✅ Learn prevention techniques
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 3</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  🧱 Build Your First Web App with JS<br />
-                  🔍 Weekly Check-in with Mentors
+                  🧱 Wireless Network Security<br />
+                  🔍 WiFi Penetration Testing
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Design your project logic and file structure<br />
-                  ✅ Submit methodology & flowchart
+                  ✅ Learn wireless security concepts<br />
+                  ✅ Practice WiFi hacking techniques<br />
+                  ✅ Submit wireless security assessment
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 4</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ⚛️ ReactJS Integration<br />
-                  🔧 GitHub Project Hosting & Live URL Generation
+                  ⚛️ Social Engineering<br />
+                  🔧 Phishing Attack Simulations
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Build reusable components<br />
-                  ✅ Host it live on GitHub Pages
+                  ✅ Understand social engineering principles<br />
+                  ✅ Learn phishing techniques and prevention<br />
+                  ✅ Create awareness materials
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 5</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  🧱 No-Code Tools (Webflow, Bubble)<br />
-                  🎨 Spline 3D Web Design (Intro)
+                  🧱 Cryptography Fundamentals<br />
+                  🎨 Digital Forensics Introduction
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Create a stunning visual element using 3D/No-Code tools
+                  ✅ Learn encryption and decryption<br />
+                  ✅ Introduction to digital forensics<br />
+                  ✅ Practice basic forensic analysis
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 6</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  🧑‍🏫 Docker Basics + Hosting Options<br />🔄 Mid-term Evaluation
+                  🧑‍🏫 Incident Response<br />🔄 Mid-term Evaluation & CTF Challenge
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Learn about containers & deployment<br />✅ Submit project midpoint version + receive mentor feedback
+                  ✅ Learn incident response procedures<br />✅ Participate in Capture The Flag challenges<br />✅ Submit project progress report
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 7</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  📦 Open Source Contributions<br />🛠 Community PRs & Collaboration
+                  📦 Advanced Penetration Testing<br />🛠 Metasploit Framework
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Contribute to GitHub open source repos<br />✅ Understand issue tracking and version control workflows
+                  ✅ Master Metasploit for penetration testing<br />✅ Learn exploit development basics<br />
+                  ✅ Practice ethical exploitation techniques
                 </td>
               </tr>
               <tr className="border border-cyan-500">
                 <td className="px-4 py-3 border border-cyan-500 align-top">Week 8</td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  💬 Mock Interviews + Career Mentorship<br />📢 Final Project Presentations
+                  💬 Security Auditing & Reporting<br />📢 Final Project Presentations
                 </td>
                 <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Participate in mock interviews<br />✅ Present your project to peers & mentors<br />✅ Resume & portfolio polishing session
+                  ✅ Learn to write security reports<br />✅ Present findings to mentors<br />✅ Portfolio and resume review session
                 </td>
               </tr>
             </tbody>
@@ -398,4 +406,4 @@ const Webdevelopment = () => {
   );
 };
 
-export default Webdevelopment;
+export default Cybersecurity;

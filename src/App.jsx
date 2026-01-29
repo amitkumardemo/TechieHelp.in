@@ -12,6 +12,7 @@ import Contacts from "./components/contacts";
 import Internship from "./components/Internship"; 
 import SpecialBatch from "./components/SpecialBatch";
 import Webdevelopment from "./components/Webdevelopment";
+import Cybersecurity from "./components/Cybersecurity";
 import Androiddevelopment from "./components/Androiddevelopment";
 import UIUX from "./components/UIUX";
 import SEO from "./components/SEO";
@@ -296,6 +297,7 @@ const App = () => {
           <Route path="/employee/ashok" element={<AshokComponent />} />
           <Route path="/employee/md-amzad" element={<MdAmzadComponent />} />
           <Route path="/webdevelopment" element={<Webdevelopment />} />
+          <Route path="/cybersecurity" element={<Cybersecurity />} />
           <Route path="/androiddevelopment" element={<Androiddevelopment />} />
           <Route path="/uiux" element={<UIUX />} />
           <Route path="/seo" element={<SEO />} />
