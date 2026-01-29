@@ -8,12 +8,22 @@ import {
   FaHtml5,
   FaCss3,
   FaDatabase,
+  FaPython, 
+  FaBootstrap
 } from "react-icons/fa";
 import {
   SiTypescript,
   SiTailwindcss,
   SiMongodb,
+  SiFirebase,
+  SiExpress,
   SiNextdotjs,
+  SiVite,
+  SiGit,
+  SiGithub,
+  SiPostman,
+  SiVercel,
+  SiRender,
 } from "react-icons/si";
 
 import {
@@ -63,7 +73,7 @@ const projectsData = [
     category: "Web Development",
     link: "https://www.raiconstructionsolutions.com/",
     year: "2023",
-    techStack: ["HTML", "CSS", "JavaScript", "React", "Tailwind", "MongoDB" ],
+    techStack: ["HTML", "CSS", "JavaScript", "React", "Tailwind", "MongoDB", "Express.js", "Git", "Python" ],
     industry: "Corporate",
   },
   {
@@ -90,6 +100,7 @@ const projectsData = [
     headline: "Real-Time Food Delivery",
     personality: "Efficient and User-Friendly",
     techStack: ["React Native", "Firebase"],
+    industry: "Food App",
   },
   {
     id: 4,
@@ -180,15 +191,26 @@ const projectsData = [
 
 const techIcons = {
   React: { icon: FaReact, color: "text-cyan-400" },
+  "React Native": { icon: FaReact, color: "text-indigo-400" },
   "Next.js": { icon: SiNextdotjs, color: "text-white" },
   "Node.js": { icon: FaNodeJs, color: "text-green-500" },
+  "Express.js": { icon: SiExpress, color: "text-gray-300" },
   JavaScript: { icon: FaJs, color: "text-yellow-400" },
   HTML: { icon: FaHtml5, color: "text-orange-500" },
   CSS: { icon: FaCss3, color: "text-blue-500" },
   TypeScript: { icon: SiTypescript, color: "text-blue-400" },
+  Python: { icon: FaPython, color: "text-yellow-400" },
+  Bootstrap: { icon: FaBootstrap, color: "text-purple-500" }, 
   Tailwind: { icon: SiTailwindcss, color: "text-cyan-300" },
+  Firebase: { icon: SiFirebase, color: "text-yellow-500" },
   MongoDB: { icon: SiMongodb, color: "text-green-400" },
   MySQL: { icon: FaDatabase, color: "text-blue-300" },
+  Vite: { icon: SiVite, color: "text-purple-400" },
+  Git: { icon: SiGit, color: "text-orange-500" },
+  GitHub: { icon: SiGithub, color: "text-white" },
+  Postman: { icon: SiPostman, color: "text-orange-400" },
+  Vercel: { icon: SiVercel, color: "text-white" },
+  Render: { icon: SiRender, color: "text-blue-400" },
 };
 
 const cardVariants = {
@@ -220,7 +242,7 @@ const TechStackGrid = ({ techStack }) => {
                        transition-all duration-300"
           >
             {TechIcon && <TechIcon className={`text-4xl mb-1 ${color}`} />}
-            <p className="text-sm text-gray-300 font-medium">{tech}</p>
+            <p className="text-sm text-gray-300 text-center font-medium">{tech}</p>
           </div>
         );
       })}
@@ -701,12 +723,11 @@ const ProjectPortfolio = () => {
                   )}
                   {filteredMobile.length > 1 && (
                     <>
-                      <div className="max-w-6xl mx-auto">
                         <div
                           ref={gridRef}
-                          className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-8 ml-20 px-12"
+                          className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-8 ml-20 mr-20 px-12"
                         >
-                          {filteredMobile.slice(1).map((project, i) => (
+                          {filteredMobile.map((project, i) => (
                             <motion.div
                               key={project.id}
                               custom={i + 1}
@@ -719,57 +740,28 @@ const ProjectPortfolio = () => {
                                 transition: { duration: 0.3 },
                               }}
                               onClick={() => handleProjectClick(project)}
-                              className="group relative bg-white text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-green-400 p-6 transition-all duration-300 flex flex-col overflow-hidden min-w-[200px] cursor-pointer"
+                              className="group relative bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-green-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[200px] cursor-pointer"
                             >
                               {/* Image */}
-                              <div className="relative mb-4 overflow-hidden rounded-xl">
+                              <div className="relative mb-1 overflow-hidden rounded-xl">
                                 <img
                                   src={project.image}
                                   alt={project.title}
                                   className="h-40 object-cover transition-transform duration-500 group-hover:scale-110"
                                 />
                                 <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                                  {project.category}
+                                  {project.industry}
                                 </div>
                               </div>
                               {/* Title */}
-                              <h3 className="text-xl font-bold mb-3 text-gray-900">
+                              <h3 className="text-l font-bold mb-1 text-center text-white">
                                 {project.title}
                               </h3>
-                              {/* Technologies */}
-                              <div className="flex flex-wrap gap-2 mb-3">
-                                {project.technologies.map((tech, index) => (
-                                  <span
-                                    key={index}
-                                    className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full"
-                                  >
-                                    {tech}
-                                  </span>
-                                ))}
-                              </div>
-                              {/* Description */}
-                              <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">
-                                {project.description}
-                              </p>
-                              {/* Button */}
-                              <Link
-                                to={project.link}
-                                className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-5 py-2 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
-                              >
-                                <span>Visit Live</span>
-                                <motion.span
-                                  className="text-lg"
-                                  whileHover={{ x: 3 }}
-                                  transition={{ duration: 0.2 }}
-                                >
-                                  →
-                                </motion.span>
-                              </Link>
                             </motion.div>
                           ))}
                         </div>
-                      </div>
-                      <div className="w-full h-2 bg-gray-400 mt-4 relative">
+                      
+                      <div className="w-1/2 h-1 bg-gray-400 mt-4 ml-80 relative">
                         <div
                           className="h-full bg-green-500 transition-all duration-100"
                           style={{ width: `${mobileProgress}%` }}
