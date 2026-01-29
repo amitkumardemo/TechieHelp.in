@@ -89,6 +89,42 @@ const projectsData = [
     techStack: ["React", "Node.js", "MongoDB"],
     industry: "Education",
   },
+  {
+    id: 5,
+    title: "Ujjawal Library",
+    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
+    image: ecom,
+    category: "Web Development",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "#",
+    year: "2023",
+    techStack: ["React", "Node.js", "MongoDB"],
+    industry: "Education",
+  },
+  {
+    id: 6,
+    title: "Ujjawal Library",
+    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
+    image: ecom,
+    category: "Web Development",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "#",
+    year: "2023",
+    techStack: ["React", "Node.js", "MongoDB"],
+    industry: "Education",
+  },
+  {
+    id: 7,
+    title: "Ujjawal Library",
+    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
+    image: ecom,
+    category: "Web Development",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "#",
+    year: "2023",
+    techStack: ["React", "Node.js", "MongoDB"],
+    industry: "Education",
+  },
 ];
 
 
@@ -321,7 +357,7 @@ const ProjectPortfolio = () => {
                     </div>
                   )}
                   {filteredMobile.length > 1 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="flex flex-wrap gap-8 max-w-6xl mx-auto">
                       {filteredMobile.slice(1).map(({ id, title, description, image, category, technologies, link }, i) => (
                         <motion.div
                           key={id}
@@ -335,7 +371,7 @@ const ProjectPortfolio = () => {
                         >
                           {/* Image */}
                           <div className="relative mb-4 overflow-hidden rounded-xl">
-                            <img src={image} alt={title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={image} alt={title} className="h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{category}</div>
                           </div>
                           {/* Title */}
@@ -449,7 +485,7 @@ const ProjectPortfolio = () => {
                     </div>
                   )}
                   {filteredWeb.length > 1 && (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div className="flex flex-wrap gap-8 max-w-4xl mx-auto">
                       {filteredWeb.slice(1).map(({ id, title, image, industry }, i) => (
                         <motion.div
                           key={id}
@@ -459,15 +495,15 @@ const ProjectPortfolio = () => {
                           viewport={{ once: true }}
                           variants={cardVariants}
                           whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                          className="group relative bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden"
+                          className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden"
                         >
                           {/* Image */}
                           <div className="relative mb-1 overflow-hidden rounded-xl">
-                            <img src={image} alt={title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <img src={image} alt={title} className="h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
                             <div className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{industry}</div>
                           </div>
                           {/* Title */}
-                          <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
+                          <h3 className="text-l font-bold mb-1 text-center text-white">{title}</h3>
                         </motion.div>
                       ))}
                     </div>
