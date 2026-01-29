@@ -62,6 +62,7 @@ const projectsData = [
     link: "#",
     year: "2023",
     techStack: ["React", "Node.js", "MongoDB"],
+    industry: "E-commerce",
   },
   {
     id: 3,
@@ -75,6 +76,18 @@ const projectsData = [
     headline: "Real-Time Food Delivery",
     personality: "Efficient and User-Friendly",
     techStack: ["React Native", "Firebase"],
+  },
+  {
+    id: 4,
+    title: "Ujjawal Library",
+    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
+    image: ecom,
+    category: "Web Development",
+    technologies: ["React", "Node.js", "MongoDB"],
+    link: "#",
+    year: "2023",
+    techStack: ["React", "Node.js", "MongoDB"],
+    industry: "Education",
   },
 ];
 
@@ -437,7 +450,7 @@ const ProjectPortfolio = () => {
                   )}
                   {filteredWeb.length > 1 && (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                      {filteredWeb.slice(1).map(({ id, title, description, image, category, technologies, link }, i) => (
+                      {filteredWeb.slice(1).map(({ id, title, image, industry }, i) => (
                         <motion.div
                           key={id}
                           custom={i + 1}
@@ -446,33 +459,15 @@ const ProjectPortfolio = () => {
                           viewport={{ once: true }}
                           variants={cardVariants}
                           whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                          className="group relative bg-white text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-purple-400 p-6 transition-all duration-300 flex flex-col overflow-hidden"
+                          className="group relative bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden"
                         >
                           {/* Image */}
-                          <div className="relative mb-4 overflow-hidden rounded-xl">
+                          <div className="relative mb-1 overflow-hidden rounded-xl">
                             <img src={image} alt={title} className="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
-                            <div className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{category}</div>
+                            <div className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{industry}</div>
                           </div>
                           {/* Title */}
                           <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
-                          {/* Technologies */}
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {technologies.map((tech, index) => (
-                              <span key={index} className="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded-full flex items-center gap-1">
-                                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                  <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                                </svg>
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-                          {/* Description */}
-                          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">{description}</p>
-                          {/* Button */}
-                          <Link to={link} className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-600 text-white px-5 py-2 rounded-full font-medium hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                            <span>View Project</span>
-                            <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
-                          </Link>
                         </motion.div>
                       ))}
                     </div>
