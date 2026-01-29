@@ -177,6 +177,7 @@ import kameshwarPatel from "./Kameshwar_patel.jpg";
 import supriyaJalani from "./supriya_jalani.jpeg";
 import adityaKumar from "./Aditya_kumar.jpeg";
 import mdAmzad from "./Amzad.jpeg";
+import cyber from "./cyber.webp";
 
 export {
   internship as airbnb,
@@ -334,4 +335,5 @@ export {
   supriyaJalani,
   adityaKumar,
   mdAmzad,
+  cyber,
 };
