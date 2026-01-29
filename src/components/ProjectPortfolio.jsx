@@ -400,6 +400,7 @@ const ProjectPortfolio = () => {
             onClick={() => {
               setSelectedCategory("Mobile App");
               window.location.hash = '#mobile-apps';
+              setTimeout(() => document.getElementById('mobile-apps').scrollIntoView({ behavior: 'smooth' }), 100);
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -415,6 +416,7 @@ const ProjectPortfolio = () => {
             onClick={() => {
               setSelectedCategory("Web Development");
               window.location.hash = '#web-apps';
+              setTimeout(() => document.getElementById('web-apps').scrollIntoView({ behavior: 'smooth' }), 100);
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
