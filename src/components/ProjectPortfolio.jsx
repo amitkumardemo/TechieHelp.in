@@ -211,6 +211,9 @@ const ProjectPortfolio = () => {
     : projectsData.filter(project => project.category === selectedCategory);
 
   useEffect(() => {
+    // Remove hash from URL on component mount to ensure clean URL
+    window.history.replaceState(null, null, window.location.pathname);
+
     const handleScroll = () => {
       if (heroRef.current) {
         const heroHeight = heroRef.current.offsetHeight;
@@ -221,6 +224,8 @@ const ProjectPortfolio = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -391,9 +396,11 @@ const ProjectPortfolio = () => {
         </div>
 
         <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 flex space-x-20">
-          <motion.a
-            href="#mobile-apps"
-            onClick={() => setSelectedCategory("Mobile App")}
+          <motion.button
+            onClick={() => {
+              setSelectedCategory("Mobile App");
+              window.location.hash = '#mobile-apps';
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition flex items-center gap-2"
@@ -403,10 +410,12 @@ const ProjectPortfolio = () => {
             </svg>
             Mobile Apps
             <span className="text-lg">→</span>
-          </motion.a>
-          <motion.a
-            href="#web-apps"
-            onClick={() => setSelectedCategory("Web Development")}
+          </motion.button>
+          <motion.button
+            onClick={() => {
+              setSelectedCategory("Web Development");
+              window.location.hash = '#web-apps';
+            }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition flex items-center gap-2"
@@ -416,7 +425,7 @@ const ProjectPortfolio = () => {
             </svg>
             Web Apps
             <span className="text-lg">→</span>
-          </motion.a>
+          </motion.button>
         </div>
       </section>
 
