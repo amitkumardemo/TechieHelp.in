@@ -173,6 +173,12 @@ const ProjectPortfolio = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [scrollPosition, setScrollPosition] = useState(0);
   const gridRef = useRef(null);
+  const [mobileProgress, setMobileProgress] = useState(0);
+  const [webProgress, setWebProgress] = useState(0);
+  const [mobileDragging, setMobileDragging] = useState(false);
+  const [webDragging, setWebDragging] = useState(false);
+  const [mobileRect, setMobileRect] = useState(null);
+  const [webRect, setWebRect] = useState(null);
 
   const slidingImages = [webdev, fullstack2, mobileapp, restaurant, web, custom, doctor];
 
@@ -206,11 +212,96 @@ const ProjectPortfolio = () => {
     const interval = setInterval(() => {
       if (gridRef.current) {
         gridRef.current.scrollLeft += 1; // Adjust speed as needed
+        handleScroll(gridRef, setMobileProgress);
+        handleScroll(gridRef, setWebProgress);
       }
     }, 50); // Adjust interval as needed
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    const handleScrollEvent = () => {
+      handleScroll(gridRef, setMobileProgress);
+      handleScroll(gridRef, setWebProgress);
+    };
+
+    if (gridRef.current) {
+      gridRef.current.addEventListener('scroll', handleScrollEvent);
+    }
+
+    return () => {
+      if (gridRef.current) {
+        gridRef.current.removeEventListener('scroll', handleScrollEvent);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const handleGlobalMouseMove = (e) => {
+      if (mobileDragging) {
+        handleMouseMove(e, mobileDragging, setMobileDragging, gridRef, mobileProgress, setMobileProgress, mobileRect);
+      }
+      if (webDragging) {
+        handleMouseMove(e, webDragging, setWebDragging, gridRef, webProgress, setWebProgress, webRect);
+      }
+    };
+
+    const handleGlobalMouseUp = () => {
+      setMobileDragging(false);
+      setWebDragging(false);
+      setMobileRect(null);
+      setWebRect(null);
+    };
+
+    if (mobileDragging || webDragging) {
+      window.addEventListener('mousemove', handleGlobalMouseMove);
+      window.addEventListener('mouseup', handleGlobalMouseUp);
+    }
+
+    return () => {
+      window.removeEventListener('mousemove', handleGlobalMouseMove);
+      window.removeEventListener('mouseup', handleGlobalMouseUp);
+    };
+  }, [mobileDragging, webDragging, mobileProgress, webProgress, mobileRect, webRect]);
+
+  const handleScroll = (ref, setProgress) => {
+    if (ref.current) {
+      const scrollLeft = ref.current.scrollLeft;
+      const scrollWidth = ref.current.scrollWidth - ref.current.clientWidth;
+      const progress = scrollWidth > 0 ? (scrollLeft / scrollWidth) * 100 : 0;
+      setProgress(progress);
+    }
+  };
+
+  const handleMouseDown = (e, setDragging, setRect, ref, progress) => {
+    setDragging(true);
+    const rect = e.target.getBoundingClientRect();
+    setRect(rect);
+    const x = e.clientX - rect.left;
+    const width = rect.width;
+    const newProgress = (x / width) * 100;
+    if (ref.current) {
+      const scrollWidth = ref.current.scrollWidth - ref.current.clientWidth;
+      ref.current.scrollLeft = (newProgress / 100) * scrollWidth;
+    }
+  };
+
+  const handleMouseMove = (e, isDragging, setDragging, ref, progress, setProgress, rect) => {
+    if (!isDragging || !rect) return;
+    const x = e.clientX - rect.left;
+    const width = rect.width;
+    const newProgress = Math.max(0, Math.min(100, (x / width) * 100));
+    setProgress(newProgress);
+    if (ref.current) {
+      const scrollWidth = ref.current.scrollWidth - ref.current.clientWidth;
+      ref.current.scrollLeft = (newProgress / 100) * scrollWidth;
+    }
+  };
+
+  const handleMouseUp = (setDragging) => {
+    setDragging(false);
+  };
 
   return (
     <>
@@ -393,41 +484,49 @@ const ProjectPortfolio = () => {
                     </div>
                   )}
                   {filteredMobile.length > 1 && (
-                    <div ref={gridRef} className="overflow-x-auto overflow-y-hidden flex flex-nowrap gap-8">
-                      {filteredMobile.slice(1).map(({ id, title, description, image, category, technologies, link }, i) => (
-                        <motion.div
-                          key={id}
-                          custom={i + 1}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          variants={cardVariants}
-                          whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                          className="group relative bg-white text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-green-400 p-6 transition-all duration-300 flex flex-col overflow-hidden min-w-[250px]"
-                        >
-                          {/* Image */}
-                          <div className="relative mb-4 overflow-hidden rounded-xl">
-                            <img src={image} alt={title} className="h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
-                            <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{category}</div>
-                          </div>
-                          {/* Title */}
-                          <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
-                          {/* Technologies */}
-                          <div className="flex flex-wrap gap-2 mb-3">
-                            {technologies.map((tech, index) => (
-                              <span key={index} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">{tech}</span>
-                            ))}
-                          </div>
-                          {/* Description */}
-                          <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">{description}</p>
-                          {/* Button */}
-                          <Link to={link} className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-5 py-2 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
-                            <span>Visit Live</span>
-                            <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
-                          </Link>
-                        </motion.div>
-                      ))}
-                    </div>
+                    <>
+                      <div ref={gridRef} className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-8 ml-20 px-12">
+                        {filteredMobile.slice(1).map(({ id, title, description, image, category, technologies, link }, i) => (
+                          <motion.div
+                            key={id}
+                            custom={i + 1}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={cardVariants}
+                            whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                            className="group relative bg-white text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 hover:border-green-400 p-6 transition-all duration-300 flex flex-col overflow-hidden min-w-[250px]"
+                          >
+                            {/* Image */}
+                            <div className="relative mb-4 overflow-hidden rounded-xl">
+                              <img src={image} alt={title} className="h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+                              <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{category}</div>
+                            </div>
+                            {/* Title */}
+                            <h3 className="text-xl font-bold mb-3 text-gray-900">{title}</h3>
+                            {/* Technologies */}
+                            <div className="flex flex-wrap gap-2 mb-3">
+                              {technologies.map((tech, index) => (
+                                <span key={index} className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">{tech}</span>
+                              ))}
+                            </div>
+                            {/* Description */}
+                            <p className="text-gray-600 text-sm leading-relaxed mb-6 flex-grow whitespace-pre-line">{description}</p>
+                            {/* Button */}
+                            <Link to={link} className="self-start inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-5 py-2 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl">
+                              <span>Visit Live</span>
+                              <motion.span className="text-lg" whileHover={{ x: 3 }} transition={{ duration: 0.2 }}>→</motion.span>
+                            </Link>
+                          </motion.div>
+                        ))}
+                      </div>
+                      <div className="w-full h-2 bg-gray-400 mt-4 relative">
+                        <div
+                          className="h-full bg-green-500 transition-all duration-100"
+                          style={{ width: `${mobileProgress}%` }}
+                        ></div>
+                      </div>
+                    </>
                   )}
                 </>
               );
@@ -450,7 +549,7 @@ const ProjectPortfolio = () => {
               Our Featured <span className="text-purple-500">Web Apps</span>
             </motion.h2>
           </div>
-          <div className="px-6">
+          <div className="px-8">
             {(() => {
               const filteredWeb = projectsData.filter(project => project.category === "Web Development");
               return (
@@ -521,28 +620,36 @@ const ProjectPortfolio = () => {
                     </div>
                   )}
                   {filteredWeb.length > 1 && (
-                    <div ref={gridRef} className="overflow-x-auto overflow-y-hidden flex flex-nowrap gap-8">
-                      {filteredWeb.slice(1).map(({ id, title, image, industry }, i) => (
-                        <motion.div
-                          key={id}
-                          custom={i + 1}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true }}
-                          variants={cardVariants}
-                          whileHover={{ y: -6, transition: { duration: 0.3 } }}
-                          className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[250px]"
-                        >
-                          {/* Image */}
-                          <div className="relative mb-1 overflow-hidden rounded-xl">
-                            <img src={image} alt={title} className="h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
-                            <div className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{industry}</div>
-                          </div>
-                          {/* Title */}
-                          <h3 className="text-l font-bold mb-1 text-center text-white">{title}</h3>
-                        </motion.div>
-                      ))}
-                    </div>
+                    <>
+                      <div ref={gridRef} className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-8 ml-20 mr-20 px-12">
+                        {filteredWeb.slice(1).map(({ id, title, image, industry }, i) => (
+                          <motion.div
+                            key={id}
+                            custom={i + 1}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={cardVariants}
+                            whileHover={{ y: -6, transition: { duration: 0.3 } }}
+                            className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[250px]"
+                          >
+                            {/* Image */}
+                            <div className="relative mb-1 overflow-hidden rounded-xl">
+                              <img src={image} alt={title} className="h-48 object-cover transition-transform duration-500 group-hover:scale-110" />
+                              <div className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-semibold">{industry}</div>
+                            </div>
+                            {/* Title */}
+                            <h3 className="text-l font-bold mb-1 text-center text-white">{title}</h3>
+                          </motion.div>
+                        ))}
+                      </div>
+                      <div className="w-1/2 h-1 bg-gray-400 mt-4 ml-80 relative">
+                        <div
+                          className="h-full bg-purple-500 transition-all duration-100"
+                          style={{ width: `${webProgress}%` }}
+                        ></div>
+                      </div>
+                    </>
                   )}
                 </>
               );
