@@ -570,7 +570,7 @@ const ProjectPortfolio = () => {
               Our Featured <span className="text-green-500">Mobile Apps</span>
             </motion.h2>
           </div>
-          <div className="px-6">
+          <div className="px-8">
             {(() => {
               const filteredMobile = projectsData.filter(
                 (project) => project.category === "Mobile App",
@@ -578,7 +578,7 @@ const ProjectPortfolio = () => {
               return (
                 <>
                   {filteredMobile.length > 0 && (
-                    <div className="flex flex-col lg:flex-row gap-8 mb-8">
+                    <div className="flex flex-col lg:flex-row gap-4 mb-8">
                       <motion.div
                         initial="hidden"
                         whileInView="visible"
@@ -588,7 +588,7 @@ const ProjectPortfolio = () => {
                         className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 flex-1"
                       >
                         {/* Large Image */}
-                        <div className="relative mt-6 overflow-hidden rounded-xl p-0">
+                        <div className="relative mt-10 overflow-hidden rounded-xl p-0">
                           <img
                             src={
                               selectedProject &&
@@ -638,10 +638,10 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={1}
-                        className="bg-black text-white rounded-2xl shadow-lg p-6 lg:w-1/3"
+                        className="bg-black text-white rounded-2xl shadow-lg p-1 lg:w-1/3"
                       >
-                        <div className="mb-4 flex gap-2 justify-start">
-                          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-gray-300 rounded-xl text-center w-20 flex items-center justify-center gap-1">
+                        <div className="mb-8 flex gap-2 justify-start">
+                          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
                             <svg
                               className="w-4 h-4"
                               fill="currentColor"
@@ -660,8 +660,8 @@ const ProjectPortfolio = () => {
                                 : filteredMobile[0].industry}
                             </p>
                           </div>
-                          <div className="p-2 bg-gray-100/60 backdrop-blur-sm border border-gray-300 rounded-xl text-center w-16 flex items-center justify-center">
-                            <p className="text-sm font-bold text-gray-900">
+                          <div className="p-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-center w-16 flex items-center justify-center">
+                            <p className="text-sm font-bold text-white-900">
                               {selectedProject &&
                               selectedProject.category === "Mobile App"
                                 ? selectedProject.year
@@ -669,14 +669,14 @@ const ProjectPortfolio = () => {
                             </p>
                           </div>
                         </div>
-                        <h4 className="text-2xl font-bold mb-4">
+                        <h4 className="text-3xl font-bold mb-1">
                           {selectedProject &&
                           selectedProject.category === "Mobile App"
                             ? selectedProject.title
                             : filteredMobile[0].title}
                         </h4>
-                        <div className="mb-4 p-4 bg-gray-100 rounded-lg">
-                          <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">
+                        <div className="mb-8 p-4 bg-gray/10 rounded-lg">
+                          <p className="text-gray-300 text-sm leading-relaxed whitespace-pre-line">
                             {selectedProject &&
                             selectedProject.category === "Mobile App"
                               ? selectedProject.description
@@ -684,7 +684,7 @@ const ProjectPortfolio = () => {
                           </p>
                         </div>
                         <div className="grid grid-cols-1 gap-4">
-                          <div>
+                          <div className="bg-white/5 rounded-xl px-3 py-2">
                             <p className="font-semibold">Tech Stack:</p>
                             <TechStackGrid
                               techStack={
