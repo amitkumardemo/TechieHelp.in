@@ -8,6 +8,29 @@ import {
   recommendation,
   AmitPhoto,
   mdAmzad,
+  aarshdeepcertificate,
+  aarshdeepdiary,
+  aarshdeeptrophy,
+  groups,
+  hod,
+  rohitdiary,
+  rohittrophy,
+  simrancertificate,
+  simrandiary,
+  simrantrophy,
+  simrantshirt,
+  aryan1,
+  aryan2,
+  sixty,
+  coreTeam,
+  amazad,
+  tit,
+  delhiJudge,
+  recon,
+  kitInt,
+  kit,
+  kitNodha,
+  kitCert,
 } from "../assets";
 import InternshipFAQ from "./InternshipFAQ";
 import { Calendar, IndianRupee, Clock, CheckCircle, Briefcase, Star, Download, QrCode, Shield, Award, Linkedin } from 'lucide-react';
@@ -91,7 +114,7 @@ const TypingAnimation = () => {
 
   return (
     <div className="text-center mb-8">
-      <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 min-h-[120px] flex items-center justify-center">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 min-h-[120px] flex items-center justify-center">
         Become a <br />
         <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
           {currentText}
@@ -105,6 +128,7 @@ const TypingAnimation = () => {
 const Webdevelopment = () => {
   const [loading, setLoading] = useState(true);
   const [activeMonth, setActiveMonth] = useState(0);
+  const [autoScroll, setAutoScroll] = useState(true);
 
   // Calculate next batch start date (1st of next month in 2026)
   const nextBatchDate = new Date(2026, new Date().getMonth() + 1, 1);
@@ -490,6 +514,20 @@ const Webdevelopment = () => {
 
   return (
     <div className="bg-black min-h-screen">
+      <style>
+        {`
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-scroll {
+            animation: scroll 30s linear infinite;
+          }
+          .hover\\:pause:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
       <section className="relative w-full min-h-screen bg-gradient-to-r from-blue-900 to-blue-800 text-white flex items-center justify-center px-6 md:px-12 pt-32">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 w-full">
           {/* Left Content */}
@@ -1082,7 +1120,7 @@ const Webdevelopment = () => {
                 </ul>
               </div>
               <div className="text-center">
-                <a href="#" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                <a href="https://www.linkedin.com/in/amit-kumar-686196225/" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>
@@ -1120,7 +1158,7 @@ const Webdevelopment = () => {
                 </ul>
               </div>
               <div className="text-center">
-                <a href="#" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                <a href="https://www.linkedin.com/in/md-amzad-b8547a296/" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
                   <Linkedin className="w-5 h-5" />
                 </a>
               </div>
@@ -1190,7 +1228,7 @@ const Webdevelopment = () => {
                   Start Your Tech Career
                 </button>
               </a>
-              <button className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+              <button onClick={() => document.getElementById('student-reviews').scrollIntoView({ behavior: 'smooth' })} className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
                 View Student Success Stories
               </button>
             </div>
@@ -1280,7 +1318,7 @@ const Webdevelopment = () => {
       </section>
 
       {/* Student Reviews & Success Stories Section */}
-      <section className="bg-gray-50 py-20 px-6 md:px-12">
+      <section id="student-reviews" className="bg-gray-50 py-20 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
@@ -1443,6 +1481,73 @@ const Webdevelopment = () => {
                 className="rounded-lg shadow-lg w-full max-w-md mx-auto"
               />
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Achievements & Certification Moments Section */}
+      <section className="bg-white py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Student Achievements & Certification Moments</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Real students. Real certificates. Real internship outcomes. A glimpse of our interns receiving verified certificates, goodies, and recognition after completing live projects.
+            </p>
+          </div>
+
+          {/* Toggle */}
+          <div className="flex justify-end mb-8">
+            <div className="flex bg-gray-100 rounded-full p-1">
+              <button
+                onClick={() => setAutoScroll(true)}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+                  autoScroll ? 'bg-blue-600 text-white' : 'text-blue-600'
+                }`}
+              >
+                Auto Scroll
+              </button>
+              <button
+                onClick={() => setAutoScroll(false)}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+                  !autoScroll ? 'bg-blue-600 text-white' : 'text-blue-600'
+                }`}
+              >
+                Manual Scroll
+              </button>
+            </div>
+          </div>
+
+          {/* Image Gallery */}
+          <div className={autoScroll ? 'overflow-hidden' : 'overflow-x-auto'}>
+            <div
+              className={`flex gap-4 ${autoScroll ? 'animate-scroll' : ''} hover:pause`}
+              style={{ width: '200%' }}
+            >
+              {[aryan1, aryan2, sixty, coreTeam, amazad, tit, delhiJudge, recon, kitInt, kit, kitNodha, kitCert, aarshdeepcertificate, aarshdeepdiary, aarshdeeptrophy, groups, hod, rohitdiary, rohittrophy, simrancertificate, simrandiary, simrantrophy, simrantshirt].map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Achievement ${index + 1}`}
+                  className="w-64 h-64 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex-shrink-0"
+                />
+              ))}
+              {[aryan1, aryan2, sixty, coreTeam, amazad, tit, delhiJudge, recon, kitInt, kit, kitNodha, kitCert, aarshdeepcertificate, aarshdeepdiary, aarshdeeptrophy, groups, hod, rohitdiary, rohittrophy, simrancertificate, simrandiary, simrantrophy, simrantshirt].map((img, index) => (
+                <img
+                  key={`dup-${index}`}
+                  src={img}
+                  alt={`Achievement ${index + 1}`}
+                  className="w-64 h-64 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex-shrink-0"
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Trust Line */}
+          <div className="text-center mt-12">
+            <p className="text-gray-600 text-lg">
+              All certificates and recognitions are awarded after successful completion of real internship projects and milestones.
+            </p>
           </div>
         </div>
       </section>
