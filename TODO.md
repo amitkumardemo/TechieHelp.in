@@ -1,19 +1,16 @@
-# TODO: Add Course Certificate Section to Webdevelopment Page
+# TODO: Convert Androiddevelopment.jsx to match Webdevelopment.jsx UI with Android content
 
-## Steps to Complete
-- [x] Import additional lucide-react icons (QrCode, Shield, Award)
-- [x] Locate the "What You Will Achieve" section in Webdevelopment.jsx
-- [x] Add the new "Course Certificate" section after it, before "Placement Support"
-- [x] Implement two-column layout: left image, right content
-- [x] Add certificate image with rounded corners and shadow
-- [x] Add heading, description, certificate title, details
-- [x] Add trust & verification points as checklist with icons
-- [x] Add verification note as highlighted block
-- [x] Ensure responsive design (stack on mobile)
-- [x] Verify styling and layout match reference
-
-## Notes
-- Use Tailwind CSS only
-- Light background for section
-- Professional, enterprise-grade UI
-- Fully responsive
+## Tasks:
+- [x] Create AndroidInternshipFAQ.jsx with Android-specific FAQ questions
+- [ ] Update Androiddevelopment.jsx imports to match Webdevelopment.jsx
+- [ ] Replace Androiddevelopment component content with Webdevelopment structure
+- [ ] Change hero section to Android Development Internship & Training
+- [ ] Update technologies section to Android stack (Java, Kotlin, Android Studio, XML, Firebase, REST APIs, Git & GitHub)
+- [ ] Update timelineData to Android-focused learning & projects
+- [ ] Change project titles to Beginner Android App, Intermediate Android App, Advanced Real-World Android App
+- [ ] Update certificate section to "TechieHelp Android Development Internship Certificate"
+- [ ] Update recommendation section with Android-specific wording
+- [ ] Change mentor expertise to Android / Mobile Development
+- [ ] Update typing animation roles to Android-related (e.g., Android Developer, Mobile App Developer)
+- [ ] Replace InternshipFAQ with AndroidInternshipFAQ in Androiddevelopment.jsx
+- [ ] Test the page to ensure identical UI and functionality
