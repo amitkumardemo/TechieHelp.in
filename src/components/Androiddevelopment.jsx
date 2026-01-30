@@ -901,7 +901,7 @@ const Androiddevelopment = () => {
                   <Briefcase className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Real-World Web Development Projects for Resume</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Real-World Android Development Projects for Resume</h3>
                   <p className="text-gray-600 text-sm">Build portfolio-worthy projects that showcase your skills to employers</p>
                 </div>
               </div>
@@ -1183,7 +1183,7 @@ const Androiddevelopment = () => {
           {/* Supporting Content */}
           <div className="text-center mb-16">
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Through TechieHelp's comprehensive training, real-world projects, and expert mentorship, you'll be prepared for high-demand roles in web development across startups and established companies.
+              Through TechieHelp's comprehensive training, real-world projects, and expert mentorship, you'll be prepared for high-demand roles in Android development across startups and established companies.
             </p>
           </div>
 
@@ -1307,30 +1307,30 @@ const Androiddevelopment = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
   <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
-  <div className="aspect-[9/16]">
-    <iframe
-      src="https://www.youtube.com/embed/Ia1EOzjVwEY"
-      title="Student Review"
-      frameBorder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className="w-full h-full rounded-md"
-    ></iframe>
+    <div className="aspect-[9/16]">
+      <iframe
+        src="https://www.youtube.com/embed/Ia1EOzjVwEY"
+        title="Student Review"
+        frameBorder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full rounded-md"
+      ></iframe>
+    </div>
   </div>
-</div>
 
-<div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
-  <div className="aspect-[9/16]">
-    <iframe
-      src="https://www.youtube.com/embed/l5Ox9Z1AJow"
-      title="Student Review"
-      frameBorder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className="w-full h-full rounded-md"
-    ></iframe>
+  <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
+    <div className="aspect-[9/16]">
+      <iframe
+        src="https://www.youtube.com/embed/l5Ox9Z1AJow"
+        title="Student Review"
+        frameBorder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full rounded-md"
+      ></iframe>
+    </div>
   </div>
-</div>
 
 
 
@@ -1367,7 +1367,7 @@ const Androiddevelopment = () => {
             <div className="md:w-1/2 text-gray-900">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Completion Certificate</h2>
               <p className="text-lg mb-6">We provide an industry-recognized certification that validates your skills, internship experience, and project work through verified and trusted channels.</p>
-              <h3 className="text-xl font-semibold mb-2">TechieHelp Web Development Internship Certificate</h3>
+              <h3 className="text-xl font-semibold mb-2">TechieHelp Android Development Internship Certificate</h3>
               <p className="text-base mb-6">This certificate is issued after successful completion of training, projects, and assessments. It is designed to validate real skills, not just course attendance. Each certificate is verifiable and transparent for recruiters and institutions.</p>
               {/* Trust Points */}
               <div className="mb-6">
@@ -1515,6 +1515,7 @@ const Androiddevelopment = () => {
                   className="w-64 h-64 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex-shrink-0"
                 />
               ))}
+              
             </div>
           </div>
 
