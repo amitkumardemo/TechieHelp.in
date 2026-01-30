@@ -495,65 +495,59 @@ const Webdevelopment = () => {
           {/* Left Content */}
           <div className="lg:w-1/2">
             <header>
-              <div className="inline-block bg-yellow-500 text-black px-4 py-2 rounded-full text-sm font-semibold mb-2">
-                Most Popular Training Program
+              <div className="inline-block bg-yellow-500 text-black px-5 py-1 rounded-full text-xs font-medium mb-1">
+                Most Trusted Internship Program • AICTE & NIP Aligned
               </div>
-              <h1 className="text-4xl md:text-5xl font-bold mb-2 leading-tight">
-                Full Stack Web Development Training & Internship Program in Rajasthan
+              <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-snug max-w-4xl">
+                Full Stack <span className="text-yellow-300 font-bold">Web Development</span> Internship & Training Program
               </h1>
-              <h2 className="text-2xl md:text-3xl font-semibold mb-2">
-                Industry-Focused Training with Live Projects, Internship Experience, and Career Support
+              <h2 className="text-xl md:text-2xl font-medium mb-2 leading-relaxed">
+                Build real-world projects, work like an industry developer, and earn a verified internship certificate that helps in placements.
               </h2>
-              <p className="text-lg mb-3 leading-tight">
-                Build real-world projects, gain internship experience, and get career support in Jodhpur, Jaipur, and Rajasthan.
+              <p className="text-base mb-2 leading-relaxed">
+                This is not just a course. It’s a structured internship experience with live projects, mentor guidance, recommendation letter, and placement-focused support.
               </p>
-              <ul className="flex flex-wrap gap-4 mb-5">
-            
-                <li className="bg-white/10 px-4 py-2 rounded-full text-sm">Live Project-Based Training</li>
-                <li className="bg-white/10 px-4 py-2 rounded-full text-sm">Beginner Friendly</li>
-                <li className="bg-white/10 px-4 py-2 rounded-full text-sm">Career Support</li>
+              <ul className="flex flex-wrap gap-3 mb-3">
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Live Internship Projects</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Beginner Friendly (No Prior Experience Needed)</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Recommendation Letter</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Placement & Career Support</li>
               </ul>
 
               {/* Inline Feature Row */}
-              <div className="flex flex-wrap items-center gap-10 mb-7">
-                <div className="flex items-center gap-3 text-white">
+              <div className="flex flex-wrap items-center gap-8 mb-4">
+                <div className="flex items-center gap-2 text-white">
                   <Clock className="w-5 h-5 text-cyan-400" />
-                  <span className="text-base font-medium">10 Weeks</span>
+                  <span className="text-sm font-medium">10–16 Weeks Internship</span>
                 </div>
-                <div className="flex items-center gap-3 text-white">
+                <div className="flex items-center gap-2 text-white">
                   <CheckCircle className="w-5 h-5 text-green-400" />
-                  <span className="text-base font-medium">Beginner Friendly</span>
+                  <span className="text-sm font-medium">Placement-Oriented Learning</span>
                 </div>
-                <div className="flex items-center gap-3 text-white">
+                <div className="flex items-center gap-2 text-white">
                   <Briefcase className="w-5 h-5 text-blue-400" />
-                  <span className="text-base font-medium">Job Assistance</span>
+                  <span className="text-sm font-medium">24/7 Mentor & Doubt Support</span>
                 </div>
               </div>
 
               {/* Inline Reviews Row */}
-              <div className="flex items-center gap-3 mb-9">
-                <div className="flex gap-1">
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                </div>
-                <span className="text-sm text-white">4.6/5 • 2k+ Reviews</span>
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-xs text-white">⭐ 4.6/5 Rated by 2,000+ Students | Trusted by Colleges & Recruiters</span>
               </div>
 
               {/* Inline CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer">
                   <button className="bg-white text-blue-900 px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-gray-100">
-                    Enroll Now – ₹499/-
+                    Start Internship – ₹499/-
                   </button>
                 </a>
                 <button className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2">
                   <Download className="w-4 h-4" />
-                  Download Syllabus
+                  Download Internship Syllabus
                 </button>
               </div>
+              <p className="text-xs text-gray-300 mt-1">Limited seats • Certificate + Projects Included • Beginner Friendly</p>
             </header>
           </div>
           {/* Right Stats Card */}
@@ -563,19 +557,19 @@ const Webdevelopment = () => {
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-blue-100 rounded-lg p-6 text-center">
                   <div className="text-3xl font-bold text-blue-900 mb-2">15+</div>
-                  <div className="text-sm text-blue-700">Live Projects</div>
+                  <div className="text-sm text-blue-700">Industry-Level Live Projects</div>
                 </div>
                 <div className="bg-green-100 rounded-lg p-6 text-center">
                   <div className="text-3xl font-bold text-green-900 mb-2">95%</div>
-                  <div className="text-sm text-green-700">Placement Rate</div>
+                  <div className="text-sm text-green-700">Students Improved Placement Readiness</div>
                 </div>
                 <div className="bg-indigo-100 rounded-lg p-6 text-center">
                   <div className="text-3xl font-bold text-indigo-900 mb-2">24/7</div>
-                  <div className="text-sm text-indigo-700">Mentor Support</div>
+                  <div className="text-sm text-indigo-700">Mentor & Career Support</div>
                 </div>
                 <div className="bg-yellow-100 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-yellow-900 mb-2">₹8L</div>
-                  <div className="text-sm text-yellow-700">Avg. Salary</div>
+                  <div className="text-3xl font-bold text-yellow-900 mb-2">₹12 LPA</div>
+                  <div className="text-sm text-yellow-700">Highest Reported Package</div>
                 </div>
               </div>
 
@@ -602,6 +596,7 @@ const Webdevelopment = () => {
                   Enroll Now – ₹499/-
                 </button>
               </a>
+              <p className="text-xs text-gray-500 mt-4">Based on past learner outcomes & placement support</p>
             </div>
           </div>
         </div>
