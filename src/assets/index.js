@@ -194,6 +194,7 @@ import kitInt from "./KIT INT.jpeg";
 import kit from "./KIT   .jpeg";
 import kitNodha from "./KIT    NODHA.jpeg";
 import kitCert from "./KIT CERT.jpeg";
+import aryanp from "./aryanp.jpeg"
 
 export {
   internship as airbnb,
@@ -367,4 +368,5 @@ export {
   kit,
   kitNodha,
   kitCert,
+  aryanp,
 };
