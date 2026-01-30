@@ -576,10 +576,16 @@ const Cybersecurity = () => {
                     Start Internship – ₹499/-
                   </button>
                 </a>
-                <button className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2">
-                  <Download className="w-4 h-4" />
-                  Download Internship Syllabus
-                </button>
+                <a
+  href="https://drive.google.com/file/d/1KMG5JObcneMBHqcKw_JZmCC2l9lEI3s6/view?usp=drive_link"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2"
+>
+  <Download className="w-4 h-4" />
+  Download Internship Syllabus
+</a>
+
               </div>
               <p className="text-xs text-gray-300 mt-1">Limited seats • Certificate + Projects Included • Beginner Friendly</p>
             </header>
@@ -1305,62 +1311,62 @@ const Cybersecurity = () => {
           {/* Technologies Grid */}
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Wireshark_Logo.svg/1280px-Wireshark_Logo.svg.png" alt="Wireshark" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://media.licdn.com/dms/image/v2/D4D12AQEz9KH8KNq56g/article-cover_image-shrink_720_1280/B4DZbc7LkdHsAM-/0/1747463229673?e=2147483647&v=beta&t=cHSGxE9ImR33iw-4Lws2ezAkaLZvH8sI3VWsRu6V5k0" alt="Wireshark" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Wireshark</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Metasploit_logo.svg/1280px-Metasploit_logo.svg.png" alt="Metasploit" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaYfylHO3PGkKwX5lR65QHA0jE1uAb5xHb-A&s" alt="Metasploit" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Metasploit</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Nmap-logo.svg/1280px-Nmap-logo.svg.png" alt="Nmap" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLoHn47twgBr93jtSyFJYyCQ1_vcIY-spHoA&s" alt="Nmap" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Nmap</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Burp_Suite_Logo.svg/1280px-Burp_Suite_Logo.svg.png" alt="Burp Suite" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://aditech.in/wp-content/uploads/2021/06/burpsuite-twittercard.png" alt="Burp Suite" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Burp Suite</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Kali_Linux_Logo.svg/1280px-Kali_Linux_Logo.svg.png" alt="Kali Linux" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/960px-Kali-dragon-icon.svg.png" alt="Kali Linux" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Kali Linux</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/John_the_Ripper_logo.svg/1280px-John_the_Ripper_logo.svg.png" alt="John the Ripper" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://dashboard.snapcraft.io/site_media/appmedia/2024/08/com.openwall.John.png" alt="John the Ripper" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">John the Ripper</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Aircrack-ng_logo.svg/1280px-Aircrack-ng_logo.svg.png" alt="Aircrack-ng" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Aircrack-ng-new-logo.jpg/226px-Aircrack-ng-new-logo.jpg" alt="Aircrack-ng" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Aircrack-ng</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/OpenVAS_logo.svg/1280px-OpenVAS_logo.svg.png" alt="OpenVAS" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://events.ccc.de/congress/2008/wiki/images/d/d1/OpenVAS-logo.png" alt="OpenVAS" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">OpenVAS</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Python-logo-notext.svg/1280px-Python-logo-notext.svg.png" alt="Python" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/960px-Python_logo_and_wordmark.svg.png" alt="Python" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Python</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Linux_Distribution.svg/1280px-Linux_Distribution.svg.png" alt="Linux" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://toppng.com/uploads/preview/linux-logo-png-free-116602984075xlboimbdm.png" alt="Linux" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Linux</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/OWASP_Logo.svg/1280px-OWASP_Logo.svg.png" alt="OWASP" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/OWASP_black_logo.svg" alt="OWASP" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">OWASP</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Hashcat_logo.svg/1280px-Hashcat_logo.svg.png" alt="Hashcat" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWZAwnXJ-YSVAKG5q55-KfIpOK6eZf_kzxVw&s" alt="Hashcat" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Hashcat</h3>
             </div>
 
