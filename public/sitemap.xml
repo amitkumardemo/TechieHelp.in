@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://techiehelp.in/</loc>
     <priority>1.0</priority>
@@ -26,18 +27,36 @@
   </url>
   <url>
     <loc>https://techiehelp.in/interns</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/employees</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/hackathon</loc>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://techiehelp.in/seo</loc>
-    <priority>0.7</priority>
+    <loc>https://techiehelp.in/placement-booster</loc>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techiehelp.in/seooptimizationservices</loc>
-    <priority>0.7</priority>
+    <loc>https://techiehelp.in/contacts</loc>
+    <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://techiehelp.in/hiring-faq</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Technology Training Pages -->
   <url>
     <loc>https://techiehelp.in/webdevelopment</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/cybersecurity</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -46,6 +65,10 @@
   </url>
   <url>
     <loc>https://techiehelp.in/uiux</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/seo</loc>
     <priority>0.7</priority>
   </url>
   <url>
@@ -104,5 +127,322 @@
     <loc>https://techiehelp.in/devops</loc>
     <priority>0.7</priority>
   </url>
-  <!-- Add other important URLs here -->
+
+  <!-- Service Pages -->
+  <url>
+    <loc>https://techiehelp.in/app-development-services</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/uiuxservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/seooptimizationservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/digitalmarketingservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/techconsultingservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/maintenancesupportservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/aiagentsservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/aichatbotsservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/aiautomationservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/computervisionservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/predictiveanalyticsservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/generativeaiservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/aieducationservices</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/speechvoiceaiservices</loc>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Employee Profile Pages -->
+  <url>
+    <loc>https://techiehelp.in/employee/amit-kumar</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/employee/kameshwar-patel</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/employee/supriya-jalani</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/employee/aditya-kumar</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/employee/ashok</loc>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/employee/md-amzad</loc>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Student/Intern Profile Pages -->
+  <url>
+    <loc>https://techiehelp.in/students/sasvanthu-g</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/sasvanthu-g</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/ritika-kasat</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/ritika-kasat</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/abhay-raj-singh</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/abhay-raj-singh</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/aarshdeep-kaur</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/aarshdeep-kaur</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/sagar-kumar</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/sagar-kumar</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/simran-kanwar</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/simran-kanwar</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/tanu-singh</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/tanu-singh</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/rohit-sharma</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/rohit-sharma</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/rohan-t</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/rohan-t</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/teja-bhuvaneswari-devi</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/teja-bhuvaneswari-devi</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/kaviyaran-p</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/kaviyaran-p</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/ganga-dhar-sharma</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/ganga-dhar-sharma</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/ankit-kumar-keshari</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/ankit-kumar-keshari</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/khiasuthong-t</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/khiasuthong-t</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/senchumbeni-c-erui</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/senchumbeni-c-erui</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/kajol-sunar</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/kajol-sunar</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/susheto-zhimo</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/susheto-zhimo</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/neha-begum</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/neha-begum</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/emanuel-thangthazo</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/emanuel-thangthazo</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/anutalu-rhakho</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/anutalu-rhakho</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/belo-kapfo</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/belo-kapfo</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/bsden-ephom</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/bsden-ephom</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/thujozo-rhakho</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/thujozo-rhakho</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/dotsu-t-yimchunger</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/dotsu-t-yimchunger</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/bendangakum-hoki</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/bendangakum-hoki</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/pulovi-k-chishi</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/pulovi-k-chishi</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/kengimheing-nampeung</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/kengimheing-nampeung</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/ashok</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/ashok</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/students/kameshwar-patel</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/intern/kameshwar-patel</loc>
+    <priority>0.4</priority>
+  </url>
 </urlset>
