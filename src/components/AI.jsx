@@ -422,13 +422,13 @@ const AI = () => {
                 Most Trusted Internship Program • AICTE & NIP Aligned
               </div>
               <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-snug max-w-4xl">
-                <span className="text-yellow-300 font-bold">AI</span> Internship & Training Program
+                <span className="text-yellow-300 font-bold">AI & Machine Learning</span> Internship Program
               </h1>
               <h2 className="text-xl md:text-2xl font-medium mb-2 leading-relaxed">
-                Master artificial intelligence, machine learning, deep learning, and AI tools to build intelligent systems and earn a verified internship certificate that helps in placements.
+                🤖 Become an AI Expert! Master Machine Learning, Deep Learning & Build Intelligent Systems! Land ₹12-20 LPA Jobs in Top Companies
               </h2>
               <p className="text-base mb-2 leading-relaxed">
-                This is not just a course. It's a structured internship experience with live AI projects, mentor guidance, recommendation letter, and placement-focused support.
+                💥 DON'T MISS THIS! 4-month intensive AI internship with hands-on projects, expert mentorship, and direct placement in Google, Microsoft, Amazon, Tesla, and AI startups. 95% students get placed within 3 months of completion!
               </p>
               <ul className="flex flex-wrap gap-3 mb-3">
                 <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Live AI Projects</li>
