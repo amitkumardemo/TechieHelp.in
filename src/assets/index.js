@@ -196,6 +196,13 @@ import kitNodha from "./KIT    NODHA.jpeg";
 import kitCert from "./KIT CERT.jpeg";
 import aryanp from "./aryanp.jpeg"
 
+// Hero carousel images
+import class1 from "./class1.jpeg";
+import class2 from "./class2.jpeg";
+import class3 from "./class3.jpeg";
+import class4 from "./class4.jpeg";
+import class5 from "./class5.jpeg";
+
 export {
   internship as airbnb,
   bill,
@@ -369,4 +376,10 @@ export {
   kitNodha,
   kitCert,
   aryanp,
+  // Hero carousel images
+  class1,
+  class2,
+  class3,
+  class4,
+  class5,
 };
