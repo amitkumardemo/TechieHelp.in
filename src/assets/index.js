@@ -181,6 +181,12 @@ import supriyaJalani from "./supriya_jalani.jpeg";
 import adityaKumar from "./Aditya_kumar.jpeg";
 import mdAmzad from "./Amzad.jpeg";
 
+import raiConstruction from "./raiConstruction.png";
+import invitationWala from "./invitationWala.png";
+import workEra from "./workEra.png";
+import nhRestaurant from "./nhRestaurant.png";
+import ujjawalLibrary from "./ujjawalLibrary.png";
+
 export {
   internship as airbnb,
   bill,
@@ -258,7 +264,6 @@ export {
   process,
   alert,
   earn,
-  // Removed duplicate export of google
   githubPng as github,
   aarshdeepKaur,
   abhayRajSingh,
@@ -342,4 +347,9 @@ export {
   webdev,
   fullstack2,
   mobileapp,
+  nhRestaurant,
+  raiConstruction,
+  workEra,
+  invitationWala,
+  ujjawalLibrary,
 };

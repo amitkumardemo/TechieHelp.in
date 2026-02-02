@@ -8,8 +8,8 @@ import {
   FaHtml5,
   FaCss3,
   FaDatabase,
-  FaPython, 
-  FaBootstrap
+  FaPython,
+  FaBootstrap,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -24,6 +24,8 @@ import {
   SiPostman,
   SiVercel,
   SiRender,
+  SiRazorpay,
+  SiGooglemaps,
 } from "react-icons/si";
 
 import {
@@ -58,6 +60,11 @@ import {
   webdev,
   fullstack2,
   mobileapp,
+  nhRestaurant,
+  raiConstruction,
+  workEra,
+  invitationWala,
+  ujjawalLibrary,
   computer,
 } from "../assets";
 import Contact from "./Contact";
@@ -69,11 +76,15 @@ const projectsData = [
     id: 1,
     title: "Rai Construction",
     description: `To design and develop a modern, SEO-optimized corporate website along with a secure admin panel that allows the client to independently manage website content such as projects, services, and blog posts, while improving online and local visibility. `,
-    image: portfolio,
+    image: raiConstruction,
     category: "Web Development",
     link: "https://www.raiconstructionsolutions.com/",
     year: "2023",
-    techStack: ["HTML", "CSS", "JavaScript", "React", "Tailwind", "MongoDB", "Express.js", "Git", "Python" ],
+    techStack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+    ],
     industry: "Corporate",
   },
   {
@@ -99,7 +110,7 @@ const projectsData = [
     year: "2023",
     headline: "Real-Time Food Delivery",
     personality: "Efficient and User-Friendly",
-    techStack: ["React Native", "Firebase"],
+    techStack: ["Native", "Firebase"],
     industry: "Food App",
   },
   {
@@ -176,6 +187,39 @@ const projectsData = [
   },
   {
     id: 10,
+    title: "Ujjawal Library – Digital Community Library",
+    description: `📚 Official website for a real-world community library serving students and exam aspirants
+    🌍 Clean, responsive design tailored for rural and semi-urban users
+    📍 Integrated Google Maps for easy location access and local discovery
+    📝 Contact & admission system designed to support student onboarding
+    💳 Razorpay payment gateway for admissions and monthly fee collection
+    🎯 Built to strengthen local education infrastructure with a modern digital presence`,
+    image: ujjawalLibrary, 
+    category: "Web Development",
+    link: "https://ujjawal-libraray.vercel.app/",
+    year: "2023",
+    techStack: ["HTML5", "CSS3", "JavaScript", 
+      "Google Maps", "Razorpay"],
+    industry: "Education / Community Services",
+  },
+  {
+    id: 11,
+    title: "InvitationWala – Wedding & Event Invitations",
+    description: `💌 Premium digital invitation platform for weddings & special celebrations
+    🎥 Bespoke video invitations designed to be minimal, memorable & eco-friendly
+    🎨 Custom-crafted designs reflecting each couple’s unique story and vibe
+    📱 Mobile-first, share-ready invites delivered instantly across platforms
+    🌍 Pan-India & online delivery trusted by hundreds of happy clients
+    🚀 Built to save time, reduce cost, and elevate the invitation experience`,
+    image: invitationWala, 
+    category: "Web Development",
+    link: "https://invitation-wala.vercel.app/",
+    year: "2024",
+    techStack: [ "HTML5", "CSS3", "JavaScript",],
+    industry: "Wedding & Event Services",
+  },
+  {
+    id: 10,
     title: "Food App",
     description: `🚚 Real-time food delivery tracking system\n📍 Location-based restaurant discovery\n💳 Secure payment processing\n⭐ Review and rating system`,
     image: food,
@@ -187,20 +231,51 @@ const projectsData = [
     personality: "Efficient and User-Friendly",
     techStack: ["React Native", "Firebase"],
   },
+  {
+    id: 12,
+    title: "Work Era – Co-WorkingSpace Website",
+    description: `🏢 Modern business website for a co-working space designed to attract startups & professionals
+    🎨 Professional UI, highlighting workspace interiors, services & team
+    📞 Lead-focused contact & enquiry pages for client acquisition
+    🌍 Built to strengthen local brand presence and increase walk-in & online leads`,
+    image: workEra, 
+    category: "Web Development",
+    link: "https://work-era-co-working-space.vercel.app/",
+    year: "2024",
+    techStack: [ "HTML5", "CSS3", "JavaScript",
+      "Bootstrap" ],
+    industry: "Real Estate / Co-Working & Office Spaces",
+  },
+  {
+    id: 13,
+    title: "NH Restaurant – Restaurant Website",
+    description: `🍽️ Premium restaurant website   showcasing menu, ambience & customer trust
+    ⭐ Highly rated dining experience highlighting strong brand credibility
+    📖 Complete digital menu with categories, pricing & signature specials
+    📅 Online table reservation system for dine-in and private events
+    📍 Location, contact & gallery integration to increase walk-ins
+    🚀 Designed to convert visitors into loyal dining customers`,
+    image: nhRestaurant, 
+    category: "Web Development",
+    link: "https://nh-restaurant-jodhpur.netlify.app/",
+    year: "2024",
+    techStack: [ "HTML5", "CSS3", "JavaScript", "Bootstrap",],
+    industry: "Food & Hospitality",
+  },
 ];
 
 const techIcons = {
   React: { icon: FaReact, color: "text-cyan-400" },
-  "React Native": { icon: FaReact, color: "text-indigo-400" },
+  Native: { icon: FaReact, color: "text-indigo-400" },
   "Next.js": { icon: SiNextdotjs, color: "text-white" },
   "Node.js": { icon: FaNodeJs, color: "text-green-500" },
   "Express.js": { icon: SiExpress, color: "text-gray-300" },
   JavaScript: { icon: FaJs, color: "text-yellow-400" },
-  HTML: { icon: FaHtml5, color: "text-orange-500" },
-  CSS: { icon: FaCss3, color: "text-blue-500" },
+  HTML5: { icon: FaHtml5, color: "text-orange-500" },
+  CSS3: { icon: FaCss3, color: "text-blue-500" },
   TypeScript: { icon: SiTypescript, color: "text-blue-400" },
   Python: { icon: FaPython, color: "text-yellow-400" },
-  Bootstrap: { icon: FaBootstrap, color: "text-purple-500" }, 
+  Bootstrap: { icon: FaBootstrap, color: "text-purple-500" },
   Tailwind: { icon: SiTailwindcss, color: "text-cyan-300" },
   Firebase: { icon: SiFirebase, color: "text-yellow-500" },
   MongoDB: { icon: SiMongodb, color: "text-green-400" },
@@ -211,6 +286,8 @@ const techIcons = {
   Postman: { icon: SiPostman, color: "text-orange-400" },
   Vercel: { icon: SiVercel, color: "text-white" },
   Render: { icon: SiRender, color: "text-blue-400" },
+  Razorpay: { icon: SiRazorpay, color: "text-blue-500" },
+  "Google Maps": { icon: SiGooglemaps, color: "text-red-500" },
 };
 
 const cardVariants = {
@@ -242,7 +319,9 @@ const TechStackGrid = ({ techStack }) => {
                        transition-all duration-300"
           >
             {TechIcon && <TechIcon className={`text-4xl mb-1 ${color}`} />}
-            <p className="text-sm text-gray-300 text-center font-medium">{tech}</p>
+            <p className="text-sm text-gray-300 text-center font-medium">
+              {tech}
+            </p>
           </div>
         );
       })}
@@ -663,7 +742,7 @@ const ProjectPortfolio = () => {
                         className="bg-black text-white rounded-2xl shadow-lg p-1 lg:w-1/3"
                       >
                         <div className="mb-8 flex gap-2 justify-start">
-                          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
+                          <div className="p-2 bg-gradient-to-r from-blue-600 to-green-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
                             <svg
                               className="w-4 h-4"
                               fill="currentColor"
@@ -675,7 +754,7 @@ const ProjectPortfolio = () => {
                                 clipRule="evenodd"
                               />
                             </svg>
-                            <p className="text-sm font-bold text-white">
+                            <p className="text-sm font-bold text-white ">
                               {selectedProject &&
                               selectedProject.category === "Mobile App"
                                 ? selectedProject.industry
@@ -723,44 +802,44 @@ const ProjectPortfolio = () => {
                   )}
                   {filteredMobile.length > 1 && (
                     <>
-                        <div
-                          ref={gridRef}
-                          className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-8 ml-20 mr-20 px-12"
-                        >
-                          {filteredMobile.map((project, i) => (
-                            <motion.div
-                              key={project.id}
-                              custom={i + 1}
-                              initial="hidden"
-                              whileInView="visible"
-                              viewport={{ once: true }}
-                              variants={cardVariants}
-                              whileHover={{
-                                y: -6,
-                                transition: { duration: 0.3 },
-                              }}
-                              onClick={() => handleProjectClick(project)}
-                              className="group relative bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-green-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[200px] cursor-pointer"
-                            >
-                              {/* Image */}
-                              <div className="relative mb-1 overflow-hidden rounded-xl">
-                                <img
-                                  src={project.image}
-                                  alt={project.title}
-                                  className="h-40 object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
-                                  {project.industry}
-                                </div>
+                      <div
+                        ref={gridRef}
+                        className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-8 ml-20 mr-20 px-12"
+                      >
+                        {filteredMobile.map((project, i) => (
+                          <motion.div
+                            key={project.id}
+                            custom={i + 1}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: true }}
+                            variants={cardVariants}
+                            whileHover={{
+                              y: -6,
+                              transition: { duration: 0.3 },
+                            }}
+                            onClick={() => handleProjectClick(project)}
+                            className="group relative bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-green-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[200px] cursor-pointer"
+                          >
+                            {/* Image */}
+                            <div className="relative mb-1 overflow-hidden rounded-xl">
+                              <img
+                                src={project.image}
+                                alt={project.title}
+                                className="h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                              />
+                              <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                                {project.industry}
                               </div>
-                              {/* Title */}
-                              <h3 className="text-l font-bold mb-1 text-center text-white">
-                                {project.title}
-                              </h3>
-                            </motion.div>
-                          ))}
-                        </div>
-                      
+                            </div>
+                            {/* Title */}
+                            <h3 className="text-l font-bold mb-1 text-center text-white">
+                              {project.title}
+                            </h3>
+                          </motion.div>
+                        ))}
+                      </div>
+
                       <div className="w-1/2 h-1 bg-gray-400 mt-4 ml-80 relative">
                         <div
                           className="h-full bg-green-500 transition-all duration-100"
