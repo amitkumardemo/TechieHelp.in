@@ -186,6 +186,9 @@ import invitationWala from "./invitationWala.png";
 import workEra from "./workEra.png";
 import nhRestaurant from "./nhRestaurant.png";
 import ujjawalLibrary from "./ujjawalLibrary.png";
+import edgeCareer from "./edgeCareer.png";
+import dentEase from "./dentEase.png";
+import techiehelpInstitute from "./techiehelpInstitute.png";
 
 export {
   internship as airbnb,
@@ -352,4 +355,7 @@ export {
   workEra,
   invitationWala,
   ujjawalLibrary,
+  edgeCareer,
+  techiehelpInstitute,
+  dentEase
 };

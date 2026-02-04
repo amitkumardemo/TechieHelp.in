@@ -10,6 +10,7 @@ import {
   FaDatabase,
   FaPython,
   FaBootstrap,
+  FaProjectDiagram,
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -26,37 +27,19 @@ import {
   SiRender,
   SiRazorpay,
   SiGooglemaps,
+  SiPrisma,
+  SiGoogle,
+  SiClerk,
+  SiPostgresql
 } from "react-icons/si";
 
 import {
-  portfolio,
-  portfoli,
-  product,
   restaurant,
   food,
   web,
   custom,
-  organic,
   doctor,
-  home,
-  zym,
-  sports,
-  er,
-  junk,
-  face,
-  plant,
-  store,
-  health,
   ecom,
-  producer,
-  gamedevelopment,
-  library,
-  expertise,
-  customSolutions,
-  agile,
-  quality,
-  communication,
-  support,
   webdev,
   fullstack2,
   mobileapp,
@@ -65,42 +48,16 @@ import {
   workEra,
   invitationWala,
   ujjawalLibrary,
-  computer,
+  edgeCareer,
+  techiehelpInstitute,
+  dentEase,
 } from "../assets";
 import Contact from "./Contact";
-import Footer from "./Footer";
 import CTA from "./CTA";
 
 const projectsData = [
   {
-    id: 1,
-    title: "Rai Construction",
-    description: `To design and develop a modern, SEO-optimized corporate website along with a secure admin panel that allows the client to independently manage website content such as projects, services, and blog posts, while improving online and local visibility. `,
-    image: raiConstruction,
-    category: "Web Development",
-    link: "https://www.raiconstructionsolutions.com/",
-    year: "2023",
-    techStack: [
-      "HTML5",
-      "CSS3",
-      "JavaScript",
-    ],
-    industry: "Corporate",
-  },
-  {
-    id: 2,
-    title: "E-commerce Platform",
-    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
-    image: ecom,
-    category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    year: "2023",
-    techStack: ["React", "Node.js", "MongoDB"],
-    industry: "E-commerce",
-  },
-  {
-    id: 3,
+    id: 9,
     title: "Food Delivery App",
     description: `🚚 Real-time food delivery tracking system\n📍 Location-based restaurant discovery\n💳 Secure payment processing\n⭐ Review and rating system`,
     image: food,
@@ -114,141 +71,129 @@ const projectsData = [
     industry: "Food App",
   },
   {
-    id: 4,
-    title: "Ujjawal Library",
-    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
-    image: ecom,
+    id: 1,
+    title: "Rai Construction Solutions",
+    description: `🏗️ Enterprise-grade construction consultancy website
+    🌍 Global-ready UI/UX with modern layouts &   trust-driven design
+    💼 Service-focused structure optimized for leads & conversions
+    📱 Fully responsive, pixel-perfect across all devices
+    📩 Smart contact system with validation & location mapping
+    🚀 Scalable, high-performance platform built for brand authority`,
+    image: raiConstruction,
     category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    year: "2023",
-    techStack: ["React", "Node.js", "MongoDB"],
-    industry: "Education",
+    link: "https://www.raiconstructionsolutions.com/",
+    year: "2024",
+    techStack: [
+      "React", "TypeScript", "Vite", "Tailwind CSS", "Shadcn UI", "Lucide Icons"
+    ],
+    industry: "Construction & Real Estate",
+  },
+  {
+    id: 2,
+    title: "DentEase (Dentwise)",
+    description: `🦷 AI-powered dental platform with smart appointment booking
+    🗣️ Voice-based AI agent for automated patient interaction
+    🔐 Secure authentication with Clerk (Google, GitHub & Email)
+    📅 3-step dentist appointment booking flow with email notifications
+    💳 Subscription plans with smart upgrades & automatic invoicing
+    📊 Admin dashboard for managing appointments and users`,
+    image: dentEase,
+    category: "Web Development",
+    link: "https://dent-ease-life.vercel.app",
+    year: "2024",
+    techStack: [
+      "Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Shadcn UI", "Clerk Auth", "Vapi AI", "Resend Email"
+    ],
+    industry: "Healthcare",
+  },
+  {
+    id: 3,
+    title: "TechieHelp Institute of AI",
+    description: `🎓 AI-powered career & skill institute for industry-ready talent
+    🤖 End-to-end learning with guidance, internships & placements
+    🌍 Global platform for students, professionals & switchers
+    📊 AI tools for roadmaps, skill gaps, ATS resumes & interviews
+    🏫 College-ready solutions with dashboards & placement support
+    🚀 Scalable, automated & outcome-focused`,
+    image: techiehelpInstitute, 
+    category: "Web Development",
+    link: "https://techiehelpinstituteofai.in/",
+    year: "2024",
+    techStack: [
+      "Next.js", "React", "Tailwind", "Prisma ORM", "NeonDB", "Clerk Auth", "Gemini AI", "Inngest", "Vercel" 
+    ],
+    industry: "EdTech & AI Education",
+  },
+  {
+    id: 4,
+    title: "EdgeCareer: AI-Powered Career Assistant",
+    description: `🚀 AI-powered career platform for job seekers and professionals
+    🤖 ATS-optimized resumes, cover letters & mock interviews
+    📊 Real-time insights on salaries, jobs & in-demand skills
+    🎯 Personalized job matching and learning recommendations
+    🧠 Recruiter-ready tools for resume screening and shortlisting
+    🌍 Scalable global SaaS focused on real hiring outcomes`,
+    image: edgeCareer, 
+    category: "Web Development",
+    link: "https://www.edgecareer.online/",
+    year: "2024",
+    techStack: [ "Next.js", "React", "Tailwind", 
+      "Prisma ORM", "NeonDB", "Clerk Auth", "Gemini AI", "Inngest", "Vercel" 
+    ],
+    industry: "AI CareerTech / HRTech",
   },
   {
     id: 5,
     title: "Ujjawal Library",
-    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
-    image: ecom,
-    category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    year: "2023",
-    techStack: ["React", "Node.js", "MongoDB"],
-    industry: "Education",
-  },
-  {
-    id: 6,
-    title: "Ujjawal Library",
-    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
-    image: ecom,
-    category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    year: "2023",
-    techStack: ["React", "Node.js", "MongoDB"],
-    industry: "Education",
-  },
-  {
-    id: 7,
-    title: "Ujjawal Library",
-    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
-    image: ecom,
-    category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    year: "2023",
-    techStack: ["React", "Node.js", "MongoDB"],
-    industry: "Education",
-  },
-  {
-    id: 8,
-    title: "Ujjawal Library",
-    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
-    image: ecom,
-    category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    year: "2023",
-    techStack: ["React", "Node.js", "MongoDB"],
-    industry: "Education",
-  },
-  {
-    id: 9,
-    title: "Ujjawal Library",
-    description: `🛒 Full-featured online store with payment integration\n📦 Product catalog with advanced filtering\n🛡️ Secure checkout process with multiple payment options\n📊 Admin dashboard for inventory management`,
-    image: ecom,
-    category: "Web Development",
-    technologies: ["React", "Node.js", "MongoDB"],
-    link: "#",
-    year: "2023",
-    techStack: ["React", "Node.js", "MongoDB"],
-    industry: "Education",
-  },
-  {
-    id: 10,
-    title: "Ujjawal Library – Digital Community Library",
     description: `📚 Official website for a real-world community library serving students and exam aspirants
     🌍 Clean, responsive design tailored for rural and semi-urban users
     📍 Integrated Google Maps for easy location access and local discovery
     📝 Contact & admission system designed to support student onboarding
-    💳 Razorpay payment gateway for admissions and monthly fee collection
-    🎯 Built to strengthen local education infrastructure with a modern digital presence`,
+    💳 Razorpay payment gateway for admissions and monthly fee collection`,
     image: ujjawalLibrary, 
     category: "Web Development",
     link: "https://ujjawal-libraray.vercel.app/",
     year: "2023",
-    techStack: ["HTML5", "CSS3", "JavaScript", 
-      "Google Maps", "Razorpay"],
+    techStack: ["React", "Tailwind", 
+      "Google Maps", "Razorpay"
+    ],
     industry: "Education / Community Services",
   },
   {
-    id: 11,
-    title: "InvitationWala – Wedding & Event Invitations",
+    id: 6,
+    title: "InvitationWala",
     description: `💌 Premium digital invitation platform for weddings & special celebrations
     🎥 Bespoke video invitations designed to be minimal, memorable & eco-friendly
     🎨 Custom-crafted designs reflecting each couple’s unique story and vibe
-    📱 Mobile-first, share-ready invites delivered instantly across platforms
     🌍 Pan-India & online delivery trusted by hundreds of happy clients
     🚀 Built to save time, reduce cost, and elevate the invitation experience`,
     image: invitationWala, 
     category: "Web Development",
     link: "https://invitation-wala.vercel.app/",
     year: "2024",
-    techStack: [ "HTML5", "CSS3", "JavaScript",],
+    techStack: [ "HTML5", "CSS3", "JavaScript"],
     industry: "Wedding & Event Services",
   },
   {
-    id: 10,
-    title: "Food App",
-    description: `🚚 Real-time food delivery tracking system\n📍 Location-based restaurant discovery\n💳 Secure payment processing\n⭐ Review and rating system`,
-    image: food,
-    category: "Mobile App",
-    technologies: ["React Native", "Firebase"],
-    link: "#",
-    year: "2023",
-    headline: "Real-Time Food Delivery",
-    personality: "Efficient and User-Friendly",
-    techStack: ["React Native", "Firebase"],
-  },
-  {
-    id: 12,
+    id: 7,
     title: "Work Era – Co-WorkingSpace Website",
     description: `🏢 Modern business website for a co-working space designed to attract startups & professionals
     🎨 Professional UI, highlighting workspace interiors, services & team
     📞 Lead-focused contact & enquiry pages for client acquisition
-    🌍 Built to strengthen local brand presence and increase walk-in & online leads`,
+    🌍 Built to strengthen local brand presence and increase walk-in & online leads
+    🚀 Ideal for co-working spaces, offices & commercial real-estate`,
     image: workEra, 
     category: "Web Development",
     link: "https://work-era-co-working-space.vercel.app/",
     year: "2024",
     techStack: [ "HTML5", "CSS3", "JavaScript",
-      "Bootstrap" ],
+      "Bootstrap" 
+    ],
     industry: "Real Estate / Co-Working & Office Spaces",
   },
   {
-    id: 13,
-    title: "NH Restaurant – Restaurant Website",
+    id: 8,
+    title: "NH Restaurant",
     description: `🍽️ Premium restaurant website   showcasing menu, ambience & customer trust
     ⭐ Highly rated dining experience highlighting strong brand credibility
     📖 Complete digital menu with categories, pricing & signature specials
@@ -259,7 +204,9 @@ const projectsData = [
     category: "Web Development",
     link: "https://nh-restaurant-jodhpur.netlify.app/",
     year: "2024",
-    techStack: [ "HTML5", "CSS3", "JavaScript", "Bootstrap",],
+    techStack: [ "HTML5", "CSS3", "JavaScript", 
+      "Bootstrap"
+    ],
     industry: "Food & Hospitality",
   },
 ];
@@ -284,10 +231,15 @@ const techIcons = {
   Git: { icon: SiGit, color: "text-orange-500" },
   GitHub: { icon: SiGithub, color: "text-white" },
   Postman: { icon: SiPostman, color: "text-orange-400" },
-  Vercel: { icon: SiVercel, color: "text-white" },
+  Vercel: { icon: SiVercel, color: "text-neutral-200" },
   Render: { icon: SiRender, color: "text-blue-400" },
   Razorpay: { icon: SiRazorpay, color: "text-blue-500" },
   "Google Maps": { icon: SiGooglemaps, color: "text-red-500" },
+  "Prisma ORM": { icon: SiPrisma, color: "text-teal-400" },
+  NeonDB: { icon: SiPostgresql, color: "text-green-400" },
+  "Gemini AI": { icon: SiGoogle, color: "text-blue-500" },
+  Inngest: { icon: FaProjectDiagram, color: "text-purple-400" },
+  "Clerk Auth": { icon: SiClerk, color: "text-indigo-400" },
 };
 
 const cardVariants = {
@@ -686,10 +638,11 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={0}
-                        className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 flex-1"
+                        className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 lg:w-2/3 flex-shrink-0"
+                        style={{ height: 'fit-content' }}
                       >
                         {/* Large Image */}
-                        <div className="relative mt-10 overflow-hidden rounded-xl p-0">
+                        <div className="relative mt-10 overflow-hidden rounded-xl p-0 h-[480px]">
                           <img
                             src={
                               selectedProject &&
@@ -703,7 +656,7 @@ const ProjectPortfolio = () => {
                                 ? selectedProject.title
                                 : filteredMobile[0].title
                             }
-                            className="w-full h-[480px] object-cover"
+                            className="w-full h-full object-cover"
                           />
                           <div className="absolute top-1 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             {selectedProject &&
@@ -739,7 +692,7 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={1}
-                        className="bg-black text-white rounded-2xl shadow-lg p-1 lg:w-1/3"
+                        className="bg-black text-white rounded-2xl shadow-lg p-1 flex-1"
                       >
                         <div className="mb-8 flex gap-2 justify-start">
                           <div className="p-2 bg-gradient-to-r from-blue-600 to-green-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
@@ -885,10 +838,11 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={0}
-                        className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 flex-1"
+                        className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 lg:w-2/3 flex-shrink-0 flex-grow-0"
+                        style={{ height: 'fit-content' }}
                       >
                         {/* Large Image */}
-                        <div className="relative mt-10 overflow-hidden rounded-xl p-0">
+                        <div className="relative mt-10 overflow-hidden rounded-xl p-0 h-[480px]">
                           <img
                             src={
                               selectedProject &&
@@ -902,7 +856,7 @@ const ProjectPortfolio = () => {
                                 ? selectedProject.title
                                 : filteredWeb[0].title
                             }
-                            className="w-full h-[480px] object-cover"
+                            className="w-full h-full object-cover"
                           />
                           <div className="absolute top-1 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             {selectedProject &&
@@ -938,7 +892,7 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={1}
-                        className="bg-gray-900 text-white rounded-2xl shadow-lg p-1 lg:w-1/3"
+                        className="bg-gray-900 text-white rounded-2xl shadow-lg p-1 flex-1"
                       >
                         <div className="mb-8 flex gap-2 justify-start">
                           <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
