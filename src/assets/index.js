@@ -190,6 +190,29 @@ import edgeCareer from "./edgeCareer.png";
 import dentEase from "./dentEase.png";
 import techiehelpInstitute from "./techiehelpInstitute.png";
 
+// New imports from main branch
+import cyber from "./cyber.png";
+import certificate from "./certificate.png";
+import recommendation from "./recommendation.png";
+import aryan1 from "./aryan1.png";
+import aryan2 from "./aryan2.png";
+import sixty from "./sixty.png";
+import coreTeam from "./coreTeam.png";
+import amazad from "./amazad.png";
+import tit from "./tit.png";
+import delhiJudge from "./delhiJudge.png";
+import recon from "./recon.png";
+import kitInt from "./kitInt.png";
+import kit from "./kit.png";
+import kitNodha from "./kitNodha.png";
+import kitCert from "./kitCert.png";
+import aryanp from "./aryanp.png";
+import class1 from "./class1.png";
+import class2 from "./class2.png";
+import class3 from "./class3.png";
+import class4 from "./class4.png";
+import class5 from "./class5.png";
+
 export {
   internship as airbnb,
   bill,
@@ -357,5 +380,29 @@ export {
   ujjawalLibrary,
   edgeCareer,
   techiehelpInstitute,
-  dentEase
+  dentEase,
+  // New exports from main branch
+  cyber,
+  certificate,
+  recommendation,
+  // New images
+  aryan1,
+  aryan2,
+  sixty,
+  coreTeam,
+  amazad,
+  tit,
+  delhiJudge,
+  recon,
+  kitInt,
+  kit,
+  kitNodha,
+  kitCert,
+  aryanp,
+  // Hero carousel images
+  class1,
+  class2,
+  class3,
+  class4,
+  class5
 };
