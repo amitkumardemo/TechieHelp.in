@@ -31,7 +31,6 @@ import {
   SiGoogle,
   SiClerk,
   SiPostgresql,
-  Sic,
 } from "react-icons/si";
 
 import {
@@ -223,7 +222,6 @@ const techIcons = {
   CSS3: { icon: FaCss3, color: "text-blue-500" },
   TypeScript: { icon: SiTypescript, color: "text-blue-400" },
   Python: { icon: FaPython, color: "text-yellow-400" },
-  C: { icon: Sic, color: "text-blue-500" },
   Bootstrap: { icon: FaBootstrap, color: "text-purple-500" },
   Tailwind: { icon: SiTailwindcss, color: "text-cyan-300" },
   Firebase: { icon: SiFirebase, color: "text-yellow-500" },
