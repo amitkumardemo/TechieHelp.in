@@ -31,6 +31,7 @@ import {
   kit,
   kitNodha,
   kitCert,
+  aryanp,
 } from "../assets";
 import InternshipFAQ from "./InternshipFAQ";
 import { Calendar, IndianRupee, Clock, CheckCircle, Briefcase, Star, Download, QrCode, Shield, Award, Linkedin } from 'lucide-react';
@@ -74,13 +75,13 @@ const Section = ({ title, children, imgSrc, imgLeft = true }) => {
 
 const TypingAnimation = () => {
   const roles = [
-    "Full Stack Web Developer",
-    "Frontend Developer (React)",
-    "Backend Developer",
-    "Software Engineer",
-    "Web Application Developer",
-    "JavaScript Developer",
-    "UI Engineer"
+    "Cybersecurity Analyst",
+    "Ethical Hacker",
+    "Security Engineer",
+    "Penetration Tester",
+    "Network Security Specialist",
+    "Information Security Consultant",
+    "Cyber Defense Specialist"
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -125,7 +126,7 @@ const TypingAnimation = () => {
   );
 };
 
-const Webdevelopment = () => {
+const Cybersecurity = () => {
   const [loading, setLoading] = useState(true);
   const [activeMonth, setActiveMonth] = useState(0);
   const [autoScroll, setAutoScroll] = useState(true);
@@ -154,7 +155,7 @@ const Webdevelopment = () => {
             includes: [
               { type: 'normal', text: 'Program orientation & onboarding' },
               { type: 'normal', text: 'Program overview & expectations' },
-              { type: 'normal', text: 'Tool setup guidance' },
+              { type: 'normal', text: 'Tool setup guidance (Kali Linux, VirtualBox)' },
               { type: 'normal', text: 'Introduction to internship workflow' },
               { type: 'project', level: 'beginner', title: 'Basic Tool & Workflow Setup Task', subtitle: 'Hands-on task submitted on GitHub' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
@@ -170,10 +171,11 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Git basics (version control concepts)' },
-              { type: 'normal', text: 'Commits, branches & workflows' },
+              { type: 'normal', text: 'Introduction to Cybersecurity fundamentals' },
+              { type: 'normal', text: 'Understanding threats, vulnerabilities & attacks' },
+              { type: 'normal', text: 'Basic networking concepts (TCP/IP, OSI model)' },
               { type: 'normal', text: 'Weekly doubt-solving session with mentor' },
-              { type: 'project', level: 'beginner', title: 'Git Workflow Practice Project', subtitle: 'Real-world Git usage with commits & branches' }
+              { type: 'project', level: 'beginner', title: 'Network Scanning & Reconnaissance Project', subtitle: 'Use Nmap for basic network scanning' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
@@ -185,11 +187,11 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'GitHub advanced concepts' },
-              { type: 'normal', text: 'Repositories, pull requests & issues' },
-              { type: 'normal', text: 'Collaboration workflow used in companies' },
+              { type: 'normal', text: 'Web application security basics' },
+              { type: 'normal', text: 'Common vulnerabilities (SQL injection, XSS)' },
+              { type: 'normal', text: 'OWASP Top 10 overview' },
               { type: 'normal', text: 'Mentor doubt-solving session' },
-              { type: 'project', level: 'intermediate', title: 'GitHub Collaboration Mini Project', subtitle: 'Team-based PR & issue workflow simulation' }
+              { type: 'project', level: 'intermediate', title: 'Web Vulnerability Assessment Project', subtitle: 'Identify and document web app vulnerabilities' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
@@ -201,11 +203,11 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Open-source contribution guidance' },
-              { type: 'normal', text: 'Finding beginner-friendly projects' },
-              { type: 'normal', text: 'Contribution rules & best practices' },
+              { type: 'normal', text: 'Cryptography fundamentals' },
+              { type: 'normal', text: 'Encryption, hashing & digital signatures' },
+              { type: 'normal', text: 'Password cracking techniques' },
               { type: 'normal', text: 'Mentor doubt-solving session' },
-              { type: 'project', level: 'hard', title: 'Open-Source Contribution Simulation Project', subtitle: 'Real contribution-style workflow with review process' }
+              { type: 'project', level: 'hard', title: 'Cryptography & Password Cracking Project', subtitle: 'Hands-on with Hashcat and John the Ripper' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
@@ -219,11 +221,10 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'HTML fundamentals (structure, semantics)' },
-              { type: 'normal', text: 'Forms, tables & accessibility basics' },
-              { type: 'normal', text: 'CSS basics (box model, colors, typography)' },
-              { type: 'normal', text: 'Introduction to responsive design' },
-              { type: 'project', level: 'beginner', title: 'Personal Portfolio Website (HTML + CSS)', subtitle: 'Build a professional portfolio from scratch' },
+              { type: 'normal', text: 'Penetration testing methodology' },
+              { type: 'normal', text: 'Reconnaissance, scanning & enumeration' },
+              { type: 'normal', text: 'Vulnerability assessment techniques' },
+              { type: 'project', level: 'beginner', title: 'Comprehensive Reconnaissance Project', subtitle: 'Complete information gathering on target systems' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -236,11 +237,10 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Advanced CSS concepts' },
-              { type: 'normal', text: 'Flexbox & Grid layouts' },
-              { type: 'normal', text: 'Responsive UI for real devices' },
-              { type: 'normal', text: 'Industry UI spacing & layout standards' },
-              { type: 'project', level: 'beginner', title: 'Responsive Landing Page (Flexbox/Grid based)', subtitle: 'Create modern, responsive web layouts' },
+              { type: 'normal', text: 'Exploitation techniques' },
+              { type: 'normal', text: 'Using Metasploit framework' },
+              { type: 'normal', text: 'Post-exploitation activities' },
+              { type: 'project', level: 'intermediate', title: 'System Exploitation Project', subtitle: 'Gain unauthorized access using Metasploit' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -253,11 +253,10 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'JavaScript fundamentals' },
-              { type: 'normal', text: 'Variables, conditions, loops & functions' },
-              { type: 'normal', text: 'DOM manipulation basics' },
-              { type: 'normal', text: 'Event handling' },
-              { type: 'project', level: 'intermediate', title: 'Interactive Website (Forms + DOM logic)', subtitle: 'Add interactivity with JavaScript' },
+              { type: 'normal', text: 'Wireless network security' },
+              { type: 'normal', text: 'Wi-Fi cracking techniques' },
+              { type: 'normal', text: 'Bluetooth security basics' },
+              { type: 'project', level: 'intermediate', title: 'Wireless Security Assessment Project', subtitle: 'Test wireless network security using Aircrack-ng' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -270,11 +269,10 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Advanced JavaScript concepts' },
-              { type: 'normal', text: 'Arrays, objects & ES6 features' },
-              { type: 'normal', text: 'Browser APIs & real-world use cases' },
-              { type: 'normal', text: 'Writing clean, structured JS code' },
-              { type: 'project', level: 'intermediate', title: 'Dynamic Web App (JS-driven UI)', subtitle: 'Build dynamic user interfaces' },
+              { type: 'normal', text: 'Social engineering attacks' },
+              { type: 'normal', text: 'Phishing techniques & prevention' },
+              { type: 'normal', text: 'Physical security concepts' },
+              { type: 'project', level: 'hard', title: 'Social Engineering Simulation Project', subtitle: 'Design and execute phishing campaigns' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -287,11 +285,10 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Async JavaScript basics' },
-              { type: 'normal', text: 'Callbacks, promises & fetch API' },
-              { type: 'normal', text: 'Consuming public APIs' },
-              { type: 'normal', text: 'Error handling & debugging' },
-              { type: 'project', level: 'hard', title: 'API-Based Web Application', subtitle: 'Real data integration' },
+              { type: 'normal', text: 'Incident response & forensics' },
+              { type: 'normal', text: 'Digital evidence collection' },
+              { type: 'normal', text: 'Log analysis techniques' },
+              { type: 'project', level: 'hard', title: 'Digital Forensics Investigation Project', subtitle: 'Analyze system logs and collect evidence' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -304,11 +301,10 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Code optimization & best practices' },
-              { type: 'normal', text: 'Project refinement & documentation' },
-              { type: 'normal', text: 'GitHub README & project presentation' },
-              { type: 'normal', text: 'Resume project mapping guidance' },
-              { type: 'project', level: 'hard', title: 'Polished Frontend Product (Production-ready)', subtitle: 'Complete professional web application' },
+              { type: 'normal', text: 'Security reporting & documentation' },
+              { type: 'normal', text: 'Writing professional security reports' },
+              { type: 'normal', text: 'Project presentation skills' },
+              { type: 'project', level: 'hard', title: 'Comprehensive Security Assessment Report', subtitle: 'Complete penetration testing report' },
               { type: 'normal', text: 'HR Placement Session' }
             ]
           },
@@ -324,9 +320,9 @@ const Webdevelopment = () => {
           {
             timeline: 'Day First',
             includes: [
-              { type: 'normal', text: 'Advanced JavaScript recap' },
-              { type: 'normal', text: 'ES6+ patterns used in real-world applications' },
-              { type: 'project', level: 'intermediate', title: 'JavaScript Feature Module', subtitle: 'Intermediate project kickoff' },
+              { type: 'normal', text: 'Advanced penetration testing' },
+              { type: 'normal', text: 'Client-side attacks & browser exploitation' },
+              { type: 'project', level: 'intermediate', title: 'Advanced Web Exploitation Module', subtitle: 'Intermediate project kickoff' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -340,9 +336,9 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'React fundamentals (components, props, state)' },
-              { type: 'normal', text: 'JSX & component structuring' },
-              { type: 'project', level: 'intermediate', title: 'React UI Module', subtitle: 'Build interactive React components' },
+              { type: 'normal', text: 'Mobile application security' },
+              { type: 'normal', text: 'Android/iOS security testing' },
+              { type: 'project', level: 'intermediate', title: 'Mobile App Security Assessment', subtitle: 'Test mobile applications for vulnerabilities' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -355,9 +351,9 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'React hooks (useState, useEffect)' },
-              { type: 'normal', text: 'API integration in React' },
-              { type: 'project', level: 'intermediate', title: 'API-driven React Application', subtitle: 'Connect React app to external APIs' },
+              { type: 'normal', text: 'Cloud security fundamentals' },
+              { type: 'normal', text: 'AWS/Azure/GCP security' },
+              { type: 'project', level: 'intermediate', title: 'Cloud Security Configuration Review', subtitle: 'Assess cloud infrastructure security' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -370,9 +366,9 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Project architecture & reusable components' },
-              { type: 'normal', text: 'GitHub collaboration workflow' },
-              { type: 'project', level: 'hard', title: 'Full React Application', subtitle: 'Hard project kickoff' },
+              { type: 'normal', text: 'IoT security challenges' },
+              { type: 'normal', text: 'Embedded system vulnerabilities' },
+              { type: 'project', level: 'hard', title: 'IoT Device Security Testing', subtitle: 'Hard project kickoff' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -385,9 +381,9 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Advanced React patterns' },
-              { type: 'normal', text: 'Performance optimization basics' },
-              { type: 'project', level: 'hard', title: 'Feature Completion & Testing', subtitle: 'Complete and test React features' },
+              { type: 'normal', text: 'Advanced exploitation techniques' },
+              { type: 'normal', text: 'Custom exploit development' },
+              { type: 'project', level: 'hard', title: 'Custom Exploit Development', subtitle: 'Create and test custom exploits' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -400,10 +396,10 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Full-scale project development' },
-              { type: 'normal', text: 'Code reviews & mentor feedback' },
+              { type: 'normal', text: 'Real-world penetration testing projects' },
+              { type: 'normal', text: 'Bug bounty program participation' },
               { type: 'normal', text: 'Resume & portfolio project mapping' },
-              { type: 'project', level: 'hard', title: 'Final Industry-Level Internship Project', subtitle: 'Complete professional React application' },
+              { type: 'project', level: 'hard', title: 'Final Industry-Level Security Assessment', subtitle: 'Complete professional penetration testing project' },
               { type: 'normal', text: 'HR Placement Preparation Sessions' }
             ]
           },
@@ -421,7 +417,7 @@ const Webdevelopment = () => {
             includes: [
               { type: 'normal', text: 'Internship roadmap & expectations for final phase' },
               { type: 'normal', text: 'Advanced project planning & task distribution' },
-              { type: 'project', level: 'hard', title: 'Industry-Grade Web Application', subtitle: 'Hard project kickoff' },
+              { type: 'project', level: 'hard', title: 'Enterprise-Level Security Audit', subtitle: 'Hard project kickoff' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -435,9 +431,9 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Backend integration basics (APIs, data flow)' },
-              { type: 'normal', text: 'Authentication & role-based access concepts' },
-              { type: 'project', level: 'hard', title: 'Backend + Frontend Integration', subtitle: 'Connect backend and frontend systems' },
+              { type: 'normal', text: 'Compliance & regulatory frameworks' },
+              { type: 'normal', text: 'GDPR, HIPAA, PCI-DSS compliance' },
+              { type: 'project', level: 'hard', title: 'Compliance Assessment Project', subtitle: 'Evaluate system compliance with standards' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -450,9 +446,9 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Application optimization & best practices' },
-              { type: 'normal', text: 'Error handling & real-world debugging' },
-              { type: 'project', level: 'hard', title: 'Feature Enhancement & Stability', subtitle: 'Improve and stabilize application features' },
+              { type: 'normal', text: 'Security operations center (SOC) concepts' },
+              { type: 'normal', text: 'SIEM systems & threat hunting' },
+              { type: 'project', level: 'hard', title: 'SOC Simulation & Threat Hunting', subtitle: 'Set up and manage security monitoring' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -465,9 +461,9 @@ const Webdevelopment = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Deployment concepts (hosting, builds, environments)' },
-              { type: 'normal', text: 'GitHub project documentation & README standards' },
-              { type: 'project', level: 'hard', title: 'Deployment & Documentation', subtitle: 'Deploy application and create documentation' },
+              { type: 'normal', text: 'Red team vs Blue team exercises' },
+              { type: 'normal', text: 'Adversary simulation techniques' },
+              { type: 'project', level: 'hard', title: 'Red Team Exercise Project', subtitle: 'Simulate advanced persistent threats' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -499,7 +495,7 @@ const Webdevelopment = () => {
               { type: 'normal', text: 'Recommendation letter & certificate eligibility' },
               { type: 'normal', text: 'Mock interviews & HR preparation sessions' },
               { type: 'normal', text: 'Placement guidance & referral support' },
-              { type: 'project', level: 'hard', title: 'Final Internship Project Submission', subtitle: 'Complete and submit final project' },
+              { type: 'project', level: 'hard', title: 'Final Internship Project Submission', subtitle: 'Complete and submit final security assessment' },
               { type: 'normal', text: 'HR Placement Sessions' }
             ]
           },
@@ -537,13 +533,13 @@ const Webdevelopment = () => {
                 Most Trusted Internship Program • AICTE & NIP Aligned
               </div>
               <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-snug max-w-4xl">
-                Full Stack <span className="text-yellow-300 font-bold">Web Development</span> Internship & Training Program
+                <span className="text-yellow-300 font-bold">Cybersecurity</span> Internship & Training Program
               </h1>
               <h2 className="text-xl md:text-2xl font-medium mb-2 leading-relaxed">
-                Build real-world projects, work like an industry developer, and earn a verified internship certificate that helps in placements.
+                Master ethical hacking, penetration testing, and security analysis to protect digital assets and earn a verified internship certificate that helps in placements.
               </h2>
               <p className="text-base mb-2 leading-relaxed">
-                This is not just a course. It’s a structured internship experience with live projects, mentor guidance, recommendation letter, and placement-focused support.
+                This is not just a course. It’s a structured internship experience with live security projects, mentor guidance, recommendation letter, and placement-focused support.
               </p>
               <ul className="flex flex-wrap gap-3 mb-3">
                 <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Live Internship Projects</li>
@@ -580,10 +576,16 @@ const Webdevelopment = () => {
                     Start Internship – ₹499/-
                   </button>
                 </a>
-                <button className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2">
-                  <Download className="w-4 h-4" />
-                  Download Internship Syllabus
-                </button>
+                <a
+  href="https://drive.google.com/file/d/1KMG5JObcneMBHqcKw_JZmCC2l9lEI3s6/view?usp=drive_link"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2"
+>
+  <Download className="w-4 h-4" />
+  Download Internship Syllabus
+</a>
+
               </div>
               <p className="text-xs text-gray-300 mt-1">Limited seats • Certificate + Projects Included • Beginner Friendly</p>
             </header>
@@ -901,7 +903,7 @@ const Webdevelopment = () => {
                   <Briefcase className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Real-World Web Development Projects for Resume</h3>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Real-World Cybersecurity Projects for Resume</h3>
                   <p className="text-gray-600 text-sm">Build portfolio-worthy projects that showcase your skills to employers</p>
                 </div>
               </div>
@@ -1088,81 +1090,139 @@ const Webdevelopment = () => {
 
           {/* Mentors Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Mentor 1 */}
+
+{/* Mentor 1 */}
             <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              <div className="text-center mb-4">
-                <img
-                  src={AmitPhoto}
-                  alt="Amit Kumar"
-                  className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg"
-                />
-                <h3 className="text-xl font-bold text-gray-900 mb-1">Amit Kumar</h3>
-                <p className="text-sm text-blue-600 font-medium">Founder & Lead Mentor – TechieHelp</p>
-              </div>
-              <p className="text-gray-700 mb-4 text-center text-sm">
-                Machine Learning Engineer & Full Stack Developer with hands-on mentoring experience.
-              </p>
-              <div className="mb-4">
-                <h4 className="text-base font-semibold text-gray-900 mb-2">Support Highlights:</h4>
-                <ul className="space-y-1 text-gray-700 text-sm">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span>Placement-oriented mentorship</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span>Resume, LinkedIn & project guidance</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span>Career & interview preparation</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="text-center">
-                <a href="https://www.linkedin.com/in/amit-kumar-686196225/" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+  {/* Profile */}
+  <div className="text-center mb-4">
+    <img
+      src={aryanp}
+      alt="Cyber Security Expert - TechieHelp"
+      className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg object-cover"
+    />
+    <h3 className="text-xl font-bold text-gray-900 mb-1">
+      Aryan
+    </h3>
+    <p className="text-sm text-blue-600 font-medium">
+      Cyber Security Expert • 2+ Years Experience
+    </p>
+  </div>
+
+  {/* Description */}
+  <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
+    Cyber Security professional at <span className="font-medium">TechieHelp</span> with 2+ years of
+    hands-on experience in securing systems, identifying vulnerabilities,
+    and guiding students in real-world security practices.
+  </p>
+
+  {/* Support Highlights */}
+  <div className="mb-4">
+    <h4 className="text-base font-semibold text-gray-900 mb-2">
+      Support Highlights:
+    </h4>
+    <ul className="space-y-2 text-gray-700 text-sm">
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Practical Cyber Security concepts & fundamentals</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Hands-on vulnerability assessment & security testing guidance</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Project-based mentoring aligned with industry security standards</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Career guidance for Cyber Security & SOC roles</span>
+      </li>
+    </ul>
+  </div>
+
+  {/* LinkedIn */}
+  <div className="text-center">
+    <a
+      href="https://www.linkedin.com/in/cyberaryan/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+      aria-label="LinkedIn Profile"
+    >
+      <Linkedin className="w-5 h-5" />
+      <span className="text-sm font-medium">Connect on LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+
 
             {/* Mentor 2 */}
             <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-              <div className="text-center mb-4">
-                <img
-                  src={mdAmzad}
-                  alt="Amzad"
-                  className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg"
-                />
-                <h3 className="text-xl font-bold text-gray-900 mb-1">Amzad</h3>
-                <p className="text-sm text-blue-600 font-medium">Machine Learning Engineer</p>
-              </div>
-              <p className="text-gray-700 mb-4 text-center text-sm">
-                Machine Learning Engineer specializing in practical ML concepts and skill development.
-              </p>
-              <div className="mb-4">
-                <h4 className="text-base font-semibold text-gray-900 mb-2">Support Highlights:</h4>
-                <ul className="space-y-1 text-gray-700 text-sm">
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span>Core Machine Learning guidance</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span>Project-based ML mentoring</span>
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                    <span>Career guidance for ML roles</span>
-                  </li>
-                </ul>
-              </div>
-              <div className="text-center">
-                <a href="https://www.linkedin.com/in/md-amzad-b8547a296/" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
+  {/* Profile */}
+  <div className="text-center mb-4">
+    <img
+      src={AmitPhoto}
+      alt="Amit Kumar - Founder TechieHelp"
+      className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg object-cover"
+    />
+    <h3 className="text-xl font-bold text-gray-900 mb-1">
+      Amit Kumar
+    </h3>
+    <p className="text-sm text-blue-600 font-medium">
+      Founder & Placement Lead Mentor – TechieHelp
+    </p>
+  </div>
+
+  {/* Description */}
+  <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
+    Founder of <span className="font-medium">TechieHelp</span> with hands-on experience in
+    building internship programs, mentoring students, and preparing
+    candidates for real-world placements across tech domains.
+  </p>
+
+  {/* Support Highlights */}
+  <div className="mb-4">
+    <h4 className="text-base font-semibold text-gray-900 mb-2">
+      Support Highlights:
+    </h4>
+    <ul className="space-y-2 text-gray-700 text-sm">
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>End-to-end placement & internship guidance</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Resume building, LinkedIn optimization & portfolio strategy</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Project selection & real-world internship roadmap planning</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Interview preparation & career decision mentoring</span>
+      </li>
+    </ul>
+  </div>
+
+  {/* LinkedIn */}
+  <div className="text-center">
+    <a
+      href="https://www.linkedin.com/in/amit-kumar-686196225/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+      aria-label="LinkedIn Profile"
+    >
+      <Linkedin className="w-5 h-5" />
+      <span className="text-sm font-medium">Connect on LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+
+          
             
           </div>
         </div>
@@ -1184,7 +1244,7 @@ const Webdevelopment = () => {
           {/* Supporting Content */}
           <div className="text-center mb-16">
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Through TechieHelp's comprehensive training, real-world projects, and expert mentorship, you'll be prepared for high-demand roles in web development across startups and established companies.
+              Through TechieHelp's comprehensive training, real-world projects, and expert mentorship, you'll be prepared for high-demand roles in cybersecurity across startups and established companies.
             </p>
           </div>
 
@@ -1244,65 +1304,70 @@ const Webdevelopment = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Technologies & Tools You Will Learn</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Master industry-relevant technologies and tools used in real-world web development projects.
+              Master industry-standard cybersecurity tools and techniques used by ethical hackers and security professionals worldwide.
             </p>
           </div>
 
           {/* Technologies Grid */}
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://www.w3.org/html/logo/downloads/HTML5_Logo_256.png" alt="HTML" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">HTML</h3>
+              <img src="https://media.licdn.com/dms/image/v2/D4D12AQEz9KH8KNq56g/article-cover_image-shrink_720_1280/B4DZbc7LkdHsAM-/0/1747463229673?e=2147483647&v=beta&t=cHSGxE9ImR33iw-4Lws2ezAkaLZvH8sI3VWsRu6V5k0" alt="Wireshark" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Wireshark</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh2DuolUB6Lp4uJmajNd3v5IvXs5_KmG5OFw&s" alt="CSS" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">CSS</h3>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaYfylHO3PGkKwX5lR65QHA0jE1uAb5xHb-A&s" alt="Metasploit" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Metasploit</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://icon2.cleanpng.com/20190202/lvc/kisspng-javascript-logo-clip-art-download-copyright-my-profi-world-web-development-1713908461961.webp" alt="JavaScript" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">JavaScript</h3>
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLoHn47twgBr93jtSyFJYyCQ1_vcIY-spHoA&s" alt="Nmap" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Nmap</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://toppng.com/uploads/preview/react-logo-icon-11609374122d9vkbptqap.png" alt="React" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">React</h3>
+              <img src="https://aditech.in/wp-content/uploads/2021/06/burpsuite-twittercard.png" alt="Burp Suite" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Burp Suite</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://cdn-icons-png.flaticon.com/512/541/541490.png" alt="JSX" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">JSX</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Kali-dragon-icon.svg/960px-Kali-dragon-icon.svg.png" alt="Kali Linux" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Kali Linux</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaSLBLpJp5eOR0zaf3mgYXoxZzzDqE8UtGMA&s" alt="Node.js" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Node.js</h3>
+              <img src="https://dashboard.snapcraft.io/site_media/appmedia/2024/08/com.openwall.John.png" alt="John the Ripper" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">John the Ripper</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://w7.pngwing.com/pngs/956/695/png-transparent-mongodb-original-wordmark-logo-icon-thumbnail.png" alt="MongoDB" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">MongoDB</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Aircrack-ng-new-logo.jpg/226px-Aircrack-ng-new-logo.jpg" alt="Aircrack-ng" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Aircrack-ng</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlRYxOOe8ovKC6K7HZfISGRQE61zRrfx3s3Q&s" alt="SQL" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">SQL</h3>
+              <img src="https://events.ccc.de/congress/2008/wiki/images/d/d1/OpenVAS-logo.png" alt="OpenVAS" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">OpenVAS</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://i.pinimg.com/736x/78/a4/11/78a4117e9a95e25cb8ef1333c955d603.jpg" alt="REST API" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">REST API</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Python_logo_and_wordmark.svg/960px-Python_logo_and_wordmark.svg.png" alt="Python" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Python</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://png.pngtree.com/png-clipart/20190630/original/pngtree-json-file-document-icon-png-image_4172477.jpg" alt="JSON" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">JSON</h3>
+              <img src="https://toppng.com/uploads/preview/linux-logo-png-free-116602984075xlboimbdm.png" alt="Linux" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Linux</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://static.vecteezy.com/system/resources/previews/067/565/470/non_2x/bootstrap-logo-rounded-free-png.png" alt="Bootstrap" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Bootstrap</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/OWASP_black_logo.svg" alt="OWASP" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">OWASP</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWZAwnXJ-YSVAKG5q55-KfIpOK6eZf_kzxVw&s" alt="Hashcat" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Hashcat</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
@@ -1393,7 +1458,7 @@ const Webdevelopment = () => {
             <div className="md:w-1/2 text-gray-900">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Completion Certificate</h2>
               <p className="text-lg mb-6">We provide an industry-recognized certification that validates your skills, internship experience, and project work through verified and trusted channels.</p>
-              <h3 className="text-xl font-semibold mb-2">TechieHelp Web Development Internship Certificate</h3>
+              <h3 className="text-xl font-semibold mb-2">TechieHelp Cybersecurity Internship Certificate</h3>
               <p className="text-base mb-6">This certificate is issued after successful completion of training, projects, and assessments. It is designed to validate real skills, not just course attendance. Each certificate is verifiable and transparent for recruiters and institutions.</p>
               {/* Trust Points */}
               <div className="mb-6">
@@ -1649,4 +1714,4 @@ const Webdevelopment = () => {
   );
 };
 
-export default Webdevelopment;
+export default Cybersecurity;
