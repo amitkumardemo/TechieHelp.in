@@ -406,5 +406,5 @@ export {
   class2,
   class3,
   class4,
-  class5
+  class5,
 };
