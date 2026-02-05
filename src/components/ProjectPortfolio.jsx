@@ -11,6 +11,8 @@ import {
   FaPython,
   FaBootstrap,
   FaProjectDiagram,
+  FaRobot, 
+  FaEnvelope
 } from "react-icons/fa";
 import {
   SiTypescript,
@@ -84,7 +86,7 @@ const projectsData = [
     link: "https://www.raiconstructionsolutions.com/",
     year: "2024",
     techStack: [
-      "React", "TypeScript", "Vite", "Tailwind CSS", "Shadcn UI", "Lucide Icons"
+      "React", "TypeScript", "Vite", "Tailwind",
     ],
     industry: "Construction & Real Estate",
   },
@@ -102,7 +104,7 @@ const projectsData = [
     link: "https://dent-ease-life.vercel.app",
     year: "2024",
     techStack: [
-      "Next.js", "TypeScript", "PostgreSQL", "Tailwind CSS", "Shadcn UI", "Clerk Auth", "Vapi AI", "Resend Email"
+      "Next.js", "TypeScript", "PostgreSQL", "Tailwind", "Clerk Auth", "Vapi AI", "EmailJS"
     ],
     industry: "Healthcare",
   },
@@ -237,9 +239,12 @@ const techIcons = {
   "Google Maps": { icon: SiGooglemaps, color: "text-red-500" },
   "Prisma ORM": { icon: SiPrisma, color: "text-teal-400" },
   NeonDB: { icon: SiPostgresql, color: "text-green-400" },
+  PostgreSQL: { icon: SiPostgresql, color: "text-sky-400" },
   "Gemini AI": { icon: SiGoogle, color: "text-blue-500" },
   Inngest: { icon: FaProjectDiagram, color: "text-purple-400" },
   "Clerk Auth": { icon: SiClerk, color: "text-indigo-400" },
+  "Vapi AI": { icon: FaRobot, color: "text-pink-400" },
+  EmailJS: { icon: FaEnvelope, color: "text-red-400" },
 };
 
 const cardVariants = {
@@ -327,7 +332,6 @@ const ProjectPortfolio = () => {
       : projectsData.filter((project) => project.category === selectedCategory);
 
   useEffect(() => {
-    // Remove hash from URL on component mount to ensure clean URL
     window.history.replaceState(null, null, window.location.pathname);
 
     const handleScroll = () => {
@@ -344,11 +348,11 @@ const ProjectPortfolio = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (gridRef.current) {
-        gridRef.current.scrollLeft += 1; // Adjust speed as needed
+        gridRef.current.scrollLeft += 1; 
         handleScroll(gridRef, setMobileProgress);
         handleScroll(gridRef, setWebProgress);
       }
-    }, 50); // Adjust interval as needed
+    }, 50); 
 
     return () => clearInterval(interval);
   }, []);
@@ -757,7 +761,7 @@ const ProjectPortfolio = () => {
                     <>
                       <div
                         ref={gridRef}
-                        className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-8 ml-20 mr-20 px-12"
+                        className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-4 sm:gap-8 ml-4 sm:ml-20 mr-4 sm:mr-20 px-4 sm:px-12"
                       >
                         {filteredMobile.map((project, i) => (
                           <motion.div
@@ -772,14 +776,14 @@ const ProjectPortfolio = () => {
                               transition: { duration: 0.3 },
                             }}
                             onClick={() => handleProjectClick(project)}
-                            className="group relative bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-green-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[200px] cursor-pointer"
+                            className="group relative bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-green-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[150px] sm:min-w-[200px] cursor-pointer"
                           >
                             {/* Image */}
                             <div className="relative mb-1 overflow-hidden rounded-xl">
                               <img
                                 src={project.image}
                                 alt={project.title}
-                                className="h-40 object-cover transition-transform duration-500 group-hover:scale-110"
+                                className="h-40 object-contain transition-transform duration-500 group-hover:scale-110"
                               />
                               <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
                                 {project.industry}
@@ -793,7 +797,7 @@ const ProjectPortfolio = () => {
                         ))}
                       </div>
 
-                      <div className="w-1/2 h-1 bg-gray-400 mt-4 ml-80 relative">
+                      <div className="hidden sm:block w-1/2 h-1 bg-gray-400 mt-4 ml-4 sm:ml-80 relative">
                         <div
                           className="h-full bg-green-500 transition-all duration-100"
                           style={{ width: `${mobileProgress}%` }}
@@ -957,7 +961,7 @@ const ProjectPortfolio = () => {
                     <>
                       <div
                         ref={gridRef}
-                        className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-8 ml-20 mr-20 px-12"
+                        className="overflow-x-auto overflow-y-hidden scrollbar-hide flex flex-nowrap gap-4 sm:gap-8 ml-4 sm:ml-20 mr-4 sm:mr-20 px-4 sm:px-12"
                       >
                         {filteredWeb.map((project, i) => (
                           <motion.div
@@ -972,7 +976,7 @@ const ProjectPortfolio = () => {
                               transition: { duration: 0.3 },
                             }}
                             onClick={() => handleProjectClick(project)}
-                            className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[200px] cursor-pointer"
+                            className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[150px] sm:min-w-[200px] cursor-pointer"
                           >
                             {/* Image */}
                             <div className="relative mb-1 overflow-hidden rounded-xl">
@@ -992,7 +996,7 @@ const ProjectPortfolio = () => {
                           </motion.div>
                         ))}
                       </div>
-                      <div className="w-1/2 h-1 bg-gray-400 mt-4 ml-80 relative">
+                      <div className="hidden sm:block w-1/2 h-1 bg-gray-400 mt-4 ml-80 relative">
                         <div
                           className="h-full bg-purple-500 transition-all duration-100"
                           style={{ width: `${webProgress}%` }}
