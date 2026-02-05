@@ -32,6 +32,7 @@ module.exports = {
       animation: {
         ripple: "ripple 2s ease calc(var(--i, 0) * 0.2s) infinite",
         orbit: "orbit calc(var(--duration) * 1s) linear infinite",
+        marquee: "marquee 30s linear infinite",
       },
       keyframes: {
         ripple: {
@@ -47,6 +48,10 @@ module.exports = {
             transform:
               "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
           },
+        },
+        marquee: {
+          "0%": { transform: "translateX(100%)" },
+          "100%": { transform: "translateX(-100%)" },
         },
       },
     },

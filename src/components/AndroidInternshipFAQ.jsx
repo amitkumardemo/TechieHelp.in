@@ -1,35 +1,35 @@
 import React, { useState } from "react";
 import styles from "../style";
 
-const internshipFaqData = [
+const androidInternshipFaqData = [
   {
-    question: "What programs does TechieHelp offer to interns?",
+    question: "What is the Android Development Internship program at TechieHelp?",
     answer:
-      "TechieHelp offers structured internship & training programs in Web Development, App Development, UI/UX Design, AI/ML, Python, Java, Digital Marketing, and more — all focused on real-world, industry-ready skills.",
+      "TechieHelp's Android Development Internship is a structured program focused on building real Android apps, APKs, and Play Store-ready skills using Java, Kotlin, Android Studio, and modern tools like Firebase and REST APIs.",
   },
   {
-    question: "Do I need prior experience to apply?",
+    question: "Do I need prior programming experience to join the Android Internship?",
     answer:
-      "No prior experience is required. Our internships are beginner-friendly and designed for students, freshers, and early-career learners who are motivated to learn.",
+      "No prior experience is required. Our Android internship is beginner-friendly and designed for students and freshers motivated to learn Android development from scratch.",
   },
   {
-    question: "What is the duration of the internship?",
+    question: "What is the duration of the Android Development Internship?",
     answer:
-      "Internship duration ranges from 1 to 4 months depending on the program. It includes training, live projects, mentor guidance, and placement-focused activities.",
+      "The internship ranges from 1 to 4 months, including Android app development training, live projects, mentor guidance, and placement-focused activities.",
   },
   {
-    question: "Will I receive certificates or recommendations?",
+    question: "Will I receive certificates or recommendations for Android Development?",
     answer:
-      "Yes. Upon successful completion, interns receive a Training Certificate and Internship Completion Certificate. Top performers also receive a Letter of Recommendation (LOR).",
+      "Yes. Upon completion, you receive a TechieHelp Android Development Internship Certificate and Training Certificate. Top performers get a Letter of Recommendation highlighting your Android projects.",
   },
   {
-    question: "Is there any fee for the internship or training?",
+    question: "Is there any fee for the Android Development Internship?",
     answer:
-      "Yes, a minimal training or registration fee is charged to ensure structured learning, mentor support, certification, and quality outcomes. Full details are shared transparently before enrollment.",
+      "Yes, a minimal registration fee covers structured Android training, mentor support, certification, and quality outcomes. Full details are provided transparently before enrollment.",
   },
 ];
 
-const InternshipFAQ = () => {
+const AndroidInternshipFAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
@@ -40,12 +40,12 @@ const InternshipFAQ = () => {
           Frequently Asked Questions
         </h2>
         <p className="text-center text-gray-500 mb-8">
-          Everything you need to know before starting your internship at TechieHelp
+          Everything you need to know before starting your Android Development Internship at TechieHelp
         </p>
 
         {/* FAQ Cards */}
         <div className="space-y-4">
-          {internshipFaqData.map((item, index) => {
+          {androidInternshipFaqData.map((item, index) => {
             const isActive = activeIndex === index;
 
             return (
@@ -90,4 +90,4 @@ const InternshipFAQ = () => {
   );
 };
 
-export default InternshipFAQ;
+export default AndroidInternshipFAQ;
