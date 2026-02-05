@@ -359,5 +359,5 @@ export {
   ujjawalLibrary,
   edgeCareer,
   techiehelpInstitute,
-  dentEase
+  dentEase,
 };
