@@ -206,7 +206,6 @@ import class3 from "./class3.jpeg";
 import class4 from "./class4.jpeg";
 import class5 from "./class5.jpeg";
 
-
 import raiConstruction from "./raiConstruction.png";
 import invitationWala from "./invitationWala.png";
 import workEra from "./workEra.png";
@@ -215,6 +214,8 @@ import ujjawalLibrary from "./ujjawalLibrary.png";
 import edgeCareer from "./edgeCareer.png";
 import dentEase from "./dentEase.png";
 import techiehelpInstitute from "./techiehelpInstitute.png";
+
+// New imports from main branch (files not present in assets folder, removed to avoid errors)
 
 export {
   internship as airbnb,
