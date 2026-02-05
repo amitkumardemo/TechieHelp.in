@@ -180,6 +180,31 @@ import kameshwarPatel from "./Kameshwar_patel.jpg";
 import supriyaJalani from "./supriya_jalani.jpeg";
 import adityaKumar from "./Aditya_kumar.jpeg";
 import mdAmzad from "./Amzad.jpeg";
+import cyber from "./cyber.webp";
+import certificate from "./certificate.png";
+import recommendation from "./recommendation.png";
+
+// New images
+import aryan1 from "./aryan1.jpeg";
+import aryan2 from "./aryan2.jpeg";
+import sixty from "./60.jpeg";
+import coreTeam from "./core team.jpeg";
+import amazad from "./Amazad.jpeg";
+import tit from "./TIT.jpg";
+import delhiJudge from "./Delhi Judge.jpg";
+import recon from "./recon.jpg";
+import kitInt from "./KIT INT.jpeg";
+import kit from "./KIT   .jpeg";
+import kitNodha from "./KIT    NODHA.jpeg";
+import kitCert from "./KIT CERT.jpeg";
+import aryanp from "./aryanp.jpeg"
+
+// Hero carousel images
+import class1 from "./class1.jpeg";
+import class2 from "./class2.jpeg";
+import class3 from "./class3.jpeg";
+import class4 from "./class4.jpeg";
+import class5 from "./class5.jpeg";
 
 import raiConstruction from "./raiConstruction.png";
 import invitationWala from "./invitationWala.png";
@@ -360,4 +385,27 @@ export {
   edgeCareer,
   techiehelpInstitute,
   dentEase,
+  cyber,
+  certificate,
+  recommendation,
+  // New images
+  aryan1,
+  aryan2,
+  sixty,
+  coreTeam,
+  amazad,
+  tit,
+  delhiJudge,
+  recon,
+  kitInt,
+  kit,
+  kitNodha,
+  kitCert,
+  aryanp,
+  // Hero carousel images
+  class1,
+  class2,
+  class3,
+  class4,
+  class5,
 };

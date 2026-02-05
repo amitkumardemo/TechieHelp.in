@@ -1,7 +1,15 @@
-# Remove Employees: AdityaKumar, MdAmzad, SupriyaJalani
+# SEO Optimization for /careers/training-internships Page
 
-- [ ] Delete employee component files: AdityaKumar.jsx, MdAmzad.jsx, SupriyaJalani.jsx
-- [ ] Remove AdityaKumar and MdAmzad from src/assets/index.js
-- [ ] Remove Aditya Kumar and Md Amzad entries from employeeData in src/components/Employee.jsx
-- [ ] Remove routes and imports for these employees in src/App.jsx
-- [ ] Update TODO.md to remove tasks related to SupriyaJalani
+## Tasks to Complete
+
+- [x] Add React Helmet import and meta tags (title, description, OG, Schema)
+- [x] Restructure headings: Ensure only one H1, others H2/H3
+- [x] Add local-focused paragraph near top
+- [x] Increase "Jodhpur" mentions to 6-8 naturally across page
+- [x] Add descriptive alt text to all images
+- [x] Rename image files for better SEO filenames if needed
+- [x] Add internal links to /webdevelopment, /artificial-intelligence, /machine-learning, /about-us, /contact
+- [x] Enhance trust section with MSME, ISO, AICTE, 15,000+ students
+- [x] Update CTAs to "Apply for Internship in Jodhpur" and "Download Internship Syllabus – Jodhpur"
+- [x] Verify mobile responsiveness and technical SEO
+- [x] Test page rendering and SEO elements
