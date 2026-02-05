@@ -123,6 +123,9 @@ import health from "./health.webp";
 import ecom from "./ecom.webp";
 import producer from "./producer.webp";
 import placement from "./place.png";
+import webdev from "./webdev.png";
+import mobileapp from "./mobileapp.png";
+import fullstack2 from "./fullstack2.png";
 
 
 
@@ -203,6 +206,17 @@ import class3 from "./class3.jpeg";
 import class4 from "./class4.jpeg";
 import class5 from "./class5.jpeg";
 
+import raiConstruction from "./raiConstruction.png";
+import invitationWala from "./invitationWala.png";
+import workEra from "./workEra.png";
+import nhRestaurant from "./nhRestaurant.png";
+import ujjawalLibrary from "./ujjawalLibrary.png";
+import edgeCareer from "./edgeCareer.png";
+import dentEase from "./dentEase.png";
+import techiehelpInstitute from "./techiehelpInstitute.png";
+
+// New imports from main branch (files not present in assets folder, removed to avoid errors)
+
 export {
   internship as airbnb,
   bill,
@@ -280,7 +294,6 @@ export {
   process,
   alert,
   earn,
-  // Removed duplicate export of google
   githubPng as github,
   aarshdeepKaur,
   abhayRajSingh,
@@ -359,6 +372,19 @@ export {
   supriyaJalani,
   adityaKumar,
   mdAmzad,
+
+
+  webdev,
+  fullstack2,
+  mobileapp,
+  nhRestaurant,
+  raiConstruction,
+  workEra,
+  invitationWala,
+  ujjawalLibrary,
+  edgeCareer,
+  techiehelpInstitute,
+  dentEase,
   cyber,
   certificate,
   recommendation,

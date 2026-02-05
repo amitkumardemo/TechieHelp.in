@@ -59,6 +59,11 @@ export const navLinks = [
     path: "/contacts"
   },
   {
+    id: "project-portfolio",
+    title: "Portfolio",
+    path: "/project-portfolio"
+  },
+  {
     id: "lms",
     title: "LMS",
     path: "/lms"

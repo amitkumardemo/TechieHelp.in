@@ -2,6 +2,7 @@ import styles, { layout } from "./style";
 import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre } from "./components";
 import OurServices from "./components/OurServices";
 import Services from "./components/Services";
+import ProjectPortfolio from "./components/ProjectPortfolio";
 import WebDevelopmentServices from "./components/WebDevelopmentServices";
 import Loading from "./components/Loading";
 import FAQ from "./components/FAQ";
@@ -283,6 +284,7 @@ const App = () => {
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/hackathon" element={<HackathonLandingPage />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/project-portfolio" element={<ProjectPortfolio />} />
           <Route path="/web-development-services" element={<WebDevelopmentServices />} />
           <Route path="/careers/training-internships" element={<Internship />} />
           <Route path="/special-batch" element={<SpecialBatch />} />
