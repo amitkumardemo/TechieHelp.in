@@ -230,38 +230,84 @@ const Internship = () => {
       </Helmet>
       {/* Content */}
       <div className="relative pt-20 px-4">
-        <div className="container mx-auto">
-          {/* Hero Section Carousel */}
-          <div className="relative w-screen h-[95vh] overflow-hidden mb-20 left-1/2 -translate-x-1/2">
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlideIndex ? 'opacity-100' : 'opacity-0'}`}
-                style={{
-                  backgroundImage: `url(${slide.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  backgroundRepeat: 'no-repeat',
-                }}
-              >
-                {/* Dark overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/85"></div>
-                {/* Text overlay */}
-                <div className="absolute inset-0 flex items-center justify-center px-4">
-                  <div className="bg-black/45 backdrop-blur-[6px] rounded-xl p-6 md:p-8 text-center">
-                    {index === 0 ? (
-                      <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{slide.heading}</h1>
-                    ) : (
-                      <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">{slide.heading}</h2>
-                    )}
-                    <p className="text-lg md:text-xl font-light text-gray-300 mb-4">{slide.sub}</p>
-                    <p className="text-sm text-gray-200">MSME Registered • AICTE/NIP Aligned • ISO Certified • 15,000+ Students Trained in Jodhpur, Rajasthan</p>
-                  </div>
+        {/* Hero Section Carousel */}
+        <div className="relative w-screen h-[95vh] overflow-hidden left-1/2 -translate-x-1/2">
+          {slides.map((slide, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlideIndex ? 'opacity-100' : 'opacity-0'}`}
+              style={{
+                backgroundImage: `url(${slide.image})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
+              {/* Dark overlay */}
+              <div className="absolute inset-0 bg-gradient-to-b from-black/75 to-black/85"></div>
+              {/* Text overlay */}
+              <div className="absolute inset-0 flex items-center justify-center px-4">
+                <div className="bg-black/45 backdrop-blur-[6px] rounded-xl p-6 md:p-8 text-center">
+                  {index === 0 ? (
+                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">{slide.heading}</h1>
+                  ) : (
+                    <h2 className="text-4xl md:text-6xl font-bold text-white mb-4">{slide.heading}</h2>
+                  )}
+                  <p className="text-lg md:text-xl font-light text-gray-300 mb-4">{slide.sub}</p>
+                  <p className="text-sm text-gray-200">MSME Registered • AICTE/NIP Aligned • ISO Certified • 15,000+ Students Trained in Jodhpur, Rajasthan</p>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
+        </div>
 
+        <style>
+          {`
+            @keyframes scroll {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+              animation: scroll 30s linear infinite;
+            }
+            .hover\\:pause:hover {
+              animation-play-state: paused;
+            }
+          `}
+        </style>
+
+        {/* Marquee Section - Full Width */}
+        <section className="w-screen bg-gray-950 py-4 border-b border-gray-900 overflow-hidden relative left-1/2 -translate-x-1/2">
+          <div className="animate-marquee flex items-center space-x-4 whitespace-nowrap">
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Highest Package ₹12 LPA</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">₹8 LPA</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">₹6 LPA</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">MSME Registered Training Partner</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">National Internship Portal Certified</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">ISO 9001:2015 Certified</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">15,000+ Students Trained</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Industry Expert Trainers</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Live Project Based Training</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Career Support & Job Assistance</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Welcome Kit Provided</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">4.6/5 Rating by 2,000+ Learners</span>
+            {/* Duplicate for seamless infinite loop */}
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Highest Package ₹12 LPA</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">₹8 LPA</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">₹6 LPA</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">MSME Registered Training Partner</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">National Internship Portal Certified</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">ISO 9001:2015 Certified</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">15,000+ Students Trained</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Industry Expert Trainers</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Live Project Based Training</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Career Support & Job Assistance</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">Welcome Kit Provided</span>
+            <span className="bg-gray-600 rounded-full px-4 py-2 text-sm font-medium border border-gray-500 text-white">4.6/5 Rating by 2,000+ Learners</span>
+          </div>
+        </section>
+
+        <div className="container mx-auto">
           <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto text-center px-4 py-8">
             TechieHelp is a Jodhpur-based IT training and internship provider offering hands-on learning, live industry projects, and verified certificates for college students and freshers in Jodhpur and nearby regions of Rajasthan.
           </p>
