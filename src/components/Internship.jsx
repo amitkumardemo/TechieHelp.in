@@ -481,7 +481,7 @@ const Internship = () => {
             )}
           </motion.div>
 
-          {/* Call to Action Section */}
+          {/* Empowering Students Section */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -493,23 +493,100 @@ const Internship = () => {
               className="text-3xl md:text-4xl font-bold mb-8 text-white"
               whileHover={{ scale: 1.02 }}
             >
-              Ready to Start Your Internship Journey in Jodhpur?
+              Empowering Students Across These Countries
             </motion.h2>
-            <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            <div className="flex flex-wrap gap-4 justify-center items-center">
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
               >
-                Apply for Internship in Jodhpur
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(16, 185, 129, 0.3)" }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-green-500 to-teal-600 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+                <img src="https://flagcdn.com/w40/in.png" alt="India flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">India</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
               >
-                Download Internship Syllabus – Jodhpur
-              </motion.button>
+                <img src="https://flagcdn.com/w40/ng.png" alt="Nigeria flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Nigeria</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/br.png" alt="Brazil flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Brazil</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/ke.png" alt="Kenya flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Kenya</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/lk.png" alt="Sri Lanka flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Sri Lanka</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/eg.png" alt="Egypt flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Egypt</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/bd.png" alt="Bangladesh flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Bangladesh</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/cm.png" alt="Cameroon flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Cameroon</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/rw.png" alt="Rwanda flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Rwanda</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/et.png" alt="Ethiopia flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Ethiopia</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/ir.png" alt="Iran flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">Iran</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/us.png" alt="United States flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">America</span>
+              </motion.div>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                className="px-5 py-2 bg-gray-600 text-white font-bold rounded-full border border-gray-500 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-row items-center gap-2"
+              >
+                <img src="https://flagcdn.com/w40/ae.png" alt="United Arab Emirates flag" className="w-8 h-6 rounded flex-shrink-0" />
+                <span className="text-sm whitespace-nowrap">United Arab Emirates</span>
+              </motion.div>
             </div>
           </motion.div>
 
