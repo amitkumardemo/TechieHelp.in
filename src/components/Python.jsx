@@ -148,7 +148,6 @@ const Python = () => {
   }, []);
 
   const timelineData = [
-  // Month 1: Python Basics (Weeks 1-4 individually)
   [
     {
       week: 'Week 1',
@@ -219,8 +218,6 @@ const Python = () => {
       ]
     }
   ],
-
-  // Month 2: Data Handling & Web (Weeks 5-8, 9-12, 13-16)
   [
     {
       week: 'Week 5-8',
@@ -231,8 +228,8 @@ const Python = () => {
             { type: 'normal', text: 'NumPy arrays and operations' },
             { type: 'normal', text: 'Pandas DataFrame creation and manipulation' },
             { type: 'normal', text: 'Data cleaning and handling missing values' },
-            { type: 'project', level: 'intermediate', title: 'Data Cleaning Project', subtitle: 'Prepare datasets for analysis' },
             { type: 'normal', text: 'Exploratory Data Analysis basics' },
+            { type: 'project', level: 'intermediate', title: 'Data Cleaning Project', subtitle: 'Prepare datasets for analysis' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
@@ -248,8 +245,8 @@ const Python = () => {
             { type: 'normal', text: 'Data visualization: Matplotlib & Seaborn' },
             { type: 'normal', text: 'Exploratory Data Analysis (EDA)' },
             { type: 'normal', text: 'Introduction to Flask web framework' },
-            { type: 'project', level: 'intermediate', title: 'EDA + Web Project', subtitle: 'Visualize dataset insights and present them via a Flask web app' },
             { type: 'normal', text: 'Connecting Flask with data from Pandas' },
+            { type: 'project', level: 'intermediate', title: 'EDA + Web Project', subtitle: 'Visualize dataset insights and present them via a Flask web app' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
@@ -265,8 +262,8 @@ const Python = () => {
             { type: 'normal', text: 'Routing, templates, views & database integration in Flask' },
             { type: 'normal', text: 'User authentication & authorization' },
             { type: 'normal', text: 'REST API basics' },
-            { type: 'project', level: 'intermediate', title: 'CRUD Web App', subtitle: 'Build a web app with create, read, update, delete functionality' },
             { type: 'normal', text: 'Deploy Flask app locally and on cloud (Heroku/Vercel)' },
+            { type: 'project', level: 'intermediate', title: 'CRUD Web App', subtitle: 'Build a web app with create, read, update, delete functionality' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
