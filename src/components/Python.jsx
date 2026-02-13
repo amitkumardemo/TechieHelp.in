@@ -148,254 +148,262 @@ const Python = () => {
   }, []);
 
   const timelineData = [
-    [
-      {
-        week: 'Week 1',
-        rows: [
-          {
-            timeline: 'Day First',
-            includes: [
-              { type: 'normal', text: 'Program orientation & onboarding' },
-              { type: 'normal', text: 'Introduction to Python: syntax, variables, and data types' },
-              { type: 'normal', text: 'Setting up Python development environment (VS Code, PyCharm, Git)' },
-              { type: 'normal', text: 'Introduction to internship workflow' },
-              { type: 'project', level: 'beginner', title: 'Python Environment Setup', subtitle: 'Install Python, virtualenv, and required libraries', },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Monday to Saturday', includes: [] },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 2',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Python Operators, Conditional Statements, and Loops' },
-              { type: 'normal', text: 'Functions and Modules in Python' },
-              { type: 'normal', text: 'File handling and exception handling' },
-              { type: 'normal', text: 'Weekly doubt-solving session with mentor' },
-              { type: 'project', level: 'beginner', title: 'Project: Basic Python Script', subtitle: 'Create a script for text processing and calculations' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 3',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Data Structures in Python: Lists, Tuples, Sets, Dictionaries' },
-              { type: 'normal', text: 'Comprehensions and Iterators' },
-              { type: 'normal', text: 'Object-Oriented Programming (Classes, Objects, Inheritance)' },
-              { type: 'normal', text: 'Version control with Git & GitHub' },
-              { type: 'normal', text: 'Mentor doubt-solving session' },
-              { type: 'project', level: 'intermediate', title: 'Project: OOP Mini Project', subtitle: 'Build a contact book application using classes and file handling' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 4',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Advanced Python: Decorators, Generators, and Context Managers' },
-              { type: 'normal', text: 'Working with external libraries: requests, datetime, os' },
-              { type: 'normal', text: 'Introduction to Python virtual environments & package management' },
-              { type: 'normal', text: 'Mentor doubt-solving session' },
-              { type: 'project', level: 'intermediate', title: 'Project: Python Automation Script', subtitle: 'Automate file organization or data parsing tasks' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-    ],
-    [
-      {
-        week: 'Week 5-8',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Node.js fundamentals & server-side JavaScript' },
-              { type: 'normal', text: 'Express.js framework & REST APIs' },
-              { type: 'normal', text: 'MongoDB & database design' },
-              { type: 'normal', text: 'API development & testing' },
-              { type: 'project', level: 'intermediate', title: 'Backend API Development', subtitle: 'Build RESTful APIs with Node.js, Express & MongoDB' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 9-12',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Frontend-Backend integration' },
-              { type: 'normal', text: 'Authentication & authorization' },
-              { type: 'normal', text: 'Full-stack application deployment' },
-              { type: 'normal', text: 'Testing & debugging full-stack apps' },
-              { type: 'project', level: 'hard', title: 'Complete Full-Stack Application', subtitle: 'Develop a production-ready full-stack web application' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 13-16',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Advanced full-stack concepts' },
-              { type: 'normal', text: 'Performance optimization & security' },
-              { type: 'normal', text: 'Cloud deployment (AWS, Vercel, Heroku)' },
-              { type: 'normal', text: 'DevOps basics & CI/CD' },
-              { type: 'project', level: 'hard', title: 'Advanced Full-Stack Project', subtitle: 'Build a scalable full-stack application with advanced features' },
-              { type: 'normal', text: 'Resume building and LinkedIn optimization' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] },
-          { timeline: 'Last Day', includes: [] }
-        ]
-      },
-    ],
-    [
-      {
-        week: 'Week 1-4',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'E-commerce full-stack development' },
-              { type: 'normal', text: 'Payment gateway integration' },
-              { type: 'normal', text: 'User authentication & security' },
-              { type: 'normal', text: 'Order management & inventory systems' },
-              { type: 'project', level: 'intermediate', title: 'E-commerce Full-Stack Platform', subtitle: 'Build a complete online shopping platform' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 5-8',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'SaaS application development' },
-              { type: 'normal', text: 'Multi-tenant architecture' },
-              { type: 'normal', text: 'Subscription management systems' },
-              { type: 'normal', text: 'Analytics & reporting dashboards' },
-              { type: 'project', level: 'hard', title: 'SaaS Full-Stack Application', subtitle: 'Develop a comprehensive SaaS platform with multiple features' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 9-12',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Real-time applications (chat, notifications)' },
-              { type: 'normal', text: 'WebSocket integration' },
-              { type: 'normal', text: 'Progressive Web Apps (PWAs)' },
-              { type: 'normal', text: 'Mobile-responsive full-stack apps' },
-              { type: 'project', level: 'hard', title: 'Real-Time Full-Stack Application', subtitle: 'Build applications with real-time features and PWA capabilities' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-    ],
-    [
-      {
-        week: 'Week 1-4',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Microservices architecture' },
-              { type: 'normal', text: 'Docker & containerization' },
-              { type: 'normal', text: 'Advanced database design' },
-              { type: 'normal', text: 'API security & rate limiting' },
-              { type: 'project', level: 'hard', title: 'Microservices Full-Stack System', subtitle: 'Design and implement scalable microservices architecture' },
-              { type: 'normal', text: 'Mock technical interviews' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 5-8',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Portfolio development with full-stack projects' },
-              { type: 'normal', text: 'Personal branding for full-stack developers' },
-              { type: 'normal', text: 'Freelancing & client project management' },
-              { type: 'normal', text: 'Full-stack project estimation & pricing' },
-              { type: 'project', level: 'hard', title: 'Professional Full-Stack Portfolio', subtitle: 'Create a comprehensive portfolio showcasing full-stack expertise' },
-              { type: 'normal', text: 'Placement preparation sessions' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 9-12',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Company-specific full-stack interview preparation' },
-              { type: 'normal', text: 'System design for full-stack applications' },
-              { type: 'normal', text: 'Code review & optimization techniques' },
-              { type: 'normal', text: 'Salary negotiation & offer evaluation' },
-              { type: 'project', level: 'hard', title: 'Full-Stack System Design Project', subtitle: 'Design scalable full-stack systems for enterprise applications' },
-              { type: 'normal', text: 'Final placement assistance' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 13-16',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Internship performance evaluation' },
-              { type: 'normal', text: 'Recommendation letter & certificate eligibility' },
-              { type: 'normal', text: 'Final mock interviews and feedback' },
-              { type: 'normal', text: 'Job application tracking and follow-ups' },
-              { type: 'project', level: 'hard', title: 'Capstone Full-Stack Project & Presentation', subtitle: 'Complete final full-stack project with industry-standard presentation' },
-              { type: 'normal', text: 'Placement success celebration & alumni network' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] },
-          { timeline: 'Last Day', includes: [] }
-        ]
-      },
-    ],
-  ];
+  // Month 1: Python Basics (Weeks 1-4 individually)
+  [
+    {
+      week: 'Week 1',
+      rows: [
+        {
+          timeline: 'Day First',
+          includes: [
+            { type: 'normal', text: 'Program orientation & onboarding' },
+            { type: 'normal', text: 'Python overview & expectations' },
+            { type: 'normal', text: 'Setting up Python environment (VS Code, PyCharm, Git)' },
+            { type: 'normal', text: 'Python basics exercises: variables, input/output, simple calculations' },
+            { type: 'project', level: 'beginner', title: 'Hello Python Project', subtitle: 'Write basic programs and explore Python syntax' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 2',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Operators & expressions' },
+            { type: 'normal', text: 'Conditional statements: if, elif, else' },
+            { type: 'normal', text: 'Loops: for, while, nested loops' },
+            { type: 'normal', text: 'Functions: definition, arguments, return values' },
+            { type: 'project', level: 'beginner', title: 'Mini Python Script', subtitle: 'Build small programs using functions, loops, and conditionals' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 3',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Data Structures: Lists, Tuples, Sets, Dictionaries' },
+            { type: 'normal', text: 'Comprehensions: List, Dict, Set' },
+            { type: 'normal', text: 'Introduction to OOP: classes, objects, inheritance, encapsulation' },
+            { type: 'normal', text: 'File handling: text, CSV, JSON' },
+            { type: 'project', level: 'intermediate', title: 'Contact Book App', subtitle: 'Build a contact management app using OOP' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 4',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Advanced Python: decorators, generators, context managers' },
+            { type: 'normal', text: 'Error handling & exceptions' },
+            { type: 'normal', text: 'Modules & Packages' },
+            { type: 'normal', text: 'Python standard library exploration' },
+            { type: 'project', level: 'intermediate', title: 'Automation Script', subtitle: 'Organize files or parse data automatically' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    }
+  ],
+
+  // Month 2: Data Handling & Web (Weeks 5-8, 9-12, 13-16)
+  [
+    {
+      week: 'Week 5-8',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'NumPy arrays and operations' },
+            { type: 'normal', text: 'Pandas DataFrame creation and manipulation' },
+            { type: 'normal', text: 'Data cleaning and handling missing values' },
+            { type: 'project', level: 'intermediate', title: 'Data Cleaning Project', subtitle: 'Prepare datasets for analysis' },
+            { type: 'normal', text: 'Exploratory Data Analysis basics' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 9-12',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Data visualization: Matplotlib & Seaborn' },
+            { type: 'normal', text: 'Exploratory Data Analysis (EDA)' },
+            { type: 'normal', text: 'Introduction to Flask web framework' },
+            { type: 'project', level: 'intermediate', title: 'EDA + Web Project', subtitle: 'Visualize dataset insights and present them via a Flask web app' },
+            { type: 'normal', text: 'Connecting Flask with data from Pandas' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 13-16',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Routing, templates, views & database integration in Flask' },
+            { type: 'normal', text: 'User authentication & authorization' },
+            { type: 'normal', text: 'REST API basics' },
+            { type: 'project', level: 'intermediate', title: 'CRUD Web App', subtitle: 'Build a web app with create, read, update, delete functionality' },
+            { type: 'normal', text: 'Deploy Flask app locally and on cloud (Heroku/Vercel)' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    }
+  ],
+
+  // Month 3: Machine Learning (Weeks 1-4, 5-8, 9-12)
+  [
+    {
+      week: 'Week 1-4',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Feature engineering and preprocessing' },
+            { type: 'normal', text: 'Advanced data visualization (Plotly, Seaborn)' },
+            { type: 'normal', text: 'Introduction to scikit-learn' },
+            { type: 'project', level: 'intermediate', title: 'Visualization & Preprocessing Project', subtitle: 'Analyze dataset and create visual insights' },
+            { type: 'normal', text: 'Exploratory ML modeling (linear regression)' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 5-8',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Regression algorithms (Linear, Polynomial)' },
+            { type: 'normal', text: 'Evaluation metrics for regression' },
+            { type: 'normal', text: 'Data splitting & cross-validation' },
+            { type: 'project', level: 'intermediate', title: 'Regression Project', subtitle: 'Predict continuous values from dataset' },
+            { type: 'normal', text: 'Hyperparameter tuning basics' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 9-12',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Classification algorithms (Logistic Regression, Decision Trees)' },
+            { type: 'normal', text: 'Evaluation metrics: accuracy, precision, recall, F1-score' },
+            { type: 'normal', text: 'Model selection & validation' },
+            { type: 'project', level: 'intermediate', title: 'Classification Project', subtitle: 'Build a model to classify data' },
+            { type: 'normal', text: 'Hyperparameter tuning & cross-validation' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    }
+  ],
+
+  // Month 4: Automation & Capstone (Weeks 1-4, 5-8, 9-12, 13-16)
+  [
+    {
+      week: 'Week 1-4',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Web scraping with BeautifulSoup' },
+            { type: 'normal', text: 'Selenium automation scripts' },
+            { type: 'normal', text: 'Task scheduling with cron/jobs' },
+            { type: 'project', level: 'intermediate', title: 'Automation Project', subtitle: 'Automate repetitive web or data tasks' },
+            { type: 'normal', text: 'Logging & error handling in scripts' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 5-8',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'API automation using Python requests' },
+            { type: 'normal', text: 'Data pipeline automation' },
+            { type: 'normal', text: 'Scheduling & notifications' },
+            { type: 'project', level: 'intermediate', title: 'API Automation Project', subtitle: 'Automate data collection & processing via APIs' },
+            { type: 'normal', text: 'Error handling & logging' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 9-12',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Capstone Project Development' },
+            { type: 'normal', text: 'Combine web, data, and automation modules' },
+            { type: 'normal', text: 'Code optimization & best practices' },
+            { type: 'project', level: 'hard', title: 'Capstone Project', subtitle: 'Develop a complete Python application integrating all learned skills' },
+            { type: 'normal', text: 'Documentation & presentation preparation' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] }
+      ]
+    },
+    {
+      week: 'Week 13-16',
+      rows: [
+        {
+          timeline: 'Monday to Saturday',
+          includes: [
+            { type: 'normal', text: 'Capstone Project completion' },
+            { type: 'normal', text: 'Final presentation preparation' },
+            { type: 'normal', text: 'Resume & LinkedIn profile enhancement' },
+            { type: 'project', level: 'hard', title: 'Final Submission & Demo', subtitle: 'Project submission, certificate awarded, and final evaluation' },
+            { type: 'normal', text: 'Internship review & feedback incorporation' },
+            { type: 'normal', text: 'Mentor doubt-solving session' }
+          ]
+        },
+        { timeline: 'Sunday', includes: [] },
+        { timeline: 'Last Day', includes: ['Capstone presentation, certificate, and internship completion celebration'] }
+      ]
+    }
+  ]
+];
+
 
   if (loading) return <LoadingSpinner />;
 
