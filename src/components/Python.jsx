@@ -1203,63 +1203,58 @@ const Python = () => {
           {/* Technologies Grid */}
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1200px-HTML5_logo_and_wordmark.svg.png" alt="HTML5" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">HTML5</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Python</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="CSS3" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">CSS3</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1200px-Flask_logo.svg.png" alt="Flask" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Flask</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png" alt="JavaScript" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">JavaScript</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" alt="Django" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Django</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png" alt="React" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">React</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heroku_logo.svg/512px-Heroku_logo.svg.png" alt="Heroku" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Heroku</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" alt="TypeScript" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">TypeScript</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png" alt="AWS" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">AWS</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Docker</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">NumPy</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Pandas</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Pytest_logo.svg/512px-Pytest_logo.svg.png" alt="Pytest" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Pytest</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn-icons-png.flaticon.com/512/2165/2165004.png" alt="REST API" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">REST API</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png" alt="Tailwind CSS" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Tailwind CSS</h3>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1200px-Vue.js_Logo_2.svg.png" alt="Vue.js" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Vue.js</h3>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Sass_Logo_Color.svg/1200px-Sass_Logo_Color.svg.png" alt="Sass" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Sass</h3>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Nextjs-logo.svg/1200px-Nextjs-logo.svg.png" alt="Next.js" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Next.js</h3>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/JavaScript-logo.png/1200px-JavaScript-logo.png" alt="ES6+" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">ES6+</h3>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/1200px-Node.js_logo.svg.png" alt="Node.js" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Node.js</h3>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Expressjs.png/1200px-Expressjs.png" alt="Express.js" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Express.js</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
@@ -1270,11 +1265,6 @@ const Python = () => {
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" alt="PostgreSQL" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">PostgreSQL</h3>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/1200px-MongoDB_Logo.svg.png" alt="Redux" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Redux</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
