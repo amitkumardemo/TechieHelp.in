@@ -324,8 +324,6 @@ const Python = () => {
       ]
     }
   ],
-
-  // Month 4: Automation & Capstone (Weeks 1-4, 5-8, 9-12, 13-16)
   [
     {
       week: 'Week 1-4',
@@ -336,8 +334,8 @@ const Python = () => {
             { type: 'normal', text: 'Web scraping with BeautifulSoup' },
             { type: 'normal', text: 'Selenium automation scripts' },
             { type: 'normal', text: 'Task scheduling with cron/jobs' },
-            { type: 'project', level: 'intermediate', title: 'Automation Project', subtitle: 'Automate repetitive web or data tasks' },
             { type: 'normal', text: 'Logging & error handling in scripts' },
+            { type: 'project', level: 'intermediate', title: 'Automation Project', subtitle: 'Automate repetitive web or data tasks' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
@@ -353,8 +351,8 @@ const Python = () => {
             { type: 'normal', text: 'API automation using Python requests' },
             { type: 'normal', text: 'Data pipeline automation' },
             { type: 'normal', text: 'Scheduling & notifications' },
-            { type: 'project', level: 'intermediate', title: 'API Automation Project', subtitle: 'Automate data collection & processing via APIs' },
             { type: 'normal', text: 'Error handling & logging' },
+            { type: 'project', level: 'intermediate', title: 'API Automation Project', subtitle: 'Automate data collection & processing via APIs' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
@@ -370,8 +368,8 @@ const Python = () => {
             { type: 'normal', text: 'Capstone Project Development' },
             { type: 'normal', text: 'Combine web, data, and automation modules' },
             { type: 'normal', text: 'Code optimization & best practices' },
-            { type: 'project', level: 'hard', title: 'Capstone Project', subtitle: 'Develop a complete Python application integrating all learned skills' },
             { type: 'normal', text: 'Documentation & presentation preparation' },
+            { type: 'project', level: 'hard', title: 'Capstone Project', subtitle: 'Develop a complete Python application integrating all learned skills' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
@@ -387,8 +385,8 @@ const Python = () => {
             { type: 'normal', text: 'Capstone Project completion' },
             { type: 'normal', text: 'Final presentation preparation' },
             { type: 'normal', text: 'Resume & LinkedIn profile enhancement' },
-            { type: 'project', level: 'hard', title: 'Final Submission & Demo', subtitle: 'Project submission, certificate awarded, and final evaluation' },
             { type: 'normal', text: 'Internship review & feedback incorporation' },
+            { type: 'project', level: 'hard', title: 'Final Submission & Demo', subtitle: 'Project submission, certificate awarded, and final evaluation' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
