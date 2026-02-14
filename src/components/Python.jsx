@@ -271,8 +271,6 @@ const Python = () => {
       ]
     }
   ],
-
-  // Month 3: Machine Learning (Weeks 1-4, 5-8, 9-12)
   [
     {
       week: 'Week 1-4',
@@ -283,8 +281,8 @@ const Python = () => {
             { type: 'normal', text: 'Feature engineering and preprocessing' },
             { type: 'normal', text: 'Advanced data visualization (Plotly, Seaborn)' },
             { type: 'normal', text: 'Introduction to scikit-learn' },
-            { type: 'project', level: 'intermediate', title: 'Visualization & Preprocessing Project', subtitle: 'Analyze dataset and create visual insights' },
             { type: 'normal', text: 'Exploratory ML modeling (linear regression)' },
+            { type: 'project', level: 'intermediate', title: 'Visualization & Preprocessing Project', subtitle: 'Analyze dataset and create visual insights' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
@@ -300,8 +298,8 @@ const Python = () => {
             { type: 'normal', text: 'Regression algorithms (Linear, Polynomial)' },
             { type: 'normal', text: 'Evaluation metrics for regression' },
             { type: 'normal', text: 'Data splitting & cross-validation' },
-            { type: 'project', level: 'intermediate', title: 'Regression Project', subtitle: 'Predict continuous values from dataset' },
             { type: 'normal', text: 'Hyperparameter tuning basics' },
+            { type: 'project', level: 'intermediate', title: 'Regression Project', subtitle: 'Predict continuous values from dataset' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
@@ -317,8 +315,8 @@ const Python = () => {
             { type: 'normal', text: 'Classification algorithms (Logistic Regression, Decision Trees)' },
             { type: 'normal', text: 'Evaluation metrics: accuracy, precision, recall, F1-score' },
             { type: 'normal', text: 'Model selection & validation' },
-            { type: 'project', level: 'intermediate', title: 'Classification Project', subtitle: 'Build a model to classify data' },
             { type: 'normal', text: 'Hyperparameter tuning & cross-validation' },
+            { type: 'project', level: 'intermediate', title: 'Classification Project', subtitle: 'Build a model to classify data' },
             { type: 'normal', text: 'Mentor doubt-solving session' }
           ]
         },
