@@ -8,9 +8,10 @@ import Loading from "./components/Loading";
 import FAQ from "./components/FAQ";
 import Testimonials from "./components/Testimonials";
 import AboutUs from "./components/AboutUs";
+import AnimatedCursor from "./components/AnimatedCursor";
 import Contact from "./components/Contact";
 import Contacts from "./components/contacts";
-import Internship from "./components/Internship"; 
+import Internship from "./components/Internship";
 import SpecialBatch from "./components/SpecialBatch";
 import Webdevelopment from "./components/Webdevelopment";
 import Cybersecurity from "./components/Cybersecurity";
@@ -71,12 +72,12 @@ import TanuSingh from "./components/students/TanuSingh";
 import RohitSharma from "./components/students/RohitSharma";
 import RohanT from "./components/students/RohanT";
 import TejaBhuvaneswariDevi from "./components/students/TejaBhuvaneswariDevi";
-import GangadharSharma from "./components/students/GangadharSharma"; 
+import GangadharSharma from "./components/students/GangadharSharma";
 import HackathonLandingPage from "./components/hackahton";
 import PlacementBoosterLanding from "./components/placement";
 
 import { useState, useEffect } from "react";
-import KaviyaranP from "./components/students/KaviyaranP"; 
+import KaviyaranP from "./components/students/KaviyaranP";
 import AnkitKumarKeshari from "./components/students/AnkitKumarKeshari";
 import KhiasuthongT from "./components/students/KhiasuthongT";
 import SenchumbeniCErui from "./components/students/SenchumbeniCErui";
@@ -197,6 +198,7 @@ const App = () => {
   return (
     <Router>
       <div className={`bg-primary w-full overflow-hidden`}>
+        <AnimatedCursor />
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
           <div className={`${styles.boxWidth}`}>
             <Navbar className="navbar" />
@@ -254,21 +256,7 @@ const App = () => {
                   <Business className="business" />
                   <Billing className="billing" />
                   <CardDeal className="cardDeal" />
-                  {/* Placement Booster Section */}
-                  <section className={`${layout.section} gap-10`}>
-                    <div className={layout.sectionImg}>
-                      <img src={placement} alt="Placement Booster" className="w-[100%] h-[90%]" />
-                    </div>
-                    <div className={layout.sectionInfo}>
-                      <h2 className={styles.heading2}>Placement Booster Program</h2>
-                      <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
-                        Crack your dream job with our A→Z Interview Program at ₹999. Includes LinkedIn enhancement, resume makeover, DSA training, mock interviews, and paid internship opportunities.
-                      </p>
-                      <Link to="/placement-booster" className="py-4 px-6 font-poppins font-medium text-[18px] text-primary bg-blue-gradient rounded-[10px] outline-none mt-10">
-                        Learn More
-                      </Link>
-                    </div>
-                  </section>
+
                   <OurServices />
 
                   <Clients className="clients" />
@@ -280,7 +268,7 @@ const App = () => {
               </div>
             </>
           } />
-          
+
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/hackathon" element={<HackathonLandingPage />} />
           <Route path="/services" element={<Services />} />
@@ -334,7 +322,7 @@ const App = () => {
           <Route path="/hiring-faq" element={<HiringFAQ />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/placement-booster" element={<PlacementBoosterLanding />} />
-          
+
           {/* Student Profile Routes */}
           <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
           <Route path="/intern/sasvanthu-g" element={<SasvanthuG />} />
@@ -358,8 +346,8 @@ const App = () => {
           <Route path="/intern/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
           <Route path="/students/kaviyaran-p" element={<KaviyaranP />} />
           <Route path="/intern/kaviyaran-p" element={<KaviyaranP />} />
-          <Route path="/students/ganga-dhar-sharma" element={<GangadharSharma />} /> 
-          <Route path="/intern/ganga-dhar-sharma" element={<GangadharSharma />} /> 
+          <Route path="/students/ganga-dhar-sharma" element={<GangadharSharma />} />
+          <Route path="/intern/ganga-dhar-sharma" element={<GangadharSharma />} />
           <Route path="/students/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
           <Route path="/intern/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
           <Route path="/students/khiasuthong-t" element={<KhiasuthongT />} />
@@ -395,16 +383,16 @@ const App = () => {
           <Route path="/students/kameshwar-patel" element={<KameshwarPatel />} />
           <Route path="/intern/kameshwar-patel" element={<KameshwarPatel />} />
 
-        {/* Authentication Routes */}
+          {/* Authentication Routes */}
 
-        <Route path="/login" element={!user ? <Login /> : <Navigate to="/profile" />} />
-        <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/profile" />} />
-        <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
-        <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
+          <Route path="/login" element={!user ? <Login /> : <Navigate to="/profile" />} />
+          <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/profile" />} />
+          <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
+          <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
 
-        {/* Intern Profile Route */}
+          {/* Intern Profile Route */}
           <Route path="/interns/:internId" element={<InternProfile />} />
-      </Routes>
+        </Routes>
         <Footer />
 
         {/* Scroll to Top Button */}
@@ -425,7 +413,7 @@ const App = () => {
               fill="currentColor"
               className="w-6 h-6"
             >
-              <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z"/>
+              <path d="M12 4l8 8h-6v8h-4v-8H4l8-8z" />
             </svg>
           </button>
         )}
@@ -443,7 +431,7 @@ const App = () => {
             fill="currentColor"
             className="w-8 h-8"
           >
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488" />
           </svg>
         </a>
       </div>

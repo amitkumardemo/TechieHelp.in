@@ -75,26 +75,26 @@ export const navLinks = [
 
 export const features = [
   {
-    id: "feature-1",
-    icon: star, // replace with your AI/rocket icon import
-    title: "AI-First Approach",
-    content:
-      "We deeply understand your business challenges and craft AI-driven solutions tailored to your exact needs, ensuring measurable results.",
-  },
-  {
-    id: "feature-2",
-    icon: shield, // replace with your handshake icon import
-    title: "Your Complete AI Partner",
-    content:
-      "From AI chatbots and predictive analytics to computer vision, automation, and custom software — we provide all-in-one AI solutions under one roof, saving you time, cost, and effort.",
-  },
-  {
-    id: "feature-3",
-    icon: send, // replace with your lightning icon import
-    title: "Always-On Support & Scalability",
-    content:
-      "We offer 24/7 technical assistance and build scalable AI systems that grow alongside your business, ensuring long-term success.",
-  },
+  id: "feature-1",
+  icon: star, // replace with your AI/rocket icon import
+  title: "AI Agents That Replace Manual Work",
+  content:
+    "We build AI and voice agents that handle repetitive tasks like calling, follow-ups, and workflows, eliminating manual effort and human errors.",
+},
+{
+  id: "feature-2",
+  icon: shield, // replace with your handshake icon import
+  title: "End-to-End Automation Partner",
+  content:
+    "From AI calling agents to workflow and process automation, we deliver production-ready AI systems that integrate seamlessly with your existing tools.",
+},
+{
+  id: "feature-3",
+  icon: send, // replace with your lightning icon import
+  title: "Built to Scale Without Manpower",
+  content:
+    "Our AI automation systems are designed to scale operations efficiently, helping businesses grow faster without increasing headcount or complexity.",
+},
 ];
 
 
