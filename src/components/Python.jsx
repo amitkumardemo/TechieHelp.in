@@ -425,16 +425,16 @@ const Python = () => {
                 Most Trusted Internship Program • AICTE & NIP Aligned
               </div>
               <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-snug max-w-4xl">
-                <span className="text-yellow-300 font-bold">MERN Stack</span> Internship & Training Program
+                <span className="text-yellow-300 font-bold">Python</span> Internship & Training Program
               </h1>
               <h2 className="text-xl md:text-2xl font-medium mb-2 leading-relaxed">
-                🚀 Master MongoDB, Express.js, React & Node.js! Build Production-Ready Full-Stack Apps & Land ₹15-25 LPA Jobs
+                🚀 Master Python, Django & PostgreSQL! Build Scalable Production-Ready Applications & Crack ₹15–25 LPA Roles
               </h2>
               <p className="text-base mb-2 leading-relaxed">
-                💥 DON'T MISS THIS! 4-month intensive MERN stack internship with hands-on projects, expert mentorship, and direct placement in top tech companies like Google, Microsoft, Amazon, and startups. 95% students get placed within 3 months of completion!
+                💥 DON'T MISS THIS! 4-month intensive Python internship with hands-on projects, expert mentorship, and direct placement in top tech companies like Google, Microsoft, Amazon, and startups. 95% students get placed within 3 months of completion!
               </p>
               <ul className="flex flex-wrap gap-3 mb-3">
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Live MERN Stack Projects</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Live Python, Django & REST API Projects</li>
                 <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Beginner Friendly (No Prior Experience Needed)</li>
                 <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Recommendation Letter</li>
                 <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Placement & Career Support</li>
@@ -690,8 +690,8 @@ const Python = () => {
                   <Star className="w-8 h-8 text-purple-600" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">3 Months</h3>
-                <p className="text-gray-600 font-medium mb-2">Advanced + Full-Stack Level</p>
-                <p className="text-sm text-gray-500">Career-ready training with real-world projects</p>
+                <p className="text-gray-600 font-medium mb-2">Advanced Python Developer</p>
+                <p className="text-sm text-gray-500">Industry-focused training with production-ready projects</p>
               </div>
             </div>
 
@@ -1136,7 +1136,7 @@ const Python = () => {
           {/* Supporting Content */}
           <div className="text-center mb-16">
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Through TechieHelp's comprehensive MERN stack training, real-world projects, and expert mentorship, you'll be prepared for high-demand full-stack development roles across startups and established companies like Google, Microsoft, and Amazon.
+              Through TechieHelp's advanced Python, Django & scalable backend systems training, hands-on production projects, and guided mentorship, you'll gain the skills needed to secure top backend and full-stack roles at leading tech companies and fast-growing startups.
             </p>
           </div>
 
@@ -1196,7 +1196,7 @@ const Python = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Technologies & Tools You Will Learn</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Master the complete MERN stack (MongoDB, Express.js, React, Node.js) - the most popular and in-demand technology stack for building modern web applications used by companies like Netflix, Uber, and Airbnb.
+              Master Python, Django & scalable REST APIs — the backbone of modern web platforms powering high-growth startups and global tech companies.
             </p>
           </div>
 
@@ -1375,7 +1375,7 @@ const Python = () => {
             <div className="md:w-1/2 text-gray-900">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Completion Certificate</h2>
               <p className="text-lg mb-6">We provide an industry-recognized certification that validates your skills, internship experience, and project work through verified and trusted channels.</p>
-              <h3 className="text-xl font-semibold mb-2">TechieHelp MERN Stack Development Internship Certificate</h3>
+              <h3 className="text-xl font-semibold mb-2">TechieHelp Advanced Python Internship Certificate</h3>
               <p className="text-base mb-6">This certificate is issued after successful completion of training, projects, and assessments. It is designed to validate real skills, not just course attendance. Each certificate is verifiable and transparent for recruiters and institutions.</p>
               {/* Trust Points */}
               <div className="mb-6">
