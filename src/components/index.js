@@ -9,6 +9,8 @@ import Footer from "./Footer";
 import Hero from "./Hero";
 import WhoWeAre from "./who";
 
+import Chatbot from "./Chatbot";
+
 export {
   Navbar,
   Billing,
@@ -19,5 +21,6 @@ export {
   Stats,
   Footer,
   Hero,
-  WhoWeAre
+  WhoWeAre,
+  Chatbot
 };
