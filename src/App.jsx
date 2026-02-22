@@ -1,5 +1,5 @@
 import styles, { layout } from "./style";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre, Chatbot } from "./components";
+import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre, Chatbot, CertificateVerify } from "./components";
 import OurServices from "./components/OurServices";
 import Services from "./components/Services";
 import ProjectPortfolio from "./components/ProjectPortfolio";
@@ -268,6 +268,8 @@ const App = () => {
               </div>
             </>
           } />
+
+          <Route path="/verify-certificate" element={<CertificateVerify />} />
 
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/hackathon" element={<HackathonLandingPage />} />
