@@ -29,6 +29,11 @@ export const navLinks = [
         id: "hackathon",
         title: "Hackathon",
         path: "/hackathon"
+      },
+      {
+        id: "verify-certificate",
+        title: "Verify Certificate",
+        path: "/verify-certificate"
       }
     ]
   },
@@ -68,33 +73,33 @@ export const navLinks = [
     title: "LMS",
     path: "/lms"
   },
-  
+
 ];
 
 
 
 export const features = [
   {
-  id: "feature-1",
-  icon: star, // replace with your AI/rocket icon import
-  title: "AI Agents That Replace Manual Work",
-  content:
-    "We build AI and voice agents that handle repetitive tasks like calling, follow-ups, and workflows, eliminating manual effort and human errors.",
-},
-{
-  id: "feature-2",
-  icon: shield, // replace with your handshake icon import
-  title: "End-to-End Automation Partner",
-  content:
-    "From AI calling agents to workflow and process automation, we deliver production-ready AI systems that integrate seamlessly with your existing tools.",
-},
-{
-  id: "feature-3",
-  icon: send, // replace with your lightning icon import
-  title: "Built to Scale Without Manpower",
-  content:
-    "Our AI automation systems are designed to scale operations efficiently, helping businesses grow faster without increasing headcount or complexity.",
-},
+    id: "feature-1",
+    icon: star, // replace with your AI/rocket icon import
+    title: "AI Agents That Replace Manual Work",
+    content:
+      "We build AI and voice agents that handle repetitive tasks like calling, follow-ups, and workflows, eliminating manual effort and human errors.",
+  },
+  {
+    id: "feature-2",
+    icon: shield, // replace with your handshake icon import
+    title: "End-to-End Automation Partner",
+    content:
+      "From AI calling agents to workflow and process automation, we deliver production-ready AI systems that integrate seamlessly with your existing tools.",
+  },
+  {
+    id: "feature-3",
+    icon: send, // replace with your lightning icon import
+    title: "Built to Scale Without Manpower",
+    content:
+      "Our AI automation systems are designed to scale operations efficiently, helping businesses grow faster without increasing headcount or complexity.",
+  },
 ];
 
 

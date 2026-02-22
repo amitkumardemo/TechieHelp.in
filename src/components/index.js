@@ -10,6 +10,7 @@ import Hero from "./Hero";
 import WhoWeAre from "./who";
 
 import Chatbot from "./Chatbot";
+import CertificateVerify from "./CertificateVerify";
 
 export {
   Navbar,
@@ -22,5 +23,6 @@ export {
   Footer,
   Hero,
   WhoWeAre,
-  Chatbot
+  Chatbot,
+  CertificateVerify
 };
