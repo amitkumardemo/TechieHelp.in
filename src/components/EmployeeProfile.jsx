@@ -93,6 +93,7 @@ const EmployeeProfile = ({ employee }) => {
                     src={employee.profileImage}
                     alt={employee.fullName}
                     className="w-full h-full object-cover transform transition-transform duration-700 hover:scale-110"
+                    style={{ objectPosition: employee.objectPosition || 'center' }}
                   />
                 </div>
                 <div className="absolute -bottom-2 -right-2 bg-blue-600 text-white p-3 rounded-2xl shadow-xl border border-white/20">
