@@ -289,7 +289,7 @@ const App = () => {
           <Route path="/interns" element={<Intern />} />
           <Route path="/employees/:employeeId" element={<EmployeeProfile />} />
           <Route path="/team/amit-kumar-founder-ceo-techiehelp" element={<AmitKumar />} />
-          <Route path="/team/kameshwar-patel-frontend-developer-techiehelp" element={<KameshwarPatelComponent />} />
+          <Route path="/team/kameshwar-patel-frontend-developer-intern-techiehelp" element={<KameshwarPatelComponent />} />
           <Route path="/team/supriya-jalani-uiux-designer-techiehelp" element={<SupriyaJalaniComponent />} />
           <Route path="/team/aditya-kumar-content-media-specialist-techiehelp" element={<AdityaKumarComponent />} />
           <Route path="/team/ashok-frontend-developer-intern-techiehelp" element={<AshokComponent />} />

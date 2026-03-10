@@ -103,7 +103,8 @@ export const employeeData = [
     githubProfile: "",
     experience: "1+ Year Experience",
     department: "Development",
-    profilePath: "/employee/manchal-kumar"
+    profilePath: "/employee/manchal-kumar",
+    objectPosition: "top"
   },
   {
     id: "TH-EMP-2026-010",
@@ -260,6 +261,7 @@ const Employee = () => {
                         src={employee.profileImage}
                         alt={employee.fullName}
                         className="relative w-full h-full rounded-2xl object-cover border-2 border-white/10 group-hover:border-blue-500/50 transition-colors"
+                        style={{ objectPosition: employee.objectPosition || 'center' }}
                       />
                       <div className="absolute -bottom-2 -right-2 bg-blue-600 rounded-lg p-1 shadow-xl">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
