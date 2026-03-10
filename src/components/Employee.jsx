@@ -7,80 +7,58 @@ import { adityaKumar, AmitPhoto, ashok, kameshwarPatel, mdAmzad, supriyaJalani, 
 
 export const employeeData = [
   {
-    id: "TH-FND-001",
+    id: "TH-CEO-001",
     fullName: "Amit Kumar",
     role: "Founder & CEO",
     profileImage: AmitPhoto,
     linkedInProfile: "https://www.linkedin.com/in/amit-kumar-686196225/",
     githubProfile: "https://github.com/amitkumardemo",
-    experience: "2+ years in tech industry",
+    experience: "2+ Year Experience",
     department: "Leadership"
   },
   {
-    id: "TH-EMP-2026-001",
-    fullName: "Kameshwar Patel",
-    role: "Frontend Developer",
-    profileImage: kameshwarPatel,
-    linkedInProfile: "https://www.linkedin.com/in/patelkameshwar",
-    githubProfile: "https://github.com/patelkameshwar",
-    experience: "Full Time Team Member",
-    department: "Development",
-    profilePath: "/employee/kameshwar-patel"
-  },
-  {
     id: "TH-EMP-2026-002",
-    fullName: "Supriya Jalani",
-    role: "UI/UX Designer",
-    profileImage: supriyaJalani,
-    linkedInProfile: "https://www.linkedin.com/in/supriya-jalani",
-    githubProfile: "https://github.com/Suprirya-Jalani",
-    experience: "Fresher",
-    department: "Design",
-    profilePath: "/employee/supriya-jalani"
+    fullName: "Ananya Sharma",
+    role: "HR Manager",
+    profileImage: ananyaSharma,
+    linkedInProfile: "",
+    githubProfile: "",
+    experience: "1+ Year Experience",
+    department: "HR",
+    profilePath: "/employee/ananya-sharma"
   },
   {
-    id: "TH-EMP-2026-003",
+    id: "TH-EMP-2025-003",
     fullName: "Aditya Kumar",
     role: "Content & Media Specialist",
     profileImage: adityaKumar,
     linkedInProfile: "https://www.linkedin.com/in/aditya-kumar-40a256291",
     githubProfile: "https://github.com/adityakumr03",
-    experience: "Full Time Team Member",
+    experience: "1+ Year Experience",
     department: "Content",
     profilePath: "/employee/aditya-kumar"
   },
   {
-    id: "TH-INT-2026-001",
-    fullName: "Ashok",
-    role: "Frontend Developer Intern",
-    profileImage: ashok,
-    linkedInProfile: "https://www.linkedin.com/in/ashok-bishnoi-b19389257",
-    githubProfile: "https://github.com/Ashokmaal0051",
-    experience: "Intern",
-    department: "Development",
-    profilePath: "/employee/ashok"
-  },
-  {
     id: "TH-EMP-2026-004",
-    fullName: "Md Amzad",
-    role: "Machine Learning Engineer",
-    profileImage: mdAmzad,
-    linkedInProfile: "https://www.linkedin.com/in/md-amzad-b8547a296",
-    githubProfile: "https://github.com/Md-Amzad-313",
-    experience: "AI/ML Developer",
-    department: "AI/ML",
-    profilePath: "/employee/md-amzad"
-  },
-  {
-    id: "TH-EMP-2026-005",
     fullName: "Mahima Panwar",
     role: "Content Creator",
     profileImage: mahimaPanwar,
     linkedInProfile: "",
     githubProfile: "",
-    experience: "Part Time Team Member",
+    experience: "1+ Year Experience",
     department: "Content",
     profilePath: "/employee/mahima-panwar"
+  },
+  {
+    id: "TH-EMP-2026-005",
+    fullName: "Supriya Jalani",
+    role: "UI/UX Designer",
+    profileImage: supriyaJalani,
+    linkedInProfile: "https://www.linkedin.com/in/supriya-jalani",
+    githubProfile: "https://github.com/Suprirya-Jalani",
+    experience: "1+ Year Experience",
+    department: "Design",
+    profilePath: "/employee/supriya-jalani"
   },
   {
     id: "TH-EMP-2026-006",
@@ -89,53 +67,76 @@ export const employeeData = [
     profileImage: charchitaSaini,
     linkedInProfile: "",
     githubProfile: "",
-    experience: "Full Time Team Member",
+    experience: "1+ Year Experience",
     department: "Development",
     profilePath: "/employee/charchita-saini"
   },
   {
     id: "TH-EMP-2026-007",
+    fullName: "Md Amzad",
+    role: "Machine Learning Engineer",
+    profileImage: mdAmzad,
+    linkedInProfile: "https://www.linkedin.com/in/md-amzad-b8547a296",
+    githubProfile: "https://github.com/Md-Amzad-313",
+    experience: "1+ Year Experience",
+    department: "AI/ML",
+    profilePath: "/employee/md-amzad"
+  },
+
+  {
+    id: "TH-EMP-2026-008",
     fullName: "Mahbub Alam",
     role: "Full Stack Developer",
     profileImage: mahbubAlam,
     linkedInProfile: "",
     githubProfile: "",
-    experience: "Full Time Team Member",
+    experience: "1+ Year Experience",
     department: "Development",
     profilePath: "/employee/mahbub-alam"
   },
   {
-    id: "TH-EMP-2026-008",
+    id: "TH-EMP-2026-009",
     fullName: "Mr. Manchal Kumar",
     role: "Full Stack Developer",
     profileImage: manchalKumar,
     linkedInProfile: "",
     githubProfile: "",
-    experience: "Full Time Team Member",
+    experience: "1+ Year Experience",
     department: "Development",
     profilePath: "/employee/manchal-kumar"
   },
   {
-    id: "TH-EMP-2026-009",
-    fullName: "Ananya Sharma",
-    role: "HR Manager",
-    profileImage: ananyaSharma,
-    linkedInProfile: "",
-    githubProfile: "",
-    experience: "HR Team",
-    department: "HR",
-    profilePath: "/employee/ananya-sharma"
-  },
-  {
-    id: "TH-INT-2026-003",
+    id: "TH-EMP-2026-010",
     fullName: "Aryan Kumar",
     role: "Cyber Security Intern",
     profileImage: aryanKumar,
     linkedInProfile: "",
     githubProfile: "",
-    experience: "Intern",
+    experience: "1+ Year Experience",
     department: "Security",
     profilePath: "/employee/aryan-kumar"
+  },
+  {
+    id: "TH-INT-2026-001",
+    fullName: "Kameshwar Patel",
+    role: "Frontend Developer Intern",
+    profileImage: kameshwarPatel,
+    linkedInProfile: "https://www.linkedin.com/in/patelkameshwar",
+    githubProfile: "https://github.com/patelkameshwar",
+    experience: "1+ Year Experience",
+    department: "Development",
+    profilePath: "/employee/kameshwar-patel"
+  },
+  {
+    id: "TH-INT-2026-002",
+    fullName: "Ashok",
+    role: "Frontend Developer Intern",
+    profileImage: ashok,
+    linkedInProfile: "https://www.linkedin.com/in/ashok-bishnoi-b19389257",
+    githubProfile: "https://github.com/Ashokmaal0051",
+    experience: "1+ Year Experience",
+    department: "Development",
+    profilePath: "/employee/ashok"
   }
 ];
 
