@@ -214,6 +214,12 @@ import ujjawalLibrary from "./ujjawalLibrary.png";
 import edgeCareer from "./edgeCareer.png";
 import dentEase from "./dentEase.png";
 import techiehelpInstitute from "./techiehelpInstitute.png";
+import mahimaPanwar from "./Mahima Panwar.png";
+import charchitaSaini from "./Charchita Saini.jpg";
+import mahbubAlam from "./MAHBUB ALAM.png";
+import manchalKumar from "./Manchal.png";
+import ananyaSharma from "./Ananya Sharma.JPG";
+import aryanKumar from "./aryanp.jpeg";
 
 // New imports from main branch (files not present in assets folder, removed to avoid errors)
 
@@ -408,4 +414,10 @@ export {
   class3,
   class4,
   class5,
+  mahimaPanwar,
+  charchitaSaini,
+  mahbubAlam,
+  manchalKumar,
+  ananyaSharma,
+  aryanKumar,
 };

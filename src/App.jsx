@@ -62,6 +62,12 @@ import SupriyaJalaniComponent from "./components/employees/SupriyaJalani";
 import AdityaKumarComponent from "./components/employees/AdityaKumar";
 import AshokComponent from "./components/employees/Ashok";
 import MdAmzadComponent from "./components/employees/MdAmzad";
+import MahimaPanwar from "./components/employees/MahimaPanwar";
+import CharchitaSaini from "./components/employees/CharchitaSaini";
+import MahbubAlam from "./components/employees/MahbubAlam";
+import ManchalKumar from "./components/employees/ManchalKumar";
+import AnanyaSharma from "./components/employees/AnanyaSharma";
+import AryanKumar from "./components/employees/AryanKumar";
 import SasvanthuG from "./components/students/SasvanthuG";
 import RitikaKasat from "./components/students/RitikaKasat";
 import AbhayRajSingh from "./components/students/AbhayRajSingh";
@@ -282,12 +288,18 @@ const App = () => {
           <Route path="/employees" element={<Employee />} />
           <Route path="/interns" element={<Intern />} />
           <Route path="/employees/:employeeId" element={<EmployeeProfile />} />
-          <Route path="/employee/amit-kumar" element={<AmitKumar />} />
-          <Route path="/employee/kameshwar-patel" element={<KameshwarPatelComponent />} />
-          <Route path="/employee/supriya-jalani" element={<SupriyaJalaniComponent />} />
-          <Route path="/employee/aditya-kumar" element={<AdityaKumarComponent />} />
-          <Route path="/employee/ashok" element={<AshokComponent />} />
-          <Route path="/employee/md-amzad" element={<MdAmzadComponent />} />
+          <Route path="/team/amit-kumar-founder-ceo-techiehelp" element={<AmitKumar />} />
+          <Route path="/team/kameshwar-patel-frontend-developer-techiehelp" element={<KameshwarPatelComponent />} />
+          <Route path="/team/supriya-jalani-uiux-designer-techiehelp" element={<SupriyaJalaniComponent />} />
+          <Route path="/team/aditya-kumar-content-media-specialist-techiehelp" element={<AdityaKumarComponent />} />
+          <Route path="/team/ashok-frontend-developer-intern-techiehelp" element={<AshokComponent />} />
+          <Route path="/team/md-amzad-machine-learning-engineer-techiehelp" element={<MdAmzadComponent />} />
+          <Route path="/team/mahima-panwar-content-creator-techiehelp" element={<MahimaPanwar />} />
+          <Route path="/team/charchita-saini-software-engineer-techiehelp" element={<CharchitaSaini />} />
+          <Route path="/team/mahbub-alam-full-stack-developer-techiehelp" element={<MahbubAlam />} />
+          <Route path="/team/mr-manchal-kumar-full-stack-developer-techiehelp" element={<ManchalKumar />} />
+          <Route path="/team/ananya-sharma-hr-manager-techiehelp" element={<AnanyaSharma />} />
+          <Route path="/team/aryan-kumar-cyber-security-intern-techiehelp" element={<AryanKumar />} />
           <Route path="/webdevelopment" element={<Webdevelopment />} />
           <Route path="/cybersecurity" element={<Cybersecurity />} />
           <Route path="/androiddevelopment" element={<Androiddevelopment />} />
