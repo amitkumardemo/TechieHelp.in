@@ -4,7 +4,7 @@ import { ananyaSharma } from '../../assets';
 
 const AnanyaSharma = () => {
   const employee = {
-    id: "TH-EMP-2026-009",
+    id: "TH-EMP-2026-002",
     fullName: "Ananya Sharma",
     role: "HR Manager",
     email: "ananyasharma1.2007@gmail.com",
