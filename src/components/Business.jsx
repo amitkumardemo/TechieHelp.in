@@ -7,32 +7,31 @@ import Button from "./Button";
 // AI Module Component for High-End Cinematic feel
 const AIModule = ({ icon, title, content, index }) => (
   <motion.div
-    initial={{ opacity: 0, x: 50, filter: 'blur(10px)' }}
-    whileInView={{ opacity: 1, x: 0, filter: 'blur(0px)' }}
-    transition={{ delay: 0.5 + index * 0.15, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    initial={{ opacity: 0, scale: 0.9, y: 20 }}
+    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+    transition={{ delay: 0.2 + index * 0.1, duration: 0.6 }}
     viewport={{ once: true }}
-    className="relative group w-full max-w-[460px] mb-4 last:mb-0"
+    className="relative group w-full max-w-[460px] cursor-pointer"
   >
-    <div className="absolute -inset-[1px] bg-gradient-to-r from-secondary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl blur-[1px]" />
-    <div className="relative glass-morphism border-white/5 p-5 rounded-2xl flex items-center gap-5 hover:bg-white/[0.03] transition-colors duration-500">
-
-      {/* Module Status HUD */}
-      <div className="absolute top-2 right-4 flex items-center gap-2">
-        <span className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_rgba(51,187,207,1)]" />
-        <p className="text-[10px] font-mono text-secondary tracking-widest opacity-60 uppercase">
-          {index === 0 ? "Autonomy: Active" : index === 1 ? "Module: Live" : "System: Sync"}
-        </p>
+    {/* Inner Glow Backdrop */}
+    <div className="absolute -inset-2 bg-secondary/5 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+    
+    <div className="relative glass-morphism border-white/5 p-6 rounded-3xl flex items-center gap-6 group-hover:bg-white/[0.04] group-hover:border-white/10 transition-all duration-500 group-hover:-translate-y-2 shadow-2xl">
+      {/* HUD Accent */}
+      <div className="absolute top-4 right-6 flex items-center gap-1.5">
+        <div className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_#33bbcf]" />
+        <span className="text-[9px] font-mono text-secondary tracking-[2px] uppercase opacity-60">System Ready</span>
       </div>
 
-      <div className="w-[54px] h-[54px] rounded-xl bg-secondary/10 flex items-center justify-center p-3 group-hover:scale-110 transition-transform duration-500">
-        <img src={icon} alt={title} className="w-full h-full object-contain filter brightness-110" />
+      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center p-4 border border-secondary/20 group-hover:border-secondary/40 transition-colors">
+        <img src={icon} alt={title} className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(51,187,207,0.4)]" />
       </div>
 
       <div className="flex-1">
-        <h4 className="text-white font-poppins font-bold text-[17px] mb-1 group-hover:text-secondary transition-colors duration-300">
+        <h4 className="text-white font-poppins font-bold text-[18px] mb-1 group-hover:text-secondary transition-colors">
           {title}
         </h4>
-        <p className="text-dimWhite font-poppins text-[13px] leading-relaxed opacity-80 line-clamp-2">
+        <p className="text-white/60 font-poppins text-[13px] leading-relaxed group-hover:text-white/80 transition-colors">
           {content}
         </p>
       </div>
@@ -87,11 +86,11 @@ const Business = () => (
         >
           <div className="flex items-center gap-3 mb-6">
             <span className="h-[1px] w-8 bg-secondary/30" />
-            <p className="text-secondary font-mono tracking-[4px] text-[11px] uppercase">Infrastructure Engine</p>
+            <p className="text-secondary font-mono tracking-[4px] text-[11px] uppercase">AI product ecosystem</p>
           </div>
 
-          <h2 className="font-poppins font-bold ss:text-[54px] text-[42px] text-white ss:leading-[68px] leading-[52px] mb-8">
-            <WordReveal text="You Focus on Growth, We Deploy AI Engines." />
+          <h2 className="font-poppins font-bold ss:text-[54px] text-[42px] text-white ss:leading-[68px] leading-[52px] mb-8 uppercase tracking-tighter">
+            AI Systems That <br className="sm:block hidden" /> <span className="text-gradient">Run Your Business</span>
           </h2>
 
           <motion.p
@@ -101,7 +100,7 @@ const Business = () => (
             viewport={{ once: true }}
             className="font-poppins text-dimWhite text-[18px] leading-[32px] max-w-[500px] mb-12"
           >
-            TechieHelp delivers production-grade AI infrastructure that eliminates operational bottlenecks. By merging advanced agentic workflows with your core business logic, we enable scale that was previously limited by manpower.
+            We don’t just offer services. We build complete AI systems—Lead Engines, Calling Agents, and Automated Workflows—that replace manual effort and automate your operations end-to-end.
           </motion.p>
 
           {/* Metric Bar (Direct ROI for VCs) */}

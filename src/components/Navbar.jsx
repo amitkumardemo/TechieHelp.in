@@ -125,6 +125,18 @@ const Navbar = () => {
           </li>
             </>
           )}
+          {location.pathname === "/careers/training-internships" && (
+            <li className="ml-6 sm:block hidden">
+              <a 
+                href="https://forms.gle/N8kk845Lbfds6Pwj6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold rounded-lg shadow-lg hover:shadow-blue-500/20 transition-all active:scale-95 whitespace-nowrap"
+              >
+                Apply Now
+              </a>
+            </li>
+          )}
         </ul>
 
           <div className="sm:hidden flex flex-1 justify-end items-center">
