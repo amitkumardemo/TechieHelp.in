@@ -81,24 +81,31 @@ export const navLinks = [
 export const features = [
   {
     id: "feature-1",
-    icon: star, // replace with your AI/rocket icon import
-    title: "AI Agents That Replace Manual Work",
-    content:
-      "We build AI and voice agents that handle repetitive tasks like calling, follow-ups, and workflows, eliminating manual effort and human errors.",
+    icon: star, 
+    title: "AI Lead Engine",
+    content: "Automatically captures, responds, and manages leads without delay.",
+    outcome: "0 missed leads"
   },
   {
     id: "feature-2",
-    icon: shield, // replace with your handshake icon import
-    title: "End-to-End Automation Partner",
-    content:
-      "From AI calling agents to workflow and process automation, we deliver production-ready AI systems that integrate seamlessly with your existing tools.",
+    icon: shield,
+    title: "AI Calling Agents",
+    content: "Calls and qualifies customers instantly, collecting vital data autonomously.",
+    outcome: "Instant Qualification"
   },
   {
     id: "feature-3",
-    icon: send, // replace with your lightning icon import
-    title: "Built to Scale Without Manpower",
-    content:
-      "Our AI automation systems are designed to scale operations efficiently, helping businesses grow faster without increasing headcount or complexity.",
+    icon: send,
+    title: "AI Workflow Automation",
+    content: "End-to-end automation of your repetitive business operations and tasks.",
+    outcome: "24/7 Autonomy"
+  },
+  {
+    id: "feature-4",
+    icon: star,
+    title: "AI Business Dashboard",
+    content: "Real-time visibility into your automated leads and system performance.",
+    outcome: "Full Visibility"
   },
 ];
 
@@ -106,27 +113,27 @@ export const features = [
 export const stats = [
   {
     id: "stats-1",
-    title: "Services Provided",
-    value: "100+",
-    description: "High-quality services tailored to your needs.",
+    title: "Missed Leads",
+    value: "0",
+    description: "Guaranteeing 100% lead capture efficiency.",
   },
   {
     id: "stats-2",
-    title: "Trusted by Companies",
-    value: "100+",
-    description: "Companies rely on us for their tech solutions.",
+    title: "Response Speed",
+    value: "3x",
+    description: "AI-driven response systems are 3x faster than human teams.",
   },
   {
     id: "stats-3",
-    title: "Unique Visitors",
-    value: "18,000+",
-    description: "A growing audience engaging with our content.",
+    title: "Cost Reduction",
+    value: "50%",
+    description: "Autonomous operations cut operational costs by half.",
   },
   {
     id: "stats-4",
-    title: "Featured In",
-    value: "Tech Times",
-    description: "Recognized for our innovative solutions.",
+    title: "Service Hours",
+    value: "24/7",
+    description: "AI never sleeps, ensuring round-the-clock availability.",
   },
 ];
 

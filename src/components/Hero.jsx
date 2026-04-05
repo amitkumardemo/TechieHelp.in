@@ -52,7 +52,7 @@ const NeuralNetworkBackground = () => (
 
 const Hero = () => {
   return (
-    <section id="home" className={`relative flex md:flex-row flex-col pt-24 pb-10 overflow-hidden`}>
+    <section id="home" className={`relative flex md:flex-row flex-col pt-28 pb-8 overflow-hidden min-h-[85vh] flex items-center`}>
       {/* Background Enhancements */}
       <NeuralNetworkBackground />
       <div className="absolute top-0 left-0 w-[400px] h-full bg-blue-gradient opacity-10 blur-[120px] -rotate-45 animate-light-beam z-[0]" />
@@ -62,58 +62,112 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="flex flex-row items-center py-[6px] px-4 bg-discount-gradient rounded-[10px] mb-2 sm:mx-2 mx-0 mt-2 border border-white/5 shadow-lg shadow-blue-500/5"
+          className="flex flex-row items-center py-[4px] px-4 bg-discount-gradient rounded-[10px] mb-4 sm:mx-2 mx-0 mt-0 border border-white/5 shadow-lg shadow-blue-500/5 scale-90 origin-left"
         >
-          <p className={`${styles.paragraph} text-xs sm:text-sm text-white text-center`}>
+          <p className={`${styles.paragraph} text-xs text-white text-center`}>
             MSME CERTIFIED| ISO Certified | Incubated at JIET | Trusted by 100+ Clients
           </p>
         </motion.div>
 
+        {/* Powered by Label */}
+        <motion.div
+           initial={{ opacity: 0, scale: 0.8 }}
+           animate={{ 
+             opacity: 1, 
+             scale: 1,
+             boxShadow: ["0 0 0px rgba(59, 130, 246, 0)", "0 0 20px rgba(59, 130, 246, 0.3)", "0 0 0px rgba(59, 130, 246, 0)"]
+           }}
+           transition={{ 
+             duration: 2, 
+             repeat: Infinity,
+             ease: "easeInOut"
+           }}
+           className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 mb-6 backdrop-blur-md"
+        >
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(96,165,250,0.8)]" />
+          <span className="text-[10px] font-bold uppercase tracking-[3px] text-blue-300">Powered by TechieHelp AI Engine</span>
+        </motion.div>
+
         <div className="flex flex-row justify-between items-center w-full">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex-1 font-poppins font-semibold ss:text-[72px] text-[52px] text-white ss:leading-[100.8px] leading-[75px]"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="flex-1 font-poppins font-bold ss:text-[64px] text-[48px] text-white ss:leading-[80px] leading-[60px] tracking-tighter"
           >
-            We Build<br className="sm:block hidden" />{" "}
-            <span className="text-gradient">AI Agents</span>{" "}
+            Your Business.<br className="sm:block hidden" />{" "}
+            <span className="text-gradient drop-shadow-[0_0_20px_rgba(0,196,255,0.2)]">Fully Automated</span>{" "}
           </motion.h1>
-          <div className="ss:flex hidden md:mr-4 mr-0">
+          <div className="ss:flex hidden md:mr-4 mr-0 scale-90">
             <GetStarted />
           </div>
         </div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="font-poppins font-semibold ss:text-[68px] text-[52px] text-white ss:leading-[100.8px] leading-[75px] w-full"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
+          className="font-poppins font-bold ss:text-[64px] text-[48px] text-white ss:leading-[80px] leading-[60px] w-full tracking-tighter"
         >
-          That Replace
-          <br />
-          Manual Work
+          by AI.
         </motion.h1>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className={`${styles.paragraph} max-w-[470px] mt-5`}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 0.8 }}
+          transition={{ duration: 1, delay: 0.3 }}
+          className={`${styles.paragraph} max-w-[470px] mt-6 font-medium italic border-l-2 border-blue-500/50 pl-6 py-1 bg-gradient-to-r from-blue-500/5 to-transparent text-sm`}
         >
-          We build AI agents, automation, and voice agents that replace manual work and help businesses scale without human errors.
+          From capturing leads to calling customers and managing workflows — TechieHelp builds AI systems that run your business automatically, 24/7.
         </motion.p>
+        
+        {/* Key Points Grid - Glass Style */}
+        <motion.div 
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5 }}
+          className="grid grid-cols-2 gap-4 mt-8 w-full max-w-[500px]"
+        >
+           {[
+             { text: "Never miss a lead again", icon: "💎" },
+             { text: "AI calls & qualifies instantly", icon: "⚡" },
+             { text: "Works even when offline", icon: "🌙" },
+             { text: "Handles lakhs of requests", icon: "🚀" }
+           ].map((point, i) => (
+             <motion.div 
+                key={point.text} 
+                whileHover={{ scale: 1.05 }}
+                className="flex items-center gap-2 p-2 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm group cursor-default"
+             >
+                <span className="text-base group-hover:rotate-12 transition-transform">{point.icon}</span>
+                <span className="text-[9px] font-bold text-white/70 uppercase tracking-widest">{point.text}</span>
+             </motion.div>
+           ))}
+        </motion.div>
       </div>
 
-      <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative px-6 md:px-0`}>
-        {/* Original robot image with framing */}
-        <div className="relative w-full h-full flex items-center justify-center">
+      <div className={`flex-1 flex ${styles.flexCenter} md:my-0 my-8 relative px-6 md:px-0`}>
+        {/* Animated Glows behind Image */}
+        <div className="absolute z-[0] w-[60%] h-[60%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 blue__gradient opacity-20 animate-pulse" />
+        <div className="absolute z-[1] w-[40%] h-[40%] rounded-full white__gradient bottom-40 opacity-10 blur-3xl" />
+        
+        <div className="relative w-full h-[80%] flex items-center justify-center">
           <motion.img
             src={robot}
             alt="billing"
-            className="w-[100%] h-[80%] relative z-[5] drop-shadow-[0_20px_50px_rgba(51,187,207,0.3)]"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+            className="w-[90%] h-[75%] relative z-[5] drop-shadow-[0_0_50px_rgba(0,196,255,0.2)]"
+            initial={{ opacity: 0, scale: 0.7 }}
+            animate={{ 
+              opacity: 1, 
+              scale: 0.9, 
+              rotate: 0,
+              y: [0, -15, 0] 
+            }}
+            transition={{ 
+              opacity: { duration: 1 },
+              scale: { duration: 1 },
+              y: { duration: 5, repeat: Infinity, ease: "easeInOut" }
+            }}
           />
 
           {/* Decorative Glassmorphism Cards */}
@@ -137,11 +191,6 @@ const Hero = () => {
             <div className="text-gradient text-[18px] font-bold">Smart Workflows</div>
             <div className="w-12 h-1 bg-secondary rounded-full mt-1" />
           </motion.div>
-
-          {/* original gradients */}
-          <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient opacity-30" />
-          <div className="absolute z-[1] w-[80%] h-[80%] rounded-full white__gradient bottom-40 opacity-20" />
-          <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient opacity-30" />
         </div>
       </div>
 

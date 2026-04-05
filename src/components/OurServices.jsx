@@ -6,7 +6,7 @@ import Particles from '../../Reactsbit/Particles/Particles';
 
 // Updated links to actual routes
 
-import { arrowUp, webDevelopment,appDevelopment,seo,uiux,digital,tech,maintance,agents, chatbot, automation, computer,predictive,generative,education,voice, gamedevelopment, library, portfolio, product, restaurant,food,web,custom,organic,portfoli,doctor,home,zym,sports,er,junk,face, plant,store, health, ecom, producer} from "../assets";
+import { arrowUp, webDevelopment, appDevelopment, seo, uiux, digital, tech, maintance, agents, chatbot, automation, computer, predictive, generative, education, voice, gamedevelopment, library, portfolio, product, restaurant, food, web, custom, organic, portfoli, doctor, home, zym, sports, er, junk, face, plant, store, health, ecom, producer } from "../assets";
 
 const services = [
   {
@@ -185,7 +185,7 @@ const OurServices = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const scrollRef = useRef(null);
-  const mockupImages = [gamedevelopment, library, portfolio, product, restaurant, food, web, custom, organic, portfoli, doctor, home, zym, sports,er,junk,face,plant,store,health,ecom,producer];
+  const mockupImages = [gamedevelopment, library, portfolio, product, restaurant, food, web, custom, organic, portfoli, doctor, home, zym, sports, er, junk, face, plant, store, health, ecom, producer];
 
   useEffect(() => {
     // Simulate loading delay
@@ -269,12 +269,23 @@ const OurServices = () => {
         />
       </div>
       <div className={`${styles.boxWidth} mx-auto relative z-10`}>
-        {/* New What we offer section */}
-        <div className="mb-12 text-center">
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Our Delivered Solutions</h2>
-          <p className="text-xl text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Industry-ready SaaS, responsive websites, and intuitive mobile apps crafted with cutting-edge technology.
-          </p>
+        {/* Use Cases Section */}
+        <div className="mb-20 text-center relative z-10">
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-[52px] font-black ss:leading-[64px] leading-[52px] mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent uppercase tracking-[-2px]"
+          >
+            Built for Real Businesses
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.7 }}
+            transition={{ delay: 0.3 }}
+            className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed font-bold italic uppercase tracking-[5px] text-[12px]"
+          >
+            From Coaching Institutes to E-commerce — our AI systems solve real-world operational bottlenecks.
+          </motion.p>
           <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
             <div className="relative">
               <div
@@ -307,9 +318,8 @@ const OurServices = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                    currentIndex === index ? 'bg-blue-500 scale-125' : 'bg-gray-400 hover:bg-gray-300'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index ? 'bg-blue-500 scale-125' : 'bg-gray-400 hover:bg-gray-300'
+                    }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
               ))}
@@ -459,15 +469,15 @@ const OurServices = () => {
                       <p className="text-gray-600 text-sm leading-relaxed line-clamp-3">{description}</p>
                     )}
                   </div>
-                <a
-                  href={link.startsWith('/') ? link : `/${link}`}
-                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold inline-flex items-center justify-center px-5 py-2 rounded-full transition-all duration-300 group text-sm shadow-lg hover:shadow-xl transform hover:scale-105 w-full"
-                >
-                  Learn More
-                  <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </a>
+                  <a
+                    href={link.startsWith('/') ? link : `/${link}`}
+                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold inline-flex items-center justify-center px-5 py-2 rounded-full transition-all duration-300 group text-sm shadow-lg hover:shadow-xl transform hover:scale-105 w-full"
+                  >
+                    Learn More
+                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
                 </div>
               </motion.div>
             ))}
