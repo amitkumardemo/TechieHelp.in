@@ -181,7 +181,7 @@ import supriyaJalani from "./supriya_jalani.jpeg";
 import adityaKumar from "./Aditya_kumar.jpeg";
 import mdAmzad from "./Amzad.jpeg";
 import cyber from "./cyber.webp";
-import certificate from "./certificate.png";
+import certificate from "./certificate.jpeg";
 import recommendation from "./recommendation.png";
 
 // New images
