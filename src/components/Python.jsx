@@ -31,6 +31,7 @@ import {
   kit,
   kitNodha,
   kitCert,
+  aryanp,
 } from "../assets";
 import InternshipFAQ from "./InternshipFAQ";
 import { Calendar, IndianRupee, Clock, CheckCircle, Briefcase, Star, Download, QrCode, Shield, Award, Linkedin } from 'lucide-react';
@@ -399,7 +400,6 @@ const Python = () => {
       },
     ],
   ];
-
   if (loading) return <LoadingSpinner />;
 
   return (
@@ -455,6 +455,15 @@ const Python = () => {
                 <div className="flex items-center gap-2 text-white">
                   <Briefcase className="w-5 h-5 text-blue-400" />
                   <span className="text-sm font-medium">Career Support & Hackathons</span>
+                  <span className="text-sm font-medium">10–16 Weeks Internship</span>
+                </div>
+                <div className="flex items-center gap-2 text-white">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="text-sm font-medium">Placement-Oriented Learning</span>
+                </div>
+                <div className="flex items-center gap-2 text-white">
+                  <Briefcase className="w-5 h-5 text-blue-400" />
+                  <span className="text-sm font-medium">24/7 Mentor & Doubt Support</span>
                 </div>
               </div>
 
@@ -474,6 +483,16 @@ const Python = () => {
                   <Download className="w-4 h-4" />
                   Download Internship Syllabus
                 </button>
+                <a
+  href="https://drive.google.com/file/d/1KMG5JObcneMBHqcKw_JZmCC2l9lEI3s6/view?usp=drive_link"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2"
+>
+  <Download className="w-4 h-4" />
+  Download Internship Syllabus
+</a>
+
               </div>
               <p className="text-xs text-gray-300 mt-1">Limited seats • Certificate + Projects Included • Beginner Friendly</p>
             </header>
@@ -498,6 +517,20 @@ const Python = () => {
                 <div className="bg-yellow-100 rounded-lg p-6 text-center">
                   <div className="text-3xl font-bold text-yellow-900 mb-2">95%</div>
                   <div className="text-sm text-yellow-700">Tech Placement</div>
+                  <div className="text-3xl font-bold text-blue-900 mb-2">15+</div>
+                  <div className="text-sm text-blue-700">Industry-Level Live Projects</div>
+                </div>
+                <div className="bg-green-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-green-900 mb-2">95%</div>
+                  <div className="text-sm text-green-700">Students Improved Placement Readiness</div>
+                </div>
+                <div className="bg-indigo-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-indigo-900 mb-2">24/7</div>
+                  <div className="text-sm text-indigo-700">Mentor & Career Support</div>
+                </div>
+                <div className="bg-yellow-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-yellow-900 mb-2">₹12 LPA</div>
+                  <div className="text-sm text-yellow-700">Highest Reported Package</div>
                 </div>
               </div>
 
@@ -793,6 +826,8 @@ const Python = () => {
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Scalable Backend Systems for Resume</h3>
                   <p className="text-gray-600 text-sm">Build portfolio-worthy web applications and APIs that showcase your backend engineering skills.</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Real-World Frontend Development Projects for Resume</h3>
+                  <p className="text-gray-600 text-sm">Build portfolio-worthy projects that showcase your skills to employers</p>
                 </div>
               </div>
             </div>
@@ -903,6 +938,8 @@ const Python = () => {
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Networking with Backend Engineers & Public Recognition</h3>
                 <p className="text-lg opacity-90">Connect with fellow developers, build lasting professional relationships, and get featured on TechieHelp platforms for outstanding coding achievements</p>
+                <h3 className="text-2xl font-bold mb-2">Networking with Like-Minded Interns & Public Recognition</h3>
+                <p className="text-lg opacity-90">Connect with fellow learners, build lasting professional relationships, and get featured on TechieHelp platforms for outstanding achievements</p>
               </div>
             </div>
           </div>
@@ -1053,6 +1090,140 @@ const Python = () => {
                 </a>
               </div>
             </div>
+
+{/* Mentor 1 */}
+            <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+  {/* Profile */}
+  <div className="text-center mb-4">
+    <img
+      src={mdAmzad}
+      alt="MERN Stack Developer Expert - TechieHelp"
+      className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg object-cover"
+    />
+    <h3 className="text-xl font-bold text-gray-900 mb-1">
+      Md Amzad
+    </h3>
+    <p className="text-sm text-blue-600 font-medium">
+      MERN Stack Developer Expert • 2+ Years Experience
+    </p>
+  </div>
+
+  {/* Description */}
+  <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
+    MERN Stack Developer professional at <span className="font-medium">TechieHelp</span> with 2+ years of
+    hands-on experience in building full-stack web applications using MongoDB, Express.js, React, and Node.js,
+    and guiding students in real-world MERN stack development practices.
+  </p>
+
+  {/* Support Highlights */}
+  <div className="mb-4">
+    <h4 className="text-base font-semibold text-gray-900 mb-2">
+      Support Highlights:
+    </h4>
+    <ul className="space-y-2 text-gray-700 text-sm">
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Complete MERN stack development concepts & fundamentals</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Hands-on MongoDB, Express.js, React & Node.js guidance</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Full-stack project mentoring aligned with industry MERN standards</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Career guidance for MERN Stack & Full-Stack development roles</span>
+      </li>
+    </ul>
+  </div>
+
+  {/* LinkedIn */}
+  <div className="text-center">
+    <a
+      href="https://www.linkedin.com/in/md-amzad-b8547a296/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+      aria-label="LinkedIn Profile"
+    >
+      <Linkedin className="w-5 h-5" />
+      <span className="text-sm font-medium">Connect on LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+
+
+            {/* Mentor 2 */}
+            <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+  {/* Profile */}
+  <div className="text-center mb-4">
+    <img
+      src={AmitPhoto}
+      alt="Amit Kumar - Founder TechieHelp"
+      className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg object-cover"
+    />
+    <h3 className="text-xl font-bold text-gray-900 mb-1">
+      Amit Kumar
+    </h3>
+    <p className="text-sm text-blue-600 font-medium">
+      Founder & Placement Lead Mentor – TechieHelp
+    </p>
+  </div>
+
+  {/* Description */}
+  <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
+    Founder of <span className="font-medium">TechieHelp</span> with hands-on experience in
+    building internship programs, mentoring students, and preparing
+    candidates for real-world placements across tech domains.
+  </p>
+
+  {/* Support Highlights */}
+  <div className="mb-4">
+    <h4 className="text-base font-semibold text-gray-900 mb-2">
+      Support Highlights:
+    </h4>
+    <ul className="space-y-2 text-gray-700 text-sm">
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>End-to-end placement & internship guidance</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Resume building, LinkedIn optimization & portfolio strategy</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Project selection & real-world internship roadmap planning</span>
+      </li>
+      <li className="flex items-start gap-2">
+        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+        <span>Interview preparation & career decision mentoring</span>
+      </li>
+    </ul>
+  </div>
+
+  {/* LinkedIn */}
+  <div className="text-center">
+    <a
+      href="https://www.linkedin.com/in/amit-kumar-686196225/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+      aria-label="LinkedIn Profile"
+    >
+      <Linkedin className="w-5 h-5" />
+      <span className="text-sm font-medium">Connect on LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+
+          
+            
           </div>
         </div>
       </section>
@@ -1074,6 +1245,7 @@ const Python = () => {
           <div className="text-center mb-16">
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
               Through TechieHelp's comprehensive training, real-world projects, and expert mentorship, you'll be prepared for high-demand roles in Backend Development across startups and established tech giants.
+              Through TechieHelp's comprehensive MERN stack training, real-world projects, and expert mentorship, you'll be prepared for high-demand full-stack development roles across startups and established companies like Google, Microsoft, and Amazon.
             </p>
           </div>
 
@@ -1086,6 +1258,8 @@ const Python = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Architecture Foundations</h3>
                 <p className="text-gray-600">Master the logic and design patterns behind scalable backend systems.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Career Growth & Skill Progression</h3>
+                <p className="text-gray-600">Industry-relevant skills aligned with hiring needs and future tech trends.</p>
               </div>
             </div>
 
@@ -1096,6 +1270,8 @@ const Python = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Django & Flask Prowess</h3>
                 <p className="text-gray-600">Expertise in developing, securing, and optimizing professional web backends.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Roles Across Startups & IT Companies</h3>
+                <p className="text-gray-600">Prepared for internships, entry-level, and junior positions in diverse organizations.</p>
               </div>
             </div>
 
@@ -1106,6 +1282,8 @@ const Python = () => {
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">API & Automation</h3>
                 <p className="text-gray-600">Hands-on experience with REST APIs, Task Queues, and Process Automation.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Project-Based Learning Advantage</h3>
+                <p className="text-gray-600">Practical experience that recruiters actually value in technical interviews.</p>
               </div>
             </div>
           </div>
@@ -1134,6 +1312,7 @@ const Python = () => {
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Technologies & Tools You Will Learn</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Gain hands-on experience with industry-standard Python tools used to build web apps, automate processes, and manage production-ready databases.
+              Master the complete MERN stack (MongoDB, Express.js, React, Node.js) - the most popular and in-demand technology stack for building modern web applications used by companies like Netflix, Uber, and Airbnb.
             </p>
           </div>
 
@@ -1142,6 +1321,12 @@ const Python = () => {
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Python 3</h3>
+              <h3 className="text-xs font-semibold text-gray-800">Python</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Flask_logo.svg/1200px-Flask_logo.svg.png" alt="Flask" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Flask</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
@@ -1177,6 +1362,83 @@ const Python = () => {
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
               <img src="https://www.vectorlogo.zone/logos/redis/redis-icon.svg" alt="Redis" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Redis</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heroku_logo.svg/512px-Heroku_logo.svg.png" alt="Heroku" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Heroku</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/512px-Amazon_Web_Services_Logo.svg.png" alt="AWS" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">AWS</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Docker</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">NumPy</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Pandas</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Pytest_logo.svg/512px-Pytest_logo.svg.png" alt="Pytest" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Pytest</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn-icons-png.flaticon.com/512/2165/2165004.png" alt="REST API" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">REST API</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/1200px-Tailwind_CSS_Logo.svg.png" alt="Tailwind CSS" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Tailwind CSS</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/MongoDB_Logo.svg/1200px-MongoDB_Logo.svg.png" alt="MongoDB" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">MongoDB</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/1200px-Postgresql_elephant.svg.png" alt="PostgreSQL" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">PostgreSQL</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pycharm/pycharm-original.svg" alt="PyCharm" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">PyCharm</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Virtualenv" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Virtualenv</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/1200px-Git_icon.svg.png" alt="Git" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Git</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png" alt="GitHub" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">GitHub</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/1200px-Visual_Studio_Code_1.35_icon.svg.png" alt="VS Code" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">VS Code</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png" alt="Bootstrap" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Bootstrap</h3>
             </div>
           </div>
         </div>
@@ -1222,9 +1484,6 @@ const Python = () => {
     </div>
   </div>
 
-
-
-
             <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
               <div className="aspect-[9/16]">
                 <iframe
@@ -1259,6 +1518,9 @@ const Python = () => {
               <p className="text-lg mb-6">We provide an industry-recognized certification that validates your Python Backend development skills, internship experience, and project work through verified and trusted channels.</p>
               <h3 className="text-xl font-semibold mb-2">TechieHelp Python Developer Internship Certificate</h3>
               <p className="text-base mb-6">This certificate is issued after successful completion of training, scalable backend projects, and API evaluations. It is designed to validate real skills in Django, Flask, and Database Architecture. Each certificate is verifiable and transparent for recruiters.</p>
+              <p className="text-lg mb-6">We provide an industry-recognized certification that validates your skills, internship experience, and project work through verified and trusted channels.</p>
+              <h3 className="text-xl font-semibold mb-2">TechieHelp MERN Stack Development Internship Certificate</h3>
+              <p className="text-base mb-6">This certificate is issued after successful completion of training, projects, and assessments. It is designed to validate real skills, not just course attendance. Each certificate is verifiable and transparent for recruiters and institutions.</p>
               {/* Trust Points */}
               <div className="mb-6">
                 <h4 className="text-lg font-semibold mb-4">Trust & Verification Points</h4>
@@ -1430,7 +1692,7 @@ const Python = () => {
 
           {/* Month Tabs */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
-            {['1 month', '2 month', '3 month', '4 month'].map((month, index) => (
+            {['Month 1', 'Month 2', 'Month 3', 'Month 4'].map((month, index) => (
               <button
                 key={index}
                 onClick={() => setActiveMonth(index)}
