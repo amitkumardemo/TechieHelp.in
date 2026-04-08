@@ -60,7 +60,7 @@ const domains = [
   },
   { 
     title: "Data Science", 
-    path: "/machinelearning",
+    path: "/datascience",
     category: "AI & Data",
     icon: <Database className="w-10 h-10 text-blue-500" />, 
     color: "from-blue-600/20 to-blue-900/10 border-blue-500/30",
@@ -237,19 +237,17 @@ const DomainGrid = () => {
                   </p>
                 </div>
 
-                <a 
-                  href="https://forms.gle/N8kk845Lbfds6Pwj6"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link 
+                  to={domain.path}
                   className="relative w-full group/btn"
                 >
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover/btn:opacity-60 transition duration-1000 group-hover/btn:duration-200" />
                   <button className="relative w-full py-5 bg-[#0a0a0f] text-white font-black text-lg rounded-2xl border border-white/10 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden">
-                    <span className="relative z-10">Apply Now</span>
+                    <span className="relative z-10">Learn More</span>
                     <ChevronRight className="relative z-10 w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
                     <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                   </button>
-                </a>
+                </Link>
               </motion.div>
             ))}
           </AnimatePresence>

@@ -36,7 +36,9 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
+import TCAP from "./components/TCAP";
 import AppDevelopmentServices from "./components/AppDevelopmentServices";
+import DataScience from "./components/DataScience";
 import UIUXServices from "./components/UIUXServices";
 import SEOOptimizationServices from "./components/SEOOptimizationServices";
 import DigitalMarketingServices from "./components/DigitalMarketingServices";
@@ -81,6 +83,8 @@ import TejaBhuvaneswariDevi from "./components/students/TejaBhuvaneswariDevi";
 import GangadharSharma from "./components/students/GangadharSharma";
 import HackathonLandingPage from "./components/hackahton";
 import PlacementBoosterLanding from "./components/placement";
+import SitePolicy from "./components/Policy";
+import SiteTerms from "./components/Terms";
 
 import { useState, useEffect } from "react";
 import KaviyaranP from "./components/students/KaviyaranP";
@@ -263,8 +267,6 @@ const App = () => {
                   <Billing className="billing" />
                   <CardDeal className="cardDeal" />
 
-                  <OurServices />
-
                   <Clients className="clients" />
                   <CTA className="cta" />
                   <Testimonials className="testimonials" />
@@ -284,6 +286,7 @@ const App = () => {
           <Route path="/web-development-services" element={<WebDevelopmentServices />} />
           <Route path="/careers/training-internships" element={<Internship />} />
           <Route path="/special-batch" element={<SpecialBatch />} />
+          <Route path="/campus-ambassador" element={<TCAP />} />
           <Route path="/careers/jobs" element={<Job />} />
           <Route path="/employees" element={<Employee />} />
           <Route path="/interns" element={<Intern />} />
@@ -318,6 +321,7 @@ const App = () => {
           <Route path="/javascript" element={<JavaScript />} />
           <Route path="/node" element={<Node />} />
           <Route path="/aiml" element={<AIML />} />
+          <Route path="/datascience" element={<DataScience />} />
           <Route path="/devops" element={<DevOps />} />
           <Route path="/app-development-services" element={<AppDevelopmentServices />} />
           <Route path="/uiuxservices" element={<UIUXServices />} />
@@ -336,6 +340,8 @@ const App = () => {
           <Route path="/hiring-faq" element={<HiringFAQ />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/placement-booster" element={<PlacementBoosterLanding />} />
+          <Route path="/policy" element={<SitePolicy />} />
+          <Route path="/terms" element={<SiteTerms />} />
 
           {/* Student Profile Routes */}
           <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
@@ -407,7 +413,6 @@ const App = () => {
           {/* Intern Profile Route */}
           <Route path="/interns/:internId" element={<InternProfile />} />
         </Routes>
-        <Footer />
 
         {/* Scroll to Top Button */}
         {showScrollButton && (
@@ -449,8 +454,7 @@ const App = () => {
           </svg>
         </a>
 
-        {/* AI Chatbot */}
-        <Chatbot />
+        <Footer />
       </div>
     </Router>
   );

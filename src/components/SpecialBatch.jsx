@@ -1,467 +1,328 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { hod, swag } from "../assets"; // Reusing existing assets for consistency
+import styles, { layout } from "../style";
+import { hod, swag } from "../assets"; 
+import { 
+  Sparkles, 
+  Rocket, 
+  ShieldCheck, 
+  Users, 
+  TrendingUp, 
+  Trophy, 
+  Globe, 
+  Linkedin, 
+  IdCard, 
+  ChevronRight,
+  CheckCircle2,
+  Clock
+} from "lucide-react";
 
 const SpecialBatch = () => {
+  const benefits = [
+    { icon: <Sparkles className="w-6 h-6 text-yellow-400" />, title: "Welcome Kit", desc: "Exclusive merchandise upon enrollment" },
+    { icon: <Rocket className="w-6 h-6 text-blue-400" />, title: "Live Projects", desc: "Work on real client work, no dummy tasks" },
+    { icon: <ShieldCheck className="w-6 h-6 text-green-400" />, title: "Certification", desc: "ISO Certified internship certificate" },
+    { icon: <TrendingUp className="w-6 h-6 text-purple-400" />, title: "Stipend", desc: "Based on performance & client satisfaction" },
+    { icon: <Globe className="w-6 h-6 text-cyan-400" />, title: "Profile Feature", desc: "Get featured on our official website" },
+    { icon: <Linkedin className="w-6 h-6 text-blue-600" />, title: "LinkedIn Badge", desc: "Exclusive digital badge for your profile" },
+  ];
+
+  const domains = [
+    { icon: "📱", title: "App Developer", desc: "Master Flutter or React Native with real-world app deployments." },
+    { icon: "💻", title: "Frontend Developer", desc: "Build high-performance React architectures for global clients." },
+    { icon: "🔧", title: "Full Stack Developer", desc: "The ultimate path. Master MERN stack and cloud deployments." }
+  ];
+
+  const steps = [
+    { title: "Enroll & Get Gear", desc: "Secure your spot and receive your exclusive welcome kit." },
+    { title: "Client Assignment", desc: "Get onboarded to a live project with dedicated mentors." },
+    { title: "Collaborate & Build", desc: "Work in a professional environment and submit high-quality code." },
+    { title: "Certify & Launch", desc: "Earn your certificate and get referred to our hiring partners." }
+  ];
+
   return (
-    <div className="bg-primary text-white min-h-screen">
+    <div className="bg-primary text-white min-h-screen font-poppins overflow-hidden pt-48">
       {/* Hero Section */}
-      <div className="relative pt-32 px-4 bg-gradient-to-br from-primary via-blue-900 to-purple-900">
-        <div className="container mx-auto">
-          <div className="max-w-7xl w-full flex flex-col lg:flex-row items-center justify-between gap-12 mb-20">
-            {/* Hero Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="w-full lg:w-1/2 text-center lg:text-left"
-            >
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="inline-block px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm font-semibold mb-4"
-              >
-                🚀 Limited Time Special Batch
-              </motion.div>
-
-              <motion.h1
-                className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                Transform Your Career with <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">Real-World Projects</span>
-              </motion.h1>
-
-              <motion.p
-                className="text-xl mb-8 text-gray-300 leading-relaxed"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.6 }}
-              >
-                Join our exclusive Special Batch Internship program and gain hands-on experience working on live client projects. Build your portfolio, learn from industry experts, and launch your tech career with confidence.
-              </motion.p>
-
-              {/* Key Benefits */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">🎁</span>
-                  </div>
-                  <span className="text-gray-300">Welcome Kit upon enrollment</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">💻</span>
-                  </div>
-                  <span className="text-gray-300">Work on real client projects (no dummy tasks)</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">🚀</span>
-                  </div>
-                  <span className="text-gray-300">Industry-ready skills through practical exposure</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">👨‍🏫</span>
-                  </div>
-                  <span className="text-gray-300">Mentorship from experienced professionals</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">📜</span>
-                  </div>
-                  <span className="text-gray-300">Internship Certificate from TechieHelp</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-yellow-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">💰</span>
-                  </div>
-                  <span className="text-gray-300">Stipend opportunity (based on client satisfaction)</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-indigo-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">🌐</span>
-                  </div>
-                  <span className="text-gray-300">Your Profile Featured on TechieHelp's Official Website</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-pink-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">🔗</span>
-                  </div>
-                  <span className="text-gray-300">Exclusive LinkedIn Badge</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-teal-500 rounded-full flex items-center justify-center">
-                    <span className="text-white text-sm">🆔</span>
-                  </div>
-                  <span className="text-gray-300">TechieHelp Student ID Card</span>
-                </div>
-              </motion.div>
-
-              {/* Stats */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.0 }}
-                className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8"
-              >
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-400">500+</div>
-                  <div className="text-sm text-gray-400">Students Trained</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-400">95%</div>
-                  <div className="text-sm text-gray-400">Placement Rate</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-400">12LPA</div>
-                  <div className="text-sm text-gray-400">Highest Package</div>
-                </div>
-              </motion.div>
-
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 }}
-                className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-              >
-                <motion.a
-                  href="https://forms.gle/MUSBDGVVap4eqH418"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-block px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-semibold rounded-full hover:from-blue-700 hover:to-purple-700 transition shadow-lg text-center"
-                >
-                  Enroll Now - ₹3000
-                </motion.a>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="inline-block px-8 py-4 border-2 border-white/30 text-white text-lg font-semibold rounded-full hover:bg-white/10 transition text-center"
-                >
-                  Learn More
-                </motion.button>
-              </motion.div>
-
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.4 }}
-                className="text-sm text-gray-400 mt-4"
-              >
-                ⏰ Limited seats available. Original price: ₹5000 | Special offer ends soon!
-              </motion.p>
-            </motion.div>
-
-            {/* Hero Image */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="w-full lg:w-1/2 relative"
-            >
-              <div className="relative h-96 md:h-[600px] rounded-2xl overflow-hidden shadow-2xl">
-                <motion.img
-                  src={hod}
-                  alt="Special Batch Internship HOD"
-                  className="w-full h-full object-contain"
-                  initial={{ scale: 1.1 }}
-                  animate={{ scale: 1 }}
-                  transition={{ duration: 1.2 }}
-                />
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-
-                {/* Floating elements */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute top-8 right-8 bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-lg"
-                >
-                  <div className="text-sm font-semibold text-gray-800">Live Projects</div>
-                  <div className="text-xs text-gray-600">Real Client Work</div>
-                </motion.div>
-
-                <motion.div
-                  animate={{ y: [0, 10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute bottom-8 left-8 bg-blue-500/90 backdrop-blur-sm rounded-lg p-3 shadow-lg text-white"
-                >
-                  <div className="text-sm font-semibold">Expert Mentors</div>
-                  <div className="text-xs">Industry Leaders</div>
-                </motion.div>
-              </div>
-            </motion.div>
-          </div>
+      <section className={`${layout.section} ${styles.paddingX} pt-12 pb-16 relative overflow-hidden`}>
+        {/* Ambient Backgrounds */}
+        <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+          <div className="absolute top-[10%] left-[-5%] w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px]" />
+          <div className="absolute bottom-[20%] right-[-5%] w-[400px] h-[400px] bg-purple-500/10 rounded-full blur-[100px]" />
         </div>
 
-        {/* Background decorative elements */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-        </div>
-      </div>
-
-      {/* Key Details Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-primary to-blue-900">
-        <div className="container mx-auto max-w-6xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-12"
-          >
-            Why Join This Internship?
-          </motion.h2>
-          <motion.ul
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.15,
-                  delayChildren: 0.2
-                }
-              }
-            }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center"
-          >
-            {[
-              { icon: "💼", title: "Real Client Projects", desc: "Learn by doing on actual client work" },
-              { icon: "🎯", title: "Industry-Ready Experience", desc: "Gain practical skills for your career" },
-              { icon: "📦", title: "Welcome Kit Included", desc: "Get exclusive merchandise and resources" },
-              { icon: "💰", title: "Special Pricing", desc: "Original ₹5000 | Limited Offer: ₹3000" },
-              { icon: "👨‍🏫", title: "Professional Mentorship", desc: "Guidance from industry experts" }
-            ].map((item, index) => (
-              <motion.li
-                key={index}
-                variants={{
-                  hidden: { opacity: 0, y: 60, scale: 0.8 },
-                  visible: { opacity: 1, y: 0, scale: 1 }
-                }}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="bg-white bg-opacity-10 rounded-xl p-6 backdrop-blur-sm border border-white/20"
-              >
-                <motion.span className="text-4xl mb-4 block" whileHover={{ scale: 1.2 }}>
-                  {item.icon}
-                </motion.span>
-                <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                <p className="text-gray-300">{item.desc}</p>
-              </motion.li>
-            ))}
-          </motion.ul>
-        </div>
-      </section>
-
-      {/* Domains Available Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-blue-900 to-purple-900">
-        <div className="container mx-auto max-w-6xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
-          >
-            Available Domains
-          </motion.h2>
+        <div className={`${layout.sectionInfo} relative z-10`}>
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.2,
-                  delayChildren: 0.2
-                }
-              }
-            }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex items-center gap-3 px-4 py-2 rounded-full bg-blue-500/10 border border-blue-500/20 mb-8 backdrop-blur-md w-fit"
           >
-            {[
-              { icon: "📱", title: "Android Developer", desc: "Build mobile applications for Android platform using modern technologies." },
-              { icon: "💻", title: "Frontend Developer", desc: "Create stunning user interfaces and experiences with web technologies." },
-              { icon: "🔧", title: "Full Stack Developer", desc: "Master both frontend and backend development for complete web solutions." }
-            ].map((domain, index) => (
-              <motion.div
-                key={index}
-                variants={{
-                  hidden: { opacity: 0, y: 60, scale: 0.8 },
-                  visible: { opacity: 1, y: 0, scale: 1 }
-                }}
-                whileHover={{ scale: 1.05, y: -10 }}
-                className="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm border border-white/20 text-center"
-              >
-                <motion.span className="text-6xl mb-6 block" whileHover={{ scale: 1.2 }}>
-                  {domain.icon}
-                </motion.span>
-                <h3 className="text-2xl font-bold mb-4">{domain.title}</h3>
-                <p className="text-gray-300 leading-relaxed">{domain.desc}</p>
-              </motion.div>
-            ))}
+            <Sparkles className="w-4 h-4 text-secondary animate-pulse" />
+            <span className="text-[10px] font-black uppercase tracking-[3px] text-blue-300">Limited-Time Special Batch</span>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Eligibility Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-purple-900 to-primary">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent"
+          <motion.h1
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            className={`${styles.heading2} mb-6`}
           >
-            Who Is Eligible?
-          </motion.h2>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
-            className="bg-white bg-opacity-10 rounded-xl p-8 backdrop-blur-sm border border-white/20"
-          >
-            <motion.p
-              className="text-xl mb-6 text-gray-300 leading-relaxed"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              This internship is open to students from any academic year who possess a foundational understanding of the chosen domain. Whether you're in your first year or final year, if you have basic knowledge and a passion for learning, you're welcome to join our program.
-            </motion.p>
-            <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7 }}
-              viewport={{ once: true }}
-              className="flex flex-wrap justify-center gap-4"
-            >
-              <div className="bg-blue-500/20 px-4 py-2 rounded-full text-blue-300 font-semibold">
-                Any Year Students
-              </div>
-              <div className="bg-purple-500/20 px-4 py-2 rounded-full text-purple-300 font-semibold">
-                Basic Domain Knowledge
-              </div>
-              <div className="bg-green-500/20 px-4 py-2 rounded-full text-green-300 font-semibold">
-                Passion for Learning
-              </div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
+            Transform Your Career with <br className="sm:block hidden" />
+            <span className="text-gradient">Real-World Projects</span>
+          </motion.h1>
 
-      {/* How It Works Section */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-          >
-            How It Works
-          </motion.h2>
-          <div className="relative max-w-4xl mx-auto space-y-8">
-            {/* Vertical line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-blue-400 to-purple-500 h-full rounded-full"></div>
-            {[
-              { step: "1. Enroll & Get Welcome Kit", desc: "Sign up and receive your exclusive internship kit to kickstart your journey." },
-              { step: "2. Get Assigned Client Projects", desc: "Dive into real-world projects tailored to build your skills." },
-              { step: "3. Work with Mentors & Submit Work", desc: "Collaborate with experts, get feedback, and showcase your progress." },
-              { step: "4. Gain Experience & Certificate", desc: "Complete projects, earn certification, and boost your portfolio." }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className={`flex items-center mb-12 ${index % 2 === 0 ? "justify-start" : "justify-end"}`}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  className="w-80 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl p-6 shadow-xl relative text-white"
-                >
-                  {/* Step dot */}
-                  <div className={`absolute top-1/2 transform -translate-y-1/2 w-4 h-4 bg-white rounded-full ${index % 2 === 0 ? "right-0 translate-x-1/2" : "left-0 -translate-x-1/2"}`}></div>
-                  <h3 className="text-lg font-bold mb-2">{item.step}</h3>
-                  <p className="text-sm leading-relaxed">{item.desc}</p>
-                </motion.div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Registration Section */}
-      <section className="py-20 px-4 bg-gradient-to-b from-purple-900 to-primary">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-3xl md:text-4xl font-bold mb-6 text-white"
-          >
-            Limited Time Offer – Enroll Today!
-          </motion.h2>
           <motion.p
-            className="text-lg mb-8 text-gray-300"
             initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
+            animate={{ opacity: 0.8 }}
+            className={`${styles.paragraph} max-w-[550px] mb-10 text-lg border-l-2 border-blue-500/30 pl-6 bg-gradient-to-r from-blue-500/5 to-transparent`}
           >
-            Secure your spot in the Special Batch at the discounted price of ₹3000 (Original ₹5000). 
-            Deadline: [Optional: Add deadline here, e.g., End of Month]
+            Join our exclusive Special Batch. Gain hands-on experience on live client projects, build a premium portfolio, and launch your career with industry-proven skills.
           </motion.p>
-          <motion.a
-            href="https://forms.gle/MUSBDGVVap4eqH418"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block px-10 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white text-xl font-bold rounded-full hover:from-purple-700 hover:to-blue-700 transition shadow-lg"
-          >
-            Enroll Now
-          </motion.a>
-          {/* Welcome Kit Image */}
-          <motion.div
+
+          {/* Quick Stats */}
+          <div className="grid grid-cols-3 gap-8 mb-12 border-t border-white/5 pt-8 w-full max-w-[500px]">
+            <div>
+              <h3 className="text-3xl font-bold text-white">500+</h3>
+              <p className="text-[10px] text-dimWhite uppercase tracking-widest mt-1">Students</p>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-secondary">95%</h3>
+              <p className="text-[10px] text-dimWhite uppercase tracking-widest mt-1">Hired</p>
+            </div>
+            <div>
+              <h3 className="text-3xl font-bold text-white">12LPA</h3>
+              <p className="text-[10px] text-dimWhite uppercase tracking-widest mt-1">Highest PKG</p>
+            </div>
+          </div>
+
+          <div className="flex flex-wrap gap-5">
+            <motion.a
+              href="https://forms.gle/MUSBDGVVap4eqH418"
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="py-5 px-10 bg-blue-gradient text-primary font-black text-lg rounded-2xl shadow-xl shadow-blue-500/10 flex items-center gap-3 group"
+            >
+              Enroll Now – ₹3000
+              <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </motion.a>
+            <p className="flex items-center gap-2 text-dimWhite text-sm font-medium">
+              <Clock className="w-4 h-4 text-blue-400" />
+              Offer ends soon • Limited seats
+            </p>
+          </div>
+        </div>
+
+        <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
-            viewport={{ once: true }}
-            className="mt-12 flex justify-center"
-          >
-            <img
-              src={swag} // Reusing swag for welcome kit illustration
-              alt="Welcome Kit"
-              className="max-w-md rounded-xl shadow-2xl"
-            />
-          </motion.div>
+            animate={{ opacity: 1, scale: 1 }}
+            className={`${layout.sectionImg} relative`}
+        >
+          <div className="relative group perspective-1000">
+             {/* Background glow for image */}
+             <div className="absolute inset-0 bg-blue-500/20 blur-[100px] rounded-full scale-75 animate-pulse" />
+             
+             <motion.img
+               src={hod}
+               alt="Technical Head"
+               className="w-full h-auto max-w-[500px] relative z-10 drop-shadow-2xl"
+               animate={{ y: [0, -20, 0] }}
+               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+             />
+
+             {/* Floating Info Cards */}
+             <motion.div
+               animate={{ x: [0, 10, 0], y: [0, -10, 0] }}
+               transition={{ duration: 4, repeat: Infinity }}
+               className="absolute top-10 -left-10 md:-left-20 glass-morphism p-5 rounded-2xl border-white/5 z-20 backdrop-blur-3xl shadow-2xl"
+             >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center">
+                    <Trophy className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-blue-400 font-black">Success Rate</p>
+                    <p className="text-xl font-black text-white">99.2%</p>
+                  </div>
+                </div>
+             </motion.div>
+
+             <motion.div
+               animate={{ x: [0, -10, 0], y: [0, 10, 0] }}
+               transition={{ duration: 5, delay: 1, repeat: Infinity }}
+               className="absolute bottom-10 -right-10 glass-morphism p-5 rounded-2xl border-white/5 z-20 backdrop-blur-3xl shadow-2xl"
+             >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-purple-500/20 flex items-center justify-center">
+                    <Users className="w-5 h-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-purple-400 font-black">Elite Batch</p>
+                    <p className="text-xl font-black text-white">Top 5% Talent</p>
+                  </div>
+                </div>
+             </motion.div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Benefits Grid */}
+      <section className={`${styles.paddingY} ${styles.paddingX} border-t border-white/5 bg-[#05050a]`}>
+        <div className="max-w-[1280px] mx-auto">
+          <div className="text-center mb-20">
+             <h2 className="text-[42px] font-black text-white uppercase tracking-tighter mb-4">The Elite <span className="text-gradient">Advantage</span></h2>
+             <p className="text-dimWhite font-mono text-[11px] uppercase tracking-[4px]">Why our special batch stands out</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-10">
+            {benefits.map((benefit, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="p-8 rounded-[2rem] glass-morphism border-white/5 hover:bg-white/[0.04] hover:border-white/10 transition-all group"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  {benefit.icon}
+                </div>
+                <h4 className="text-xl font-black text-white mb-3 tracking-tight group-hover:text-secondary transition-colors">{benefit.title}</h4>
+                <p className="text-dimWhite text-sm leading-relaxed">{benefit.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
+      {/* Domains Section */}
+      <section className={`${styles.paddingY} ${styles.paddingX} relative`}>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[300px] bg-secondary/5 blur-[120px] rounded-full" />
+        
+        <div className="max-w-[1280px] mx-auto relative z-10">
+          <div className="flex md:flex-row flex-col items-center gap-10 mb-20">
+            <div className="flex-1">
+               <h2 className={styles.heading2}>Available <span className="text-gradient">Specializations</span></h2>
+            </div>
+            <div className="flex-1">
+               <p className={styles.paragraph}>We've curated the most high-demand domains for the special batch to ensure maximum employability and technical depth.</p>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-10">
+            {domains.map((domain, i) => (
+              <motion.div
+                key={i}
+                whileHover={{ y: -10 }}
+                className="p-10 rounded-[3rem] bg-black-gradient-2 border border-white/5 shadow-2xl text-center relative overflow-hidden group"
+              >
+                <div className="absolute top-0 right-0 w-24 h-24 bg-white/5 rounded-bl-full opacity-50 transition-all group-hover:w-full group-hover:h-full group-hover:rounded-none group-hover:opacity-10 duration-700" />
+                <span className="text-6xl mb-8 block grayscale group-hover:grayscale-0 transition-all duration-500 scale-90 group-hover:scale-110">{domain.icon}</span>
+                <h3 className="text-3xl font-black text-white mb-4 leading-tight">{domain.title}</h3>
+                <p className="text-dimWhite leading-relaxed group-hover:text-white transition-colors">{domain.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className={`${styles.paddingY} ${styles.paddingX} bg-[#05050a]`}>
+        <div className="max-w-[1280px] mx-auto">
+          <div className="text-center mb-20">
+             <h2 className="text-[40px] font-black text-white uppercase tracking-tighter">Roadmap to <span className="text-gradient">Excellence</span></h2>
+             <div className="mt-4 flex items-center justify-center gap-2">
+               <span className="h-[2px] w-12 bg-secondary/30" />
+               <p className="text-secondary font-mono tracking-[5px] text-[10px] uppercase">4-Phase Transformation</p>
+               <span className="h-[2px] w-12 bg-secondary/30" />
+             </div>
+          </div>
+
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 relative">
+            {/* Horizontal line for desktop */}
+            <div className="absolute top-24 left-0 w-full h-[1px] bg-white/10 hidden lg:block" />
+
+            {steps.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: i * 0.2 }}
+                viewport={{ once: true }}
+                className="relative z-10 flex flex-col items-center text-center"
+              >
+                <div className="w-16 h-16 rounded-full bg-primary border-4 border-white/5 flex items-center justify-center mb-8 relative z-20 group">
+                   <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-[10px] opacity-0 group-hover:opacity-100 transition-opacity" />
+                   <span className="text-xl font-black text-secondary">{i + 1}</span>
+                </div>
+                <h4 className="text-xl font-bold text-white mb-4 px-4">{step.title}</h4>
+                <p className="text-dimWhite text-sm leading-relaxed px-6">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Eligibility Callout */}
+      <section className={`${styles.paddingY} ${styles.paddingX}`}>
+        <div className="max-w-[900px] mx-auto p-12 rounded-[3.5rem] bg-blue-500/5 border border-white/5 backdrop-blur-3xl text-center relative overflow-hidden group">
+          <div className="absolute -inset-2 bg-blue-500/5 blur-[100px] pointer-events-none" />
+          <h2 className="text-3xl font-black text-white mb-8 tracking-tighter uppercase italic">Who is this for?</h2>
+          <p className="text-xl text-dimWhite leading-relaxed mb-10 max-w-[700px] mx-auto">
+            Open to students from <span className="text-white font-bold">Any Year</span> with basic domain knowledge and a passion for building enterprise-grade software.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+              {["Any Academic Year", "Basic Knowledge Needed", "Industry Passion"].map((tag) => (
+                <div key={tag} className="px-6 py-2 rounded-full border border-white/10 bg-white/5 text-[10px] font-black uppercase tracking-widest text-blue-300">
+                  {tag}
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section - Replicated Professional Style */}
+      <section className={`${styles.paddingX} ${styles.paddingY}`}>
+        <div className={`${styles.flexCenter} ${styles.marginY} ${styles.padding} sm:flex-row flex-col bg-black-gradient-2 rounded-[40px] shadow-2xl border border-white/5 backdrop-blur-3xl relative overflow-hidden group min-h-[350px]`}>
+          <div className="absolute -inset-2 bg-blue-500/5 blur-[120px] opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+          <div className="absolute top-0 right-0 w-[40% ] h-full bg-secondary opacity-5 blur-[100px] rounded-full translate-x-1/2" />
+
+          <div className="flex-1 flex flex-col relative z-10">
+            <div className="flex items-center gap-3 mb-6">
+               <div className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
+               <p className="text-secondary font-mono tracking-[4px] text-[10px] uppercase">Immediate Enrollment</p>
+            </div>
+            <h2 className={`${styles.heading2} tracking-tighter`}>Secure Your Spot in the <br className="hidden sm:block" /> <span className="text-gradient">Special Batch.</span></h2>
+            <p className={`${styles.paragraph} max-w-[500px] mt-8 text-white/50`}>
+              Grab the exclusive ₹2000 discount. Join the elite team working on projects that actually matter.
+            </p>
+            <div className="mt-8 flex items-center gap-6">
+               <div className="flex -space-x-3">
+                 {[1,2,3,4].map(i => (
+                   <div key={i} className={`w-10 h-10 rounded-full border-2 border-primary bg-zinc-800 flex items-center justify-center text-[10px] font-bold`}>{String.fromCharCode(64 + i)}</div>
+                 ))}
+                 <div className="w-10 h-10 rounded-full border-2 border-primary bg-blue-600 flex items-center justify-center text-[10px] font-bold">+12</div>
+               </div>
+               <p className="text-dimWhite font-bold text-xs uppercase tracking-[2px]">Joining Now</p>
+            </div>
+          </div>
+
+          <div className={`${styles.flexCenter} sm:ml-10 ml-0 sm:mt-0 mt-12 relative z-10`}>
+            <motion.a
+                href="https://forms.gle/MUSBDGVVap4eqH418"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="py-6 px-12 bg-white text-primary font-black text-xl rounded-[2rem] shadow-2xl flex items-center gap-4 hover:shadow-white/10 transition-all"
+            >
+              Enroll Now
+              <ChevronRight className="w-6 h-6" />
+            </motion.a>
+          </div>
+        </div>
+      </section>
+      
+      {/* Footer is already rendered in App.jsx */}
     </div>
   );
 };

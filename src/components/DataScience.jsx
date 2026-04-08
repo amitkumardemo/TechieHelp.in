@@ -74,13 +74,13 @@ const Section = ({ title, children, imgSrc, imgLeft = true }) => {
 
 const TypingAnimation = () => {
   const roles = [
-    "AI/ML Developer",
+    "Data Analyst",
     "Data Scientist",
-    "Machine Learning Engineer",
-    "Deep Learning Specialist",
-    "Computer Vision Engineer",
-    "Natural Language Processing Expert",
-    "Generative AI Developer"
+    "Business Intelligence Analyst",
+    "SQL Developer",
+    "Visualization Expert",
+    "Research Scientist",
+    "Advanced Analytics Professional"
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -125,7 +125,7 @@ const TypingAnimation = () => {
   );
 };
 
-const AIML = () => {
+const DataScience = () => {
   const [loading, setLoading] = useState(true);
   const [activeMonth, setActiveMonth] = useState(0);
   const [autoScroll, setAutoScroll] = useState(true);
@@ -152,11 +152,10 @@ const AIML = () => {
           {
             timeline: 'Day First',
             includes: [
-              { type: 'normal', text: 'Program orientation & AI/ML roadmap' },
-              { type: 'normal', text: 'Python for Data Science setup (Anaconda/Jupyter)' },
-              { type: 'normal', text: 'Introduction to NumPy and Pandas' },
-              { type: 'normal', text: 'Internship workflow & GitHub for AI' },
-              { type: 'project', level: 'beginner', title: 'Exploratory Data Analysis (EDA) Task', subtitle: 'Analyze a real dataset using Pandas & Seaborn' },
+              { type: 'normal', text: 'Program orientation & Data Science roadmap' },
+              { type: 'normal', text: 'Introduction to Data Analysis Lifecycle' },
+              { type: 'normal', text: 'Advanced Excel: Formulas, Pivot Tables, Power Query' },
+              { type: 'project', level: 'beginner', title: 'Sales Analysis in Excel', subtitle: 'Clean and analyze a messy retail dataset' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -170,10 +169,10 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Statistics for Machine Learning' },
-              { type: 'normal', text: 'Probability, Distributions, and Hypothesis Testing' },
+              { type: 'normal', text: 'SQL Fundamentals: SELECT, WHERE, ORDER BY' },
+              { type: 'normal', text: 'Joins, Aggregations, and Group By' },
               { type: 'normal', text: 'Weekly doubt-solving session with mentor' },
-              { type: 'project', level: 'beginner', title: 'Statistical Analysis Report', subtitle: 'Perform hypothesis testing on a business dataset' }
+              { type: 'project', level: 'beginner', title: 'ER Diagram & SQL Querying', subtitle: 'Extract insights from an HR database' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
@@ -185,11 +184,10 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Linear Regression & Cost Functions' },
-              { type: 'normal', text: 'Gradient Descent implementation' },
-              { type: 'normal', text: 'Feature Engineering & Scaling' },
+              { type: 'normal', text: 'Advanced SQL: Window Functions, CTEs' },
+              { type: 'normal', text: 'Database Design & Normalization' },
               { type: 'normal', text: 'Mentor doubt-solving session' },
-              { type: 'project', level: 'intermediate', title: 'House Price Prediction Model', subtitle: 'Build and optimize a linear regression model' }
+              { type: 'project', level: 'intermediate', title: 'Business Reporting SQL', subtitle: 'Build multi-table queries for financial reports' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
@@ -201,11 +199,10 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Logistic Regression & Classification' },
-              { type: 'normal', text: 'Evaluation Metrics (Precision, Recall, F1)' },
-              { type: 'normal', text: 'Bias-Variance Tradeoff' },
+              { type: 'normal', text: 'Introduction to Data Visualization' },
+              { type: 'normal', text: 'Excel Dashboards & Storytelling' },
               { type: 'normal', text: 'Mentor doubt-solving session' },
-              { type: 'project', level: 'hard', title: 'Diabetes Prediction System', subtitle: 'Create a classification system with complete evaluation' }
+              { type: 'project', level: 'hard', title: 'Interactive Sales Tracker', subtitle: 'Automated Excel dashboard with slices & VBA basics' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
@@ -219,11 +216,10 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Decision Trees & Entropy' },
-              { type: 'normal', text: 'Information Gain & Gini Impurity' },
-              { type: 'normal', text: 'Random Forest Ensembles' },
-              { type: 'normal', text: 'Introduction to Ensemble Learning' },
-              { type: 'project', level: 'beginner', title: 'Loan Approval Classifier', subtitle: 'Build a decision tree based classifier' },
+              { type: 'normal', text: 'Python for Data Science introduction' },
+              { type: 'normal', text: 'NumPy for Numerical Computing' },
+              { type: 'normal', text: 'Pandas Essentials: DataFrames & Series' },
+              { type: 'project', level: 'beginner', title: 'Data Manipulation Task', subtitle: 'Handle real-world data issues using Pandas' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -236,11 +232,9 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Boosting Techniques (XGBoost, AdaBoost)' },
-              { type: 'normal', text: 'Hyperparameter Tuning (GridSearchCV)' },
-              { type: 'normal', text: 'Cross-Validation Strategies' },
-              { type: 'normal', text: 'Handing Imbalanced Data (SMOTE)' },
-              { type: 'project', level: 'beginner', title: 'Customer Churn Prediction', subtitle: 'Optimize a Gradient Boosting model for churn' },
+              { type: 'normal', text: 'Data Visualization with Matplotlib & Seaborn' },
+              { type: 'normal', text: 'Exploratory Data Analysis (EDA) Techniques' },
+              { type: 'project', level: 'beginner', title: 'Customer Churn EDA', subtitle: 'Visualize trends in a shopping mall dataset' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -253,11 +247,9 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Unsupervised Learning (K-Means)' },
-              { type: 'normal', text: 'Principal Component Analysis (PCA)' },
-              { type: 'normal', text: 'Dimentionality Reduction' },
-              { type: 'normal', text: 'User segmentation best practices' },
-              { type: 'project', level: 'intermediate', title: 'Market Basket Analysis', subtitle: 'Apply clustering algorithms for customer segmentation' },
+              { type: 'normal', text: 'Statistics for Data Science' },
+              { type: 'normal', text: 'Probability, Distributions, and Hypothesis Testing' },
+              { type: 'project', level: 'intermediate', title: 'Statistical Analysis Report', subtitle: 'Perform hypothesis testing on business data' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -270,50 +262,13 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Recommendation Systems' },
-              { type: 'normal', text: 'Collaborative vs Content-based filtering' },
-              { type: 'normal', text: 'Matrix Factorization' },
-              { type: 'normal', text: 'Hybrid Recommendation Models' },
-              { type: 'project', level: 'intermediate', title: 'Movie Recommendation Engine', subtitle: 'Build a personalized recommendation system' },
+              { type: 'normal', text: 'Data Cleaning Pipeline in Python' },
+              { type: 'normal', text: 'Feature Engineering Essentials' },
+              { type: 'project', level: 'hard', title: 'End-to-End Cleaning Script', subtitle: 'Build a reusable Python script for data prep' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 5',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Natural Language Processing (NLP) Basics' },
-              { type: 'normal', text: 'Tokenization, Stemming, Lemmatization' },
-              { type: 'normal', text: 'TF-IDF & Word Embeddings' },
-              { type: 'normal', text: 'Sentiment Analysis' },
-              { type: 'project', level: 'hard', title: 'Twitter Sentiment Analyzer', subtitle: 'Analyze real-time sentiment from social media data' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 6',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Model Deployment (Flask/FastAPI)' },
-              { type: 'normal', text: 'Saving Models (Pickle/Joblib)' },
-              { type: 'normal', text: 'Docker for ML Basics' },
-              { type: 'normal', text: 'MLOps Introduction' },
-              { type: 'project', level: 'hard', title: 'End-to-End ML Web App', subtitle: 'Deploy an ML model as a functional web application' },
-              { type: 'normal', text: 'HR Placement Session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] },
-          { timeline: 'Last Day', includes: [] }
         ]
       },
     ],
@@ -324,9 +279,9 @@ const AIML = () => {
           {
             timeline: 'Day First',
             includes: [
-              { type: 'normal', text: 'Introduction to Neural Networks' },
-              { type: 'normal', text: 'Activation Functions & Backpropagation' },
-              { type: 'project', level: 'intermediate', title: 'Perceptron from Scratch', subtitle: 'Implement a basic neural network without libraries' },
+              { type: 'normal', text: 'Power BI Onboarding & GUI' },
+              { type: 'normal', text: 'Power Query for Data Transformation' },
+              { type: 'project', level: 'intermediate', title: 'HR Analytics Dashboard', subtitle: 'Visualize employee turnover and performance metrics' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -340,9 +295,9 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Feedforward Neural Networks (ANN)' },
-              { type: 'normal', text: 'Optimizers (Adam, SGD) & Loss Functions' },
-              { type: 'project', level: 'intermediate', title: 'Digit Recognizer (MNIST)', subtitle: 'Build an ANN to recognize handwritten digits' },
+              { type: 'normal', text: 'Advanced DAX (Calculated Columns & Measures)' },
+              { type: 'normal', text: 'Time Intelligence Functions in Power BI' },
+              { type: 'project', level: 'intermediate', title: 'Financial Intelligence Report', subtitle: 'Build complex DAX queries for business growth analysis' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -355,9 +310,9 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Convolutional Neural Networks (CNN)' },
-              { type: 'normal', text: 'Pooling, Padding & Strides' },
-              { type: 'project', level: 'intermediate', title: 'Image Classifier (CIFAR-10)', subtitle: 'Build a CNN for multi-class image classification' },
+              { type: 'normal', text: 'Tableau Fundamentals & Mapping' },
+              { type: 'normal', text: 'Calculated Fields & Parameters in Tableau' },
+              { type: 'project', level: 'intermediate', title: 'Global Sales Map Dashboard', subtitle: 'Build a geospatial visualization of supply chain data' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -370,45 +325,13 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Object Detection & YOLO Basics' },
-              { type: 'normal', text: 'Transfer Learning (VGG, ResNet)' },
-              { type: 'project', level: 'hard', title: 'Real-time Object Detector', subtitle: 'Implement object detection using pre-trained models' },
+              { type: 'normal', text: 'Business Intelligence Strategy' },
+              { type: 'normal', text: 'Dashboard UI/UX Principles' },
+              { type: 'project', level: 'hard', title: 'Executive Summary Dashboard', subtitle: 'Design a clean, high-impact CEO report with KPI tracking' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 5',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Recurrent Neural Networks (RNN & LSTM)' },
-              { type: 'normal', text: 'Time Series Analysis & Forecasting' },
-              { type: 'project', level: 'hard', title: 'Stock Price Predictor', subtitle: 'Forecast prices using LSTM neural networks' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 6–12',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Full-scale AI/ML project development' },
-              { type: 'normal', text: 'Hyperparameter optimization (Optuna/Ray)' },
-              { type: 'normal', text: 'Portfolio project mapping' },
-              { type: 'project', level: 'hard', title: 'Final Industry-Level AI Project', subtitle: 'Complete a professional deep learning application' },
-              { type: 'normal', text: 'HR Placement Preparation Sessions' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] },
-          { timeline: 'Last Day', includes: [] }
         ]
       },
     ],
@@ -419,9 +342,9 @@ const AIML = () => {
           {
             timeline: 'Day First',
             includes: [
-              { type: 'normal', text: 'Generative AI & LLM Roadmap' },
-              { type: 'normal', text: 'Transformer Architectures (Attention Mechanism)' },
-              { type: 'project', level: 'hard', title: 'Custom GPT-style model', subtitle: 'Build a small-scale language model' },
+              { type: 'normal', text: 'Machine Learning Basics for Analysts' },
+              { type: 'normal', text: 'Linear & Logistic Regression' },
+              { type: 'project', level: 'hard', title: 'House Price Prediction Model', subtitle: 'Build a regression model based on historical data' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -435,9 +358,9 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Working with OpenAI & Hugging Face APIs' },
-              { type: 'normal', text: 'Prompt Engineering & RAG Systems' },
-              { type: 'project', level: 'hard', title: 'AI Knowledge Bot', subtitle: 'Build a RAG system for custom documents' },
+              { type: 'normal', text: 'Clustering & Classification Techniques' },
+              { type: 'normal', text: 'Customer Segmentation (K-Means)' },
+              { type: 'project', level: 'hard', title: 'Market Segmentation Project', subtitle: 'Analyze buying behavior to group high-value customers' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -450,9 +373,9 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'Fine-tuning LLMs (Llama, BERT)' },
-              { type: 'normal', text: 'Quantization & Efficient Fine-tuning' },
-              { type: 'project', level: 'hard', title: 'Specialized AI Assistant', subtitle: 'Fine-tune a model for a specific domain' },
+              { type: 'normal', text: 'Data Storytelling & Presentation Skills' },
+              { type: 'normal', text: 'Big Data Mini Project setup' },
+              { type: 'project', level: 'hard', title: 'Industry-Level Analytics Capstone', subtitle: 'End-to-end analysis of a massive real-world dataset' },
               { type: 'normal', text: 'Mentor doubt-solving session' }
             ]
           },
@@ -465,46 +388,13 @@ const AIML = () => {
           {
             timeline: 'Monday to Saturday',
             includes: [
-              { type: 'normal', text: 'AI Model Monitoring & Ethics' },
-              { type: 'normal', text: 'Scaling AI applications on Cloud' },
-              { type: 'project', level: 'hard', title: 'Production-Ready AI API', subtitle: 'Deploy an LLM-based service with monitoring' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
+              { type: 'normal', text: 'Resume & LinkedIn for Data Analysts' },
+              { type: 'normal', text: 'Portfolio Hosting (GitHub/Tableau Public)' },
+              { type: 'project', level: 'hard', title: 'Final Internship Capstone Submission', subtitle: 'Submit your end-to-end professional solution' },
+              { type: 'normal', text: 'Placement Guidance & HR Support' }
             ]
           },
           { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 5',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'Resume project mapping (AI specific)' },
-              { type: 'normal', text: 'Kaggle portfolio finalization' },
-              { type: 'project', level: 'hard', title: 'AI Portfolio Review', subtitle: 'Comprehensive review of your AI/ML projects' },
-              { type: 'normal', text: 'Mentor doubt-solving session' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] }
-        ]
-      },
-      {
-        week: 'Week 6–16',
-        rows: [
-          {
-            timeline: 'Monday to Saturday',
-            includes: [
-              { type: 'normal', text: 'AI Developer interview prep' },
-              { type: 'normal', text: 'Case studies & System design for AI' },
-              { type: 'normal', text: 'Mock interviews & Referral support' },
-              { type: 'normal', text: 'Placement guidance' },
-              { type: 'project', level: 'hard', title: 'Final AI/ML Internship Capstone', subtitle: 'Submit your end-to-end AI/ML solution' },
-              { type: 'normal', text: 'HR Placement Sessions' }
-            ]
-          },
-          { timeline: 'Sunday', includes: [] },
-          { timeline: 'Last Day', includes: [] }
         ]
       },
     ],
@@ -534,21 +424,21 @@ const AIML = () => {
           <div className="lg:w-1/2">
             <header>
               <div className="inline-block bg-yellow-500 text-black px-5 py-1 rounded-full text-xs font-medium mb-1">
-                Most Trusted AI/ML Program • National Internship Portal Aligned
+                Highly Rated Data Science Program • National Internship Portal Aligned
               </div>
               <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-snug max-w-4xl">
-                <span className="text-yellow-300 font-bold">AI/ML (Artificial Intelligence)</span> Internship & Training Program
+                <span className="text-yellow-300 font-bold">Data Science</span> Internship & Training Program
               </h1>
               <h2 className="text-xl md:text-2xl font-medium mb-2 leading-relaxed">
-                Build intelligent models, work on real-world datasets, and master Machine Learning architecture like an industry expert.
+                Uncover insights from data, master SQL, Power BI, and Advanced Analytics like an industry expert.
               </h2>
               <p className="text-base mb-2 leading-relaxed">
-                This is not just a theory course. It’s a structured internship experience with live AI projects, data science workflows, mentor guidance, and placement-focused support.
+                This is not just a theory course. It’s a structured internship experience with live Data Science projects, analytical workflows, mentor guidance, and placement-focused support.
               </p>
               <ul className="flex flex-wrap gap-3 mb-3">
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Real-World AI Projects</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Python for Data Science</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Deep Learning & Neural Networks</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Real-World Data Projects</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ SQL & Advanced Excel Mastery</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Power BI & Tableau Visualization</li>
                 <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Letter of Recommendation</li>
               </ul>
 
@@ -594,20 +484,20 @@ const AIML = () => {
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-blue-100 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-blue-900 mb-2">15+</div>
-                  <div className="text-sm text-blue-700">Industry-Level Live Projects</div>
+                  <div className="text-3xl font-bold text-blue-900 mb-2">12+</div>
+                  <div className="text-sm text-blue-700">Analytical Projects</div>
                 </div>
                 <div className="bg-green-100 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-green-900 mb-2">95%</div>
-                  <div className="text-sm text-green-700">Students Improved Placement Readiness</div>
+                  <div className="text-3xl font-bold text-green-900 mb-2">SQL</div>
+                  <div className="text-sm text-green-700">Advanced Querying</div>
                 </div>
                 <div className="bg-indigo-100 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-indigo-900 mb-2">24/7</div>
-                  <div className="text-sm text-indigo-700">Mentor & Career Support</div>
+                  <div className="text-3xl font-bold text-indigo-900 mb-2">BI</div>
+                  <div className="text-sm text-indigo-700">Analytical Dashboards</div>
                 </div>
                 <div className="bg-yellow-100 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-yellow-900 mb-2">₹12 LPA</div>
-                  <div className="text-sm text-yellow-700">Highest Reported Package</div>
+                  <div className="text-3xl font-bold text-yellow-900 mb-2">90%</div>
+                  <div className="text-sm text-yellow-700">Placement Rate</div>
                 </div>
               </div>
 
@@ -901,8 +791,8 @@ const AIML = () => {
                   <Briefcase className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">Real-World AI/ML and Data Science Projects for Resume</h3>
-                  <p className="text-gray-600 text-sm">Build portfolio-worthy projects that showcase your skills to employers</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Real-World Data Analytics Projects for Resume</h3>
+                  <p className="text-gray-600 text-sm">Build portfolio-worthy analytical projects that showcase your skills to employers</p>
                 </div>
               </div>
             </div>
@@ -1011,8 +901,8 @@ const AIML = () => {
                     <CheckCircle className="w-8 h-8 text-white" />
                   </div>
                 </div>
-                <h3 className="text-2xl font-bold mb-2">Networking with Like-Minded Interns & Public Recognition</h3>
-                <p className="text-lg opacity-90">Connect with fellow learners, build lasting professional relationships, and get featured on TechieHelp platforms for outstanding achievements</p>
+                <h3 className="text-2xl font-bold mb-2">Networking with Data Professionals & Public Recognition</h3>
+                <p className="text-lg opacity-90">Connect with fellow analysts, build lasting professional relationships, and get featured on TechieHelp platforms for outstanding achievements</p>
               </div>
             </div>
           </div>
@@ -1194,8 +1084,8 @@ const AIML = () => {
                 <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
                   <Briefcase className="w-8 h-8 text-green-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Core AI/ML Concepts</h3>
-                <p className="text-gray-600">Master the mathematics and logic behind top-tier AI systems.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Statistical Foundations</h3>
+                <p className="text-gray-600">Master the mathematics and logic behind top-tier analytical models.</p>
               </div>
             </div>
 
@@ -1214,8 +1104,8 @@ const AIML = () => {
                 <div className="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-indigo-200 transition-colors">
                   <CheckCircle className="w-8 h-8 text-indigo-600" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Deep Learning Expertise</h3>
-                <p className="text-gray-600">Hands-on experience with Neural Networks and Generative AI.</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">BI & Business Analytics</h3>
+                <p className="text-gray-600">Hands-on experience with Power BI, Tableau, and Business Strategy.</p>
               </div>
             </div>
           </div>
@@ -1243,7 +1133,7 @@ const AIML = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Technologies & Tools You Will Learn</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
-              Gain hands-on experience with industry-standard AI/ML tools used to build intelligent models, process complex datasets, and deploy production-ready AI services.
+              Gain hands-on experience with industry-standard Data Science tools used to uncover insights, process complex datasets, and build production-ready dashboards.
             </p>
           </div>
 
@@ -1255,18 +1145,18 @@ const AIML = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Scikit-learn</h3>
+              <img src="https://cdn-icons-png.flaticon.com/512/2772/2772128.png" alt="SQL" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">SQL</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/Tensorflow_logo.svg" alt="TensorFlow" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">TensorFlow</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Power BI</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" alt="PyTorch" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">PyTorch</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Tableau_Logo.png" alt="Tableau" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Tableau</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
@@ -1275,18 +1165,18 @@ const AIML = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/3/31/NumPy_logo_2020.svg" alt="NumPy" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">NumPy</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg" alt="Excel" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Excel Mastery</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Kaggle_logo.png" alt="Kaggle" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Kaggle</h3>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Pandas_logo.svg" alt="Stats" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Advanced Stats</h3>
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
               <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Created_with_Matplotlib-logo.svg" alt="Matplotlib" className="w-8 h-8 object-contain mx-auto mb-2" />
-              <h3 className="text-xs font-semibold text-gray-800">Matplotlib</h3>
+              <h3 className="text-xs font-semibold text-gray-800">Visuals</h3>
             </div>
           </div>
         </div>
@@ -1366,9 +1256,9 @@ const AIML = () => {
             {/* Right: Content */}
             <div className="md:w-1/2 text-gray-900">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Completion Certificate</h2>
-              <p className="text-lg mb-6">We provide an industry-recognized certification that validates your AI/ML skills, internship experience, and project work through verified and trusted channels.</p>
-              <h3 className="text-xl font-semibold mb-2">TechieHelp AI/ML Development Internship Certificate</h3>
-              <p className="text-base mb-6">This certificate is issued after successful completion of training, AI projects, and model evaluations. It is designed to validate real skills in Data Science and Machine Learning. Each certificate is verifiable and transparent for recruiters.</p>
+              <p className="text-lg mb-6">We provide an industry-recognized certification that validates your Data Science skills, internship experience, and project work through verified and trusted channels.</p>
+              <h3 className="text-xl font-semibold mb-2">TechieHelp Data Science Internship Certificate</h3>
+              <p className="text-base mb-6">This certificate is issued after successful completion of training, analytical projects, and dashboard evaluations. It is designed to validate real skills in SQL, BI, and Python. Each certificate is verifiable and transparent for recruiters.</p>
               {/* Trust Points */}
               <div className="mb-6">
                 <h4 className="text-lg font-semibold mb-4">Trust & Verification Points</h4>
@@ -1624,4 +1514,4 @@ const AIML = () => {
   );
 };
 
-export default AIML;
+export default DataScience;

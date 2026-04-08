@@ -1,71 +1,248 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { ClipboardList, Database, Mail, Phone, SearchCheck, Server, BellRing, ChevronRight } from "lucide-react";
 
 const flowSteps = [
-  { id: 1, label: "Customer fills form", icon: <ClipboardList className="w-6 h-6" />, color: "bg-blue-500" },
-  { id: 2, label: "AI stores data", icon: <Database className="w-6 h-6" />, color: "bg-purple-600" },
-  { id: 3, label: "AI sends instant email", icon: <Mail className="w-6 h-6" />, color: "bg-cyan-500" },
-  { id: 4, label: "AI calls customer", icon: <Phone className="w-6 h-6" />, color: "bg-red-500" },
-  { id: 5, label: "AI collects details", icon: <SearchCheck className="w-6 h-6" />, color: "bg-green-500" },
-  { id: 6, label: "AI updates database", icon: <Server className="w-6 h-6" />, color: "bg-orange-500" },
-  { id: 7, label: "You get notification", icon: <BellRing className="w-6 h-6" />, color: "bg-yellow-500" }
+  { id: 1, label: "Form Submitted", emoji: "📋", color: "#3b82f6" },
+  { id: 2, label: "AI Stores Data", emoji: "🗄️", color: "#8b5cf6" },
+  { id: 3, label: "Instant Email", emoji: "📧", color: "#06b6d4" },
+  { id: 4, label: "AI Calls Lead", emoji: "📞", color: "#ef4444" },
+  { id: 5, label: "Qualifies Lead", emoji: "🔍", color: "#22c55e" },
+  { id: 6, label: "Updates CRM", emoji: "⚙️", color: "#f97316" },
+  { id: 7, label: "You're Notified", emoji: "🔔", color: "#eab308" },
 ];
+
+// Animated 3D-style particle canvas running behind the steps
+const ParticleCanvas = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+
+    let animId;
+    let W = canvas.offsetWidth;
+    let H = canvas.offsetHeight;
+    canvas.width = W;
+    canvas.height = H;
+
+    // Build a grid of "nodes" that will pulse and connect
+    const NODE_COLS = 14;
+    const NODE_ROWS = 7;
+    const nodes = [];
+    for (let r = 0; r < NODE_ROWS; r++) {
+      for (let c = 0; c < NODE_COLS; c++) {
+        nodes.push({
+          x: (c / (NODE_COLS - 1)) * W,
+          y: (r / (NODE_ROWS - 1)) * H,
+          ox: (c / (NODE_COLS - 1)) * W,
+          oy: (r / (NODE_ROWS - 1)) * H,
+          t: Math.random() * Math.PI * 2,
+          speed: 0.005 + Math.random() * 0.008,
+          r: 1.5 + Math.random() * 1.5,
+          alpha: 0.1 + Math.random() * 0.4,
+        });
+      }
+    }
+
+    // Traveling "signal" particles along a path
+    const signals = [];
+    for (let i = 0; i < 8; i++) {
+      signals.push({
+        progress: Math.random(),
+        speed: 0.001 + Math.random() * 0.002,
+        color: flowSteps[i % flowSteps.length].color,
+      });
+    }
+
+    const getPathPoint = (t) => {
+      // Sinusoidal horizontal path spanning the width
+      const x = t * W;
+      const y = H / 2 + Math.sin(t * Math.PI * 3) * (H * 0.25);
+      return { x, y };
+    };
+
+    const draw = () => {
+      ctx.clearRect(0, 0, W, H);
+
+      // Draw animated node grid
+      for (const n of nodes) {
+        n.t += n.speed;
+        n.x = n.ox + Math.sin(n.t) * 6;
+        n.y = n.oy + Math.cos(n.t * 0.7) * 5;
+      }
+
+      // Draw connections between nearby nodes
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < W / NODE_COLS * 1.6) {
+            const alpha = (1 - dist / (W / NODE_COLS * 1.6)) * 0.08;
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(99,102,241,${alpha})`;
+            ctx.lineWidth = 0.8;
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw nodes
+      for (const n of nodes) {
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(139,92,246,${n.alpha * 0.8})`;
+        ctx.fill();
+      }
+
+      // Draw the main signal path
+      ctx.beginPath();
+      for (let t = 0; t <= 1; t += 0.01) {
+        const p = getPathPoint(t);
+        if (t === 0) ctx.moveTo(p.x, p.y);
+        else ctx.lineTo(p.x, p.y);
+      }
+      ctx.strokeStyle = "rgba(99,102,241,0.15)";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Draw traveling signal particles
+      for (const sig of signals) {
+        sig.progress += sig.speed;
+        if (sig.progress > 1) sig.progress = 0;
+        const p = getPathPoint(sig.progress);
+        // Glow circle
+        const grd = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, 18);
+        grd.addColorStop(0, sig.color + "cc");
+        grd.addColorStop(1, sig.color + "00");
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 18, 0, Math.PI * 2);
+        ctx.fillStyle = grd;
+        ctx.fill();
+
+        // Core dot
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, 4, 0, Math.PI * 2);
+        ctx.fillStyle = sig.color;
+        ctx.fill();
+      }
+
+      animId = requestAnimationFrame(draw);
+    };
+
+    draw();
+
+    const resize = () => {
+      W = canvas.offsetWidth;
+      H = canvas.offsetHeight;
+      canvas.width = W;
+      canvas.height = H;
+    };
+    window.addEventListener("resize", resize);
+    return () => {
+      cancelAnimationFrame(animId);
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
+  return (
+    <canvas
+      ref={canvasRef}
+      className="absolute inset-0 w-full h-full pointer-events-none"
+    />
+  );
+};
 
 const WorkflowVisual = () => {
   return (
-    <section className="py-32 bg-[#050510] px-6 relative overflow-hidden" id="workflow">
-      <div className="container mx-auto max-w-7xl relative z-10 text-center">
-        <motion.h2 
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+    <section
+      className="relative py-20 bg-[#050510] px-6 overflow-hidden"
+      id="workflow"
+    >
+      {/* 3D Particle Canvas BG */}
+      <ParticleCanvas />
+
+      {/* Radial glow behind center */}
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="w-[70%] h-[300px] bg-indigo-600/10 blur-[100px] rounded-full" />
+      </div>
+
+      <div className="container mx-auto max-w-6xl relative z-10 text-center">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-black text-white mb-6 uppercase tracking-tighter"
+          className="text-2xl md:text-4xl font-bold text-white mb-3"
         >
-          AI That Instantly <br />
-          <span className="text-gradient">Handles Every Lead</span>
+          AI That Instantly{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">
+            Handles Every Lead
+          </span>
         </motion.h2>
-        <p className="text-gray-500 font-black text-xs uppercase tracking-[5px] mb-20 leading-relaxed">
-          Even if 10,000+ leads come — <span className="text-white">system responds instantly</span>
+        <p className="text-gray-500 text-sm mb-14">
+          Even if 10,000+ leads arrive — system responds{" "}
+          <span className="text-white font-medium">in seconds</span>
         </p>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
+        {/* Flow Steps */}
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
           {flowSteps.map((step, i) => (
-            <React.Fragment key={step.id}>
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="group flex flex-col items-center"
+            <motion.div
+              key={step.id}
+              initial={{ opacity: 0, y: 30, scale: 0.85 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1, type: "spring", stiffness: 180 }}
+              className="group flex flex-col items-center w-28 md:w-32"
+            >
+              {/* Icon card with dynamic glow */}
+              <div
+                className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-2xl md:text-3xl border border-white/10 bg-white/5 backdrop-blur-md group-hover:scale-110 transition-transform duration-300 shadow-2xl"
+                style={{ boxShadow: `0 0 30px ${step.color}33` }}
               >
-                <div className={`w-20 h-20 rounded-[2rem] ${step.color} flex items-center justify-center text-white shadow-[0_10px_30px_rgba(0,0,0,0.5)] group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 border-4 border-[#050510] relative z-20`}>
-                   {step.icon}
-                </div>
-                
-                <div className="mt-8 flex flex-col items-center">
-                   <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center mb-3">
-                      <span className="text-[10px] font-black text-white/50">{step.id}</span>
-                   </div>
-                   <h4 className="text-[11px] font-black text-white uppercase tracking-widest leading-tight whitespace-nowrap opacity-80 group-hover:opacity-100 transition-opacity">
-                      {step.label}
-                   </h4>
-                </div>
-              </motion.div>
+                {/* Animated glow ring */}
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{ boxShadow: `0 0 25px ${step.color}66, inset 0 0 15px ${step.color}22` }}
+                />
+                <span className="relative z-10">{step.emoji}</span>
+              </div>
 
-              {/* Connector (Desktop) */}
-              {i < flowSteps.length - 1 && (
-                <div className="hidden lg:flex items-center justify-center pointer-events-none opacity-20">
-                  <ChevronRight className="w-8 h-8 text-white animate-pulse" />
+              {/* Step number + label */}
+              <div className="mt-4 flex flex-col items-center gap-1">
+                <div
+                  className="w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-bold"
+                  style={{ background: step.color + "33", color: step.color, border: `1px solid ${step.color}55` }}
+                >
+                  {step.id}
                 </div>
+                <h4 className="text-[11px] font-semibold text-gray-300 text-center leading-tight group-hover:text-white transition-colors">
+                  {step.label}
+                </h4>
+              </div>
+
+              {/* Connector arrow (between steps, not after last) */}
+              {i < flowSteps.length - 1 && (
+                <div className="hidden md:block absolute" />
               )}
-            </React.Fragment>
+            </motion.div>
           ))}
         </div>
+
+        {/* Bottom line */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.8 }}
+          className="mt-12 text-xs text-gray-600 font-medium tracking-wider uppercase"
+        >
+          From lead to response in under 30 seconds
+        </motion.p>
       </div>
-      
-      {/* Visual Flow Connector Line (Desktop) */}
-      <div className="absolute top-[55%] left-1/2 -translate-x-1/2 w-full h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent hidden lg:block -z-10" />
     </section>
   );
 };

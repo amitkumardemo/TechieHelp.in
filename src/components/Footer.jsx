@@ -191,13 +191,18 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Copyright */}
-      <div className="text-center text-gray-500 mt-8 text-sm">
-        &copy; {new Date().getFullYear()} TechieHelp. All rights reserved.
+      {/* Bottom Copyright & Legal */}
+      <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm px-6">
+        <div className="mb-4 md:mb-0">
+          &copy; {new Date().getFullYear()} TechieHelp. All rights reserved.
+        </div>
+        <div className="flex gap-6">
+          <Link to="/policy" className="hover:text-blue-400 hover:underline transition-colors">Privacy Policy</Link>
+          <Link to="/terms" className="hover:text-blue-400 hover:underline transition-colors">Terms & Conditions</Link>
+        </div>
       </div>
     </footer>
   );
 };
 
 export default Footer;
-

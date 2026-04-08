@@ -75,14 +75,13 @@ const Section = ({ title, children, imgSrc, imgLeft = true }) => {
 
 const TypingAnimation = () => {
   const roles = [
-    "Frontend Developer",
-    "React Developer",
-    "UI/UX Developer",
-    "JavaScript Developer",
-    "Full-Stack Developer",
-    "Web Developer",
-    "Frontend Engineer",
+    "Backend Developer",
     "Python Engineer",
+    "Django Developer",
+    "Automation Expert",
+    "API Developer",
+    "Full Stack Logic Specialist",
+    "Scraping & Data Extraction Pro",
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -115,17 +114,16 @@ const TypingAnimation = () => {
   }, [currentText, isDeleting, currentRoleIndex, typingSpeed, roles]);
 
   return (
-  <div className="text-center mb-8">
-    <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 min-h-[120px] flex items-center justify-center">
-      <span className="mr-4">Become a</span>
-      <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-        {currentText}
-      </span>
-      <span className="animate-pulse text-blue-600">|</span>
-    </h1>
-  </div>
-);
-
+    <div className="text-center mb-8">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 min-h-[120px] flex items-center justify-center">
+        Become a <br />
+        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          {currentText}
+        </span>
+        <span className="animate-pulse text-blue-600">|</span>
+      </h1>
+    </div>
+  );
 };
 
 const Python = () => {
@@ -148,256 +146,260 @@ const Python = () => {
   }, []);
 
   const timelineData = [
-  [
-    {
-      week: 'Week 1',
-      rows: [
-        {
-          timeline: 'Day First',
-          includes: [
-            { type: 'normal', text: 'Program orientation & onboarding' },
-            { type: 'normal', text: 'Python overview & expectations' },
-            { type: 'normal', text: 'Setting up Python environment (VS Code, PyCharm, Git)' },
-            { type: 'normal', text: 'Python basics exercises: variables, input/output, simple calculations' },
-            { type: 'project', level: 'beginner', title: 'Hello Python Project', subtitle: 'Write basic programs and explore Python syntax' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 2',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Operators & expressions' },
-            { type: 'normal', text: 'Conditional statements: if, elif, else' },
-            { type: 'normal', text: 'Loops: for, while, nested loops' },
-            { type: 'normal', text: 'Functions: definition, arguments, return values' },
-            { type: 'project', level: 'beginner', title: 'Mini Python Script', subtitle: 'Build small programs using functions, loops, and conditionals' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 3',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Data Structures: Lists, Tuples, Sets, Dictionaries' },
-            { type: 'normal', text: 'Comprehensions: List, Dict, Set' },
-            { type: 'normal', text: 'Introduction to OOP: classes, objects, inheritance, encapsulation' },
-            { type: 'normal', text: 'File handling: text, CSV, JSON' },
-            { type: 'project', level: 'intermediate', title: 'Contact Book App', subtitle: 'Build a contact management app using OOP' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 4',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Advanced Python: decorators, generators, context managers' },
-            { type: 'normal', text: 'Error handling & exceptions' },
-            { type: 'normal', text: 'Modules & Packages' },
-            { type: 'normal', text: 'Python standard library exploration' },
-            { type: 'project', level: 'intermediate', title: 'Automation Script', subtitle: 'Organize files or parse data automatically' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    }
-  ],
-  [
-    {
-      week: 'Week 5-8',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'NumPy arrays and operations' },
-            { type: 'normal', text: 'Pandas DataFrame creation and manipulation' },
-            { type: 'normal', text: 'Data cleaning and handling missing values' },
-            { type: 'normal', text: 'Exploratory Data Analysis basics' },
-            { type: 'project', level: 'intermediate', title: 'Data Cleaning Project', subtitle: 'Prepare datasets for analysis' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 9-12',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Data visualization: Matplotlib & Seaborn' },
-            { type: 'normal', text: 'Exploratory Data Analysis (EDA)' },
-            { type: 'normal', text: 'Introduction to Flask web framework' },
-            { type: 'normal', text: 'Connecting Flask with data from Pandas' },
-            { type: 'project', level: 'intermediate', title: 'EDA + Web Project', subtitle: 'Visualize dataset insights and present them via a Flask web app' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 13-16',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Routing, templates, views & database integration in Flask' },
-            { type: 'normal', text: 'User authentication & authorization' },
-            { type: 'normal', text: 'REST API basics' },
-            { type: 'normal', text: 'Deploy Flask app locally and on cloud (Heroku/Vercel)' },
-            { type: 'project', level: 'intermediate', title: 'CRUD Web App', subtitle: 'Build a web app with create, read, update, delete functionality' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    }
-  ],
-  [
-    {
-      week: 'Week 1-4',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Feature engineering and preprocessing' },
-            { type: 'normal', text: 'Advanced data visualization (Plotly, Seaborn)' },
-            { type: 'normal', text: 'Introduction to scikit-learn' },
-            { type: 'normal', text: 'Exploratory ML modeling (linear regression)' },
-            { type: 'project', level: 'intermediate', title: 'Visualization & Preprocessing Project', subtitle: 'Analyze dataset and create visual insights' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 5-8',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Regression algorithms (Linear, Polynomial)' },
-            { type: 'normal', text: 'Evaluation metrics for regression' },
-            { type: 'normal', text: 'Data splitting & cross-validation' },
-            { type: 'normal', text: 'Hyperparameter tuning basics' },
-            { type: 'project', level: 'intermediate', title: 'Regression Project', subtitle: 'Predict continuous values from dataset' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 9-12',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Classification algorithms (Logistic Regression, Decision Trees)' },
-            { type: 'normal', text: 'Evaluation metrics: accuracy, precision, recall, F1-score' },
-            { type: 'normal', text: 'Model selection & validation' },
-            { type: 'normal', text: 'Hyperparameter tuning & cross-validation' },
-            { type: 'project', level: 'intermediate', title: 'Classification Project', subtitle: 'Build a model to classify data' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    }
-  ],
-  [
-    {
-      week: 'Week 1-4',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Web scraping with BeautifulSoup' },
-            { type: 'normal', text: 'Selenium automation scripts' },
-            { type: 'normal', text: 'Task scheduling with cron/jobs' },
-            { type: 'normal', text: 'Logging & error handling in scripts' },
-            { type: 'project', level: 'intermediate', title: 'Automation Project', subtitle: 'Automate repetitive web or data tasks' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 5-8',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'API automation using Python requests' },
-            { type: 'normal', text: 'Data pipeline automation' },
-            { type: 'normal', text: 'Scheduling & notifications' },
-            { type: 'normal', text: 'Error handling & logging' },
-            { type: 'project', level: 'intermediate', title: 'API Automation Project', subtitle: 'Automate data collection & processing via APIs' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 9-12',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Capstone Project Development' },
-            { type: 'normal', text: 'Combine web, data, and automation modules' },
-            { type: 'normal', text: 'Code optimization & best practices' },
-            { type: 'normal', text: 'Documentation & presentation preparation' },
-            { type: 'project', level: 'hard', title: 'Capstone Project', subtitle: 'Develop a complete Python application integrating all learned skills' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] }
-      ]
-    },
-    {
-      week: 'Week 13-16',
-      rows: [
-        {
-          timeline: 'Monday to Saturday',
-          includes: [
-            { type: 'normal', text: 'Capstone Project completion' },
-            { type: 'normal', text: 'Final presentation preparation' },
-            { type: 'normal', text: 'Resume & LinkedIn profile enhancement' },
-            { type: 'normal', text: 'Internship review & feedback incorporation' },
-            { type: 'project', level: 'hard', title: 'Final Submission & Demo', subtitle: 'Project submission, certificate awarded, and final evaluation' },
-            { type: 'normal', text: 'Mentor doubt-solving session' }
-          ]
-        },
-        { timeline: 'Sunday', includes: [] },
-        { timeline: 'Last Day', includes: ['Capstone presentation, certificate, and internship completion celebration'] }
-      ]
-    }
-  ]
-];
-
-
+    [
+      {
+        week: 'Week 1',
+        rows: [
+          {
+            timeline: 'Day First',
+            includes: [
+              { type: 'normal', text: 'Program orientation & Python Developer roadmap' },
+              { type: 'normal', text: 'Installation, Virtual Environments & IDE Setup' },
+              { type: 'normal', text: 'Python Syntax, Variables & Dynamic Typing' },
+              { type: 'project', level: 'beginner', title: 'Smart Calculator Script', subtitle: 'Build a basic CLI calculator with error handling' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Monday to Saturday', includes: [] },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 2',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Control Flow: Logic, Loops & List Comprehensions' },
+              { type: 'normal', text: 'Functions, *args, **kwargs & Scope' },
+              { type: 'normal', text: 'Weekly doubt-solving session with mentor' },
+              { type: 'project', level: 'beginner', title: 'Number Guessing Game', subtitle: 'Implement game logic using loops and random module' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 3',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Data Structures: Lists, Tuples, Sets, Dicts' },
+              { type: 'normal', text: 'Exception Handling & Input Validation' },
+              { type: 'normal', text: 'Mentor doubt-solving session' },
+              { type: 'project', level: 'intermediate', title: 'Contact Management System', subtitle: 'Build a CRUD CLI app using nested data structures' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 4',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'File I/O & Working with JSON/CSV' },
+              { type: 'normal', text: 'Modules, Packages & Pip Management' },
+              { type: 'normal', text: 'Mentor doubt-solving session' },
+              { type: 'project', level: 'hard', title: 'Automated Log Analyzer', subtitle: 'Parse system logs and export summaries to CSV' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+    ],
+    [
+      {
+        week: 'Week 1',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Object-Oriented Programming (OOP) in Python' },
+              { type: 'normal', text: 'Classes, Objects, Inheritance & Polymorphism' },
+              { type: 'normal', text: 'Encapsulation & Decorators' },
+              { type: 'project', level: 'beginner', title: 'Library Management Logic', subtitle: 'Design a library system using class inheritance' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 2',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Introduction to Web Frameworks (Flask)' },
+              { type: 'normal', text: 'Routing, Templates & Jinja2' },
+              { type: 'project', level: 'beginner', title: 'Personal Blog Site (Flask)', subtitle: 'Create a dynamic multi-page website' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 3',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Flask Extensions & Forms' },
+              { type: 'normal', text: 'SQLite Integration with SQLAlchemy' },
+              { type: 'project', level: 'intermediate', title: 'Task Tracker with DB', subtitle: 'Perform persistent CRUD operations with SQLite' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 4',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Modern Backend with FastAPI' },
+              { type: 'normal', text: 'Async/Await & Type Hinting' },
+              { type: 'project', level: 'hard', title: 'High-Performance API', subtitle: 'Build asynchronous endpoints for real-time data' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+    ],
+    [
+      {
+        week: 'Week 1',
+        rows: [
+          {
+            timeline: 'Day First',
+            includes: [
+              { type: 'normal', text: 'Enterprise Development with Django' },
+              { type: 'normal', text: 'Django Project Structure & MVT Pattern' },
+              { type: 'project', level: 'intermediate', title: 'Core Admin Dashboard', subtitle: 'Customize the Django admin for a CRM backend' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Monday to Saturday', includes: [] },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 2',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Django Models & Migrations' },
+              { type: 'normal', text: 'Authentication & User Management' },
+              { type: 'project', level: 'intermediate', title: 'Member Portal System', subtitle: 'Build a secure registration & login flow' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 3',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Django REST Framework (DRF)' },
+              { type: 'normal', text: 'Serializers, Views & Routers' },
+              { type: 'project', level: 'intermediate', title: 'Social Feed API', subtitle: 'Create endpoints for posting, liking and commenting' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 4',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Advanced DRF: Permissions & JWT' },
+              { type: 'normal', text: 'Third-party API Integration (Razorpay/Twilio)' },
+              { type: 'project', level: 'hard', title: 'E-commerce API Engine', subtitle: 'Build a backend for orders, carts and payments' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+    ],
+    [
+      {
+        week: 'Week 1',
+        rows: [
+          {
+            timeline: 'Day First',
+            includes: [
+              { type: 'normal', text: 'Scalability & Background Tasks' },
+              { type: 'normal', text: 'Celery, Redis & Task Queues' },
+              { type: 'project', level: 'hard', title: 'Bulk Email Automator', subtitle: 'Send thousands of emails asynchronously' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Monday to Saturday', includes: [] },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 2',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Web Scraping & Data Extraction' },
+              { type: 'normal', text: 'BeautifulSoup4 & Selenium Mastery' },
+              { type: 'project', level: 'hard', title: 'Price Tracker Bot', subtitle: 'Scrape e-commerce sites and alert on price drops' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 3',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'DevOps for Python: Docker & CI/CD' },
+              { type: 'normal', text: 'Containerizing Django/Flask Apps' },
+              { type: 'project', level: 'hard', title: 'Cloud-Ready Microservice', subtitle: 'Dockerize and deploy an API to AWS/Render' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 4',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Backend Optimization & Security Audit' },
+              { type: 'normal', text: 'Resume & LinkedIn for Backend Roles' },
+              { type: 'project', level: 'hard', title: 'Final Graduation Capstone', subtitle: 'Industry-level production backend submission' },
+              { type: 'normal', text: 'Placement Guidance & HR Support' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+    ],
+  ];
   if (loading) return <LoadingSpinner />;
 
   return (
@@ -422,28 +424,37 @@ const Python = () => {
           <div className="lg:w-1/2">
             <header>
               <div className="inline-block bg-yellow-500 text-black px-5 py-1 rounded-full text-xs font-medium mb-1">
-                Most Trusted Internship Program • AICTE & NIP Aligned
+                Highly Rated Python Program • National Internship Portal Aligned
               </div>
               <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-snug max-w-4xl">
-                <span className="text-yellow-300 font-bold">MERN Stack</span> Internship & Training Program
+                <span className="text-yellow-300 font-bold">Python Developer</span> Internship & Training Program
               </h1>
               <h2 className="text-xl md:text-2xl font-medium mb-2 leading-relaxed">
-                🚀 Master MongoDB, Express.js, React & Node.js! Build Production-Ready Full-Stack Apps & Land ₹15-25 LPA Jobs
+                Build high-performance backends, automate workflows, and master Django & Flask like an industry pro.
               </h2>
               <p className="text-base mb-2 leading-relaxed">
-                💥 DON'T MISS THIS! 4-month intensive MERN stack internship with hands-on projects, expert mentorship, and direct placement in top tech companies like Google, Microsoft, Amazon, and startups. 95% students get placed within 3 months of completion!
+                This is not just a theory course. It’s a specialized internship where you build scalable APIs, automate real-world tasks, and learn modern backend architecture.
               </p>
               <ul className="flex flex-wrap gap-3 mb-3">
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Live MERN Stack Projects</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Beginner Friendly (No Prior Experience Needed)</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Recommendation Letter</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Placement & Career Support</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Scalable API Development</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Django & Flask Mastery</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Database & Security Architecture</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Letter of Recommendation</li>
               </ul>
 
               {/* Inline Feature Row */}
               <div className="flex flex-wrap items-center gap-8 mb-4">
                 <div className="flex items-center gap-2 text-white">
                   <Clock className="w-5 h-5 text-cyan-400" />
+                  <span className="text-sm font-medium">1–4 Months Internship</span>
+                </div>
+                <div className="flex items-center gap-2 text-white">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="text-sm font-medium">Industry-Level Datasets</span>
+                </div>
+                <div className="flex items-center gap-2 text-white">
+                  <Briefcase className="w-5 h-5 text-blue-400" />
+                  <span className="text-sm font-medium">Career Support & Hackathons</span>
                   <span className="text-sm font-medium">10–16 Weeks Internship</span>
                 </div>
                 <div className="flex items-center gap-2 text-white">
@@ -468,6 +479,10 @@ const Python = () => {
                     Start Internship – ₹499/-
                   </button>
                 </a>
+                <button className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2">
+                  <Download className="w-4 h-4" />
+                  Download Internship Syllabus
+                </button>
                 <a
   href="https://drive.google.com/file/d/1KMG5JObcneMBHqcKw_JZmCC2l9lEI3s6/view?usp=drive_link"
   target="_blank"
@@ -488,6 +503,20 @@ const Python = () => {
               {/* Stats Grid */}
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="bg-blue-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-blue-900 mb-2">10+</div>
+                  <div className="text-sm text-blue-700">Backend Systems</div>
+                </div>
+                <div className="bg-green-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-green-900 mb-2">REST</div>
+                  <div className="text-sm text-green-700">API Architecture</div>
+                </div>
+                <div className="bg-indigo-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-indigo-900 mb-2">Django</div>
+                  <div className="text-sm text-indigo-700">Web Frameworks</div>
+                </div>
+                <div className="bg-yellow-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-yellow-900 mb-2">95%</div>
+                  <div className="text-sm text-yellow-700">Tech Placement</div>
                   <div className="text-3xl font-bold text-blue-900 mb-2">15+</div>
                   <div className="text-sm text-blue-700">Industry-Level Live Projects</div>
                 </div>
@@ -795,6 +824,8 @@ const Python = () => {
                   <Briefcase className="w-6 h-6 text-blue-600" />
                 </div>
                 <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Scalable Backend Systems for Resume</h3>
+                  <p className="text-gray-600 text-sm">Build portfolio-worthy web applications and APIs that showcase your backend engineering skills.</p>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Real-World Frontend Development Projects for Resume</h3>
                   <p className="text-gray-600 text-sm">Build portfolio-worthy projects that showcase your skills to employers</p>
                 </div>
@@ -905,6 +936,8 @@ const Python = () => {
                     <CheckCircle className="w-8 h-8 text-white" />
                   </div>
                 </div>
+                <h3 className="text-2xl font-bold mb-2">Networking with Backend Engineers & Public Recognition</h3>
+                <p className="text-lg opacity-90">Connect with fellow developers, build lasting professional relationships, and get featured on TechieHelp platforms for outstanding coding achievements</p>
                 <h3 className="text-2xl font-bold mb-2">Networking with Like-Minded Interns & Public Recognition</h3>
                 <p className="text-lg opacity-90">Connect with fellow learners, build lasting professional relationships, and get featured on TechieHelp platforms for outstanding achievements</p>
               </div>
@@ -982,6 +1015,81 @@ const Python = () => {
 
           {/* Mentors Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Mentor 1 */}
+            <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div className="text-center mb-4">
+                <img
+                  src={AmitPhoto}
+                  alt="Amit Kumar"
+                  className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg"
+                />
+                <h3 className="text-xl font-bold text-gray-900 mb-1">Amit Kumar</h3>
+                <p className="text-sm text-blue-600 font-medium">Founder & Lead Mentor – TechieHelp</p>
+              </div>
+              <p className="text-gray-700 mb-4 text-center text-sm">
+                Machine Learning Engineer & Full Stack Developer with hands-on mentoring experience.
+              </p>
+              <div className="mb-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-2">Support Highlights:</h4>
+                <ul className="space-y-1 text-gray-700 text-sm">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Placement-oriented mentorship</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Resume, LinkedIn & project guidance</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Career & interview preparation</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="text-center">
+                <a href="https://www.linkedin.com/in/amit-kumar-686196225/" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Mentor 2 */}
+            <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div className="text-center mb-4">
+                <img
+                  src={mdAmzad}
+                  alt="Amzad"
+                  className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg"
+                />
+                <h3 className="text-xl font-bold text-gray-900 mb-1">Amzad</h3>
+                <p className="text-sm text-blue-600 font-medium">Machine Learning Engineer</p>
+              </div>
+              <p className="text-gray-700 mb-4 text-center text-sm">
+                Machine Learning Engineer specializing in practical ML concepts and skill development.
+              </p>
+              <div className="mb-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-2">Support Highlights:</h4>
+                <ul className="space-y-1 text-gray-700 text-sm">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Core Machine Learning guidance</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Project-based ML mentoring</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Career guidance for ML roles</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="text-center">
+                <a href="https://www.linkedin.com/in/md-amzad-b8547a296/" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
 
 {/* Mentor 1 */}
             <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
@@ -1136,6 +1244,7 @@ const Python = () => {
           {/* Supporting Content */}
           <div className="text-center mb-16">
             <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Through TechieHelp's comprehensive training, real-world projects, and expert mentorship, you'll be prepared for high-demand roles in Backend Development across startups and established tech giants.
               Through TechieHelp's comprehensive MERN stack training, real-world projects, and expert mentorship, you'll be prepared for high-demand full-stack development roles across startups and established companies like Google, Microsoft, and Amazon.
             </p>
           </div>
@@ -1147,6 +1256,8 @@ const Python = () => {
                 <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
                   <Briefcase className="w-8 h-8 text-green-600" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Architecture Foundations</h3>
+                <p className="text-gray-600">Master the logic and design patterns behind scalable backend systems.</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Career Growth & Skill Progression</h3>
                 <p className="text-gray-600">Industry-relevant skills aligned with hiring needs and future tech trends.</p>
               </div>
@@ -1157,6 +1268,8 @@ const Python = () => {
                 <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
                   <Star className="w-8 h-8 text-purple-600" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Django & Flask Prowess</h3>
+                <p className="text-gray-600">Expertise in developing, securing, and optimizing professional web backends.</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Roles Across Startups & IT Companies</h3>
                 <p className="text-gray-600">Prepared for internships, entry-level, and junior positions in diverse organizations.</p>
               </div>
@@ -1167,6 +1280,8 @@ const Python = () => {
                 <div className="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-indigo-200 transition-colors">
                   <CheckCircle className="w-8 h-8 text-indigo-600" />
                 </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">API & Automation</h3>
+                <p className="text-gray-600">Hands-on experience with REST APIs, Task Queues, and Process Automation.</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Project-Based Learning Advantage</h3>
                 <p className="text-gray-600">Practical experience that recruiters actually value in technical interviews.</p>
               </div>
@@ -1196,6 +1311,7 @@ const Python = () => {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Technologies & Tools You Will Learn</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Gain hands-on experience with industry-standard Python tools used to build web apps, automate processes, and manage production-ready databases.
               Master the complete MERN stack (MongoDB, Express.js, React, Node.js) - the most popular and in-demand technology stack for building modern web applications used by companies like Netflix, Uber, and Airbnb.
             </p>
           </div>
@@ -1204,6 +1320,7 @@ const Python = () => {
           <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
               <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Python 3</h3>
               <h3 className="text-xs font-semibold text-gray-800">Python</h3>
             </div>
 
@@ -1218,6 +1335,33 @@ const Python = () => {
             </div>
 
             <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="Flask" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Flask</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/fastapi.svg" alt="FastAPI" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">FastAPI</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">MySQL</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Postman</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Docker</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.vectorlogo.zone/logos/redis/redis-icon.svg" alt="Redis" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Redis</h3>
               <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Heroku_logo.svg/512px-Heroku_logo.svg.png" alt="Heroku" className="w-8 h-8 object-contain mx-auto mb-2" />
               <h3 className="text-xs font-semibold text-gray-800">Heroku</h3>
             </div>
@@ -1315,33 +1459,30 @@ const Python = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
   <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
-  <div className="aspect-[9/16]">
-    <iframe
-      src="https://www.youtube.com/embed/Ia1EOzjVwEY"
-      title="Student Review"
-      frameBorder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className="w-full h-full rounded-md"
-    ></iframe>
+    <div className="aspect-[9/16]">
+      <iframe
+        src="https://www.youtube.com/embed/Ia1EOzjVwEY"
+        title="Student Review"
+        frameBorder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full rounded-md"
+      ></iframe>
+    </div>
   </div>
-</div>
 
-<div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
-  <div className="aspect-[9/16]">
-    <iframe
-      src="https://www.youtube.com/embed/l5Ox9Z1AJow"
-      title="Student Review"
-      frameBorder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className="w-full h-full rounded-md"
-    ></iframe>
+  <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
+    <div className="aspect-[9/16]">
+      <iframe
+        src="https://www.youtube.com/embed/l5Ox9Z1AJow"
+        title="Student Review"
+        frameBorder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full rounded-md"
+      ></iframe>
+    </div>
   </div>
-</div>
-
-
-
 
             <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
               <div className="aspect-[9/16]">
@@ -1374,6 +1515,9 @@ const Python = () => {
             {/* Right: Content */}
             <div className="md:w-1/2 text-gray-900">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">Completion Certificate</h2>
+              <p className="text-lg mb-6">We provide an industry-recognized certification that validates your Python Backend development skills, internship experience, and project work through verified and trusted channels.</p>
+              <h3 className="text-xl font-semibold mb-2">TechieHelp Python Developer Internship Certificate</h3>
+              <p className="text-base mb-6">This certificate is issued after successful completion of training, scalable backend projects, and API evaluations. It is designed to validate real skills in Django, Flask, and Database Architecture. Each certificate is verifiable and transparent for recruiters.</p>
               <p className="text-lg mb-6">We provide an industry-recognized certification that validates your skills, internship experience, and project work through verified and trusted channels.</p>
               <h3 className="text-xl font-semibold mb-2">TechieHelp MERN Stack Development Internship Certificate</h3>
               <p className="text-base mb-6">This certificate is issued after successful completion of training, projects, and assessments. It is designed to validate real skills, not just course attendance. Each certificate is verifiable and transparent for recruiters and institutions.</p>
@@ -1523,6 +1667,7 @@ const Python = () => {
                   className="w-64 h-64 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex-shrink-0"
                 />
               ))}
+              
             </div>
           </div>
 

@@ -34,6 +34,11 @@ export const navLinks = [
         id: "verify-certificate",
         title: "Verify Certificate",
         path: "/verify-certificate"
+      },
+      {
+        id: "campus-ambassador",
+        title: "Campus Ambassador",
+        path: "/campus-ambassador"
       }
     ]
   },
@@ -81,7 +86,7 @@ export const navLinks = [
 export const features = [
   {
     id: "feature-1",
-    icon: star, 
+    icon: star,
     title: "AI Lead Engine",
     content: "Automatically captures, responds, and manages leads without delay.",
     outcome: "0 missed leads"
