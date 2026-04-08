@@ -10,7 +10,6 @@ import HowItWorks from "./solutions/HowItWorks";
 import Differentiator from "./solutions/Differentiator";
 import PricingSaaS from "./solutions/PricingSaaS";
 import FinalCTA from "./solutions/FinalCTA";
-import Footer from "./Footer";
 import Contact from "./Contact";
 
 const Services = () => {
@@ -50,7 +49,6 @@ const Services = () => {
       
       {/* Retaining Contact & Footer for brand consistency */}
       <Contact />
-      <Footer />
     </div>
   );
 };

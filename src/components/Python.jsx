@@ -1,10 +1,39 @@
 import React, { useState, useEffect } from "react";
 import {
-  python,
+  webdevelopment,
   intern,
   overview,
   swag,
+  certificate,
+  recommendation,
+  AmitPhoto,
+  mdAmzad,
+  aarshdeepcertificate,
+  aarshdeepdiary,
+  aarshdeeptrophy,
+  groups,
+  hod,
+  rohitdiary,
+  rohittrophy,
+  simrancertificate,
+  simrandiary,
+  simrantrophy,
+  simrantshirt,
+  aryan1,
+  aryan2,
+  sixty,
+  coreTeam,
+  amazad,
+  tit,
+  delhiJudge,
+  recon,
+  kitInt,
+  kit,
+  kitNodha,
+  kitCert,
 } from "../assets";
+import InternshipFAQ from "./InternshipFAQ";
+import { Calendar, IndianRupee, Clock, CheckCircle, Briefcase, Star, Download, QrCode, Shield, Award, Linkedin } from 'lucide-react';
 
 const LoadingSpinner = () => (
   <div className="flex justify-center items-center py-10">
@@ -43,25 +72,71 @@ const Section = ({ title, children, imgSrc, imgLeft = true }) => {
   );
 };
 
-const PriceBox = ({ title, price, features, offer }) => (
-  <div className="bg-cyan-900 bg-opacity-70 border border-cyan-500 rounded-lg p-6 shadow-lg max-w-sm mx-auto transform transition-transform duration-300 hover:scale-105 cursor-pointer">
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <div className="flex items-center mb-4">
-      <p className="text-3xl font-bold text-cyan-400">{price}</p>
-      {offer && (
-        <p className="ml-4 text-sm text-red-500 line-through font-semibold">{offer}</p>
-      )}
+const TypingAnimation = () => {
+  const roles = [
+    "Backend Developer",
+    "Python Engineer",
+    "Django Developer",
+    "Automation Expert",
+    "API Developer",
+    "Full Stack Logic Specialist",
+    "Scraping & Data Extraction Pro"
+  ];
+
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [currentText, setCurrentText] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(150);
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const currentRole = roles[currentRoleIndex];
+
+      if (isDeleting) {
+        setCurrentText(prev => prev.slice(0, -1));
+        setTypingSpeed(50);
+      } else {
+        setCurrentText(prev => currentRole.slice(0, prev.length + 1));
+        setTypingSpeed(150);
+      }
+
+      if (!isDeleting && currentText === currentRole) {
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && currentText === "") {
+        setIsDeleting(false);
+        setCurrentRoleIndex(prev => (prev + 1) % roles.length);
+      }
+    };
+
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [currentText, isDeleting, currentRoleIndex, typingSpeed, roles]);
+
+  return (
+    <div className="text-center mb-8">
+      <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 min-h-[120px] flex items-center justify-center">
+        Become a <br />
+        <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          {currentText}
+        </span>
+        <span className="animate-pulse text-blue-600">|</span>
+      </h1>
     </div>
-    <ul className="list-disc list-inside space-y-2 text-white text-sm">
-      {features.map((feature, idx) => (
-        <li key={idx}>{feature}</li>
-      ))}
-    </ul>
-  </div>
-);
+  );
+};
 
 const Python = () => {
   const [loading, setLoading] = useState(true);
+  const [activeMonth, setActiveMonth] = useState(0);
+  const [autoScroll, setAutoScroll] = useState(true);
+
+  // Calculate next batch start date (1st of next month in 2026)
+  const nextBatchDate = new Date(2026, new Date().getMonth() + 1, 1);
+  const formattedDate = nextBatchDate.toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  });
 
   useEffect(() => {
     // Simulate loading delay for animation
@@ -69,222 +144,1371 @@ const Python = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const timelineData = [
+    [
+      {
+        week: 'Week 1',
+        rows: [
+          {
+            timeline: 'Day First',
+            includes: [
+              { type: 'normal', text: 'Program orientation & Python Developer roadmap' },
+              { type: 'normal', text: 'Installation, Virtual Environments & IDE Setup' },
+              { type: 'normal', text: 'Python Syntax, Variables & Dynamic Typing' },
+              { type: 'project', level: 'beginner', title: 'Smart Calculator Script', subtitle: 'Build a basic CLI calculator with error handling' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Monday to Saturday', includes: [] },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 2',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Control Flow: Logic, Loops & List Comprehensions' },
+              { type: 'normal', text: 'Functions, *args, **kwargs & Scope' },
+              { type: 'normal', text: 'Weekly doubt-solving session with mentor' },
+              { type: 'project', level: 'beginner', title: 'Number Guessing Game', subtitle: 'Implement game logic using loops and random module' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 3',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Data Structures: Lists, Tuples, Sets, Dicts' },
+              { type: 'normal', text: 'Exception Handling & Input Validation' },
+              { type: 'normal', text: 'Mentor doubt-solving session' },
+              { type: 'project', level: 'intermediate', title: 'Contact Management System', subtitle: 'Build a CRUD CLI app using nested data structures' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 4',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'File I/O & Working with JSON/CSV' },
+              { type: 'normal', text: 'Modules, Packages & Pip Management' },
+              { type: 'normal', text: 'Mentor doubt-solving session' },
+              { type: 'project', level: 'hard', title: 'Automated Log Analyzer', subtitle: 'Parse system logs and export summaries to CSV' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+    ],
+    [
+      {
+        week: 'Week 1',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Object-Oriented Programming (OOP) in Python' },
+              { type: 'normal', text: 'Classes, Objects, Inheritance & Polymorphism' },
+              { type: 'normal', text: 'Encapsulation & Decorators' },
+              { type: 'project', level: 'beginner', title: 'Library Management Logic', subtitle: 'Design a library system using class inheritance' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 2',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Introduction to Web Frameworks (Flask)' },
+              { type: 'normal', text: 'Routing, Templates & Jinja2' },
+              { type: 'project', level: 'beginner', title: 'Personal Blog Site (Flask)', subtitle: 'Create a dynamic multi-page website' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 3',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Flask Extensions & Forms' },
+              { type: 'normal', text: 'SQLite Integration with SQLAlchemy' },
+              { type: 'project', level: 'intermediate', title: 'Task Tracker with DB', subtitle: 'Perform persistent CRUD operations with SQLite' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 4',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Modern Backend with FastAPI' },
+              { type: 'normal', text: 'Async/Await & Type Hinting' },
+              { type: 'project', level: 'hard', title: 'High-Performance API', subtitle: 'Build asynchronous endpoints for real-time data' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+    ],
+    [
+      {
+        week: 'Week 1',
+        rows: [
+          {
+            timeline: 'Day First',
+            includes: [
+              { type: 'normal', text: 'Enterprise Development with Django' },
+              { type: 'normal', text: 'Django Project Structure & MVT Pattern' },
+              { type: 'project', level: 'intermediate', title: 'Core Admin Dashboard', subtitle: 'Customize the Django admin for a CRM backend' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Monday to Saturday', includes: [] },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 2',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Django Models & Migrations' },
+              { type: 'normal', text: 'Authentication & User Management' },
+              { type: 'project', level: 'intermediate', title: 'Member Portal System', subtitle: 'Build a secure registration & login flow' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 3',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Django REST Framework (DRF)' },
+              { type: 'normal', text: 'Serializers, Views & Routers' },
+              { type: 'project', level: 'intermediate', title: 'Social Feed API', subtitle: 'Create endpoints for posting, liking and commenting' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 4',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Advanced DRF: Permissions & JWT' },
+              { type: 'normal', text: 'Third-party API Integration (Razorpay/Twilio)' },
+              { type: 'project', level: 'hard', title: 'E-commerce API Engine', subtitle: 'Build a backend for orders, carts and payments' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+    ],
+    [
+      {
+        week: 'Week 1',
+        rows: [
+          {
+            timeline: 'Day First',
+            includes: [
+              { type: 'normal', text: 'Scalability & Background Tasks' },
+              { type: 'normal', text: 'Celery, Redis & Task Queues' },
+              { type: 'project', level: 'hard', title: 'Bulk Email Automator', subtitle: 'Send thousands of emails asynchronously' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Monday to Saturday', includes: [] },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 2',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Web Scraping & Data Extraction' },
+              { type: 'normal', text: 'BeautifulSoup4 & Selenium Mastery' },
+              { type: 'project', level: 'hard', title: 'Price Tracker Bot', subtitle: 'Scrape e-commerce sites and alert on price drops' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 3',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'DevOps for Python: Docker & CI/CD' },
+              { type: 'normal', text: 'Containerizing Django/Flask Apps' },
+              { type: 'project', level: 'hard', title: 'Cloud-Ready Microservice', subtitle: 'Dockerize and deploy an API to AWS/Render' },
+              { type: 'normal', text: 'Mentor doubt-solving session' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+      {
+        week: 'Week 4',
+        rows: [
+          {
+            timeline: 'Monday to Saturday',
+            includes: [
+              { type: 'normal', text: 'Backend Optimization & Security Audit' },
+              { type: 'normal', text: 'Resume & LinkedIn for Backend Roles' },
+              { type: 'project', level: 'hard', title: 'Final Graduation Capstone', subtitle: 'Industry-level production backend submission' },
+              { type: 'normal', text: 'Placement Guidance & HR Support' }
+            ]
+          },
+          { timeline: 'Sunday', includes: [] }
+        ]
+      },
+    ],
+  ];
+
   if (loading) return <LoadingSpinner />;
 
   return (
-    <div className="bg-black-gradient min-h-screen pt-36 pb-12 px-6">
-      <Section imgSrc={python} imgLeft={true} title="TechieHelp Python Developer Internship Program">
-        <p>
-          Develop scripts, automation, and backend logic using Python frameworks like Django or Flask. Gain hands-on experience with real projects and expert mentorship.
-        </p>
-<a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer">
-  <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
-    Apply Now
-  </button>
-</a>
-      </Section>
+    <div className="bg-black min-h-screen">
+      <style>
+        {`
+          @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-scroll {
+            animation: scroll 30s linear infinite;
+          }
+          .hover\\:pause:hover {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
+      <section className="relative w-full min-h-screen bg-gradient-to-r from-blue-900 to-blue-800 text-white flex items-center justify-center px-6 md:px-12 pt-32">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 w-full">
+          {/* Left Content */}
+          <div className="lg:w-1/2">
+            <header>
+              <div className="inline-block bg-yellow-500 text-black px-5 py-1 rounded-full text-xs font-medium mb-1">
+                Highly Rated Python Program • National Internship Portal Aligned
+              </div>
+              <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-snug max-w-4xl">
+                <span className="text-yellow-300 font-bold">Python Developer</span> Internship & Training Program
+              </h1>
+              <h2 className="text-xl md:text-2xl font-medium mb-2 leading-relaxed">
+                Build high-performance backends, automate workflows, and master Django & Flask like an industry pro.
+              </h2>
+              <p className="text-base mb-2 leading-relaxed">
+                This is not just a theory course. It’s a specialized internship where you build scalable APIs, automate real-world tasks, and learn modern backend architecture.
+              </p>
+              <ul className="flex flex-wrap gap-3 mb-3">
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Scalable API Development</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Django & Flask Mastery</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Database & Security Architecture</li>
+                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Letter of Recommendation</li>
+              </ul>
 
-      <Section imgSrc={overview} imgLeft={false} title="🔥 Why Choose TechieHelp?">
-        <p>
-          Our Python internship offers practical experience in backend development and automation with real-world projects and dedicated mentor support.
-        </p>
-        <ul className="list-disc list-inside mt-2 space-y-1">
-          <li>✔️ Recognized by MSME & Verified on AICTE Internship Portal</li>
-          <li>✔️ Offer Letter + Completion Certificate + LinkedIn Badge</li>
-          <li>✔️ Live Classes + Mentor Guidance + Hackathons + Projects</li>
-          <li>✔️ Resume Review & GitHub Hosting Support</li>
-          <li>✔️ Intern ID with Public Records on TechieHelp Website</li>
-          <li>✔️ Best Interns Get Goodies + Certificate of Excellence + LinkedIn/YouTube Feature</li>
-        </ul>
-      </Section>
+              {/* Inline Feature Row */}
+              <div className="flex flex-wrap items-center gap-8 mb-4">
+                <div className="flex items-center gap-2 text-white">
+                  <Clock className="w-5 h-5 text-cyan-400" />
+                  <span className="text-sm font-medium">1–4 Months Internship</span>
+                </div>
+                <div className="flex items-center gap-2 text-white">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="text-sm font-medium">Industry-Level Datasets</span>
+                </div>
+                <div className="flex items-center gap-2 text-white">
+                  <Briefcase className="w-5 h-5 text-blue-400" />
+                  <span className="text-sm font-medium">Career Support & Hackathons</span>
+                </div>
+              </div>
 
-      <Section imgSrc={python} imgLeft={true} title="🚀 Internship Overview">
-        <p><strong>Internship Duration Options:</strong></p>
-        <ul className="list-disc list-inside mt-2 space-y-1">
-          <li>1 Month (Beginner Level)</li>
-          <li>2 Months (Intermediate Level)</li>
-          <li>3 Months (Advanced Level)</li>
-        </ul>
-        <p className="mt-4">
-          <strong>Mode:</strong> Online<br />
-          <strong>Format:</strong> Live Sessions, Recordings, Doubt Solving, Hackathons<br />
-          <strong>Tools Covered:</strong> Python, Django, Flask, Automation, APIs, and More
-        </p>
-      </Section>
+              {/* Inline Reviews Row */}
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-xs text-white">⭐ 4.6/5 Rated by 2,000+ Students | Trusted by Colleges & Recruiters</span>
+              </div>
 
-      <Section imgSrc={swag} imgLeft={false} title="🌟 What You Will Achieve">
-        <ul className="list-disc list-inside space-y-2 text-lg">
-          <li>📌 Real-World Python Projects for Resume</li>
-          <li>🛠 GitHub Portfolio + Hosted Project Links</li>
-          <li>🎖 Certificate, Badge, and Offer Letter</li>
-          <li>🤝 Networking with Like-Minded Interns</li>
-          <li>🏁 Eligibility for Excellence Awards + Public Recognition</li>
-        </ul>
-      </Section>
+              {/* Inline CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-3">
+                <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer">
+                  <button className="bg-white text-blue-900 px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-gray-100">
+                    Start Internship – ₹499/-
+                  </button>
+                </a>
+                <button className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2">
+                  <Download className="w-4 h-4" />
+                  Download Internship Syllabus
+                </button>
+              </div>
+              <p className="text-xs text-gray-300 mt-1">Limited seats • Certificate + Projects Included • Beginner Friendly</p>
+            </header>
+          </div>
+          {/* Right Stats Card */}
+          <div className="lg:w-1/2 max-w-lg">
+            <div className="bg-white rounded-xl shadow-2xl p-8">
+              {/* Stats Grid */}
+              <div className="grid grid-cols-2 gap-6 mb-8">
+                <div className="bg-blue-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-blue-900 mb-2">10+</div>
+                  <div className="text-sm text-blue-700">Backend Systems</div>
+                </div>
+                <div className="bg-green-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-green-900 mb-2">REST</div>
+                  <div className="text-sm text-green-700">API Architecture</div>
+                </div>
+                <div className="bg-indigo-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-indigo-900 mb-2">Django</div>
+                  <div className="text-sm text-indigo-700">Web Frameworks</div>
+                </div>
+                <div className="bg-yellow-100 rounded-lg p-6 text-center">
+                  <div className="text-3xl font-bold text-yellow-900 mb-2">95%</div>
+                  <div className="text-sm text-yellow-700">Tech Placement</div>
+                </div>
+              </div>
 
-      <section className="max-w-7xl mx-auto px-6 md:px-12 my-20 text-white">
-        <h2 className="text-3xl font-bold mb-8 text-center">🔥 1-Month Python Developer Internship — ₹999</h2>
-        <p className="text-center mb-6 font-semibold">
-          Best for Beginners • Fast-Track Learning • Certificate + Badge
-        </p>
-        <div className="overflow-x-auto mb-12">
-          <table className="min-w-full text-left text-white border border-cyan-500 rounded-lg">
-            <thead>
-              <tr className="bg-cyan-700">
-                <th className="px-4 py-3 font-semibold border border-cyan-500">Week</th>
-                <th className="px-4 py-3 font-semibold border border-cyan-500">Activity</th>
-                <th className="px-4 py-3 font-semibold border border-cyan-500">What You’ll Do</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr className="border border-cyan-500">
-                <td className="px-4 py-3 border border-cyan-500 align-top">Week 1</td>
-                <td className="px-4 py-3 border border-cyan-500">
-                  🚀 Introduction to Python<br />
-                  🛠️ Python Basics & Syntax
-                </td>
-                <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Learn Python syntax and basics<br />
-                  ✅ Write simple scripts
-                </td>
-              </tr>
-              <tr className="border border-cyan-500">
-                <td className="px-4 py-3 border border-cyan-500 align-top">Week 2</td>
-                <td className="px-4 py-3 border border-cyan-500">
-                  💡 Django & Flask Basics<br />
-                  🎯 Mentorship & AMA with Industry Experts
-                </td>
-                <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Understand Django and Flask<br />
-                  ✅ Build backend applications
-                </td>
-              </tr>
-              <tr className="border border-cyan-500">
-                <td className="px-4 py-3 border border-cyan-500 align-top">Week 3</td>
-                <td className="px-4 py-3 border border-cyan-500">
-                  ⚙️ Automation & API Integration<br />
-                  🌐 Deployment Workshop
-                </td>
-                <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Automate tasks<br />
-                  ✅ Deploy Python applications
-                </td>
-              </tr>
-              <tr className="border border-cyan-500">
-                <td className="px-4 py-3 border border-cyan-500 align-top">Week 4</td>
-                <td className="px-4 py-3 border border-cyan-500">
-                  🏁 Final Project Review<br />
-                  🎓 Certificate & Badge Distribution
-                </td>
-                <td className="px-4 py-3 border border-cyan-500">
-                  ✅ Submit final Python project<br />
-                  ✅ Get personal review by mentors<br />
-                  ✅ Receive your verified certificate and badge
-                </td>
-              </tr>
-            </tbody>
-          </table>
+              {/* Divider */}
+              <hr className="border-gray-300 mb-6" />
+
+              {/* Card Footer */}
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center gap-3">
+                  <Calendar className="w-5 h-5 text-blue-600" />
+                  <span className="text-sm">Next Batch Starts:</span>
+                  <span className="text-sm font-semibold text-blue-600">{formattedDate}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <IndianRupee className="w-5 h-5 text-green-600" />
+                  <span className="text-sm">Pricing start from:</span>
+                  <span className="text-sm font-semibold text-green-600">₹499/-</span>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer" className="block">
+                <button className="w-full bg-blue-900 hover:bg-blue-800 text-white py-4 px-6 rounded-lg font-bold text-lg transition duration-300 transform hover:scale-105">
+                  Enroll Now – ₹499/-
+                </button>
+              </a>
+              <p className="text-xs text-gray-500 mt-4">Based on past learner outcomes & placement support</p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <h2 className="text-3xl font-bold mb-8 text-center">💸 Internship Plans & Pricing</h2>
-      <div className="flex flex-col md:flex-row justify-center gap-8">
-        <PriceBox
-          title="🔹 1-Month Internship — ₹999"
-          price="₹999"
-          offer="₹2,000"
-          features={[
-            "🔥 Limited-Time Offer: 50%+ OFF on our Full Internship Experience!",
-            "🧑‍💻 What You Will Learn",
-            "Python Basics, Django, Flask",
-            "Backend Development & Automation",
-            "Real-World Projects & Deployment",
-            "🎯 Internship Benefits",
-            "🧑‍🏫 Live Classes & AMAs with Mentors & Co-Founders",
-            "📝 Weekly Task Guidance + Final Report Format",
-            "💬 Dedicated Support via Discord & Email",
-            "📛 Internship ID Card + Digital Identity",
-            "💼 Resume & LinkedIn Profile Optimization",
-            "🛠️ Project Hosting on GitHub + LinkedIn Badge",
-            "🔖 Government-Recognized Certificate (MSME & ISO Certified)",
-            "🏅 Certificate of Completion with Project Showcase",
-            "🏆 Top Performer Rewards",
-            "⭐ Featured Portfolio on TechieHelp Platform & Partner Networks",
-            "📝 Permanent Letter of Recommendation",
-            "🎁 Exclusive TechieHelp Merchandise & Swag",
-            "📌 Perfect for Beginners",
-            "🎓 Learn by Doing | 🧠 Mentorship-Driven | 💼 Career Boosting",
-          ]}
-        />
-        <PriceBox
-          title="🔸 2-Month Internship — ₹1499"
-          price="₹1499"
-          offer="₹3,000"
-          features={[
-            "🔥 Special Launch Offer: Save 50%+ & Build a Stronger Python Developer Profile! 🚀",
-            "🧑‍💻 Everything in the 1-Month Internship",
-            "✅ Python Basics, Django, Flask",
-            "✅ Backend Development & Automation",
-            "✅ Real-World Projects & Deployment",
-            "✅ Live Classes, Mentorship, Certificate, ID Card, Final Project, Resume Boost",
-            "➕ Additional 2-Month Benefits",
-            "🧑‍🏫 Live Classes & AMAs with Mentors & Co-Founders",
-            "📝 Weekly Task Guidance + Final Report Format",
-            "💬 Dedicated Support via Discord & Email",
-            "📛 Internship ID Card + Digital Identity",
-            "💼 Resume & LinkedIn Profile Optimization",
-            "🛠️ Project Hosting on GitHub + LinkedIn Badge",
-            "🔖 Government-Recognized Certificate (MSME & ISO Certified)",
-            "🏅 Certificate of Completion with Project Showcase",
-            "🏆 Top Performer Rewards",
-            "⭐ Featured Portfolio on TechieHelp Platform & Partner Networks",
-            "📝 Permanent Letter of Recommendation",
-            "🎁 Exclusive TechieHelp Merchandise & Swag",
-            "🏅 Certificate of Excellence for Outstanding Projects",
-            "🧠 Advanced Python Concepts",
-            "⚛️ Django & Flask Project Building",
-            "🌐 Portfolio Deep-Dive with Personalized Reviews",
-            "🧩 Mini Hackathon Challenge with Mentor Feedback + Recognition",
-          ]}
-        />
-        <PriceBox
-          title="🔶 3-Month Internship — ₹1999"
-          price="₹1999"
-          offer="₹4,000"
-          features={[
-            "🔥 Limited-Time Offer: 50%+ OFF on our Full Internship Experience!",
-            "Includes All 2-Month Features",
-            "Advanced Backend Development",
-            "Automation & API Mastery",
-            "Final Hackathon + T-Shirt + YouTube Feature",
-            "Certificate of Excellence for Top Python Developers",
-            "₹2,000 Cash Prize + Additional Goodies from TechieHelp",
-            "🥇 Hackathon Winner Reward",
-            "🎁 Exclusive TechieHelp Merchandise & Swag",
-            "📝 Permanent Letter of Recommendation",
-            "⭐ Featured Portfolio on TechieHelp Platform & Partner Networks",
-            "🏆 Top Performer Rewards",
-            "🏅 Certificate of Completion with Project Showcase",
-            "🔖 Government-Recognized Certificate (MSME & ISO Certified)",
-            "💼 Resume & LinkedIn Profile Optimization",
-            "📛 Internship ID Card + Digital Identity",
-            "💬 Dedicated Support via Discord & Email",
-            "📝 Weekly Task Guidance + Final Report Format",
-            "🧑‍🏫 Live Classes & AMAs with Mentors & Co-Founders",
-            "🎯 Internship Benefits",
-            "▶️ YouTube Feature for Top Projects",
-            "👕 TechieHelp Internship T-Shirt",
-            "🎯 Final Hackathon Challenge with Mentor Jury",
-            "🌍 Open Source Contribution Guidance",
-            "🔥 Python, Django, Flask Basics",
-            "🖥️ Backend Collaboration & Tools",
-            "🔥 Exclusive to the 3-Month Plan",
-            "✅ Mini Hackathon + Feedback from Mentors",
-            "✅ Live Classes, Mentorship, Project Hosting",
-            "✅ Python Projects, Resume Boost, LinkedIn Badge",
-            "✅ Everything from the 1 & 2-Month Programs",
-          ]}
-        />
+      {/* Marquee Section */}
+      <section className="w-full bg-slate-50 py-4 border-t border-b border-slate-200 overflow-hidden">
+        <div className="animate-marquee flex items-center space-x-4 whitespace-nowrap">
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Highest Package ₹12 LPA</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">₹8 LPA</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">₹6 LPA</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">MSME Registered Training Partner</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">National Internship Portal Certified</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">ISO 9001:2015 Certified</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">15,000+ Students Trained</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Industry Expert Trainers</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Live Project Based Training</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Career Support & Job Assistance</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Welcome Kit Provided</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">4.6/5 Rating by 2,000+ Learners</span>
+          {/* Duplicate for seamless infinite loop */}
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Highest Package ₹12 LPA</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">₹8 LPA</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">₹6 LPA</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">MSME Registered Training Partner</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">National Internship Portal Certified</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">ISO 9001:2015 Certified</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">15,000+ Students Trained</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Industry Expert Trainers</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Live Project Based Training</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Career Support & Job Assistance</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">Welcome Kit Provided</span>
+          <span className="bg-slate-200 rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800">4.6/5 Rating by 2,000+ Learners</span>
+        </div>
+      </section>
+
+      {/* Why Choose TechieHelp Section */}
+      <section className="bg-white py-16 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose TechieHelp Internship?</h2>
+          <p className="text-lg text-gray-600 mb-12 max-w-3xl mx-auto">
+            Practical, industry-focused internship programs designed to help students and freshers build real-world skills and career readiness.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-blue-100 rounded-full p-3 flex-shrink-0">
+                <CheckCircle className="w-6 h-6 text-blue-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">MSME Recognized & Verified on AICTE Internship Portal</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-green-100 rounded-full p-3 flex-shrink-0">
+                <Briefcase className="w-6 h-6 text-green-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">Offer Letter & Completion Certificate</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-purple-100 rounded-full p-3 flex-shrink-0">
+                <Star className="w-6 h-6 text-purple-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">LinkedIn Badge & Public Verification</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-indigo-100 rounded-full p-3 flex-shrink-0">
+                <Clock className="w-6 h-6 text-indigo-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">Live Classes & Expert Mentor Guidance</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-orange-100 rounded-full p-3 flex-shrink-0">
+                <Download className="w-6 h-6 text-orange-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">Real-World Projects & Hackathons</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-teal-100 rounded-full p-3 flex-shrink-0">
+                <Calendar className="w-6 h-6 text-teal-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">Resume Review & GitHub Hosting Support</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-pink-100 rounded-full p-3 flex-shrink-0">
+                <IndianRupee className="w-6 h-6 text-pink-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">Intern ID with Public Records on TechieHelp Website</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-yellow-100 rounded-full p-3 flex-shrink-0">
+                <Star className="w-6 h-6 text-yellow-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">Top Performers Get Goodies & Certificate of Excellence</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
+              <div className="bg-red-100 rounded-full p-3 flex-shrink-0">
+                <CheckCircle className="w-6 h-6 text-red-600" />
+              </div>
+              <div className="text-left">
+                <p className="text-gray-900 font-medium">LinkedIn & YouTube Feature Opportunities</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Internship Overview Section */}
+      <section className="bg-gray-50 py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🚀 Internship Overview</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Flexible online & offline internship programs designed for students, freshers, and working professionals to build career-ready skills with industry experts.
+            </p>
+          </div>
+
+          {/* Internship Duration Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
+              <div className="text-center">
+                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
+                  <Clock className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">1 Month</h3>
+                <p className="text-gray-600 font-medium mb-2">Beginner Level</p>
+                <p className="text-sm text-gray-500">For students starting from scratch</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
+              <div className="text-center">
+                <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-green-200 transition-colors">
+                  <Briefcase className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">2 Months</h3>
+                <p className="text-gray-600 font-medium mb-2">Intermediate Level</p>
+                <p className="text-sm text-gray-500">Project-based skill development</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
+              <div className="text-center">
+                <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
+                  <Star className="w-8 h-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">3 Months</h3>
+                <p className="text-gray-600 font-medium mb-2">Advanced + Full-Stack Level</p>
+                <p className="text-sm text-gray-500">Career-ready training with real-world projects</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
+              <div className="text-center">
+                <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-orange-200 transition-colors">
+                  <Calendar className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">Custom Duration</h3>
+                <p className="text-gray-600 font-medium mb-2">As Per Student Requirement</p>
+                <p className="text-sm text-gray-500">Flexible timeline based on learning pace, college schedule, or goals</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Mode & Learning Format */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Learning Modes & Formats</h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">Online Internship</span>
+              <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">Offline Classroom Training (Limited Seats)</span>
+              <span className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">Live Sessions</span>
+              <span className="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">Recorded Videos</span>
+              <span className="bg-red-100 text-red-800 px-4 py-2 rounded-full text-sm font-medium">Doubt Solving Support</span>
+              <span className="bg-indigo-100 text-indigo-800 px-4 py-2 rounded-full text-sm font-medium">Hackathons & Assessments</span>
+            </div>
+          </div>
+
+          {/* Trust & Certification Block */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-16">
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Trust & Certification</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle className="w-8 h-8 text-blue-600" />
+                </div>
+                <p className="text-gray-900 font-medium">MSME Recognized Training Program</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Briefcase className="w-8 h-8 text-green-600" />
+                </div>
+                <p className="text-gray-900 font-medium">Offer Letter & Completion Certificate</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Star className="w-8 h-8 text-purple-600" />
+                </div>
+                <p className="text-gray-900 font-medium">Intern ID with Public Verification</p>
+              </div>
+              <div className="text-center">
+                <div className="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                  <Clock className="w-8 h-8 text-orange-600" />
+                </div>
+                <p className="text-gray-900 font-medium">Mentorship by Industry Experts</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Career Outcomes Strip */}
+          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 className="text-2xl font-bold text-center mb-8">Career Outcomes</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+              <div>
+                <Download className="w-8 h-8 mx-auto mb-2" />
+                <p className="font-medium">Resume Review</p>
+              </div>
+              <div>
+                <Star className="w-8 h-8 mx-auto mb-2" />
+                <p className="font-medium">GitHub Portfolio Setup</p>
+              </div>
+              <div>
+                <Briefcase className="w-8 h-8 mx-auto mb-2" />
+                <p className="font-medium">Career & Placement Guidance</p>
+              </div>
+              <div>
+                <CheckCircle className="w-8 h-8 mx-auto mb-2" />
+                <p className="font-medium">Top Performer Recognition</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What You Will Achieve Section */}
+      <section className="bg-gradient-to-br from-blue-50 to-indigo-50 py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🌟 What You Will Achieve</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Gain tangible career outcomes, industry-recognized certificates, and real-world experience that sets you apart in the competitive job market.
+            </p>
+          </div>
+
+          {/* Achievements Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-blue-100 rounded-full p-3 group-hover:bg-blue-200 transition-colors flex-shrink-0">
+                  <Briefcase className="w-6 h-6 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Scalable Backend Systems for Resume</h3>
+                  <p className="text-gray-600 text-sm">Build portfolio-worthy web applications and APIs that showcase your backend engineering skills.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-green-100 rounded-full p-3 group-hover:bg-green-200 transition-colors flex-shrink-0">
+                  <Star className="w-6 h-6 text-green-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">GitHub Portfolio with Live Hosted Project Links</h3>
+                  <p className="text-gray-600 text-sm">Professional GitHub profile with live demos of your work</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-purple-100 rounded-full p-3 group-hover:bg-purple-200 transition-colors flex-shrink-0">
+                  <Download className="w-6 h-6 text-purple-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Internship Offer Letter</h3>
+                  <p className="text-gray-600 text-sm">Official internship offer letter for your professional records</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-orange-100 rounded-full p-3 group-hover:bg-orange-200 transition-colors flex-shrink-0">
+                  <CheckCircle className="w-6 h-6 text-orange-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Training Certificate</h3>
+                  <p className="text-gray-600 text-sm">Industry-recognized training completion certificate</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-teal-100 rounded-full p-3 group-hover:bg-teal-200 transition-colors flex-shrink-0">
+                  <Calendar className="w-6 h-6 text-teal-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Course Completion Certificate</h3>
+                  <p className="text-gray-600 text-sm">Verified course completion certificate from TechieHelp</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-pink-100 rounded-full p-3 group-hover:bg-pink-200 transition-colors flex-shrink-0">
+                  <IndianRupee className="w-6 h-6 text-pink-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Internship Completion Certificate</h3>
+                  <p className="text-gray-600 text-sm">Official internship completion certificate with performance details</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-indigo-100 rounded-full p-3 group-hover:bg-indigo-200 transition-colors flex-shrink-0">
+                  <Clock className="w-6 h-6 text-indigo-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">LinkedIn Badge & Certificate of Excellence (Top Performers)</h3>
+                  <p className="text-gray-600 text-sm">LinkedIn verification badge and excellence certificate for outstanding performance</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-yellow-100 rounded-full p-3 group-hover:bg-yellow-200 transition-colors flex-shrink-0">
+                  <Star className="w-6 h-6 text-yellow-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Topic-Wise Quizzes with Quiz Completion Certificates</h3>
+                  <p className="text-gray-600 text-sm">Individual certificates for each topic quiz you complete successfully</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="flex items-start space-x-4">
+                <div className="bg-red-100 rounded-full p-3 group-hover:bg-red-200 transition-colors flex-shrink-0">
+                  <CheckCircle className="w-6 h-6 text-red-600" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">Letter of Recommendation (Performance Based)</h3>
+                  <p className="text-gray-600 text-sm">Professional recommendation letter from industry mentors</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Full-width final item */}
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg p-8 text-white md:col-span-2 lg:col-span-3 hover:shadow-xl transition-shadow duration-300">
+              <div className="text-center">
+                <div className="flex justify-center mb-4">
+                  <div className="bg-white/20 rounded-full p-4">
+                    <CheckCircle className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold mb-2">Networking with Backend Engineers & Public Recognition</h3>
+                <p className="text-lg opacity-90">Connect with fellow developers, build lasting professional relationships, and get featured on TechieHelp platforms for outstanding coding achievements</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Placement Support Section */}
+      <section className="bg-white py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Placement Support</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Structured career assistance to help you prepare, apply, and succeed in your job journey.
+            </p>
+          </div>
+
+          {/* Placement Support Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+              <div className="text-center">
+                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Briefcase className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Company-Wise DSA Preparation</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">Curated DSA sheets based on real hiring patterns of top companies.</p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+              <div className="text-center">
+                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Download className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Resume Review & Optimization</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">One-to-one resume reviews to make your profile recruiter-ready.</p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+              <div className="text-center">
+                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Star className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Mentor-Led Interview Guidance</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">Mock interviews, feedback sessions, and expert mentor support.</p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+              <div className="text-center">
+                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <CheckCircle className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold mb-4">Hiring & Placement Assistance</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">Access to job opportunities, referrals, and partner hiring drives.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Mentor Guidance & Placement Support Section */}
+      <section className="bg-white py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Mentor Guidance & Placement Support</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Get direct guidance from industry mentors to prepare for internships and placements.
+            </p>
+          </div>
+
+          {/* Mentors Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Mentor 1 */}
+            <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div className="text-center mb-4">
+                <img
+                  src={AmitPhoto}
+                  alt="Amit Kumar"
+                  className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg"
+                />
+                <h3 className="text-xl font-bold text-gray-900 mb-1">Amit Kumar</h3>
+                <p className="text-sm text-blue-600 font-medium">Founder & Lead Mentor – TechieHelp</p>
+              </div>
+              <p className="text-gray-700 mb-4 text-center text-sm">
+                Machine Learning Engineer & Full Stack Developer with hands-on mentoring experience.
+              </p>
+              <div className="mb-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-2">Support Highlights:</h4>
+                <ul className="space-y-1 text-gray-700 text-sm">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Placement-oriented mentorship</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Resume, LinkedIn & project guidance</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Career & interview preparation</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="text-center">
+                <a href="https://www.linkedin.com/in/amit-kumar-686196225/" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+
+            {/* Mentor 2 */}
+            <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              <div className="text-center mb-4">
+                <img
+                  src={mdAmzad}
+                  alt="Amzad"
+                  className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg"
+                />
+                <h3 className="text-xl font-bold text-gray-900 mb-1">Amzad</h3>
+                <p className="text-sm text-blue-600 font-medium">Machine Learning Engineer</p>
+              </div>
+              <p className="text-gray-700 mb-4 text-center text-sm">
+                Machine Learning Engineer specializing in practical ML concepts and skill development.
+              </p>
+              <div className="mb-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-2">Support Highlights:</h4>
+                <ul className="space-y-1 text-gray-700 text-sm">
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Core Machine Learning guidance</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Project-based ML mentoring</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                    <span>Career guidance for ML roles</span>
+                  </li>
+                </ul>
+              </div>
+              <div className="text-center">
+                <a href="https://www.linkedin.com/in/md-amzad-b8547a296/" target="_blank" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors">
+                  <Linkedin className="w-5 h-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Career Outcome Section with Typing Animation */}
+      <section className="bg-gradient-to-br from-slate-50 to-blue-50 py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Top Label */}
+          <div className="text-center mb-8">
+            <span className="inline-block bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-2 rounded-full uppercase tracking-wide">
+              Your Future Career Roles
+            </span>
+          </div>
+
+          {/* Dynamic Typing Heading */}
+          <TypingAnimation />
+
+          {/* Supporting Content */}
+          <div className="text-center mb-16">
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Through TechieHelp's comprehensive training, real-world projects, and expert mentorship, you'll be prepared for high-demand roles in Backend Development across startups and established tech giants.
+            </p>
+          </div>
+
+          {/* Career Insight Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="text-center">
+                <div className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-green-200 transition-colors">
+                  <Briefcase className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Architecture Foundations</h3>
+                <p className="text-gray-600">Master the logic and design patterns behind scalable backend systems.</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="text-center">
+                <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
+                  <Star className="w-8 h-8 text-purple-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Django & Flask Prowess</h3>
+                <p className="text-gray-600">Expertise in developing, securing, and optimizing professional web backends.</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 group">
+              <div className="text-center">
+                <div className="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-indigo-200 transition-colors">
+                  <CheckCircle className="w-8 h-8 text-indigo-600" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">API & Automation</h3>
+                <p className="text-gray-600">Hands-on experience with REST APIs, Task Queues, and Process Automation.</p>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer">
+                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300 transform hover:scale-105">
+                  Start Your Tech Career
+                </button>
+              </a>
+              <button onClick={() => document.getElementById('student-reviews').scrollIntoView({ behavior: 'smooth' })} className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+                View Student Success Stories
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies & Tools Section */}
+      <section className="bg-white py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Technologies & Tools You Will Learn</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Gain hands-on experience with industry-standard Python tools used to build web apps, automate processes, and manage production-ready databases.
+            </p>
+          </div>
+
+          {/* Technologies Grid */}
+          <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Python 3</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Django_logo.svg" alt="Django" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Django</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Flask_logo.svg" alt="Flask" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Flask</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://cdn.worldvectorlogo.com/logos/fastapi.svg" alt="FastAPI" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">FastAPI</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.mysql.com/common/logos/logo-mysql-170x115.png" alt="MySQL" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">MySQL</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Postman</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.vectorlogo.zone/logos/docker/docker-icon.svg" alt="Docker" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Docker</h3>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-3 hover:shadow-md transition-shadow duration-200 text-center">
+              <img src="https://www.vectorlogo.zone/logos/redis/redis-icon.svg" alt="Redis" className="w-8 h-8 object-contain mx-auto mb-2" />
+              <h3 className="text-xs font-semibold text-gray-800">Redis</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Reviews & Success Stories Section */}
+      <section id="student-reviews" className="bg-gray-50 py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🎓 Student Reviews & Success Stories</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Hear directly from our students about their learning experience, projects, and career growth with TechieHelp.
+            </p>
+          </div>
+
+          {/* Videos Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+  <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
+    <div className="aspect-[9/16]">
+      <iframe
+        src="https://www.youtube.com/embed/Ia1EOzjVwEY"
+        title="Student Review"
+        frameBorder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full rounded-md"
+      ></iframe>
+    </div>
+  </div>
+
+  <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
+    <div className="aspect-[9/16]">
+      <iframe
+        src="https://www.youtube.com/embed/l5Ox9Z1AJow"
+        title="Student Review"
+        frameBorder="0"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        className="w-full h-full rounded-md"
+      ></iframe>
+    </div>
+  </div>
+
+
+
+
+            <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
+              <div className="aspect-[9/16]">
+                <iframe
+                  src="https://www.youtube.com/embed/ywZ-_qpzRNY"
+                  title="Student Review 2"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full rounded-md"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Completion Certificate Section */}
+      <section className="bg-gray-50 py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Left: Certificate Image */}
+            <div className="md:w-1/2">
+              <img
+                src={certificate}
+                alt="Completion Certificate"
+                className="rounded-lg shadow-lg w-full max-w-md mx-auto"
+              />
+            </div>
+            {/* Right: Content */}
+            <div className="md:w-1/2 text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Completion Certificate</h2>
+              <p className="text-lg mb-6">We provide an industry-recognized certification that validates your Python Backend development skills, internship experience, and project work through verified and trusted channels.</p>
+              <h3 className="text-xl font-semibold mb-2">TechieHelp Python Developer Internship Certificate</h3>
+              <p className="text-base mb-6">This certificate is issued after successful completion of training, scalable backend projects, and API evaluations. It is designed to validate real skills in Django, Flask, and Database Architecture. Each certificate is verifiable and transparent for recruiters.</p>
+              {/* Trust Points */}
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold mb-4">Trust & Verification Points</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span>National Internship Portal (NIP) Listed Internship</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span>AICTE-Recognized Internship Program</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <QrCode className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <span>QR Code / Scanner-Based Verification</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Shield className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <span>Public Profile Verification on TechieHelp Website</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Award className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                    <span>Unique Certificate ID for Every Intern</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+                    <span>Linked to Internship Duration & Projects Completed</span>
+                  </li>
+                </ul>
+              </div>
+              {/* Verification Note */}
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <p className="text-sm text-blue-800">Every certificate can be verified by scanning the QR code or visiting the intern’s public profile on the TechieHelp website.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recommendation Letter Section */}
+      <section className="bg-gray-50 py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center gap-8">
+            {/* Left: Content */}
+            <div className="md:w-1/2 text-gray-900">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Recommendation Letter (Placement Support)</h2>
+              <p className="text-lg mb-6">This recommendation letter strengthens your resume and supports internship-to-placement transitions by highlighting your performance, skills, and project contributions.</p>
+              <h3 className="text-xl font-semibold mb-2">TechieHelp Internship Letter of Recommendation</h3>
+              {/* Trust Points */}
+              <div className="mb-6">
+                <h4 className="text-lg font-semibold mb-4">Placement-Focused Trust Points</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span>Issued based on intern performance & project quality</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0" />
+                    <span>Helps in resume shortlisting and HR screening</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Shield className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <span>Linked to the intern’s public TechieHelp profile</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <QrCode className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                    <span>QR Code / ID-based verification for recruiters</span>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <Award className="w-5 h-5 text-orange-600 flex-shrink-0" />
+                    <span>Suitable for jobs, internships, and higher studies</span>
+                  </li>
+                </ul>
+              </div>
+              {/* Verification Note */}
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+                <p className="text-sm text-blue-800">Recruiters and institutions can verify this recommendation letter via QR code or the intern’s public TechieHelp profile.</p>
+              </div>
+            </div>
+            {/* Right: Recommendation Letter Image */}
+            <div className="md:w-1/2">
+              <img
+                src={recommendation}
+                alt="Recommendation Letter"
+                className="rounded-lg shadow-lg w-full max-w-md mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Student Achievements & Certification Moments Section */}
+      <section className="bg-white py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Student Achievements & Certification Moments</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Real students. Real certificates. Real internship outcomes. A glimpse of our interns receiving verified certificates, goodies, and recognition after completing live projects.
+            </p>
+          </div>
+
+          {/* Toggle */}
+          <div className="flex justify-end mb-8">
+            <div className="flex bg-gray-100 rounded-full p-1">
+              <button
+                onClick={() => setAutoScroll(true)}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+                  autoScroll ? 'bg-blue-600 text-white' : 'text-blue-600'
+                }`}
+              >
+                Auto Scroll
+              </button>
+              <button
+                onClick={() => setAutoScroll(false)}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+                  !autoScroll ? 'bg-blue-600 text-white' : 'text-blue-600'
+                }`}
+              >
+                Manual Scroll
+              </button>
+            </div>
+          </div>
+
+          {/* Image Gallery */}
+          <div className={autoScroll ? 'overflow-hidden' : 'overflow-x-auto'}>
+            <div
+              className={`flex gap-4 ${autoScroll ? 'animate-scroll' : ''} hover:pause`}
+              style={{ width: '200%' }}
+            >
+              {[aryan1, aryan2, sixty, coreTeam, amazad, tit, delhiJudge, recon, kitInt, kit, kitNodha, kitCert, aarshdeepcertificate, aarshdeepdiary, aarshdeeptrophy, groups, hod, rohitdiary, rohittrophy, simrancertificate, simrandiary, simrantrophy, simrantshirt].map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt={`Achievement ${index + 1}`}
+                  className="w-64 h-64 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex-shrink-0"
+                />
+              ))}
+              {[aryan1, aryan2, sixty, coreTeam, amazad, tit, delhiJudge, recon, kitInt, kit, kitNodha, kitCert, aarshdeepcertificate, aarshdeepdiary, aarshdeeptrophy, groups, hod, rohitdiary, rohittrophy, simrancertificate, simrandiary, simrantrophy, simrantshirt].map((img, index) => (
+                <img
+                  key={`dup-${index}`}
+                  src={img}
+                  alt={`Achievement ${index + 1}`}
+                  className="w-64 h-64 object-cover rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex-shrink-0"
+                />
+              ))}
+              
+            </div>
+          </div>
+
+          {/* Trust Line */}
+          <div className="text-center mt-12">
+            <p className="text-gray-600 text-lg">
+              All certificates and recognitions are awarded after successful completion of real internship projects and milestones.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Program Timeline Section */}
+      <section className="bg-gray-50 py-20 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Program Timeline</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              Real experiences from learners who achieved their goals and transformed careers with our guidance and support.
+            </p>
+          </div>
+
+          {/* Month Tabs */}
+          <div className="flex flex-wrap justify-center gap-2 mb-8">
+            {['1 month', '2 month', '3 month', '4 month'].map((month, index) => (
+              <button
+                key={index}
+                onClick={() => setActiveMonth(index)}
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
+                  activeMonth === index
+                    ? 'bg-blue-600 text-white'
+                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                }`}
+              >
+                {month}
+              </button>
+            ))}
+          </div>
+
+          {/* Timeline Table */}
+          <div className="overflow-x-auto">
+            <table className="min-w-full bg-white border border-gray-300 rounded-lg">
+              <thead>
+                <tr className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+                  <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Weeks</th>
+                  <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Timeline</th>
+                  <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Includes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {timelineData[activeMonth] && timelineData[activeMonth].length > 0 ? (
+                  timelineData[activeMonth].map((week, weekIdx) => (
+                    <React.Fragment key={weekIdx}>
+                      {week.rows.map((row, rowIdx) => (
+                        <tr key={`${weekIdx}-${rowIdx}`} className={rowIdx % 2 === 0 ? 'bg-blue-50' : 'bg-white'}>
+                          {rowIdx === 0 && (
+                            <td rowSpan={week.rows.length} className="px-4 py-2 border border-gray-300 font-semibold">
+                              {week.week}
+                            </td>
+                          )}
+                          <td className="px-4 py-2 border border-gray-300">{row.timeline}</td>
+                          {rowIdx === 0 && <td rowSpan={week.rows.length} className="px-4 py-2 border border-gray-300">
+                            <div className="flex flex-col gap-1">
+                              {Array.isArray(row.includes) ? row.includes.map((item, idx) => (
+                                <div key={idx} className={item.type === 'project' ? `p-2 rounded border-l-4 ${item.level === 'beginner' ? 'bg-yellow-50 border-yellow-400' : item.level === 'intermediate' ? 'bg-blue-50 border-blue-400' : 'bg-red-50 border-red-400'}` : item.text.includes('Mentor') ? 'text-gray-600' : ''}>
+                                  {item.type === 'project' ? (
+                                    <div>
+                                      <div className={`font-bold ${item.level === 'beginner' ? 'text-yellow-800' : item.level === 'intermediate' ? 'text-blue-800' : 'text-red-800'}`}>
+                                        {item.level === 'beginner' ? '🟡 Beginner Project' : item.level === 'intermediate' ? '🔵 Intermediate Project' : '🔴 Hard Project'}
+                                      </div>
+                                      <div className="text-gray-700 font-medium">{item.title}</div>
+                                      <div className="text-gray-600 text-sm">{item.subtitle}</div>
+                                    </div>
+                                  ) : (
+                                    <div>{item.text}</div>
+                                  )}
+                                </div>
+                              )) : row.includes.split('\n').map((item, idx) => (
+                                <div key={idx} className={item.includes('⭐') ? 'font-semibold text-gray-800' : ''}>
+                                  {item}
+                                </div>
+                              ))}
+                            </div>
+                          </td>}
+                        </tr>
+                      ))}
+                    </React.Fragment>
+                  ))
+                ) : (
+                  <tr>
+                    <td colSpan="3" className="px-4 py-8 text-center text-gray-500">
+                      Coming Soon
+                    </td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-black-gradient">
+        <InternshipFAQ />
       </div>
     </div>
   );
