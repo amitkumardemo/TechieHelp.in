@@ -80,7 +80,7 @@ const TypingAnimation = () => {
     "Automation Expert",
     "API Developer",
     "Full Stack Logic Specialist",
-    "Scraping & Data Extraction Pro"
+    "Scraping & Data Extraction Pro",
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
