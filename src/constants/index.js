@@ -39,6 +39,11 @@ export const navLinks = [
         id: "campus-ambassador",
         title: "Campus Ambassador",
         path: "/campus-ambassador"
+      },
+      {
+        id: "community-partnership",
+        title: "Community Partnership",
+        path: "/community-partnership"
       }
     ]
   },
