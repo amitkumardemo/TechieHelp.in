@@ -37,6 +37,7 @@ import Signup from "./components/Signup";
 import Profile from "./components/Profile";
 import Dashboard from "./components/Dashboard";
 import TCAP from "./components/TCAP";
+import CommunityPartnership from "./components/CommunityPartnership";
 import AppDevelopmentServices from "./components/AppDevelopmentServices";
 import DataScience from "./components/DataScience";
 import UIUXServices from "./components/UIUXServices";
@@ -59,17 +60,14 @@ import Employee from "./components/Employee";
 import InternProfile from "./components/InternProfile";
 import EmployeeProfile from "./components/EmployeeProfile";
 import AmitKumar from "./components/employees/AmitKumar";
-import KameshwarPatelComponent from "./components/employees/KameshwarPatel";
-import SupriyaJalaniComponent from "./components/employees/SupriyaJalani";
+
 import AdityaKumarComponent from "./components/employees/AdityaKumar";
-import AshokComponent from "./components/employees/Ashok";
 import MdAmzadComponent from "./components/employees/MdAmzad";
 import MahimaPanwar from "./components/employees/MahimaPanwar";
 import CharchitaSaini from "./components/employees/CharchitaSaini";
-import MahbubAlam from "./components/employees/MahbubAlam";
+
 import ManchalKumar from "./components/employees/ManchalKumar";
 import AnanyaSharma from "./components/employees/AnanyaSharma";
-import AryanKumar from "./components/employees/AryanKumar";
 import SasvanthuG from "./components/students/SasvanthuG";
 import RitikaKasat from "./components/students/RitikaKasat";
 import AbhayRajSingh from "./components/students/AbhayRajSingh";
@@ -103,8 +101,6 @@ import DotsuTYimchunger from "./components/students/DotsuTYimchunger";
 import BendangakumHoki from "./components/students/BendangakumHoki";
 import PuloviKChishi from "./components/students/PuloviKChishi";
 import KengimheingNampeung from "./components/students/KengimheingNampeung";
-import Ashok from "./components/students/Ashok";
-import KameshwarPatel from "./components/students/KameshwarPatel";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { BrowserRouter as Router, Routes, Route, Navigate, Link } from "react-router-dom";
@@ -287,22 +283,20 @@ const App = () => {
           <Route path="/careers/training-internships" element={<Internship />} />
           <Route path="/special-batch" element={<SpecialBatch />} />
           <Route path="/campus-ambassador" element={<TCAP />} />
+          <Route path="/community-partnership" element={<CommunityPartnership />} />
           <Route path="/careers/jobs" element={<Job />} />
           <Route path="/employees" element={<Employee />} />
           <Route path="/interns" element={<Intern />} />
           <Route path="/employees/:employeeId" element={<EmployeeProfile />} />
           <Route path="/team/amit-kumar-founder-ceo-techiehelp" element={<AmitKumar />} />
-          <Route path="/team/kameshwar-patel-frontend-developer-intern-techiehelp" element={<KameshwarPatelComponent />} />
-          <Route path="/team/supriya-jalani-uiux-designer-techiehelp" element={<SupriyaJalaniComponent />} />
+
           <Route path="/team/aditya-kumar-content-media-specialist-techiehelp" element={<AdityaKumarComponent />} />
-          <Route path="/team/ashok-frontend-developer-intern-techiehelp" element={<AshokComponent />} />
           <Route path="/team/md-amzad-machine-learning-engineer-techiehelp" element={<MdAmzadComponent />} />
           <Route path="/team/mahima-panwar-content-creator-techiehelp" element={<MahimaPanwar />} />
           <Route path="/team/charchita-saini-software-engineer-techiehelp" element={<CharchitaSaini />} />
-          <Route path="/team/mahbub-alam-full-stack-developer-techiehelp" element={<MahbubAlam />} />
+
           <Route path="/team/mr-manchal-kumar-full-stack-developer-techiehelp" element={<ManchalKumar />} />
           <Route path="/team/ananya-sharma-hr-manager-techiehelp" element={<AnanyaSharma />} />
-          <Route path="/team/aryan-kumar-cyber-security-intern-techiehelp" element={<AryanKumar />} />
           <Route path="/webdevelopment" element={<Webdevelopment />} />
           <Route path="/cybersecurity" element={<Cybersecurity />} />
           <Route path="/androiddevelopment" element={<Androiddevelopment />} />
@@ -398,10 +392,6 @@ const App = () => {
           <Route path="/intern/pulovi-k-chishi" element={<PuloviKChishi />} />
           <Route path="/students/kengimheing-nampeung" element={<KengimheingNampeung />} />
           <Route path="/intern/kengimheing-nampeung" element={<KengimheingNampeung />} />
-          <Route path="/students/ashok" element={<Ashok />} />
-          <Route path="/intern/ashok" element={<Ashok />} />
-          <Route path="/students/kameshwar-patel" element={<KameshwarPatel />} />
-          <Route path="/intern/kameshwar-patel" element={<KameshwarPatel />} />
 
           {/* Authentication Routes */}
 

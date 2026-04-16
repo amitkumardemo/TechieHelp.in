@@ -3,7 +3,7 @@ import DotGrid from './DotGrid';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { slugifyEmployee } from '../utils/slugify';
-import { adityaKumar, AmitPhoto, ashok, kameshwarPatel, mdAmzad, supriyaJalani, mahimaPanwar, charchitaSaini, mahbubAlam, manchalKumar, ananyaSharma, aryanKumar } from '../assets/index.js';
+import { adityaKumar, AmitPhoto, mdAmzad, mahimaPanwar, charchitaSaini, manchalKumar, ananyaSharma } from '../assets/index.js';
 
 export const employeeData = [
   {
@@ -49,17 +49,7 @@ export const employeeData = [
     department: "Content",
     profilePath: "/employee/mahima-panwar"
   },
-  {
-    id: "TH-EMP-2026-005",
-    fullName: "Supriya Jalani",
-    role: "UI/UX Designer",
-    profileImage: supriyaJalani,
-    linkedInProfile: "https://www.linkedin.com/in/supriya-jalani",
-    githubProfile: "https://github.com/Suprirya-Jalani",
-    experience: "1+ Year Experience",
-    department: "Design",
-    profilePath: "/employee/supriya-jalani"
-  },
+
   {
     id: "TH-EMP-2026-006",
     fullName: "Charchita Saini",
@@ -83,17 +73,7 @@ export const employeeData = [
     profilePath: "/employee/md-amzad"
   },
 
-  {
-    id: "TH-EMP-2026-008",
-    fullName: "Mahbub Alam",
-    role: "Full Stack Developer",
-    profileImage: mahbubAlam,
-    linkedInProfile: "",
-    githubProfile: "",
-    experience: "1+ Year Experience",
-    department: "Development",
-    profilePath: "/employee/mahbub-alam"
-  },
+
   {
     id: "TH-EMP-2026-009",
     fullName: "Mr. Manchal Kumar",
@@ -105,39 +85,6 @@ export const employeeData = [
     department: "Development",
     profilePath: "/employee/manchal-kumar",
     objectPosition: "top"
-  },
-  {
-    id: "TH-EMP-2026-010",
-    fullName: "Aryan Kumar",
-    role: "Cyber Security Intern",
-    profileImage: aryanKumar,
-    linkedInProfile: "",
-    githubProfile: "",
-    experience: "1+ Year Experience",
-    department: "Security",
-    profilePath: "/employee/aryan-kumar"
-  },
-  {
-    id: "TH-INT-2026-001",
-    fullName: "Kameshwar Patel",
-    role: "Frontend Developer Intern",
-    profileImage: kameshwarPatel,
-    linkedInProfile: "https://www.linkedin.com/in/patelkameshwar",
-    githubProfile: "https://github.com/patelkameshwar",
-    experience: "1+ Year Experience",
-    department: "Development",
-    profilePath: "/employee/kameshwar-patel"
-  },
-  {
-    id: "TH-INT-2026-002",
-    fullName: "Ashok",
-    role: "Frontend Developer Intern",
-    profileImage: ashok,
-    linkedInProfile: "https://www.linkedin.com/in/ashok-bishnoi-b19389257",
-    githubProfile: "https://github.com/Ashokmaal0051",
-    experience: "1+ Year Experience",
-    department: "Development",
-    profilePath: "/employee/ashok"
   }
 ];
 
