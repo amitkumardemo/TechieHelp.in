@@ -143,16 +143,30 @@ const DomainGrid = () => {
   });
 
   return (
-    <section className="py-24 bg-primary px-6" id="domains">
-      <div className="container mx-auto max-w-7xl">
+    <section className="py-24 bg-[#05050f] relative overflow-hidden px-6" id="domains">
+      {/* Background Gradients */}
+      <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+        <motion.div 
+          animate={{ x: [0, 50, 0], y: [0, 30, 0] }}
+          transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-[10%] right-[10%] w-[40%] h-[40%] bg-orange-600/10 blur-[120px] rounded-full" 
+        />
+        <motion.div 
+          animate={{ x: [0, -50, 0], y: [0, -30, 0] }}
+          transition={{ duration: 12, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+          className="absolute bottom-[20%] left-[5%] w-[30%] h-[50%] bg-blue-600/10 blur-[130px] rounded-full" 
+        />
+      </div>
+
+      <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16 px-4">
           <motion.h2 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter"
+            className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter drop-shadow-lg"
           >
-            Find Your <span className="text-gradient">Dream Career</span>
+            Find Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Dream Career</span>
           </motion.h2>
           <p className="text-gray-400 max-w-2xl mx-auto mb-12 font-medium">
             Browse through our wide range of industry-aligned internship programs. Filter by category or search to find your perfect fit.
@@ -201,53 +215,60 @@ const DomainGrid = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <AnimatePresence mode="popLayout">
             {filteredDomains.map((domain, i) => (
-              <motion.div
+              <motion.div 
                 key={domain.title}
-                layout
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.8, y: 10 }}
-                transition={{ duration: 0.4 }}
-                whileHover={{ y: -12 }}
-                className={`group relative flex flex-col h-full bg-gradient-to-br ${domain.color} backdrop-blur-2xl rounded-[3rem] border p-10 overflow-hidden transition-all duration-500 ${domain.glow}`}
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 4, repeat: Infinity, delay: i * 0.2, ease: "easeInOut" }}
+                className="h-full"
               >
-                {/* Decorative Shapes */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 blur-3xl rounded-full group-hover:bg-white/10 transition-colors" />
-                
-                {/* Highlight Badge */}
-                <div className="absolute top-8 right-8 flex items-center gap-2 px-4 py-2 rounded-2xl bg-black/40 border border-white/10 backdrop-blur-md">
-                   <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                   <span className="text-[10px] font-black uppercase tracking-widest text-white">{domain.highlight}</span>
-                </div>
-
-                <div className="relative z-10 mb-8 w-20 h-20 rounded-3xl bg-white/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-500 group-hover:rotate-6">
-                  {domain.icon}
-                </div>
-                
-                <div className="relative z-10 flex-1">
-                  <h3 className="text-3xl font-black text-white mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-gray-400 transition-all">
-                    {domain.title}
-                  </h3>
-                  <div className="flex items-center gap-1 mb-4 text-xs font-bold text-blue-400 uppercase tracking-widest opacity-80">
-                    <Star className="w-3 h-3 fill-current" />
-                    <span>Highly Rated Program</span>
-                  </div>
-                  <p className="text-gray-400 text-base leading-relaxed mb-12 font-medium">
-                    {domain.desc}
-                  </p>
-                </div>
-
-                <Link 
-                  to={domain.path}
-                  className="relative w-full group/btn"
+                <motion.div
+                  layout
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  exit={{ opacity: 0, scale: 0.8, y: 10 }}
+                  transition={{ duration: 0.4 }}
+                  whileHover={{ y: -8, scale: 1.02 }}
+                  className={`group relative flex flex-col h-full bg-[#0a0a15]/80 backdrop-blur-2xl rounded-[3rem] border border-white/10 p-10 overflow-hidden transition-all duration-300 hover:border-orange-500/30 ${domain.glow} shadow-[0_10px_40px_rgba(0,0,0,0.5)]`}
                 >
-                  <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover/btn:opacity-60 transition duration-1000 group-hover/btn:duration-200" />
-                  <button className="relative w-full py-5 bg-[#0a0a0f] text-white font-black text-lg rounded-2xl border border-white/10 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden">
-                    <span className="relative z-10">Learn More</span>
-                    <ChevronRight className="relative z-10 w-6 h-6 group-hover/btn:translate-x-1 transition-transform" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
-                  </button>
-                </Link>
+                  {/* Decorative Shapes */}
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 blur-3xl rounded-full group-hover:bg-orange-500/10 transition-colors duration-500" />
+                  
+                  {/* Highlight Badge */}
+                  <div className="absolute top-8 right-8 flex items-center gap-2 px-4 py-2 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-md shadow-lg">
+                     <div className="w-2 h-2 rounded-full bg-orange-400 animate-ping absolute opacity-75" />
+                     <div className="w-2 h-2 rounded-full bg-orange-500 relative" />
+                     <span className="text-[10px] font-black uppercase tracking-widest text-[#e1e7ef]">{domain.highlight}</span>
+                  </div>
+
+                  <div className="relative z-10 mb-8 w-20 h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 shadow-inner">
+                    {domain.icon}
+                  </div>
+                  
+                  <div className="relative z-10 flex-1">
+                    <h3 className="text-3xl font-black text-white mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-orange-200 transition-all">
+                      {domain.title}
+                    </h3>
+                    <div className="flex items-center gap-1 mb-4 text-xs font-bold text-orange-400 uppercase tracking-widest opacity-80">
+                      <Star className="w-3 h-3 fill-current" />
+                      <span>Highly Rated Program</span>
+                    </div>
+                    <p className="text-gray-400 text-base leading-relaxed mb-12 font-medium group-hover:text-gray-300 transition-colors">
+                      {domain.desc}
+                    </p>
+                  </div>
+
+                  <Link 
+                    to={domain.path}
+                    className="relative w-full group/btn mt-auto"
+                  >
+                    <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-orange-700 rounded-2xl blur opacity-25 group-hover/btn:opacity-100 transition duration-500" />
+                    <button className="relative w-full py-4 bg-[#05050f] text-white font-bold text-lg rounded-xl border border-white/10 hover:border-orange-500/50 transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden shadow-lg hover:bg-[#0a0a15]">
+                      <span className="relative z-10">Learn More</span>
+                      <ChevronRight className="relative z-10 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </Link>
+                </motion.div>
               </motion.div>
             ))}
           </AnimatePresence>
