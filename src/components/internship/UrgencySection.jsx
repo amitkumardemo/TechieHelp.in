@@ -28,7 +28,7 @@ const UrgencySection = () => {
   };
 
   return (
-    <section className="py-20 bg-primary px-6">
+    <section className="py-20 bg-[#05050f] px-6">
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}

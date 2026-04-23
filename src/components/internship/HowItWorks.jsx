@@ -32,7 +32,11 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section className="py-24 bg-primary px-6 relative">
+    <section className="py-24 bg-[#05050f] px-6 relative overflow-hidden">
+      {/* Background Gradients */}
+      <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none">
+        <div className="absolute top-[20%] right-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[130px] rounded-full" />
+      </div>
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-20">
           <motion.h2 
@@ -47,9 +51,16 @@ const HowItWorks = () => {
         </div>
 
         <div className="relative">
-          {/* Progress Line */}
-          <div className="absolute top-1/2 left-0 w-full h-1 bg-white/5 -translate-y-1/2 hidden lg:block" />
-          
+          {/* Animated Progress Line */}
+          <div className="absolute top-1/2 left-[10%] w-[80%] h-1 bg-white/5 -translate-y-1/2 hidden lg:block overflow-hidden rounded-full">
+            <motion.div 
+              initial={{ x: "-100%" }}
+              whileInView={{ x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+              className="w-full h-full bg-gradient-to-r from-transparent via-orange-500 to-orange-400"
+            />
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-4">
             {steps.map((step, i) => (
               <motion.div
@@ -60,9 +71,9 @@ const HowItWorks = () => {
                 transition={{ delay: i * 0.2 }}
                 className="relative z-10 flex flex-col items-center text-center group"
               >
-                <div className="w-16 h-16 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center text-blue-400 mb-6 group-hover:bg-blue-600/20 group-hover:border-blue-600/40 transition-all duration-300">
+                <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-orange-400 mb-6 group-hover:bg-orange-500/10 group-hover:border-orange-500/40 group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300 shadow-lg relative glass-morphism">
                   {step.icon}
-                  <div className="absolute -top-3 -right-3 w-8 h-8 rounded-full bg-blue-600 text-white text-xs font-bold flex items-center justify-center">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-orange-500 text-white text-xs font-black flex items-center justify-center shadow-[0_0_15px_rgba(249,115,22,0.6)]">
                     {i + 1}
                   </div>
                 </div>

@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const FinalCTA = () => {
   return (
-    <section className="py-24 bg-primary px-6 relative overflow-hidden">
+    <section className="py-24 bg-[#05050f] px-6 relative overflow-hidden">
       {/* Decorative Background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full -z-10">
         <div className="absolute top-0 left-1/4 w-[50%] h-[50%] bg-blue-600/10 blur-[150px] rounded-full animate-pulse-glow" />
@@ -45,7 +45,17 @@ const FinalCTA = () => {
             <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">Only 48 Hours Left</p>
           </div>
           
-          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+          <div className="mt-12 flex flex-col sm:flex-row justify-center items-center gap-6 text-gray-300">
+             <div className="flex items-center gap-2">
+               <span className="font-bold text-white">Email:</span> <a href="mailto:internship@techiehelp.in" className="hover:text-blue-400 font-medium">internship@techiehelp.in</a>
+             </div>
+             <div className="hidden sm:block w-1.5 h-1.5 rounded-full bg-white/20" />
+             <div className="flex items-center gap-2">
+               <span className="font-bold text-white">Phone:</span> <a href="tel:+917673825079" className="hover:text-blue-400 font-medium">7673825079</a>
+             </div>
+          </div>
+
+          <div className="mt-16 flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 hover:opacity-100 transition-all duration-500">
              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/600px-LinkedIn_logo_initials.png" className="h-6" alt="Logo" />
              <p className="text-lg font-black text-white italic tracking-tighter">TECHIEHELP</p>
              <div className="flex items-center gap-2">
