@@ -1,51 +1,119 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { logo, send as sendIcon, close as closeIcon } from '../assets';
+import { Mic, MicOff, Volume2, VolumeX } from 'lucide-react';
+import { SYSTEM_INSTRUCTION } from '../config/prompts/chatbotPrompt.js';
 
-// Production Datasets
-const DATASET_A = {
-    internships: [
-        { id: "web", title: "Web Development", stack: "HTML, CSS, JavaScript, React", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "app", title: "App Development", stack: "Flutter, React Native, Firebase", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "uiux", title: "UI/UX Design", stack: "Figma, Adobe XD, User Research", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "seo", title: "SEO & Digital Marketing", stack: "Google Analytics, SEMrush, Keywords", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "ai", title: "Artificial Intelligence", stack: "Python, TensorFlow, Neural Networks", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "ml", title: "Machine Learning", stack: "Python, Scikit-learn, Regression", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "frontend", title: "Front-End Developer", stack: "React, Tailwind, Redux", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "backend", title: "Back-End Developer", stack: "Node.js, MongoDB, Express", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "fullstack", title: "Full Stack Developer", stack: "MERN or Java Full Stack", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "mern", title: "MERN Stack", stack: "MongoDB, Express, React, Node", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "python", title: "Python Developer", stack: "Django, Flask, Automation", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "java", title: "Java Developer", stack: "Spring Boot, Maven, SQL", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "javafull", title: "Java Full Stack", stack: "Spring Boot + React", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "react", title: "React Developer", stack: "Hooks, Context API, Next.js", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "javascript", title: "JavaScript Developer", stack: "ES6+, Async, DOM", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "node", title: "Node.js Developer", stack: "Express, Middleware, Auth", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "aiml", title: "AI/ML Developer", stack: "NLP, Computer Vision, Data Sets", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "devops", title: "DevOps", stack: "Docker, Kubernetes, CI/CD", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" },
-        { id: "cyber", title: "Cyber Security", stack: "Ethical Hacking, Linux, Networks", duration: "1 / 2 / 3 Months", price: "₹499 (Std) / ₹3000 (Spl)", link: "https://rzp.io/rzp/techiehelpInternship" }
-    ],
-    specialBatchForm: "https://forms.gle/MUSBDGVVap4eqH418",
-    standardPaymentLink: "https://rzp.io/rzp/techiehelpInternship"
+// Inline Markdown Parser
+const formatMessageText = (text) => {
+    if (!text) return "";
+    
+    const lines = text.split('\n');
+    
+    return lines.map((line, idx) => {
+        let trimmed = line.trim();
+        
+        // 1. Handle Bullet Points (e.g. starting with * or - or •)
+        const isBullet = trimmed.startsWith('* ') || trimmed.startsWith('- ') || trimmed.startsWith('• ');
+        if (isBullet) {
+            const content = trimmed.substring(2);
+            return (
+                <ul key={idx} className="list-disc pl-5 my-1">
+                    <li className="text-gray-200">{parseInlineFormatting(content)}</li>
+                </ul>
+            );
+        }
+        
+        // 2. Handle Numbered Lists (e.g. "1. ")
+        const numListMatch = trimmed.match(/^(\d+)\.\s(.*)/);
+        if (numListMatch) {
+            const num = parseInt(numListMatch[1], 10);
+            const content = numListMatch[2];
+            return (
+                <ol key={idx} className="list-decimal pl-5 my-1" start={num}>
+                    <li className="text-gray-200">{parseInlineFormatting(content)}</li>
+                </ol>
+            );
+        }
+        
+        // 3. Regular Paragraph / Heading
+        if (trimmed === "") {
+            return <div key={idx} className="h-2"></div>;
+        }
+        
+        if (trimmed.startsWith('### ')) {
+            return <h4 key={idx} className="font-bold text-sm text-cyan-400 mt-2 mb-1">{parseInlineFormatting(trimmed.substring(4))}</h4>;
+        }
+        if (trimmed.startsWith('## ') || trimmed.startsWith('# ')) {
+            const startIdx = trimmed.startsWith('## ') ? 3 : 2;
+            return <h3 key={idx} className="font-bold text-sm text-cyan-300 mt-2 mb-1">{parseInlineFormatting(trimmed.substring(startIdx))}</h3>;
+        }
+
+        return <p key={idx} className="mb-1">{parseInlineFormatting(line)}</p>;
+    });
 };
 
-const DATASET_B = {
-    services: [
-        { title: "Web & App Development", price: "5999", features: ["Custom solution", "AI integration", "Deployment & support"] },
-        { title: "AI Agents & Automation", price: "15,000", features: ["Custom solution", "AI integration", "Deployment & support"] },
-        { title: "AI Education (LMS, Tutor Bots)", price: "15,000", features: ["Custom solution", "AI integration", "Deployment & support"] },
-        { title: "Voice & Calling AI", price: "Custom quote", features: ["Custom solution", "AI integration", "Deployment & support"] },
-        { title: "Workflow & CRM Automation", price: "Custom quote", features: ["Custom solution", "AI integration", "Deployment & support"] }
-    ]
+const parseInlineFormatting = (text) => {
+    // Process markdown link syntax: [text](url)
+    const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+    let parts = [];
+    let lastIndex = 0;
+    let match;
+    
+    while ((match = linkRegex.exec(text)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(text.substring(lastIndex, match.index));
+        }
+        
+        const linkText = match[1];
+        const linkUrl = match[2];
+        parts.push(
+            <a 
+                key={match.index} 
+                href={linkUrl} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-cyan-400 hover:text-cyan-300 underline font-medium transition-colors"
+            >
+                {linkText}
+            </a>
+        );
+        
+        lastIndex = linkRegex.lastIndex;
+    }
+    
+    if (lastIndex < text.length) {
+        parts.push(text.substring(lastIndex));
+    }
+    
+    return parts.map((part, idx) => {
+        if (typeof part !== 'string') return part;
+        
+        // Process bold syntax: **text**
+        const boldRegex = /\*\*([^*]+)\*\*/g;
+        let boldParts = [];
+        let bLastIndex = 0;
+        let bMatch;
+        
+        while ((bMatch = boldRegex.exec(part)) !== null) {
+            if (bMatch.index > bLastIndex) {
+                boldParts.push(part.substring(bLastIndex, bMatch.index));
+            }
+            boldParts.push(<strong key={bMatch.index} className="font-bold text-white">{bMatch[1]}</strong>);
+            bLastIndex = boldRegex.lastIndex;
+        }
+        
+        if (bLastIndex < part.length) {
+            boldParts.push(part.substring(bLastIndex));
+        }
+        
+        return <React.Fragment key={idx}>{boldParts}</React.Fragment>;
+    });
 };
 
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
-
-    // 🧠 CONTEXT MEMORY
     const [currentMode, setCurrentMode] = useState(null); // internship | services | company
-    const [currentDomain, setCurrentDomain] = useState(null); // web | app | uiux | ...
-
     const [messages, setMessages] = useState([
         {
             id: 1,
@@ -55,150 +123,214 @@ const Chatbot = () => {
     ]);
     const [inputValue, setInputValue] = useState('');
     const [isTyping, setIsTyping] = useState(false);
+    
+    // Voice/Speech States
+    const [isListening, setIsListening] = useState(false);
+    const [speakingMsgId, setSpeakingMsgId] = useState(null);
+    
     const messagesEndRef = useRef(null);
+    const recognitionRef = useRef(null);
 
     const scrollToBottom = () => messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    useEffect(() => { scrollToBottom(); }, [messages, isTyping]);
+    
+    useEffect(() => { 
+        scrollToBottom(); 
+    }, [messages, isTyping]);
+
+    // Initialize Speech Recognition on Mount
+    useEffect(() => {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRecognition) {
+            const rec = new SpeechRecognition();
+            rec.continuous = false;
+            rec.interimResults = false;
+            rec.lang = 'en-US';
+            
+            rec.onstart = () => {
+                setIsListening(true);
+            };
+            
+            rec.onresult = (event) => {
+                const transcript = event.results[0][0].transcript;
+                setInputValue(transcript);
+            };
+            
+            rec.onerror = (event) => {
+                console.error("Speech recognition error:", event.error);
+                setIsListening(false);
+            };
+            
+            rec.onend = () => {
+                setIsListening(false);
+            };
+            
+            recognitionRef.current = rec;
+        }
+    }, []);
+
+    // Clean up SpeechSynthesis when closing
+    useEffect(() => {
+        if (!isOpen && window.speechSynthesis) {
+            window.speechSynthesis.cancel();
+            setSpeakingMsgId(null);
+        }
+    }, [isOpen]);
+
+    const toggleListening = () => {
+        if (!recognitionRef.current) {
+            alert("Speech recognition is not supported in this browser. Please try Chrome or Safari.");
+            return;
+        }
+        
+        if (isListening) {
+            recognitionRef.current.stop();
+        } else {
+            recognitionRef.current.start();
+        }
+    };
+
+    const handleSpeak = (text, msgId) => {
+        if (!window.speechSynthesis) {
+            alert("Text-to-speech is not supported in this browser.");
+            return;
+        }
+
+        if (window.speechSynthesis.speaking && speakingMsgId === msgId) {
+            window.speechSynthesis.cancel();
+            setSpeakingMsgId(null);
+            return;
+        }
+
+        if (window.speechSynthesis.speaking) {
+            window.speechSynthesis.cancel();
+        }
+
+        // Strip tags and markdown formatting for natural voice output
+        const cleanText = text
+            .replace(/<[^>]*>/g, '') // remove XML/HTML
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // replace markdown links with label
+            .replace(/\*\*([^*]+)\*\*/g, '$1'); // remove bold markers
+
+        const utterance = new SpeechSynthesisUtterance(cleanText);
+        utterance.lang = 'en-US';
+        utterance.onend = () => setSpeakingMsgId(null);
+        utterance.onerror = () => setSpeakingMsgId(null);
+        
+        setSpeakingMsgId(msgId);
+        window.speechSynthesis.speak(utterance);
+    };
 
     const handleSend = async (text = null) => {
         const q = (text || inputValue).trim();
         if (!q) return;
 
-        setMessages(prev => [...prev, { id: Date.now(), text: q, sender: 'user' }]);
+        // Update suggestion mode based on query keywords
+        const lowQ = q.toLowerCase();
+        if (lowQ.includes("intern") || lowQ.includes("training") || lowQ.includes("course") || lowQ.includes("tcap")) {
+            setCurrentMode('internship');
+        } else if (lowQ.includes("service") || lowQ.includes("custom") || lowQ.includes("pricing") || lowQ.includes("automation")) {
+            setCurrentMode('services');
+        } else if (lowQ.includes("about") || lowQ.includes("techiehelp") || lowQ.includes("company")) {
+            setCurrentMode('company');
+        }
+
+        const userMsg = { id: Date.now(), text: q, sender: 'user' };
+        setMessages(prev => [...prev, userMsg]);
         setInputValue('');
         setIsTyping(true);
 
-        setTimeout(() => {
-            const response = getBotResponse(q);
-            setMessages(prev => [...prev, { id: Date.now() + 1, text: response, sender: 'bot' }]);
+        // Fetch sessionId or create new one
+        let sessionId = localStorage.getItem('techiehelp_chat_session_id');
+        if (!sessionId) {
+            sessionId = 'session_' + Math.random().toString(36).substring(2, 15);
+            localStorage.setItem('techiehelp_chat_session_id', sessionId);
+        }
+
+        try {
+            // Keep current history and map role types for api
+            const chatHistory = [...messages, userMsg];
+
+            let responseText = "";
+
+            try {
+                // Call backend API
+                const response = await fetch('/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        message: q,
+                        history: messages,
+                        sessionId,
+                        userId: 'guest'
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    responseText = data.text;
+                } else {
+                    throw new Error(`Backend API returned code ${response.status}`);
+                }
+            } catch (apiErr) {
+                console.warn("Backend API call failed, falling back to direct client-side Gemini connection:", apiErr);
+                
+                // Fallback direct Gemini connection using client key
+                const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+                if (!apiKey || apiKey === 'YOUR_GEMINI_API_KEY') {
+                    responseText = "I'm sorry, I cannot connect to the server API, and the Gemini API Key is not configured. Please add your `GEMINI_API_KEY` to the `.env` file to enable conversations.";
+                } else {
+                    // Structure payload for Gemini
+                    const contents = [];
+                    messages.forEach(msg => {
+                        contents.push({
+                            role: msg.sender === 'user' ? 'user' : 'model',
+                            parts: [{ text: msg.text }]
+                        });
+                    });
+                    contents.push({
+                        role: 'user',
+                        parts: [{ text: q }]
+                    });
+
+                    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+                    
+                    const response = await fetch(geminiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            contents,
+                            systemInstruction: {
+                                parts: [{ text: SYSTEM_INSTRUCTION }]
+                            },
+                            generationConfig: {
+                                temperature: 0.7,
+                                maxOutputTokens: 800
+                            }
+                        })
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        responseText = data.candidates?.[0]?.content?.parts?.[0]?.text || "I apologize, but I encountered an issue. How can I help you?";
+                    } else {
+                        const errDetails = await response.text();
+                        console.error("Gemini Direct API Error:", errDetails);
+                        responseText = "I apologize, but I am unable to process your request at the moment. Please contact us directly at support@techiehelp.in.";
+                    }
+                }
+            }
+
+            // Remove lead tags if present in client fallback (the backend API strips it automatically)
+            const leadRegex = /<lead_captured\s+name="([^"]*)"\s+email="([^"]*)"\s+phone="([^"]*)"\s+interest="([^"]*)"\s*\/?>/i;
+            const textWithoutLead = responseText.replace(leadRegex, "").trim();
+
+            setMessages(prev => [...prev, { id: Date.now() + 1, text: textWithoutLead, sender: 'bot' }]);
+        } catch (error) {
+            console.error("Chat error:", error);
+            setMessages(prev => [...prev, { id: Date.now() + 1, text: "Sorry, I had trouble communicating. Please try again.", sender: 'bot' }]);
+        } finally {
             setIsTyping(false);
-        }, 800);
-    };
-
-    const getBotResponse = (query) => {
-        const lowQ = query.toLowerCase();
-
-        // 🚀 APPLY NOW ACTION PROMPT
-        const applyKeywords = ["apply", "enroll", "join", "payment"];
-        if (applyKeywords.some(k => lowQ.includes(k))) {
-            if (currentDomain) {
-                const domainInfo = DATASET_A.internships.find(d => d.id === currentDomain || d.title.toLowerCase().includes(currentDomain));
-                return `You're almost in! 🚀
-Here are your official enrollment links for ${domainInfo?.title || currentDomain}:
-
-👉 **Standard Payment Link:**
-${DATASET_A.standardPaymentLink}
-
-👉 **Special Batch Form:**
-${DATASET_A.specialBatchForm}`;
-            }
         }
-
-        // 🏢 COMPANY INFO PROMPT
-        const companyKeywords = ["about", "techiehelp", "company"];
-        if (companyKeywords.some(k => lowQ.includes(k))) {
-            setCurrentMode('company');
-            return `🏢 **TechieHelp – Official Overview**
-
-• AI-first automation & software company
-• MSME Registered | ISO 9001:2015
-• AICTE / NIP aligned programs
-• 15,000+ students trained
-• 100+ AI solutions delivered
-• Incubated at JIET, Jodhpur
-
-Ask next:
-[Internships] | [Services] | [Contact]`;
-        }
-
-        // 🎓 INTERNSHIP MODE PROMPT
-        if (lowQ.includes("internship") || (currentMode === 'internship' && !currentDomain) || (currentMode === 'internship' && lowQ.length < 25)) {
-            if (currentMode !== 'internship') setCurrentMode('internship');
-
-            const domainMatch = DATASET_A.internships.find(d => lowQ.includes(d.id) || lowQ.includes(d.title.toLowerCase()));
-            if (domainMatch) {
-                setCurrentDomain(domainMatch.id);
-                return `📌 **${domainMatch.title} Internship – TechieHelp**
-
-🔧 **Tech Stack:**
-${domainMatch.stack}
-
-⏳ **Duration:**
-1 / 2 / 3 Months
-
-💰 **Pricing:**
-• Standard Internship – ₹499
-• Special Mentorship Batch – ₹3000
-
-🎓 **You Will Get:**
-• ISO Certificate
-• AICTE/NIP aligned structure
-• LinkedIn Digital Badge
-• Real-world Projects
-• LMS + Mentor Support
-
-👉 **Apply Now:**
-[Standard Payment Link](${DATASET_A.standardPaymentLink})
-
-[Special Batch Form](${DATASET_A.specialBatchForm})
-
-Ask:
-[Syllabus] | [Projects] | [Apply Now]`;
-            }
-
-            if (currentMode === 'internship' && !currentDomain) {
-                return `🚀 **Official Internship Mode**
-      
-We offer intensive training in 19+ domains. Which one are you interested in?
-• Web Dev | App Dev | UI/UX
-• AI | ML | Cyber Security
-• Data Science | MERN | Python
-
-Each domain includes AICTE-verified certificates and real projects.`;
-            }
-
-            // If user asks for internship but no domain matched and we have a current domain, stay in current domain context
-            if (currentDomain) {
-                const d = DATASET_A.internships.find(x => x.id === currentDomain);
-                return `You are currently viewing the **${d.title}** internship. Would you like to **Apply Now** or view the **Syllabus**?`;
-            }
-
-            return `🚀 **Official Internship Mode**
-      
-We offer intensive training in 19+ domains. Which one are you interested in?
-• Web Dev | App Dev | UI/UX
-• AI | ML | Cyber Security
-• Data Science | MERN | Python`;
-        }
-
-        // 🛠 SERVICES MODE PROMPT
-        if (lowQ.includes("service") || currentMode === 'services') {
-            if (currentMode !== 'services') setCurrentMode('services');
-            const serviceMatch = DATASET_B.services.find(s => lowQ.includes(s.title.toLowerCase()));
-            if (serviceMatch) {
-                return `📦 **${serviceMatch.title} – TechieHelp**
-
-**Starting From:**
-₹${serviceMatch.price}
-
-**Includes:**
-• ${serviceMatch.features.join('\n• ')}
-
-**Next:**
-[Get Quote] | [Talk to Expert]`;
-            }
-            return `📦 **Our Official Services**
-      
-• Web & App Development
-• AI Agents & Automation
-• AI Education (LMS, Tutor Bots)
-• Voice & Calling AI
-• Workflow & CRM Automation
-
-Which service do you want pricing for?`;
-        }
-
-        return "I'm TechieHelp AI, and I can guide you on internships, services, or pricing. Could you please specify which domain or service you're interested in?";
     };
 
     return (
@@ -209,7 +341,7 @@ Which service do you want pricing for?`;
                         initial={{ opacity: 0, scale: 0.9, y: 20 }}
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                        className="mb-6 w-[360px] h-[550px] bg-[#0c0f14]/95 backdrop-blur-3xl border border-gray-800 rounded-[2rem] flex flex-col shadow-2xl overflow-hidden"
+                        className="mb-6 w-[360px] h-[550px] bg-[#0c0f14]/95 backdrop-blur-3xl border border-gray-800 rounded-[2rem] flex flex-col shadow-2xl overflow-hidden text-left"
                     >
                         {/* Header */}
                         <div className="p-4 border-b border-gray-800 flex justify-between items-center bg-gradient-to-r from-blue-900/60 to-black">
@@ -234,20 +366,36 @@ Which service do you want pricing for?`;
                         <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
                             {messages.map((m) => (
                                 <div key={m.id} className={`flex ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
-                                    <div className={`max-w-[85%] p-3.5 text-[13px] leading-relaxed shadow-lg ${m.sender === 'user'
-                                            ? 'bg-blue-600 text-white rounded-[1.2rem] rounded-br-none'
-                                            : 'bg-gray-900 text-gray-200 border border-gray-800 rounded-[1.2rem] rounded-bl-none whitespace-pre-line'
-                                        }`}>
-                                        {m.text}
+                                    <div className="relative group max-w-[85%]">
+                                        <div className={`p-3.5 text-[13px] leading-relaxed shadow-lg ${m.sender === 'user'
+                                                ? 'bg-blue-600 text-white rounded-[1.2rem] rounded-br-none'
+                                                : 'bg-gray-900 text-gray-200 border border-gray-800 rounded-[1.2rem] rounded-bl-none whitespace-pre-line'
+                                            }`}>
+                                            {m.sender === 'user' ? m.text : formatMessageText(m.text)}
+                                        </div>
+                                        {/* Speak Button for Bot Messages */}
+                                        {m.sender === 'bot' && (
+                                            <button 
+                                                onClick={() => handleSpeak(m.text, m.id)}
+                                                className={`absolute -right-7 top-1/2 -translate-y-1/2 p-1.5 rounded-full bg-gray-800 border border-gray-700 text-gray-400 hover:text-white hover:bg-gray-700 transition-all opacity-0 group-hover:opacity-100 ${speakingMsgId === m.id ? 'opacity-100 text-cyan-400 border-cyan-500/50' : ''}`}
+                                                title="Read aloud"
+                                            >
+                                                {speakingMsgId === m.id ? (
+                                                    <VolumeX className="w-3.5 h-3.5 animate-pulse" />
+                                                ) : (
+                                                    <Volume2 className="w-3.5 h-3.5" />
+                                                )}
+                                            </button>
+                                        )}
                                     </div>
                                 </div>
                             ))}
                             {isTyping && (
                                 <div className="flex justify-start">
                                     <div className="bg-gray-900 border border-gray-800 p-3 rounded-2xl rounded-bl-none flex gap-1">
-                                        <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce"></div>
-                                        <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.2s]"></div>
-                                        <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.4s]"></div>
+                                        <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-bounce"></div>
+                                        <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.2s]"></div>
+                                        <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.4s]"></div>
                                     </div>
                                 </div>
                             )}
@@ -255,7 +403,7 @@ Which service do you want pricing for?`;
                         </div>
 
                         {/* Quick Replies */}
-                        <div className="px-4 pb-3 flex gap-2 overflow-x-auto no-scrollbar">
+                        <div className="px-4 pb-3 flex gap-2 overflow-x-auto no-scrollbar scroll-smooth">
                             {currentMode === 'internship' ? (
                                 ['Web Dev', 'App Dev', 'AI/ML', 'Apply Now', 'Pricing'].map(btn => (
                                     <button key={btn} onClick={() => handleSend(btn)} className="whitespace-nowrap px-3 py-1.5 bg-blue-900/30 border border-blue-500/20 text-cyan-400 rounded-full text-[10px] font-bold hover:bg-blue-700 hover:text-white transition-all">{btn}</button>
@@ -273,18 +421,32 @@ Which service do you want pricing for?`;
 
                         {/* Input */}
                         <div className="p-4 border-t border-gray-800 bg-black/40">
-                            <div className="relative flex items-center">
-                                <input
-                                    type="text"
-                                    value={inputValue}
-                                    onChange={(e) => setInputValue(e.target.value)}
-                                    onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-                                    placeholder="Ask about internships, services, or pricing..."
-                                    className="w-full bg-gray-900 border border-gray-800 rounded-xl py-3 px-4 text-sm text-white focus:outline-none focus:border-cyan-500/50"
-                                />
+                            <div className="relative flex items-center gap-2">
+                                <div className="relative flex-1">
+                                    <input
+                                        type="text"
+                                        value={inputValue}
+                                        onChange={(e) => setInputValue(e.target.value)}
+                                        onKeyPress={(e) => e.key === 'Enter' && handleSend()}
+                                        placeholder="Ask about internships, services..."
+                                        className="w-full bg-gray-900 border border-gray-800 rounded-xl py-3 pl-4 pr-12 text-sm text-white focus:outline-none focus:border-cyan-500/50"
+                                    />
+                                    {/* Mic/Voice Button inside Input */}
+                                    <button
+                                        onClick={toggleListening}
+                                        className={`absolute right-3 top-1/2 -translate-y-1/2 p-1.5 rounded-lg transition-all ${isListening ? 'bg-red-500/20 text-red-500 animate-pulse' : 'text-gray-400 hover:text-white'}`}
+                                        title={isListening ? "Listening..." : "Voice search"}
+                                    >
+                                        {isListening ? (
+                                            <MicOff className="w-4 h-4" />
+                                        ) : (
+                                            <Mic className="w-4 h-4" />
+                                        )}
+                                    </button>
+                                </div>
                                 <button
                                     onClick={() => handleSend()}
-                                    className="absolute right-2 w-9 h-9 bg-cyan-600 rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-all shadow-[0_0_10px_rgba(6,182,212,0.4)]"
+                                    className="w-9 h-9 shrink-0 bg-cyan-600 rounded-lg flex items-center justify-center hover:bg-cyan-500 transition-all shadow-[0_0_10px_rgba(6,182,212,0.4)]"
                                 >
                                     <img src={sendIcon} className="w-3.5 h-3.5" />
                                 </button>
@@ -302,7 +464,6 @@ Which service do you want pricing for?`;
             >
                 <div className="absolute inset-0 bg-cyan-400 opacity-10 animate-pulse duration-[4000ms]"></div>
                 <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent blur-xl"></div>
-                {/* Modern Chatbot Icon */}
                 <svg
                     viewBox="0 0 24 24"
                     fill="none"
