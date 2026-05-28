@@ -444,6 +444,9 @@ const App = () => {
           </svg>
         </a>
 
+        {/* Floating Chatbot Assistant */}
+        <Chatbot />
+
         <Footer />
       </div>
     </Router>
