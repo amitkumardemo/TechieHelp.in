@@ -11,6 +11,7 @@ import WhoWeAre from "./who";
 
 import Chatbot from "./Chatbot";
 import CertificateVerify from "./CertificateVerify";
+import MetaSEO from "./MetaSEO";
 
 export {
   Navbar,
@@ -24,5 +25,6 @@ export {
   Hero,
   WhoWeAre,
   Chatbot,
-  CertificateVerify
+  CertificateVerify,
+  MetaSEO
 };

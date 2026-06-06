@@ -21,27 +21,35 @@ const CardDeal = () => (
       />
 
       <div className="space-y-8">
-         {[
-           { id: 1, text: "Form submitted & Data Stored", color: "blue" },
-           { id: 2, text: "AI Sends Instant Email & SMS", color: "purple" },
-           { id: 3, text: "AI Calls Customer Instantly", color: "red" },
-           { id: 4, text: "AI Updates System & Notifies You", color: "green" }
-         ].map((step, i) => (
-           <motion.div 
-             key={i}
-             initial={{ opacity: 0, x: -20 }}
-             whileInView={{ opacity: 1, x: 0 }}
-             transition={{ delay: i * 0.1 }}
-             className="flex items-center gap-6 group"
-           >
-              <div className={`w-8 h-8 rounded-full bg-${step.color}-500/20 flex items-center justify-center text-${step.color}-400 font-black border border-${step.color}-500/30 shadow-[0_0_10px_rgba(0,0,0,0.3)] z-20 bg-primary`}>
-                {step.id}
-              </div>
-              <p className="text-white/60 font-bold text-xs uppercase tracking-[3px] group-hover:text-white transition-colors">
-                {step.text}
-              </p>
-           </motion.div>
-         ))}
+         {(() => {
+           const colorMap = {
+             blue: "bg-blue-500/20 text-blue-400 border-blue-500/30",
+             purple: "bg-purple-500/20 text-purple-400 border-purple-500/30",
+             red: "bg-red-500/20 text-red-400 border-red-500/30",
+             green: "bg-green-500/20 text-green-400 border-green-500/30"
+           };
+           return [
+             { id: 1, text: "Form submitted & Data Stored", color: "blue" },
+             { id: 2, text: "AI Sends Instant Email & SMS", color: "purple" },
+             { id: 3, text: "AI Calls Customer Instantly", color: "red" },
+             { id: 4, text: "AI Updates System & Notifies You", color: "green" }
+           ].map((step, i) => (
+             <motion.div 
+               key={i}
+               initial={{ opacity: 0, x: -20 }}
+               whileInView={{ opacity: 1, x: 0 }}
+               transition={{ delay: i * 0.1 }}
+               className="flex items-center gap-6 group"
+             >
+                <div className={`w-8 h-8 rounded-full ${colorMap[step.color]} flex items-center justify-center font-black border shadow-[0_0_10px_rgba(0,0,0,0.3)] z-20 bg-primary`}>
+                  {step.id}
+                </div>
+                <p className="text-white/60 font-bold text-xs uppercase tracking-[3px] group-hover:text-white transition-colors">
+                  {step.text}
+                </p>
+             </motion.div>
+           ));
+         })()}
       </div>
     </div>
     

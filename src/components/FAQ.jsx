@@ -67,16 +67,26 @@ const FAQ = () => {
           {faqData.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-700 rounded-lg p-4 cursor-pointer transition-shadow duration-300 hover:shadow-lg"
-              onMouseEnter={() => setActiveIndex(index)}
-              onMouseLeave={() => setActiveIndex(null)}
+              className="border border-gray-700 rounded-lg p-4 cursor-pointer transition-shadow duration-300 hover:shadow-lg focus-within:ring-2 focus-within:ring-secondary/50 focus:outline-none"
+              onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  setActiveIndex(activeIndex === index ? null : index);
+                }
+              }}
+              tabIndex={0}
+              role="button"
+              aria-expanded={activeIndex === index}
             >
-              <h3 className="text-lg font-semibold flex justify-between items-center">
+              <h3 className="text-lg font-semibold flex justify-between items-center select-none">
                 {item.question}
-                <span>{activeIndex === index ? "-" : "+"}</span>
+                <span className="text-xl font-bold">{activeIndex === index ? "−" : "+"}</span>
               </h3>
               {activeIndex === index && (
-                <p className="mt-2 text-gray-300">{item.answer}</p>
+                <p className="mt-3 text-gray-300 leading-relaxed text-sm select-text" onClick={(e) => e.stopPropagation()}>
+                  {item.answer}
+                </p>
               )}
             </div>
           ))}

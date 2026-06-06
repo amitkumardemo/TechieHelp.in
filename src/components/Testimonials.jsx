@@ -107,16 +107,26 @@ const testimonials = [
 
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
 
   const getInitials = (name) => {
     return name.split(' ').map(n => n[0]).join('').toUpperCase();
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
     const interval = setInterval(() => {
       setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     }, 5000);
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   const getCardStyle = (index) => {
@@ -125,7 +135,7 @@ const Testimonials = () => {
 
     if (isActive) {
       return { zIndex: 10, scale: 1, opacity: 1, x: 0, rotateY: 0 };
-    } else if (Math.abs(diff) === 1 || (activeIndex === 0 && index === testimonials.length - 1) || (activeIndex === testimonials.length - 1 && index === 0)) {
+    } else if (!isMobile && (Math.abs(diff) === 1 || (activeIndex === 0 && index === testimonials.length - 1) || (activeIndex === testimonials.length - 1 && index === 0))) {
       const direction = diff > 0 ? 1 : -1;
       const wrapDirection = (activeIndex === 0 && index === testimonials.length - 1) ? -1 : (activeIndex === testimonials.length - 1 && index === 0) ? 1 : direction;
       return {

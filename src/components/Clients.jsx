@@ -7,7 +7,15 @@ const Clients = () => (
     <div className={`${styles.flexCenter} flex-wrap w-full`}>
       {clients.map((client) => (
         <div key={client.id} className={`flex-1 ${styles.flexCenter} sm:min-w-[192px] min-w-[120px] m-5`}>
-          <img src={client.logo} alt="client_logo" className="sm:w-[192px] w-[100px] object-contain" />
+          <img
+            src={client.logo}
+            alt={`${client.id || 'Client'} logo`}
+            loading="lazy"
+            decoding="async"
+            className="sm:w-[192px] w-[100px] h-auto object-contain"
+            width="192"
+            height="60"
+          />
         </div>
       ))}
     </div>

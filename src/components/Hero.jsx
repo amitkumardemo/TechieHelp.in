@@ -154,7 +154,7 @@ const Hero = () => {
         <div className="relative w-full h-[80%] flex items-center justify-center">
           <motion.img
             src={robot}
-            alt="billing"
+            alt="TechieHelp AI Automation Robot"
             className="w-[90%] h-[75%] relative z-[5] drop-shadow-[0_0_50px_rgba(0,196,255,0.2)]"
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ 
