@@ -156,7 +156,7 @@ const Internship = () => {
             initial={{ opacity: 0, x: -100, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8, x: -50 }}
-            className="fixed bottom-10 left-6 md:left-10 z-[60] w-full max-w-[320px]"
+            className="fixed bottom-10 left-4 right-4 sm:right-auto sm:left-10 z-[60] w-auto sm:w-[320px]"
           >
             <div className="relative p-5 rounded-[2rem] bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl overflow-hidden flex items-center gap-4">
               <div className="relative shrink-0">
@@ -197,7 +197,7 @@ const Internship = () => {
             initial={{ opacity: 0, x: 100, scale: 0.8 }}
             animate={{ opacity: 1, x: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8, x: 50 }}
-            className="fixed bottom-10 right-6 md:right-10 z-[60] w-full max-w-[320px]"
+            className="fixed bottom-10 right-4 left-4 sm:left-auto sm:right-10 z-[60] w-auto sm:w-[320px]"
           >
             <div className="relative p-6 rounded-3xl bg-[#11111a] border border-red-500/30 shadow-[0_20px_50px_rgba(220,38,38,0.2)] overflow-hidden group">
               {/* Background Glow */}

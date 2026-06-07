@@ -33,21 +33,21 @@ const internshipLinks = [
 ];
 
 const jobsLinks = [
-  { title: "Web Developer", path: "careers/jobs" },
-  { title: "App Developer", path: "careers/jobs" },
-  { title: "UI/UX Designer", path: "careers/jobs" },
-  { title: "SEO Specialist", path: "careers/jobs" },
-  { title: "Digital Marketing Specialist", path: "careers/jobs" },
-  { title: "Tech Consultant", path: "careers/jobs" },
-  { title: "Maintenance & Support Engineer", path: "careers/jobs" },
-  { title: "AI Agent Developer", path: "careers/jobs" },
-  { title: "AI Chatbot Developer", path: "careers/jobs" },
-  { title: "AI Automation Engineer", path: "careers/jobs" },
-  { title: "Computer Vision Engineer", path: "careers/jobs" },
-  { title: "Predictive Analytics Specialist", path: "careers/jobs" },
-  { title: "Generative AI Specialist", path: "careers/jobs" },
-  { title: "AI Education Specialist", path: "careers/jobs" },
-  { title: "Speech & Voice AI Specialist", path: "careers/jobs" },
+  { title: "Web Developer", path: "/careers/jobs" },
+  { title: "App Developer", path: "/careers/jobs" },
+  { title: "UI/UX Designer", path: "/careers/jobs" },
+  { title: "SEO Specialist", path: "/careers/jobs" },
+  { title: "Digital Marketing Specialist", path: "/careers/jobs" },
+  { title: "Tech Consultant", path: "/careers/jobs" },
+  { title: "Maintenance & Support Engineer", path: "/careers/jobs" },
+  { title: "AI Agent Developer", path: "/careers/jobs" },
+  { title: "AI Chatbot Developer", path: "/careers/jobs" },
+  { title: "AI Automation Engineer", path: "/careers/jobs" },
+  { title: "Computer Vision Engineer", path: "/careers/jobs" },
+  { title: "Predictive Analytics Specialist", path: "/careers/jobs" },
+  { title: "Generative AI Specialist", path: "/careers/jobs" },
+  { title: "AI Education Specialist", path: "/careers/jobs" },
+  { title: "Speech & Voice AI Specialist", path: "/careers/jobs" },
 ];
 
 const serviceLinks = [
@@ -80,19 +80,19 @@ const Footer = () => {
           <p className="text-gray-400 mt-1">Empowering Your Business & Tech Journey</p>
 
           <div className="flex justify-center gap-4 text-white text-2xl mt-4">
-            <a href="https://www.facebook.com/techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.facebook.com/techiehelp" target="_blank" rel="noopener noreferrer" aria-label="TechieHelp Facebook">
               <Facebook />
             </a>
-            <a href="https://www.instagram.com/techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/techiehelp" target="_blank" rel="noopener noreferrer" aria-label="TechieHelp Instagram">
               <Instagram />
             </a>
-            <a href="https://www.linkedin.com/company/techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/company/techiehelp" target="_blank" rel="noopener noreferrer" aria-label="TechieHelp LinkedIn">
               <Linkedin />
             </a>
-            <a href="https://www.youtube.com/@techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.youtube.com/@techiehelp" target="_blank" rel="noopener noreferrer" aria-label="TechieHelp YouTube">
               <Youtube />
             </a>
-            <a href="https://twitter.com/techiehelp" target="_blank" rel="noopener noreferrer">
+            <a href="https://twitter.com/techiehelp" target="_blank" rel="noopener noreferrer" aria-label="TechieHelp Twitter">
               <Twitter />
             </a>
           </div>
@@ -112,7 +112,7 @@ const Footer = () => {
         </div>
 
         {/* Internships */}
-        <div><Link to="careers/training-internships">
+        <div><Link to="/careers/training-internships">
   <h4 className="text-lg font-semibold mb-4 hover:underline">Training / Internships</h4>
 </Link>
 
@@ -140,7 +140,7 @@ const Footer = () => {
 
         {/* Jobs */}
         
-          <div><Link to="careers/jobs">
+          <div><Link to="/careers/jobs">
   <h4 className="text-lg font-semibold mb-4 hover:underline">Career / Jobs</h4>
 </Link>
           <div className="grid grid-cols-2 gap-x-6">

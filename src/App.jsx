@@ -1,5 +1,5 @@
 import styles, { layout } from "./style";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre, Chatbot, CertificateVerify } from "./components";
+import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre, Chatbot, CertificateVerify, MetaSEO } from "./components";
 import OurServices from "./components/OurServices";
 import Services from "./components/Services";
 import ProjectPortfolio from "./components/ProjectPortfolio";
@@ -249,6 +249,7 @@ const App = () => {
 
           <Route path="/" element={
             <>
+              <MetaSEO />
               <div className={`${styles.flexStart} pt-0`}>
                 <div className={`${styles.boxWidth}`}>
                   <Hero className="hero" />
@@ -426,6 +427,9 @@ const App = () => {
             </svg>
           </button>
         )}
+
+        {/* Chatbot */}
+        <Chatbot />
 
         {/* WhatsApp Icon */}
         <a
