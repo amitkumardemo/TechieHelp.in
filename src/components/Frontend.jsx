@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import {
   webdevelopment,
   intern,
@@ -398,6 +399,14 @@ const Frontend = () => {
 
   return (
     <div className="bg-black min-h-screen">
+      <Helmet>
+        <title>React Frontends & Dashboards for AI Lead Systems | TechieHelp</title>
+        <meta name="description" content="Build high-converting UI/UX dashboards for AI lead engines. TechieHelp offers React frontend training focused on real-world business dashboard systems." />
+        <meta property="og:title" content="React Frontends & Dashboards for AI Lead Systems | TechieHelp" />
+        <meta property="og:description" content="Build high-converting UI/UX dashboards for AI lead engines. TechieHelp offers React frontend training focused on real-world business dashboard systems." />
+        <meta property="og:url" content="https://techiehelp.in/frontend" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <style>
         {`
           @keyframes scroll {

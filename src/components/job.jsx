@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import styles from "../style";
 import { motion } from "framer-motion";
 import Loading from "./Loading";
@@ -161,6 +162,14 @@ const Job = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Careers in AI Systems & Lead Automation | TechieHelp</title>
+        <meta name="description" content="Join TechieHelp's team in Jodhpur & Jaipur building state-of-the-art AI lead engines, custom calling agents, and automation workflows. Apply now." />
+        <meta property="og:title" content="Careers in AI Systems & Lead Automation | TechieHelp" />
+        <meta property="og:description" content="Join TechieHelp's team in Jodhpur & Jaipur building state-of-the-art AI lead engines, custom calling agents, and automation workflows. Apply now." />
+        <meta property="og:url" content="https://techiehelp.in/careers/jobs" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <section className="pt-40 bg-primary text-white">
         <div className={`${styles.boxWidth} mx-auto flex flex-col md:flex-row items-center justify-between`}>
           <div className="md:w-1/2 mb-8 md:mb-0 px-4 max-w-[90%]">

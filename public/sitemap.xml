@@ -1,57 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Main Pages -->
+  <!-- Main Pages & AI Services -->
   <url>
     <loc>https://techiehelp.in/</loc>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/services</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/services/ai-lead-engine</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/services/ai-calling-agents</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/services/ai-workflow-automation</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/services/ai-business-dashboard</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/services/voice-ai-system</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/qualifyai-dashboard</loc>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://techiehelp.in/about-us</loc>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://techiehelp.in/services</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://techiehelp.in/web-development-services</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://techiehelp.in/careers/training-internships</loc>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://techiehelp.in/careers/jobs</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://techiehelp.in/interns</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://techiehelp.in/employees</loc>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://techiehelp.in/hackathon</loc>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://techiehelp.in/placement-booster</loc>
+    <loc>https://techiehelp.in/project-portfolio</loc>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://techiehelp.in/contacts</loc>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://techiehelp.in/hiring-faq</loc>
-    <priority>0.6</priority>
+    <loc>https://techiehelp.in/careers/training-internships</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/careers/jobs</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/interns</loc>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/employees</loc>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://techiehelp.in/verify-certificate</loc>
-    <priority>0.9</priority>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://techiehelp.in/hackathon</loc>
+    <priority>0.4</priority>
   </url>
 
   <!-- Technology Training Pages -->

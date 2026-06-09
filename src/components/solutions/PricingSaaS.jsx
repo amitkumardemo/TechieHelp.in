@@ -3,6 +3,15 @@ import { motion } from "framer-motion";
 import { Send, CheckCircle, Rocket, Flame } from "lucide-react";
 
 const PricingSaaS = () => {
+  const features = [
+    "AI Lead Qualification",
+    "AI Email Automation",
+    "AI Calling Agent",
+    "Dashboard Access",
+    "CRM Integration",
+    "Deployment Support"
+  ];
+
   return (
     <section className="py-24 bg-[#050510] px-6 relative overflow-hidden" id="pricing">
       <div className="container mx-auto max-w-7xl relative z-10">
@@ -13,8 +22,7 @@ const PricingSaaS = () => {
             viewport={{ once: true }}
             className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter"
           >
-            Simple Pricing for <br />
-            <span className="text-gradient font-black">Powerful AI Systems</span>
+            Custom <span className="text-gradient font-black">AI Systems</span>
           </motion.h2>
           <p className="text-gray-400 font-bold max-w-2xl mx-auto">One-time setup for continuous automated growth.</p>
         </div>
@@ -40,35 +48,29 @@ const PricingSaaS = () => {
               </div>
 
               <div className="space-y-4 mb-12 text-left px-4">
-                 {[
-                   "Custom AI Reasoning Logic",
-                   "Full Ownership (No recurring fee)",
-                   "7-Day Deployment Guarantee",
-                   "End-to-End System Integration",
-                   "Real-time Dashboard Access"
-                 ].map(item => (
-                   <div key={item} className="flex items-center gap-3">
-                      <div className="p-1 rounded-full bg-blue-500/20 text-blue-400">
-                        <CheckCircle className="w-4 h-4" />
-                      </div>
-                      <span className="text-[11px] font-black text-gray-300 uppercase tracking-widest">{item}</span>
-                   </div>
+                 {features.map(item => (
+                    <div key={item} className="flex items-center gap-3">
+                       <div className="p-1 rounded-full bg-blue-500/20 text-blue-400">
+                         <CheckCircle className="w-4 h-4" />
+                       </div>
+                       <span className="text-[11px] font-black text-gray-300 uppercase tracking-widest">{item}</span>
+                    </div>
                  ))}
               </div>
 
               <a 
-               href="https://wa.me/917673825079?text=Hello%20TechieHelp%2C%20I%20want%20to%20get%20a%20custom%20AI%20system%20for%20my%20business."
+               href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                target="_blank"
                rel="noopener noreferrer"
                className="group relative w-full py-6 bg-white text-[#050510] font-black text-xl rounded-[2rem] flex items-center justify-center gap-3 hover:scale-105 active:scale-95 transition-all shadow-2xl"
               >
-                <span>Get Custom AI System</span>
+                <span>Schedule Custom AI Consultation</span>
                 <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </a>
 
               <div className="mt-10 flex items-center justify-center gap-3 text-[10px] font-black text-white/20 uppercase tracking-[5px]">
                  <Rocket className="w-4 h-4" />
-                 <span>Deployment within 5–7 days</span>
+                 <span>Deployment: 5–7 Days</span>
               </div>
            </div>
         </div>

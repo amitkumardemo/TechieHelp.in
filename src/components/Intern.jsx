@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { Helmet } from 'react-helmet';
 import DotGrid from './DotGrid';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -644,6 +645,14 @@ const Intern = () => {
 
   return (
     <div className="relative min-h-screen">
+      <Helmet>
+        <title>AI Lead Automation Engineers & Specialists | TechieHelp</title>
+        <meta name="description" content="Meet our verified team of AI developers, frontend engineers, and CRM workflow automation specialists delivering results for TechieHelp clients." />
+        <meta property="og:title" content="AI Lead Automation Engineers & Specialists | TechieHelp" />
+        <meta property="og:description" content="Meet our verified team of AI developers, frontend engineers, and CRM workflow automation specialists delivering results for TechieHelp clients." />
+        <meta property="og:url" content="https://techiehelp.in/interns" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       {/* DotGrid Background - Fixed position behind everything */}
       <div className="fixed inset-0 z-0">
         <DotGrid 

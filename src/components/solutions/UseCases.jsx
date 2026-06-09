@@ -1,31 +1,37 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { GraduationCap, Rocket, Briefcase, ShoppingBag, ArrowUpRight } from "lucide-react";
+import { GraduationCap, Rocket, Briefcase, ShoppingBag, Wrench, ArrowUpRight } from "lucide-react";
 
 const useCases = [
   { 
     title: "Coaching Institutes", 
-    desc: "Admission automation: Automate lead capture from ads, follow-up calls, and student data entry.", 
+    desc: "Admissions automation. Captures student lead inquiries from ads, triggers instant qualification calls, and schedules counseling slots automatically.", 
     icon: <GraduationCap className="w-10 h-10 text-blue-400" />,
-    stats: "90% Admission Growth"
+    stats: "90% Admissions Increase"
   },
   { 
     title: "Startups", 
-    desc: "AI sales systems: Qualify leads and book meetings on autopilot for your founding team.", 
+    desc: "Autonomous sales dialer. Instantly contacts and qualifies demo sign-ups, booking qualified leads on the founding team's calendar 24/7.", 
     icon: <Rocket className="w-10 h-10 text-purple-400" />,
-    stats: "24/7 Sales Engine"
+    stats: "10x Meetings Booked"
   },
   { 
     title: "Agencies", 
-    desc: "Client onboarding automation: Automate welcome emails, resource sharing, and contract signatures.", 
+    desc: "Onboarding and billing flows. Automatically generates client contracts, sets up internal communication channels, and logs reporting metrics.", 
     icon: <Briefcase className="w-10 h-10 text-green-400" />,
-    stats: "0% Manual Onboarding"
+    stats: "0% Manual Administrative Work"
   },
   { 
     title: "E-commerce", 
-    desc: "Order + support automation: AI agents handle order tracking, basic support, and cart recovery.", 
+    desc: "Abandonment and support recovery. AI phone agents contact high-value abandoned carts and process order tracking requests instantly.", 
     icon: <ShoppingBag className="w-10 h-10 text-red-400" />,
-    stats: "3x Faster Support"
+    stats: "35% Recovered Abandoned Sales"
+  },
+  { 
+    title: "Service Businesses", 
+    desc: "Instant quoting and booking. AI captures project requirements, emails quotes automatically, and follows up until a deposit is paid.", 
+    icon: <Wrench className="w-10 h-10 text-orange-400" />,
+    stats: "Zero Missed Client Calls"
   }
 ];
 

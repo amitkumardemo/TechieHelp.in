@@ -68,11 +68,11 @@ const Internship = () => {
   return (
     <div className="bg-primary text-white min-h-screen font-poppins selection:bg-blue-500/30">
       <Helmet>
-        <title>Start Your Internship at Just ₹499 | TechieHelp Institute of AI</title>
-        <meta name="description" content="Join TechieHelp Institute of AI - High-quality internships in Web Dev, App Dev, AI/ML & more starting at just ₹499. Work on real projects, get certified, and boost your career." />
-        <meta property="og:title" content="Start Your Internship at Just ₹499 | TechieHelp Institute of AI" />
-        <meta property="og:description" content="High-quality internships starting at just ₹499. Real projects + ISO Certification." />
-        <meta property="og:url" content="https://www.techiehelp.in/careers/training-internships" />
+        <title>AI Solutions & Software Development Training | TechieHelp</title>
+        <meta name="description" content="Explore advanced hands-on training in AI automation, calling agents, and custom CRM systems. Start building production-level AI software with TechieHelp." />
+        <meta property="og:title" content="AI Solutions & Software Development Training | TechieHelp" />
+        <meta property="og:description" content="Build real-world AI calling agents, workflow systems, and earn certified project experience with TechieHelp." />
+        <meta property="og:url" content="https://techiehelp.in/careers/training-internships" />
         <meta property="og:type" content="website" />
       </Helmet>
 

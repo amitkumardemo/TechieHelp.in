@@ -273,12 +273,12 @@ const AIAgentsServices = () => {
               Build intelligent AI agents for research, data automation, and custom task handling to optimize your business processes.
             </p>
             <a
-              href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20AI%20Agents%20Services.%20Please%20provide%20more%20details."
+              href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
-                Get Consultation
+                Book Your Free 1:1 Strategy Call
               </button>
             </a>
           </div>
@@ -519,12 +519,12 @@ const AIAgentsServices = () => {
               </motion.p>
               <div className="font-bold text-green-600 mb-4">{price}</div>
               <a
-                href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
-                  Book a Strategy Call
+                  Book 1:1 Strategy Session
                 </button>
               </a>
               {/* Hover effect line */}
@@ -552,12 +552,12 @@ const AIAgentsServices = () => {
               We use advanced AI frameworks and automation tools to build scalable and efficient AI agents for your business.
             </p>
             <a
-              href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20AI%20Agents%20Services.%20Please%20provide%20more%20details."
+              href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
-                Get Consultation
+                Book Your Free 1:1 Strategy Call
               </button>
             </a>
           </div>
@@ -638,16 +638,16 @@ const AIAgentsServices = () => {
                 <a
                   href={
                     index === 0
-                      ? "https://wa.me/917673825079?text=Hello%2C%20I%20am%20interested%20in%20TechieHelp%27s%20Basic%20Plan%20for%20AI%20Agents.%20Kindly%20share%20the%20details%20and%20how%20I%20can%20get%20started."
+                      ? "https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                       : index === 1
-                      ? "https://wa.me/917673825079?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20TechieHelp%27s%20Standard%20Plan%20for%20AI%20Agents.%20Please%20provide%20the%20complete%20information%20and%20benefits."
-                      : "https://wa.me/917673825079?text=Hi%2C%20I%27m%20interested%20in%20TechieHelp%27s%20Premium%20Plan%20for%20AI%20Agents.%20Could%20you%20please%20guide%20me%20through%20the%20features%2C%20pricing%2C%20and%20enrollment%20process%3F"
+                      ? "https://calendar.app.google/XY3C9NoNJuDAtbZp9"
+                      : "https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                   }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 inline-block text-center"
                 >
-                  Choose Plan
+                  Book Plan Setup Call
                 </a>
               </motion.div>
             ))}

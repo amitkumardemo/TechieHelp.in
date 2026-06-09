@@ -45,7 +45,7 @@ const Billing = () => (
         <p className={`${styles.paragraph} max-w-[470px] mt-8 text-white/70 leading-relaxed font-medium`}>
           When a customer fills your form and you're busy or offline, the lead goes cold instantly. A 5-minute delay can cost you the deal. TechieHelp AI ensures you never miss a lead again.
         </p>
-        <Button styles="mt-12 !bg-white !text-black !font-black !shadow-white/10 hover:!shadow-red-500/20 transition-all hover:scale-105" text="Stop Losing Leads" />
+        <Button styles="mt-12 !bg-white !text-black !font-black !shadow-white/10 hover:!shadow-red-500/20 transition-all hover:scale-105" text="Stop Losing Leads — Book Strategy Call" />
       </div>
     </motion.div>
   </section>

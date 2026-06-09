@@ -244,12 +244,12 @@ const ComputerVisionServices = () => {
               Build intelligent computer vision applications including object detection, face recognition, and smart scanning tools.
             </p>
             <a
-              href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20Computer%20Vision%20Services.%20Please%20provide%20more%20details."
+              href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
-                Get Consultation
+                Book Your Free 1:1 Strategy Call
               </button>
             </a>
           </div>
@@ -490,12 +490,12 @@ const ComputerVisionServices = () => {
               </motion.p>
               <div className="font-bold text-green-600 mb-4">{price}</div>
               <a
-                href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
-                  Book a Strategy Call
+                  Book 1:1 Strategy Session
                 </button>
               </a>
               {/* Hover effect line */}
@@ -523,12 +523,12 @@ const ComputerVisionServices = () => {
               We use state-of-the-art computer vision algorithms and tools to deliver innovative and scalable solutions.
             </p>
             <a
-              href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20Computer%20Vision%20Services.%20Please%20provide%20more%20details."
+              href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
-                Get Consultation
+                Book Your Free 1:1 Strategy Call
               </button>
             </a>
           </div>
@@ -607,12 +607,12 @@ const ComputerVisionServices = () => {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20Computer%20Vision%20Services.%20Please%20provide%20more%20details."
+                  href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 inline-block text-center"
                 >
-                  Choose Plan
+                  Book Plan Setup Call
                 </a>
               </motion.div>
             ))}

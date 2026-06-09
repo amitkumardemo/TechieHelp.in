@@ -67,7 +67,7 @@ const WordReveal = ({ text, className }) => {
 };
 
 const Business = () => (
-  <section id="features" className="relative w-full overflow-hidden py-16 lg:py-0 lg:h-[85vh] flex items-center justify-center ss:px-16 px-6 bg-primary">
+  <section id="features" className="relative w-full overflow-hidden py-16 lg:py-24 lg:min-h-[85vh] flex items-center justify-center ss:px-16 px-6 bg-primary">
     {/* Cinematic Ambient Elements */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
       <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px] animate-pulse" />

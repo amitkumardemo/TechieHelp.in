@@ -51,7 +51,7 @@ const CardDeal = () => (
       </p>
     </div>
 
-    <Button styles={`mt-10`} text="See Live AI Demo" />
+    <Button styles={`mt-10`} text="Book Live AI Demo Call Now" />
   </div>
 
   <div className={layout.sectionImg}>

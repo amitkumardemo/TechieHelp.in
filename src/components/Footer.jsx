@@ -11,61 +11,30 @@ import {
   Twitter,
 } from "lucide-react";
 
-const internshipLinks = [
-  { title: "Web Development", path: "/webdevelopment" },
-  { title: "App Development", path: "/androiddevelopment" },
-  { title: "UI/UX Design", path: "/uiux" },
-  { title: "SEO & Digital Marketing", path: "/seo" },
-  { title: "Artificial Intelligence", path: "/ai" },
-  { title: "Machine Learning", path: "/machinelearning" },
-  { title: "Front-End Developer", path: "/frontend" },
-  { title: "Back-End Developer", path: "/backend" },
-  { title: "Full Stack Developer", path: "/fullstack" },
-  { title: "MERN Stack Developer", path: "/mern" },
-  { title: "Python Developer", path: "/python" },
-  { title: "Java Developer", path: "/java" },
-  { title: "Java Full Stack Developer", path: "/javafull" },
-  { title: "React Developer", path: "/react" },
-  { title: "JavaScript Developer", path: "/javascript" },
-  { title: "Node.js Developer", path: "/node" },
-  { title: "AI/ML Developer", path: "/aiml" },
-  { title: "DevOps", path: "/devops" },
-];
-
-const jobsLinks = [
-  { title: "Web Developer", path: "careers/jobs" },
-  { title: "App Developer", path: "careers/jobs" },
-  { title: "UI/UX Designer", path: "careers/jobs" },
-  { title: "SEO Specialist", path: "careers/jobs" },
-  { title: "Digital Marketing Specialist", path: "careers/jobs" },
-  { title: "Tech Consultant", path: "careers/jobs" },
-  { title: "Maintenance & Support Engineer", path: "careers/jobs" },
-  { title: "AI Agent Developer", path: "careers/jobs" },
-  { title: "AI Chatbot Developer", path: "careers/jobs" },
-  { title: "AI Automation Engineer", path: "careers/jobs" },
-  { title: "Computer Vision Engineer", path: "careers/jobs" },
-  { title: "Predictive Analytics Specialist", path: "careers/jobs" },
-  { title: "Generative AI Specialist", path: "careers/jobs" },
-  { title: "AI Education Specialist", path: "careers/jobs" },
-  { title: "Speech & Voice AI Specialist", path: "careers/jobs" },
-];
-
 const serviceLinks = [
-  { title: "Web Development", path: "/webdevelopment" },
-  { title: "App Development", path: "/app-development-services" },
-  { title: "UI/UX Design", path: "/uiuxservices" },
-  { title: "SEO Optimization", path: "/seooptimizationservices" },
-  { title: "Digital Marketing", path: "/digitalmarketingservices" },
-  { title: "Tech Consulting", path: "/techconsultingservices" },
-  { title: "Maintenance & Support", path: "/maintenancesupportservices" },
-  { title: "AI Agents", path: "/aiagentsservices" },
-  { title: "AI Chatbots & Virtual Assistants", path: "/aichatbotsservices" },
-  { title: "AI Automation Solutions", path: "/aiautomationservices" },
-  { title: "Computer Vision", path: "/computervisionservices" },
-  { title: "Predictive Analytics", path: "/predictiveanalyticsservices" },
-  { title: "Generative AI Solutions", path: "/generativeaiservices" },
-  { title: "AI for Education", path: "/aieducationservices" },
-  { title: "Speech & Voice AI", path: "/speechvoiceaiservices" },
+  { title: "AI Lead Capture Engine", path: "/services/ai-lead-engine" },
+  { title: "AI Phone Calling Agents", path: "/services/ai-calling-agents" },
+  { title: "AI Workflow Automation", path: "/services/ai-workflow-automation" },
+  { title: "Voice AI Systems", path: "/services/voice-ai-system" },
+  { title: "QualifyAI Dashboard", path: "/qualifyai-dashboard" },
+  { title: "AI Business Dashboard", path: "/services/ai-business-dashboard" },
+  { title: "All AI Services", path: "/services" },
+];
+
+const resourceLinks = [
+  { title: "Download Android App", path: "https://t90161611204.p.clickup-attachments.com/t90161611204/1b036e48-f883-4ba1-9812-bdcf04a65796/techiehelp.apk" },
+  { title: "Training & Internships", path: "/careers/training-internships" },
+  { title: "Career Opportunities", path: "/careers/jobs" },
+  { title: "Verify Certificate", path: "/verify-certificate" },
+  { title: "Campus Ambassador", path: "/campus-ambassador" },
+  { title: "Community Partnership", path: "/community-partnership" },
+];
+
+const companyLinks = [
+  { title: "About Us", path: "/about-us" },
+  { title: "Our Portfolio", path: "/project-portfolio" },
+  { title: "Contact Us", path: "/contacts" },
+  { title: "Founder & CEO Profile", path: "/team/amit-kumar-founder-ceo-techiehelp" },
 ];
 
 
@@ -97,98 +66,93 @@ const Footer = () => {
             </a>
           </div>
 
-          <ul className="mt-4">
+          <ul className="mt-4 space-y-2">
             <li>
               <a
-                href="https://wa.me/7073130165?text=Hello%2C%20I%20am%20interested%20in%20becoming%20a%20partner%20with%20TechieHelp."
-                className="hover:underline text-blue-400"
+                href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
+                className="hover:underline text-blue-400 text-sm"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Become a Partner
+                Become a Partner — Book Discussion
+              </a>
+            </li>
+            <li className="pt-2">
+              <a
+                href="https://t90161611204.p.clickup-attachments.com/t90161611204/1b036e48-f883-4ba1-9812-bdcf04a65796/techiehelp.apk"
+                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium text-xs rounded-xl shadow-lg transition-all active:scale-95 whitespace-nowrap"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17.523 15.3c-.149 0-.29-.059-.4-.165l-4.14-4.14v8.305c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-8.305l-4.14 4.14c-.105.105-.246.165-.4.165-.313 0-.565-.252-.565-.565 0-.15.06-.29.165-.4l5.29-5.29c.105-.105.25-.165.4-.165s.295.06.4.165l5.29 5.29c.105.11.165.25.165.4 0 .313-.252.565-.565.565zm-11.023-5.3c-.276 0-.5-.224-.5-.5v-4c0-1.93 1.57-3.5 3.5-3.5h5c1.93 0 3.5 1.57 3.5 3.5v4c0 .276-.224.5-.5.5s-.5-.224-.5-.5v-4c0-1.378-1.122-2.5-2.5-2.5h-5c-1.378 0-2.5 1.122-2.5 2.5v4c0 .276-.224.5-.5.5z"/>
+                </svg>
+                <span>Download Android App</span>
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Internships */}
-        <div><Link to="careers/training-internships">
-  <h4 className="text-lg font-semibold mb-4 hover:underline">Training / Internships</h4>
-</Link>
-
-          <div className="grid grid-cols-2 gap-x-6">
-            <ul className="space-y-2">
-              {internshipLinks.slice(0, Math.ceil(internshipLinks.length / 2)).map((item) => (
-                <li key={item.title}>
-                  <Link to={item.path} className="hover:underline">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <ul className="space-y-2">
-              {internshipLinks.slice(Math.ceil(internshipLinks.length / 2)).map((item) => (
-                <li key={item.title}>
-                  <Link to={item.path} className="hover:underline">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Jobs */}
-        
-          <div><Link to="careers/jobs">
-  <h4 className="text-lg font-semibold mb-4 hover:underline">Career / Jobs</h4>
-</Link>
-          <div className="grid grid-cols-2 gap-x-6">
-            <ul className="space-y-2">
-              {jobsLinks.slice(0, Math.ceil(jobsLinks.length / 2)).map((item) => (
-                <li key={item.title}>
-                  <Link to={item.path} className="hover:underline">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <ul className="space-y-2">
-              {jobsLinks.slice(Math.ceil(jobsLinks.length / 2)).map((item) => (
-                <li key={item.title}>
-                  <Link to={item.path} className="hover:underline">
-                    {item.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Services */}
+        {/* AI Solutions */}
         <div>
-          <h4 className="text-lg font-semibold mb-4">Services</h4>
-          <div className="grid grid-cols-2 gap-x-6">
-            <ul className="space-y-2">
-              {serviceLinks.slice(0, Math.ceil(serviceLinks.length / 2)).map((item) => (
-                <li key={item.title}>
-                  <a href={item.path} className="hover:underline">
+          <h4 className="text-lg font-semibold mb-4 border-b border-gray-800 pb-2">AI Solutions</h4>
+          <ul className="space-y-2">
+            {serviceLinks.map((item) => (
+              <li key={item.title}>
+                {item.path.startsWith("http") ? (
+                  <a href={item.path} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400 hover:text-white transition-colors">
                     {item.title}
                   </a>
-                </li>
-              ))}
-            </ul>
-            <ul className="space-y-2">
-              {serviceLinks.slice(Math.ceil(serviceLinks.length / 2)).map((item) => (
-                <li key={item.title}>
-                  <a href={item.path} className="hover:underline">
+                ) : (
+                  <Link to={item.path} className="hover:underline text-gray-400 hover:text-white transition-colors">
                     {item.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
+
+        {/* Resources */}
+        <div>
+          <h4 className="text-lg font-semibold mb-4 border-b border-gray-800 pb-2">Resources</h4>
+          <ul className="space-y-2">
+            {resourceLinks.map((item) => (
+              <li key={item.title}>
+                {item.path.startsWith("http") ? (
+                  <a href={item.path} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400 hover:text-white transition-colors">
+                    {item.title}
+                  </a>
+                ) : (
+                  <Link to={item.path} className="hover:underline text-gray-400 hover:text-white transition-colors">
+                    {item.title}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Company */}
+        <div>
+          <h4 className="text-lg font-semibold mb-4 border-b border-gray-800 pb-2">Company</h4>
+          <ul className="space-y-2">
+            {companyLinks.map((item) => (
+              <li key={item.title}>
+                {item.path.startsWith("http") ? (
+                  <a href={item.path} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400 hover:text-white transition-colors">
+                    {item.title}
+                  </a>
+                ) : (
+                  <Link to={item.path} className="hover:underline text-gray-400 hover:text-white transition-colors">
+                    {item.title}
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+
       </div>
 
       {/* Bottom Copyright & Legal */}

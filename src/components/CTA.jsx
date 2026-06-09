@@ -17,7 +17,7 @@ const CTA = () => (
     </div>
 
     <div className={`${styles.flexCenter} sm:ml-10 ml-0 sm:mt-0 mt-10 relative z-10`}>
-      <Button styles="py-5 px-10 text-lg !font-black !rounded-2xl shadow-xl shadow-blue-500/10 hover:shadow-blue-500/30 transition-all active:scale-95" text="Book Free Demo" />
+      <Button styles="py-5 px-10 text-lg !font-black !rounded-2xl shadow-xl shadow-blue-500/10 hover:shadow-blue-500/30 transition-all active:scale-95" text="Book Your Free 1:1 Strategy Call" />
     </div>
   </section>
 );

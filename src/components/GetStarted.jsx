@@ -12,15 +12,15 @@ const GetStarted = () => (
        </div>
        
        <p className="font-poppins font-medium text-[16px] leading-[23.4px]">
-   <a
-     href="https://wa.me/917673825079?text=Hello%20TechieHelp%2C%20I%20want%20to%20book%20a%20free%20demo%20of%20your%20AI%20systems%20for%20my%20business."
-     target="_blank"
-     rel="noopener noreferrer"
-     className="text-gradient"
-   >
-     Free Demo
-   </a>
- </p>
+    <a
+      href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-gradient font-bold"
+    >
+      1:1 Call
+    </a>
+  </p>
 
     </div>
   </div>

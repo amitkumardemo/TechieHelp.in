@@ -7,9 +7,45 @@ export const navLinks = [
     path: "/"
   },
   {
-    id: "features",
-    title: "Services",
-    path: "/services"
+    id: "services",
+    title: "AI Solutions",
+    subLinks: [
+      {
+        id: "ai-lead-engine",
+        title: "AI Lead Capture Engine",
+        path: "/services/ai-lead-engine"
+      },
+      {
+        id: "ai-calling-agents",
+        title: "AI Phone Calling Agents",
+        path: "/services/ai-calling-agents"
+      },
+      {
+        id: "ai-workflow-automation",
+        title: "AI Workflow Automation",
+        path: "/services/ai-workflow-automation"
+      },
+      {
+        id: "voice-ai-system",
+        title: "Voice AI Systems",
+        path: "/services/voice-ai-system"
+      },
+      {
+        id: "qualifyai-dashboard",
+        title: "QualifyAI Dashboard",
+        path: "/qualifyai-dashboard"
+      },
+      {
+        id: "all-services",
+        title: "All AI Services",
+        path: "/services"
+      }
+    ]
+  },
+  {
+    id: "project-portfolio",
+    title: "Portfolio",
+    path: "/project-portfolio"
   },
   {
     id: "careers",
@@ -34,32 +70,6 @@ export const navLinks = [
         id: "verify-certificate",
         title: "Verify Certificate",
         path: "/verify-certificate"
-      },
-      {
-        id: "campus-ambassador",
-        title: "Campus Ambassador",
-        path: "/campus-ambassador"
-      },
-      {
-        id: "community-partnership",
-        title: "Community Partnership",
-        path: "/community-partnership"
-      }
-    ]
-  },
-  {
-    id: "team",
-    title: "Team",
-    subLinks: [
-      {
-        id: "interns",
-        title: "Interns",
-        path: "/interns"
-      },
-      {
-        id: "employees",
-        title: "Employees",
-        path: "/employees"
       }
     ]
   },
@@ -74,16 +84,10 @@ export const navLinks = [
     path: "/contacts"
   },
   {
-    id: "project-portfolio",
-    title: "Portfolio",
-    path: "/project-portfolio"
-  },
-  {
     id: "lms",
     title: "LMS",
     path: "/lms"
-  },
-
+  }
 ];
 
 
@@ -92,31 +96,38 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "AI Lead Engine",
-    content: "Automatically captures, responds, and manages leads without delay.",
-    outcome: "0 missed leads"
+    title: "AI Lead Capture Engine",
+    content: "Never lose a client again. AI instantly captures, replies to, and logs leads the second they submit a form.",
+    outcome: "100% Response Rate"
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "AI Calling Agents",
-    content: "Calls and qualifies customers instantly, collecting vital data autonomously.",
-    outcome: "Instant Qualification"
+    title: "AI Phone Calling Agents",
+    content: "Custom voice assistants dial your leads in 60s, qualify interest, and book meetings on your calendar.",
+    outcome: "24/7 Active Sales Team"
   },
   {
     id: "feature-3",
     icon: send,
-    title: "AI Workflow Automation",
-    content: "End-to-end automation of your repetitive business operations and tasks.",
-    outcome: "24/7 Autonomy"
+    title: "AI Stack Automations",
+    content: "Connect your email, CRM, spreadsheets, and invoices. Let AI run all your repetitive admin tasks.",
+    outcome: "Eliminate 90% Manual Work"
   },
   {
     id: "feature-4",
     icon: star,
     title: "AI Business Dashboard",
-    content: "Real-time visibility into your automated leads and system performance.",
-    outcome: "Full Visibility"
+    content: "A single, beautiful analytics center showing your lead pipelines, call records, and revenue growth in real time.",
+    outcome: "Complete Live Control"
   },
+  {
+    id: "feature-5",
+    icon: shield,
+    title: "Custom Voice AI Assistants",
+    content: "Answer calls, solve queries, and support customers with natural, human-like AI voices that sound like your top team.",
+    outcome: "Zero Support Wait Times"
+  }
 ];
 
 

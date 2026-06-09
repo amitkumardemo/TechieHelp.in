@@ -2,13 +2,12 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const flowSteps = [
-  { id: 1, label: "Form Submitted", emoji: "📋", color: "#3b82f6" },
-  { id: 2, label: "AI Stores Data", emoji: "🗄️", color: "#8b5cf6" },
-  { id: 3, label: "Instant Email", emoji: "📧", color: "#06b6d4" },
-  { id: 4, label: "AI Calls Lead", emoji: "📞", color: "#ef4444" },
-  { id: 5, label: "Qualifies Lead", emoji: "🔍", color: "#22c55e" },
-  { id: 6, label: "Updates CRM", emoji: "⚙️", color: "#f97316" },
-  { id: 7, label: "You're Notified", emoji: "🔔", color: "#eab308" },
+  { id: 1, label: "Lead Comes In", emoji: "📋", color: "#3b82f6" },
+  { id: 2, label: "AI Replies Instantly", emoji: "📧", color: "#06b6d4" },
+  { id: 3, label: "AI Qualifies Lead", emoji: "🔍", color: "#8b5cf6" },
+  { id: 4, label: "AI Calls Prospect", emoji: "📞", color: "#ef4444" },
+  { id: 5, label: "CRM Updated", emoji: "⚙️", color: "#f97316" },
+  { id: 6, label: "You Get Notified", emoji: "🔔", color: "#22c55e" },
 ];
 
 // Animated 3D-style particle canvas running behind the steps
@@ -175,16 +174,12 @@ const WorkflowVisual = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-2xl md:text-4xl font-bold text-white mb-3"
+          className="text-3xl md:text-5xl font-black text-white mb-3 uppercase tracking-tighter"
         >
-          AI That Instantly{" "}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400">
-            Handles Every Lead
-          </span>
+          How TechieHelp <span className="text-gradient">AI Works</span>
         </motion.h2>
-        <p className="text-gray-500 text-sm mb-14">
-          Even if 10,000+ leads arrive — system responds{" "}
-          <span className="text-white font-medium">in seconds</span>
+        <p className="text-gray-400 font-bold uppercase tracking-wider text-xs mb-14">
+          AI That Instantly Handles Every Lead
         </p>
 
         {/* Flow Steps */}

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Helmet } from "react-helmet";
 import {
   webdevelopment,
   intern,
@@ -399,6 +400,14 @@ const MachineLearning = () => {
 
   return (
     <div className="bg-black min-h-screen">
+      <Helmet>
+        <title>AI & Machine Learning Lead Conversion Systems | TechieHelp</title>
+        <meta name="description" content="Harness machine learning for business growth. Learn how TechieHelp builds predictive AI calling systems, lead qualification engines, and conversion workflows." />
+        <meta property="og:title" content="AI & Machine Learning Lead Conversion Systems | TechieHelp" />
+        <meta property="og:description" content="Harness machine learning for business growth. Learn how TechieHelp builds predictive AI calling systems, lead qualification engines, and conversion workflows." />
+        <meta property="og:url" content="https://techiehelp.in/machinelearning" />
+        <meta property="og:type" content="website" />
+      </Helmet>
       <style>
         {`
           @keyframes scroll {

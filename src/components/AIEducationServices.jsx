@@ -326,7 +326,7 @@ const AIEducationServices = () => {
               <span className="font-semibold text-cyan-400">🤖 Automation Features:</span> Smart content generation, automated assessment creation, real-time performance analytics, and intelligent feedback systems that work 24/7 to support both educators and learners.
             </motion.p>
             <motion.a
-              href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20AI%20Education%20Services.%20Please%20provide%20more%20details."
+              href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
               target="_blank"
               rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -336,7 +336,7 @@ const AIEducationServices = () => {
               whileTap={{ scale: 0.95 }}
             >
               <button className="mt-6 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-full hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl">
-                🚀 Get AI Education Consultation
+                🚀 Book Your Free 1:1 Strategy Call
               </button>
             </motion.a>
           </div>
@@ -585,12 +585,12 @@ const AIEducationServices = () => {
               </motion.p>
               <div className="font-bold text-green-600 mb-4">{price}</div>
               <a
-                href="https://calendar.app.google/vX3iT9r8XvV9bUqr9"
+                href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
-                  Book a Strategy Call
+                  Book 1:1 Strategy Session
                 </button>
               </a>
               {/* Hover effect line */}
@@ -618,12 +618,12 @@ const AIEducationServices = () => {
               We use advanced AI tools and platforms to deliver personalized and effective educational solutions.
             </p>
             <a
-              href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20AI%20Education%20Services.%20Please%20provide%20more%20details."
+              href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
               target="_blank"
               rel="noopener noreferrer"
             >
               <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
-                Get Consultation
+                Book Your Free 1:1 Strategy Call
               </button>
             </a>
           </div>
@@ -702,12 +702,12 @@ const AIEducationServices = () => {
                   ))}
                 </ul>
                 <a
-                  href="https://wa.me/7673825079?text=Hello%2C%20I%20am%20interested%20in%20your%20AI%20Education%20Services.%20Please%20provide%20more%20details."
+                  href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-auto px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 inline-block text-center"
                 >
-                  Choose Plan
+                  Book Plan Setup Call
                 </a>
               </motion.div>
             ))}
