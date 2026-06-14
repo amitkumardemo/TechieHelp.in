@@ -58,24 +58,24 @@ const HumanVsAI = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter"
+            className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 uppercase tracking-tighter"
           >
             Human vs. <span className="text-gradient">TechieHelp AI</span>
           </motion.h2>
-          <p className="text-gray-400 font-medium max-w-xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 font-medium max-w-xl mx-auto">
             Traditional hiring vs. deploying an autonomous digital workforce.
           </p>
         </div>
 
-        <div className="bg-white/5 border border-white/10 rounded-[3rem] p-6 md:p-10 backdrop-blur-xl overflow-x-auto">
+        <div className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-[3rem] p-6 md:p-10 backdrop-blur-xl overflow-x-auto">
           <table className="w-full min-w-[600px] text-left border-collapse">
             <thead>
-              <tr className="border-b border-white/10 pb-4">
-                <th className="pb-6 text-sm font-bold text-gray-400 uppercase tracking-wider">Features</th>
-                <th className="pb-6 text-sm font-bold text-gray-400 uppercase tracking-wider flex items-center gap-2">
+              <tr className="border-b border-gray-200 dark:border-white/10 pb-4">
+                <th className="pb-6 text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">Features</th>
+                <th className="pb-6 text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider flex items-center gap-2">
                   <User className="w-4 h-4 text-red-400" /> Human Employee
                 </th>
-                <th className="pb-6 text-sm font-bold text-gray-400 uppercase tracking-wider">
+                <th className="pb-6 text-sm font-bold text-gray-600 dark:text-gray-400 uppercase tracking-wider">
                   <span className="flex items-center gap-2 text-gradient">
                     <Bot className="w-4 h-4 text-blue-400 animate-bounce" /> TechieHelp AI Employee
                   </span>
@@ -85,8 +85,8 @@ const HumanVsAI = () => {
             <tbody className="divide-y divide-white/5">
               {comparisonData.map((row, idx) => (
                 <tr key={row.metric} className="hover:bg-white/[0.02] transition-colors">
-                  <td className="py-5 font-semibold text-white text-sm">{row.metric}</td>
-                  <td className="py-5 text-gray-400 text-sm flex items-center gap-2">
+                  <td className="py-5 font-semibold text-gray-900 dark:text-white text-sm">{row.metric}</td>
+                  <td className="py-5 text-gray-600 dark:text-gray-400 text-sm flex items-center gap-2">
                     <X className="w-4 h-4 text-red-500 shrink-0" />
                     <span>{row.human}</span>
                   </td>

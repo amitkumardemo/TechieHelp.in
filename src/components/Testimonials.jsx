@@ -141,7 +141,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className={`${styles.paddingY} flex flex-col items-center bg-primary overflow-hidden`}>
+    <section className={`${styles.paddingY} flex flex-col items-center bg-white dark:bg-primary overflow-hidden`}>
       <div className={`${styles.boxWidth} relative z-[5]`}>
         {/* Updated Header */}
         <div className="text-center mb-16 px-6">
@@ -166,7 +166,7 @@ const Testimonials = () => {
             {testimonials.map((testimonial, index) => (
               <motion.div
                 key={index}
-                className="absolute bg-gray-900 rounded-[32px] p-8 ss:p-10 shadow-3xl w-full max-w-[450px] glass-morphism border-white/5"
+                className="absolute bg-gray-50 dark:bg-gray-900 rounded-[32px] p-8 ss:p-10 shadow-3xl w-full max-w-[450px] glass-morphism border-white/5"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={getCardStyle(index)}
                 transition={{ type: 'spring', stiffness: 200, damping: 25 }}
@@ -179,7 +179,7 @@ const Testimonials = () => {
                     {getInitials(testimonial.name)}
                   </div>
                   <div>
-                    <h3 className="font-poppins font-bold text-white text-[20px] leading-tight">{testimonial.name}</h3>
+                    <h3 className="font-poppins font-bold text-gray-900 dark:text-white text-[20px] leading-tight">{testimonial.name}</h3>
                     <p className="text-secondary text-[13px] font-medium tracking-wide mt-1 uppercase">{testimonial.role}</p>
                   </div>
                 </div>
@@ -190,7 +190,7 @@ const Testimonials = () => {
                       <span key={s} className="text-secondary text-[14px]">★</span>
                     ))}
                   </div>
-                  <p className="text-dimWhite font-poppins text-[16px] ss:text-[18px] leading-[1.6] italic" dangerouslySetInnerHTML={{ __html: testimonial.review }} />
+                  <p className="text-gray-500 dark:text-dimWhite font-poppins text-[16px] ss:text-[18px] leading-[1.6] italic" dangerouslySetInnerHTML={{ __html: testimonial.review }} />
                 </div>
               </motion.div>
             ))}

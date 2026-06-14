@@ -29,7 +29,7 @@ const Billing = () => (
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      className={`${layout.sectionInfo} p-8 sm:p-12 rounded-[40px] bg-white/5 border border-white/10 backdrop-blur-3xl relative overflow-hidden group hover:border-red-500/20 transition-all duration-700 shadow-2xl`}
+      className={`${layout.sectionInfo} p-8 sm:p-12 rounded-[40px] bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 backdrop-blur-3xl relative overflow-hidden group hover:border-red-500/20 transition-all duration-700 shadow-2xl`}
     >
       {/* Background Accent Glow */}
       <div className="absolute top-[-20%] right-[-10%] w-64 h-64 bg-red-500/10 blur-[90px] rounded-full group-hover:bg-red-500/20 transition-all duration-1000" />
@@ -42,7 +42,7 @@ const Billing = () => (
         <p className={`${styles.paragraph} mt-6 font-black italic text-red-400/80 uppercase tracking-[6px] text-[10px]`}>
           Wait Time = Profit Drain
         </p>
-        <p className={`${styles.paragraph} max-w-[470px] mt-8 text-white/70 leading-relaxed font-medium`}>
+        <p className={`${styles.paragraph} max-w-[470px] mt-8 text-gray-900 dark:text-white/70 leading-relaxed font-medium`}>
           When a customer fills your form and you're busy or offline, the lead goes cold instantly. A 5-minute delay can cost you the deal. TechieHelp AI ensures you never miss a lead again.
         </p>
         <Button styles="mt-12 !bg-white !text-black !font-black !shadow-white/10 hover:!shadow-red-500/20 transition-all hover:scale-105" text="Stop Losing Leads — Book Strategy Call" />

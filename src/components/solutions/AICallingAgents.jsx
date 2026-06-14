@@ -43,9 +43,9 @@ const AICallingAgents = () => {
   const [activeCallIdx, setActiveCallIdx] = useState(0);
 
   const mockCalls = [
-    { name: "Rahul Sharma", company: "JIET Jodhpur", status: "Hot 🔥", phone: "+91 98765 XXXXX" },
-    { name: "Neha Vyas", company: "Jaipur Academy", status: "Warm 🟡", phone: "+91 94140 XXXXX" },
-    { name: "Amit Patel", company: "Rai Real Estate", status: "Hot 🔥", phone: "+91 88901 XXXXX" }
+    { name: "Rahul Sharma", company: "JIET Jodhpur", status: "Hot ", phone: "+91 98765 XXXXX" },
+    { name: "Neha Vyas", company: "Jaipur Academy", status: "Warm �", phone: "+91 94140 XXXXX" },
+    { name: "Amit Patel", company: "Rai Real Estate", status: "Hot ", phone: "+91 88901 XXXXX" }
   ];
 
   const dialerSteps = [
@@ -169,14 +169,14 @@ const AICallingAgents = () => {
       <div className="absolute bottom-[10%] left-[20%] w-[40%] h-[40%] bg-pink-900/10 blur-[140px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* BREADCRUMB */}
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-10">
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-10">
           <span>Home</span>
-          <span className="text-purple-500">→</span>
+          <span className="text-[#33bbcf]">→</span>
           <span>Services</span>
-          <span className="text-purple-500">→</span>
-          <span className="text-white font-semibold">AI Calling Agents</span>
+          <span className="text-[#33bbcf]">→</span>
+          <span className="text-gray-900 dark:text-white font-semibold">AI Calling Agents</span>
         </div>
 
         {/* HERO SECTION */}
@@ -186,7 +186,7 @@ const AICallingAgents = () => {
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-mono uppercase tracking-wider"
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[#33bbcf] text-xs font-mono uppercase tracking-wider"
             >
               <Volume2 className="w-4 h-4 animate-pulse" />
               <span>Your AI Sales Team That Never Sleeps</span>
@@ -196,10 +196,10 @@ const AICallingAgents = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight"
+              className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight"
             >
               Every Lead Gets A Call <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400">
+              <span className="text-cyan-gradient font-bold">
                 Within 60 Seconds.
               </span>
             </motion.h1>
@@ -208,7 +208,7 @@ const AICallingAgents = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl"
+              className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl"
             >
               TechieHelp AI Calling Agents instantly call new leads, answer questions, qualify prospects, overcome objections, and schedule meetings automatically. Replace missed calls, slow follow-ups, and repetitive conversations with 24/7 voice agents.
             </motion.p>
@@ -221,28 +221,28 @@ const AICallingAgents = () => {
               className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-y border-white/5 py-6"
             >
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-purple-500/10 text-[#33bbcf] flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-semibold text-white">Calls Within 60 Seconds</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">Calls Within 60 Seconds</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-purple-500/10 text-[#33bbcf] flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-semibold text-white">24/7 Availability</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">24/7 Availability</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-purple-500/10 text-[#33bbcf] flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-semibold text-white">Human-Like Voice Conversations</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">Human-Like Voice Conversations</span>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-6 h-6 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center">
+                <div className="w-6 h-6 rounded-full bg-purple-500/10 text-[#33bbcf] flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-semibold text-white">Automatic Meeting Booking</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">Automatic Meeting Booking</span>
               </div>
             </motion.div>
 
@@ -257,19 +257,19 @@ const AICallingAgents = () => {
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 hover:from-purple-500 hover:to-blue-500 text-white shadow-xl shadow-purple-900/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+                className="btn-primary"
               >
                 Book Free Strategy Call <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#live-demo"
-                className="px-6 py-3.5 rounded-xl font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-purple-500 transition-all flex items-center gap-2"
+                className="px-6 py-3.5 rounded-xl font-semibold bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 hover:border-purple-500 transition-all flex items-center gap-2"
               >
                 Listen To Live AI Calls
               </a>
               <a
                 href="#pricing"
-                className="px-6 py-3.5 rounded-xl font-semibold text-gray-400 hover:text-white transition-all"
+                className="px-6 py-3.5 rounded-xl font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-all"
               >
                 Get Custom Proposal
               </a>
@@ -278,18 +278,18 @@ const AICallingAgents = () => {
 
           {/* LIVE AI CALL CENTER PREVIEW SIMULATOR */}
           <div className="lg:col-span-5 w-full">
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl relative overflow-hidden">
+            <div className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/10 rounded-full blur-2xl -z-10" />
-              
+
               {/* Simulator Header */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-2.5 h-2.5 bg-green-500 rounded-full animate-ping" />
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-green-400">Live Call Center Simulator</span>
                 </div>
                 <button
                   onClick={() => setIsDialerRunning(!isDialerRunning)}
-                  className="text-xs font-mono bg-white/5 hover:bg-white/10 border border-white/10 rounded px-2.5 py-1 text-gray-400 hover:text-white flex items-center gap-1.5 transition-all"
+                  className="text-xs font-mono bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded px-2.5 py-1 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white flex items-center gap-1.5 transition-all"
                 >
                   {isDialerRunning ? (
                     <>
@@ -308,16 +308,15 @@ const AICallingAgents = () => {
                 <div className="flex justify-between items-center">
                   <div>
                     <span className="text-[10px] text-gray-500 uppercase tracking-widest block font-mono">Current Lead</span>
-                    <span className="text-base font-bold text-white">{mockCalls[activeCallIdx].name}</span>
+                    <span className="text-base font-bold text-gray-900 dark:text-white">{mockCalls[activeCallIdx].name}</span>
                   </div>
-                  <span className={`text-[10px] uppercase font-mono px-2 py-0.5 rounded font-bold ${
-                    dialerState === "Dialing" ? "bg-blue-500/20 text-blue-400 animate-pulse" :
-                    dialerState === "Connected" ? "bg-green-500/20 text-green-400" :
-                    dialerState === "Qualified" ? "bg-purple-500/20 text-purple-400" :
-                    dialerState === "Booked" ? "bg-yellow-500/20 text-yellow-400 font-bold" :
-                    dialerState === "Completed" ? "bg-pink-500/20 text-pink-400" :
-                    "bg-white/5 text-gray-400"
-                  }`}>
+                  <span className={`text-[10px] uppercase font-mono px-2 py-0.5 rounded font-bold ${dialerState === "Dialing" ? "bg-blue-500/20 text-blue-400 animate-pulse" :
+                      dialerState === "Connected" ? "bg-green-500/20 text-green-400" :
+                        dialerState === "Qualified" ? "bg-purple-500/20 text-[#33bbcf]" :
+                          dialerState === "Booked" ? "bg-yellow-500/20 text-yellow-400 font-bold" :
+                            dialerState === "Completed" ? "bg-pink-500/20 text-pink-400" :
+                              "bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400"
+                    }`}>
                     {dialerState === "Idle" ? "Ready" : dialerState}
                   </span>
                 </div>
@@ -335,7 +334,7 @@ const AICallingAgents = () => {
 
                 {/* Status Bar */}
                 <div className="pt-2">
-                  <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-1.5 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-green-500"
                       initial={{ width: "0%" }}
@@ -354,9 +353,8 @@ const AICallingAgents = () => {
                   return (
                     <div
                       key={idx}
-                      className={`flex items-start gap-3.5 p-3 rounded-xl transition-all duration-300 border ${
-                        isActive ? "bg-purple-500/10 border-purple-500/30" : "bg-transparent border-transparent"
-                      }`}
+                      className={`flex items-start gap-3.5 p-3 rounded-xl transition-all duration-300 border ${isActive ? "bg-purple-500/10 border-purple-500/30" : "bg-transparent border-transparent"
+                        }`}
                     >
                       <div className="mt-0.5">
                         {isCompleted ? (
@@ -364,12 +362,12 @@ const AICallingAgents = () => {
                         ) : isActive ? (
                           <div className="w-4 h-4 rounded-full border-2 border-purple-500 border-t-transparent animate-spin" />
                         ) : (
-                          <div className="w-4 h-4 rounded-full border-2 border-white/10" />
+                          <div className="w-4 h-4 rounded-full border-2 border-gray-200 dark:border-white/10" />
                         )}
                       </div>
                       <div className="flex-1">
                         <div className="flex justify-between items-center">
-                          <p className={`text-xs font-semibold ${isActive ? "text-white" : "text-gray-500"}`}>
+                          <p className={`text-xs font-semibold ${isActive ? "text-gray-900 dark:text-white" : "text-gray-500"}`}>
                             {step.label}
                           </p>
                           {isActive && (
@@ -394,20 +392,20 @@ const AICallingAgents = () => {
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold block">The Cost of Waiting</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Your Sales Team Can't Be Available 24/7</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Your Sales Team Can't Be Available 24/7</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Most businesses lose customers because nobody calls back fast enough. Look at how leads drift away in a typical manual loop:
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-5xl mx-auto relative">
-            
+
             {/* Journey Card 1 */}
             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 relative flex flex-col items-center text-center">
               <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold mb-4 border border-blue-500/20">
                 1
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Lead Arrives</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Lead Arrives</h3>
               <p className="text-sm text-gray-500">Prospect submits an inquiry on your site or social page.</p>
               <div className="hidden lg:block absolute top-12 right-[-20px] z-20 text-gray-600 font-bold">→</div>
             </div>
@@ -417,7 +415,7 @@ const AICallingAgents = () => {
               <div className="w-12 h-12 rounded-full bg-red-500/10 text-red-400 flex items-center justify-center font-bold mb-4 border border-red-500/20">
                 2
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">No Immediate Follow-Up</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">No Immediate Follow-Up</h3>
               <p className="text-sm text-gray-500">Sales representatives are busy, asleep, or out of office.</p>
               <div className="hidden lg:block absolute top-12 right-[-20px] z-20 text-gray-600 font-bold">→</div>
             </div>
@@ -427,34 +425,34 @@ const AICallingAgents = () => {
               <div className="w-12 h-12 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4 border border-amber-500/20">
                 3
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Customer Loses Interest</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Customer Loses Interest</h3>
               <p className="text-sm text-gray-500">The first 5 minutes pass. The buyer's impulse cools off.</p>
               <div className="hidden lg:block absolute top-12 right-[-20px] z-20 text-gray-600 font-bold">→</div>
             </div>
 
             {/* Journey Card 4 */}
             <div className="bg-red-950/20 border border-red-500/20 rounded-2xl p-6 relative flex flex-col items-center text-center">
-              <div className="w-12 h-12 rounded-full bg-red-500 text-white flex items-center justify-center font-bold mb-4">
+              <div className="w-12 h-12 rounded-full bg-red-500 text-gray-900 dark:text-white flex items-center justify-center font-bold mb-4">
                 4
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Competitor Wins</h3>
-              <p className="text-sm text-gray-400">Another provider responds first and locks in the deal.</p>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Competitor Wins</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Another provider responds first and locks in the deal.</p>
             </div>
           </div>
         </section>
 
         {/* WHY SPEED MATTERS GRAPH SECTION */}
-        <section className="mb-28 bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
+        <section className="mb-28 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-purple-500/5 to-blue-500/5 -z-10" />
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             <div className="lg:col-span-5 space-y-6">
-              <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">The First Call Wins</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">The First Call Wins</span>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight">
                 Why Callback Speed Determines Revenue
               </h2>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                 Calling a lead within 60 seconds raises contact rates by **over 390%**. After just 5 minutes, conversion rates collapse. AI calling ensures you are first to call, every single time.
               </p>
               <div className="space-y-4 pt-2">
@@ -463,16 +461,15 @@ const AICallingAgents = () => {
                     key={idx}
                     onMouseEnter={() => setHoveredSpeedPoint(idx)}
                     onMouseLeave={() => setHoveredSpeedPoint(null)}
-                    className={`p-3.5 rounded-xl border transition-all duration-300 cursor-pointer ${
-                      hoveredSpeedPoint === idx ? "bg-white/5 border-purple-500/40" : "bg-transparent border-white/5"
-                    }`}
+                    className={`p-3.5 rounded-xl border transition-all duration-300 cursor-pointer ${hoveredSpeedPoint === idx ? "bg-gray-100 dark:bg-white/5 border-purple-500/40" : "bg-transparent border-white/5"
+                      }`}
                   >
                     <div className="flex justify-between items-center">
-                      <span className="text-xs font-semibold text-white">{pt.label}</span>
-                      <span className="text-xs font-bold text-purple-400">{pt.rate} Call Conversion Ratio</span>
+                      <span className="text-xs font-semibold text-gray-900 dark:text-white">{pt.label}</span>
+                      <span className="text-xs font-bold text-[#33bbcf]">{pt.rate} Call Conversion Ratio</span>
                     </div>
                     {hoveredSpeedPoint === idx && (
-                      <p className="text-[10px] text-gray-400 mt-1.5 transition-all">{pt.desc}</p>
+                      <p className="text-[10px] text-gray-600 dark:text-gray-400 mt-1.5 transition-all">{pt.desc}</p>
                     )}
                   </div>
                 ))}
@@ -484,9 +481,9 @@ const AICallingAgents = () => {
               <div className="border border-white/5 bg-black/40 rounded-2xl p-6">
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-xs font-bold uppercase tracking-wider font-mono text-gray-500">Lead Conversion Rate vs Callback Delay</span>
-                  <span className="text-[10px] bg-purple-500/20 text-purple-400 px-2 py-0.5 rounded font-mono">Live Stat</span>
+                  <span className="text-[10px] bg-purple-500/20 text-[#33bbcf] px-2 py-0.5 rounded font-mono">Live Stat</span>
                 </div>
-                
+
                 {/* SVG Graph */}
                 <div className="relative h-64 w-full">
                   <svg className="w-full h-full" viewBox="0 0 500 220">
@@ -582,14 +579,14 @@ const AICallingAgents = () => {
         {/* HOW AI CALLING WORKS FLOWCHART */}
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Automated Flowchart</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">How AI Voice Automation Connects</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Automated Flowchart</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">How AI Voice Automation Connects</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Trace the end-to-end pathway from lead arrival to automated calling, objection qualifying, calendar routing, and direct notifications:
             </p>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl mb-16 flex items-center justify-center overflow-x-auto min-h-[300px]">
+          <div className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-8 backdrop-blur-xl mb-16 flex items-center justify-center overflow-x-auto min-h-[300px]">
             <svg width="900" height="220" viewBox="0 0 900 220" className="min-w-[900px]">
               <defs>
                 <linearGradient id="flowGlow" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -644,108 +641,108 @@ const AICallingAgents = () => {
         {/* WHAT THE AI AGENT CAN DO */}
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Capabilities</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">What TechieHelp AI Agents Can Do</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Capabilities</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">What TechieHelp AI Agents Can Do</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Engineered for versatility, our AI phone employees take over repetitive telecalling, follow-ups, and calendar scheduling duties.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <Volume2 className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Outbound Lead Qualification</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Outbound Lead Qualification</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Automatically dial website signups, quiz them on their requirements, analyze timeline/budget, and qualify.
               </p>
             </div>
 
             {/* Card 2 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <Phone className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Inbound Call Handling</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Inbound Call Handling</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Connect your business line to answer customer questions instantly, schedule bookings, and route emergencies.
               </p>
             </div>
 
             {/* Card 3 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <Calendar className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Appointment Booking</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Appointment Booking</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Lookup calendars in real time, suggest available times, and lock meetings in your team's schedule.
               </p>
             </div>
 
             {/* Card 4 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <Headphones className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Customer Support</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Customer Support</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Provide instant resolution for standard customer queries like tracking, billing, or access issues.
               </p>
             </div>
 
             {/* Card 5 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <MessageSquare className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">FAQ Handling</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">FAQ Handling</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Trained on your business knowledge documents to respond accurately to product, policy, and services FAQs.
               </p>
             </div>
 
             {/* Card 6 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <Zap className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Follow-Up Calls</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Follow-Up Calls</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Re-engage cold leads, call clients before major events, or follow up on unpaid invoices and agreements.
               </p>
             </div>
 
             {/* Card 7 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <TrendingUp className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Lead Scoring</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Lead Scoring</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Score leads dynamically based on call replies, separating high-intent buyers from cold inquiries.
               </p>
             </div>
 
             {/* Card 8 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <Database className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">CRM Updates</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">CRM Updates</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Write call transcripts, summaries, action points, and call recording files directly back to HubSpot/Salesforce.
               </p>
             </div>
 
             {/* Card 9 */}
-            <div className="bg-white/[0.02] border border-white/5 hover:border-purple-500/30 p-6 rounded-2xl hover:bg-white/[0.04] transition-all group">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
+            <div className="card-glass flex flex-col">
+              <div className="w-10 h-10 rounded-xl bg-purple-500/10 text-[#33bbcf] flex items-center justify-center mb-4 group-hover:scale-110 transition-all">
                 <Calendar className="w-5 h-5" />
               </div>
-              <h3 className="text-lg font-bold text-white mb-2">Calendar Scheduling</h3>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Calendar Scheduling</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
                 Book meetings across team member slots based on automated round-robin distribution or matching criteria.
               </p>
@@ -756,22 +753,22 @@ const AICallingAgents = () => {
         {/* LIVE CONVERSATION DEMO */}
         <section id="live-demo" className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Live Script</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Listen to AI Calling in Real Time</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Live Script</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Listen to AI Calling in Real Time</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Read how a typical conversation unfolds. Our AI handles user concerns, queries and closes appointment booking smoothly.
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-2xl">
+          <div className="max-w-3xl mx-auto bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-2xl">
             {/* Conversation player header */}
-            <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+            <div className="flex items-center justify-between border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-400 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-full bg-purple-500/10 border border-purple-500/20 text-[#33bbcf] flex items-center justify-center">
                   <Volume2 className="w-5 h-5 animate-pulse" />
                 </div>
                 <div>
-                  <span className="text-sm font-semibold text-white block">Priya (TechieHelp Voice Engine)</span>
+                  <span className="text-sm font-semibold text-gray-900 dark:text-white block">Priya (TechieHelp Voice Engine)</span>
                   <span className="text-[10px] text-purple-300 font-mono">Status: Connected to Lead</span>
                 </div>
               </div>
@@ -781,13 +778,13 @@ const AICallingAgents = () => {
                   onClick={() => {
                     setConvIndex(0);
                   }}
-                  className="p-2 bg-white/5 hover:bg-white/10 border border-white/10 text-xs rounded text-gray-400 hover:text-white transition-all"
+                  className="p-2 bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 text-xs rounded text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-all"
                 >
                   Restart
                 </button>
                 <button
                   onClick={() => setIsConvPlaying(!isConvPlaying)}
-                  className="p-2 bg-purple-600 hover:bg-purple-500 text-white rounded text-xs flex items-center gap-1.5 shadow-lg transition-all"
+                  className="btn-primary"
                 >
                   {isConvPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
                   {isConvPlaying ? "Pause Audio" : "Play Audio"}
@@ -806,13 +803,12 @@ const AICallingAgents = () => {
                     transition={{ duration: 0.3 }}
                     className={`flex ${msg.speaker === "agent" ? "justify-start" : "justify-end"}`}
                   >
-                    <div className={`max-w-[85%] rounded-2xl p-4 text-sm ${
-                      msg.speaker === "agent"
+                    <div className={`max-w-[85%] rounded-2xl p-4 text-sm ${msg.speaker === "agent"
                         ? "bg-purple-600/10 text-purple-100 border border-purple-500/20 rounded-tl-none"
-                        : "bg-white/5 text-gray-200 border border-white/5 rounded-tr-none"
-                    }`}>
+                        : "bg-gray-100 dark:bg-white/5 text-gray-200 border border-white/5 rounded-tr-none"
+                      }`}>
                       <div className="flex justify-between items-center mb-1.5">
-                        <span className="text-[10px] uppercase font-mono tracking-wider font-bold text-purple-400">
+                        <span className="text-[10px] uppercase font-mono tracking-wider font-bold text-[#33bbcf]">
                           {msg.speaker === "agent" ? "AI Employee (Priya)" : "Rahul (Customer)"}
                         </span>
                         <span className="text-[9px] text-gray-500">Live Transcript</span>
@@ -841,9 +837,9 @@ const AICallingAgents = () => {
         {/* AI QUALIFICATION ENGINE */}
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Qualification Rules</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">How the AI Qualifies Leads</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Qualification Rules</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">How the AI Qualifies Leads</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               During the call, the AI analyzes responses based on your BANT filters to score and classify prospects instantly:
             </p>
           </div>
@@ -854,24 +850,24 @@ const AICallingAgents = () => {
               <div className="absolute top-4 right-4 text-red-400 font-bold text-xs uppercase tracking-widest flex items-center gap-1">
                 <Flame className="w-4 h-4 animate-pulse" /> Hot Lead
               </div>
-              <h3 className="text-2xl font-bold text-white mb-6 pt-4">🔥 Hot Leads</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pt-4"> Hot Leads</h3>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2" />
                   <div>
-                    <strong className="text-white">Ready To Buy:</strong> Timelines are immediate or within 1-2 weeks.
+                    <strong className="text-gray-900 dark:text-white">Ready To Buy:</strong> Timelines are immediate or within 1-2 weeks.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2" />
                   <div>
-                    <strong className="text-white">Budget Available:</strong> Fits target client thresholds comfortably.
+                    <strong className="text-gray-900 dark:text-white">Budget Available:</strong> Fits target client thresholds comfortably.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2" />
                   <div>
-                    <strong className="text-white">Meeting Booked:</strong> Scheduled onto sales team calendars.
+                    <strong className="text-gray-900 dark:text-white">Meeting Booked:</strong> Scheduled onto sales team calendars.
                   </div>
                 </li>
               </ul>
@@ -882,24 +878,24 @@ const AICallingAgents = () => {
               <div className="absolute top-4 right-4 text-yellow-400 font-bold text-xs uppercase tracking-widest flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-yellow-400" /> Warm Lead
               </div>
-              <h3 className="text-2xl font-bold text-white mb-6 pt-4">🟡 Warm Leads</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pt-4">� Warm Leads</h3>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2" />
                   <div>
-                    <strong className="text-white">Interested:</strong> Positive sentiment, fits business profiles.
+                    <strong className="text-gray-900 dark:text-white">Interested:</strong> Positive sentiment, fits business profiles.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2" />
                   <div>
-                    <strong className="text-white">Needs More Info:</strong> Asks product questions or handles objections.
+                    <strong className="text-gray-900 dark:text-white">Needs More Info:</strong> Asks product questions or handles objections.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 mt-2" />
                   <div>
-                    <strong className="text-white">Follow-Up scheduled:</strong> Saved to CRM for automated WhatsApp sequences.
+                    <strong className="text-gray-900 dark:text-white">Follow-Up scheduled:</strong> Saved to CRM for automated WhatsApp sequences.
                   </div>
                 </li>
               </ul>
@@ -910,24 +906,24 @@ const AICallingAgents = () => {
               <div className="absolute top-4 right-4 text-blue-400 font-bold text-xs uppercase tracking-widest flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-blue-400" /> Cold Lead
               </div>
-              <h3 className="text-2xl font-bold text-white mb-6 pt-4">🔵 Cold Leads</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6 pt-4">� Cold Leads</h3>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2" />
                   <div>
-                    <strong className="text-white">Research Phase:</strong> Just checking options, no short-term intent.
+                    <strong className="text-gray-900 dark:text-white">Research Phase:</strong> Just checking options, no short-term intent.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2" />
                   <div>
-                    <strong className="text-white">Low Budget:</strong> Under minimum entry qualification thresholds.
+                    <strong className="text-gray-900 dark:text-white">Low Budget:</strong> Under minimum entry qualification thresholds.
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2" />
                   <div>
-                    <strong className="text-white">Future Opportunity:</strong> Logged into CRM for nurture mailing.
+                    <strong className="text-gray-900 dark:text-white">Future Opportunity:</strong> Logged into CRM for nurture mailing.
                   </div>
                 </li>
               </ul>
@@ -938,60 +934,60 @@ const AICallingAgents = () => {
         {/* BUSINESS IMPACT SECTION */}
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Business Outcomes</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Performance Analytics & Business Impact</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Business Outcomes</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Performance Analytics & Business Impact</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Unlock scaling capacity. AI phone agents deliver premium call metrics, automate labor, and expand sales opportunities:
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Stat 1 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl relative overflow-hidden">
+            <div className="card-glass flex flex-col">
               <span className="text-[10px] font-mono uppercase text-gray-500 tracking-wider">Calls Made Automatically</span>
-              <h3 className="text-4xl font-extrabold text-white mt-2 mb-4">10,000+ / Day</h3>
-              <p className="text-sm text-gray-400">Scale call dials instantly during lead spikes without hiring temporary workers.</p>
-              <div className="absolute bottom-2 right-2 text-purple-500/10 font-bold text-7xl font-mono pointer-events-none">01</div>
+              <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white mt-2 mb-4">10,000+ / Day</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Scale call dials instantly during lead spikes without hiring temporary workers.</p>
+              <div className="absolute bottom-2 right-2 text-[#33bbcf]/10 font-bold text-7xl font-mono pointer-events-none">01</div>
             </div>
 
             {/* Stat 2 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl relative overflow-hidden">
+            <div className="card-glass flex flex-col">
               <span className="text-[10px] font-mono uppercase text-gray-500 tracking-wider">Lead Qualification Rate</span>
-              <h3 className="text-4xl font-extrabold text-white mt-2 mb-4">94.8% Accuracy</h3>
-              <p className="text-sm text-gray-400">Consistent conversational quality analyzing BANT data filters on every dial.</p>
-              <div className="absolute bottom-2 right-2 text-purple-500/10 font-bold text-7xl font-mono pointer-events-none">02</div>
+              <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white mt-2 mb-4">94.8% Accuracy</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Consistent conversational quality analyzing BANT data filters on every dial.</p>
+              <div className="absolute bottom-2 right-2 text-[#33bbcf]/10 font-bold text-7xl font-mono pointer-events-none">02</div>
             </div>
 
             {/* Stat 3 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl relative overflow-hidden">
+            <div className="card-glass flex flex-col">
               <span className="text-[10px] font-mono uppercase text-gray-500 tracking-wider">Meetings Booked Automatically</span>
-              <h3 className="text-4xl font-extrabold text-white mt-2 mb-4">32% Increase</h3>
-              <p className="text-sm text-gray-400">AI locks calendar bookings on the phone while lead engagement is highest.</p>
-              <div className="absolute bottom-2 right-2 text-purple-500/10 font-bold text-7xl font-mono pointer-events-none">03</div>
+              <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white mt-2 mb-4">32% Increase</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">AI locks calendar bookings on the phone while lead engagement is highest.</p>
+              <div className="absolute bottom-2 right-2 text-[#33bbcf]/10 font-bold text-7xl font-mono pointer-events-none">03</div>
             </div>
 
             {/* Stat 4 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl relative overflow-hidden">
+            <div className="card-glass flex flex-col">
               <span className="text-[10px] font-mono uppercase text-gray-500 tracking-wider">Response Speed</span>
-              <h3 className="text-4xl font-extrabold text-white mt-2 mb-4">&lt; 60 Seconds</h3>
-              <p className="text-sm text-gray-400">Beating human speed restrictions by calling instantly, 24 hours a day.</p>
-              <div className="absolute bottom-2 right-2 text-purple-500/10 font-bold text-7xl font-mono pointer-events-none">04</div>
+              <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white mt-2 mb-4">&lt; 60 Seconds</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Beating human speed restrictions by calling instantly, 24 hours a day.</p>
+              <div className="absolute bottom-2 right-2 text-[#33bbcf]/10 font-bold text-7xl font-mono pointer-events-none">04</div>
             </div>
 
             {/* Stat 5 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl relative overflow-hidden">
+            <div className="card-glass flex flex-col">
               <span className="text-[10px] font-mono uppercase text-gray-500 tracking-wider">Manual Work Saved</span>
-              <h3 className="text-4xl font-extrabold text-white mt-2 mb-4">80+ Hours / Mo</h3>
-              <p className="text-sm text-gray-400">Releases team members from cold calling, repetitive dialing, and sorting cold leads.</p>
-              <div className="absolute bottom-2 right-2 text-purple-500/10 font-bold text-7xl font-mono pointer-events-none">05</div>
+              <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white mt-2 mb-4">80+ Hours / Mo</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Releases team members from cold calling, repetitive dialing, and sorting cold leads.</p>
+              <div className="absolute bottom-2 right-2 text-[#33bbcf]/10 font-bold text-7xl font-mono pointer-events-none">05</div>
             </div>
 
             {/* Stat 6 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl relative overflow-hidden">
+            <div className="card-glass flex flex-col">
               <span className="text-[10px] font-mono uppercase text-gray-500 tracking-wider">Revenue Opportunity</span>
-              <h3 className="text-4xl font-extrabold text-white mt-2 mb-4">2.4X Growth</h3>
-              <p className="text-sm text-gray-400">Capture every inbound/outbound call, eliminating lost lead leakage.</p>
-              <div className="absolute bottom-2 right-2 text-purple-500/10 font-bold text-7xl font-mono pointer-events-none">06</div>
+              <h3 className="text-4xl font-extrabold text-gray-900 dark:text-white mt-2 mb-4">2.4X Growth</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">Capture every inbound/outbound call, eliminating lost lead leakage.</p>
+              <div className="absolute bottom-2 right-2 text-[#33bbcf]/10 font-bold text-7xl font-mono pointer-events-none">06</div>
             </div>
           </div>
         </section>
@@ -999,9 +995,9 @@ const AICallingAgents = () => {
         {/* WHO SHOULD USE THIS */}
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Target Sectors</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Who Should Deploy AI Calling?</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Target Sectors</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Who Should Deploy AI Calling?</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Explore outcomes tailored to different business models and operations:
             </p>
           </div>
@@ -1013,16 +1009,14 @@ const AICallingAgents = () => {
                 <button
                   key={idx}
                   onClick={() => setSelectedIndustry(idx)}
-                  className={`w-full text-left p-4 rounded-xl font-bold transition-all border flex items-center justify-between ${
-                    selectedIndustry === idx
-                      ? "bg-purple-600/10 border-purple-500 text-white shadow-lg"
-                      : "bg-transparent border-white/5 text-gray-400 hover:text-white hover:bg-white/[0.02]"
-                  }`}
+                  className={`w-full text-left p-4 rounded-xl font-bold transition-all border flex items-center justify-between ${selectedIndustry === idx
+                      ? "bg-purple-600/10 border-purple-500 text-gray-900 dark:text-white shadow-lg"
+                      : "bg-transparent border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white hover:bg-white/[0.02]"
+                    }`}
                 >
                   <span>{ind.title}</span>
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${
-                    selectedIndustry === idx ? "bg-purple-500 text-white" : "bg-white/5 text-gray-500"
-                  }`}>
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${selectedIndustry === idx ? "bg-purple-500 text-gray-900 dark:text-white" : "bg-gray-100 dark:bg-white/5 text-gray-500"
+                    }`}>
                     Active
                   </span>
                 </button>
@@ -1030,26 +1024,26 @@ const AICallingAgents = () => {
             </div>
 
             {/* Display side */}
-            <div className="lg:col-span-8 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl flex flex-col justify-between">
+            <div className="lg:col-span-8 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-8 backdrop-blur-xl flex flex-col justify-between">
               <div>
-                <span className="text-xs font-mono uppercase tracking-wider text-purple-400 font-bold block mb-2">Target Outcome</span>
-                <h3 className="text-3xl font-extrabold text-white mb-6">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#33bbcf] font-bold block mb-2">Target Outcome</span>
+                <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">
                   {industries[selectedIndustry].outcome}
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                   {industries[selectedIndustry].desc}
                 </p>
               </div>
-              <div className="border-t border-white/10 pt-6 flex flex-wrap gap-4 items-center justify-between">
+              <div className="border-t border-gray-200 dark:border-white/10 pt-6 flex flex-wrap gap-4 items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-gray-500">
-                  <Building className="w-4 h-4 text-purple-500" />
+                  <Building className="w-4 h-4 text-[#33bbcf]" />
                   <span>Deployment: Custom script configured</span>
                 </div>
                 <a
                   href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-purple-400 hover:text-purple-300 font-bold text-sm flex items-center gap-1"
+                  className="text-[#33bbcf] hover:text-purple-300 font-bold text-sm flex items-center gap-1"
                 >
                   Deploy for my business <ArrowRight className="w-4 h-4" />
                 </a>
@@ -1061,58 +1055,58 @@ const AICallingAgents = () => {
         {/* VOICE AI CAPABILITIES */}
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Technical Pillars</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Voice AI Capabilities & Core Strengths</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Technical Pillars</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Voice AI Capabilities & Core Strengths</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Engineered with advanced conversational models to perform identically to highly-skilled sales agents:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-base font-bold text-white mb-2">Natural Human-Like Voice</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Natural Human-Like Voice</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Matches speaking speeds, introduces natural breathing beats, and expresses warm voice inflections.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-base font-bold text-white mb-2">Multi-Language Support</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Multi-Language Support</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Speaks English, Hindi, Hinglish, and custom regional variants fluently matching client preferences.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-base font-bold text-white mb-2">Custom Business Scripts</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Custom Business Scripts</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Trained on your sales objectives, target values, products, and scripts for consistent delivery.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-base font-bold text-white mb-2">Objection Handling</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Objection Handling</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Armed with script branching rules to answer product hesitations, competitor comparisons, and pricing objections.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-base font-bold text-white mb-2">Calendar Integration</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Calendar Integration</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Checks live schedules, offers open slots, books slots directly, and sends invites automatically on call.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-base font-bold text-white mb-2">Knowledge Base Training</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Knowledge Base Training</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Syncs with files, PDFs, links, and FAQs, ensuring accurate responses to detailed customer questions.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-base font-bold text-white mb-2">CRM Synchronization</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">CRM Synchronization</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Pushes recordings, transcripts, actions, and scores directly back to Google Sheets or CRMs immediately.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-base font-bold text-white mb-2">Low-Latency Response</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Low-Latency Response</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Operates with sub-1-second audio feedback delays, avoiding uncomfortable pauses or overlap.
               </p>
@@ -1123,64 +1117,64 @@ const AICallingAgents = () => {
         {/* IMPLEMENTATION TIMELINE */}
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Implementation Plan</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">How We Deploy Your Agent In 7 Days</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Implementation Plan</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">How We Deploy Your Agent In 7 Days</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Our structured onboarding roadmap ensures your custom phone agent is operational and configured by day 7:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-7 gap-6 max-w-6xl mx-auto">
             {/* Day 1 */}
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl relative flex flex-col justify-between">
+            <div className="card-glass flex flex-col">
               <div>
-                <span className="text-xs font-mono font-bold text-purple-400">Day 1</span>
-                <h3 className="text-base font-bold text-white mt-1.5 mb-2">Discovery Call</h3>
+                <span className="text-xs font-mono font-bold text-[#33bbcf]">Day 1</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Discovery Call</h3>
                 <p className="text-xs text-gray-500">We analyze your calling needs, integration targets, and scripts.</p>
               </div>
             </div>
 
             {/* Day 2 */}
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl relative flex flex-col justify-between">
+            <div className="card-glass flex flex-col">
               <div>
-                <span className="text-xs font-mono font-bold text-purple-400">Day 2</span>
-                <h3 className="text-base font-bold text-white mt-1.5 mb-2">Design</h3>
+                <span className="text-xs font-mono font-bold text-[#33bbcf]">Day 2</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Design</h3>
                 <p className="text-xs text-gray-500">We map the conversation flow, objection paths, and BANT filters.</p>
               </div>
             </div>
 
             {/* Day 3 */}
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl relative flex flex-col justify-between">
+            <div className="card-glass flex flex-col">
               <div>
-                <span className="text-xs font-mono font-bold text-purple-400">Day 3</span>
-                <h3 className="text-base font-bold text-white mt-1.5 mb-2">Agent Setup</h3>
+                <span className="text-xs font-mono font-bold text-[#33bbcf]">Day 3</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Agent Setup</h3>
                 <p className="text-xs text-gray-500">We train the custom voice engine and configure system prompts.</p>
               </div>
             </div>
 
             {/* Day 4 */}
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl relative flex flex-col justify-between">
+            <div className="card-glass flex flex-col">
               <div>
-                <span className="text-xs font-mono font-bold text-purple-400">Day 4</span>
-                <h3 className="text-base font-bold text-white mt-1.5 mb-2">CRM Integration</h3>
+                <span className="text-xs font-mono font-bold text-[#33bbcf]">Day 4</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">CRM Integration</h3>
                 <p className="text-xs text-gray-500">Connecting Google Sheets, CRM API portals, and webhooks.</p>
               </div>
             </div>
 
             {/* Day 5 */}
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl relative flex flex-col justify-between">
+            <div className="card-glass flex flex-col">
               <div>
-                <span className="text-xs font-mono font-bold text-purple-400">Day 5</span>
-                <h3 className="text-base font-bold text-white mt-1.5 mb-2">Testing</h3>
+                <span className="text-xs font-mono font-bold text-[#33bbcf]">Day 5</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Testing</h3>
                 <p className="text-xs text-gray-500">Dry-run testing for latency, scoring precision, and integrations.</p>
               </div>
             </div>
 
             {/* Day 6 */}
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl relative flex flex-col justify-between">
+            <div className="card-glass flex flex-col">
               <div>
-                <span className="text-xs font-mono font-bold text-purple-400">Day 6</span>
-                <h3 className="text-base font-bold text-white mt-1.5 mb-2">Training</h3>
+                <span className="text-xs font-mono font-bold text-[#33bbcf]">Day 6</span>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Training</h3>
                 <p className="text-xs text-gray-500">Reviewing conversation transcripts and adjusting script triggers.</p>
               </div>
             </div>
@@ -1189,7 +1183,7 @@ const AICallingAgents = () => {
             <div className="bg-gradient-to-b from-purple-500/20 to-transparent border border-purple-500/30 p-5 rounded-2xl relative flex flex-col justify-between shadow-lg">
               <div>
                 <span className="text-xs font-mono font-bold text-purple-300">Day 7</span>
-                <h3 className="text-base font-bold text-white mt-1.5 mb-2">Go Live</h3>
+                <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Go Live</h3>
                 <p className="text-xs text-purple-300">AI agent is fully live handling real inbound and outbound calls.</p>
               </div>
             </div>
@@ -1198,13 +1192,13 @@ const AICallingAgents = () => {
 
         {/* CASE STUDY SECTION */}
         <section className="mb-28">
-          <div className="bg-gradient-to-r from-purple-900/10 via-pink-900/5 to-blue-900/10 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
+          <div className="bg-gradient-to-r from-purple-900/10 via-pink-900/5 to-blue-900/10 border border-gray-200 dark:border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
+
               <div className="lg:col-span-5 space-y-6">
-                <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Case Study</span>
-                <h2 className="text-3xl font-extrabold text-white">Education Institute Success Story</h2>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Case Study</span>
+                <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">Education Institute Success Story</h2>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                   Learn how a premium regional education institute scaled their admissions calling, resolved lead lag times, and automated BANT checks.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
@@ -1225,14 +1219,14 @@ const AICallingAgents = () => {
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="bg-black/40 border border-white/5 p-6 rounded-2xl text-center">
                   <span className="text-xs text-gray-500 block font-mono">Admission Conversion Rate</span>
-                  <h3 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400 mt-2 mb-3">
+                  <h3 className="text-cyan-gradient font-bold">
                     3.1X Growth
                   </h3>
                   <p className="text-xs text-gray-500">More qualified student leads captured and routed successfully.</p>
                 </div>
                 <div className="bg-black/40 border border-white/5 p-6 rounded-2xl text-center">
                   <span className="text-xs text-gray-500 block font-mono">Appointments Booked</span>
-                  <h3 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-400 mt-2 mb-3">
+                  <h3 className="text-cyan-gradient font-bold">
                     42% Increase
                   </h3>
                   <p className="text-xs text-gray-500">Admissions interviews locked on counseling team calendars.</p>
@@ -1245,66 +1239,66 @@ const AICallingAgents = () => {
         {/* WHY TECHIEHELP */}
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Why TechieHelp</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Why Deploy With TechieHelp?</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Why TechieHelp</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Why Deploy With TechieHelp?</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               We deliver custom-built, fully owned voice infrastructure, matching regional enterprise objectives:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <Sparkles className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Custom Voice AI</h3>
+            <div className="card-glass flex flex-col">
+              <Sparkles className="w-8 h-8 text-[#33bbcf] mb-4" />
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Custom Voice AI</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Trained and script-optimized specifically around your business rules and local customer language patterns.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <Building className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Built Around Your Business</h3>
+            <div className="card-glass flex flex-col">
+              <Building className="w-8 h-8 text-[#33bbcf] mb-4" />
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Built Around Your Business</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 We custom-program BANT filters, objection routing, and calendar booking systems to mimic your best agents.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <Clock className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">24/7 Availability</h3>
+            <div className="card-glass flex flex-col">
+              <Clock className="w-8 h-8 text-[#33bbcf] mb-4" />
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">24/7 Availability</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 No holidays, breaks, or sleep cycles. The AI responds instantly to leads arriving at midnight or weekends.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <Zap className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Fast Deployment</h3>
+            <div className="card-glass flex flex-col">
+              <Zap className="w-8 h-8 text-[#33bbcf] mb-4" />
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Fast Deployment</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 We design, program, test, integrate, and launch your automated phone calling system in just 7 days.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <Award className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Full Ownership</h3>
+            <div className="card-glass flex flex-col">
+              <Award className="w-8 h-8 text-[#33bbcf] mb-4" />
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Full Ownership</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 One-time build and setup fees. You own the script configuration, numbers, and agent configurations completely.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <Users className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Indian Support Team</h3>
+            <div className="card-glass flex flex-col">
+              <Users className="w-8 h-8 text-[#33bbcf] mb-4" />
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Indian Support Team</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Dedicated developer support operating out of Rajasthan startup hubs to resolve issues immediately.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <Shield className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">No Missed Calls</h3>
+            <div className="card-glass flex flex-col">
+              <Shield className="w-8 h-8 text-[#33bbcf] mb-4" />
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">No Missed Calls</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Simultaneous scaling allows the agent to place hundreds of calls at once without busy tone restrictions.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <DollarSign className="w-8 h-8 text-purple-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Rajasthan Milestone Hub</h3>
+            <div className="card-glass flex flex-col">
+              <DollarSign className="w-8 h-8 text-[#33bbcf] mb-4" />
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Rajasthan Milestone Hub</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Verified ISO 9001:2015 startup, officially selected in Rajasthan Startup Summit 2026.
               </p>
@@ -1315,39 +1309,39 @@ const AICallingAgents = () => {
         {/* PRICING SECTION */}
         <section id="pricing" className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Investment Packages</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Transparent Build Pricing</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Investment Packages</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Transparent Build Pricing</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               One-time build fees with full asset ownership. No complex monthly software subscriptions:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
             {/* Plan 1 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl flex flex-col justify-between relative">
+            <div className="card-glass flex flex-col">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white">Outbound Agent</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Outbound Agent</h3>
                   <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Outbound Calling & Qualification</p>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-white">₹25,000</span>
+                  <span className="text-4xl font-extrabold text-gray-900 dark:text-white">₹25,000</span>
                   <span className="text-xs text-gray-500">/ setup</span>
                 </div>
-                <ul className="space-y-3.5 text-xs text-gray-400">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Outbound Call Integration</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> AI Conversational Scripting</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Lead Qualification Logic</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> CRM Status Sync</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Call Logs & Status Reporting</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Deployment Support</li>
+                <ul className="space-y-3.5 text-xs text-gray-600 dark:text-gray-400">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Outbound Call Integration</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> AI Conversational Scripting</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Lead Qualification Logic</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> CRM Status Sync</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Call Logs & Status Reporting</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Deployment Support</li>
                 </ul>
               </div>
               <a
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 w-full py-3 text-center bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-xl font-bold transition-all text-xs block"
+                className="mt-8 w-full py-3 text-center bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 rounded-xl font-bold transition-all text-xs block"
               >
                 Book Setup Call
               </a>
@@ -1355,17 +1349,17 @@ const AICallingAgents = () => {
 
             {/* Plan 2 */}
             <div className="bg-gradient-to-b from-purple-500/10 to-transparent border border-purple-500/30 p-8 rounded-3xl flex flex-col justify-between relative shadow-2xl">
-              <div className="absolute top-4 right-4 bg-purple-600 text-white text-[9px] uppercase tracking-widest font-bold px-2 py-0.5 rounded">
+              <div className="btn-primary">
                 Popular
               </div>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white">Inbound + Outbound Agent</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Inbound + Outbound Agent</h3>
                   <p className="text-xs text-purple-300 uppercase tracking-widest mt-1">Full Phone Automation</p>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-white">₹45,000</span>
-                  <span className="text-xs text-gray-400">/ setup</span>
+                  <span className="text-4xl font-extrabold text-gray-900 dark:text-white">₹45,000</span>
+                  <span className="text-xs text-gray-600 dark:text-gray-400">/ setup</span>
                 </div>
                 <ul className="space-y-3.5 text-xs text-gray-300">
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> Inbound Call Routing & Support</li>
@@ -1380,36 +1374,36 @@ const AICallingAgents = () => {
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 w-full py-3 text-center bg-purple-600 hover:bg-purple-500 text-white rounded-xl font-bold transition-all text-xs block shadow-lg"
+                className="btn-primary"
               >
                 Book Setup Call
               </a>
             </div>
 
             {/* Plan 3 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl flex flex-col justify-between relative">
+            <div className="card-glass flex flex-col">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white">Enterprise AI Call Center</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Enterprise AI Call Center</h3>
                   <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Multi-Agent Custom Setup</p>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-white">Custom</span>
+                  <span className="text-4xl font-extrabold text-gray-900 dark:text-white">Custom</span>
                 </div>
-                <ul className="space-y-3.5 text-xs text-gray-400">
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Deep Custom DB Lookups on Call</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Custom Voice Cloning & Branding</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Advanced Conversational Branches</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Round-Robin Calendar Routing</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Dedicated Technical support</li>
-                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-purple-400" /> Custom integrations & webhooks</li>
+                <ul className="space-y-3.5 text-xs text-gray-600 dark:text-gray-400">
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Deep Custom DB Lookups on Call</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Custom Voice Cloning & Branding</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Advanced Conversational Branches</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Round-Robin Calendar Routing</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Dedicated Technical support</li>
+                  <li className="flex items-center gap-2"><Check className="w-4 h-4 text-[#33bbcf]" /> Custom integrations & webhooks</li>
                 </ul>
               </div>
               <a
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 w-full py-3 text-center bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-xl font-bold transition-all text-xs block"
+                className="mt-8 w-full py-3 text-center bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 rounded-xl font-bold transition-all text-xs block"
               >
                 Request Custom Quote
               </a>
@@ -1420,9 +1414,9 @@ const AICallingAgents = () => {
         {/* FAQ SECTION */}
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">FAQ</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Frequently Asked Questions</h2>
-            <p className="text-gray-400 text-lg">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">FAQ</span>
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Find answers to key operational concerns and questions:
             </p>
           </div>
@@ -1433,15 +1427,15 @@ const AICallingAgents = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden transition-all duration-300"
+                  className="card-glass flex flex-col"
                 >
                   <button
                     onClick={() => setOpenFaqIndex(isOpen ? null : idx)}
-                    className="w-full text-left p-6 font-bold text-white flex items-center justify-between gap-4"
+                    className="w-full text-left p-6 font-bold text-gray-900 dark:text-white flex items-center justify-between gap-4"
                   >
                     <span>{faq.q}</span>
                     {isOpen ? (
-                      <ChevronUp className="w-4 h-4 text-purple-400 shrink-0" />
+                      <ChevronUp className="w-4 h-4 text-[#33bbcf] shrink-0" />
                     ) : (
                       <ChevronDown className="w-4 h-4 text-gray-500 shrink-0" />
                     )}
@@ -1455,7 +1449,7 @@ const AICallingAgents = () => {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 pt-0 border-t border-white/5 text-sm text-gray-400 leading-relaxed">
+                        <div className="p-6 pt-0 border-t border-white/5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -1469,14 +1463,14 @@ const AICallingAgents = () => {
 
         {/* FINAL CTA */}
         <section className="mb-20">
-          <div className="bg-gradient-to-r from-purple-900/20 via-pink-900/10 to-blue-900/20 border border-white/10 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
+          <div className="bg-gradient-to-r from-purple-900/20 via-pink-900/10 to-blue-900/20 border border-gray-200 dark:border-white/10 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl -z-10 animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -z-10 animate-pulse" />
 
             <div className="max-w-2xl mx-auto space-y-6">
-              <span className="text-xs font-mono uppercase tracking-widest text-purple-400 font-bold block">Deploy In 7 Days</span>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white">Stop Missing Sales Calls.</h2>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Deploy In 7 Days</span>
+              <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Stop Missing Sales Calls.</h2>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                 Deploy your AI calling team in 7 days and let AI qualify, engage, and schedule meetings around the clock. Make sure every lead gets contacted within 60 seconds.
               </p>
 
@@ -1493,13 +1487,13 @@ const AICallingAgents = () => {
                   href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-xl font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-purple-500 transition-all"
+                  className="px-6 py-3.5 rounded-xl font-semibold bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 hover:border-purple-500 transition-all"
                 >
                   Book Free Strategy Session
                 </a>
                 <a
                   href="#pricing"
-                  className="px-6 py-3.5 rounded-xl font-semibold text-gray-400 hover:text-white transition-all"
+                  className="px-6 py-3.5 rounded-xl font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-all"
                 >
                   Request Custom Proposal
                 </a>

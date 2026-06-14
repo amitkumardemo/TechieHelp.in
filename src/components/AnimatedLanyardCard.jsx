@@ -42,11 +42,11 @@ const AnimatedLanyardCard = ({ student, isOpen, onClose }) => {
             transition={{ duration: 0.4, type: "spring", stiffness: 300 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
-            <div className="relative w-full max-w-4xl h-[80vh] bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-3xl border border-white/20 backdrop-blur-lg">
+            <div className="relative w-full max-w-4xl h-[80vh] bg-gradient-to-br from-purple-900/20 to-pink-900/20 rounded-3xl border border-gray-300 dark:border-white/20 backdrop-blur-lg">
               {/* Close Button */}
               <button
                 onClick={onClose}
-                className="absolute top-4 right-4 z-10 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+                className="absolute top-4 right-4 z-10 w-10 h-10 bg-gray-100 dark:bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-gray-900 dark:text-white transition-colors"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -57,7 +57,7 @@ const AnimatedLanyardCard = ({ student, isOpen, onClose }) => {
               <div className="relative h-full flex flex-col">
                 {/* Header */}
                 <div className="p-6 text-center">
-                  <h2 className="text-3xl font-bold text-white mb-2">Intern ID Card</h2>
+                  <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Intern ID Card</h2>
                   <p className="text-purple-300">TechieHelp Internship Program</p>
                 </div>
 
@@ -89,7 +89,7 @@ const AnimatedLanyardCard = ({ student, isOpen, onClose }) => {
                           className="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-purple-500"
                         />
                         <h3 className="text-xl font-bold text-gray-800 mb-1">{student.fullName}</h3>
-                        <p className="text-purple-600 font-semibold mb-2">{student.internshipDomain}</p>
+                        <p className="text-[#33bbcf] font-semibold mb-2">{student.internshipDomain}</p>
                         <p className="text-sm text-gray-600 mb-1">ID: {student.techieHelpStudentID}</p>
                         <p className="text-sm text-gray-600 mb-1">{student.collegeName}</p>
                         <p className="text-sm text-gray-600">Batch: {student.currentYearBatch}</p>
@@ -98,7 +98,7 @@ const AnimatedLanyardCard = ({ student, isOpen, onClose }) => {
                       <div className="mt-4 pt-4 border-t border-gray-200">
                         <button
                           onClick={handleViewProfile}
-                          className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-4 rounded-xl font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105"
+                          className="btn-primary"
                         >
                           View Full Profile
                         </button>
@@ -109,7 +109,7 @@ const AnimatedLanyardCard = ({ student, isOpen, onClose }) => {
 
                 {/* Footer */}
                 <div className="p-4 text-center">
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     Click anywhere outside to close • Drag the lanyard to interact
                   </p>
                 </div>

@@ -66,7 +66,7 @@ const Internship = () => {
   }, []);
 
   return (
-    <div className="bg-primary text-white min-h-screen font-poppins selection:bg-blue-500/30">
+    <div className="bg-white dark:bg-primary text-gray-900 dark:text-white min-h-screen font-poppins selection:bg-blue-500/30">
       <Helmet>
         <title>AI Solutions & Software Development Training | TechieHelp</title>
         <meta name="description" content="Explore advanced hands-on training in AI automation, calling agents, and custom CRM systems. Start building production-level AI software with TechieHelp." />
@@ -89,7 +89,7 @@ const Internship = () => {
       <FinalCTA />
       
       {/* FAQ Section */}
-      <div className="py-20 bg-primary">
+      <div className="py-20 bg-white dark:bg-primary">
          <InternshipFAQ />
       </div>
 
@@ -102,34 +102,34 @@ const Internship = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setShowExitPopup(false)}
-              className="absolute inset-0 bg-primary/80 backdrop-blur-md"
+              className="absolute inset-0 bg-white dark:bg-primary/80 backdrop-blur-md"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-xl bg-gradient-to-br from-blue-600 to-purple-600 rounded-[3rem] p-10 md:p-16 overflow-hidden shadow-2xl border border-white/20"
+              className="relative w-full max-w-xl bg-gradient-to-br from-blue-600 to-purple-600 rounded-[3rem] p-10 md:p-16 overflow-hidden shadow-2xl border border-gray-300 dark:border-white/20"
             >
               {/* Decorative elements */}
               <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-white to-yellow-400" />
-              <div className="absolute -top-24 -right-24 w-64 h-64 bg-white/10 blur-[80px] rounded-full" />
+              <div className="absolute -top-24 -right-24 w-64 h-64 bg-gray-100 dark:bg-white/10 blur-[80px] rounded-full" />
               
               <button 
                 onClick={() => setShowExitPopup(false)}
-                className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-all"
+                className="absolute top-6 right-6 p-2 rounded-full bg-gray-100 dark:bg-white/10 hover:bg-white/20 text-gray-900 dark:text-white transition-all"
               >
                 <X className="w-6 h-6" />
               </button>
 
               <div className="relative z-10 text-center">
                 <Sparkles className="w-12 h-12 text-yellow-300 mx-auto mb-6" />
-                <h3 className="text-4xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter">
+                <h3 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 uppercase tracking-tighter">
                   Wait! Don't Go
                 </h3>
-                <p className="text-xl md:text-2xl font-bold text-white/90 mb-8 leading-tight">
+                <p className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white/90 mb-8 leading-tight">
                   Get <span className="text-yellow-300 text-3xl font-black">₹100 Off</span> instantly on any internship plan!
                 </p>
-                <p className="text-sm text-white/60 mb-10 font-bold uppercase tracking-widest italic font-poppins">
+                <p className="text-sm text-gray-900 dark:text-white/60 mb-10 font-bold uppercase tracking-widest italic font-poppins">
                   Coupon Code: TECHIE100
                 </p>
                 
@@ -142,7 +142,7 @@ const Internship = () => {
                   <span>Apply Now – Get ₹100 Off</span>
                   <ArrowRight className="w-6 h-6" />
                 </a>
-                <p className="mt-6 text-[10px] text-white/40 uppercase tracking-[2px] font-bold">Offer expires in 10 minutes</p>
+                <p className="mt-6 text-[10px] text-gray-900 dark:text-white/40 uppercase tracking-[2px] font-bold">Offer expires in 10 minutes</p>
               </div>
             </motion.div>
           </div>
@@ -158,19 +158,19 @@ const Internship = () => {
             exit={{ opacity: 0, scale: 0.8, x: -50 }}
             className="fixed bottom-10 left-6 md:left-10 z-[60] w-full max-w-[320px]"
           >
-            <div className="relative p-5 rounded-[2rem] bg-white/10 backdrop-blur-2xl border border-white/20 shadow-2xl overflow-hidden flex items-center gap-4">
+            <div className="relative p-5 rounded-[2rem] bg-gray-100 dark:bg-white/10 backdrop-blur-2xl border border-gray-300 dark:border-white/20 shadow-2xl overflow-hidden flex items-center gap-4">
               <div className="relative shrink-0">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-black text-lg shadow-inner">
+                <div className="btn-primary">
                   {currentSocial.name.charAt(0)}
                 </div>
                 <div className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-green-500 border-2 border-primary animate-pulse" />
               </div>
               
               <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold text-white truncate">
-                  {currentSocial.name} <span className="text-[10px] font-medium text-gray-400 font-poppins">from {currentSocial.city}</span>
+                <p className="text-sm font-bold text-gray-900 dark:text-white truncate">
+                  {currentSocial.name} <span className="text-[10px] font-medium text-gray-600 dark:text-gray-400 font-poppins">from {currentSocial.city}</span>
                 </p>
-                <p className="text-[11px] text-gray-400 leading-tight">
+                <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-tight">
                   Just enrolled in <span className="text-blue-400 font-bold">{currentSocial.domain}</span>
                 </p>
                 <div className="mt-1 flex items-center gap-1 text-[9px] font-bold text-green-400 uppercase tracking-widest">
@@ -181,7 +181,7 @@ const Internship = () => {
               
               <button 
                 onClick={() => setShowSocialToast(false)}
-                className="p-1 rounded-full hover:bg-white/5 text-white/30 hover:text-white transition-all"
+                className="p-1 rounded-full hover:bg-gray-100 dark:bg-white/5 text-gray-900 dark:text-white/30 hover:text-gray-900 dark:text-white transition-all"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -205,7 +205,7 @@ const Internship = () => {
               
               <button 
                 onClick={() => setShowUrgencyToast(false)}
-                className="absolute top-3 right-3 p-1 rounded-full hover:bg-white/5 text-gray-500 transition-all"
+                className="absolute top-3 right-3 p-1 rounded-full hover:bg-gray-100 dark:bg-white/5 text-gray-500 transition-all"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -215,9 +215,9 @@ const Internship = () => {
                   <AlertTriangle className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-black text-white uppercase tracking-wider mb-1">Only 50 Seats Left!</h4>
-                  <p className="text-xs text-gray-400 font-medium leading-relaxed">
-                    Next Batch Starts on <span className="text-white font-bold">{
+                  <h4 className="text-sm font-black text-gray-900 dark:text-white uppercase tracking-wider mb-1">Only 50 Seats Left!</h4>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 font-medium leading-relaxed">
+                    Next Batch Starts on <span className="text-gray-900 dark:text-white font-bold">{
                       (() => {
                         const date = new Date();
                         date.setDate(date.getDate() + 2);

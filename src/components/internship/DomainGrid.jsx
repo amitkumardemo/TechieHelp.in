@@ -22,7 +22,7 @@ const domains = [
     title: "App Development", 
     path: "/androiddevelopment",
     category: "Mobile",
-    icon: <Smartphone className="w-10 h-10 text-purple-400" />, 
+    icon: <Smartphone className="w-10 h-10 text-[#33bbcf]" />, 
     color: "from-purple-600/20 to-purple-900/10 border-purple-500/30",
     glow: "shadow-[0_0_30px_rgba(168,85,247,0.2)]",
     desc: "Create stunning Android & iOS apps. Learn Flutter & React Native. Build your own play-store ready application in just 4 weeks.",
@@ -62,7 +62,7 @@ const domains = [
     title: "Data Science", 
     path: "/datascience",
     category: "AI & Data",
-    icon: <Database className="w-10 h-10 text-blue-500" />, 
+    icon: <Database className="w-10 h-10 text-[#33bbcf]" />, 
     color: "from-blue-600/20 to-blue-900/10 border-blue-500/30",
     glow: "shadow-[0_0_30px_rgba(59,130,246,0.2)]",
     desc: "Uncover insights from data. SQL, PowerBI, and Advanced Analytics. Learn to solve real business problems with data-driven logic.",
@@ -82,7 +82,7 @@ const domains = [
     title: "Backend Development", 
     path: "/backend",
     category: "Development",
-    icon: <Server className="w-10 h-10 text-gray-400" />, 
+    icon: <Server className="w-10 h-10 text-gray-600 dark:text-gray-400" />, 
     color: "from-gray-600/20 to-gray-900/10 border-gray-500/30",
     glow: "shadow-[0_0_30px_rgba(107,114,128,0.2)]",
     desc: "The engine behind the web. Master Node.js, SQL, and Cloud deployments. High-salary opportunities for backend architects.",
@@ -102,7 +102,7 @@ const domains = [
     title: "DevOps", 
     path: "/devops",
     category: "Cloud",
-    icon: <Cloud className="w-10 h-10 text-indigo-400" />, 
+    icon: <Cloud className="w-10 h-10 text-[#33bbcf]" />, 
     color: "from-indigo-600/20 to-indigo-900/10 border-indigo-500/30",
     glow: "shadow-[0_0_30px_rgba(99,102,241,0.2)]",
     desc: "Ship code faster. Learn Docker, Kubernetes, and CI/CD pipelines. The bridge between development and infrastructure.",
@@ -112,7 +112,7 @@ const domains = [
     title: "Special Batch", 
     path: "/special-batch",
     category: "Specialized",
-    icon: <Award className="w-10 h-10 text-yellow-500" />, 
+    icon: <Award className="w-10 h-10 text-[#33bbcf]" />, 
     color: "from-yellow-500/20 to-yellow-900/10 border-yellow-500/40",
     glow: "shadow-[0_0_40px_rgba(234,179,8,0.3)]",
     desc: "A fast-track program for elite students. Intensive training, direct mentorship, and 100% placement focus. Highly selective batch.",
@@ -164,11 +164,11 @@ const DomainGrid = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter drop-shadow-lg"
+            className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 uppercase tracking-tighter drop-shadow-lg"
           >
-            Find Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Dream Career</span>
+            Find Your <span className="text-cyan-gradient font-bold">Dream Career</span>
           </motion.h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-12 font-medium">
+          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-12 font-medium">
             Browse through our wide range of industry-aligned internship programs. Filter by category or search to find your perfect fit.
           </p>
 
@@ -180,12 +180,12 @@ const DomainGrid = () => {
             className="max-w-2xl mx-auto relative group mb-10"
           >
             <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
-              <Search className="w-6 h-6 text-gray-500 group-focus-within:text-blue-500 transition-colors" />
+              <Search className="w-6 h-6 text-gray-500 group-focus-within:text-[#33bbcf] transition-colors" />
             </div>
             <input 
               type="text" 
               placeholder="Search domains (e.g. React, Python, Cyber)..." 
-              className="w-full pl-16 pr-8 py-6 bg-white/5 border border-white/10 rounded-[2rem] text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all shadow-2xl text-lg font-medium"
+              className="w-full pl-16 pr-8 py-6 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-[2rem] text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 focus:bg-white/[0.08] transition-all shadow-2xl text-lg font-medium"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
@@ -202,8 +202,8 @@ const DomainGrid = () => {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-3 rounded-full text-sm font-bold transition-all duration-300 border ${
                   activeCategory === cat 
-                  ? 'bg-blue-600 border-blue-500 text-white shadow-[0_10px_20px_rgba(37,99,235,0.3)]' 
-                  : 'bg-white/5 border-white/10 text-gray-400 hover:bg-white/10 hover:text-white'
+                  ? 'bg-blue-600 border-blue-500 text-gray-900 dark:text-white shadow-[0_10px_20px_rgba(37,99,235,0.3)]' 
+                  : 'bg-gray-100 dark:bg-white/5 border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:bg-gray-100 dark:bg-white/10 hover:text-gray-900 dark:text-white'
                 }`}
               >
                 {cat}
@@ -229,31 +229,31 @@ const DomainGrid = () => {
                   exit={{ opacity: 0, scale: 0.8, y: 10 }}
                   transition={{ duration: 0.4 }}
                   whileHover={{ y: -8, scale: 1.02 }}
-                  className={`group relative flex flex-col h-full bg-[#0a0a15]/80 backdrop-blur-2xl rounded-[3rem] border border-white/10 p-10 overflow-hidden transition-all duration-300 hover:border-orange-500/30 ${domain.glow} shadow-[0_10px_40px_rgba(0,0,0,0.5)]`}
+                  className={`group relative flex flex-col h-full bg-[#0a0a15]/80 backdrop-blur-2xl rounded-[3rem] border border-gray-200 dark:border-white/10 p-10 overflow-hidden transition-all duration-300 hover:border-orange-500/30 ${domain.glow} shadow-[0_10px_40px_rgba(0,0,0,0.5)]`}
                 >
                   {/* Decorative Shapes */}
-                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-white/5 blur-3xl rounded-full group-hover:bg-orange-500/10 transition-colors duration-500" />
+                  <div className="absolute -top-10 -right-10 w-40 h-40 bg-gray-100 dark:bg-white/5 blur-3xl rounded-full group-hover:bg-orange-500/10 transition-colors duration-500" />
                   
                   {/* Highlight Badge */}
-                  <div className="absolute top-8 right-8 flex items-center gap-2 px-4 py-2 rounded-2xl bg-black/60 border border-white/10 backdrop-blur-md shadow-lg">
+                  <div className="absolute top-8 right-8 flex items-center gap-2 px-4 py-2 rounded-2xl bg-black/60 border border-gray-200 dark:border-white/10 backdrop-blur-md shadow-lg">
                      <div className="w-2 h-2 rounded-full bg-orange-400 animate-ping absolute opacity-75" />
                      <div className="w-2 h-2 rounded-full bg-orange-500 relative" />
                      <span className="text-[10px] font-black uppercase tracking-widest text-[#e1e7ef]">{domain.highlight}</span>
                   </div>
 
-                  <div className="relative z-10 mb-8 w-20 h-20 rounded-3xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 shadow-inner">
+                  <div className="relative z-10 mb-8 w-20 h-20 rounded-3xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 shadow-inner">
                     {domain.icon}
                   </div>
                   
                   <div className="relative z-10 flex-1">
-                    <h3 className="text-3xl font-black text-white mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-orange-200 transition-all">
+                    <h3 className="text-3xl font-black text-gray-900 dark:text-white mb-4 leading-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-orange-200 transition-all">
                       {domain.title}
                     </h3>
                     <div className="flex items-center gap-1 mb-4 text-xs font-bold text-orange-400 uppercase tracking-widest opacity-80">
                       <Star className="w-3 h-3 fill-current" />
                       <span>Highly Rated Program</span>
                     </div>
-                    <p className="text-gray-400 text-base leading-relaxed mb-12 font-medium group-hover:text-gray-300 transition-colors">
+                    <p className="text-gray-600 dark:text-gray-400 text-base leading-relaxed mb-12 font-medium group-hover:text-gray-300 transition-colors">
                       {domain.desc}
                     </p>
                   </div>
@@ -263,7 +263,7 @@ const DomainGrid = () => {
                     className="relative w-full group/btn mt-auto"
                   >
                     <div className="absolute -inset-0.5 bg-gradient-to-r from-orange-500 to-orange-700 rounded-2xl blur opacity-25 group-hover/btn:opacity-100 transition duration-500" />
-                    <button className="relative w-full py-4 bg-[#05050f] text-white font-bold text-lg rounded-xl border border-white/10 hover:border-orange-500/50 transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden shadow-lg hover:bg-[#0a0a15]">
+                    <button className="relative w-full py-4 bg-[#05050f] text-gray-900 dark:text-white font-bold text-lg rounded-xl border border-gray-200 dark:border-white/10 hover:border-orange-500/50 transition-all duration-300 flex items-center justify-center gap-3 overflow-hidden shadow-lg hover:bg-[#0a0a15]">
                       <span className="relative z-10">Learn More</span>
                       <ChevronRight className="relative z-10 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
@@ -279,14 +279,14 @@ const DomainGrid = () => {
               animate={{ opacity: 1 }}
               className="col-span-full py-24 text-center"
             >
-              <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
+              <div className="w-20 h-20 bg-gray-100 dark:bg-white/5 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Box className="w-10 h-10 text-gray-600" />
               </div>
-              <h3 className="text-2xl font-bold text-white mb-2">No matching domains</h3>
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">No matching domains</h3>
               <p className="text-gray-500 mb-8">Try adjusting your search or category filters.</p>
               <button 
                 onClick={() => { setSearchTerm(""); setActiveCategory("All"); }}
-                className="text-blue-500 font-bold hover:underline"
+                className="text-[#33bbcf] font-bold hover:underline"
               >
                 Reset all filters
               </button>

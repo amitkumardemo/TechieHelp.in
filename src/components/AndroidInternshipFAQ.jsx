@@ -63,20 +63,20 @@ const AndroidInternshipFAQ = () => {
                   <div className="flex justify-between items-center">
                     <h3
                       className={`text-lg font-semibold transition-colors duration-300
-                        ${isActive ? "text-white" : "text-gray-900"}`}
+                        ${isActive ? "text-gray-900 dark:text-white" : "text-gray-900"}`}
                     >
                       {item.question}
                     </h3>
                     <span
                       className={`text-2xl font-bold transition-colors duration-300
-                        ${isActive ? "text-white" : "text-blue-600"}`}
+                        ${isActive ? "text-gray-900 dark:text-white" : "text-blue-600"}`}
                     >
                       {isActive ? "–" : "+"}
                     </span>
                   </div>
 
                   {isActive && (
-                    <p className="mt-3 text-white text-sm leading-relaxed">
+                    <p className="mt-3 text-gray-900 dark:text-white text-sm leading-relaxed">
                       {item.answer}
                     </p>
                   )}

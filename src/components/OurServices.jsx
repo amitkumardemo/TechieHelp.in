@@ -5,6 +5,7 @@ import Loading from "./Loading";
 import Particles from '../../Reactsbit/Particles/Particles';
 
 // Updated links to actual routes
+import { UserCircle, FormInput, Settings, Search, LayoutTemplate, Headset } from "lucide-react";
 
 import { arrowUp, webDevelopment, appDevelopment, seo, uiux, digital, tech, maintance, agents, chatbot, automation, computer, predictive, generative, education, voice, gamedevelopment, library, portfolio, product, restaurant, food, web, custom, organic, portfoli, doctor, home, zym, sports, er, junk, face, plant, store, health, ecom, producer } from "../assets";
 
@@ -144,37 +145,37 @@ const services = [
 const serviceFlowSteps = [
   {
     id: 1,
-    icon: "🌐",
+    icon: <UserCircle className="w-12 h-12 text-cyan-400 group-hover:text-cyan-300 filter drop-shadow-[0_0_8px_rgba(51,187,207,0.4)] transition-colors" />,
     title: "Business Profile Creation",
     description: "Setting up professional online presence with modern, responsive websites and digital identity that represents your brand effectively."
   },
   {
     id: 2,
-    icon: "📝",
+    icon: <FormInput className="w-12 h-12 text-cyan-400 group-hover:text-cyan-300 filter drop-shadow-[0_0_8px_rgba(51,187,207,0.4)] transition-colors" />,
     title: "Smart Contact Forms",
     description: "Automatically transferring form data to email/CRM systems with intelligent lead capture and instant notifications."
   },
   {
     id: 3,
-    icon: "⚙️",
+    icon: <Settings className="w-12 h-12 text-cyan-400 group-hover:text-cyan-300 filter drop-shadow-[0_0_8px_rgba(51,187,207,0.4)] transition-colors" />,
     title: "Automation Setup",
     description: "Handling workflows like email follow-ups, lead management, and notifications to streamline your business processes."
   },
   {
     id: 4,
-    icon: "🔍",
+    icon: <Search className="w-12 h-12 text-cyan-400 group-hover:text-cyan-300 filter drop-shadow-[0_0_8px_rgba(51,187,207,0.4)] transition-colors" />,
     title: "SEO & Google Ranking",
     description: "Strategies to rank on the first page of Google and grow traffic through proven optimization techniques and content strategies."
   },
   {
     id: 5,
-    icon: "🎨",
+    icon: <LayoutTemplate className="w-12 h-12 text-cyan-400 group-hover:text-cyan-300 filter drop-shadow-[0_0_8px_rgba(51,187,207,0.4)] transition-colors" />,
     title: "Branding & Development",
     description: "Building unique digital identity and solutions with custom designs, user experience optimization, and brand consistency."
   },
   {
     id: 6,
-    icon: "🔄",
+    icon: <Headset className="w-12 h-12 text-cyan-400 group-hover:text-cyan-300 filter drop-shadow-[0_0_8px_rgba(51,187,207,0.4)] transition-colors" />,
     title: "Ongoing Support",
     description: "Regular updates, monitoring, and client communication to ensure your digital presence stays current and effective."
   }
@@ -244,7 +245,7 @@ const OurServices = () => {
   }
 
   return (
-    <section className={`${styles.paddingY} text-white relative`} style={{ minHeight: '100vh' }}>
+    <section className={`${styles.paddingY} text-gray-900 dark:text-white relative`} style={{ minHeight: '100vh' }}>
       <style>
         {`
           .hide-scrollbar {
@@ -271,18 +272,18 @@ const OurServices = () => {
       <div className={`${styles.boxWidth} mx-auto relative z-10`}>
         {/* Use Cases Section */}
         <div className="mb-20 text-center relative z-10">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-[52px] font-black ss:leading-[64px] leading-[52px] mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent uppercase tracking-[-2px]"
           >
             Built for Real Businesses
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.7 }}
             transition={{ delay: 0.3 }}
-            className="text-xl text-white mb-12 max-w-3xl mx-auto leading-relaxed font-bold italic uppercase tracking-[5px] text-[12px]"
+            className="text-xl text-gray-900 dark:text-white mb-12 max-w-3xl mx-auto leading-relaxed font-bold italic uppercase tracking-[5px] text-[12px]"
           >
             From Coaching Institutes to E-commerce — our AI systems solve real-world operational bottlenecks.
           </motion.p>
@@ -357,13 +358,13 @@ const OurServices = () => {
                 }}
               >
                 <div className="text-center">
-                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                     {step.icon}
                   </div>
-                  <div className="bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-4">
+                  <div className="btn-primary">
                     Step {step.id}
                   </div>
-                  <h3 className="text-xl font-bold mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300">
+                  <h3 className="text-xl font-bold mb-3 text-gray-900 dark:text-white group-hover:text-cyan-400 transition-colors duration-300">
                     {step.title}
                   </h3>
                   <p className="text-gray-300 leading-relaxed text-sm">
@@ -452,7 +453,7 @@ const OurServices = () => {
                       }}
                     />
                     {id <= 3 && (
-                      <div className="absolute top-3 right-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                      <div className="btn-primary">
                         Popular
                       </div>
                     )}
@@ -471,7 +472,7 @@ const OurServices = () => {
                   </div>
                   <a
                     href={link.startsWith('/') ? link : `/${link}`}
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold inline-flex items-center justify-center px-5 py-2 rounded-full transition-all duration-300 group text-sm shadow-lg hover:shadow-xl transform hover:scale-105 w-full"
+                    className="btn-primary"
                   >
                     Learn More
                     <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

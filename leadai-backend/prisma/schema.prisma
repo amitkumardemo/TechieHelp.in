@@ -1,0 +1,415 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ==========================================
+// ENUMS
+// ==========================================
+
+enum Role {
+  OWNER
+  ADMIN
+  MEMBER
+}
+
+enum LeadStatus {
+  NEW
+  QUALIFIED
+  DISCARDED
+  CONTACTED
+  CONVERTED
+}
+
+// ==========================================
+// MODELS
+// ==========================================
+
+model Workspace {
+  id                      String                    @id @default(cuid())
+  name                    String
+  slug                    String                    @unique
+  plan                    String                    @default("FREE")
+  status                  String                    @default("PENDING_REVIEW")
+  createdAt               DateTime                  @default(now())
+  updatedAt               DateTime                  @updatedAt
+  ownerId                 String?
+
+  // Relations
+  users                   User[]
+  businessProfile         BusinessProfile?
+  gmailIntegration        GmailIntegration?
+  whatsappIntegration     WhatsAppIntegration?
+  googleSheetsIntegration GoogleSheetsIntegration?
+  vapiIntegration         VapiIntegration?
+  aiConfiguration         AIConfiguration?
+  emailSignature          EmailSignature?
+  leads                   Lead[]
+  emails                  Email[]
+  workflows               Workflow[]
+  activityFeeds           ActivityFeed[]
+  reports                 Report[]
+  notifications           Notification[]
+  calls                   Call[]
+  whatsAppMessages        WhatsAppMessage[]
+
+  @@index([slug])
+  @@index([status])
+}
+
+model User {
+  id            String     @id @default(cuid())
+  firebaseUid   String     @unique
+  name          String?
+  email         String     @unique
+  role          Role       @default(MEMBER)
+  avatar        String?
+  workspaceId   String?
+  lastLoginAt   DateTime?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+
+  // Relations
+  workspace     Workspace? @relation(fields: [workspaceId], references: [id], onDelete: SetNull)
+  auditLogs     AuditLog[]
+
+  @@index([workspaceId])
+  @@index([firebaseUid])
+}
+
+model BusinessProfile {
+  id           String    @id @default(cuid())
+  businessName String
+  website      String?
+  industry     String?
+  phone        String?
+  address      String?
+  timezone     String    @default("UTC")
+  logo         String?
+  workspaceId  String    @unique
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  workspace    Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+}
+
+model GmailIntegration {
+  id           String    @id @default(cuid())
+  workspaceId  String    @unique
+  email        String
+  accessToken  String
+  refreshToken String
+  status       String    @default("CONNECTED")
+  lastSyncAt   DateTime?
+  connectedAt  DateTime  @default(now())
+  tokenExpiry  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  workspace    Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+}
+
+model WhatsAppIntegration {
+  id          String    @id @default(cuid())
+  workspaceId String    @unique
+  phoneNumber String?
+  accessToken String?
+  status      String    @default("CONNECTED")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+}
+
+model GoogleSheetsIntegration {
+  id            String    @id @default(cuid())
+  workspaceId   String    @unique
+  spreadsheetId String?
+  sheetName     String?
+  status        String    @default("CONNECTED")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  workspace     Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+}
+
+model VapiIntegration {
+  id          String    @id @default(cuid())
+  workspaceId String    @unique
+  apiKey      String?
+  assistantId String?
+  status      String    @default("CONNECTED")
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+}
+
+model AIConfiguration {
+  id           String    @id @default(cuid())
+  workspaceId  String    @unique
+  modelName    String    @default("gemini-1.5-pro")
+  temperature  Float     @default(0.7)
+  systemPrompt String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  // Relations
+  workspace    Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+}
+
+model Lead {
+  id               String      @id @default(cuid())
+  workspaceId      String
+  name             String
+  email            String
+  phone            String?
+  source           String?
+  leadScore        Int         @default(0)
+  priority         String      @default("MEDIUM")
+  status           LeadStatus  @default(NEW)
+  estimatedRevenue Float       @default(0.0)
+  intent           String?
+  notes            String?
+  createdAt        DateTime    @default(now())
+  updatedAt        DateTime    @updatedAt
+
+  // Relations
+  workspace        Workspace   @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  emails           Email[]
+  calls            Call[]
+  aiReplies        AIReply[]
+
+  @@index([workspaceId])
+  @@index([email])
+  @@index([status])
+  @@index([leadScore])
+}
+
+model Email {
+  id             String    @id @default(cuid())
+  workspaceId    String
+  leadId         String?
+  gmailMessageId String?
+  subject        String?
+  sender         String
+  recipient      String
+  body           String?
+  snippet        String?
+  receivedAt     DateTime  @default(now())
+  isRead         Boolean   @default(false)
+  isArchived     Boolean   @default(false)
+  status         String    @default("RECEIVED")
+  leadScore      Int       @default(0)
+  priority       String?
+  intent         String?
+  sentiment      String?
+  aiSummary      String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  // Relations
+  workspace      Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  lead           Lead?     @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  aiReplies      AIReply[]
+
+  @@index([workspaceId])
+  @@index([leadId])
+  @@index([gmailMessageId])
+  @@index([isRead])
+  @@index([leadScore])
+}
+
+model AIReply {
+  id             String    @id @default(cuid())
+  emailId        String?
+  leadId         String?
+  generatedReply String
+  editedReply    String?
+  sentAt         DateTime?
+  status         String    @default("DRAFT")
+  model          String?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+
+  // Relations
+  email          Email?    @relation(fields: [emailId], references: [id], onDelete: Cascade)
+  lead           Lead?     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+
+  @@index([emailId])
+  @@index([leadId])
+}
+
+model Call {
+  id            String    @id @default(cuid())
+  workspaceId   String
+  leadId        String?
+  phone         String
+  duration      Int?
+  status        String
+  transcript    String?
+  summary       String?
+  recordingUrl  String?
+  bookedMeeting Boolean   @default(false)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  workspace     Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  lead          Lead?     @relation(fields: [leadId], references: [id], onDelete: SetNull)
+
+  @@index([workspaceId])
+  @@index([leadId])
+}
+
+model WhatsAppMessage {
+  id          String    @id @default(cuid())
+  workspaceId String
+  phone       String
+  message     String
+  direction   String
+  aiResponse  String?
+  status      String    @default("SENT")
+  createdAt   DateTime  @default(now())
+
+  // Relations
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@index([phone])
+}
+
+model Workflow {
+  id          String              @id @default(cuid())
+  workspaceId String
+  name        String
+  description String?
+  status      String              @default("ACTIVE")
+  trigger     String
+  createdAt   DateTime            @default(now())
+  updatedAt   DateTime            @updatedAt
+
+  // Relations
+  workspace   Workspace           @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  executions  WorkflowExecution[]
+
+  @@index([workspaceId])
+}
+
+model WorkflowExecution {
+  id            String   @id @default(cuid())
+  workflowId    String
+  status        String
+  executionTime Int?
+  payload       String?
+  result        String?
+  createdAt     DateTime @default(now())
+
+  // Relations
+  workflow      Workflow @relation(fields: [workflowId], references: [id], onDelete: Cascade)
+
+  @@index([workflowId])
+}
+
+model ActivityFeed {
+  id          String    @id @default(cuid())
+  workspaceId String
+  type        String
+  title       String
+  description String?
+  metadata    String?
+  createdAt   DateTime  @default(now())
+
+  // Relations
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@index([createdAt])
+}
+
+model Report {
+  id          String    @id @default(cuid())
+  workspaceId String
+  type        String
+  period      String
+  jsonData    String?
+  generatedAt DateTime  @default(now())
+
+  // Relations
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+}
+
+model Notification {
+  id          String    @id @default(cuid())
+  workspaceId String
+  title       String
+  message     String
+  read        Boolean   @default(false)
+  type        String
+  createdAt   DateTime  @default(now())
+
+  // Relations
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+  @@index([read])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  action    String
+  ipAddress String?
+  userAgent String?
+  timestamp DateTime @default(now())
+
+  // Relations
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([timestamp])
+}
+
+model EmailSignature {
+  id          String    @id @default(cuid())
+  workspaceId String    @unique
+  name        String?
+  designation String?
+  company     String?
+  phone       String?
+  website     String?
+  logoUrl     String?
+  customHtml  String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  // Relations
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@index([workspaceId])
+}

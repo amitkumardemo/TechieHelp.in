@@ -265,7 +265,7 @@ const cardVariants = {
 
 const AIEducationServices = () => {
   return (
-    <div className="min-h-screen pt-20 bg-primary text-white">
+    <div className="min-h-screen pt-20 bg-white dark:bg-primary text-gray-900 dark:text-white">
       {/* Page Navigation/Breadcrumb */}
       <section className="py-8 px-6">
         <div className="max-w-7xl mx-auto">
@@ -277,11 +277,11 @@ const AIEducationServices = () => {
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-4">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-full p-3">
+                <div className="btn-primary">
                   <FaGraduationCap className="w-6 h-6" />
                 </div>
                 <div>
-                  <h2 className="text-2xl font-bold text-white">AI Education Services</h2>
+                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">AI Education Services</h2>
                   <p className="text-blue-300 text-sm">Transform your educational institution with AI-powered solutions</p>
                 </div>
               </div>
@@ -323,7 +323,7 @@ const AIEducationServices = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <span className="font-semibold text-cyan-400">🤖 Automation Features:</span> Smart content generation, automated assessment creation, real-time performance analytics, and intelligent feedback systems that work 24/7 to support both educators and learners.
+              <span className="font-semibold text-cyan-400">� Automation Features:</span> Smart content generation, automated assessment creation, real-time performance analytics, and intelligent feedback systems that work 24/7 to support both educators and learners.
             </motion.p>
             <motion.a
               href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
@@ -335,8 +335,8 @@ const AIEducationServices = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <button className="mt-6 px-8 py-4 bg-gradient-to-r from-cyan-600 to-blue-600 text-white rounded-full hover:from-cyan-700 hover:to-blue-700 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl">
-                🚀 Book Your Free 1:1 Strategy Call
+              <button className="btn-primary">
+                 Book Your Free 1:1 Strategy Call
               </button>
             </motion.a>
           </div>
@@ -384,7 +384,7 @@ const AIEducationServices = () => {
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 text-white rounded-2xl p-8 relative overflow-hidden md:w-1/2"
+              className="btn-primary"
               whileHover={{ scale: 1.02 }}
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -469,7 +469,7 @@ const AIEducationServices = () => {
                   className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
                 >
                   <motion.div
-                    className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                    className="btn-primary"
                     whileHover={{
                       scale: 1.1,
                       rotate: 360,
@@ -479,7 +479,7 @@ const AIEducationServices = () => {
                     {icon}
                   </motion.div>
                   <motion.h3
-                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-[#33bbcf] transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                   >
                     {title}
@@ -559,7 +559,7 @@ const AIEducationServices = () => {
               className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
             >
               <motion.div
-                className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                className="btn-primary"
                 whileHover={{
                   scale: 1.1,
                   rotate: 360,
@@ -569,7 +569,7 @@ const AIEducationServices = () => {
                 {icon}
               </motion.div>
               <motion.h3
-                className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-[#33bbcf] transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
               >
                 {title}
@@ -589,7 +589,7 @@ const AIEducationServices = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
+                <button className="btn-primary">
                   Book 1:1 Strategy Session
                 </button>
               </a>
@@ -622,7 +622,7 @@ const AIEducationServices = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
+              <button className="btn-primary">
                 Book Your Free 1:1 Strategy Call
               </button>
             </a>
@@ -705,7 +705,7 @@ const AIEducationServices = () => {
                   href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 inline-block text-center"
+                  className="btn-primary"
                 >
                   Book Plan Setup Call
                 </a>

@@ -58,7 +58,7 @@ const TrustSection = () => {
 
   const badges = [
     { icon: <ShieldCheck className="w-8 h-8 text-blue-400" />, title: "MSME Registered", sub: "Govt. Recognized" },
-    { icon: <Award className="w-8 h-8 text-purple-400" />, title: "ISO Certified", sub: "Quality Education" },
+    { icon: <Award className="w-8 h-8 text-[#33bbcf]" />, title: "ISO Certified", sub: "Quality Education" },
     { icon: <CheckCircle className="w-8 h-8 text-green-400" />, title: "AICTE Aligned", sub: "Standard Curriculum" }
   ];
 
@@ -79,12 +79,12 @@ const TrustSection = () => {
               viewport={{ once: true }}
               className="flex items-center gap-4"
             >
-              <div className="p-3 rounded-2xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform">
+              <div className="p-3 rounded-2xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 group-hover:scale-110 transition-transform">
                 {badge.icon}
               </div>
               <div>
-                <p className="text-lg font-bold text-white leading-tight">{badge.title}</p>
-                <p className="text-sm text-gray-400">{badge.sub}</p>
+                <p className="text-lg font-bold text-gray-900 dark:text-white leading-tight">{badge.title}</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{badge.sub}</p>
               </div>
             </motion.div>
           ))}
@@ -97,24 +97,24 @@ const TrustSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-black text-white mb-6 drop-shadow-lg"
+            className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 drop-shadow-lg"
           >
-            Trusted by <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600"><Counter to={15000} suffix="+" /></span> Students
+            Trusted by <span className="text-cyan-gradient font-bold"><Counter to={15000} suffix="+" /></span> Students
           </motion.h2>
           
           <div className="flex flex-wrap justify-center gap-8 md:gap-16 items-center">
             <div className="flex flex-col items-center">
-              <div className="flex items-center gap-2 text-yellow-500 text-2xl font-bold mb-1">
+              <div className="flex items-center gap-2 text-[#33bbcf] text-2xl font-bold mb-1">
                 <Counter to={4.6} decimals={1} /> <Star className="w-6 h-6 fill-current animate-pulse" />
               </div>
-              <p className="text-gray-400 text-sm font-medium">Over 2,000+ Reviews</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Over 2,000+ Reviews</p>
             </div>
-            <div className="hidden md:block w-px h-12 bg-white/10"></div>
+            <div className="hidden md:block w-px h-12 bg-gray-100 dark:bg-white/10"></div>
             <div className="flex flex-col items-center">
               <div className="text-3xl font-bold text-orange-400 mb-1">
                 <Counter to={12} prefix="₹" suffix=" LPA" />
               </div>
-              <p className="text-gray-400 text-sm font-medium">Highest Package</p>
+              <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Highest Package</p>
             </div>
           </div>
         </div>
@@ -129,15 +129,15 @@ const TrustSection = () => {
               transition={{ delay: i * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10, scale: 1.02 }}
-              className="p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-orange-500/30 transition-all duration-300 relative group shadow-lg glass-morphism"
+              className="p-8 rounded-[2rem] bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-orange-500/30 transition-all duration-300 relative group shadow-lg glass-morphism"
             >
               <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-transparent rounded-[2rem] opacity-0 group-hover:opacity-100 transition-opacity" />
-              <MessageSquare className="absolute top-6 right-6 w-8 h-8 text-white/5 group-hover:text-orange-500/20 transition-colors z-10" />
+              <MessageSquare className="absolute top-6 right-6 w-8 h-8 text-gray-900 dark:text-white/5 group-hover:text-orange-500/20 transition-colors z-10" />
               <div className="flex items-center gap-4 mb-6">
                 <img src={t.image} alt={t.name} className="w-14 h-14 rounded-full object-cover" />
                 <div>
-                  <p className="text-white font-bold">{t.name}</p>
-                  <p className="text-xs text-gray-400">{t.role}</p>
+                  <p className="text-gray-900 dark:text-white font-bold">{t.name}</p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">{t.role}</p>
                 </div>
               </div>
               <p className="text-gray-300 leading-relaxed italic">"{t.text}"</p>

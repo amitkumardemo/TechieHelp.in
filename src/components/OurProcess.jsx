@@ -73,13 +73,13 @@ const OurProcess = () => {
   const rows = [steps.slice(0, 4), steps.slice(4)];
 
   return (
-    <section className="text-white py-20 px-6 md:px-12 lg:px-20">
+    <section className="text-gray-900 dark:text-white py-20 px-6 md:px-12 lg:px-20">
       <div className="text-center mb-16">
-        <h2 className="text-blue-500 text-sm tracking-widest font-semibold uppercase mb-2">
+        <h2 className="text-[#33bbcf] text-sm tracking-widest font-semibold uppercase mb-2">
           Our Process
         </h2>
         <h1 className="text-4xl md:text-5xl font-extrabold leading-tight">
-          An Innovative Process for <span className="text-blue-500">Future-Ready Solutions</span>
+          An Innovative Process for <span className="text-[#33bbcf]">Future-Ready Solutions</span>
         </h1>
         <p className="text-gray-300 mt-6 max-w-3xl mx-auto text-lg">
           TechieHelp's 8-step agile workflow blends strategy, technology, AI, and user empathy to deliver scalable and intelligent digital experiences across industries.
@@ -97,13 +97,13 @@ const OurProcess = () => {
                 <div className="mx-auto w-16 h-16 bg-white text-black rounded-full flex items-center justify-center mb-4 shadow-lg">
                   {step.icon}
                 </div>
-                <h3 className="text-white font-bold text-lg mb-1">Step 0{step.id}</h3>
+                <h3 className="text-gray-900 dark:text-white font-bold text-lg mb-1">Step 0{step.id}</h3>
                 <h4 className="text-blue-400 font-semibold mb-2">{step.title}</h4>
-                <p className="text-gray-400 text-sm">{step.description}</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
               </div>
 
               {index < row.length - 1 && (
-                <FaArrowRight className="text-blue-500 text-3xl mx-4 hidden md:block" />
+                <FaArrowRight className="text-[#33bbcf] text-3xl mx-4 hidden md:block" />
               )}
             </div>
           ))}

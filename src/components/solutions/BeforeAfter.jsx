@@ -14,11 +14,11 @@ const BeforeAfter = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl md:text-5xl font-black text-white mb-4 uppercase tracking-tighter"
+            className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 uppercase tracking-tighter"
           >
             The Difference <span className="text-gradient">Automation Makes</span>
           </motion.h2>
-          <p className="text-gray-400 font-medium max-w-xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 font-medium max-w-xl mx-auto">
             Traditional follow-ups leak leads. TechieHelp closes every gap in your sales pipeline.
           </p>
         </div>
@@ -36,16 +36,16 @@ const BeforeAfter = () => {
               <div className="p-3 bg-red-500/20 text-red-500 rounded-2xl">
                 <AlertCircle className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tight">Before TechieHelp</h3>
+              <h3 className="text-2xl font-black text-gray-900 dark:text-white uppercase tracking-tight">Before TechieHelp</h3>
             </div>
 
             <div className="space-y-6">
               {/* Step 1 */}
-              <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
+              <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-white/5 rounded-2xl border border-white/5">
                 <span className="text-sm font-semibold text-gray-300">100 Inbound Leads</span>
-                <span className="text-xs bg-gray-500/20 text-gray-400 px-3 py-1 rounded-full font-mono font-bold">100% Received</span>
+                <span className="text-xs bg-gray-500/20 text-gray-600 dark:text-gray-400 px-3 py-1 rounded-full font-mono font-bold">100% Received</span>
               </div>
-              
+
               <div className="flex justify-center py-1 text-red-500/40">
                 <ArrowRight className="w-5 h-5 rotate-90" />
               </div>
@@ -84,17 +84,17 @@ const BeforeAfter = () => {
               <div className="p-3 bg-blue-500/20 text-blue-400 rounded-2xl">
                 <CheckCircle2 className="w-6 h-6" />
               </div>
-              <h3 className="text-2xl font-black text-white uppercase tracking-tight">After TechieHelp</h3>
+              <h3 className="text-2xl font-black text-gray-900 dark:text-white uppercase tracking-tight">After TechieHelp</h3>
             </div>
 
             <div className="space-y-6">
               {/* Step 1 */}
-              <div className="flex items-center justify-between p-4 bg-white/5 rounded-2xl border border-white/5">
+              <div className="flex items-center justify-between p-4 bg-gray-100 dark:bg-white/5 rounded-2xl border border-white/5">
                 <span className="text-sm font-semibold text-gray-300">100 Inbound Leads</span>
                 <span className="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full font-mono font-bold">100% Captured</span>
               </div>
-              
-              <div className="flex justify-center py-1 text-blue-500/40">
+
+              <div className="flex justify-center py-1 text-[#33bbcf]/40">
                 <ArrowRight className="w-5 h-5 rotate-90" />
               </div>
 
@@ -104,17 +104,17 @@ const BeforeAfter = () => {
                 <span className="text-xs bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full font-mono font-bold">100% In Under 60s</span>
               </div>
 
-              <div className="flex justify-center py-1 text-blue-500/40">
+              <div className="flex justify-center py-1 text-[#33bbcf]/40">
                 <ArrowRight className="w-5 h-5 rotate-90" />
               </div>
 
               {/* Step 3 */}
               <div className="flex items-center justify-between p-4 bg-purple-500/5 rounded-2xl border border-purple-500/10">
                 <span className="text-sm font-semibold text-purple-300">40 Qualified</span>
-                <span className="text-xs bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full font-mono font-bold">AI Screened & Booked</span>
+                <span className="text-xs bg-purple-500/20 text-[#33bbcf] px-3 py-1 rounded-full font-mono font-bold">AI Screened & Booked</span>
               </div>
 
-              <div className="flex justify-center py-1 text-blue-500/40">
+              <div className="flex justify-center py-1 text-[#33bbcf]/40">
                 <ArrowRight className="w-5 h-5 rotate-90" />
               </div>
 
@@ -126,7 +126,7 @@ const BeforeAfter = () => {
             </div>
 
             <div className="mt-8 text-center text-xs text-green-400 font-bold uppercase tracking-wider animate-pulse">
-              ⚡ Average 45-Second Response Time
+              Average 45-Second Response Time
             </div>
           </motion.div>
         </div>

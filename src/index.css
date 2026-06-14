@@ -9,7 +9,11 @@
       #ffffff -278.56%,
       #6d6d6d -78.47%,
       #11101d 91.61%);
+  --light-gradient: linear-gradient(144.39deg,
+      #ffffff 0%,
+      #f3f4f6 100%);
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  --light-card-shadow: 0px 10px 30px -10px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -41,13 +45,18 @@
 }
 
 .bg-black-gradient {
-  background: linear-gradient(144.39deg,
-      #ffffff -278.56%,
-      #6d6d6d -78.47%,
-      #11101d 91.61%);
+  background: var(--light-gradient);
+}
+
+.dark .bg-black-gradient {
+  background: var(--black-gradient);
 }
 
 .bg-black-gradient-2 {
+  background: linear-gradient(-168.39deg, #ffffff 0%, #f3f4f6 100%);
+}
+
+.dark .bg-black-gradient-2 {
   background: linear-gradient(-168.39deg,
       #ffffff -278.56%,
       #6d6d6d -78.47%,
@@ -61,6 +70,10 @@
 }
 
 .bg-discount-gradient {
+  background: linear-gradient(125.17deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+.dark .bg-discount-gradient {
   background: linear-gradient(125.17deg, #272727 0%, #11101d 100%);
 }
 
@@ -98,6 +111,11 @@
 }
 
 .feature-card:hover {
+  background: var(--light-gradient);
+  box-shadow: var(--light-card-shadow);
+}
+
+.dark .feature-card:hover {
   background: var(--black-gradient);
   box-shadow: var(--card-shadow);
 }
@@ -111,7 +129,13 @@
 }
 
 .feedback-card:hover {
+  background: var(--light-gradient);
+  box-shadow: var(--light-card-shadow);
+}
+
+.dark .feedback-card:hover {
   background: var(--black-gradient);
+  box-shadow: none;
 }
 
 .blue__gradient {
@@ -147,9 +171,14 @@
 }
 
 .glass-morphism {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -214,7 +243,186 @@
 }
 
 .glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass {
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: none;
+}
+
+/* ==========================================
+   UNIFIED DESIGN SYSTEM (TECHIEHELP)
+   ========================================== */
+
+/* Typography */
+.text-cyan-gradient {
+  background: radial-gradient(64.18% 64.18% at 71.16% 35.69%,
+      #def9fa 0.89%,
+      #bef3f5 17.23%,
+      #9dedf0 42.04%,
+      #7de7eb 55.12%,
+      #5ce1e6 71.54%,
+      #33bbcf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+/* Button System */
+.btn-primary {
+  background: linear-gradient(157.81deg,
+      #def9fa -43.27%,
+      #bef3f5 -21.24%,
+      #9dedf0 12.19%,
+      #7de7eb 29.82%,
+      #5ce1e6 51.94%,
+      #33bbcf 90.29%);
+  color: #00040f;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(51, 187, 207, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 30px rgba(51, 187, 207, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid #33bbcf;
+  color: #33bbcf;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(51, 187, 207, 0.1);
+  box-shadow: 0 0 20px rgba(51, 187, 207, 0.2);
+}
+
+/* Card System */
+.card-glass {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+}
+
+.card-glass:hover {
+  border-color: rgba(51, 187, 207, 0.3);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05), 0 0 10px rgba(51, 187, 207, 0.05);
+  transform: translateY(-2px);
+}
+
+.dark .card-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card-glass:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 20px rgba(51, 187, 207, 0.1);
+}
+
+/* Base Card without hover transform, good for Dashboards */
+.card-glass-static {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: border-color 0.3s ease;
+}
+
+.card-glass-static:hover {
+  border-color: rgba(51, 187, 207, 0.3);
+}
+
+.dark .card-glass-static {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dark .card-glass-static:hover {
+  border-color: rgba(51, 187, 207, 0.2);
+}
+
+/* ==========================================
+   PREMIUM ICON SYSTEM (LUCIDE REACT)
+   ========================================== */
+
+/* Default Icon - Muted */
+.icon-premium {
+  color: #9ca3af;
+  /* gray-400 */
+  transition: all 0.3s ease;
+}
+
+.dark .icon-premium {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Hover State - Cyan glow */
+.icon-hover:hover .icon-premium,
+.icon-premium:hover {
+  color: #33bbcf;
+  filter: drop-shadow(0 0 8px rgba(51, 187, 207, 0.5));
+  transform: scale(1.05);
+}
+
+/* Active State - Solid cyan with glow */
+.icon-active {
+  color: #33bbcf;
+  filter: drop-shadow(0 0 10px rgba(51, 187, 207, 0.6));
+}
+
+/* Icon Container/Wrapper */
+.icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.dark .icon-wrapper {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.icon-wrapper:hover {
+  background: rgba(51, 187, 207, 0.1);
+  border-color: rgba(51, 187, 207, 0.3);
+  box-shadow: 0 0 15px rgba(51, 187, 207, 0.15);
 }

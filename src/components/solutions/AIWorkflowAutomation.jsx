@@ -169,19 +169,19 @@ const AIWorkflowAutomation = () => {
       <div className="absolute bottom-[10%] left-[20%] w-[40%] h-[40%] bg-indigo-900/10 blur-[140px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* BREADCRUMB */}
-        <div className="flex items-center gap-2 text-sm text-gray-400 mb-10">
+        <div className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400 mb-10">
           <span>Home</span>
           <span className="text-cyan-500">→</span>
           <span>Services</span>
           <span className="text-cyan-500">→</span>
-          <span className="text-white font-semibold">AI Workflow Automation</span>
+          <span className="text-gray-900 dark:text-white font-semibold">AI Workflow Automation</span>
         </div>
 
         {/* HERO SECTION */}
         <section className="mb-28 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
+
           <div className="lg:col-span-7 space-y-8">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -197,10 +197,10 @@ const AIWorkflowAutomation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-extrabold text-white leading-tight tracking-tight"
+              className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight"
             >
               Your Business Should Run <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-blue-400">
+              <span className="text-cyan-gradient font-bold">
                 Even When You're Offline.
               </span>
             </motion.h1>
@@ -209,7 +209,7 @@ const AIWorkflowAutomation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-lg md:text-xl text-gray-400 leading-relaxed max-w-xl"
+              className="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed max-w-xl"
             >
               Stop paying people to move data between apps. TechieHelp builds AI-powered workflow systems that automatically move data, update records, trigger actions, send notifications, and keep operations running 24/7.
             </motion.p>
@@ -225,25 +225,25 @@ const AIWorkflowAutomation = () => {
                 <div className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-semibold text-white">⚡ 90% Less Manual Work</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white"> 90% Less Manual Work</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-semibold text-white">🔄 Automated Operations</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">� Automated Operations</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-semibold text-white">📊 Real-Time Data Sync</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white"> Real-Time Data Sync</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
                   <Check className="w-4 h-4" />
                 </div>
-                <span className="text-sm font-semibold text-white">🤖 AI-Powered Decision Making</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-white">� AI-Powered Decision Making</span>
               </div>
             </motion.div>
 
@@ -258,7 +258,7 @@ const AIWorkflowAutomation = () => {
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl font-bold bg-gradient-to-r from-cyan-600 via-teal-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white shadow-xl shadow-cyan-900/20 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+                className="btn-primary"
               >
                 Get My Automation Blueprint <ArrowRight className="w-4 h-4" />
               </a>
@@ -266,13 +266,13 @@ const AIWorkflowAutomation = () => {
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-3.5 rounded-xl font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-cyan-500 transition-all"
+                className="px-6 py-3.5 rounded-xl font-semibold bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 hover:border-cyan-500 transition-all"
               >
                 Book Free Workflow Audit
               </a>
               <a
                 href="#live-operations"
-                className="px-6 py-3.5 rounded-xl font-semibold text-gray-400 hover:text-white transition-all"
+                className="px-6 py-3.5 rounded-xl font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-all"
               >
                 Watch Automation Demo
               </a>
@@ -281,18 +281,18 @@ const AIWorkflowAutomation = () => {
 
           {/* ANIMATED HERO VISUAL OPERATIONS MAP */}
           <div className="lg:col-span-5 w-full">
-            <div className="bg-white/5 border border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl relative">
+            <div className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-6 backdrop-blur-xl shadow-2xl relative">
               <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 rounded-full blur-2xl -z-10" />
 
               {/* Header controls */}
-              <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-gray-200 dark:border-white/10 pb-4 mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-2.5 h-2.5 bg-cyan-500 rounded-full animate-pulse shadow-[0_0_8px_rgba(6,182,212,0.8)]" />
                   <span className="text-xs font-mono font-bold uppercase tracking-wider text-cyan-400">Live Operations Map</span>
                 </div>
                 <button
                   onClick={() => setIsMapRunning(!isMapRunning)}
-                  className="text-xs font-mono bg-white/5 hover:bg-white/10 border border-white/10 rounded px-2 py-0.5 text-gray-400 hover:text-white flex items-center gap-1 transition-all"
+                  className="text-xs font-mono bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded px-2 py-0.5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white flex items-center gap-1 transition-all"
                 >
                   {isMapRunning ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3 text-cyan-400" />}
                   {isMapRunning ? "Pause" : "Play"}
@@ -307,22 +307,20 @@ const AIWorkflowAutomation = () => {
                   return (
                     <div
                       key={node.id}
-                      className={`p-3.5 rounded-xl border transition-all duration-300 flex items-center justify-between ${
-                        isActive
+                      className={`p-3.5 rounded-xl border transition-all duration-300 flex items-center justify-between ${isActive
                           ? "bg-cyan-500/10 border-cyan-500/30 shadow-lg shadow-cyan-900/5 scale-[1.02] opacity-100"
                           : isCompleted
-                          ? "bg-blue-500/[0.03] border-blue-500/10 opacity-80"
-                          : "bg-transparent border-white/5 opacity-30"
-                      }`}
+                            ? "bg-blue-500/[0.03] border-blue-500/10 opacity-80"
+                            : "bg-transparent border-white/5 opacity-30"
+                        }`}
                     >
                       <div className="flex items-center gap-3">
-                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold ${
-                          isActive ? "bg-cyan-500/20 text-cyan-400" : isCompleted ? "bg-blue-500/10 text-blue-400" : "bg-white/5 text-gray-500"
-                        }`}>
+                        <div className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold ${isActive ? "bg-cyan-500/20 text-cyan-400" : isCompleted ? "bg-blue-500/10 text-blue-400" : "bg-gray-100 dark:bg-white/5 text-gray-500"
+                          }`}>
                           {node.icon}
                         </div>
                         <div>
-                          <p className="text-xs font-bold text-white">{node.label}</p>
+                          <p className="text-xs font-bold text-gray-900 dark:text-white">{node.label}</p>
                           {isActive && (
                             <p className="text-[10px] text-cyan-300 font-mono mt-0.5 animate-pulse">
                               {node.status}...
@@ -335,14 +333,14 @@ const AIWorkflowAutomation = () => {
                           )}
                         </div>
                       </div>
-                      
+
                       {isActive ? (
                         <span className="text-[9px] font-mono bg-cyan-500/20 text-cyan-300 px-1.5 py-0.5 rounded uppercase font-bold tracking-wider flex items-center gap-1">
                           <Check className="w-3.5 h-3.5 text-blue-400 stroke-[3]" /> Sync Complete
                         </span>
                       ) : isCompleted ? (
                         <span className="text-[9px] font-mono bg-blue-500/10 text-blue-400 px-1.5 py-0.5 rounded uppercase font-bold tracking-wider flex items-center gap-1">
-                          <Check className="w-3.5 h-3.5 text-blue-500 stroke-[3]" /> Done
+                          <Check className="w-3.5 h-3.5 text-[#33bbcf] stroke-[3]" /> Done
                         </span>
                       ) : (
                         <span className="text-[9px] font-mono text-gray-600">Idle</span>
@@ -353,7 +351,7 @@ const AIWorkflowAutomation = () => {
               </div>
 
               {/* Moving data particle feed logs */}
-              <div className="mt-6 pt-5 border-t border-white/10 bg-black/30 rounded-xl p-3.5 text-[10px] font-mono text-gray-400 space-y-1">
+              <div className="mt-6 pt-5 border-t border-gray-200 dark:border-white/10 bg-black/30 rounded-xl p-3.5 text-[10px] font-mono text-gray-600 dark:text-gray-400 space-y-1">
                 <p className="text-gray-500 uppercase tracking-widest text-[9px] font-bold pb-1.5 border-b border-white/5 mb-1.5">
                   Activity Feed Logs
                 </p>
@@ -381,35 +379,35 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold block">The Cost of Chores</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Your Team Spends Too Much Time On Repetitive Tasks</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Your Team Spends Too Much Time On Repetitive Tasks</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Manual admin bottlenecks drain corporate output. These 6 areas cost businesses valuable time every single day:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-lg font-bold text-white mb-2">Manual Data Entry</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Manual Data Entry</h3>
               <p className="text-sm text-gray-500">Typing student details, leads or client data into spreadsheets line-by-line.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-lg font-bold text-white mb-2">Copy-Pasting Between Apps</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Copy-Pasting Between Apps</h3>
               <p className="text-sm text-gray-500">Moving customer info from emails to CRM, then to invoicing sheets manually.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-lg font-bold text-white mb-2">Missed Follow-Ups</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Missed Follow-Ups</h3>
               <p className="text-sm text-gray-500">Leaving leads uncalled for hours because sales reps were out of office.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-lg font-bold text-white mb-2">Spreadsheet Chaos</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Spreadsheet Chaos</h3>
               <p className="text-sm text-gray-500">Broken formulas, duplicate rows, and conflicting columns across sheets.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-lg font-bold text-white mb-2">Invoice Delays</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Invoice Delays</h3>
               <p className="text-sm text-gray-500">Forgetting to bill clients on time, stalling collection and cashflows.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
-              <h3 className="text-lg font-bold text-white mb-2">Approval Bottlenecks</h3>
+            <div className="card-glass flex flex-col">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Approval Bottlenecks</h3>
               <p className="text-sm text-gray-500">Waiting for management signatures to move documentation forward.</p>
             </div>
           </div>
@@ -417,7 +415,7 @@ const AIWorkflowAutomation = () => {
           {/* Visual: Employee -> Lost Revenue */}
           <div className="max-w-4xl mx-auto bg-red-950/10 border border-red-500/10 rounded-2xl p-6 text-center">
             <p className="text-sm font-mono text-red-400 font-bold uppercase tracking-widest mb-6">Traditional Operational Drain</p>
-            <div className="flex flex-col md:flex-row items-center justify-around gap-6 text-white font-bold">
+            <div className="flex flex-col md:flex-row items-center justify-around gap-6 text-gray-900 dark:text-white font-bold">
               <div className="bg-black/40 border border-white/5 p-4 rounded-xl w-44">Employee</div>
               <div className="text-gray-600">↓ Repeating Task</div>
               <div className="bg-black/40 border border-white/5 p-4 rounded-xl w-44">Lost Time</div>
@@ -428,17 +426,17 @@ const AIWorkflowAutomation = () => {
         </section>
 
         {/* AUTOMATION IMPACT GRAPH */}
-        <section className="mb-28 bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
+        <section className="mb-28 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 to-indigo-500/5 -z-10" />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             <div className="lg:col-span-5 space-y-6">
               <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">The Impact Graph</span>
-              <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white leading-tight">
                 Before vs After Automation
               </h2>
-              <p className="text-gray-400 text-sm leading-relaxed">
+              <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                 Toggle the switch to see the operational transformation. Custom integrations compress hours of manual work and drop data errors to near-zero.
               </p>
 
@@ -446,17 +444,15 @@ const AIWorkflowAutomation = () => {
               <div className="flex items-center gap-4 bg-black/40 border border-white/5 p-2 rounded-xl w-fit">
                 <button
                   onClick={() => setIsBeforeState(true)}
-                  className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${
-                    isBeforeState ? "bg-red-500/20 text-red-400 border border-red-500/20" : "bg-transparent text-gray-500"
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${isBeforeState ? "bg-red-500/20 text-red-400 border border-red-500/20" : "bg-transparent text-gray-500"
+                    }`}
                 >
                   Before Automation
                 </button>
                 <button
                   onClick={() => setIsBeforeState(false)}
-                  className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${
-                    !isBeforeState ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/20" : "bg-transparent text-gray-500"
-                  }`}
+                  className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${!isBeforeState ? "bg-cyan-500/20 text-cyan-400 border border-cyan-500/20" : "bg-transparent text-gray-500"
+                    }`}
                 >
                   After Automation
                 </button>
@@ -466,16 +462,16 @@ const AIWorkflowAutomation = () => {
             {/* Impact chart rendering */}
             <div className="lg:col-span-7 space-y-6">
               <div className="bg-black/30 border border-white/5 rounded-2xl p-6 space-y-6">
-                
+
                 {/* Metric 1: Hours */}
                 <div>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs font-bold text-white">Weekly Manual Work Hours</span>
+                    <span className="text-xs font-bold text-gray-900 dark:text-white">Weekly Manual Work Hours</span>
                     <span className={`text-sm font-bold ${isBeforeState ? "text-red-400" : "text-green-400"}`}>
                       {isBeforeState ? "40 Hours" : "4 Hours (90% Saved)"}
                     </span>
                   </div>
-                  <div className="h-2.5 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-2.5 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
                     <motion.div
                       className={`h-full ${isBeforeState ? "bg-red-500" : "bg-cyan-500"}`}
                       animate={{ width: isBeforeState ? "100%" : "10%" }}
@@ -487,12 +483,12 @@ const AIWorkflowAutomation = () => {
                 {/* Metric 2: Errors */}
                 <div>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs font-bold text-white">Manual Processing Data Errors</span>
+                    <span className="text-xs font-bold text-gray-900 dark:text-white">Manual Processing Data Errors</span>
                     <span className={`text-sm font-bold ${isBeforeState ? "text-red-400" : "text-green-400"}`}>
                       {isBeforeState ? "20+ Errors / Mo" : "Near-Zero Errors"}
                     </span>
                   </div>
-                  <div className="h-2.5 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-2.5 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
                     <motion.div
                       className={`h-full ${isBeforeState ? "bg-red-500" : "bg-cyan-500"}`}
                       animate={{ width: isBeforeState ? "80%" : "1%" }}
@@ -504,12 +500,12 @@ const AIWorkflowAutomation = () => {
                 {/* Metric 3: Response speed */}
                 <div>
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-xs font-bold text-white">Operations Response Time</span>
+                    <span className="text-xs font-bold text-gray-900 dark:text-white">Operations Response Time</span>
                     <span className={`text-sm font-bold ${isBeforeState ? "text-red-400" : "text-green-400"}`}>
                       {isBeforeState ? "4-8 Hours Delay" : "Instant (< 1s)"}
                     </span>
                   </div>
-                  <div className="h-2.5 bg-white/5 rounded-full overflow-hidden">
+                  <div className="h-2.5 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden">
                     <motion.div
                       className={`h-full ${isBeforeState ? "bg-red-500" : "bg-cyan-500"}`}
                       animate={{ width: isBeforeState ? "95%" : "2%" }}
@@ -528,13 +524,13 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Automation Workflow</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">How The Automated Path Flows</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">How The Automated Path Flows</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Trace the system events from the moment a lead signs up to invoicing and internal team Slack alerts:
             </p>
           </div>
 
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl mb-16 flex items-center justify-center overflow-x-auto min-h-[300px]">
+          <div className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-8 backdrop-blur-xl mb-16 flex items-center justify-center overflow-x-auto min-h-[300px]">
             <svg width="900" height="240" viewBox="0 0 900 240" className="min-w-[900px]">
               <defs>
                 <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -590,71 +586,71 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Service Grid</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">What TechieHelp Automates</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">What TechieHelp Automates</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               We connect applications across 12 primary integration areas to construct a unified business workflow:
             </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">01</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Lead Management</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Lead Management</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Capture, distribute, and follow up with leads automatically.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">02</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Customer Onboarding</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Customer Onboarding</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Trigger custom welcome emails and setup customer dashboard portals.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">03</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Invoice Processing</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Invoice Processing</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Auto-generate invoices on Stripe checkouts and update spreadsheets.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">04</span>
-              <h3 className="text-base font-bold text-white mb-1.5">CRM Updates</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">CRM Updates</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Keep pipeline stages synced, updating status details instantly.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">05</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Google Sheets Sync</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Google Sheets Sync</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Maintain master records, lead spreadsheets, and analytics logs.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">06</span>
-              <h3 className="text-base font-bold text-white mb-1.5">WhatsApp Automation</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">WhatsApp Automation</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Send instant notifications, booking invites, and alerts.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">07</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Email Automation</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Email Automation</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Deliver responsive transactional proposals and calendar alerts.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">08</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Reporting & Analytics</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Reporting & Analytics</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Assemble operational performance logs and sync data dashboards.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">09</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Team Notifications</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Team Notifications</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Alert sales staff on Slack or WhatsApp for instant lead calls.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">10</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Appointment Scheduling</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Appointment Scheduling</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Lookup live calendars, round-robin assignments, and lock bookings.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">11</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Document Generation</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Document Generation</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Automate PDFs, agreement proposals, contracts, and receipts.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl hover:border-cyan-500/20 transition-all">
+            <div className="card-glass flex flex-col">
               <span className="text-cyan-400 font-bold text-sm block mb-1">12</span>
-              <h3 className="text-base font-bold text-white mb-1.5">Internal Approvals</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-1.5">Internal Approvals</h3>
               <p className="text-xs text-gray-500 leading-relaxed">Trigger manager sign-offs before generating custom contracts.</p>
             </div>
           </div>
@@ -664,24 +660,23 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Logic Branches</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">AI Doesn't Just Move Data. It Makes Decisions.</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">AI Doesn't Just Move Data. It Makes Decisions.</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Click the tabs below to explore how our workflow automation reasons through complex corporate actions:
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-2xl">
+          <div className="max-w-4xl mx-auto bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl shadow-2xl">
             {/* Tabs */}
-            <div className="flex flex-wrap gap-2 pb-6 border-b border-white/10 mb-8">
+            <div className="flex flex-wrap gap-2 pb-6 border-b border-gray-200 dark:border-white/10 mb-8">
               {Object.keys(decisions).map((key) => (
                 <button
                   key={key}
                   onClick={() => setActiveDecision(key)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
-                    activeDecision === key
-                      ? "bg-cyan-600 text-white border-cyan-500 shadow-md"
-                      : "bg-transparent border-white/5 text-gray-400 hover:text-white"
-                  }`}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${activeDecision === key
+                      ? "bg-cyan-600 text-gray-900 dark:text-white border-cyan-500 shadow-md"
+                      : "bg-transparent border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                    }`}
                 >
                   {decisions[key].title}
                 </button>
@@ -691,11 +686,11 @@ const AIWorkflowAutomation = () => {
             {/* Decision display visualizer */}
             <div className="space-y-6">
               <div className="bg-black/40 border border-white/5 rounded-2xl p-6 relative overflow-hidden flex flex-col md:flex-row items-center justify-around gap-6">
-                
+
                 {/* Condition node */}
                 <div className="bg-cyan-950/20 border border-cyan-500/30 p-5 rounded-2xl text-center w-56 shadow-lg">
                   <span className="text-[10px] text-cyan-400 font-mono block mb-1">Decision Trigger</span>
-                  <strong className="text-sm text-white">{decisions[activeDecision].condition}</strong>
+                  <strong className="text-sm text-gray-900 dark:text-white">{decisions[activeDecision].condition}</strong>
                 </div>
 
                 <div className="text-gray-600 font-extrabold text-xl hidden md:block">→</div>
@@ -727,8 +722,8 @@ const AIWorkflowAutomation = () => {
         <section id="live-operations" className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Live Center</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Operations Center Dashboard</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Operations Center Dashboard</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Track real-time workflow performance. Access detailed metrics and visual execution summaries on autopilot:
             </p>
           </div>
@@ -736,28 +731,28 @@ const AIWorkflowAutomation = () => {
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Tasks Automated Today</span>
-              <h3 className="text-3xl font-extrabold text-white mt-1">1,420</h3>
+              <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">1,420</h3>
             </div>
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Hours Saved</span>
-              <h3 className="text-3xl font-extrabold text-white mt-1">48 Hrs</h3>
+              <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">48 Hrs</h3>
             </div>
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Errors Prevented</span>
-              <h3 className="text-3xl font-extrabold text-white mt-1">14</h3>
+              <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">14</h3>
             </div>
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Workflows Executed</span>
-              <h3 className="text-3xl font-extrabold text-white mt-1">100%</h3>
+              <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">100%</h3>
             </div>
             <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Revenue Impact</span>
-              <h3 className="text-3xl font-extrabold text-white mt-1">2.4X</h3>
+              <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">2.4X</h3>
             </div>
           </div>
 
           {/* SVG line-graph layout */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl">
+          <div className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl">
             <div className="flex justify-between items-center mb-6">
               <span className="text-xs font-bold uppercase tracking-wider font-mono text-gray-500">Hourly Workflow Execution Volume</span>
               <span className="text-[10px] bg-cyan-500/20 text-cyan-400 px-2 py-0.5 rounded font-mono">Live Syncing</span>
@@ -807,8 +802,8 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Target Users</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Who Should Deploy Operational Automation?</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Who Should Deploy Operational Automation?</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Explore custom deliverables mapped for different industries and domains:
             </p>
           </div>
@@ -820,16 +815,14 @@ const AIWorkflowAutomation = () => {
                 <button
                   key={idx}
                   onClick={() => setSelectedIndustry(idx)}
-                  className={`w-full text-left p-4 rounded-xl font-bold transition-all border flex items-center justify-between ${
-                    selectedIndustry === idx
-                      ? "bg-cyan-600/10 border-cyan-500 text-white shadow-lg"
-                      : "bg-transparent border-white/5 text-gray-400 hover:text-white hover:bg-white/[0.02]"
-                  }`}
+                  className={`w-full text-left p-4 rounded-xl font-bold transition-all border flex items-center justify-between ${selectedIndustry === idx
+                      ? "bg-cyan-600/10 border-cyan-500 text-gray-900 dark:text-white shadow-lg"
+                      : "bg-transparent border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white hover:bg-white/[0.02]"
+                    }`}
                 >
                   <span>{ind.title}</span>
-                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${
-                    selectedIndustry === idx ? "bg-cyan-500 text-white" : "bg-white/5 text-gray-500"
-                  }`}>
+                  <span className={`text-[10px] font-mono px-2 py-0.5 rounded ${selectedIndustry === idx ? "bg-cyan-500 text-gray-900 dark:text-white" : "bg-gray-100 dark:bg-white/5 text-gray-500"
+                    }`}>
                     Active
                   </span>
                 </button>
@@ -837,17 +830,17 @@ const AIWorkflowAutomation = () => {
             </div>
 
             {/* Display Box */}
-            <div className="lg:col-span-8 bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-xl flex flex-col justify-between">
+            <div className="lg:col-span-8 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-8 backdrop-blur-xl flex flex-col justify-between">
               <div>
                 <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 block mb-2 font-bold">Target Outcome</span>
-                <h3 className="text-3xl font-extrabold text-white mb-6">
+                <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mb-6">
                   {industries[selectedIndustry].outcome}
                 </h3>
-                <p className="text-gray-400 leading-relaxed mb-6">
+                <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6">
                   {industries[selectedIndustry].desc}
                 </p>
               </div>
-              <div className="border-t border-white/10 pt-6 flex flex-wrap gap-4 items-center justify-between">
+              <div className="border-t border-gray-200 dark:border-white/10 pt-6 flex flex-wrap gap-4 items-center justify-between">
                 <div className="flex items-center gap-2 text-sm text-gray-500">
                   <Workflow className="w-4 h-4 text-cyan-500" />
                   <span>Deployment: Configured, audited & tested in 7 Days</span>
@@ -869,24 +862,23 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Use Cases</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Example Automation Workflows</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Example Automation Workflows</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Explore step-by-step visual roadmaps of our 4 most popular operational packages:
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto bg-white/5 border border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl">
+          <div className="max-w-4xl mx-auto bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 backdrop-blur-xl">
             {/* Tabs */}
-            <div className="flex flex-wrap gap-2 pb-6 border-b border-white/10 mb-8">
+            <div className="flex flex-wrap gap-2 pb-6 border-b border-gray-200 dark:border-white/10 mb-8">
               {workflowsList.map((wf, idx) => (
                 <button
                   key={idx}
                   onClick={() => setSelectedWorkflowTab(idx)}
-                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${
-                    selectedWorkflowTab === idx
-                      ? "bg-cyan-600 text-white border-cyan-500 shadow-md"
-                      : "bg-transparent border-white/5 text-gray-400 hover:text-white"
-                  }`}
+                  className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${selectedWorkflowTab === idx
+                      ? "bg-cyan-600 text-gray-900 dark:text-white border-cyan-500 shadow-md"
+                      : "bg-transparent border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                    }`}
                 >
                   {wf.title}
                 </button>
@@ -901,7 +893,7 @@ const AIWorkflowAutomation = () => {
                     {idx + 1}
                   </div>
                   <div className="flex-1 bg-black/30 border border-white/5 p-4 rounded-xl">
-                    <p className="text-sm font-semibold text-white">{step}</p>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white">{step}</p>
                   </div>
                 </div>
               ))}
@@ -913,46 +905,46 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Roadmap</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">How We Deploy Your Autopilot in 7 Days</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">How We Deploy Your Autopilot in 7 Days</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Our structured onboarding roadmap ensuring your custom logic works seamlessly:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-7 gap-6 max-w-6xl mx-auto">
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <span className="text-xs font-mono font-bold text-cyan-400">Day 1</span>
-              <h3 className="text-base font-bold text-white mt-1.5 mb-2">Discovery</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Discovery</h3>
               <p className="text-xs text-gray-500 font-medium">Analyzing manual chores, bottlenecks and app connections.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <span className="text-xs font-mono font-bold text-cyan-400">Day 2</span>
-              <h3 className="text-base font-bold text-white mt-1.5 mb-2">Process Mapping</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Process Mapping</h3>
               <p className="text-xs text-gray-500 font-medium">Drafting step flows, validation criteria and parameters.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <span className="text-xs font-mono font-bold text-cyan-400">Day 3</span>
-              <h3 className="text-base font-bold text-white mt-1.5 mb-2">AI Logic Design</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">AI Logic Design</h3>
               <p className="text-xs text-gray-500 font-medium">Programming decision logic, variables, and formats.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <span className="text-xs font-mono font-bold text-cyan-400">Day 4</span>
-              <h3 className="text-base font-bold text-white mt-1.5 mb-2">Integration</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Integration</h3>
               <p className="text-xs text-gray-500 font-medium">Connecting CRM cards, sheets, APIs, and webhook triggers.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <span className="text-xs font-mono font-bold text-cyan-400">Day 5</span>
-              <h3 className="text-base font-bold text-white mt-1.5 mb-2">Testing</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Testing</h3>
               <p className="text-xs text-gray-500 font-medium">Executing system dry-runs and validation error checks.</p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-5 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <span className="text-xs font-mono font-bold text-cyan-400">Day 6</span>
-              <h3 className="text-base font-bold text-white mt-1.5 mb-2">Training</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Training</h3>
               <p className="text-xs text-gray-500 font-medium">Familiarizing staff with dashboard interfaces and logs.</p>
             </div>
             <div className="bg-gradient-to-b from-cyan-500/20 to-transparent border border-cyan-500/30 p-5 rounded-2xl shadow-lg">
               <span className="text-xs font-mono font-bold text-cyan-300">Day 7</span>
-              <h3 className="text-base font-bold text-white mt-1.5 mb-2">Go Live</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mt-1.5 mb-2">Go Live</h3>
               <p className="text-xs text-cyan-300 font-medium">AI system goes fully live running operations on autopilot.</p>
             </div>
           </div>
@@ -960,13 +952,13 @@ const AIWorkflowAutomation = () => {
 
         {/* CASE STUDY */}
         <section className="mb-28">
-          <div className="bg-gradient-to-r from-cyan-900/10 via-indigo-900/5 to-blue-900/10 border border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl">
+          <div className="bg-gradient-to-r from-cyan-900/10 via-indigo-900/5 to-blue-900/10 border border-gray-200 dark:border-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
+
               <div className="lg:col-span-5 space-y-6">
                 <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Case Study</span>
-                <h2 className="text-3xl font-extrabold text-white">Agency Operations Transformation</h2>
-                <p className="text-gray-400 text-sm leading-relaxed">
+                <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white">Agency Operations Transformation</h2>
+                <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
                   How a regional consulting agency automated their client scheduling, task assignments, invoicing, and reporting sheets:
                 </p>
                 <div className="grid grid-cols-2 gap-4">
@@ -987,14 +979,14 @@ const AIWorkflowAutomation = () => {
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="bg-black/40 border border-white/5 p-6 rounded-2xl text-center">
                   <span className="text-xs text-gray-500 block font-mono">Operations Time Saved</span>
-                  <h3 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-400 mt-2 mb-3">
+                  <h3 className="text-cyan-gradient font-bold">
                     20+ Hours / Wk
                   </h3>
                   <p className="text-xs text-gray-500">Redirected back to custom client deliverables.</p>
                 </div>
                 <div className="bg-black/40 border border-white/5 p-6 rounded-2xl text-center">
                   <span className="text-xs text-gray-500 block font-mono">Execution Speed</span>
-                  <h3 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-blue-400 mt-2 mb-3">
+                  <h3 className="text-cyan-gradient font-bold">
                     3X Faster
                   </h3>
                   <p className="text-xs text-gray-500">Eliminated client onboarding queues and invoice delays.</p>
@@ -1008,65 +1000,65 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Why TechieHelp</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Why Partner With TechieHelp?</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Why Partner With TechieHelp?</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               We deploy custom workflow automations focused entirely on scalability, accuracy, and full client asset ownership:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <Sparkles className="w-8 h-8 text-cyan-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Custom Workflows</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Custom Workflows</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Trained and customized specifically around your business rules and app stack connections.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <Settings className="w-8 h-8 text-cyan-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">AI Logic Included</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">AI Logic Included</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 We design smart branching, data filters, and lead grading criteria.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <Layers className="w-8 h-8 text-cyan-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">No-Code Experience</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">No-Code Experience</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 We handle the backend setups; your staff manages flows through visual, user-friendly forms.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <Award className="w-8 h-8 text-cyan-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Full Ownership</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Full Ownership</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 One-time build fees. You own all configurations, scripts, sheets, and dashboard layouts.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <Zap className="w-8 h-8 text-cyan-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Fast Deployment</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Fast Deployment</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 We analyze, map, program, and launch your automated workflow pipeline in just 7 days.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <Activity className="w-8 h-8 text-cyan-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Scalable Architecture</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Scalable Architecture</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Configured to handle thousands of events simultaneously without lagging or data drops.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <Shield className="w-8 h-8 text-cyan-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Dedicated Support</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Dedicated Support</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Dedicated developers to review integration logs and optimize decision variables.
               </p>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl">
+            <div className="card-glass flex flex-col">
               <Users className="w-8 h-8 text-cyan-400 mb-4" />
-              <h3 className="text-base font-bold text-white mb-2">Indian Milestone Team</h3>
+              <h3 className="text-base font-bold text-gray-900 dark:text-white mb-2">Indian Milestone Team</h3>
               <p className="text-xs text-gray-500 leading-relaxed">
                 Selected Startup in Rajasthan Startup Summit 2026 and Seaside Startup Summit Armenia 2026.
               </p>
@@ -1078,25 +1070,25 @@ const AIWorkflowAutomation = () => {
         <section id="pricing" className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Investment Packages</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Transparent Build Pricing</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Transparent Build Pricing</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               One-time build fees with full asset ownership. No complex monthly software subscriptions:
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
             {/* Plan 1 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl flex flex-col justify-between relative">
+            <div className="card-glass flex flex-col">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white">Basic Automation</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Basic Automation</h3>
                   <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">2 App Integrations</p>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-white">₹20,000</span>
+                  <span className="text-4xl font-extrabold text-gray-900 dark:text-white">₹20,000</span>
                   <span className="text-xs text-gray-500">/ setup</span>
                 </div>
-                <ul className="space-y-3.5 text-xs text-gray-400">
+                <ul className="space-y-3.5 text-xs text-gray-600 dark:text-gray-400">
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> 2 App Connections</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Linear Data Syncing</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Email Automation</li>
@@ -1109,7 +1101,7 @@ const AIWorkflowAutomation = () => {
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 w-full py-3 text-center bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-xl font-bold transition-all text-xs block font-mono"
+                className="mt-8 w-full py-3 text-center bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 rounded-xl font-bold transition-all text-xs block font-mono"
               >
                 Book Setup Call
               </a>
@@ -1117,17 +1109,17 @@ const AIWorkflowAutomation = () => {
 
             {/* Plan 2 */}
             <div className="bg-gradient-to-b from-cyan-500/10 to-transparent border border-cyan-500/30 p-8 rounded-3xl flex flex-col justify-between relative shadow-2xl animate-pulse-subtle">
-              <div className="absolute top-4 right-4 bg-cyan-600 text-white text-[9px] uppercase tracking-widest font-bold px-2 py-0.5 rounded">
+              <div className="btn-primary">
                 Popular
               </div>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white">Standard Automation</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Standard Automation</h3>
                   <p className="text-xs text-cyan-300 uppercase tracking-widest mt-1">Multi-App Operations</p>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-white">₹35,000</span>
-                  <span className="text-xs text-gray-400">/ setup</span>
+                  <span className="text-4xl font-extrabold text-gray-900 dark:text-white">₹35,000</span>
+                  <span className="text-xs text-gray-600 dark:text-gray-400">/ setup</span>
                 </div>
                 <ul className="space-y-3.5 text-xs text-gray-300">
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> 5 App Connections</li>
@@ -1142,23 +1134,23 @@ const AIWorkflowAutomation = () => {
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 w-full py-3 text-center bg-cyan-600 hover:bg-cyan-500 text-white rounded-xl font-bold transition-all text-xs block shadow-lg"
+                className="btn-primary"
               >
                 Book Setup Call
               </a>
             </div>
 
             {/* Plan 3 */}
-            <div className="bg-white/[0.02] border border-white/5 p-8 rounded-3xl flex flex-col justify-between relative">
+            <div className="card-glass flex flex-col">
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white">Enterprise Automation</h3>
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">Enterprise Automation</h3>
                   <p className="text-xs text-gray-500 uppercase tracking-widest mt-1">Custom API Setup</p>
                 </div>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold text-white">Custom</span>
+                  <span className="text-4xl font-extrabold text-gray-900 dark:text-white">Custom</span>
                 </div>
-                <ul className="space-y-3.5 text-xs text-gray-400">
+                <ul className="space-y-3.5 text-xs text-gray-600 dark:text-gray-400">
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Unlimited Integrations</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Custom API coding & connections</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-cyan-400" /> Advanced Custom AI logic</li>
@@ -1171,7 +1163,7 @@ const AIWorkflowAutomation = () => {
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-8 w-full py-3 text-center bg-white/5 hover:bg-white/10 text-white border border-white/10 rounded-xl font-bold transition-all text-xs block"
+                className="mt-8 w-full py-3 text-center bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 rounded-xl font-bold transition-all text-xs block"
               >
                 Request Custom Quote
               </a>
@@ -1183,8 +1175,8 @@ const AIWorkflowAutomation = () => {
         <section className="mb-28 border-t border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">FAQ</span>
-            <h2 className="text-3xl md:text-5xl font-extrabold text-white">Frequently Asked Questions</h2>
-            <p className="text-gray-400 text-lg">
+            <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
+            <p className="text-gray-600 dark:text-gray-400 text-lg">
               Find answers to key operational concerns and questions:
             </p>
           </div>
@@ -1195,11 +1187,11 @@ const AIWorkflowAutomation = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white/[0.02] border border-white/5 rounded-2xl overflow-hidden transition-all duration-300"
+                  className="card-glass flex flex-col"
                 >
                   <button
                     onClick={() => setOpenFaqIdx(isOpen ? null : idx)}
-                    className="w-full text-left p-6 font-bold text-white flex items-center justify-between gap-4"
+                    className="w-full text-left p-6 font-bold text-gray-900 dark:text-white flex items-center justify-between gap-4"
                   >
                     <span>{faq.q}</span>
                     {isOpen ? (
@@ -1217,7 +1209,7 @@ const AIWorkflowAutomation = () => {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 pt-0 border-t border-white/5 text-sm text-gray-400 leading-relaxed">
+                        <div className="p-6 pt-0 border-t border-white/5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -1231,14 +1223,14 @@ const AIWorkflowAutomation = () => {
 
         {/* FINAL CTA */}
         <section className="mb-20">
-          <div className="bg-gradient-to-r from-cyan-900/20 via-indigo-900/10 to-blue-900/20 border border-white/10 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
+          <div className="bg-gradient-to-r from-cyan-900/20 via-indigo-900/10 to-blue-900/20 border border-gray-200 dark:border-white/10 rounded-3xl p-10 md:p-16 text-center relative overflow-hidden shadow-2xl">
             <div className="absolute top-0 right-0 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl -z-10 animate-pulse" />
             <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -z-10 animate-pulse" />
 
             <div className="max-w-2xl mx-auto space-y-6">
               <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Get Started</span>
-              <h2 className="text-3xl md:text-5xl font-extrabold text-white">Stop Managing Operations Manually.</h2>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Stop Managing Operations Manually.</h2>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
                 Deploy your custom AI workflow system and let your business run on autopilot. Free up your team to focus on high-value goals.
               </p>
 
@@ -1255,13 +1247,13 @@ const AIWorkflowAutomation = () => {
                   href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-6 py-3.5 rounded-xl font-semibold bg-white/5 hover:bg-white/10 text-white border border-white/10 hover:border-cyan-500 transition-all"
+                  className="px-6 py-3.5 rounded-xl font-semibold bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10 hover:border-cyan-500 transition-all"
                 >
                   Book Free Workflow Audit
                 </a>
                 <a
                   href="#pricing"
-                  className="px-6 py-3.5 rounded-xl font-semibold text-gray-400 hover:text-white transition-all"
+                  className="px-6 py-3.5 rounded-xl font-semibold text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-all"
                 >
                   Request Custom Proposal
                 </a>

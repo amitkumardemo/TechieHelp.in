@@ -8,15 +8,39 @@ import {
   Instagram,
   Linkedin,
   Youtube,
-  Twitter,
+  ShieldCheck,
+  CheckCircle2
 } from "lucide-react";
 
-const serviceLinks = [
+const F6SIcon = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fontSize="11" fontWeight="bold">F6S</text>
+  </svg>
+);
+
+const companyLinks = [
+  { title: "About Us", path: "/about-us" },
+  { title: "Our Portfolio", path: "/project-portfolio" },
+  { title: "Contact Us", path: "/contacts" },
+  { title: "Founder & CEO Profile", path: "/team/amit-kumar-founder-ceo-techiehelp" },
+];
+
+const legalLinks = [
+  { title: "Privacy Policy", path: "/privacy-policy" },
+  { title: "Terms & Conditions", path: "/terms-and-conditions" },
+  { title: "Cookie Policy", path: "/cookie-policy" },
+  { title: "Pricing Policy", path: "/pricing-policy" },
+  { title: "Refund Policy", path: "/refund-policy" },
+  { title: "Acceptable Use Policy", path: "/acceptable-use-policy" },
+  { title: "Data Processing Agreement", path: "/data-processing-agreement" },
+];
+
+const solutionLinks = [
   { title: "AI Lead Capture Engine", path: "/services/ai-lead-engine" },
   { title: "AI Phone Calling Agents", path: "/services/ai-calling-agents" },
   { title: "AI Workflow Automation", path: "/services/ai-workflow-automation" },
   { title: "Voice AI Systems", path: "/services/voice-ai-system" },
-  { title: "QualifyAI Dashboard", path: "/qualifyai-dashboard" },
+  { title: "LeadAI Dashboard", path: "/leadai-dashboard" },
   { title: "AI Business Dashboard", path: "/services/ai-business-dashboard" },
   { title: "All AI Services", path: "/services" },
 ];
@@ -30,140 +54,211 @@ const resourceLinks = [
   { title: "Community Partnership", path: "/community-partnership" },
 ];
 
-const companyLinks = [
-  { title: "About Us", path: "/about-us" },
-  { title: "Our Portfolio", path: "/project-portfolio" },
-  { title: "Contact Us", path: "/contacts" },
-  { title: "Founder & CEO Profile", path: "/team/amit-kumar-founder-ceo-techiehelp" },
+const trustLinks = [
+  { title: "Security Overview", path: "/security" },
+  { title: "Compliance", path: "/compliance" },
+  { title: "Data Processing Agreement", path: "/data-processing-agreement" },
 ];
-
 
 const Footer = () => {
   return (
-    <footer className="footer bg-gray-900 text-white py-10">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        
-        {/* Logo & Social */}
-        <div className="flex flex-col items-center md:items-start">
-          <img src={logo} alt="TechieHelp Logo" className="w-48 h-20 mb-2" />
-          <p className="text-gray-400 mt-1">Empowering Your Business & Tech Journey</p>
-
-          <div className="flex justify-center gap-4 text-white text-2xl mt-4">
-            <a href="https://www.facebook.com/techiehelp" target="_blank" rel="noopener noreferrer">
-              <Facebook />
-            </a>
-            <a href="https://www.instagram.com/techiehelp" target="_blank" rel="noopener noreferrer">
-              <Instagram />
-            </a>
-            <a href="https://www.linkedin.com/company/techiehelp" target="_blank" rel="noopener noreferrer">
-              <Linkedin />
-            </a>
-            <a href="https://www.youtube.com/@techiehelp" target="_blank" rel="noopener noreferrer">
-              <Youtube />
-            </a>
-            <a href="https://twitter.com/techiehelp" target="_blank" rel="noopener noreferrer">
-              <Twitter />
-            </a>
-          </div>
-
-          <ul className="mt-4 space-y-2">
-            <li>
-              <a
-                href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
-                className="hover:underline text-blue-400 text-sm"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Become a Partner — Book Discussion
-              </a>
-            </li>
-            <li className="pt-2">
-              <a
-                href="https://t90161611204.p.clickup-attachments.com/t90161611204/1b036e48-f883-4ba1-9812-bdcf04a65796/techiehelp.apk"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-medium text-xs rounded-xl shadow-lg transition-all active:scale-95 whitespace-nowrap"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M17.523 15.3c-.149 0-.29-.059-.4-.165l-4.14-4.14v8.305c0 .414-.336.75-.75.75s-.75-.336-.75-.75v-8.305l-4.14 4.14c-.105.105-.246.165-.4.165-.313 0-.565-.252-.565-.565 0-.15.06-.29.165-.4l5.29-5.29c.105-.105.25-.165.4-.165s.295.06.4.165l5.29 5.29c.105.11.165.25.165.4 0 .313-.252.565-.565.565zm-11.023-5.3c-.276 0-.5-.224-.5-.5v-4c0-1.93 1.57-3.5 3.5-3.5h5c1.93 0 3.5 1.57 3.5 3.5v4c0 .276-.224.5-.5.5s-.5-.224-.5-.5v-4c0-1.378-1.122-2.5-2.5-2.5h-5c-1.378 0-2.5 1.122-2.5 2.5v4c0 .276-.224.5-.5.5z"/>
-                </svg>
-                <span>Download Android App</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        {/* AI Solutions */}
-        <div>
-          <h4 className="text-lg font-semibold mb-4 border-b border-gray-800 pb-2">AI Solutions</h4>
-          <ul className="space-y-2">
-            {serviceLinks.map((item) => (
-              <li key={item.title}>
-                {item.path.startsWith("http") ? (
-                  <a href={item.path} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400 hover:text-white transition-colors">
-                    {item.title}
-                  </a>
-                ) : (
-                  <Link to={item.path} className="hover:underline text-gray-400 hover:text-white transition-colors">
-                    {item.title}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Resources */}
-        <div>
-          <h4 className="text-lg font-semibold mb-4 border-b border-gray-800 pb-2">Resources</h4>
-          <ul className="space-y-2">
-            {resourceLinks.map((item) => (
-              <li key={item.title}>
-                {item.path.startsWith("http") ? (
-                  <a href={item.path} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400 hover:text-white transition-colors">
-                    {item.title}
-                  </a>
-                ) : (
-                  <Link to={item.path} className="hover:underline text-gray-400 hover:text-white transition-colors">
-                    {item.title}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Company */}
-        <div>
-          <h4 className="text-lg font-semibold mb-4 border-b border-gray-800 pb-2">Company</h4>
-          <ul className="space-y-2">
-            {companyLinks.map((item) => (
-              <li key={item.title}>
-                {item.path.startsWith("http") ? (
-                  <a href={item.path} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400 hover:text-white transition-colors">
-                    {item.title}
-                  </a>
-                ) : (
-                  <Link to={item.path} className="hover:underline text-gray-400 hover:text-white transition-colors">
-                    {item.title}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </div>
-
+    <footer className="bg-white dark:bg-[#02000a] text-gray-900 dark:text-gray-300 pt-20 relative overflow-hidden transition-colors duration-300 border-t border-gray-200 dark:border-white/10">
+      
+      {/* Background glow effects for premium dark mode */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden -z-10">
+        <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] bg-[#33bbcf]/5 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen" />
+        <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] bg-blue-500/5 blur-[120px] rounded-full mix-blend-multiply dark:mix-blend-screen" />
       </div>
 
-      {/* Bottom Copyright & Legal */}
-      <div className="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm px-6">
-        <div className="mb-4 md:mb-0">
-          &copy; {new Date().getFullYear()} TechieHelp. All rights reserved.
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {/* Top Section: Logo, Description, Newsletter */}
+        <div className="flex flex-col lg:flex-row justify-between items-start gap-12 mb-16 pb-12 border-b border-gray-200 dark:border-white/10">
+          <div className="flex flex-col items-start max-w-sm">
+            <img src={logo} alt="TechieHelp Logo" className="w-48 h-auto object-contain mb-2 filter dark:brightness-110" />
+            <span className="text-[#33bbcf] font-bold text-sm tracking-wide uppercase mb-6">
+              AI Workforce Platform
+            </span>
+            <p className="text-gray-500 dark:text-gray-400 text-[15px] mb-8 leading-relaxed font-medium">
+              Deploy <span className="text-[#33bbcf] font-semibold">AI Employees</span> that capture leads, engage customers, automate workflows, and help businesses scale operations 24/7.
+            </p>
+            
+            <div className="flex gap-4 text-gray-500 dark:text-gray-400">
+              <a href="https://www.linkedin.com/company/techiehelp" target="_blank" rel="noopener noreferrer" className="hover:text-[#33bbcf] transition-colors">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://www.f6s.com/company/techiehelp" target="_blank" rel="noopener noreferrer" className="hover:text-[#33bbcf] transition-colors">
+                <F6SIcon size={20} />
+              </a>
+              <a href="https://www.youtube.com/@techiehelp" target="_blank" rel="noopener noreferrer" className="hover:text-[#33bbcf] transition-colors">
+                <Youtube size={20} />
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61564958817014#" target="_blank" rel="noopener noreferrer" className="hover:text-[#33bbcf] transition-colors">
+                <Facebook size={20} />
+              </a>
+              <a href="https://www.instagram.com/techiehelp.in" target="_blank" rel="noopener noreferrer" className="hover:text-[#33bbcf] transition-colors">
+                <Instagram size={20} />
+              </a>
+            </div>
+          </div>
+
+          <div className="w-full lg:w-auto max-w-md">
+            <h5 className="text-xs font-bold text-gray-900 dark:text-white tracking-wider uppercase mb-3">Get Product Updates</h5>
+            <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-5">
+              Receive hiring updates, internship opportunities, AI industry insights, product announcements, startup programs, and exclusive TechieHelp news directly in your inbox.
+            </p>
+            
+            <div className="flex w-full mb-5">
+              <input 
+                type="email" 
+                placeholder="Enter your email" 
+                className="flex-1 bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-l-lg px-4 py-3 text-sm outline-none focus:border-[#33bbcf] transition-colors text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"
+              />
+              <button className="bg-[#33bbcf] hover:bg-[#2cb2c6] text-gray-900 font-bold px-6 py-3 rounded-r-lg transition-colors flex items-center justify-center">
+                Subscribe
+              </button>
+            </div>
+
+            <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4">
+              {[
+                "Hiring Opportunities",
+                "Internship Updates",
+                "AI Industry Insights",
+                "Product Announcements",
+                "Startup Programs"
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-1.5 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-[#33bbcf] dark:hover:text-[#33bbcf] transition-colors cursor-default">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#33bbcf]" />
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-[11px] text-gray-400 dark:text-gray-500 font-medium">
+              Weekly Updates • No Spam • Unsubscribe Anytime
+            </p>
+          </div>
         </div>
-        <div className="flex gap-6">
-          <Link to="/policy" className="hover:text-blue-400 hover:underline transition-colors">Privacy Policy</Link>
-          <Link to="/terms" className="hover:text-blue-400 hover:underline transition-colors">Terms & Conditions</Link>
+
+        {/* Links Grid Section */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-8 gap-y-12 mb-16">
+          
+          {/* Column 1: Company */}
+          <div>
+            <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider">Company</h4>
+            <ul className="space-y-4">
+              {companyLinks.map((item) => (
+                <li key={item.title}>
+                  {item.path.startsWith("http") ? (
+                    <a href={item.path} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#33bbcf] dark:hover:text-[#33bbcf] transition-colors">
+                      {item.title}
+                    </a>
+                  ) : (
+                    <Link to={item.path} className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#33bbcf] dark:hover:text-[#33bbcf] transition-colors">
+                      {item.title}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 2: Legal & Compliance */}
+          <div>
+            <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider">Legal & Compliance</h4>
+            <ul className="space-y-4">
+              {legalLinks.map((item) => (
+                <li key={item.title}>
+                  <Link to={item.path} className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#33bbcf] dark:hover:text-[#33bbcf] transition-colors flex items-center gap-2 group">
+                    {item.title === "Data Processing Agreement" && <ShieldCheck className="w-3 h-3 text-gray-400 group-hover:text-[#33bbcf]" />}
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Solutions */}
+          <div>
+            <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider">Solutions</h4>
+            <ul className="space-y-4">
+              {solutionLinks.map((item) => (
+                <li key={item.title}>
+                  <Link to={item.path} className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#33bbcf] dark:hover:text-[#33bbcf] transition-colors">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Resources */}
+          <div>
+            <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider">Resources</h4>
+            <ul className="space-y-4">
+              {resourceLinks.map((item) => (
+                <li key={item.title}>
+                  {item.path.startsWith("http") ? (
+                    <a href={item.path} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#33bbcf] dark:hover:text-[#33bbcf] transition-colors">
+                      {item.title}
+                    </a>
+                  ) : (
+                    <Link to={item.path} className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#33bbcf] dark:hover:text-[#33bbcf] transition-colors">
+                      {item.title}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5: Trust & Security */}
+          <div>
+            <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-6 uppercase tracking-wider">Trust & Security</h4>
+            <ul className="space-y-4">
+              {trustLinks.map((item) => (
+                <li key={item.title}>
+                  <Link to={item.path} className="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-[#33bbcf] dark:hover:text-[#33bbcf] transition-colors">
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
+
+        {/* Bottom Horizontal Links & Copyright */}
+        <div className="border-t border-gray-200 dark:border-white/10 pt-8 pb-16 flex flex-col md:flex-row justify-between items-center text-gray-500 dark:text-gray-500 text-sm">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4 md:mb-0">
+            <Link to="/privacy-policy" className="hover:text-gray-900 dark:hover:text-white transition-colors">Privacy Policy</Link>
+            <Link to="/terms-and-conditions" className="hover:text-gray-900 dark:hover:text-white transition-colors">Terms of Service</Link>
+            <Link to="/acceptable-use-policy" className="hover:text-gray-900 dark:hover:text-white transition-colors">AUP</Link>
+            <Link to="/data-processing-agreement" className="hover:text-gray-900 dark:hover:text-white transition-colors">DPA</Link>
+          </div>
+          <div className="text-center md:text-right font-medium">
+            &copy; {new Date().getFullYear()} TechieHelp. All rights reserved.
+          </div>
+        </div>
+      </div>
+
+      {/* Massive Bottom Text */}
+      <div className="w-full flex flex-col items-center justify-end overflow-hidden relative pb-4">
+        <div className="absolute top-4 w-full flex justify-center items-center z-10">
+          <div className="bg-white dark:bg-[#02000a] px-4 md:px-8 text-center flex flex-col items-center">
+             <p className="text-gray-600 dark:text-gray-400 tracking-widest text-xs md:text-sm font-bold uppercase mb-1">
+               Empowering Your Business & Tech Journey
+             </p>
+             <div className="flex items-center justify-center gap-2 text-[10px] md:text-xs text-gray-500 dark:text-gray-500 font-semibold">
+               <ShieldCheck className="w-4 h-4 text-[#33bbcf]" />
+               <span>Enterprise Grade Security & Compliance</span>
+             </div>
+          </div>
+          <div className="absolute top-1/2 left-0 w-full border-t border-gray-100 dark:border-white/5 -z-10"></div>
+        </div>
+        <h1 className="text-[14vw] sm:text-[16vw] md:text-[18vw] font-black text-gray-100 dark:text-white/5 leading-[0.8] tracking-tighter select-none text-center whitespace-nowrap mt-8">
+          TECHIEHELP
+        </h1>
       </div>
     </footer>
   );

@@ -38,12 +38,12 @@ const AILeadEngine = () => {
   const [simStep, setSimStep] = useState(0);
   const [isSimRunning, setIsSimRunning] = useState(true);
   const [simLeads, setSimLeads] = useState([
-    { name: "Rahul Sharma", company: "JIET Jodhpur", budget: "₹5,00,000", score: "Hot 🔥" },
-    { name: "Sarah Jenkins", company: "Apex Digital", budget: "$10,000", score: "Warm 🟡" },
-    { name: "Amit Verma", company: "Jaipur Real Estate", budget: "₹15,00,000", score: "Hot 🔥" }
+    { name: "Rahul Sharma", company: "JIET Jodhpur", budget: "₹5,00,000", score: "Hot " },
+    { name: "Sarah Jenkins", company: "Apex Digital", budget: "$10,000", score: "Warm �" },
+    { name: "Amit Verma", company: "Jaipur Real Estate", budget: "₹15,00,000", score: "Hot " }
   ]);
   const [currentLeadIdx, setCurrentLeadIdx] = useState(0);
-  
+
   // Hero Step-by-Step Cycle State
   const [activeStep, setActiveStep] = useState(0);
 
@@ -63,7 +63,7 @@ const AILeadEngine = () => {
   // Simulation Steps Data
   const simSteps = [
     { title: "New Lead Detected", status: "ACTIVE", desc: "User filled contact form on website / WhatsApp", icon: <Users className="w-5 h-5 text-blue-400" /> },
-    { title: "AI Qualification Running", status: "PROCESSING", desc: "Analyzing budget, authority, need, and timeline (BANT)", icon: <Activity className="w-5 h-5 text-purple-400" /> },
+    { title: "AI Qualification Running", status: "PROCESSING", desc: "Analyzing budget, authority, need, and timeline (BANT)", icon: <Activity className="w-5 h-5 text-[#33bbcf]" /> },
     { title: "Email Sent", status: "SYNCED", desc: "Sent custom email proposal matching prospect intent", icon: <Mail className="w-5 h-5 text-cyan-400" /> },
     { title: "WhatsApp Sent", status: "SYNCED", desc: "Followed up on WhatsApp with booking calendar link", icon: <MessageCircle className="w-5 h-5 text-green-400" /> },
     { title: "CRM Updated", status: "QUALIFIED", desc: "Lead classified as HOT and synced to Google Sheets & HubSpot", icon: <Database className="w-5 h-5 text-yellow-400" /> },
@@ -161,14 +161,14 @@ const AILeadEngine = () => {
       <div className="fixed bottom-[15%] right-[15%] w-[400px] h-[400px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Breadcrumbs */}
         <div className="flex items-center gap-2 text-xs text-gray-500 mb-8 border border-white/5 bg-white/[0.02] backdrop-blur-md w-fit px-4 py-2 rounded-full">
           <span>Home</span>
-          <span className="text-blue-500/50">→</span>
+          <span className="text-[#33bbcf]/50">→</span>
           <span>Services</span>
-          <span className="text-blue-500/50">→</span>
-          <span className="text-white font-semibold">AI Lead Engine</span>
+          <span className="text-[#33bbcf]/50">→</span>
+          <span className="text-gray-900 dark:text-white font-semibold">AI Lead Engine</span>
         </div>
 
         {/* HERO SECTION */}
@@ -190,10 +190,10 @@ const AILeadEngine = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-4xl md:text-6xl font-extrabold text-white leading-[1.1] mb-6 tracking-tighter"
+              className="text-4xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-[1.1] mb-6 tracking-tighter"
             >
               Never Miss <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-500 filter drop-shadow-[0_0_20px_rgba(0,196,255,0.1)]">
+              <span className="text-cyan-gradient font-bold">
                 Another Lead Again.
               </span>
             </motion.h1>
@@ -202,7 +202,7 @@ const AILeadEngine = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-lg text-gray-400 leading-relaxed mb-8 max-w-xl"
+              className="text-lg text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-xl"
             >
               TechieHelp AI Lead Engine captures every inquiry, responds instantly through Email and WhatsApp, qualifies prospects using AI, updates your CRM, and alerts your team automatically.
             </motion.p>
@@ -218,7 +218,7 @@ const AILeadEngine = () => {
               <Sparkles className="w-10 h-10 text-blue-400 shrink-0 group-hover:rotate-12 transition-transform" />
               <div>
                 <p className="text-[10px] font-mono uppercase tracking-[3px] text-blue-400 font-semibold mb-0.5">Brand Commitment</p>
-                <p className="text-sm font-semibold text-white leading-relaxed">
+                <p className="text-sm font-semibold text-gray-900 dark:text-white leading-relaxed">
                   We don't sell software. We build AI Employees that capture, qualify, and convert leads automatically.
                 </p>
               </div>
@@ -256,7 +256,7 @@ const AILeadEngine = () => {
                 href="https://wa.me/917673825079?text=Hello%20TechieHelp%20Team,%20I%20am%20interested%20in%20deploying%20the%20AI%20Lead%20Engine%20for%20my%20business.%20Please%20guide%20me%20further."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-bold rounded-xl shadow-lg shadow-blue-500/10 hover:shadow-blue-500/20 active:scale-95 transition-all text-sm flex items-center gap-2"
+                className="btn-primary"
               >
                 <span>Get My AI Lead Engine</span> <ArrowRight className="w-4 h-4" />
               </a>
@@ -264,13 +264,13 @@ const AILeadEngine = () => {
                 href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-4 bg-white/5 border border-white/10 hover:bg-white/10 text-white font-bold rounded-xl transition-all active:scale-95 text-sm flex items-center gap-2"
+                className="px-8 py-4 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white font-bold rounded-xl transition-all active:scale-95 text-sm flex items-center gap-2"
               >
                 <span>Book Free Strategy Call</span>
               </a>
               <a
                 href="#simulator"
-                className="px-6 py-4 text-gray-400 hover:text-white font-semibold transition-colors text-sm flex items-center gap-1.5"
+                className="px-6 py-4 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white font-semibold transition-colors text-sm flex items-center gap-1.5"
               >
                 <Play className="w-4 h-4 text-blue-400 fill-current" /> Watch Demo
               </a>
@@ -294,45 +294,44 @@ const AILeadEngine = () => {
                 </div>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" />
-                  <span className="text-[10px] font-mono text-gray-400 tracking-wider">ACTIVE AGENT SYSTEM</span>
+                  <span className="text-[10px] font-mono text-gray-600 dark:text-gray-400 tracking-wider">ACTIVE AGENT SYSTEM</span>
                 </div>
               </div>
 
               {/* Central Widget wrapper with timeline */}
               <div className="relative pr-8">
-                
+
                 {/* Vertical Connector track line */}
-                <div className="absolute right-3.5 top-[8%] bottom-[8%] w-[2px] bg-white/10 md:block hidden z-0 pointer-events-none" />
+                <div className="absolute right-3.5 top-[8%] bottom-[8%] w-[2px] bg-gray-100 dark:bg-white/10 md:block hidden z-0 pointer-events-none" />
 
                 <div className="space-y-4 relative z-10">
-                  
+
                   {/* Step 1 Card: Capture */}
-                  <div 
+                  <div
                     onClick={() => setActiveStep(0)}
-                    className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${
-                      activeStep === 0
+                    className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${activeStep === 0
                         ? "bg-blue-500/10 border-blue-500/40 shadow-[0_0_20px_rgba(59,130,246,0.2)] opacity-100 scale-[1.02]"
                         : "bg-white/[0.02] border-white/5 opacity-40 hover:opacity-60"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className={`text-[10px] font-mono uppercase tracking-widest ${activeStep === 0 ? "text-blue-400 font-bold" : "text-gray-500"}`}>Step 1: Capture</span>
-                      <span className={`text-[9px] px-2 py-0.5 rounded font-mono font-bold ${activeStep === 0 ? "bg-blue-500/20 text-blue-300 shadow-[0_0_8px_rgba(59,130,246,0.3)]" : "bg-white/5 text-gray-500"}`}>100% SUCCESS</span>
+                      <span className={`text-[9px] px-2 py-0.5 rounded font-mono font-bold ${activeStep === 0 ? "bg-blue-500/20 text-blue-300 shadow-[0_0_8px_rgba(59,130,246,0.3)]" : "bg-gray-100 dark:bg-white/5 text-gray-500"}`}>100% SUCCESS</span>
                     </div>
-                    <h4 className="text-sm font-bold text-white mb-1">Multi-Channel Ingestion</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">Website, Social Ads, GBP, and WhatsApp funneled to AI instantly.</p>
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1">Multi-Channel Ingestion</h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Website, Social Ads, GBP, and WhatsApp funneled to AI instantly.</p>
 
                     {/* Step 1 Micro-Animation */}
                     <AnimatePresence>
                       {activeStep === 0 && (
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
                           className="mt-3 flex gap-2 flex-wrap"
                         >
-                          {["🌐 Website", "💬 WhatsApp", "📊 FB Ads", "📍 GBP"].map((src, i) => (
-                            <motion.span 
+                          {["� Website", "� WhatsApp", " FB Ads", "� GBP"].map((src, i) => (
+                            <motion.span
                               key={src}
                               initial={{ opacity: 0, scale: 0.8 }}
                               animate={{ opacity: 1, scale: 1 }}
@@ -348,34 +347,32 @@ const AILeadEngine = () => {
 
                     {/* Timeline Node */}
                     <div className="absolute right-[-25px] top-1/2 -translate-y-1/2 z-10 md:block hidden">
-                      <div className={`w-3.5 h-3.5 rounded-full border-2 border-[#030014] transition-all duration-500 ${
-                        activeStep === 0 
-                          ? "bg-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.8)] scale-125" 
+                      <div className={`w-3.5 h-3.5 rounded-full border-2 border-[#030014] transition-all duration-500 ${activeStep === 0
+                          ? "bg-blue-400 shadow-[0_0_12px_rgba(59,130,246,0.8)] scale-125"
                           : "bg-white/15 scale-90"
-                      }`} />
+                        }`} />
                     </div>
                   </div>
 
                   {/* Step 2 Card: Qualify */}
-                  <div 
+                  <div
                     onClick={() => setActiveStep(1)}
-                    className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${
-                      activeStep === 1
+                    className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${activeStep === 1
                         ? "bg-purple-500/10 border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.2)] opacity-100 scale-[1.02]"
                         : "bg-white/[0.02] border-white/5 opacity-40 hover:opacity-60"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between mb-2">
-                      <span className={`text-[10px] font-mono uppercase tracking-widest ${activeStep === 1 ? "text-purple-400 font-bold" : "text-gray-500"}`}>Step 2: Qualify</span>
-                      <span className={`text-[9px] px-2 py-0.5 rounded font-mono font-bold ${activeStep === 1 ? "bg-purple-500/20 text-purple-300 shadow-[0_0_8px_rgba(168,85,247,0.3)]" : "bg-white/5 text-gray-500"}`}>AI ACTIVE</span>
+                      <span className={`text-[10px] font-mono uppercase tracking-widest ${activeStep === 1 ? "text-[#33bbcf] font-bold" : "text-gray-500"}`}>Step 2: Qualify</span>
+                      <span className={`text-[9px] px-2 py-0.5 rounded font-mono font-bold ${activeStep === 1 ? "bg-purple-500/20 text-purple-300 shadow-[0_0_8px_rgba(168,85,247,0.3)]" : "bg-gray-100 dark:bg-white/5 text-gray-500"}`}>AI ACTIVE</span>
                     </div>
-                    <h4 className="text-sm font-bold text-white mb-1">Intent Analysis & Lead Scoring</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">AI analyzes budget, authority, and timelines in under 3 seconds.</p>
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1">Intent Analysis & Lead Scoring</h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">AI analyzes budget, authority, and timelines in under 3 seconds.</p>
 
                     {/* Step 2 Micro-Animation */}
                     <AnimatePresence>
                       {activeStep === 1 && (
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
@@ -387,7 +384,7 @@ const AILeadEngine = () => {
                             { label: "Need", val: "High ✓" },
                             { label: "Timeline", val: "Immediate ✓" }
                           ].map((item, i) => (
-                            <motion.div 
+                            <motion.div
                               key={item.label}
                               initial={{ opacity: 0, x: -5 }}
                               animate={{ opacity: 1, x: 0 }}
@@ -404,34 +401,32 @@ const AILeadEngine = () => {
 
                     {/* Timeline Node */}
                     <div className="absolute right-[-25px] top-1/2 -translate-y-1/2 z-10 md:block hidden">
-                      <div className={`w-3.5 h-3.5 rounded-full border-2 border-[#030014] transition-all duration-500 ${
-                        activeStep === 1 
-                          ? "bg-purple-400 shadow-[0_0_12px_rgba(168,85,247,0.8)] scale-125" 
+                      <div className={`w-3.5 h-3.5 rounded-full border-2 border-[#030014] transition-all duration-500 ${activeStep === 1
+                          ? "bg-purple-400 shadow-[0_0_12px_rgba(168,85,247,0.8)] scale-125"
                           : "bg-white/15 scale-90"
-                      }`} />
+                        }`} />
                     </div>
                   </div>
 
                   {/* Step 3 Card: Act */}
-                  <div 
+                  <div
                     onClick={() => setActiveStep(2)}
-                    className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${
-                      activeStep === 2
+                    className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${activeStep === 2
                         ? "bg-cyan-500/10 border-cyan-500/40 shadow-[0_0_20px_rgba(6,182,212,0.2)] opacity-100 scale-[1.02]"
                         : "bg-white/[0.02] border-white/5 opacity-40 hover:opacity-60"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between mb-2">
                       <span className={`text-[10px] font-mono uppercase tracking-widest ${activeStep === 2 ? "text-cyan-400 font-bold" : "text-gray-500"}`}>Step 3: Act</span>
-                      <span className={`text-[9px] px-2 py-0.5 rounded font-mono font-bold ${activeStep === 2 ? "bg-cyan-500/20 text-cyan-300 shadow-[0_0_8px_rgba(6,182,212,0.3)]" : "bg-white/5 text-gray-500"}`}>SYNCED</span>
+                      <span className={`text-[9px] px-2 py-0.5 rounded font-mono font-bold ${activeStep === 2 ? "bg-cyan-500/20 text-cyan-300 shadow-[0_0_8px_rgba(6,182,212,0.3)]" : "bg-gray-100 dark:bg-white/5 text-gray-500"}`}>SYNCED</span>
                     </div>
-                    <h4 className="text-sm font-bold text-white mb-1">Instant Response & Sync</h4>
-                    <p className="text-xs text-gray-400 leading-relaxed">Sends custom PDF catalog via WhatsApp/Email. Syncs CRM & alerts sales team.</p>
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1">Instant Response & Sync</h4>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Sends custom PDF catalog via WhatsApp/Email. Syncs CRM & alerts sales team.</p>
 
                     {/* Step 3 Micro-Animation */}
                     <AnimatePresence>
                       {activeStep === 2 && (
-                        <motion.div 
+                        <motion.div
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
@@ -441,8 +436,8 @@ const AILeadEngine = () => {
                             <span className="text-gray-500">Proposal Delivery:</span>
                             <span className="text-green-400 font-bold">100% Sent ✓</span>
                           </div>
-                          <div className="w-full bg-white/5 rounded-full h-1 overflow-hidden">
-                            <motion.div 
+                          <div className="w-full bg-gray-100 dark:bg-white/5 rounded-full h-1 overflow-hidden">
+                            <motion.div
                               initial={{ width: "0%" }}
                               animate={{ width: "100%" }}
                               transition={{ duration: 2, ease: "easeInOut" }}
@@ -459,11 +454,10 @@ const AILeadEngine = () => {
 
                     {/* Timeline Node */}
                     <div className="absolute right-[-25px] top-1/2 -translate-y-1/2 z-10 md:block hidden">
-                      <div className={`w-3.5 h-3.5 rounded-full border-2 border-[#030014] transition-all duration-500 ${
-                        activeStep === 2 
-                          ? "bg-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.8)] scale-125" 
+                      <div className={`w-3.5 h-3.5 rounded-full border-2 border-[#030014] transition-all duration-500 ${activeStep === 2
+                          ? "bg-cyan-400 shadow-[0_0_12px_rgba(6,182,212,0.8)] scale-125"
                           : "bg-white/15 scale-90"
-                      }`} />
+                        }`} />
                     </div>
                   </div>
 
@@ -477,10 +471,10 @@ const AILeadEngine = () => {
         <section id="simulator" className="mb-28 scroll-mt-24">
           <div className="text-center mb-12">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">Live Simulation</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Watch The AI Lead Employee In Action
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               See how the engine detects incoming traffic, qualifies it, responds instantly, and coordinates your stack in real-time.
             </p>
           </div>
@@ -493,20 +487,20 @@ const AILeadEngine = () => {
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-transparent blur-xl pointer-events-none" />
                 <div>
                   <div className="flex items-center justify-between mb-6">
-                    <h4 className="text-xs font-mono uppercase text-gray-400 tracking-wider">Incoming Lead Detail</h4>
+                    <h4 className="text-xs font-mono uppercase text-gray-600 dark:text-gray-400 tracking-wider">Incoming Lead Detail</h4>
                     <button
                       onClick={() => setIsSimRunning(!isSimRunning)}
-                      className="p-2 rounded-xl bg-white/5 hover:bg-white/10 text-white transition-colors flex items-center gap-1.5 text-[10px] font-mono font-semibold"
+                      className="p-2 rounded-xl bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white transition-colors flex items-center gap-1.5 text-[10px] font-mono font-semibold"
                     >
                       <RefreshCw className={`w-3.5 h-3.5 ${isSimRunning ? "animate-spin" : ""}`} />
                       {isSimRunning ? "Pause Sim" : "Resume Sim"}
                     </button>
                   </div>
-                  
+
                   <div className="space-y-4">
                     <div>
                       <p className="text-[10px] uppercase text-gray-500 font-mono">Lead Name</p>
-                      <p className="text-base font-bold text-white">{currentLead.name}</p>
+                      <p className="text-base font-bold text-gray-900 dark:text-white">{currentLead.name}</p>
                     </div>
                     <div>
                       <p className="text-[10px] uppercase text-gray-500 font-mono">Company / Organization</p>
@@ -518,7 +512,7 @@ const AILeadEngine = () => {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase text-gray-500 font-mono">AI Lead Score</p>
-                      <span className="inline-block px-2.5 py-1 text-xs font-bold rounded-lg bg-white/5 border border-white/10 text-yellow-300 mt-1">
+                      <span className="inline-block px-2.5 py-1 text-xs font-bold rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-yellow-300 mt-1">
                         {currentLead.score}
                       </span>
                     </div>
@@ -527,7 +521,7 @@ const AILeadEngine = () => {
 
                 <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-500">
                   <span>Simulation Cycle</span>
-                  <span className="font-mono text-white">Lead {currentLeadIdx + 1} of {simLeads.length}</span>
+                  <span className="font-mono text-gray-900 dark:text-white">Lead {currentLeadIdx + 1} of {simLeads.length}</span>
                 </div>
               </div>
             </div>
@@ -535,23 +529,22 @@ const AILeadEngine = () => {
             {/* Processor Actions list */}
             <div className="lg:col-span-7">
               <div className="glass-morphism border-white/5 bg-white/[0.01] p-6 rounded-3xl h-full shadow-2xl">
-                <h4 className="text-xs font-mono uppercase text-gray-400 tracking-wider mb-6 text-left">Pipeline Execution Logs</h4>
-                
+                <h4 className="text-xs font-mono uppercase text-gray-600 dark:text-gray-400 tracking-wider mb-6 text-left">Pipeline Execution Logs</h4>
+
                 <div className="space-y-3">
                   {simSteps.map((step, idx) => {
                     const isActive = idx === simStep;
                     const isCompleted = idx < simStep;
-                    
+
                     return (
                       <div
                         key={step.title}
-                        className={`flex items-start gap-4 p-3.5 rounded-2xl border transition-all duration-500 ${
-                          isActive
+                        className={`flex items-start gap-4 p-3.5 rounded-2xl border transition-all duration-500 ${isActive
                             ? "bg-white/[0.04] border-blue-500/30 shadow-lg"
                             : isCompleted
-                            ? "bg-white/[0.01] border-green-500/10 opacity-70"
-                            : "bg-transparent border-transparent opacity-40"
-                        }`}
+                              ? "bg-white/[0.01] border-green-500/10 opacity-70"
+                              : "bg-transparent border-transparent opacity-40"
+                          }`}
                       >
                         {/* Status Icon */}
                         <div className="shrink-0 mt-0.5">
@@ -560,9 +553,8 @@ const AILeadEngine = () => {
                               <Check className="w-4 h-4 stroke-[3]" />
                             </div>
                           ) : (
-                            <div className={`w-8 h-8 rounded-full flex items-center justify-center border transition-colors duration-500 ${
-                              isActive ? "bg-blue-600/20 border-blue-500/30" : "bg-white/5 border-white/10"
-                            }`}>
+                            <div className={`w-8 h-8 rounded-full flex items-center justify-center border transition-colors duration-500 ${isActive ? "bg-blue-600/20 border-blue-500/30" : "bg-gray-100 dark:bg-white/5 border-gray-200 dark:border-white/10"
+                              }`}>
                               {step.icon}
                             </div>
                           )}
@@ -571,14 +563,12 @@ const AILeadEngine = () => {
                         {/* Text and Desc */}
                         <div className="flex-1 text-left min-w-0">
                           <div className="flex items-center justify-between gap-4">
-                            <h5 className={`text-sm font-bold transition-colors duration-500 ${
-                              isActive ? "text-white" : isCompleted ? "text-gray-300" : "text-gray-500"
-                            }`}>{step.title}</h5>
-                            <span className={`text-[8px] font-mono px-2 py-0.5 rounded font-bold ${
-                              step.status === "ACTIVE" ? "bg-blue-500/20 text-blue-400" :
-                              step.status === "PROCESSING" ? "bg-purple-500/20 text-purple-400 animate-pulse" :
-                              step.status === "QUALIFIED" ? "bg-yellow-500/20 text-yellow-400" : "bg-green-500/20 text-green-400"
-                            }`}>{step.status}</span>
+                            <h5 className={`text-sm font-bold transition-colors duration-500 ${isActive ? "text-gray-900 dark:text-white" : isCompleted ? "text-gray-300" : "text-gray-500"
+                              }`}>{step.title}</h5>
+                            <span className={`text-[8px] font-mono px-2 py-0.5 rounded font-bold ${step.status === "ACTIVE" ? "bg-blue-500/20 text-blue-400" :
+                                step.status === "PROCESSING" ? "bg-purple-500/20 text-[#33bbcf] animate-pulse" :
+                                  step.status === "QUALIFIED" ? "bg-yellow-500/20 text-yellow-400" : "bg-green-500/20 text-green-400"
+                              }`}>{step.status}</span>
                           </div>
                           <p className="text-xs text-gray-500 mt-1 leading-normal truncate">{step.desc}</p>
                         </div>
@@ -598,10 +588,10 @@ const AILeadEngine = () => {
 
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-red-400 mb-2 font-bold">The Leakage Problem</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Most Businesses Lose Revenue Before Sales Even Starts
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               The cost of delay is massive. When a prospect submits an inquiry, they expect an immediate response. Every minute of delay leaks conversion.
             </p>
           </div>
@@ -612,8 +602,8 @@ const AILeadEngine = () => {
               <div className="space-y-4">
                 {/* 100 Leads */}
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-right text-xs font-mono text-gray-400">100 Leads Recd</span>
-                  <div className="flex-1 h-10 rounded-xl bg-gradient-to-r from-blue-600 to-blue-500 flex items-center justify-between px-4 text-white font-bold text-xs relative overflow-hidden">
+                  <span className="w-24 text-right text-xs font-mono text-gray-600 dark:text-gray-400">100 Leads Recd</span>
+                  <div className="btn-primary">
                     <span className="relative z-10">Total Enquiries Received</span>
                     <span className="relative z-10 font-mono">100%</span>
                   </div>
@@ -621,9 +611,9 @@ const AILeadEngine = () => {
 
                 {/* 50 Contacted */}
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-right text-xs font-mono text-gray-400">50 Contacted</span>
+                  <span className="w-24 text-right text-xs font-mono text-gray-600 dark:text-gray-400">50 Contacted</span>
                   <div className="flex-1 flex items-center gap-2">
-                    <div className="w-[50%] h-10 rounded-xl bg-gradient-to-r from-red-600/70 to-red-500/70 flex items-center justify-between px-4 text-white font-bold text-xs relative overflow-hidden">
+                    <div className="btn-primary">
                       <span className="relative z-10">Speed Delay Dropoff</span>
                       <span className="relative z-10 font-mono">50%</span>
                     </div>
@@ -633,9 +623,9 @@ const AILeadEngine = () => {
 
                 {/* 20 Followed Up */}
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-right text-xs font-mono text-gray-400">20 Followed Up</span>
+                  <span className="w-24 text-right text-xs font-mono text-gray-600 dark:text-gray-400">20 Followed Up</span>
                   <div className="flex-1 flex items-center gap-2">
-                    <div className="w-[20%] h-10 rounded-xl bg-gradient-to-r from-red-800/80 to-red-700/80 flex items-center justify-between px-4 text-white font-bold text-xs relative overflow-hidden">
+                    <div className="btn-primary">
                       <span className="relative z-10">Manual Followup Delay</span>
                       <span className="relative z-10 font-mono">20%</span>
                     </div>
@@ -645,7 +635,7 @@ const AILeadEngine = () => {
 
                 {/* 5 Converted */}
                 <div className="flex items-center gap-4">
-                  <span className="w-24 text-right text-xs font-mono text-gray-400">5 Converted</span>
+                  <span className="w-24 text-right text-xs font-mono text-gray-600 dark:text-gray-400">5 Converted</span>
                   <div className="flex-1 flex items-center gap-2">
                     <div className="w-[5%] h-10 rounded-xl bg-green-500 flex items-center justify-center text-black font-extrabold text-xs relative overflow-hidden shadow-[0_0_15px_#22c55e]">
                       <span className="relative z-10 font-mono">5%</span>
@@ -662,11 +652,11 @@ const AILeadEngine = () => {
                 <ShieldAlert className="w-5 h-5 shrink-0" />
                 <span className="text-xs font-bold font-mono tracking-widest uppercase">CRITICAL REVENUE LEAK</span>
               </div>
-              <h4 className="text-2xl font-bold text-white mb-4">Most businesses lose opportunities because nobody responds instantly.</h4>
-              <p className="text-gray-400 leading-relaxed text-sm md:text-base mb-6">
+              <h4 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Most businesses lose opportunities because nobody responds instantly.</h4>
+              <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-sm md:text-base mb-6">
                 Leads are perishable. If a prospect inquiries and has to wait hours for a response, they have already gone to a competitor. Manual follow-ups are too slow, inconsistent, and expensive.
               </p>
-              <div className="border-l-4 border-red-500 pl-4 py-1 italic text-lg text-white font-bold">
+              <div className="border-l-4 border-red-500 pl-4 py-1 italic text-lg text-gray-900 dark:text-white font-bold">
                 "Speed is revenue. The business that answers first wins the contract."
               </div>
             </div>
@@ -677,32 +667,32 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">System Architecture</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               How The AI Lead Engine Works
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               A unified pipeline that bridges your marketing channels with your AI and sales stack seamlessly.
             </p>
           </div>
 
           <div className="glass-morphism border-white/5 bg-white/[0.01] p-8 rounded-[2rem] max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
-            
+
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
-              
+
               {/* Traffic Sources Column */}
               <div className="md:col-span-3 space-y-3">
                 <h4 className="text-xs font-mono uppercase text-gray-500 tracking-widest text-center md:text-left mb-2">1. Inbound Channels</h4>
                 {[
-                  { name: "Website Form", detail: "HTML / WordPress", icon: "🌐" },
-                  { name: "WhatsApp Message", detail: "Customer chat init", icon: "💬" },
-                  { name: "Facebook Lead Ad", detail: "API Direct Sync", icon: "👥" },
-                  { name: "Google Business Profile", detail: "GBP inquiries", icon: "📍" }
+                  { name: "Website Form", detail: "HTML / WordPress", icon: "�" },
+                  { name: "WhatsApp Message", detail: "Customer chat init", icon: "�" },
+                  { name: "Facebook Lead Ad", detail: "API Direct Sync", icon: "�" },
+                  { name: "Google Business Profile", detail: "GBP inquiries", icon: "�" }
                 ].map((item) => (
-                  <div key={item.name} className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-left flex gap-3 items-center hover:bg-white/[0.04] hover:border-white/10 transition-all">
+                  <div key={item.name} className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-left flex gap-3 items-center hover:bg-white/[0.04] hover:border-gray-200 dark:border-white/10 transition-all">
                     <span className="text-lg">{item.icon}</span>
                     <div>
-                      <p className="text-xs font-bold text-white">{item.name}</p>
+                      <p className="text-xs font-bold text-gray-900 dark:text-white">{item.name}</p>
                       <p className="text-[9px] text-gray-500 font-mono">{item.detail}</p>
                     </div>
                   </div>
@@ -712,27 +702,27 @@ const AILeadEngine = () => {
               {/* Connecting Flow Indicator Column */}
               <div className="md:col-span-1 flex flex-col justify-center items-center gap-1.5 py-4">
                 <div className="w-1 h-8 bg-gradient-to-b from-blue-500 to-purple-500 rounded-full md:block hidden" />
-                <ArrowDown className="w-5 h-5 text-purple-400 md:hidden block animate-bounce" />
-                <span className="text-[8px] font-mono text-purple-400 uppercase tracking-widest md:-rotate-90 md:my-6">Process</span>
+                <ArrowDown className="w-5 h-5 text-[#33bbcf] md:hidden block animate-bounce" />
+                <span className="text-[8px] font-mono text-[#33bbcf] uppercase tracking-widest md:-rotate-90 md:my-6">Process</span>
               </div>
 
               {/* Core Processor Column */}
               <div className="md:col-span-4 flex flex-col gap-4">
                 <h4 className="text-xs font-mono uppercase text-gray-500 tracking-widest text-center mb-2">2. Processing Core</h4>
-                
+
                 <div className="relative group w-full">
                   <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl blur-[10px] opacity-20 group-hover:opacity-40 transition-opacity" />
                   <div className="relative p-6 rounded-2xl bg-gradient-to-br from-blue-900/30 to-purple-900/30 border border-blue-500/20 backdrop-blur-md text-center">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mx-auto mb-4 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]">
+                    <div className="btn-primary">
                       <Sparkles className="w-6 h-6 animate-pulse" />
                     </div>
-                    <h5 className="text-sm font-black text-white uppercase tracking-wider mb-1">AI Lead Engine</h5>
-                    <p className="text-xs text-gray-400 leading-relaxed">Central hub parsing lead data, intent classification, and database logging.</p>
+                    <h5 className="text-sm font-black text-gray-900 dark:text-white uppercase tracking-wider mb-1">AI Lead Engine</h5>
+                    <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">Central hub parsing lead data, intent classification, and database logging.</p>
                   </div>
                 </div>
 
                 <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center flex items-center justify-center gap-2">
-                  <Activity className="w-4 h-4 text-purple-400 animate-pulse" />
+                  <Activity className="w-4 h-4 text-[#33bbcf] animate-pulse" />
                   <span className="text-[10px] font-mono uppercase tracking-widest text-purple-300">AI Qualification Matrix</span>
                 </div>
               </div>
@@ -753,10 +743,10 @@ const AILeadEngine = () => {
                   { name: "CRM Sync", detail: "Hubspot/Sheets logs", icon: <Database className="w-4 h-4 text-yellow-400" /> },
                   { name: "Sales Team Alert", detail: "Instant Slack notify", icon: <AlertCircle className="w-4 h-4 text-red-400" /> }
                 ].map((item) => (
-                  <div key={item.name} className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-left flex gap-3 items-center hover:bg-white/[0.04] hover:border-white/10 transition-all">
-                    <div className="p-1.5 rounded-lg bg-white/5 border border-white/10">{item.icon}</div>
+                  <div key={item.name} className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-left flex gap-3 items-center hover:bg-white/[0.04] hover:border-gray-200 dark:border-white/10 transition-all">
+                    <div className="p-1.5 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10">{item.icon}</div>
                     <div>
-                      <p className="text-xs font-bold text-white">{item.name}</p>
+                      <p className="text-xs font-bold text-gray-900 dark:text-white">{item.name}</p>
                       <p className="text-[9px] text-gray-500 font-mono">{item.detail}</p>
                     </div>
                   </div>
@@ -771,10 +761,10 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">Operational Impact</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Business Performance Reimagined
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               The metrics that count. Deploying the AI Lead Engine translates to direct, measurable growth.
             </p>
           </div>
@@ -783,16 +773,16 @@ const AILeadEngine = () => {
             {[
               { label: "Response Time", value: "< 45 Secs", icon: <Clock className="w-5 h-5 text-blue-400" />, desc: "Answering lead instantly" },
               { label: "Lead Capture Rate", value: "100%", icon: <Users className="w-5 h-5 text-green-400" />, desc: "Zero enquiries leaked" },
-              { label: "Qualification Accuracy", value: "92%", icon: <Activity className="w-5 h-5 text-purple-400" />, desc: "AI parsing criteria" },
+              { label: "Qualification Accuracy", value: "92%", icon: <Activity className="w-5 h-5 text-[#33bbcf]" />, desc: "AI parsing criteria" },
               { label: "Manual Work Reduced", value: "90%", icon: <Database className="w-5 h-5 text-yellow-400" />, desc: "Repetitive tasks deleted" },
               { label: "Conversion Increase", value: "3X Growth", icon: <TrendingUp className="w-5 h-5 text-red-400" />, desc: "High conversion speeds" }
             ].map((kpi) => (
               <div key={kpi.label} className="glass-morphism border-white/5 bg-white/[0.01] p-5 rounded-2xl text-left hover:bg-white/[0.03] transition-all flex flex-col justify-between shadow-lg">
-                <div className="p-2 bg-white/5 border border-white/10 rounded-xl w-fit mb-4">{kpi.icon}</div>
+                <div className="p-2 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl w-fit mb-4">{kpi.icon}</div>
                 <div>
                   <h4 className="text-xs text-gray-500 font-semibold mb-1 uppercase tracking-wider">{kpi.label}</h4>
-                  <p className="text-2xl font-black text-white tracking-tight leading-none mb-2">{kpi.value}</p>
-                  <p className="text-[10px] text-gray-400 leading-normal">{kpi.desc}</p>
+                  <p className="text-2xl font-black text-gray-900 dark:text-white tracking-tight leading-none mb-2">{kpi.value}</p>
+                  <p className="text-[10px] text-gray-600 dark:text-gray-400 leading-normal">{kpi.desc}</p>
                 </div>
               </div>
             ))}
@@ -803,10 +793,10 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">System Features</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               What You Get With TechieHelp Deployment
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               We configure, integrate, and test every aspect of your AI Lead Engine to deliver a plug-and-play AI Employee.
             </p>
           </div>
@@ -826,12 +816,12 @@ const AILeadEngine = () => {
               { title: "Team Notifications", desc: "Slack, Discord, or WhatsApp alerts for qualified leads." },
               { title: "Deployment Support", desc: "Complete testing, training, and 7-day post-launch optimization." }
             ].map((item) => (
-              <div key={item.title} className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl text-left hover:border-white/10 transition-all flex gap-3">
+              <div key={item.title} className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl text-left hover:border-gray-200 dark:border-white/10 transition-all flex gap-3">
                 <div className="w-5 h-5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-1.5">{item.title}</h4>
+                  <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-1.5">{item.title}</h4>
                   <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
@@ -843,10 +833,10 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">AI Matrix</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Automated Lead Classification
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               The AI qualifies leads automatically using BANT analysis and scores them to ensure your sales team calls the right customer first.
             </p>
           </div>
@@ -862,8 +852,8 @@ const AILeadEngine = () => {
                 </div>
                 <span className="text-[10px] font-mono text-gray-500">SCORE: 90-100</span>
               </div>
-              <h4 className="text-xl font-bold text-white mb-2">Ready To Buy</h4>
-              <p className="text-xs text-gray-400 leading-relaxed mb-6">High budget range, immediate timeline requirement, matches decision-maker profile.</p>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Ready To Buy</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-6">High budget range, immediate timeline requirement, matches decision-maker profile.</p>
               <div className="p-3 rounded-xl bg-red-500/5 border border-red-500/10 text-red-400 font-mono text-[10px] font-bold uppercase tracking-widest text-center">
                 Immediate Action Required
               </div>
@@ -873,14 +863,14 @@ const AILeadEngine = () => {
             <div className="glass-morphism border-white/5 bg-[#07021a]/50 p-8 rounded-3xl text-left relative overflow-hidden shadow-2xl">
               <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-600/5 blur-xl pointer-events-none" />
               <div className="flex items-center justify-between mb-6">
-                <div className="p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-xl text-yellow-500 flex items-center gap-2">
+                <div className="p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-xl text-[#33bbcf] flex items-center gap-2">
                   <Sparkles className="w-6 h-6" />
                   <span className="text-xs font-mono font-bold uppercase tracking-widest">Warm Leads</span>
                 </div>
                 <span className="text-[10px] font-mono text-gray-500">SCORE: 60-89</span>
               </div>
-              <h4 className="text-xl font-bold text-white mb-2">Interested</h4>
-              <p className="text-xs text-gray-400 leading-relaxed mb-6">Expressed clear interest, matches target industry, budget validation is needed.</p>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Interested</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-6">Expressed clear interest, matches target industry, budget validation is needed.</p>
               <div className="p-3 rounded-xl bg-yellow-500/5 border border-yellow-500/10 text-yellow-400 font-mono text-[10px] font-bold uppercase tracking-widest text-center">
                 Needs Follow-Up Evaluation
               </div>
@@ -890,14 +880,14 @@ const AILeadEngine = () => {
             <div className="glass-morphism border-white/5 bg-[#07021a]/50 p-8 rounded-3xl text-left relative overflow-hidden shadow-2xl">
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/5 blur-xl pointer-events-none" />
               <div className="flex items-center justify-between mb-6">
-                <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl text-blue-500 flex items-center gap-2">
+                <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl text-[#33bbcf] flex items-center gap-2">
                   <Clock className="w-6 h-6" />
                   <span className="text-xs font-mono font-bold uppercase tracking-widest">Cold Leads</span>
                 </div>
                 <span className="text-[10px] font-mono text-gray-500">SCORE: 10-59</span>
               </div>
-              <h4 className="text-xl font-bold text-white mb-2">Researching</h4>
-              <p className="text-xs text-gray-400 leading-relaxed mb-6">Browsing resources, no immediate buy intention, low-budget profile matches.</p>
+              <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-2">Researching</h4>
+              <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-6">Browsing resources, no immediate buy intention, low-budget profile matches.</p>
               <div className="p-3 rounded-xl bg-blue-500/5 border border-blue-500/10 text-blue-400 font-mono text-[10px] font-bold uppercase tracking-widest text-center">
                 Long-Term Nurturing Loop
               </div>
@@ -909,10 +899,10 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">System Intelligence</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Consolidated Engine Dashboard
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               A premium, real-time analytics panel showing leads captured, qualified conversions, and pipeline valuation.
             </p>
           </div>
@@ -929,10 +919,10 @@ const AILeadEngine = () => {
                 <div key={stat.title} className="p-4 bg-white/[0.02] border border-white/5 rounded-2xl text-left flex justify-between items-center">
                   <div>
                     <h5 className="text-[10px] text-gray-500 font-semibold mb-1 uppercase tracking-wider">{stat.title}</h5>
-                    <p className="text-lg font-black text-white tracking-tight">{stat.val}</p>
+                    <p className="text-lg font-black text-gray-900 dark:text-white tracking-tight">{stat.val}</p>
                     <span className="text-[8px] font-mono text-green-400 font-bold">{stat.change}</span>
                   </div>
-                  <div className="p-2 rounded-xl bg-white/5 border border-white/10 shrink-0">{stat.icon}</div>
+                  <div className="p-2 rounded-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 shrink-0">{stat.icon}</div>
                 </div>
               ))}
             </div>
@@ -942,19 +932,19 @@ const AILeadEngine = () => {
               <div className="lg:col-span-7 p-6 bg-white/[0.02] border border-white/5 rounded-3xl flex flex-col justify-between text-left">
                 <div>
                   <div className="flex justify-between items-center mb-4">
-                    <h5 className="text-xs font-mono uppercase text-gray-400 tracking-wider">Lead Intake Growth</h5>
-                    <div className="flex gap-2 text-[8px] font-mono font-bold text-gray-400">
+                    <h5 className="text-xs font-mono uppercase text-gray-600 dark:text-gray-400 tracking-wider">Lead Intake Growth</h5>
+                    <div className="flex gap-2 text-[8px] font-mono font-bold text-gray-600 dark:text-gray-400">
                       <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-blue-500" /> Auto AI</span>
                       <span className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-purple-500" /> Human Manual</span>
                     </div>
                   </div>
-                  
+
                   {/* SVG Line Graph */}
                   <svg viewBox="0 0 500 200" className="w-full h-44 pointer-events-none">
                     <defs>
                       <linearGradient id="chartGlow" x1="0" y1="0" x2="0" y2="1">
-                        <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2"/>
-                        <stop offset="100%" stopColor="#3b82f6" stopOpacity="0"/>
+                        <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
+                        <stop offset="100%" stopColor="#3b82f6" stopOpacity="0" />
                       </linearGradient>
                     </defs>
                     <path d="M0 180 Q100 130 200 90 T400 40 L500 20" fill="none" stroke="#3b82f6" strokeWidth="4" />
@@ -970,8 +960,8 @@ const AILeadEngine = () => {
 
               {/* Conversion Funnel Mockup (Col 5) */}
               <div className="lg:col-span-5 p-6 bg-white/[0.02] border border-white/5 rounded-3xl text-left flex flex-col justify-between">
-                <h5 className="text-xs font-mono uppercase text-gray-400 tracking-wider mb-6">Lead-to-Meeting Conversion</h5>
-                
+                <h5 className="text-xs font-mono uppercase text-gray-600 dark:text-gray-400 tracking-wider mb-6">Lead-to-Meeting Conversion</h5>
+
                 <div className="space-y-4">
                   {[
                     { label: "1. Enquiries Received", val: "100 Leads", w: "w-full", color: "bg-blue-600/40" },
@@ -984,7 +974,7 @@ const AILeadEngine = () => {
                         <span>{row.label}</span>
                         <span className="font-mono">{row.val}</span>
                       </div>
-                      <div className="w-full h-2 rounded-full bg-white/5 overflow-hidden">
+                      <div className="w-full h-2 rounded-full bg-gray-100 dark:bg-white/5 overflow-hidden">
                         <div className={`h-full ${row.w} ${row.color} rounded-full`} />
                       </div>
                     </div>
@@ -1000,10 +990,10 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">Target Verticals</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Custom Built For Every Industry
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               The AI Lead Engine is tailored specifically to your business rules. Click on the industries below to see targeted outcomes.
             </p>
           </div>
@@ -1017,11 +1007,10 @@ const AILeadEngine = () => {
                   <button
                     key={ind.title}
                     onClick={() => setActiveIndustry(idx)}
-                    className={`p-4 rounded-2xl border text-left transition-all duration-300 flex items-center justify-between ${
-                      isActive
-                        ? "bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/30 text-white shadow-lg shadow-blue-500/5"
-                        : "bg-white/[0.01] border-white/5 text-gray-400 hover:bg-white/[0.02] hover:border-white/10"
-                    }`}
+                    className={`p-4 rounded-2xl border text-left transition-all duration-300 flex items-center justify-between ${isActive
+                        ? "bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/30 text-gray-900 dark:text-white shadow-lg shadow-blue-500/5"
+                        : "bg-white/[0.01] border-white/5 text-gray-600 dark:text-gray-400 hover:bg-white/[0.02] hover:border-gray-200 dark:border-white/10"
+                      }`}
                   >
                     <span className="text-sm font-bold">{ind.title}</span>
                     <Building2 className={`w-4 h-4 transition-transform duration-300 ${isActive ? "scale-110 text-blue-400" : "text-gray-500"}`} />
@@ -1042,7 +1031,7 @@ const AILeadEngine = () => {
                   className="glass-morphism border-white/5 bg-[#05021a]/80 p-8 rounded-[2rem] h-full flex flex-col justify-between text-left shadow-2xl relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/10 to-transparent blur-2xl pointer-events-none" />
-                  
+
                   <div>
                     <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
                       <span className="px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-300 text-xs font-mono uppercase tracking-widest font-bold">
@@ -1053,10 +1042,10 @@ const AILeadEngine = () => {
                       </span>
                     </div>
 
-                    <h4 className="text-3xl font-extrabold text-white tracking-tight mb-4">
+                    <h4 className="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight mb-4">
                       {industriesData[activeIndustry].title}
                     </h4>
-                    
+
                     <p className="text-base text-gray-300 leading-relaxed mb-6">
                       {industriesData[activeIndustry].desc}
                     </p>
@@ -1064,7 +1053,7 @@ const AILeadEngine = () => {
 
                   <div className="pt-6 border-t border-white/5 mt-auto flex items-center justify-between">
                     <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Projected Outcome:</span>
-                    <span className="text-base font-black text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                    <span className="text-base font-black text-gray-900 dark:text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                       {industriesData[activeIndustry].outcome}
                     </span>
                   </div>
@@ -1078,10 +1067,10 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">7-Day Deployment</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Implementation Timeline
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               A rapid deployment strategy that takes your business from manual processes to fully autonomous AI operations in one week.
             </p>
           </div>
@@ -1096,13 +1085,13 @@ const AILeadEngine = () => {
               { day: "Day 6", title: "Team Training", desc: "Instruct sales team on lead score notifications and human handover." },
               { day: "Day 7", title: "Launch & Go Live", desc: "Publish system pipeline live. Operations start running autonomously 24/7." }
             ].map((step, idx) => (
-              <div key={step.day} className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl relative hover:border-white/10 transition-all flex flex-col justify-between shadow-lg">
+              <div key={step.day} className="card-glass flex flex-col">
                 <div className="absolute top-3 right-4 text-[10px] font-mono text-blue-400 font-bold uppercase tracking-widest">{step.day}</div>
                 <div>
                   <div className="w-8 h-8 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs mb-4">
                     {idx + 1}
                   </div>
-                  <h4 className="text-sm font-bold text-white mb-2">{step.title}</h4>
+                  <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-2">{step.title}</h4>
                   <p className="text-[11px] text-gray-500 leading-relaxed">{step.desc}</p>
                 </div>
               </div>
@@ -1114,23 +1103,23 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-green-400 mb-2 font-bold">Case Studies</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Real Business Results
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               Verified outcomes showing how TechieHelp automation directly shifts commercial metrics.
             </p>
           </div>
 
           <div className="glass-morphism border-white/5 bg-[#05021a]/80 p-8 rounded-[2rem] max-w-4xl mx-auto shadow-2xl relative overflow-hidden text-left">
             <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-green-500/5 to-transparent blur-3xl pointer-events-none" />
-            
+
             <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
               <div className="flex items-center gap-3">
                 <span className="p-2 rounded-xl bg-green-500/10 border border-green-500/20 text-green-400 font-mono text-[10px] font-bold uppercase tracking-widest">
                   Verified Result
                 </span>
-                <span className="text-sm text-gray-400 font-bold">JIET Coaching Institute case</span>
+                <span className="text-sm text-gray-600 dark:text-gray-400 font-bold">JIET Coaching Institute case</span>
               </div>
               <div className="text-2xl font-black text-green-400 tracking-tight font-mono">2.7X More Leads</div>
             </div>
@@ -1146,7 +1135,7 @@ const AILeadEngine = () => {
                   </div>
                   <div className="text-right">
                     <p className="text-[10px] uppercase text-gray-500 font-mono">Response Time</p>
-                    <p className="text-base font-extrabold text-white">4 Hours</p>
+                    <p className="text-base font-extrabold text-gray-900 dark:text-white">4 Hours</p>
                   </div>
                 </div>
 
@@ -1154,7 +1143,7 @@ const AILeadEngine = () => {
                   <div className="absolute top-0 left-0 w-1 h-full bg-green-500" />
                   <div>
                     <h5 className="text-[10px] uppercase text-green-400 font-mono font-bold tracking-widest mb-1">After TechieHelp</h5>
-                    <p className="text-sm font-semibold text-white">AI Lead Engine Active</p>
+                    <p className="text-sm font-semibold text-gray-900 dark:text-white">AI Lead Engine Active</p>
                   </div>
                   <div className="text-right">
                     <p className="text-[10px] uppercase text-gray-500 font-mono">Response Time</p>
@@ -1165,11 +1154,11 @@ const AILeadEngine = () => {
 
               {/* Case text desc */}
               <div>
-                <h4 className="text-xl font-bold text-white mb-3">Eliminated lead delay leakage entirely.</h4>
-                <p className="text-xs text-gray-400 leading-relaxed mb-4">
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-3">Eliminated lead delay leakage entirely.</h4>
+                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
                   The Institute was receiving hundreds of student inquiries daily via Facebook Ads and WhatsApp. Because staff took hours to follow up manually, students had already booked calls with competing institutes.
                 </p>
-                <p className="text-xs text-gray-400 leading-relaxed">
+                <p className="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
                   By deploying the AI Lead Engine, 100% of leads received immediate WhatsApp replies, qualified details (course choice, timing, budget) automatically, and synced hot candidates to the counselors in 45 seconds.
                 </p>
               </div>
@@ -1181,10 +1170,10 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">Why TechieHelp</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               AI Built For Enterprise Operations
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               We deliver complete operational systems custom-configured to your commercial pipeline.
             </p>
           </div>
@@ -1198,12 +1187,12 @@ const AILeadEngine = () => {
               { title: "Indian Support Team", desc: "Dedicated local developer support available via phone/WhatsApp for any pipeline modifications." },
               { title: "AI Employees Working 24/7", desc: "Zero downtime, zero sick leaves, zero delay. AI handles leads at midnight with the same speed as midday." }
             ].map((item) => (
-              <div key={item.title} className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl text-left hover:border-white/10 transition-all flex flex-col justify-between shadow-lg">
+              <div key={item.title} className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl text-left hover:border-gray-200 dark:border-white/10 transition-all flex flex-col justify-between shadow-lg">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-6">
                   <Sparkles className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-2">{item.title}</h4>
+                  <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-2">{item.title}</h4>
                   <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
                 </div>
               </div>
@@ -1215,10 +1204,10 @@ const AILeadEngine = () => {
         <section className="mb-28">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">Transparent Pricing</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Choose Your AI Lead Engine
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               No monthly license fees. One-time build cost with full system ownership.
             </p>
           </div>
@@ -1227,15 +1216,15 @@ const AILeadEngine = () => {
             {/* Basic Setup */}
             <div className="glass-morphism border-white/5 bg-[#05021a]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden">
               <div>
-                <h4 className="text-xl font-bold text-white mb-1">Basic Setup</h4>
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Basic Setup</h4>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest font-mono font-bold mb-6">Single Inbound Integration</p>
-                
+
                 <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-4xl font-black text-white">₹15,000</span>
+                  <span className="text-4xl font-black text-gray-900 dark:text-white">₹15,000</span>
                   <span className="text-xs text-gray-500 font-medium">One-Time Cost</span>
                 </div>
 
-                <ul className="space-y-4 text-xs text-gray-400 mb-8">
+                <ul className="space-y-4 text-xs text-gray-600 dark:text-gray-400 mb-8">
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-blue-400 stroke-[3]" /> Web Form Integration</li>
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-blue-400 stroke-[3]" /> Email Auto Reply (Gmail)</li>
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-blue-400 stroke-[3]" /> CRM / Google Sheets Logging</li>
@@ -1247,7 +1236,7 @@ const AILeadEngine = () => {
                 href="https://wa.me/917673825079?text=Hello%20TechieHelp%20Team,%20I%20am%20interested%20in%20deploying%20the%20Basic%20Setup%20AI%20Lead%20Engine%20for%20my%20business.%20Please%20guide%20me%20further."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-white/5 border border-white/10 hover:border-blue-500 hover:text-white rounded-xl font-bold text-center transition-all text-xs text-white"
+                className="w-full py-3 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-blue-500 hover:text-gray-900 dark:text-white rounded-xl font-bold text-center transition-all text-xs text-gray-900 dark:text-white"
               >
                 Get Basic Setup
               </a>
@@ -1255,26 +1244,26 @@ const AILeadEngine = () => {
 
             {/* Standard Engine (Popular) */}
             <div className="glass-morphism border-blue-500/30 bg-[#0c052d]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden scale-105">
-              <div className="absolute top-4 right-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-[9px] uppercase tracking-widest font-bold px-3 py-1 rounded-full shadow-lg">
+              <div className="btn-primary">
                 Popular Plan
               </div>
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-500" />
-              
+
               <div>
-                <h4 className="text-xl font-bold text-white mb-1">Standard Engine</h4>
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Standard Engine</h4>
                 <p className="text-[10px] text-blue-400 uppercase tracking-widest font-mono font-bold mb-6">Omnichannel AI Employee</p>
-                
+
                 <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-4xl font-black text-white">₹25,000</span>
-                  <span className="text-xs text-gray-400 font-medium">One-Time Cost</span>
+                  <span className="text-4xl font-black text-gray-900 dark:text-white">₹25,000</span>
+                  <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">One-Time Cost</span>
                 </div>
 
                 <ul className="space-y-4 text-xs text-gray-300 mb-8">
-                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 stroke-[3]" /> Multi-Channel Lead Capture</li>
-                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 stroke-[3]" /> WhatsApp Business Auto-Reply</li>
-                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 stroke-[3]" /> Smart AI Lead Qualification</li>
-                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 stroke-[3]" /> HubSpot/CRM Auto Integration</li>
-                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-purple-400 stroke-[3]" /> 5 Day Complete Deployment</li>
+                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-[#33bbcf] stroke-[3]" /> Multi-Channel Lead Capture</li>
+                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-[#33bbcf] stroke-[3]" /> WhatsApp Business Auto-Reply</li>
+                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-[#33bbcf] stroke-[3]" /> Smart AI Lead Qualification</li>
+                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-[#33bbcf] stroke-[3]" /> HubSpot/CRM Auto Integration</li>
+                  <li className="flex items-center gap-3"><Check className="w-4 h-4 text-[#33bbcf] stroke-[3]" /> 5 Day Complete Deployment</li>
                 </ul>
               </div>
 
@@ -1282,7 +1271,7 @@ const AILeadEngine = () => {
                 href="https://wa.me/917673825079?text=Hello%20TechieHelp%20Team,%20I%20am%20interested%20in%20deploying%20the%20Standard%20AI%20Lead%20Engine%20for%20my%20business.%20Please%20guide%20me%20further."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 rounded-xl font-bold text-center transition-all text-xs text-white shadow-lg"
+                className="btn-primary"
               >
                 Get Standard Engine
               </a>
@@ -1291,15 +1280,15 @@ const AILeadEngine = () => {
             {/* Enterprise Custom */}
             <div className="glass-morphism border-white/5 bg-[#05021a]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden">
               <div>
-                <h4 className="text-xl font-bold text-white mb-1">Enterprise Custom</h4>
+                <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Enterprise Custom</h4>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest font-mono font-bold mb-6">Tailored AI Reasoning</p>
-                
+
                 <div className="flex items-baseline gap-2 mb-8">
-                  <span className="text-4xl font-black text-white">Custom</span>
+                  <span className="text-4xl font-black text-gray-900 dark:text-white">Custom</span>
                   <span className="text-xs text-gray-500 font-medium">Pricing</span>
                 </div>
 
-                <ul className="space-y-4 text-xs text-gray-400 mb-8">
+                <ul className="space-y-4 text-xs text-gray-600 dark:text-gray-400 mb-8">
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-blue-400 stroke-[3]" /> Unlimited Marketing Channels</li>
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-blue-400 stroke-[3]" /> Custom LLM / AI Logic Training</li>
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-blue-400 stroke-[3]" /> Advanced CRM & ERP Integrations</li>
@@ -1311,7 +1300,7 @@ const AILeadEngine = () => {
                 href="https://wa.me/917673825079?text=Hello%20TechieHelp%20Team,%20I%20am%20interested%20in%20deploying%20the%20Enterprise%20Custom%20AI%20Lead%20Engine%20for%20my%20business.%20Please%20guide%20me%20further."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3 bg-white/5 border border-white/10 hover:border-blue-500 hover:text-white rounded-xl font-bold text-center transition-all text-xs text-white"
+                className="w-full py-3 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-blue-500 hover:text-gray-900 dark:text-white rounded-xl font-bold text-center transition-all text-xs text-gray-900 dark:text-white"
               >
                 Book Enterprise Discussion
               </a>
@@ -1323,10 +1312,10 @@ const AILeadEngine = () => {
         <section className="mb-28 max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-xs font-mono uppercase tracking-[4px] text-blue-400 mb-2 font-bold">Common Queries</h2>
-            <h3 className="text-3xl md:text-4xl font-extrabold text-white tracking-tighter">
+            <h3 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tighter">
               Frequently Asked Questions
             </h3>
-            <p className="text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
+            <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2 text-sm md:text-base">
               Everything you need to know about TechieHelp's AI Lead Engine.
             </p>
           </div>
@@ -1363,10 +1352,10 @@ const AILeadEngine = () => {
                 <div key={faq.q} className="glass-morphism border-white/5 bg-white/[0.01] rounded-2xl overflow-hidden transition-all duration-300">
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full p-5 text-left flex justify-between items-center text-white font-bold text-sm md:text-base hover:bg-white/[0.02]"
+                    className="w-full p-5 text-left flex justify-between items-center text-gray-900 dark:text-white font-bold text-sm md:text-base hover:bg-white/[0.02]"
                   >
                     <span>{faq.q}</span>
-                    <div className="p-1 rounded-lg bg-white/5 border border-white/10 text-gray-400">
+                    <div className="p-1 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400">
                       {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
                     </div>
                   </button>
@@ -1378,7 +1367,7 @@ const AILeadEngine = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="p-5 pt-0 border-t border-white/5 text-xs md:text-sm text-gray-400 leading-relaxed">
+                        <div className="p-5 pt-0 border-t border-white/5 text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -1391,14 +1380,14 @@ const AILeadEngine = () => {
         </section>
 
         {/* FINAL CTA SECTION */}
-        <section className="bg-white/5 border border-white/10 rounded-[2.5rem] p-12 backdrop-blur-xl text-center shadow-2xl relative overflow-hidden max-w-5xl mx-auto">
+        <section className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-[2.5rem] p-12 backdrop-blur-xl text-center shadow-2xl relative overflow-hidden max-w-5xl mx-auto">
           <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-cyan-500/10 opacity-30 -z-10 animate-pulse" />
           <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/10 blur-[80px] rounded-full -z-10" />
-          
-          <h2 className="text-3xl md:text-5xl font-black text-white tracking-tighter mb-4">
+
+          <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tighter mb-4">
             Stop Losing Leads To Slow Follow-Ups.
           </h2>
-          <p className="text-sm md:text-base text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm md:text-base text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
             Deploy your AI Lead Engine in 7 days and let AI capture, qualify, and convert customers automatically. Elevate your conversion pipeline with a 24/7 dedicated digital employee.
           </p>
 
@@ -1415,13 +1404,13 @@ const AILeadEngine = () => {
               href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-extrabold px-8 py-4 rounded-xl text-sm hover:scale-105 active:scale-95 transition-all shadow-lg shadow-blue-500/20"
+              className="btn-primary"
             >
               Request Custom Automation Plan
             </a>
             <a
               href="tel:+917673825079"
-              className="px-6 py-4 text-gray-300 hover:text-white font-bold transition-colors text-sm flex items-center gap-1.5"
+              className="px-6 py-4 text-gray-300 hover:text-gray-900 dark:text-white font-bold transition-colors text-sm flex items-center gap-1.5"
             >
               Call Now
             </a>

@@ -61,7 +61,7 @@ const projectsData = [
   {
     id: 9,
     title: "Food Delivery App",
-    description: `🚚 Real-time food delivery tracking system\n📍 Location-based restaurant discovery\n💳 Secure payment processing\n⭐ Review and rating system`,
+    description: `� Real-time food delivery tracking system\n� Location-based restaurant discovery\n� Secure payment processing\n⭐ Review and rating system`,
     image: food,
     category: "Mobile App",
     technologies: ["React Native", "Firebase"],
@@ -75,12 +75,12 @@ const projectsData = [
   {
     id: 1,
     title: "Rai Construction Solutions",
-    description: `🏗️ Enterprise-grade construction consultancy website
-    🌍 Global-ready UI/UX with modern layouts &   trust-driven design
-    💼 Service-focused structure optimized for leads & conversions
-    📱 Fully responsive, pixel-perfect across all devices
-    📩 Smart contact system with validation & location mapping
-    🚀 Scalable, high-performance platform built for brand authority`,
+    description: `�️ Enterprise-grade construction consultancy website
+    � Global-ready UI/UX with modern layouts &   trust-driven design
+     Service-focused structure optimized for leads & conversions
+    � Fully responsive, pixel-perfect across all devices
+    � Smart contact system with validation & location mapping
+     Scalable, high-performance platform built for brand authority`,
     image: raiConstruction,
     category: "Web Development",
     link: "https://www.raiconstructionsolutions.com/",
@@ -93,12 +93,12 @@ const projectsData = [
   {
     id: 2,
     title: "DentEase (Dentwise)",
-    description: `🦷 AI-powered dental platform with smart appointment booking
-    🗣️ Voice-based AI agent for automated patient interaction
-    🔐 Secure authentication with Clerk (Google, GitHub & Email)
-    📅 3-step dentist appointment booking flow with email notifications
-    💳 Subscription plans with smart upgrades & automatic invoicing
-    📊 Admin dashboard for managing appointments and users`,
+    description: `� AI-powered dental platform with smart appointment booking
+    �️ Voice-based AI agent for automated patient interaction
+    � Secure authentication with Clerk (Google, GitHub & Email)
+    � 3-step dentist appointment booking flow with email notifications
+    � Subscription plans with smart upgrades & automatic invoicing
+     Admin dashboard for managing appointments and users`,
     image: dentEase,
     category: "Web Development",
     link: "https://dent-ease-life.vercel.app",
@@ -111,12 +111,12 @@ const projectsData = [
   {
     id: 3,
     title: "TechieHelp Institute of AI",
-    description: `🎓 AI-powered career & skill institute for industry-ready talent
-    🤖 End-to-end learning with guidance, internships & placements
-    🌍 Global platform for students, professionals & switchers
-    📊 AI tools for roadmaps, skill gaps, ATS resumes & interviews
-    🏫 College-ready solutions with dashboards & placement support
-    🚀 Scalable, automated & outcome-focused`,
+    description: ` AI-powered career & skill institute for industry-ready talent
+    � End-to-end learning with guidance, internships & placements
+    � Global platform for students, professionals & switchers
+     AI tools for roadmaps, skill gaps, ATS resumes & interviews
+    � College-ready solutions with dashboards & placement support
+     Scalable, automated & outcome-focused`,
     image: techiehelpInstitute, 
     category: "Web Development",
     link: "https://techiehelpinstituteofai.in/",
@@ -129,12 +129,12 @@ const projectsData = [
   {
     id: 4,
     title: "EdgeCareer: AI-Powered Career Assistant",
-    description: `🚀 AI-powered career platform for job seekers and professionals
-    🤖 ATS-optimized resumes, cover letters & mock interviews
-    📊 Real-time insights on salaries, jobs & in-demand skills
-    🎯 Personalized job matching and learning recommendations
-    🧠 Recruiter-ready tools for resume screening and shortlisting
-    🌍 Scalable global SaaS focused on real hiring outcomes`,
+    description: ` AI-powered career platform for job seekers and professionals
+    � ATS-optimized resumes, cover letters & mock interviews
+     Real-time insights on salaries, jobs & in-demand skills
+     Personalized job matching and learning recommendations
+     Recruiter-ready tools for resume screening and shortlisting
+    � Scalable global SaaS focused on real hiring outcomes`,
     image: edgeCareer, 
     category: "Web Development",
     link: "https://www.edgecareer.online/",
@@ -147,11 +147,11 @@ const projectsData = [
   {
     id: 5,
     title: "Ujjawal Library",
-    description: `📚 Official website for a real-world community library serving students and exam aspirants
-    🌍 Clean, responsive design tailored for rural and semi-urban users
-    📍 Integrated Google Maps for easy location access and local discovery
-    📝 Contact & admission system designed to support student onboarding
-    💳 Razorpay payment gateway for admissions and monthly fee collection`,
+    description: `� Official website for a real-world community library serving students and exam aspirants
+    � Clean, responsive design tailored for rural and semi-urban users
+    � Integrated Google Maps for easy location access and local discovery
+    � Contact & admission system designed to support student onboarding
+    � Razorpay payment gateway for admissions and monthly fee collection`,
     image: ujjawalLibrary, 
     category: "Web Development",
     link: "https://ujjawal-libraray.vercel.app/",
@@ -164,11 +164,11 @@ const projectsData = [
   {
     id: 6,
     title: "InvitationWala",
-    description: `💌 Premium digital invitation platform for weddings & special celebrations
-    🎥 Bespoke video invitations designed to be minimal, memorable & eco-friendly
-    🎨 Custom-crafted designs reflecting each couple’s unique story and vibe
-    🌍 Pan-India & online delivery trusted by hundreds of happy clients
-    🚀 Built to save time, reduce cost, and elevate the invitation experience`,
+    description: `� Premium digital invitation platform for weddings & special celebrations
+    � Bespoke video invitations designed to be minimal, memorable & eco-friendly
+    � Custom-crafted designs reflecting each couple’s unique story and vibe
+    � Pan-India & online delivery trusted by hundreds of happy clients
+     Built to save time, reduce cost, and elevate the invitation experience`,
     image: invitationWala, 
     category: "Web Development",
     link: "https://invitation-wala.vercel.app/",
@@ -179,11 +179,11 @@ const projectsData = [
   {
     id: 7,
     title: "Work Era – Co-WorkingSpace Website",
-    description: `🏢 Modern business website for a co-working space designed to attract startups & professionals
-    🎨 Professional UI, highlighting workspace interiors, services & team
-    📞 Lead-focused contact & enquiry pages for client acquisition
-    🌍 Built to strengthen local brand presence and increase walk-in & online leads
-    🚀 Ideal for co-working spaces, offices & commercial real-estate`,
+    description: `� Modern business website for a co-working space designed to attract startups & professionals
+    � Professional UI, highlighting workspace interiors, services & team
+    � Lead-focused contact & enquiry pages for client acquisition
+    � Built to strengthen local brand presence and increase walk-in & online leads
+     Ideal for co-working spaces, offices & commercial real-estate`,
     image: workEra, 
     category: "Web Development",
     link: "https://work-era-co-working-space.vercel.app/",
@@ -196,12 +196,12 @@ const projectsData = [
   {
     id: 8,
     title: "NH Restaurant",
-    description: `🍽️ Premium restaurant website   showcasing menu, ambience & customer trust
+    description: `�️ Premium restaurant website   showcasing menu, ambience & customer trust
     ⭐ Highly rated dining experience highlighting strong brand credibility
-    📖 Complete digital menu with categories, pricing & signature specials
-    📅 Online table reservation system for dine-in and private events
-    📍 Location, contact & gallery integration to increase walk-ins
-    🚀 Designed to convert visitors into loyal dining customers`,
+    � Complete digital menu with categories, pricing & signature specials
+    � Online table reservation system for dine-in and private events
+    � Location, contact & gallery integration to increase walk-ins
+     Designed to convert visitors into loyal dining customers`,
     image: nhRestaurant, 
     category: "Web Development",
     link: "https://nh-restaurant-jodhpur.netlify.app/",
@@ -215,34 +215,34 @@ const projectsData = [
 
 const techIcons = {
   React: { icon: FaReact, color: "text-cyan-400" },
-  Native: { icon: FaReact, color: "text-indigo-400" },
-  "Next.js": { icon: SiNextdotjs, color: "text-white" },
+  Native: { icon: FaReact, color: "text-[#33bbcf]" },
+  "Next.js": { icon: SiNextdotjs, color: "text-gray-900 dark:text-white" },
   "Node.js": { icon: FaNodeJs, color: "text-green-500" },
   "Express.js": { icon: SiExpress, color: "text-gray-300" },
   JavaScript: { icon: FaJs, color: "text-yellow-400" },
   HTML5: { icon: FaHtml5, color: "text-orange-500" },
-  CSS3: { icon: FaCss3, color: "text-blue-500" },
+  CSS3: { icon: FaCss3, color: "text-[#33bbcf]" },
   TypeScript: { icon: SiTypescript, color: "text-blue-400" },
   Python: { icon: FaPython, color: "text-yellow-400" },
-  Bootstrap: { icon: FaBootstrap, color: "text-purple-500" },
+  Bootstrap: { icon: FaBootstrap, color: "text-[#33bbcf]" },
   Tailwind: { icon: SiTailwindcss, color: "text-cyan-300" },
-  Firebase: { icon: SiFirebase, color: "text-yellow-500" },
+  Firebase: { icon: SiFirebase, color: "text-[#33bbcf]" },
   MongoDB: { icon: SiMongodb, color: "text-green-400" },
   MySQL: { icon: FaDatabase, color: "text-blue-300" },
-  Vite: { icon: SiVite, color: "text-purple-400" },
+  Vite: { icon: SiVite, color: "text-[#33bbcf]" },
   Git: { icon: SiGit, color: "text-orange-500" },
-  GitHub: { icon: SiGithub, color: "text-white" },
+  GitHub: { icon: SiGithub, color: "text-gray-900 dark:text-white" },
   Postman: { icon: SiPostman, color: "text-orange-400" },
   Vercel: { icon: SiVercel, color: "text-neutral-200" },
   Render: { icon: SiRender, color: "text-blue-400" },
-  Razorpay: { icon: SiRazorpay, color: "text-blue-500" },
+  Razorpay: { icon: SiRazorpay, color: "text-[#33bbcf]" },
   "Google Maps": { icon: SiGooglemaps, color: "text-red-500" },
   "Prisma ORM": { icon: SiPrisma, color: "text-teal-400" },
   NeonDB: { icon: SiPostgresql, color: "text-green-400" },
   PostgreSQL: { icon: SiPostgresql, color: "text-sky-400" },
-  "Gemini AI": { icon: SiGoogle, color: "text-blue-500" },
-  Inngest: { icon: FaProjectDiagram, color: "text-purple-400" },
-  "Clerk Auth": { icon: SiClerk, color: "text-indigo-400" },
+  "Gemini AI": { icon: SiGoogle, color: "text-[#33bbcf]" },
+  Inngest: { icon: FaProjectDiagram, color: "text-[#33bbcf]" },
+  "Clerk Auth": { icon: SiClerk, color: "text-[#33bbcf]" },
   "Vapi AI": { icon: FaRobot, color: "text-pink-400" },
   EmailJS: { icon: FaEnvelope, color: "text-red-400" },
 };
@@ -270,7 +270,7 @@ const TechStackGrid = ({ techStack }) => {
         return (
           <div
             key={index}
-            className="bg-white/10 border border-white/10 rounded-2xl p-4
+            className="bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded-2xl p-4
                        flex flex-col items-center justify-center
                        hover:border-purple-500 hover:shadow-lg
                        transition-all duration-300"
@@ -478,7 +478,7 @@ const ProjectPortfolio = () => {
   return (
     <>
       {/* --------------------- Top Intro Section --------------------- */}
-      <section className="bg-primary text-white flex flex-col items-center relative overflow-hidden h-screen">
+      <section className="bg-white dark:bg-primary text-gray-900 dark:text-white flex flex-col items-center relative overflow-hidden h-screen">
         {/* Animated Gradient Background */}
         <div className="absolute inset-0 opacity-20 animate-gradient-x"></div>
 
@@ -520,7 +520,7 @@ const ProjectPortfolio = () => {
             transition={{ duration: 0.8 }}
             className="text-4xl font-bold mb-4"
           >
-            Our <span className="text-blue-500">Project Portfolio</span>
+            Our <span className="text-[#33bbcf]">Project Portfolio</span>
           </motion.h2>
 
           <motion.p
@@ -539,7 +539,7 @@ const ProjectPortfolio = () => {
             href="#contact"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition"
+            className="btn-primary"
           >
             Discuss Your Project
           </motion.a>
@@ -560,7 +560,7 @@ const ProjectPortfolio = () => {
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition flex items-center gap-2"
+            className="px-6 py-3 bg-green-600 text-gray-900 dark:text-white rounded-lg hover:bg-green-700 transition flex items-center gap-2"
           >
             <svg
               className="w-5 h-5"
@@ -592,7 +592,7 @@ const ProjectPortfolio = () => {
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition flex items-center gap-2"
+            className="btn-primary"
           >
             <svg
               className="w-5 h-5"
@@ -615,7 +615,7 @@ const ProjectPortfolio = () => {
 
       {/* --------------------- Mobile Apps Section --------------------- */}
       {(selectedCategory === "All" || selectedCategory === "Mobile App") && (
-        <section id="mobile-apps" className="py-16 bg-black text-white">
+        <section id="mobile-apps" className="py-16 bg-black text-gray-900 dark:text-white">
           <div className="text-center mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -642,7 +642,7 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={0}
-                        className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 lg:w-2/3 flex-shrink-0"
+                        className="bg-gray-100 dark:bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 lg:w-2/3 flex-shrink-0"
                         style={{ height: 'fit-content' }}
                       >
                         {/* Large Image */}
@@ -662,7 +662,7 @@ const ProjectPortfolio = () => {
                             }
                             className="w-full h-full object-cover"
                           />
-                          <div className="absolute top-1 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          <div className="absolute top-1 right-4 bg-green-500 text-gray-900 dark:text-white px-3 py-1 rounded-full text-sm font-semibold">
                             {selectedProject &&
                             selectedProject.category === "Mobile App"
                               ? selectedProject.category
@@ -676,7 +676,7 @@ const ProjectPortfolio = () => {
                                   ? selectedProject.link
                                   : filteredMobile[0].link
                               }
-                              className="inline-flex items-center gap-2 bg-gradient-to-r from-green-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                              className="btn-primary"
                             >
                               <span>Visit Live</span>
                               <motion.span
@@ -696,10 +696,10 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={1}
-                        className="bg-black text-white rounded-2xl shadow-lg p-1 flex-1"
+                        className="bg-black text-gray-900 dark:text-white rounded-2xl shadow-lg p-1 flex-1"
                       >
                         <div className="mb-8 flex gap-2 justify-start">
-                          <div className="p-2 bg-gradient-to-r from-blue-600 to-green-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
+                          <div className="p-2 bg-gradient-to-r from-blue-600 to-green-500 border border-gray-200 dark:border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
                             <svg
                               className="w-4 h-4"
                               fill="currentColor"
@@ -711,15 +711,15 @@ const ProjectPortfolio = () => {
                                 clipRule="evenodd"
                               />
                             </svg>
-                            <p className="text-sm font-bold text-white ">
+                            <p className="text-sm font-bold text-gray-900 dark:text-white ">
                               {selectedProject &&
                               selectedProject.category === "Mobile App"
                                 ? selectedProject.industry
                                 : filteredMobile[0].industry}
                             </p>
                           </div>
-                          <div className="p-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-center w-16 flex items-center justify-center">
-                            <p className="text-sm font-bold text-white-900">
+                          <div className="p-2 bg-gray-100 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-full text-center w-16 flex items-center justify-center">
+                            <p className="text-sm font-bold text-gray-900 dark:text-white-900">
                               {selectedProject &&
                               selectedProject.category === "Mobile App"
                                 ? selectedProject.year
@@ -742,7 +742,7 @@ const ProjectPortfolio = () => {
                           </p>
                         </div>
                         <div className="grid grid-cols-1 gap-4">
-                          <div className="bg-white/5 rounded-xl px-3 py-2">
+                          <div className="bg-gray-100 dark:bg-white/5 rounded-xl px-3 py-2">
                             <p className="font-semibold">Tech Stack:</p>
                             <TechStackGrid
                               techStack={
@@ -776,7 +776,7 @@ const ProjectPortfolio = () => {
                               transition: { duration: 0.3 },
                             }}
                             onClick={() => handleProjectClick(project)}
-                            className="group relative bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-green-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[150px] sm:min-w-[200px] cursor-pointer"
+                            className="group relative bg-gray-100 dark:bg-white/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-white/10 hover:border-green-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[150px] sm:min-w-[200px] cursor-pointer"
                           >
                             {/* Image */}
                             <div className="relative mb-1 overflow-hidden rounded-xl">
@@ -785,12 +785,12 @@ const ProjectPortfolio = () => {
                                 alt={project.title}
                                 className="h-40 object-contain transition-transform duration-500 group-hover:scale-110"
                               />
-                              <div className="absolute top-2 right-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                              <div className="absolute top-2 right-2 bg-green-500 text-gray-900 dark:text-white px-2 py-1 rounded-full text-xs font-semibold">
                                 {project.industry}
                               </div>
                             </div>
                             {/* Title */}
-                            <h3 className="text-l font-bold mb-1 text-center text-white">
+                            <h3 className="text-l font-bold mb-1 text-center text-gray-900 dark:text-white">
                               {project.title}
                             </h3>
                           </motion.div>
@@ -815,7 +815,7 @@ const ProjectPortfolio = () => {
       {/* --------------------- Web Apps Section --------------------- */}
       {(selectedCategory === "All" ||
         selectedCategory === "Web Development") && (
-        <section id="web-apps" className="py-16 bg-gray-900 text-white">
+        <section id="web-apps" className="py-16 bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white">
           <div className="text-center mb-12">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -824,7 +824,7 @@ const ProjectPortfolio = () => {
               viewport={{ once: true }}
               className="text-4xl font-bold mb-4"
             >
-              Our Featured <span className="text-purple-500">Web Apps</span>
+              Our Featured <span className="text-[#33bbcf]">Web Apps</span>
             </motion.h2>
           </div>
           <div className="px-8">
@@ -842,7 +842,7 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={0}
-                        className="bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 lg:w-2/3 flex-shrink-0 flex-grow-0"
+                        className="bg-gray-100 dark:bg-white/10 text-gray-800 rounded-2xl shadow-lg p-2 lg:w-2/3 flex-shrink-0 flex-grow-0"
                         style={{ height: 'fit-content' }}
                       >
                         {/* Large Image */}
@@ -862,7 +862,7 @@ const ProjectPortfolio = () => {
                             }
                             className="w-full h-full object-cover"
                           />
-                          <div className="absolute top-1 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                          <div className="btn-primary">
                             {selectedProject &&
                             selectedProject.category === "Web Development"
                               ? selectedProject.category
@@ -876,7 +876,7 @@ const ProjectPortfolio = () => {
                                   ? selectedProject.link
                                   : filteredWeb[0].link
                               }
-                              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-500 to-blue-600 text-white px-6 py-3 rounded-full font-medium hover:from-purple-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                              className="btn-primary"
                             >
                               <span>Visit Live</span>
                               <motion.span
@@ -896,10 +896,10 @@ const ProjectPortfolio = () => {
                         viewport={{ once: true }}
                         variants={cardVariants}
                         custom={1}
-                        className="bg-gray-900 text-white rounded-2xl shadow-lg p-1 flex-1"
+                        className="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-white rounded-2xl shadow-lg p-1 flex-1"
                       >
                         <div className="mb-8 flex gap-2 justify-start">
-                          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
+                          <div className="p-2 bg-gradient-to-r from-blue-500 to-purple-500 border border-gray-200 dark:border-white/10 rounded-full text-center w-35 flex items-center justify-center gap-1">
                             <svg
                               className="w-4 h-4"
                               fill="currentColor"
@@ -911,15 +911,15 @@ const ProjectPortfolio = () => {
                                 clipRule="evenodd"
                               />
                             </svg>
-                            <p className="text-sm font-bold text-white">
+                            <p className="text-sm font-bold text-gray-900 dark:text-white">
                               {selectedProject &&
                               selectedProject.category === "Web Development"
                                 ? selectedProject.industry
                                 : filteredWeb[0].industry}
                             </p>
                           </div>
-                          <div className="p-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full text-center w-16 flex items-center justify-center">
-                            <p className="text-sm font-bold text-white-900">
+                          <div className="p-2 bg-gray-100 dark:bg-white/10 backdrop-blur-sm border border-gray-200 dark:border-white/10 rounded-full text-center w-16 flex items-center justify-center">
+                            <p className="text-sm font-bold text-gray-900 dark:text-white-900">
                               {selectedProject &&
                               selectedProject.category === "Web Development"
                                 ? selectedProject.year
@@ -942,7 +942,7 @@ const ProjectPortfolio = () => {
                           </p>
                         </div>
                         <div className="grid grid-cols-1 gap-4">
-                          <div className="bg-white/5 rounded-xl px-3 py-2">
+                          <div className="bg-gray-100 dark:bg-white/5 rounded-xl px-3 py-2">
                             <p className="font-semibold">Tech Stack:</p>
                             <TechStackGrid
                               techStack={
@@ -976,7 +976,7 @@ const ProjectPortfolio = () => {
                               transition: { duration: 0.3 },
                             }}
                             onClick={() => handleProjectClick(project)}
-                            className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[150px] sm:min-w-[200px] cursor-pointer"
+                            className="group relative bg-blue/10 text-gray-800 rounded-2xl shadow-lg hover:shadow-xl border border-gray-200 dark:border-white/10 hover:border-purple-400 transition-all duration-300 flex flex-col overflow-hidden min-w-[150px] sm:min-w-[200px] cursor-pointer"
                           >
                             {/* Image */}
                             <div className="relative mb-1 overflow-hidden rounded-xl">
@@ -985,12 +985,12 @@ const ProjectPortfolio = () => {
                                 alt={project.title}
                                 className="h-40 object-cover transition-transform duration-500 group-hover:scale-110"
                               />
-                              <div className="absolute top-2 right-2 bg-purple-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+                              <div className="btn-primary">
                                 {project.industry}
                               </div>
                             </div>
                             {/* Title */}
-                            <h3 className="text-l font-bold mb-1 text-center text-white">
+                            <h3 className="text-l font-bold mb-1 text-center text-gray-900 dark:text-white">
                               {project.title}
                             </h3>
                           </motion.div>

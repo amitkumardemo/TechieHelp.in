@@ -208,7 +208,7 @@ const Profile = () => {
   const tabs = ["Experience", "Biography", "Skills", "Portfolio", "Social Media"];
 
   return (
-    <div className="max-w-5xl mx-auto p-6 mt-32 bg-primary text-white min-h-screen rounded-lg shadow-lg">
+    <div className="max-w-5xl mx-auto p-6 mt-32 bg-white dark:bg-primary text-gray-900 dark:text-white min-h-screen rounded-lg shadow-lg">
       <div className="flex flex-col md:flex-row items-start">
         <div className="relative flex-shrink-0 cursor-pointer group">
           <>
@@ -229,7 +229,7 @@ const Profile = () => {
                 className="absolute bottom-0 right-0 bg-black bg-opacity-70 rounded-full p-2 cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity"
                 title="Edit Profile Photo"
               >
-                <FaPencilAlt className="text-white" />
+                <FaPencilAlt className="text-gray-900 dark:text-white" />
                 <input
                   id="photo-upload"
                   type="file"
@@ -300,7 +300,7 @@ const Profile = () => {
             {!editMode && (
               <button
                 onClick={() => setEditMode(true)}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                className="btn-primary"
               >
                 Edit Profile
               </button>
@@ -310,14 +310,14 @@ const Profile = () => {
                 <button
                   onClick={handleSave}
                   disabled={uploading}
-                  className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition mr-2"
+                  className="px-4 py-2 bg-green-600 text-gray-900 dark:text-white rounded hover:bg-green-700 transition mr-2"
                 >
                   Save
                 </button>
                 <button
                   onClick={() => setEditMode(false)}
                   disabled={uploading}
-                  className="px-4 py-2 bg-gray-400 text-white rounded hover:bg-gray-500 transition"
+                  className="px-4 py-2 bg-gray-400 text-gray-900 dark:text-white rounded hover:bg-gray-500 transition"
                 >
                   Cancel
                 </button>
@@ -334,8 +334,8 @@ const Profile = () => {
                     onClick={() => setActiveTab(tab)}
                     className={`whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm ${
                       activeTab === tab
-                        ? "border-blue-500 text-white"
-                        : "border-transparent text-gray-400 hover:text-gray-300 hover:border-gray-300"
+                        ? "border-blue-500 text-gray-900 dark:text-white"
+                        : "border-transparent text-gray-600 dark:text-gray-400 hover:text-gray-300 hover:border-gray-300"
                     }`}
                   >
                     {tab}

@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import styles from "../style";
 import { motion } from "framer-motion";
 import Loading from "./Loading";
-import { arrowUp, webDevelopment, appDevelopment, seo, uiux, digital, tech, maintance, agents, chatbot, automation, computer, predictive, generative, education, voice, hiring,work,process,alert,earn} from "../assets";
+import { arrowUp, webDevelopment, appDevelopment, seo, uiux, digital, tech, maintance, agents, chatbot, automation, computer, predictive, generative, education, voice, hiring, work, process, alert, earn } from "../assets";
 import HiringFAQ from "./hiringFAQ";
 
 const services = [
@@ -170,17 +170,17 @@ const Job = () => {
         <meta property="og:url" content="https://techiehelp.in/careers/jobs" />
         <meta property="og:type" content="website" />
       </Helmet>
-      <section className="pt-40 bg-primary text-white">
+      <section className="pt-40 bg-white dark:bg-primary text-gray-900 dark:text-white">
         <div className={`${styles.boxWidth} mx-auto flex flex-col md:flex-row items-center justify-between`}>
           <div className="md:w-1/2 mb-8 md:mb-0 px-4 max-w-[90%]">
             <h1 className="text-4xl font-bold mb-4">
-              🟢 Join TechieHelp — Shape the Future with Us
+              � Join TechieHelp — Shape the Future with Us
             </h1>
             <p className="text-lg mb-6 leading-relaxed">
               Welcome to TechieHelp, where innovation meets opportunity. We’re on a mission to empower students and professionals through real-world experience, expert mentorship, and career-defining projects. If you’re passionate about tech, creativity, and growth — this is the place for you.
             </p>
             <p className="text-lg font-semibold">
-              👉 Explore roles. Apply now. Let’s build something great together.
+              � Explore roles. Apply now. Let’s build something great together.
             </p>
           </div>
           <div className="md:w-1/2 flex justify-center">
@@ -189,7 +189,7 @@ const Job = () => {
           </div>
         </div>
       </section>
-      <section className={`${styles.paddingY} text-white`}>
+      <section className={`${styles.paddingY} text-gray-900 dark:text-white`}>
         <div className={`${styles.boxWidth} mx-auto flex flex-col md:flex-row items-center justify-between`}>
           <div className="md:w-1/2 flex justify-center order-2 md:order-1 mx-auto max-w-7xl mt-8 md:mt-0">
             {/* Increased size of work image as requested */}
@@ -197,16 +197,16 @@ const Job = () => {
           </div>
           <div className="md:w-1/2 order-1 md:order-2 px-4 max-w-[90%]">
             <h2 className={`${styles.heading2} text-blue-400 mb-4 text-center md:text-left`}>
-              🌟 Why Work With TechieHelp?
+              � Why Work With TechieHelp?
             </h2>
             <ul className="list-disc list-inside space-y-2 text-lg mb-6">
-              <li>🏆 MSME & National Internship Portal Verified</li>
-              <li>💼 Real-World Projects & Challenges</li>
-              <li>🧑‍🏫 Industry Mentorship & Training</li>
-              <li>📜 Internship Certificates & LOR</li>
-              <li>🚀 Performance-Based PPOs</li>
-              <li>🔥 Flexible Work Culture</li>
-              <li>🌐 Global Exposure via YouTube & LinkedIn</li>
+              <li> MSME & National Internship Portal Verified</li>
+              <li> Real-World Projects & Challenges</li>
+              <li>�‍� Industry Mentorship & Training</li>
+              <li>� Internship Certificates & LOR</li>
+              <li> Performance-Based PPOs</li>
+              <li> Flexible Work Culture</li>
+              <li>� Global Exposure via YouTube & LinkedIn</li>
             </ul>
             <p className="text-lg font-semibold">
               “We don’t just give internships, we build careers.”
@@ -214,7 +214,7 @@ const Job = () => {
           </div>
         </div>
       </section>
-      <section className={`${styles.paddingY} text-white`}>
+      <section className={`${styles.paddingY} text-gray-900 dark:text-white`}>
         <div className={`${styles.boxWidth} mx-auto relative`}>
           <h2 className={`${styles.heading2} text-center text-blue-400 mb-4`}>
             We Are Hiring!
@@ -226,7 +226,7 @@ const Job = () => {
             <button
               onClick={() => scroll("left")}
               aria-label="Scroll Left"
-              className="text-white p-2 focus:outline-none"
+              className="text-gray-900 dark:text-white p-2 focus:outline-none"
             >
               &#8249;
             </button>
@@ -264,28 +264,28 @@ const Job = () => {
                   ) : (
                     <p className="text-gray-700 text-sm">{description}</p>
                   )}
-<a
-  href="https://wa.me/917673825079?text=Hello%20TechieHelp%20Team%2C%20I%20am%20interested%20in%20applying%20for%20a%20hiring%20opportunity.%20Please%20guide%20me%20through%20the%20process."
-  className="mt-3 inline-block px-6 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition font-medium text-center"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  Apply Now
-</a>
+                  <a
+                    href="https://wa.me/917673825079?text=Hello%20TechieHelp%20Team%2C%20I%20am%20interested%20in%20applying%20for%20a%20hiring%20opportunity.%20Please%20guide%20me%20through%20the%20process."
+                    className="btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Apply Now
+                  </a>
                 </motion.div>
               ))}
             </div>
             <button
               onClick={() => scroll("right")}
               aria-label="Scroll Right"
-              className="text-white p-2 focus:outline-none"
+              className="text-gray-900 dark:text-white p-2 focus:outline-none"
             >
               &#8250;
             </button>
           </div>
         </div>
       </section>
-      <section className={`${styles.paddingY} text-white`}>
+      <section className={`${styles.paddingY} text-gray-900 dark:text-white`}>
         <div className={`${styles.boxWidth} mx-auto flex flex-col md:flex-row items-center justify-between`}>
           <div className="md:w-1/2 flex justify-center order-2 md:order-1 mx-auto max-w-lg mt-8 md:mt-0">
             {/* Added process image as requested */}
@@ -293,7 +293,7 @@ const Job = () => {
           </div>
           <div className="md:w-1/2 order-1 md:order-2 px-4 max-w-[90%]">
             <h2 className={`${styles.heading2} text-blue-400 mb-4 text-center md:text-left`}>
-              📌 Our Hiring Process
+              � Our Hiring Process
             </h2>
             <ul className="list-disc list-inside space-y-2 text-lg mb-6">
               <li>Apply Online<br />Fill in the form with your resume and role interest.</li>
@@ -304,7 +304,7 @@ const Job = () => {
           </div>
         </div>
       </section>
-      <section className={`${styles.paddingY} text-white`}>
+      <section className={`${styles.paddingY} text-gray-900 dark:text-white`}>
         <div className={`${styles.boxWidth} mx-auto flex flex-col md:flex-row items-center justify-between`}>
           <div className="md:w-1/2 flex justify-center order-2 md:order-2 mx-auto max-w-3xl mt-8 md:mt-0">
             {/* Further increased alert image size on right side */}
@@ -312,19 +312,19 @@ const Job = () => {
           </div>
           <div className="md:w-1/2 order-1 md:order-1 px-4 max-w-[90%]">
             <h2 className={`${styles.heading2} text-blue-400 mb-4 text-center md:text-left`}>
-              🌟 Please Note Before You Apply
+              � Please Note Before You Apply
             </h2>
             <ul className="list-disc list-inside space-y-2 text-lg mb-6">
               <li>At TechieHelp, we currently do not offer full-time roles.</li>
               <li>We are hiring only for part-time, project-based roles designed specifically for students and early-stage professionals.</li>
             </ul>
-            <h3 className="text-lg font-semibold mb-2">✅ What This Means:</h3>
+            <h3 className="text-lg font-semibold mb-2"> What This Means:</h3>
             <ul className="list-disc list-inside space-y-2 text-lg">
-              <li>💼 You will be officially part of the TechieHelp Team</li>
-              <li>🧩 Work on real projects with deadlines and proper task allocation</li>
-              <li>💰 Receive payment based on project delivery and performance</li>
+              <li> You will be officially part of the TechieHelp Team</li>
+              <li>� Work on real projects with deadlines and proper task allocation</li>
+              <li>� Receive payment based on project delivery and performance</li>
               <li>⏳ Flexible working hours — ideal for students</li>
-              <li>🎓 All team members receive:</li>
+              <li> All team members receive:</li>
               <ul className="list-disc list-inside ml-6 space-y-1">
                 <li>Internship Certificate</li>
                 <li>Letter of Recommendation (LOR)</li>
@@ -335,14 +335,14 @@ const Job = () => {
           </div>
         </div>
       </section>
-      <section className={`${styles.paddingY} text-white`}>
+      <section className={`${styles.paddingY} text-gray-900 dark:text-white`}>
         <div className={`${styles.boxWidth} mx-auto flex flex-col md:flex-row items-center justify-between`}>
           <div className="md:w-1/2 flex justify-center order-1 md:order-1 mx-auto max-w-3xl mt-8 md:mt-0">
             <img src={earn} alt="Why Project-Based Roles" className="max-w-full h-auto rounded-lg shadow-lg w-full" />
           </div>
           <div className="md:w-1/2 order-2 md:order-2 px-4 max-w-[90%]">
             <h2 className={`${styles.heading2} text-blue-400 mb-4 text-center md:text-left`}>
-              💡 Why Project-Based Roles?
+              Why Project-Based Roles?
             </h2>
             <p className="text-lg mb-4">
               We believe in skill-first, hands-on learning. Our project-based model helps you:
@@ -354,7 +354,7 @@ const Job = () => {
               <li>Stay committed without disturbing your academics</li>
             </ul>
             <p className="text-lg font-semibold">
-              💬 “At TechieHelp, we don’t just hire interns — we build a team of innovators, creators, and future leaders.”
+              � “At TechieHelp, we don’t just hire interns — we build a team of innovators, creators, and future leaders.”
             </p>
           </div>
         </div>

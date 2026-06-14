@@ -1,5 +1,5 @@
 import styles, { layout } from "./style";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre, Chatbot, CertificateVerify } from "./components";
+import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre, Chatbot, CertificateVerify, LeadAIShowcase, AIEmployeeFeatures, BeforeAfterTable, ROICalculator, LeadAIFlow, IntegrationStack, ClientResults, WhyTechieHelp, GlobalReachMap } from "./components";
 import OurServices from "./components/OurServices";
 import Services from "./components/Services";
 import ProjectPortfolio from "./components/ProjectPortfolio";
@@ -83,6 +83,14 @@ import HackathonLandingPage from "./components/hackahton";
 import PlacementBoosterLanding from "./components/placement";
 import SitePolicy from "./components/Policy";
 import SiteTerms from "./components/Terms";
+import PricingPolicy from "./components/PricingPolicy";
+import CookiePolicy from "./components/SiteCookies";
+import RefundPolicy from "./components/RefundPolicy";
+import AcceptableUsePolicy from "./components/AcceptableUsePolicy";
+import DataProcessingAgreement from "./components/DataProcessingAgreement";
+import SecurityOverview from "./components/SecurityOverview";
+import ComplianceCenter from "./components/ComplianceCenter";
+import ScrollToTop from "./components/ScrollToTop";
 
 import AILeadEngine from "./components/solutions/AILeadEngine";
 import AICallingAgents from "./components/solutions/AICallingAgents";
@@ -107,22 +115,20 @@ import DotsuTYimchunger from "./components/students/DotsuTYimchunger";
 import BendangakumHoki from "./components/students/BendangakumHoki";
 import PuloviKChishi from "./components/students/PuloviKChishi";
 import KengimheingNampeung from "./components/students/KengimheingNampeung";
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { BrowserRouter as Router, Routes, Route, Navigate, Link, useLocation } from "react-router-dom";
 import { placement } from "./assets";
 import { useAuth } from "./contexts/AuthContext";
 import GalaxyBackground from "./components/GalaxyBackground";
-import LMSLogin from "./components/lms/LMSLogin";
-import BatchSelection from "./components/lms/BatchSelection";
-import StudentDashboard from "./components/lms/StudentDashboard";
-import AdminDashboard from "./components/lms/AdminDashboard";
-import AdminCourseManagement from "./components/lms/AdminCourseManagement";
-import CourseView from "./components/lms/CourseView";
-import InitializeProfiles from "./components/lms/InitializeProfiles";
-import ProtectedRoute from "./components/ProtectedRoute";
-import QualifyAIAdmin from "./components/admin/QualifyAIAdmin";
-import QualifyAIDashboard from "./components/solutions/QualifyAIDashboard";
+import LeadAIAdmin from "./components/admin/LeadAIAdmin";
+import LeadAIDashboard from "./components/solutions/LeadAIDashboard";
+import VerificationStatus from "./components/VerificationStatus";
+import NotFound from "./components/NotFound";
+import { db } from "./firebase";
+import { doc, getDoc } from "firebase/firestore";
+import { Loader2 } from "lucide-react";
 
 
 
@@ -132,14 +138,32 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
+const LeadProtectedRoute = ({ children }) => {
+  const { user, loading } = useAuth();
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-[#02000d] flex items-center justify-center text-gray-900 dark:text-white">
+        <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
+      </div>
+    );
+  }
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
+
+  return children;
+};
+
 const AppContent = () => {
-  const [buttonBg, setButtonBg] = useState('bg-primary/90');
+  const [buttonBg, setButtonBg] = useState('bg-white dark:bg-primary/90');
   const [showScrollButton, setShowScrollButton] = useState(false);
   const { user, userProfile } = useAuth();
   const location = useLocation();
 
-  // Check if we are on the QualifyAI Admin Dashboard path
-  const isQualifyAdmin = location.pathname.startsWith('/qualifyai-admin') || location.pathname.startsWith('/admin/qualifyai') || location.pathname.startsWith('/qualifyai-dashboard');
+  // Check if we are on the LeadAI Admin Dashboard path
+  const isLeadAdmin = location.pathname.startsWith('/leadai-admin') || location.pathname.startsWith('/admin/leadai') || location.pathname.startsWith('/leadai-dashboard') || location.pathname.startsWith('/qualifyai-dashboard') || location.pathname.startsWith('/qualifyai-admin') || location.pathname.startsWith('/admin/qualifyai');
 
   useEffect(() => {
     // Scroll event listener for scroll to top button visibility
@@ -155,7 +179,7 @@ const AppContent = () => {
 
     // Only animate if elements exist (on home page) and not on admin pages
     let ctx;
-    if (!isQualifyAdmin) {
+    if (!isLeadAdmin) {
       ctx = gsap.context(() => {
         if (document.querySelector(".navbar")) {
           gsap.from(".navbar", { duration: 1, y: -100, opacity: 0, ease: "bounce" });
@@ -209,12 +233,13 @@ const AppContent = () => {
       window.removeEventListener('scroll', handleScroll);
       if (ctx) ctx.revert();
     };
-  }, [isQualifyAdmin]);
+  }, [isLeadAdmin]);
 
   return (
-    <div className={`bg-primary w-full overflow-hidden`}>
-      {!isQualifyAdmin && <AnimatedCursor />}
-      {!isQualifyAdmin && (
+    <div className={`bg-white dark:bg-primary w-full overflow-hidden`}>
+      <ScrollToTop />
+      {!isLeadAdmin && <AnimatedCursor />}
+      {!isLeadAdmin && (
         <div className={`${styles.paddingX} ${styles.flexCenter}`}>
           <div className={`${styles.boxWidth}`}>
             <Navbar className="navbar" />
@@ -222,46 +247,26 @@ const AppContent = () => {
         </div>
       )}
 
-      <Routes>
-        {/* QualifyAI Admin Route */}
-        <Route path="/qualifyai-admin" element={<QualifyAIAdmin />} />
-        <Route path="/admin/qualifyai" element={<QualifyAIAdmin />} />
-        <Route path="/qualifyai-dashboard" element={<QualifyAIDashboard />} />
-
-        {/* LMS Routes */}
-        <Route path="/lms" element={<LMSLogin />} />
-        <Route path="/lms/login" element={<LMSLogin />} />
-        <Route path="/lms/batch-selection" element={
-          <ProtectedRoute>
-            <BatchSelection />
-          </ProtectedRoute>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={location.pathname}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+        >
+          <Routes location={location} key={location.pathname}>
+        {/* LeadAI Admin Route & Redirects */}
+        <Route path="/leadai-admin" element={<LeadAIAdmin />} />
+        <Route path="/admin/leadai" element={<LeadAIAdmin />} />
+        <Route path="/leadai-dashboard" element={
+          <LeadProtectedRoute>
+            <LeadAIDashboard />
+          </LeadProtectedRoute>
         } />
-        <Route path="/lms/student/dashboard" element={
-          <ProtectedRoute requiredRole="student">
-            <StudentDashboard />
-          </ProtectedRoute>
-        } />
-        <Route path="/lms/student/courses/:courseId" element={
-          <ProtectedRoute requiredRole="student">
-            <CourseView />
-          </ProtectedRoute>
-        } />
-        <Route path="/lms/admin/dashboard" element={
-          <ProtectedRoute requiredRole="admin">
-            <AdminDashboard />
-          </ProtectedRoute>
-        } />
-        <Route path="/lms/admin/courses" element={
-          <ProtectedRoute requiredRole="admin">
-            <AdminCourseManagement />
-          </ProtectedRoute>
-        } />
-        <Route path="/admin/courses" element={
-          <ProtectedRoute requiredRole="admin">
-            <AdminCourseManagement />
-          </ProtectedRoute>
-        } />
-        <Route path="/lms/init-profiles" element={<InitializeProfiles />} />
+        <Route path="/qualifyai-dashboard" element={<Navigate to="/leadai-dashboard" replace />} />
+        <Route path="/qualifyai-admin" element={<Navigate to="/leadai-admin" replace />} />
+        <Route path="/admin/qualifyai" element={<Navigate to="/admin/leadai" replace />} />
 
         <Route path="/" element={
           <>
@@ -271,19 +276,29 @@ const AppContent = () => {
               </div>
             </div>
 
-            <div className={`bg-primary ${styles.paddingX} ${styles.flexCenter}`}>
-              <div className={`${styles.boxWidth}`}>
-                <Stats className="stats" />
-                <WhoWeAre />
-                <Business className="business" />
-                <Billing className="billing" />
-                <CardDeal className="cardDeal" />
+            <div className={`bg-white dark:bg-primary w-full overflow-hidden`}>
+              <LeadAIShowcase />
+              <AIEmployeeFeatures />
+              <BeforeAfterTable />
+              <ROICalculator />
+              <LeadAIFlow />
+              <IntegrationStack />
 
-                <Clients className="clients" />
-                <CTA className="cta" />
-                <Testimonials className="testimonials" />
-                <FAQ />
-                <Contact />
+              <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+                <div className={`${styles.boxWidth}`}>
+                  <Clients className="clients" />
+                </div>
+              </div>
+
+              <ClientResults />
+              <WhyTechieHelp />
+              <GlobalReachMap />
+
+              <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+                <div className={`${styles.boxWidth}`}>
+                  <FAQ />
+                  <Contact />
+                </div>
               </div>
             </div>
           </>
@@ -355,8 +370,15 @@ const AppContent = () => {
         <Route path="/hiring-faq" element={<HiringFAQ />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/placement-booster" element={<PlacementBoosterLanding />} />
-        <Route path="/policy" element={<SitePolicy />} />
-        <Route path="/terms" element={<SiteTerms />} />
+        <Route path="/privacy-policy" element={<SitePolicy />} />
+        <Route path="/terms-and-conditions" element={<SiteTerms />} />
+        <Route path="/pricing-policy" element={<PricingPolicy />} />
+        <Route path="/cookie-policy" element={<CookiePolicy />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/acceptable-use-policy" element={<AcceptableUsePolicy />} />
+        <Route path="/data-processing-agreement" element={<DataProcessingAgreement />} />
+        <Route path="/security" element={<SecurityOverview />} />
+        <Route path="/compliance" element={<ComplianceCenter />} />
 
         {/* Student Profile Routes */}
         <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
@@ -415,26 +437,32 @@ const AppContent = () => {
         <Route path="/intern/kengimheing-nampeung" element={<KengimheingNampeung />} />
 
         {/* Authentication Routes */}
-        <Route path="/login" element={!user ? <Login /> : <Navigate to="/profile" />} />
-        <Route path="/signup" element={!user ? <Signup /> : <Navigate to="/profile" />} />
-        <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" />} />
-        <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
+        <Route path="/login" element={!user ? <Login /> : <Navigate to="/leadai-dashboard" replace />} />
+        <Route path="/signup" element={<Navigate to="/login" replace />} />
+        <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" replace />} />
+        <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" replace />} />
+        <Route path="/verification-status" element={<Navigate to="/leadai-dashboard" replace />} />
 
         {/* Intern Profile Route */}
         <Route path="/interns/:internId" element={<InternProfile />} />
-      </Routes>
+
+        {/* Catch-all 404 Route */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
+        </motion.div>
+      </AnimatePresence>
 
       {/* Scroll to Top Button */}
-      {!isQualifyAdmin && showScrollButton && (
+      {!isLeadAdmin && showScrollButton && (
         <button
           onMouseDown={() => setButtonBg('bg-blue-600')}
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            setTimeout(() => setButtonBg('bg-primary/90'), 150);
+            setTimeout(() => setButtonBg('bg-white dark:bg-primary/90'), 150);
           }}
           onTouchStart={() => setButtonBg('bg-blue-600')}
-          onTouchEnd={() => setTimeout(() => setButtonBg('bg-primary/90'), 150)}
-          className={`fixed bottom-44 right-6 z-50 ${buttonBg} text-white p-3 rounded-full shadow-lg transition-all duration-300 animate-bounce`}
+          onTouchEnd={() => setTimeout(() => setButtonBg('bg-white dark:bg-primary/90'), 150)}
+          className={`fixed bottom-44 right-6 z-50 ${buttonBg} text-gray-900 dark:text-white p-3 rounded-full shadow-lg transition-all duration-300 animate-bounce`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -448,12 +476,12 @@ const AppContent = () => {
       )}
 
       {/* WhatsApp Icon */}
-      {!isQualifyAdmin && (
+      {!isLeadAdmin && (
         <a
           href="https://wa.me/917073130165?text=Hello%20TechieHelp%20Team,%20I%20would%20like%20to%20connect%20regarding%20your%20services%20and%20opportunities.%20Please%20guide%20me%20further."
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-colors duration-200 animate-pulse"
+          className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-gray-900 dark:text-white p-3 rounded-full shadow-lg transition-colors duration-200 animate-pulse"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -466,7 +494,7 @@ const AppContent = () => {
         </a>
       )}
 
-      {!isQualifyAdmin && <Footer />}
+      {!isLeadAdmin && <Footer />}
     </div>
   );
 };

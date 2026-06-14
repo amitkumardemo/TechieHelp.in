@@ -1,424 +1,423 @@
- import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
-import { db, storage } from "../firebase";
-import { doc, setDoc } from "firebase/firestore";
-import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import { google as googleIcon, github as githubIcon, signup as signupImage, sign } from "../assets";
+import { useNavigate, Link } from "react-router-dom";
+import { auth, db } from "../firebase";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { doc, getDoc } from "firebase/firestore";
+import { isBusinessEmail } from "../utils/authValidation";
+import { ShieldAlert, Eye, EyeOff, Loader2, Check, Lock, Sparkles } from "lucide-react";
 
-const Login = () => {
-  const { loginWithGoogle, loginWithGithub, loginWithEmail, signup, updateUserProfile, user, userProfile } = useAuth();
+export default function Login() {
+  const { loginWithEmail, user, userProfile, workspace, logAuthEvent } = useAuth();
   const navigate = useNavigate();
 
-  const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    confirmPassword: "",
-    displayName: "",
-    photo: null,
-    isRobotChecked: false,
+    rememberMe: false
   });
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const [isFlipping, setIsFlipping] = useState(false);
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  // Role-based redirection
+  // Forgot password flow
+  const [forgotPasswordMode, setForgotPasswordMode] = useState(false);
+  const [resetEmail, setResetEmail] = useState("");
+  const [resetSent, setResetSent] = useState(false);
+
+  // Bot Shield (Turnstile simulator)
+  const [botShieldVerified, setBotShieldVerified] = useState(false);
+  const [botShieldLoading, setBotShieldLoading] = useState(false);
+
+  // Lockout State
+  const [lockoutTimeLeft, setLockoutTimeLeft] = useState(0);
+
+  // Load saved email if rememberMe was true
   useEffect(() => {
-    if (user && userProfile) {
-      const redirectBasedOnRole = () => {
-        if (userProfile.role === 'admin') {
-          navigate('/admin/dashboard');
-        } else if (userProfile.role === 'student') {
-          if (userProfile.batchId) {
-            navigate('/student/dashboard');
-          } else {
-            navigate('/batch-selection');
-          }
+    const savedEmail = localStorage.getItem("leadai_remembered_email");
+    if (savedEmail) {
+      setFormData(prev => ({ ...prev, email: savedEmail, rememberMe: true }));
+    }
+  }, []);
+
+  // Lockout checking timer
+  useEffect(() => {
+    const checkLockout = () => {
+      const emailKey = `lockout_${formData.email.trim().toLowerCase()}`;
+      const lockoutStr = localStorage.getItem(emailKey);
+      if (lockoutStr) {
+        const lockoutTime = parseInt(lockoutStr, 10);
+        const now = Date.now();
+        if (now < lockoutTime) {
+          setLockoutTimeLeft(Math.ceil((lockoutTime - now) / 1000));
+        } else {
+          localStorage.removeItem(emailKey);
+          localStorage.removeItem(`attempts_${formData.email.trim().toLowerCase()}`);
+          setLockoutTimeLeft(0);
         }
-      };
-      redirectBasedOnRole();
-    }
-  }, [user, userProfile, navigate]);
+      } else {
+        setLockoutTimeLeft(0);
+      }
+    };
 
-  const generateStudentId = () => {
-    return "TECHIE" + Math.floor(100000 + Math.random() * 900000);
-  };
+    checkLockout();
+    const interval = setInterval(checkLockout, 1000);
+    return () => clearInterval(interval);
+  }, [formData.email]);
 
-  const handleGoogleLogin = async () => {
-    try {
-      await loginWithGoogle();
-    } catch (error) {
-      console.error("Google login error:", error);
-      setError(error.message || "Google login failed");
+  // Handle successful login redirect routing
+  useEffect(() => {
+    if (user) {
+      if (user.email === "support@techiehelp.in") {
+        navigate("/leadai-admin");
+      } else {
+        navigate("/leadai-dashboard");
+      }
     }
-  };
-
-  const handleGithubLogin = async () => {
-    try {
-      await loginWithGithub();
-    } catch (error) {
-      console.error("GitHub login error:", error);
-      setError(error.message || "GitHub login failed");
-    }
-  };
+  }, [user, navigate]);
 
   const handleChange = (e) => {
-    if (e.target.name === "photo") {
-      setFormData({ ...formData, photo: e.target.files[0] });
-    } else if (e.target.name === "isRobotChecked") {
-      setFormData({ ...formData, isRobotChecked: e.target.checked });
+    if (e.target.name === "rememberMe") {
+      setFormData({ ...formData, rememberMe: e.target.checked });
     } else {
       setFormData({ ...formData, [e.target.name]: e.target.value });
     }
   };
 
+  const handleBotShieldClick = () => {
+    if (botShieldVerified || botShieldLoading) return;
+    setBotShieldLoading(true);
+    setTimeout(() => {
+      setBotShieldLoading(false);
+      setBotShieldVerified(true);
+    }, 1500);
+  };
+
+  const incrementFailedAttempts = (email) => {
+    const cleanEmail = email.trim().toLowerCase();
+    const attemptsKey = `attempts_${cleanEmail}`;
+    const lockoutKey = `lockout_${cleanEmail}`;
+
+    const attemptsStr = localStorage.getItem(attemptsKey);
+    let attempts = attemptsStr ? parseInt(attemptsStr, 10) : 0;
+    attempts += 1;
+    localStorage.setItem(attemptsKey, attempts.toString());
+
+    if (attempts >= 5) {
+      const blockDuration = 15 * 60 * 1000; // 15 mins
+      const lockoutExpiry = Date.now() + blockDuration;
+      localStorage.setItem(lockoutKey, lockoutExpiry.toString());
+      logAuthEvent(null, "ACCOUNT_LOCKED", { email: cleanEmail, durationMs: blockDuration });
+      return true;
+    }
+    return false;
+  };
+
+  const resetFailedAttempts = (email) => {
+    const cleanEmail = email.trim().toLowerCase();
+    localStorage.removeItem(`attempts_${cleanEmail}`);
+    localStorage.removeItem(`lockout_${cleanEmail}`);
+  };
+
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     setError("");
+
+    if (lockoutTimeLeft > 0) {
+      setError(`Access suspended. Please try again after ${Math.floor(lockoutTimeLeft / 60)}m ${lockoutTimeLeft % 60}s.`);
+      return;
+    }
+
+    if (!botShieldVerified) {
+      setError("Please complete the bot protection challenge.");
+      return;
+    }
+
+    // Enforce business domain filter
+    if (!isBusinessEmail(formData.email)) {
+      setError("Personal email domains are restricted. Use your verified business credentials.");
+      return;
+    }
+
     setLoading(true);
     try {
       await loginWithEmail(formData.email, formData.password);
+      resetFailedAttempts(formData.email);
+
+      // Remember me email caching
+      if (formData.rememberMe) {
+        localStorage.setItem("leadai_remembered_email", formData.email);
+      } else {
+        localStorage.removeItem("leadai_remembered_email");
+      }
     } catch (err) {
-      setError(err.message || "Failed to login");
+      console.error("Login attempt failed:", err);
+
+      const isLocked = incrementFailedAttempts(formData.email);
+      if (isLocked) {
+        setError("Account locked out due to 5 failed login attempts. Suspended for 15 minutes.");
+      } else {
+        setError(err.message || "Authentication failed. Check your password.");
+      }
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
-  const handleSignupSubmit = async (e) => {
+  const handlePasswordReset = async (e) => {
     e.preventDefault();
     setError("");
+    setResetSent(false);
 
-    // Validate confirm password
-    if (formData.password !== formData.confirmPassword) {
-      setError("Passwords do not match");
-      return;
-    }
-
-    // Validate robot check
-    if (!formData.isRobotChecked) {
-      setError("Please confirm you are not a robot");
+    if (!isBusinessEmail(resetEmail)) {
+      setError("Password resets are restricted to verified business emails.");
       return;
     }
 
     setLoading(true);
     try {
-      const userCredential = await signup(formData.email, formData.password);
-      const user = userCredential.user;
-
-      let photoURL = "";
-      if (formData.photo) {
-        const storageRef = ref(storage, `profilePhotos/${user.uid}/${formData.photo.name}`);
-        await uploadBytes(storageRef, formData.photo);
-        photoURL = await getDownloadURL(storageRef);
-      }
-
-      await updateUserProfile({
-        displayName: formData.displayName,
-        photoURL,
-      });
-
-      const studentId = generateStudentId();
-
-      const profileData = {
-        displayName: formData.displayName,
-        photoURL,
-        studentId,
-        socialLinks: {
-          linkedin: "",
-          github: "",
-          twitter: "",
-          facebook: "",
-        },
-      };
-
-      await setDoc(doc(db, "profiles", user.uid), profileData);
-
-      setIsSignup(false);
-      setFormData({
-        email: "",
-        password: "",
-        confirmPassword: "",
-        displayName: "",
-        photo: null,
-        isRobotChecked: false,
-      });
-      alert("Signup successful! Please login.");
-      navigate("/login");
+      await sendPasswordResetEmail(auth, resetEmail);
+      await logAuthEvent(null, "PASSWORD_RESET_REQUESTED", { email: resetEmail });
+      setResetSent(true);
     } catch (err) {
-      setError(err.message || "Failed to create an account");
+      setError(err.message || "Failed to dispatch reset email.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
 
-  // Handle flip animation on toggle
-  const toggleSignup = () => {
-    setIsFlipping(true);
-    setTimeout(() => {
-      setIsSignup(!isSignup);
-      setError("");
-      setIsFlipping(false);
-    }, 600); // duration matches animation duration
+  const formatLockoutTime = (seconds) => {
+    const mins = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
   };
 
-  return (
-    <div className="min-h-screen bg-black">
-      <div className="min-h-screen flex justify-center items-center pt-24">
-        <div
-          className={`flex flex-col md:flex-row bg-white rounded-lg shadow-lg max-w-5xl w-full mx-4 p-6 perspective pt-10`}
-        >
-          <div
-            className={`md:w-1/2 flex justify-center items-center p-4 transition-transform duration-600 ease-in-out preserve-3d ${
-              isFlipping ? "flip" : ""
-            }`}
-          >
-            <img
-              src={isSignup ? signupImage : sign}
-              alt={isSignup ? "Signup" : "Sign"}
-              className="rounded-lg max-w-full h-auto backface-hidden"
-            />
+  if (forgotPasswordMode) {
+    return (
+      <div className="min-h-screen bg-[#02000d] text-gray-900 dark:text-white flex items-center justify-center p-6 selection:bg-purple-500/30 pt-20 relative overflow-hidden">
+        <div className="absolute top-[20%] left-[20%] w-[40%] h-[40%] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none -z-10" />
+
+        <div className="max-w-md w-full bg-[#050510]/85 border border-gray-200 dark:border-white/10 p-8 rounded-3xl backdrop-blur-2xl shadow-2xl space-y-6 relative z-10">
+          <div className="text-center">
+            <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">Reset Password</h1>
+            <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Enter your business email to receive reset instructions.</p>
           </div>
-          <div
-            className={`md:w-1/2 p-6 transition-transform duration-600 ease-in-out preserve-3d ${
-              isFlipping ? "flip" : ""
-            }`}
-          >
-            {!isSignup ? (
-              <>
-                <h2 className="text-3xl font-bold mb-6 text-center text-black">Welcome back TECHIES</h2>
-                {error && <p className="text-red-600 mb-4">{error}</p>}
-                <form onSubmit={handleLoginSubmit} className="space-y-4">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-text pt-1 text-black"
-                  />
-                  <div className="relative">
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      name="password"
-                      placeholder="Password"
-                      value={formData.password}
-                      onChange={handleChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-text pt-1 text-black"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-2 text-gray-600"
-                      tabIndex={-1}
-                    >
-                      {showPassword ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-5.523 0-10-4.477-10-10 0-1.042.168-2.04.475-2.975M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 2l20 20" />
-                        </svg>
-                      ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                        </svg>
-                      )}
-                    </button>
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-                  >
-                    {loading ? "Logging in..." : "Log In"}
-                  </button>
-                </form>
-                <button
-                  onClick={handleGoogleLogin}
-                  className="w-full mt-4 py-2 px-4 bg-red-600 text-white rounded hover:bg-red-700 transition flex items-center justify-center"
-                >
-                  <img src={googleIcon} alt="Google" className="w-6 h-6 mr-2" />
-                  Continue with Google
-                </button>
-                <button
-                  onClick={handleGithubLogin}
-                  className="w-full mt-2 py-2 px-4 bg-gray-800 text-white rounded hover:bg-gray-900 transition flex items-center justify-center"
-                >
-                  <img src={githubIcon} alt="GitHub" className="w-6 h-6 mr-2" />
-                  Continue with GitHub
-                </button>
-                <p className="mt-4 text-center text-black">
-                  Don't have an account?{" "}
-                  <button onClick={toggleSignup} className="text-blue-600 hover:underline">
-                    Sign Up
-                  </button>
-                </p>
-              </>
-            ) : (
-              <>
-                <h2 className="text-3xl font-bold mb-6 text-center text-black pt-6 block"></h2>
-                {error && <p className="text-red-600 mb-4">{error}</p>}
-            <form onSubmit={handleSignupSubmit} className="space-y-4 text-black pt-6">
-              <div>
-                <h2 className="text-3xl font-bold mb-6 text-center text-black">Signup</h2>
-                <label htmlFor="displayName" className="block mb-1 font-semibold text-black">
-                  Display Name
-                </label>
-                <input
-                  type="text"
-                  id="displayName"
-                  name="displayName"
-                  value={formData.displayName}
-                  onChange={handleChange}
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-text pt-1 text-black"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block mb-1 font-semibold text-black">
-                  Email
-                </label>
+
+          {error && (
+            <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-center gap-2">
+              <ShieldAlert className="w-4 h-4 shrink-0" />
+              <span>{error}</span>
+            </div>
+          )}
+
+          {resetSent ? (
+            <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs text-center space-y-3">
+              <p className="font-semibold">Reset instructions dispatched!</p>
+              <p className="text-[10px] text-gray-600 dark:text-gray-400 leading-normal">
+                Check your corporate inbox for a link to securely update your B2B account credentials.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setForgotPasswordMode(false);
+                  setResetSent(false);
+                  setResetEmail("");
+                }}
+                className="mt-2 text-xs text-[#33bbcf] hover:underline"
+              >
+                Back to Sign In
+              </button>
+            </div>
+          ) : (
+            <form onSubmit={handlePasswordReset} className="space-y-4">
+              <div className="space-y-1.5">
+                <label className="text-[11px] font-mono text-gray-600 dark:text-gray-400 uppercase tracking-wider block">Business Email</label>
                 <input
                   type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                  value={resetEmail}
+                  onChange={(e) => setResetEmail(e.target.value)}
                   required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-text pt-1 text-black"
+                  placeholder="name@company.com"
+                  className="w-full px-3.5 py-2.5 bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-white/[0.04] transition-all"
                 />
               </div>
-              <div className="relative">
-                <label htmlFor="password" className="block mb-1 font-semibold text-black">
-                  Password
-                </label>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  id="password"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-text pt-1 text-black"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-8 text-gray-600"
-                  tabIndex={-1}
-                >
-                  {showPassword ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-5.523 0-10-4.477-10-10 0-1.042.168-2.04.475-2.975M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 2l20 20" />
-                    </svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  )}
-                </button>
-              </div>
-              <div className="relative">
-                <label htmlFor="confirmPassword" className="block mb-1 font-semibold text-black">
-                  Confirm Password
-                </label>
-                <input
-                  type={showConfirmPassword ? "text" : "password"}
-                  id="confirmPassword"
-                  name="confirmPassword"
-                  value={formData.confirmPassword}
-                  onChange={handleChange}
-                  required
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-600 cursor-text pt-1 text-black"
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-3 top-8 text-gray-600"
-                  tabIndex={-1}
-                >
-                  {showConfirmPassword ? (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.875 18.825A10.05 10.05 0 0112 19c-5.523 0-10-4.477-10-10 0-1.042.168-2.04.475-2.975M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2 2l20 20" />
-                    </svg>
-                  ) : (
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                    </svg>
-                  )}
-                </button>
-              </div>
-              <div>
-                <label htmlFor="photo" className="block mb-1 font-semibold">
-                  Profile Photo
-                </label>
-                <input
-                  type="file"
-                  id="photo"
-                  name="photo"
-                  accept="image/*"
-                  onChange={handleChange}
-                  className="w-full"
-                />
-              </div>
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  id="isRobotChecked"
-                  name="isRobotChecked"
-                  checked={formData.isRobotChecked}
-                  onChange={handleChange}
-                  className="mr-2"
-                />
-                <label htmlFor="isRobotChecked" className="select-none">
-                  I am not a robot
-                </label>
-              </div>
+
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+                className="btn-primary"
               >
-                {loading ? "Signing up..." : "Sign Up"}
+                {loading ? <Loader2 className="w-3.5 h-3.5 animate-spin mx-auto" /> : "Send Reset Link"}
               </button>
+
+              <div className="text-center pt-2">
+                <button
+                  type="button"
+                  onClick={() => setForgotPasswordMode(false)}
+                  className="text-xs text-gray-500 hover:text-gray-900 dark:text-white transition-colors"
+                >
+                  Cancel and Return
+                </button>
+              </div>
             </form>
-                <p className="mt-4 text-center text-black">
-                  Have an account?{" "}
-                  <button onClick={toggleSignup} className="text-blue-600 hover:underline">
-                    Log In
-                  </button>
-                </p>
-              </>
-            )}
-          </div>
+          )}
         </div>
       </div>
-      <style jsx>{`
-        .perspective {
-          perspective: 1000px;
-        }
-        .preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .flip {
-          transform: rotateY(180deg);
-        }
-        .duration-600 {
-          transition-duration: 600ms;
-        }
-      `}</style>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-[#02000d] text-gray-900 dark:text-white flex items-center justify-center p-6 selection:bg-purple-500/30 pt-28 pb-20 relative overflow-hidden">
+      {/* Radial glows */}
+      <div className="absolute top-[10%] left-[-10%] w-[50%] h-[50%] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute bottom-[10%] right-[-10%] w-[45%] h-[45%] bg-blue-900/10 blur-[130px] rounded-full pointer-events-none -z-10" />
+
+      <div className="max-w-md w-full bg-[#050510]/85 border border-gray-200 dark:border-white/10 p-8 rounded-3xl backdrop-blur-2xl shadow-2xl space-y-6 relative z-10">
+
+        <div className="text-center">
+          <div className="inline-flex items-center gap-1 mb-2 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[#33bbcf] text-[9px] font-mono uppercase tracking-wider">
+            <Sparkles className="w-3 h-3 text-[#33bbcf]" />
+            <span>Secure Terminal Gateway</span>
+          </div>
+          <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">LeadAI Sign In</h1>
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Authorized business employees only.</p>
+        </div>
+
+        {error && (
+          <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-start gap-2">
+            <ShieldAlert className="w-4 h-4 shrink-0 mt-0.5" />
+            <span>{error}</span>
+          </div>
+        )}
+
+        <form onSubmit={handleLoginSubmit} className="space-y-4">
+
+          {/* Email input */}
+          <div className="space-y-1.5">
+            <label className="text-[11px] font-mono text-gray-600 dark:text-gray-400 uppercase tracking-wider block">Business Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              disabled={lockoutTimeLeft > 0}
+              placeholder="name@company.com"
+              className="w-full px-3.5 py-2.5 bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-white/[0.04] transition-all disabled:opacity-40"
+            />
+          </div>
+
+          {/* Password input */}
+          <div className="space-y-1.5">
+            <div className="flex justify-between items-center">
+              <label className="text-[11px] font-mono text-gray-600 dark:text-gray-400 uppercase tracking-wider block">Password</label>
+              <button
+                type="button"
+                onClick={() => setForgotPasswordMode(true)}
+                className="text-[10px] text-[#33bbcf] hover:text-purple-300 hover:underline"
+              >
+                Forgot Password?
+              </button>
+            </div>
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                disabled={lockoutTimeLeft > 0}
+                placeholder="••••••••••••"
+                className="w-full pl-3.5 pr-10 py-2.5 bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-white/[0.04] transition-all disabled:opacity-40"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3.5 top-3 text-gray-500 hover:text-gray-900 dark:text-white"
+                disabled={lockoutTimeLeft > 0}
+              >
+                {showPassword ? <EyeOff className="w-3.5 h-3.5" /> : <Eye className="w-3.5 h-3.5" />}
+              </button>
+            </div>
+          </div>
+
+          {/* Remember me checkbox */}
+          <div className="flex items-center">
+            <input
+              type="checkbox"
+              id="rememberMe"
+              name="rememberMe"
+              checked={formData.rememberMe}
+              onChange={handleChange}
+              className="rounded bg-white/[0.02] border-gray-200 dark:border-white/10 text-[#33bbcf] focus:ring-purple-500/20"
+            />
+            <label htmlFor="rememberMe" className="text-xs text-gray-600 dark:text-gray-400 ml-2 select-none cursor-pointer">
+              Remember corporate credentials
+            </label>
+          </div>
+
+          {/* Turnstile Bot protection */}
+          {lockoutTimeLeft === 0 && (
+            <div className="border border-white/5 bg-[#050510]/60 p-4 rounded-xl flex items-center justify-between shadow-inner">
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={handleBotShieldClick}
+                  className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${botShieldVerified
+                    ? "bg-purple-600 border-purple-500 text-gray-900 dark:text-white"
+                    : "bg-white/[0.02] border-gray-300 dark:border-white/20 hover:border-purple-500/40"
+                    }`}
+                  disabled={botShieldVerified || botShieldLoading}
+                >
+                  {botShieldLoading && <Loader2 className="w-3.5 h-3.5 animate-spin text-[#33bbcf]" />}
+                  {botShieldVerified && <Check className="w-3.5 h-3.5" />}
+                </button>
+                <span className="text-xs font-medium text-gray-300 select-none cursor-pointer" onClick={handleBotShieldClick}>
+                  {botShieldLoading ? "Verifying browser request..." : "Verify Business Request"}
+                </span>
+              </div>
+              <div className="text-right">
+                <span className="text-[8px] font-mono uppercase tracking-widest text-gray-600 block">LeadAI Shield</span>
+                <span className="text-[7px] text-gray-500 font-mono">Secured by Turnstile</span>
+              </div>
+            </div>
+          )}
+
+          {/* Lockout details */}
+          {lockoutTimeLeft > 0 && (
+            <div className="p-3.5 rounded-xl bg-red-500/10 border border-red-500/20 text-red-400 text-xs flex items-center gap-3 font-mono">
+              <Lock className="w-4 h-4 shrink-0 animate-bounce" />
+              <div>
+                <p className="font-bold">Access Suspended</p>
+                <p className="text-[10px] text-gray-600 dark:text-gray-400 mt-0.5">
+                  Try again in: {formatLockoutTime(lockoutTimeLeft)}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Submit button */}
+          <button
+            type="submit"
+            disabled={loading || lockoutTimeLeft > 0}
+            className="btn-primary"
+          >
+            {loading ? <Loader2 className="w-4 h-4 animate-spin mx-auto" /> : "Sign In to LeadAI"}
+          </button>
+        </form>
+
+        <div className="text-center space-y-2">
+          <p className="text-xs text-gray-600 dark:text-gray-400">
+            Don't have credentials?{" "}
+            <Link to="/contacts" className="text-[#33bbcf] hover:underline font-semibold">
+              Fill contact form to request credentials
+            </Link>
+          </p>
+          <p className="text-[10px] text-gray-600 font-mono">
+            LeadAI Corporate Authentication Portal
+          </p>
+        </div>
+      </div>
     </div>
   );
-};
-
-export default Login;
+}

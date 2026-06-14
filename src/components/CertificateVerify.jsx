@@ -110,7 +110,7 @@ const CertificateVerify = () => {
     };
 
     return (
-        <div className="bg-primary w-full overflow-hidden min-h-screen relative font-poppins selection:bg-secondary selection:text-primary">
+        <div className="bg-white dark:bg-primary w-full overflow-hidden min-h-screen relative font-poppins selection:bg-secondary selection:text-primary">
             <div className={`${styles.paddingX} ${styles.flexCenter} pt-32 pb-20`}>
                 <div className={`${styles.boxWidth} flex flex-col items-center relative z-[5]`}>
 
@@ -128,17 +128,17 @@ const CertificateVerify = () => {
                         <motion.h1 variants={itemVariants} className={`${styles.heading2} leading-tight`}>
                             Official Verification System – <span className="text-gradient">TechieHelp</span>
                         </motion.h1>
-                        <motion.p variants={itemVariants} className={`${styles.paragraph} mt-4 max-w-[750px] mx-auto text-dimWhite`}>
+                        <motion.p variants={itemVariants} className={`${styles.paragraph} mt-4 max-w-[750px] mx-auto text-gray-500 dark:text-dimWhite`}>
                             This portal allows employers, academic institutions, and candidates to verify the authenticity of internship certificates issued by TechieHelp.
                         </motion.p>
                     </motion.div>
 
-                    <div className="w-full max-w-[750px] glass-morphism p-1 rounded-3xl overflow-hidden shadow-2xl border border-white/10 mb-12">
+                    <div className="w-full max-w-[750px] glass-morphism p-1 rounded-3xl overflow-hidden shadow-2xl border border-gray-200 dark:border-white/10 mb-12">
                         <div className="p-8 bg-black-gradient-2 rounded-[calc(1.5rem-1px)]">
-                            <h3 className="text-white font-bold text-xl mb-4 flex items-center gap-2">
+                            <h3 className="text-gray-900 dark:text-white font-bold text-xl mb-4 flex items-center gap-2">
                                 <Search className="text-secondary w-5 h-5" /> Verify Internship Certificate
                             </h3>
-                            <p className="text-dimWhite mb-6 text-sm">
+                            <p className="text-gray-500 dark:text-dimWhite mb-6 text-sm">
                                 Enter the unique Internship Certificate ID printed on the certificate to validate its authenticity.
                             </p>
 
@@ -149,10 +149,10 @@ const CertificateVerify = () => {
                                         placeholder="Enter Certificate ID (e.g. TECHIE1234)"
                                         value={certIdInput}
                                         onChange={(e) => setCertIdInput(e.target.value)}
-                                        className="w-full bg-primary/40 text-white border border-gray-700/50 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-secondary font-poppins transition-all pl-12 placeholder:text-gray-600"
+                                        className="w-full bg-white dark:bg-primary/40 text-gray-900 dark:text-white border border-gray-700/50 rounded-2xl px-5 py-4 focus:outline-none focus:ring-2 focus:ring-secondary font-poppins transition-all pl-12 placeholder:text-gray-600"
                                         required
                                     />
-                                    <ShieldCheck className={`absolute left-4 top-1/2 -translate-y-1/2 transition-colors w-5 h-5 ${status === 'loading' ? 'text-secondary animate-pulse' : 'text-dimWhite group-hover:text-secondary'}`} />
+                                    <ShieldCheck className={`absolute left-4 top-1/2 -translate-y-1/2 transition-colors w-5 h-5 ${status === 'loading' ? 'text-secondary animate-pulse' : 'text-gray-500 dark:text-dimWhite group-hover:text-secondary'}`} />
                                 </div>
                                 <button
                                     type="submit"
@@ -173,7 +173,7 @@ const CertificateVerify = () => {
                                 </button>
                             </form>
 
-                            <p className="mt-4 text-xs text-dimWhite italic">
+                            <p className="mt-4 text-xs text-gray-500 dark:text-dimWhite italic">
                                 * Please enter the Certificate ID exactly as mentioned (without .pdf).
                             </p>
 
@@ -219,16 +219,16 @@ const CertificateVerify = () => {
                                         <CheckCircle className="w-12 h-12 text-secondary" />
                                     </motion.div>
                                     <p className="text-secondary font-bold tracking-widest uppercase text-sm mb-2">Verification Status</p>
-                                    <h2 className="text-white font-extrabold text-[32px] sm:text-[48px] leading-[1.1]">
-                                        ✅ Internship Certificate Verified
+                                    <h2 className="text-gray-900 dark:text-white font-extrabold text-[32px] sm:text-[48px] leading-[1.1]">
+                                         Internship Certificate Verified
                                     </h2>
-                                    <p className="text-dimWhite max-w-[650px] mx-auto mt-6 text-lg">
+                                    <p className="text-gray-500 dark:text-dimWhite max-w-[650px] mx-auto mt-6 text-lg">
                                         The internship certificate associated with the entered ID has been successfully validated against TechieHelp’s official records.
                                     </p>
                                 </div>
 
                                 <div className="w-full mb-12">
-                                    <h3 className="text-white font-bold text-2xl mb-6 flex items-center gap-2">
+                                    <h3 className="text-gray-900 dark:text-white font-bold text-2xl mb-6 flex items-center gap-2">
                                         <Cpu className="text-secondary w-6 h-6" /> Internship Credential Details
                                     </h3>
                                     <div className="grid md:grid-cols-2 gap-4">
@@ -240,25 +240,25 @@ const CertificateVerify = () => {
                                             { label: "Credential Status", val: "Active" },
                                             { label: "Verification Date", val: certData.verifiedAt },
                                         ].map((item, i) => (
-                                            <div key={i} className="flex justify-between items-center p-4 bg-primary/30 border border-white/5 rounded-xl">
-                                                <span className="text-dimWhite text-sm font-semibold">{item.label}</span>
-                                                <span className="text-white font-bold">{item.val}</span>
+                                            <div key={i} className="flex justify-between items-center p-4 bg-white dark:bg-primary/30 border border-white/5 rounded-xl">
+                                                <span className="text-gray-500 dark:text-dimWhite text-sm font-semibold">{item.label}</span>
+                                                <span className="text-gray-900 dark:text-white font-bold">{item.val}</span>
                                             </div>
                                         ))}
                                     </div>
                                 </div>
 
                                 <div className="w-full mb-12">
-                                    <h3 className="text-white font-bold text-2xl mb-6 flex items-center gap-2">
+                                    <h3 className="text-gray-900 dark:text-white font-bold text-2xl mb-6 flex items-center gap-2">
                                         <ExternalLink className="text-secondary w-6 h-6" /> Certificate Preview & Download
                                     </h3>
-                                    <p className="text-dimWhite mb-8">You may view the official internship certificate preview or download the original certificate (PDF).</p>
+                                    <p className="text-gray-500 dark:text-dimWhite mb-8">You may view the official internship certificate preview or download the original certificate (PDF).</p>
 
                                     <div className="w-full relative group">
                                         <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-blue-500 rounded-[3rem] blur opacity-25" />
                                         <div className="relative w-full bg-black-gradient-2 p-1.5 rounded-[3rem] shadow-2xl overflow-hidden">
-                                            <div className="bg-primary/50 rounded-[2.8rem] overflow-hidden">
-                                                <div className="relative w-full aspect-[1.414/1] rounded-[2.5rem] overflow-hidden bg-gray-900 border border-white/5">
+                                            <div className="bg-white dark:bg-primary/50 rounded-[2.8rem] overflow-hidden">
+                                                <div className="relative w-full aspect-[1.414/1] rounded-[2.5rem] overflow-hidden bg-gray-50 dark:bg-gray-900 border border-white/5">
                                                     <iframe
                                                         src={certData.previewUrl}
                                                         className="absolute inset-0 w-full h-full border-0"
@@ -266,13 +266,13 @@ const CertificateVerify = () => {
                                                     ></iframe>
 
                                                     <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[4px] pointer-events-none">
-                                                        <div className="flex flex-col items-center gap-4 bg-secondary/80 px-10 py-7 rounded-[2.5rem] shadow-2xl border border-white/20 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500">
-                                                            <ShieldCheck className="h-16 w-16 text-white animate-bounce" />
-                                                            <p className="text-white font-black text-2xl tracking-[4px] uppercase">
+                                                        <div className="flex flex-col items-center gap-4 bg-secondary/80 px-10 py-7 rounded-[2.5rem] shadow-2xl border border-gray-300 dark:border-white/20 transform translate-y-8 group-hover:translate-y-0 transition-all duration-500">
+                                                            <ShieldCheck className="h-16 w-16 text-gray-900 dark:text-white animate-bounce" />
+                                                            <p className="text-gray-900 dark:text-white font-black text-2xl tracking-[4px] uppercase">
                                                                 Verified Intern
                                                             </p>
                                                             <div className="h-[2px] w-20 bg-white/40 rounded-full" />
-                                                            <p className="text-white/80 font-bold text-lg">TechieHelp AI</p>
+                                                            <p className="text-gray-900 dark:text-white/80 font-bold text-lg">TechieHelp AI</p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -291,7 +291,7 @@ const CertificateVerify = () => {
                                             <Download className="h-6 w-6 mr-3 group-hover:translate-y-1 transition-transform" />
                                             Download Certificate (PDF)
                                         </motion.a>
-                                        <p className="text-dimWhite font-semibold text-sm text-center opacity-60">
+                                        <p className="text-gray-500 dark:text-dimWhite font-semibold text-sm text-center opacity-60">
                                             The certificate is provided for verification, academic submission, and professional record purposes only.
                                         </p>
                                     </div>
@@ -301,24 +301,24 @@ const CertificateVerify = () => {
                     </AnimatePresence>
 
                     {/* New Informational Sections */}
-                    <div className="w-full max-w-[950px] mt-10 border-t border-white/10 pt-20">
+                    <div className="w-full max-w-[950px] mt-10 border-t border-gray-200 dark:border-white/10 pt-20">
                         <div className="grid md:grid-cols-2 gap-12 mb-20">
                             <div>
-                                <h3 className="text-white font-bold text-2xl mb-6 flex items-center gap-2">
+                                <h3 className="text-gray-900 dark:text-white font-bold text-2xl mb-6 flex items-center gap-2">
                                     <BadgeCheck className="text-secondary w-6 h-6" /> About TechieHelp Internship Programs
                                 </h3>
-                                <p className="text-dimWhite leading-relaxed mb-4">
+                                <p className="text-gray-500 dark:text-dimWhite leading-relaxed mb-4">
                                     TechieHelp conducts structured internship programs focused on practical skill development, real-world project experience, and career readiness across technology and digital domains.
                                 </p>
-                                <p className="text-dimWhite leading-relaxed">
+                                <p className="text-gray-500 dark:text-dimWhite leading-relaxed">
                                     Internship certificates are issued upon successful participation and completion of program requirements.
                                 </p>
                             </div>
                             <div>
-                                <h3 className="text-white font-bold text-2xl mb-6 flex items-center gap-2">
+                                <h3 className="text-gray-900 dark:text-white font-bold text-2xl mb-6 flex items-center gap-2">
                                     <Search className="text-secondary w-6 h-6" /> For Recruiters & Institutions
                                 </h3>
-                                <p className="text-dimWhite leading-relaxed mb-6">
+                                <p className="text-gray-500 dark:text-dimWhite leading-relaxed mb-6">
                                     This portal serves as the official source for validating internship credentials issued by TechieHelp.
                                 </p>
                                 <div className="p-6 bg-secondary/10 border border-secondary/20 rounded-2xl flex items-center gap-4">
@@ -326,8 +326,8 @@ const CertificateVerify = () => {
                                         <ShieldCheck className="text-secondary w-6 h-6" />
                                     </div>
                                     <div>
-                                        <p className="text-white font-bold text-sm">For verification support:</p>
-                                        <a href="mailto:support@techiehelp.in" className="text-secondary hover:text-white transition-colors decoration-dotted underline">support@techiehelp.in</a>
+                                        <p className="text-gray-900 dark:text-white font-bold text-sm">For verification support:</p>
+                                        <a href="mailto:support@techiehelp.in" className="text-secondary hover:text-gray-900 dark:text-white transition-colors decoration-dotted underline">support@techiehelp.in</a>
                                     </div>
                                 </div>
                             </div>
@@ -335,10 +335,10 @@ const CertificateVerify = () => {
 
                         <div className="w-full bg-red-500/5 border border-red-500/20 rounded-[2.5rem] p-8 sm:p-12 relative overflow-hidden">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-red-500/10 blur-[80px]" />
-                            <h3 className="text-white font-bold text-2xl mb-6 flex items-center gap-2">
+                            <h3 className="text-gray-900 dark:text-white font-bold text-2xl mb-6 flex items-center gap-2">
                                 <ShieldAlert className="text-red-500 w-7 h-7" /> Important Notice
                             </h3>
-                            <div className="space-y-4 text-dimWhite leading-relaxed text-sm sm:text-base">
+                            <div className="space-y-4 text-gray-500 dark:text-dimWhite leading-relaxed text-sm sm:text-base">
                                 <p className="flex gap-3">
                                     <span className="text-red-500 font-bold">•</span>
                                     <span>This is the only authorized platform to verify TechieHelp internship certificates.</span>
@@ -349,7 +349,7 @@ const CertificateVerify = () => {
                                 </p>
                                 <p className="flex gap-3">
                                     <span className="text-red-500 font-bold">•</span>
-                                    <span className="font-bold text-white uppercase tracking-tight">Unauthorized modification or misuse of certificates is strictly prohibited.</span>
+                                    <span className="font-bold text-gray-900 dark:text-white uppercase tracking-tight">Unauthorized modification or misuse of certificates is strictly prohibited.</span>
                                 </p>
                             </div>
                         </div>

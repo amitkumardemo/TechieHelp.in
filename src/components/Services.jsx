@@ -99,15 +99,15 @@ const Services = () => {
           })}
         </script>
       </Helmet>
-      
+
       {/* 1. Hero Section */}
       <Hero />
       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      
+
       {/* 2. Problem Section */}
       <ProblemSection />
       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      
+
       {/* 3. Solution Section (Workflow Visual) */}
       <WorkflowVisual />
       <div className="w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />

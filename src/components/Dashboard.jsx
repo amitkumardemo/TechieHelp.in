@@ -5,7 +5,7 @@ const Dashboard = () => {
   const { user } = useAuth();
 
   return (
-    <div className="min-h-screen bg-primary p-12 text-white">
+    <div className="min-h-screen bg-white dark:bg-primary p-12 text-gray-900 dark:text-white">
       <div className="max-w-5xl mx-auto bg-black bg-opacity-70 rounded-lg shadow-lg p-8">
         <h1 className="text-4xl font-extrabold mb-6">Welcome back, {user?.displayName || "User"}!</h1>
         <p className="text-lg">

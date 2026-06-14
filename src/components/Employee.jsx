@@ -136,7 +136,7 @@ const Employee = () => {
             <h1 className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight bg-gradient-to-r from-blue-400 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
               Our Professional Team
             </h1>
-            <p className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+            <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
               Meet the innovators and experts driving TechieHelp towards the future of AI and Digital Excellence.
             </p>
           </motion.div>
@@ -154,7 +154,7 @@ const Employee = () => {
                 placeholder="Search by name, role, or ID (e.g., TH-EMP...)"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full px-6 py-4 rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all shadow-2xl"
+                className="w-full px-6 py-4 rounded-2xl bg-gray-100 dark:bg-white/5 backdrop-blur-xl border border-gray-200 dark:border-white/10 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500/50 transition-all shadow-2xl"
               />
               <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -171,8 +171,8 @@ const Employee = () => {
                   onClick={() => setActiveDepartment(dept)}
                   className={`px-5 py-2 rounded-full border transition-all duration-300 backdrop-blur-md ${
                     activeDepartment === dept
-                      ? 'bg-blue-600 border-blue-400 text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
-                      : 'bg-white/5 border-white/10 text-gray-400 hover:border-blue-500/50 hover:text-white'
+                      ? 'bg-blue-600 border-blue-400 text-gray-900 dark:text-white shadow-[0_0_20px_rgba(37,99,235,0.4)]'
+                      : 'bg-gray-100 dark:bg-white/5 border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400 hover:border-blue-500/50 hover:text-gray-900 dark:text-white'
                   }`}
                 >
                   {dept}
@@ -196,7 +196,7 @@ const Employee = () => {
                 className="group relative"
               >
                 <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-500 to-purple-600 rounded-3xl blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
-                <div className="relative flex flex-col h-full bg-[#0d0d12]/80 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 overflow-hidden shadow-2xl">
+                <div className="relative flex flex-col h-full bg-[#0d0d12]/80 backdrop-blur-2xl border border-gray-200 dark:border-white/10 rounded-3xl p-6 overflow-hidden shadow-2xl">
                   {/* Glassmorph Highlight */}
                   <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 blur-3xl -mr-12 -mt-12 rounded-full"></div>
                   
@@ -207,24 +207,24 @@ const Employee = () => {
                       <img
                         src={employee.profileImage}
                         alt={employee.fullName}
-                        className="relative w-full h-full rounded-2xl object-cover border-2 border-white/10 group-hover:border-blue-500/50 transition-colors"
+                        className="relative w-full h-full rounded-2xl object-cover border-2 border-gray-200 dark:border-white/10 group-hover:border-blue-500/50 transition-colors"
                         style={{ objectPosition: employee.objectPosition || 'center' }}
                       />
                       <div className="absolute -bottom-2 -right-2 bg-blue-600 rounded-lg p-1 shadow-xl">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-900 dark:text-white" viewBox="0 0 20 20" fill="currentColor">
                           <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.607.27 1.154.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                         </svg>
                       </div>
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-1 group-hover:text-blue-400 transition-colors">{employee.fullName}</h3>
-                    <p className="text-blue-500 font-medium text-sm tracking-wider uppercase">{employee.role}</p>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-1 group-hover:text-blue-400 transition-colors">{employee.fullName}</h3>
+                    <p className="text-[#33bbcf] font-medium text-sm tracking-wider uppercase">{employee.role}</p>
                   </div>
 
                   {/* Details */}
                   <div className="space-y-3 mb-8 text-sm flex-grow">
                     <div className="flex justify-between items-center py-2 border-b border-white/5">
                       <span className="text-gray-500 uppercase tracking-tighter font-bold">ID</span>
-                      <span className="text-gray-300 font-mono bg-white/5 px-2 py-0.5 rounded italic">{employee.id}</span>
+                      <span className="text-gray-300 font-mono bg-gray-100 dark:bg-white/5 px-2 py-0.5 rounded italic">{employee.id}</span>
                     </div>
                     <div className="flex justify-between items-center py-2 border-b border-white/5">
                       <span className="text-gray-500 uppercase tracking-tighter font-bold">Dept</span>
@@ -248,14 +248,14 @@ const Employee = () => {
                        <a
                         href={employee.linkedInProfile || '#'}
                         target="_blank"
-                        className="flex-1 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-xs text-center text-gray-400 hover:text-white transition-all uppercase tracking-widest font-bold"
+                        className="flex-1 py-2 bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded-xl text-xs text-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-all uppercase tracking-widest font-bold"
                       >
                         LinkedIn
                       </a>
                       <a
                         href={employee.githubProfile || '#'}
                         target="_blank"
-                        className="flex-1 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-xs text-center text-gray-400 hover:text-white transition-all uppercase tracking-widest font-bold"
+                        className="flex-1 py-2 bg-gray-100 dark:bg-white/5 hover:bg-gray-100 dark:bg-white/10 border border-gray-200 dark:border-white/10 rounded-xl text-xs text-center text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white transition-all uppercase tracking-widest font-bold"
                       >
                         GitHub
                       </a>
@@ -268,7 +268,7 @@ const Employee = () => {
 
           {/* Empty State */}
           {filteredEmployees.length === 0 && (
-            <div className="text-center py-20 bg-white/5 backdrop-blur-xl rounded-3xl border border-white/10">
+            <div className="text-center py-20 bg-gray-100 dark:bg-white/5 backdrop-blur-xl rounded-3xl border border-gray-200 dark:border-white/10">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-16 w-16 mx-auto text-gray-600 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>

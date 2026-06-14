@@ -56,8 +56,8 @@ const Platforms = () => {
   }, [selectedCategory]);
 
   return (
-    <section className="py-16 text-white px-6 md:px-12 lg:px-20">
-      <h2 className="text-4xl font-bold text-center mb-8 text-blue-500">Platforms We Use</h2>
+    <section className="py-16 text-gray-900 dark:text-white px-6 md:px-12 lg:px-20">
+      <h2 className="text-4xl font-bold text-center mb-8 text-[#33bbcf]">Platforms We Use</h2>
       <p className="text-center mb-12 text-gray-300 text-lg">
         Powering modern development with secure, scalable, and AI-driven technologies.
       </p>
@@ -70,7 +70,7 @@ const Platforms = () => {
             className="flex items-center space-x-3 bg-[#101827] p-4 rounded-lg shadow hover:shadow-blue-500 transition-shadow cursor-pointer"
           >
             <span className="text-blue-600 w-6 h-6">{icon}</span>
-            <span className="text-white font-medium">{name}</span>
+            <span className="text-gray-900 dark:text-white font-medium">{name}</span>
           </div>
         ))}
       </div>
@@ -84,7 +84,7 @@ const Platforms = () => {
             {platformDetails[selectedCategory].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-[#1e293b] text-white px-4 py-2 rounded-full shadow hover:bg-blue-700 transition"
+                className="bg-[#1e293b] text-gray-900 dark:text-white px-4 py-2 rounded-full shadow hover:bg-blue-700 transition"
               >
                 {item}
               </div>

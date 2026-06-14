@@ -240,7 +240,7 @@ const cardVariants = {
 
 const AIAutomationServices = () => {
   return (
-    <div className="min-h-screen pt-20 bg-primary text-white">
+    <div className="min-h-screen pt-20 bg-white dark:bg-primary text-gray-900 dark:text-white">
       {/* Hero Section */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
@@ -254,7 +254,7 @@ const AIAutomationServices = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
+              <button className="btn-primary">
                 Book Your Free 1:1 Strategy Call
               </button>
             </a>
@@ -294,7 +294,7 @@ const AIAutomationServices = () => {
             </motion.div>
 
             <motion.div
-              className="bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl p-8 relative overflow-hidden md:w-1/2"
+              className="btn-primary"
               whileHover={{ scale: 1.02 }}
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -380,7 +380,7 @@ const AIAutomationServices = () => {
                   className="bg-white rounded-2xl shadow-xl p-6 flex flex-col items-center text-center text-gray-800 border-2 border-transparent hover:border-purple-200 transition-all duration-300 cursor-pointer group"
                 >
                   <motion.div
-                    className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4 group-hover:from-purple-600 group-hover:to-blue-600 transition-all duration-300"
+                    className="btn-primary"
                     whileHover={{
                       scale: 1.1,
                       rotate: 360,
@@ -390,7 +390,7 @@ const AIAutomationServices = () => {
                     {icon}
                   </motion.div>
                   <motion.h3
-                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-purple-600 transition-colors duration-300"
+                    className="text-xl font-semibold mb-3 text-gray-800 group-hover:text-[#33bbcf] transition-colors duration-300"
                     whileHover={{ scale: 1.05 }}
                   >
                     {title}
@@ -451,7 +451,7 @@ const AIAutomationServices = () => {
               custom={index}
               className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center text-center text-gray-800"
             >
-              <div className="bg-gradient-to-br from-blue-500 to-purple-600 text-white rounded-full p-4 mb-4">
+              <div className="btn-primary">
                 {icon}
               </div>
               <h3 className="text-xl font-semibold mb-2">{title}</h3>
@@ -462,7 +462,7 @@ const AIAutomationServices = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="mt-2 px-4 py-2 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 text-sm">
+                <button className="btn-primary">
                   Book 1:1 Strategy Session
                 </button>
               </a>
@@ -489,7 +489,7 @@ const AIAutomationServices = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <button className="mt-6 px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300">
+              <button className="btn-primary">
                 Book Your Free 1:1 Strategy Call
               </button>
             </a>
@@ -572,7 +572,7 @@ const AIAutomationServices = () => {
                   href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto px-6 py-3 bg-cyan-600 text-white rounded-full hover:bg-cyan-700 transition duration-300 inline-block text-center"
+                  className="btn-primary"
                 >
                   Book Plan Setup Call
                 </a>

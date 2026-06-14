@@ -18,7 +18,7 @@ const LanyardIntegration = ({ student }) => {
         {/* Visit Profile Button */}
         <button
           onClick={handleVisitProfile}
-          className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-full font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          className="btn-primary"
         >
           View ID Card
         </button>

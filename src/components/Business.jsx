@@ -15,8 +15,8 @@ const AIModule = ({ icon, title, content, index }) => (
   >
     {/* Inner Glow Backdrop */}
     <div className="absolute -inset-2 bg-secondary/5 blur-[40px] opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-    
-    <div className="relative glass-morphism border-white/5 p-6 rounded-3xl flex items-center gap-6 group-hover:bg-white/[0.04] group-hover:border-white/10 transition-all duration-500 group-hover:-translate-y-2 shadow-2xl">
+
+    <div className="relative glass-morphism border-white/5 p-6 rounded-3xl flex items-center gap-6 group-hover:bg-white/[0.04] group-hover:border-gray-200 dark:border-white/10 transition-all duration-500 group-hover:-translate-y-2 shadow-2xl">
       {/* HUD Accent */}
       <div className="absolute top-4 right-6 flex items-center gap-1.5">
         <div className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse shadow-[0_0_8px_#33bbcf]" />
@@ -24,14 +24,14 @@ const AIModule = ({ icon, title, content, index }) => (
       </div>
 
       <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-transparent flex items-center justify-center p-4 border border-secondary/20 group-hover:border-secondary/40 transition-colors">
-        <img src={icon} alt={title} className="w-full h-full object-contain filter drop-shadow-[0_0_8px_rgba(51,187,207,0.4)]" />
+        {icon}
       </div>
 
       <div className="flex-1">
-        <h4 className="text-white font-poppins font-bold text-[18px] mb-1 group-hover:text-secondary transition-colors">
+        <h4 className="text-gray-900 dark:text-white font-poppins font-bold text-[18px] mb-1 group-hover:text-secondary transition-colors">
           {title}
         </h4>
-        <p className="text-white/60 font-poppins text-[13px] leading-relaxed group-hover:text-white/80 transition-colors">
+        <p className="text-gray-900 dark:text-white/60 font-poppins text-[13px] leading-relaxed group-hover:text-gray-900 dark:text-white/80 transition-colors">
           {content}
         </p>
       </div>
@@ -67,7 +67,7 @@ const WordReveal = ({ text, className }) => {
 };
 
 const Business = () => (
-  <section id="features" className="relative w-full overflow-hidden py-16 lg:py-24 lg:min-h-[85vh] flex items-center justify-center ss:px-16 px-6 bg-primary">
+  <section id="features" className="relative w-full overflow-hidden py-16 lg:py-24 lg:min-h-[85vh] flex items-center justify-center ss:px-16 px-6 bg-white dark:bg-primary">
     {/* Cinematic Ambient Elements */}
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
       <div className="absolute top-[20%] right-[10%] w-[500px] h-[500px] bg-secondary/5 rounded-full blur-[120px] animate-pulse" />
@@ -89,7 +89,7 @@ const Business = () => (
             <p className="text-secondary font-mono tracking-[4px] text-[11px] uppercase">AI product ecosystem</p>
           </div>
 
-          <h2 className="font-poppins font-bold ss:text-[54px] text-[42px] text-white ss:leading-[68px] leading-[52px] mb-8 uppercase tracking-tighter">
+          <h2 className="font-poppins font-bold ss:text-[54px] text-[42px] text-gray-900 dark:text-white ss:leading-[68px] leading-[52px] mb-8 uppercase tracking-tighter">
             AI Systems That <br className="sm:block hidden" /> <span className="text-gradient">Run Your Business</span>
           </h2>
 
@@ -98,7 +98,7 @@ const Business = () => (
             whileInView={{ opacity: 1 }}
             transition={{ delay: 1, duration: 1 }}
             viewport={{ once: true }}
-            className="font-poppins text-dimWhite text-[18px] leading-[32px] max-w-[500px] mb-12"
+            className="font-poppins text-gray-500 dark:text-dimWhite text-[18px] leading-[32px] max-w-[500px] mb-12"
           >
             We don’t just offer services. We build complete AI systems—Lead Engines, Calling Agents, and Automated Workflows—that replace manual effort and automate your operations end-to-end.
           </motion.p>
@@ -111,8 +111,8 @@ const Business = () => (
               transition={{ delay: 1.2 }}
               className="flex flex-col"
             >
-              <span className="text-white font-bold text-[28px] leading-tight">90%</span>
-              <span className="text-dimWhite font-mono text-[10px] uppercase tracking-widest mt-1">Manual Work Reduction</span>
+              <span className="text-gray-900 dark:text-white font-bold text-[28px] leading-tight">90%</span>
+              <span className="text-gray-500 dark:text-dimWhite font-mono text-[10px] uppercase tracking-widest mt-1">Manual Work Reduction</span>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -120,8 +120,8 @@ const Business = () => (
               transition={{ delay: 1.4 }}
               className="flex flex-col"
             >
-              <span className="text-white font-bold text-[28px] leading-tight">24/7</span>
-              <span className="text-dimWhite font-mono text-[10px] uppercase tracking-widest mt-1">Operational Autonomy</span>
+              <span className="text-gray-900 dark:text-white font-bold text-[28px] leading-tight">24/7</span>
+              <span className="text-gray-500 dark:text-dimWhite font-mono text-[10px] uppercase tracking-widest mt-1">Operational Autonomy</span>
             </motion.div>
           </div>
 

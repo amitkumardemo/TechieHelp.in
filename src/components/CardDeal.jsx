@@ -34,10 +34,10 @@ const CardDeal = () => (
              transition={{ delay: i * 0.1 }}
              className="flex items-center gap-6 group"
            >
-              <div className={`w-8 h-8 rounded-full bg-${step.color}-500/20 flex items-center justify-center text-${step.color}-400 font-black border border-${step.color}-500/30 shadow-[0_0_10px_rgba(0,0,0,0.3)] z-20 bg-primary`}>
+              <div className={`w-8 h-8 rounded-full bg-${step.color}-500/20 flex items-center justify-center text-${step.color}-400 font-black border border-${step.color}-500/30 shadow-[0_0_10px_rgba(0,0,0,0.3)] z-20 bg-white dark:bg-primary`}>
                 {step.id}
               </div>
-              <p className="text-white/60 font-bold text-xs uppercase tracking-[3px] group-hover:text-white transition-colors">
+              <p className="text-gray-900 dark:text-white/60 font-bold text-xs uppercase tracking-[3px] group-hover:text-gray-900 dark:text-white transition-colors">
                 {step.text}
               </p>
            </motion.div>

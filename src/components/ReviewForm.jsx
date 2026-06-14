@@ -48,7 +48,7 @@ const ReviewForm = ({ onReviewSubmitted }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 border rounded-md bg-gray-800 text-white">
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto p-4 border rounded-md bg-gray-800 text-gray-900 dark:text-white">
       <h3 className="text-lg font-semibold mb-2">Submit Your Review</h3>
       <div className="flex mb-4">
         {[1, 2, 3, 4, 5].map((star) => (
@@ -76,7 +76,7 @@ const ReviewForm = ({ onReviewSubmitted }) => {
       <button
         type="submit"
         disabled={submitting}
-        className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 disabled:opacity-50"
+        className="btn-primary"
       >
         {submitting ? "Submitting..." : "Submit Review"}
       </button>

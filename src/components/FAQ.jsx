@@ -60,23 +60,22 @@ const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section className={`${styles.paddingY} ${styles.flexCenter} text-white`}>
-      <div className={`${styles.boxWidth} w-full max-w-4xl`}>
-        <h2 className={`${styles.heading2} text-center mb-8`}>Frequently Asked Questions</h2>
-        <div className="space-y-4">
+    <section className={`${styles.paddingY} ${styles.flexCenter} text-gray-900 dark:text-white`}>
+      <div className={`${styles.boxWidth} w-full`}>
+        <h2 className={`${styles.heading2} text-center mb-12`}>Frequently Asked Questions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {faqData.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-700 rounded-lg p-4 cursor-pointer transition-shadow duration-300 hover:shadow-lg"
-              onMouseEnter={() => setActiveIndex(index)}
-              onMouseLeave={() => setActiveIndex(null)}
+              className="bg-white dark:bg-[#11101d] border border-gray-200 dark:border-gray-700 rounded-xl p-6 cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-blue-500/30 flex flex-col h-fit"
+              onClick={() => setActiveIndex(activeIndex === index ? null : index)}
             >
-              <h3 className="text-lg font-semibold flex justify-between items-center">
-                {item.question}
-                <span>{activeIndex === index ? "-" : "+"}</span>
+              <h3 className="text-lg font-semibold flex justify-between items-start gap-4 text-gray-900 dark:text-white">
+                <span className="flex-1 leading-snug">{item.question}</span>
+                <span className="text-blue-500 text-2xl leading-none mt-[-2px]">{activeIndex === index ? "-" : "+"}</span>
               </h3>
               {activeIndex === index && (
-                <p className="mt-2 text-gray-300">{item.answer}</p>
+                <p className="mt-4 text-gray-600 dark:text-gray-300 text-sm leading-relaxed border-t border-gray-100 dark:border-gray-800 pt-4">{item.answer}</p>
               )}
             </div>
           ))}

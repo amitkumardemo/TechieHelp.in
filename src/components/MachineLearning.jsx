@@ -56,7 +56,7 @@ const Section = ({ title, children, imgSrc, imgLeft = true }) => {
           />
         </div>
       )}
-      <div className="md:w-1/2 text-white">
+      <div className="md:w-1/2 text-gray-900 dark:text-white">
         <h2 className="text-3xl font-bold mb-4">{title}</h2>
         <div className="space-y-4 text-lg leading-relaxed">{children}</div>
       </div>
@@ -422,7 +422,7 @@ const MachineLearning = () => {
           }
         `}
       </style>
-      <section className="relative w-full min-h-screen bg-gradient-to-r from-blue-900 to-blue-800 text-white flex items-center justify-center px-6 md:px-12 pt-32">
+      <section className="btn-primary">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 w-full">
           {/* Left Content */}
           <div className="lg:w-1/2">
@@ -440,23 +440,23 @@ const MachineLearning = () => {
                 This is not just a course. It's a structured internship experience with live ML projects, mentor guidance, recommendation letter, and placement-focused support.
               </p>
               <ul className="flex flex-wrap gap-3 mb-3">
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Live ML Projects</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Beginner Friendly (No Prior Experience Needed)</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Recommendation Letter</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Placement & Career Support</li>
+                <li className="bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-full text-sm">✔ Live ML Projects</li>
+                <li className="bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-full text-sm">✔ Beginner Friendly (No Prior Experience Needed)</li>
+                <li className="bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Recommendation Letter</li>
+                <li className="bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-full text-sm">✔ Placement & Career Support</li>
               </ul>
 
               {/* Inline Feature Row */}
               <div className="flex flex-wrap items-center gap-8 mb-4">
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                   <Clock className="w-5 h-5 text-cyan-400" />
                   <span className="text-sm font-medium">10–16 Weeks Internship</span>
                 </div>
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                   <CheckCircle className="w-5 h-5 text-green-400" />
                   <span className="text-sm font-medium">Placement-Oriented Learning</span>
                 </div>
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                   <Briefcase className="w-5 h-5 text-blue-400" />
                   <span className="text-sm font-medium">24/7 Mentor & Doubt Support</span>
                 </div>
@@ -464,7 +464,7 @@ const MachineLearning = () => {
 
               {/* Inline Reviews Row */}
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs text-white">⭐ 4.6/5 Rated by 2,000+ Students | Trusted by Colleges & Recruiters</span>
+                <span className="text-xs text-gray-900 dark:text-white">⭐ 4.6/5 Rated by 2,000+ Students | Trusted by Colleges & Recruiters</span>
               </div>
 
               {/* Inline CTA Buttons */}
@@ -475,14 +475,14 @@ const MachineLearning = () => {
                   </button>
                 </a>
                 <a
-  href="https://drive.google.com/file/d/1KMG5JObcneMBHqcKw_JZmCC2l9lEI3s6/view?usp=drive_link"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2"
->
-  <Download className="w-4 h-4" />
-  Download Internship Syllabus
-</a>
+                  href="https://drive.google.com/file/d/1KMG5JObcneMBHqcKw_JZmCC2l9lEI3s6/view?usp=drive_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="border border-white text-gray-900 dark:text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2"
+                >
+                  <Download className="w-4 h-4" />
+                  Download Internship Syllabus
+                </a>
 
               </div>
               <p className="text-xs text-gray-300 mt-1">Limited seats • Certificate + Projects Included • Beginner Friendly</p>
@@ -530,7 +530,7 @@ const MachineLearning = () => {
 
               {/* CTA Button */}
               <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer" className="block">
-                <button className="w-full bg-blue-900 hover:bg-blue-800 text-white py-4 px-6 rounded-lg font-bold text-lg transition duration-300 transform hover:scale-105">
+                <button className="btn-primary">
                   Enroll Now – ₹499/-
                 </button>
               </a>
@@ -597,7 +597,7 @@ const MachineLearning = () => {
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
               <div className="bg-purple-100 rounded-full p-3 flex-shrink-0">
-                <Star className="w-6 h-6 text-purple-600" />
+                <Star className="w-6 h-6 text-[#33bbcf]" />
               </div>
               <div className="text-left">
                 <p className="text-gray-900 font-medium">LinkedIn Badge & Public Verification</p>
@@ -605,7 +605,7 @@ const MachineLearning = () => {
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
               <div className="bg-indigo-100 rounded-full p-3 flex-shrink-0">
-                <Clock className="w-6 h-6 text-indigo-600" />
+                <Clock className="w-6 h-6 text-[#33bbcf]" />
               </div>
               <div className="text-left">
                 <p className="text-gray-900 font-medium">Live Classes & Expert Mentor Guidance</p>
@@ -660,7 +660,7 @@ const MachineLearning = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🚀 Internship Overview</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"> Internship Overview</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Flexible online & offline internship programs designed for students, freshers, and working professionals to build career-ready skills with industry experts.
             </p>
@@ -693,7 +693,7 @@ const MachineLearning = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
               <div className="text-center">
                 <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
-                  <Star className="w-8 h-8 text-purple-600" />
+                  <Star className="w-8 h-8 text-[#33bbcf]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">3 Months</h3>
                 <p className="text-gray-600 font-medium mb-2">Advanced + Full-Stack Level</p>
@@ -744,7 +744,7 @@ const MachineLearning = () => {
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-8 h-8 text-purple-600" />
+                  <Star className="w-8 h-8 text-[#33bbcf]" />
                 </div>
                 <p className="text-gray-900 font-medium">Intern ID with Public Verification</p>
               </div>
@@ -758,7 +758,7 @@ const MachineLearning = () => {
           </div>
 
           {/* Career Outcomes Strip */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="btn-primary">
             <h3 className="text-2xl font-bold text-center mb-8">Career Outcomes</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               <div>
@@ -787,7 +787,7 @@ const MachineLearning = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🌟 What You Will Achieve</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">� What You Will Achieve</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Gain tangible career outcomes, industry-recognized certificates, and real-world experience that sets you apart in the competitive job market.
             </p>
@@ -822,7 +822,7 @@ const MachineLearning = () => {
             <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
               <div className="flex items-start space-x-4">
                 <div className="bg-purple-100 rounded-full p-3 group-hover:bg-purple-200 transition-colors flex-shrink-0">
-                  <Download className="w-6 h-6 text-purple-600" />
+                  <Download className="w-6 h-6 text-[#33bbcf]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Internship Offer Letter</h3>
@@ -870,7 +870,7 @@ const MachineLearning = () => {
             <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
               <div className="flex items-start space-x-4">
                 <div className="bg-indigo-100 rounded-full p-3 group-hover:bg-indigo-200 transition-colors flex-shrink-0">
-                  <Clock className="w-6 h-6 text-indigo-600" />
+                  <Clock className="w-6 h-6 text-[#33bbcf]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">LinkedIn Badge & Certificate of Excellence (Top Performers)</h3>
@@ -904,11 +904,11 @@ const MachineLearning = () => {
             </div>
 
             {/* Full-width final item */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg p-8 text-white md:col-span-2 lg:col-span-3 hover:shadow-xl transition-shadow duration-300">
+            <div className="btn-primary">
               <div className="text-center">
                 <div className="flex justify-center mb-4">
                   <div className="bg-white/20 rounded-full p-4">
-                    <CheckCircle className="w-8 h-8 text-white" />
+                    <CheckCircle className="w-8 h-8 text-gray-900 dark:text-white" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Networking with Like-Minded AI Professionals & Public Recognition</h3>
@@ -932,40 +932,40 @@ const MachineLearning = () => {
 
           {/* Placement Support Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+            <div className="bg-gradient-to-br from-gray-100 dark:from-slate-800 to-gray-200 dark:to-slate-900 rounded-xl shadow-lg p-8 text-gray-900 dark:text-white hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
-                  <Briefcase className="w-8 h-8 text-white" />
+                <div className="bg-gray-100 dark:bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Briefcase className="w-8 h-8 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Company-Wise DSA Preparation</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">Curated DSA sheets based on real hiring patterns of top companies.</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+            <div className="bg-gradient-to-br from-gray-100 dark:from-slate-800 to-gray-200 dark:to-slate-900 rounded-xl shadow-lg p-8 text-gray-900 dark:text-white hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
-                  <Download className="w-8 h-8 text-white" />
+                <div className="bg-gray-100 dark:bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Download className="w-8 h-8 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Resume Review & Optimization</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">One-to-one resume reviews to make your profile recruiter-ready.</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+            <div className="bg-gradient-to-br from-gray-100 dark:from-slate-800 to-gray-200 dark:to-slate-900 rounded-xl shadow-lg p-8 text-gray-900 dark:text-white hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
-                  <Star className="w-8 h-8 text-white" />
+                <div className="bg-gray-100 dark:bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Star className="w-8 h-8 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Mentor-Led Interview Guidance</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">Mock interviews, feedback sessions, and expert mentor support.</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+            <div className="bg-gradient-to-br from-gray-100 dark:from-slate-800 to-gray-200 dark:to-slate-900 rounded-xl shadow-lg p-8 text-gray-900 dark:text-white hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
-                  <CheckCircle className="w-8 h-8 text-white" />
+                <div className="bg-gray-100 dark:bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <CheckCircle className="w-8 h-8 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Hiring & Placement Assistance</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">Access to job opportunities, referrals, and partner hiring drives.</p>
@@ -989,139 +989,139 @@ const MachineLearning = () => {
           {/* Mentors Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-{/* Mentor 1 */}
-<div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-  {/* Profile */}
-  <div className="text-center mb-4">
-    <img
-      src={mdAmzad}
-      alt="MD Amzad - AI Instructor"
-      className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg object-cover"
-    />
-    <h3 className="text-xl font-bold text-gray-900 mb-1">
-      MD Amzad
-    </h3>
-    <p className="text-sm text-blue-600 font-medium">
-      AI Instructor • 2+ Years Experience
-    </p>
-  </div>
+            {/* Mentor 1 */}
+            <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
+              {/* Profile */}
+              <div className="text-center mb-4">
+                <img
+                  src={mdAmzad}
+                  alt="MD Amzad - AI Instructor"
+                  className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg object-cover"
+                />
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  MD Amzad
+                </h3>
+                <p className="text-sm text-blue-600 font-medium">
+                  AI Instructor • 2+ Years Experience
+                </p>
+              </div>
 
-  {/* Description */}
-  <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
-    AI Instructor at <span className="font-medium">TechieHelp</span> with 2+ years of
-    hands-on experience in artificial intelligence, machine learning, deep learning,
-    and guiding students in real-world AI practices.
-  </p>
+              {/* Description */}
+              <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
+                AI Instructor at <span className="font-medium">TechieHelp</span> with 2+ years of
+                hands-on experience in artificial intelligence, machine learning, deep learning,
+                and guiding students in real-world AI practices.
+              </p>
 
-  {/* Support Highlights */}
-  <div className="mb-4">
-    <h4 className="text-base font-semibold text-gray-900 mb-2">
-      Support Highlights:
-    </h4>
-    <ul className="space-y-2 text-gray-700 text-sm">
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-        <span>Practical AI concepts & fundamentals</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-        <span>Hands-on machine learning, deep learning & AI guidance</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-        <span>Project-based mentoring aligned with industry AI standards</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-        <span>Career guidance for AI & ML roles</span>
-      </li>
-    </ul>
-  </div>
+              {/* Support Highlights */}
+              <div className="mb-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-2">
+                  Support Highlights:
+                </h4>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Practical AI concepts & fundamentals</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Hands-on machine learning, deep learning & AI guidance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Project-based mentoring aligned with industry AI standards</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Career guidance for AI & ML roles</span>
+                  </li>
+                </ul>
+              </div>
 
-  {/* LinkedIn */}
-  <div className="text-center">
-    <a
-      href="https://www.linkedin.com/in/cyberaryan/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
-      aria-label="LinkedIn Profile"
-    >
-      <Linkedin className="w-5 h-5" />
-      <span className="text-sm font-medium">Connect on LinkedIn</span>
-    </a>
-  </div>
-</div>
+              {/* LinkedIn */}
+              <div className="text-center">
+                <a
+                  href="https://www.linkedin.com/in/cyberaryan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span className="text-sm font-medium">Connect on LinkedIn</span>
+                </a>
+              </div>
+            </div>
 
 
 
             {/* Mentor 2 */}
             <div className="bg-gray-50 rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300">
-  {/* Profile */}
-  <div className="text-center mb-4">
-    <img
-      src={AmitPhoto}
-      alt="Amit Kumar - Founder TechieHelp"
-      className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg object-cover"
-    />
-    <h3 className="text-xl font-bold text-gray-900 mb-1">
-      Amit Kumar
-    </h3>
-    <p className="text-sm text-blue-600 font-medium">
-      Founder & Placement Lead Mentor – TechieHelp
-    </p>
-  </div>
+              {/* Profile */}
+              <div className="text-center mb-4">
+                <img
+                  src={AmitPhoto}
+                  alt="Amit Kumar - Founder TechieHelp"
+                  className="w-24 h-24 rounded-full mx-auto mb-3 shadow-lg object-cover"
+                />
+                <h3 className="text-xl font-bold text-gray-900 mb-1">
+                  Amit Kumar
+                </h3>
+                <p className="text-sm text-blue-600 font-medium">
+                  Founder & Placement Lead Mentor – TechieHelp
+                </p>
+              </div>
 
-  {/* Description */}
-  <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
-    Founder of <span className="font-medium">TechieHelp</span> with hands-on experience in
-    building internship programs, mentoring students, and preparing
-    candidates for real-world placements across tech domains.
-  </p>
+              {/* Description */}
+              <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
+                Founder of <span className="font-medium">TechieHelp</span> with hands-on experience in
+                building internship programs, mentoring students, and preparing
+                candidates for real-world placements across tech domains.
+              </p>
 
-  {/* Support Highlights */}
-  <div className="mb-4">
-    <h4 className="text-base font-semibold text-gray-900 mb-2">
-      Support Highlights:
-    </h4>
-    <ul className="space-y-2 text-gray-700 text-sm">
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-        <span>End-to-end placement & internship guidance</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-        <span>Resume building, LinkedIn optimization & portfolio strategy</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-        <span>Project selection & real-world internship roadmap planning</span>
-      </li>
-      <li className="flex items-start gap-2">
-        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-        <span>Interview preparation & career decision mentoring</span>
-      </li>
-    </ul>
-  </div>
+              {/* Support Highlights */}
+              <div className="mb-4">
+                <h4 className="text-base font-semibold text-gray-900 mb-2">
+                  Support Highlights:
+                </h4>
+                <ul className="space-y-2 text-gray-700 text-sm">
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>End-to-end placement & internship guidance</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Resume building, LinkedIn optimization & portfolio strategy</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Project selection & real-world internship roadmap planning</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                    <span>Interview preparation & career decision mentoring</span>
+                  </li>
+                </ul>
+              </div>
 
-  {/* LinkedIn */}
-  <div className="text-center">
-    <a
-      href="https://www.linkedin.com/in/amit-kumar-686196225/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
-      aria-label="LinkedIn Profile"
-    >
-      <Linkedin className="w-5 h-5" />
-      <span className="text-sm font-medium">Connect on LinkedIn</span>
-    </a>
-  </div>
-</div>
+              {/* LinkedIn */}
+              <div className="text-center">
+                <a
+                  href="https://www.linkedin.com/in/amit-kumar-686196225/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 transition-colors"
+                  aria-label="LinkedIn Profile"
+                >
+                  <Linkedin className="w-5 h-5" />
+                  <span className="text-sm font-medium">Connect on LinkedIn</span>
+                </a>
+              </div>
+            </div>
 
 
-          
-            
+
+
           </div>
         </div>
       </section>
@@ -1161,7 +1161,7 @@ const MachineLearning = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
                 <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                  <Star className="w-8 h-8 text-purple-600" />
+                  <Star className="w-8 h-8 text-[#33bbcf]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Roles Across Startups & IT Companies</h3>
                 <p className="text-gray-600">Prepared for internships, entry-level, and junior positions in diverse organizations.</p>
@@ -1171,7 +1171,7 @@ const MachineLearning = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
                 <div className="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-indigo-200 transition-colors">
-                  <CheckCircle className="w-8 h-8 text-indigo-600" />
+                  <CheckCircle className="w-8 h-8 text-[#33bbcf]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Project-Based Learning Advantage</h3>
                 <p className="text-gray-600">Practical experience that recruiters actually value in technical interviews.</p>
@@ -1183,11 +1183,11 @@ const MachineLearning = () => {
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300 transform hover:scale-105">
+                <button className="btn-primary">
                   Start Your Tech Career
                 </button>
               </a>
-              <button onClick={() => document.getElementById('student-reviews').scrollIntoView({ behavior: 'smooth' })} className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+              <button onClick={() => document.getElementById('student-reviews').scrollIntoView({ behavior: 'smooth' })} className="btn-primary">
                 View Student Success Stories
               </button>
             </div>
@@ -1296,7 +1296,7 @@ const MachineLearning = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🎓 Student Reviews & Success Stories</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"> Student Reviews & Success Stories</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Hear directly from our students about their learning experience, projects, and career growth with TechieHelp.
             </p>
@@ -1304,32 +1304,32 @@ const MachineLearning = () => {
 
           {/* Videos Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            
-  <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
-  <div className="aspect-[9/16]">
-    <iframe
-      src="https://www.youtube.com/embed/Ia1EOzjVwEY"
-      title="Student Review"
-      frameBorder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className="w-full h-full rounded-md"
-    ></iframe>
-  </div>
-</div>
 
-<div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
-  <div className="aspect-[9/16]">
-    <iframe
-      src="https://www.youtube.com/embed/l5Ox9Z1AJow"
-      title="Student Review"
-      frameBorder="0"
-      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowFullScreen
-      className="w-full h-full rounded-md"
-    ></iframe>
-  </div>
-</div>
+            <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
+              <div className="aspect-[9/16]">
+                <iframe
+                  src="https://www.youtube.com/embed/Ia1EOzjVwEY"
+                  title="Student Review"
+                  frameBorder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full rounded-md"
+                ></iframe>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-sm p-4 hover:shadow-md transition-shadow duration-200">
+              <div className="aspect-[9/16]">
+                <iframe
+                  src="https://www.youtube.com/embed/l5Ox9Z1AJow"
+                  title="Student Review"
+                  frameBorder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full rounded-md"
+                ></iframe>
+              </div>
+            </div>
 
 
 
@@ -1385,7 +1385,7 @@ const MachineLearning = () => {
                     <span>QR Code / Scanner-Based Verification</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <Shield className="w-5 h-5 text-[#33bbcf] flex-shrink-0" />
                     <span>Public Profile Verification on TechieHelp Website</span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -1393,7 +1393,7 @@ const MachineLearning = () => {
                     <span>Unique Certificate ID for Every Intern</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+                    <Clock className="w-5 h-5 text-[#33bbcf] flex-shrink-0" />
                     <span>Linked to Internship Duration & Projects Completed</span>
                   </li>
                 </ul>
@@ -1429,7 +1429,7 @@ const MachineLearning = () => {
                     <span>Helps in resume shortlisting and HR screening</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <Shield className="w-5 h-5 text-[#33bbcf] flex-shrink-0" />
                     <span>Linked to the intern’s public TechieHelp profile</span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -1475,17 +1475,15 @@ const MachineLearning = () => {
             <div className="flex bg-gray-100 rounded-full p-1">
               <button
                 onClick={() => setAutoScroll(true)}
-                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                  autoScroll ? 'bg-blue-600 text-white' : 'text-blue-600'
-                }`}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${autoScroll ? 'bg-blue-600 text-gray-900 dark:text-white' : 'text-blue-600'
+                  }`}
               >
                 Auto Scroll
               </button>
               <button
                 onClick={() => setAutoScroll(false)}
-                className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                  !autoScroll ? 'bg-blue-600 text-white' : 'text-blue-600'
-                }`}
+                className={`px-4 py-2 rounded-full font-semibold transition-colors ${!autoScroll ? 'bg-blue-600 text-gray-900 dark:text-white' : 'text-blue-600'
+                  }`}
               >
                 Manual Scroll
               </button>
@@ -1542,11 +1540,10 @@ const MachineLearning = () => {
               <button
                 key={index}
                 onClick={() => setActiveMonth(index)}
-                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
-                  activeMonth === index
-                    ? 'bg-blue-600 text-white'
+                className={`px-4 py-2 rounded-lg font-semibold transition-colors ${activeMonth === index
+                    ? 'bg-blue-600 text-gray-900 dark:text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
-                }`}
+                  }`}
               >
                 {month}
               </button>
@@ -1557,7 +1554,7 @@ const MachineLearning = () => {
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white border border-gray-300 rounded-lg">
               <thead>
-                <tr className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+                <tr className="btn-primary">
                   <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Weeks</th>
                   <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Timeline</th>
                   <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Includes</th>
@@ -1582,7 +1579,7 @@ const MachineLearning = () => {
                                   {item.type === 'project' ? (
                                     <div>
                                       <div className={`font-bold ${item.level === 'beginner' ? 'text-yellow-800' : item.level === 'intermediate' ? 'text-blue-800' : 'text-red-800'}`}>
-                                        {item.level === 'beginner' ? '🟡 Beginner Project' : item.level === 'intermediate' ? '🔵 Intermediate Project' : '🔴 Hard Project'}
+                                        {item.level === 'beginner' ? '� Beginner Project' : item.level === 'intermediate' ? '� Intermediate Project' : '� Hard Project'}
                                       </div>
                                       <div className="text-gray-700 font-medium">{item.title}</div>
                                       <div className="text-gray-600 text-sm">{item.subtitle}</div>

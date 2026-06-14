@@ -43,16 +43,16 @@ const HowItWorks = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6"
+            className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6"
           >
             How it <span className="text-gradient">Works</span>
           </motion.h2>
-          <p className="text-gray-400">Step-by-step guide to your tech career growth.</p>
+          <p className="text-gray-600 dark:text-gray-400">Step-by-step guide to your tech career growth.</p>
         </div>
 
         <div className="relative">
           {/* Animated Progress Line */}
-          <div className="absolute top-1/2 left-[10%] w-[80%] h-1 bg-white/5 -translate-y-1/2 hidden lg:block overflow-hidden rounded-full">
+          <div className="absolute top-1/2 left-[10%] w-[80%] h-1 bg-gray-100 dark:bg-white/5 -translate-y-1/2 hidden lg:block overflow-hidden rounded-full">
             <motion.div 
               initial={{ x: "-100%" }}
               whileInView={{ x: 0 }}
@@ -71,13 +71,13 @@ const HowItWorks = () => {
                 transition={{ delay: i * 0.2 }}
                 className="relative z-10 flex flex-col items-center text-center group"
               >
-                <div className="w-20 h-20 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-orange-400 mb-6 group-hover:bg-orange-500/10 group-hover:border-orange-500/40 group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300 shadow-lg relative glass-morphism">
+                <div className="w-20 h-20 rounded-[2rem] bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-orange-400 mb-6 group-hover:bg-orange-500/10 group-hover:border-orange-500/40 group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-300 shadow-lg relative glass-morphism">
                   {step.icon}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-orange-500 text-white text-xs font-black flex items-center justify-center shadow-[0_0_15px_rgba(249,115,22,0.6)]">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-orange-500 text-gray-900 dark:text-white text-xs font-black flex items-center justify-center shadow-[0_0_15px_rgba(249,115,22,0.6)]">
                     {i + 1}
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{step.title}</h3>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed px-4">{step.desc}</p>
               </motion.div>
             ))}

@@ -12,6 +12,16 @@ import WhoWeAre from "./who";
 import Chatbot from "./Chatbot";
 import CertificateVerify from "./CertificateVerify";
 
+import LeadAIShowcase from "./LeadAIShowcase";
+import AIEmployeeFeatures from "./AIEmployeeFeatures";
+import BeforeAfterTable from "./BeforeAfterTable";
+import ROICalculator from "./ROICalculator";
+import LeadAIFlow from "./LeadAIFlow";
+import IntegrationStack from "./IntegrationStack";
+import ClientResults from "./ClientResults";
+import WhyTechieHelp from "./WhyTechieHelp";
+import GlobalReachMap from "./GlobalReachMap";
+
 export {
   Navbar,
   Billing,
@@ -24,5 +34,14 @@ export {
   Hero,
   WhoWeAre,
   Chatbot,
-  CertificateVerify
+  CertificateVerify,
+  LeadAIShowcase,
+  AIEmployeeFeatures,
+  BeforeAfterTable,
+  ROICalculator,
+  LeadAIFlow,
+  IntegrationStack,
+  ClientResults,
+  WhyTechieHelp,
+  GlobalReachMap
 };

@@ -2,12 +2,12 @@ import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const flowSteps = [
-  { id: 1, label: "Lead Comes In", emoji: "📋", color: "#3b82f6" },
-  { id: 2, label: "AI Replies Instantly", emoji: "📧", color: "#06b6d4" },
-  { id: 3, label: "AI Qualifies Lead", emoji: "🔍", color: "#8b5cf6" },
-  { id: 4, label: "AI Calls Prospect", emoji: "📞", color: "#ef4444" },
+  { id: 1, label: "Lead Comes In", emoji: "�", color: "#3b82f6" },
+  { id: 2, label: "AI Replies Instantly", emoji: "�", color: "#06b6d4" },
+  { id: 3, label: "AI Qualifies Lead", emoji: "�", color: "#8b5cf6" },
+  { id: 4, label: "AI Calls Prospect", emoji: "�", color: "#ef4444" },
   { id: 5, label: "CRM Updated", emoji: "⚙️", color: "#f97316" },
-  { id: 6, label: "You Get Notified", emoji: "🔔", color: "#22c55e" },
+  { id: 6, label: "You Get Notified", emoji: "�", color: "#22c55e" },
 ];
 
 // Animated 3D-style particle canvas running behind the steps
@@ -174,11 +174,11 @@ const WorkflowVisual = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-5xl font-black text-white mb-3 uppercase tracking-tighter"
+          className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-3 uppercase tracking-tighter"
         >
           How TechieHelp <span className="text-gradient">AI Works</span>
         </motion.h2>
-        <p className="text-gray-400 font-bold uppercase tracking-wider text-xs mb-14">
+        <p className="text-gray-600 dark:text-gray-400 font-bold uppercase tracking-wider text-xs mb-14">
           AI That Instantly Handles Every Lead
         </p>
 
@@ -195,7 +195,7 @@ const WorkflowVisual = () => {
             >
               {/* Icon card with dynamic glow */}
               <div
-                className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-2xl md:text-3xl border border-white/10 bg-white/5 backdrop-blur-md group-hover:scale-110 transition-transform duration-300 shadow-2xl"
+                className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-2xl md:text-3xl border border-gray-200 dark:border-white/10 bg-gray-100 dark:bg-white/5 backdrop-blur-md group-hover:scale-110 transition-transform duration-300 shadow-2xl"
                 style={{ boxShadow: `0 0 30px ${step.color}33` }}
               >
                 {/* Animated glow ring */}
@@ -214,7 +214,7 @@ const WorkflowVisual = () => {
                 >
                   {step.id}
                 </div>
-                <h4 className="text-[11px] font-semibold text-gray-300 text-center leading-tight group-hover:text-white transition-colors">
+                <h4 className="text-[11px] font-semibold text-gray-300 text-center leading-tight group-hover:text-gray-900 dark:text-white transition-colors">
                   {step.label}
                 </h4>
               </div>

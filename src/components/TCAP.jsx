@@ -78,7 +78,7 @@ const TCAP = () => {
     { name: "Rahul from Delhi", action: "earned ₹2,500", icon: <DollarSign className="w-4 h-4 text-green-400" /> },
     { name: "Sneha from Jaipur", action: "just joined the team", icon: <UserCheck className="w-4 h-4 text-blue-400" /> },
     { name: "Aman from Mumbai", action: "earned ₹5,000 this week", icon: <TrendingUp className="w-4 h-4 text-yellow-400" /> },
-    { name: "Priya from Bangalore", action: "redeemed milestone bonus", icon: <Trophy className="w-4 h-4 text-purple-400" /> },
+    { name: "Priya from Bangalore", action: "redeemed milestone bonus", icon: <Trophy className="w-4 h-4 text-[#33bbcf]" /> },
     { name: "Vikram from Pune", action: "earned ₹1,200 today", icon: <DollarSign className="w-4 h-4 text-green-400" /> },
   ];
 
@@ -119,7 +119,7 @@ const TCAP = () => {
   const benefits = [
     { icon: <DollarSign className="w-6 h-6 text-green-400" />, title: "Earn ₹10,000+", desc: "Attractive monthly commissions on referrals" },
     { icon: <ShieldCheck className="w-6 h-6 text-blue-400" />, title: "Certificate + LOR", desc: "Official ISO certification & Recommendation" },
-    { icon: <Rocket className="w-6 h-6 text-purple-400" />, title: "PPO Opportunities", desc: "Top performers get direct hiring offers" },
+    { icon: <Rocket className="w-6 h-6 text-[#33bbcf]" />, title: "PPO Opportunities", desc: "Top performers get direct hiring offers" },
     { icon: <Zap className="w-6 h-6 text-yellow-400" />, title: "Free Courses", desc: "Complimentary access to premium training" },
     { icon: <Gift className="w-6 h-6 text-pink-400" />, title: "Welcome Kit", desc: "Exclusive T-shirts & TechieHelp goodies" },
     { icon: <Globe className="w-6 h-6 text-cyan-400" />, title: "LinkedIn Growth", desc: "Exclusive digital badge & profile feature" },
@@ -148,9 +148,9 @@ const TCAP = () => {
   ];
 
   return (
-    <div className="bg-[#0f172a] text-white min-h-screen font-poppins overflow-hidden pt-20">
+    <div className="bg-[#0f172a] text-gray-900 dark:text-white min-h-screen font-poppins overflow-hidden pt-20">
       {/* Scroll Progress Bar */}
-      <div className="fixed top-0 left-0 w-full h-[3px] bg-white/5 z-[1000]">
+      <div className="fixed top-0 left-0 w-full h-[3px] bg-gray-100 dark:bg-white/5 z-[1000]">
         <motion.div
           className="h-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.8)]"
           style={{ width: `${scrollProgress}%` }}
@@ -172,14 +172,14 @@ const TCAP = () => {
             initial={{ opacity: 0, x: -50, y: 50 }}
             animate={{ opacity: 1, x: 0, y: 0 }}
             exit={{ opacity: 0, scale: 0.8 }}
-            className="fixed bottom-10 left-6 z-[200] p-4 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 border-blue-500/30 flex items-center gap-4 shadow-2xl md:max-w-xs"
+            className="fixed bottom-10 left-6 z-[200] p-4 rounded-2xl backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 border-blue-500/30 flex items-center gap-4 shadow-2xl md:max-w-xs"
           >
             <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center shrink-0">
               {notification.icon}
             </div>
             <div className="text-sm">
-              <p className="font-bold text-white mb-0.5">{notification.name}</p>
-              <p className="text-dimWhite font-medium leading-tight">{notification.action}</p>
+              <p className="font-bold text-gray-900 dark:text-white mb-0.5">{notification.name}</p>
+              <p className="text-gray-500 dark:text-dimWhite font-medium leading-tight">{notification.action}</p>
             </div>
             <div className="ml-4 w-2 h-2 rounded-full bg-green-500 animate-pulse shrink-0" />
           </motion.div>
@@ -207,21 +207,21 @@ const TCAP = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="font-poppins font-black sm:text-[56px] text-[36px] text-white sm:leading-[70px] leading-[45px] w-full mb-6"
+              className="font-poppins font-black sm:text-[56px] text-[36px] text-gray-900 dark:text-white sm:leading-[70px] leading-[45px] w-full mb-6"
             >
               Become a Campus Leader & <br /> 
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+              <span className="text-cyan-gradient font-bold">
                 Earn ₹10,000 Monthly
-              </span> 🚀
+              </span> 
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               transition={{ delay: 0.4 }}
-              className="text-dimWhite font-medium text-lg leading-relaxed mb-10 max-w-[550px]"
+              className="text-gray-500 dark:text-dimWhite font-medium text-lg leading-relaxed mb-10 max-w-[550px]"
             >
-              Join India’s premier student network. Scale your influence, build your personal brand, and secure your financial future. <span className="text-white font-bold border-b-2 border-blue-500/50">Success starts on campus.</span>
+              Join India’s premier student network. Scale your influence, build your personal brand, and secure your financial future. <span className="text-gray-900 dark:text-white font-bold border-b-2 border-blue-500/50">Success starts on campus.</span>
             </motion.p>
 
             <div className="flex flex-wrap gap-6 items-center">
@@ -233,16 +233,16 @@ const TCAP = () => {
                 whileTap={{ scale: 0.98 }}
                 className="py-4 px-8 bg-white text-[#0f172a] font-black text-lg rounded-2xl shadow-[0_10px_35px_rgba(255,255,255,0.15)] hover:shadow-white/30 transition-all flex items-center justify-center gap-3"
               >
-                Apply for TCAP 💰
+                Apply for TCAP �
               </motion.a>
               
               <div className="flex -space-x-3 items-center group cursor-help">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0f172a] bg-blue-500/20 flex items-center justify-center text-[10px] font-bold bg-white/5 backdrop-blur-md">
+                  <div key={i} className="w-10 h-10 rounded-full border-2 border-[#0f172a] bg-blue-500/20 flex items-center justify-center text-[10px] font-bold bg-gray-100 dark:bg-white/5 backdrop-blur-md">
                     {String.fromCharCode(64 + i)}
                   </div>
                 ))}
-                <span className="ml-4 text-[13px] font-bold text-dimWhite tracking-wide group-hover:text-white transition-colors">1.2k+ Applied</span>
+                <span className="ml-4 text-[13px] font-bold text-gray-500 dark:text-dimWhite tracking-wide group-hover:text-gray-900 dark:text-white transition-colors">1.2k+ Applied</span>
               </div>
             </div>
           </div>
@@ -255,7 +255,7 @@ const TCAP = () => {
           >
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-[2.5rem] blur opacity-25 group-hover:opacity-40 transition duration-1000 group-hover:duration-200" />
-              <div className="relative bg-[#0f172a] rounded-[2.5rem] overflow-hidden border border-white/10 shadow-2xl">
+              <div className="relative bg-[#0f172a] rounded-[2.5rem] overflow-hidden border border-gray-200 dark:border-white/10 shadow-2xl">
                 <img 
                   src={tcapHero} 
                   alt="TechieHelp Campus Ambassadors" 
@@ -268,24 +268,24 @@ const TCAP = () => {
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute top-8 -right-8 px-5 py-3 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/20 shadow-2xl z-20 md:flex hidden items-center gap-3"
+                className="absolute top-8 -right-8 px-5 py-3 rounded-2xl backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-300 dark:border-white/20 shadow-2xl z-20 md:flex hidden items-center gap-3"
               >
                 <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center font-bold text-green-400">₹</div>
                 <div>
-                  <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest">Top Earner</p>
-                  <p className="text-sm font-black text-white leading-none">Amit: ₹5,200/wk</p>
+                  <p className="text-[10px] font-bold text-gray-900 dark:text-white/60 uppercase tracking-widest">Top Earner</p>
+                  <p className="text-sm font-black text-gray-900 dark:text-white leading-none">Amit: ₹5,200/wk</p>
                 </div>
               </motion.div>
               
               <motion.div
                 animate={{ y: [0, 8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute bottom-12 -left-8 px-5 py-3 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/20 shadow-2xl z-20 md:flex hidden items-center gap-3"
+                className="absolute bottom-12 -left-8 px-5 py-3 rounded-2xl backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-300 dark:border-white/20 shadow-2xl z-20 md:flex hidden items-center gap-3"
               >
                 <Rocket className="w-6 h-6 text-blue-400" />
                 <div>
-                  <p className="text-[10px] font-bold text-white/60 uppercase tracking-widest">Recent Activity</p>
-                  <p className="text-sm font-black text-white leading-none">Batch 12 Filling 🚀</p>
+                  <p className="text-[10px] font-bold text-gray-900 dark:text-white/60 uppercase tracking-widest">Recent Activity</p>
+                  <p className="text-sm font-black text-gray-900 dark:text-white leading-none">Batch 12 Filling </p>
                 </div>
               </motion.div>
             </div>
@@ -304,8 +304,8 @@ const TCAP = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 className="text-center"
               >
-                <h3 className="text-4xl sm:text-5xl font-black text-white mb-1">{stat.value}</h3>
-                <p className="text-dimWhite uppercase tracking-[3px] text-[10px] sm:text-[11px] font-bold">{stat.label}</p>
+                <h3 className="text-4xl sm:text-5xl font-black text-gray-900 dark:text-white mb-1">{stat.value}</h3>
+                <p className="text-gray-500 dark:text-dimWhite uppercase tracking-[3px] text-[10px] sm:text-[11px] font-bold">{stat.label}</p>
               </motion.div>
             ))}
           </div>
@@ -314,8 +314,8 @@ const TCAP = () => {
             <div className="whitespace-nowrap flex items-center gap-8 animate-marquee">
               {[1, 2, 3, 4].map(i => (
                 <div key={i} className="flex items-center gap-4">
-                  <span className="text-lg font-black text-blue-400 uppercase tracking-widest">🔥 1000+ students already earning with TechieHelp</span>
-                  <span className="text-white/20">•</span>
+                  <span className="text-lg font-black text-blue-400 uppercase tracking-widest"> 1000+ students already earning with TechieHelp</span>
+                  <span className="text-gray-900 dark:text-white/20">•</span>
                 </div>
               ))}
             </div>
@@ -326,8 +326,8 @@ const TCAP = () => {
       {/* Benefits Section */}
       <section id="benefits" className={`${styles.paddingX} py-32 relative overflow-hidden`}>
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-5xl font-black mb-4">Why Join <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">TCAP?</span></h2>
-          <p className="text-dimWhite text-base sm:text-lg">Massive perks, direct industry exposure, and a community of high-performers.</p>
+          <h2 className="text-3xl sm:text-5xl font-black mb-4">Why Join <span className="text-cyan-gradient font-bold">TCAP?</span></h2>
+          <p className="text-gray-500 dark:text-dimWhite text-base sm:text-lg">Massive perks, direct industry exposure, and a community of high-performers.</p>
         </div>
 
         <div className="grid md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8 max-w-7xl mx-auto">
@@ -335,27 +335,27 @@ const TCAP = () => {
             <motion.div
               key={i}
               whileHover={{ y: -10 }}
-              className="p-10 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent border border-white/10 backdrop-blur-xl hover:border-blue-500/50 transition-all group"
+              className="p-10 rounded-[2.5rem] bg-gradient-to-br from-white/10 to-transparent border border-gray-200 dark:border-white/10 backdrop-blur-xl hover:border-blue-500/50 transition-all group"
             >
-              <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-14 h-14 rounded-2xl bg-gray-100 dark:bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 {benefit.icon}
               </div>
               <h3 className="text-xl font-black mb-3">{benefit.title}</h3>
-              <p className="text-dimWhite text-sm leading-relaxed">{benefit.desc}</p>
+              <p className="text-gray-500 dark:text-dimWhite text-sm leading-relaxed">{benefit.desc}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Earning Potential Section */}
-      <section className={`${styles.paddingX} py-32 relative bg-primary overflow-hidden`}>
+      <section className={`${styles.paddingX} py-32 relative bg-white dark:bg-primary overflow-hidden`}>
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div>
               <h2 className="text-3xl sm:text-5xl font-black mb-8 leading-tight italic">
-                Massive Earning <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 underline">Potential 📈</span>
+                Massive Earning <br /> <span className="text-cyan-gradient font-bold">Potential </span>
               </h2>
-              <p className="text-dimWhite text-xl mb-12">Stop dreaming, start doing. Here is how much you can easily earn every month by helping students join our specialized batches.</p>
+              <p className="text-gray-500 dark:text-dimWhite text-xl mb-12">Stop dreaming, start doing. Here is how much you can easily earn every month by helping students join our specialized batches.</p>
               
               <div className="space-y-6">
                 {[
@@ -366,22 +366,22 @@ const TCAP = () => {
                   <motion.div
                     key={i}
                     whileHover={{ scale: 1.02 }}
-                    className={`p-6 rounded-2xl flex justify-between items-center border border-white/10 ${tier.bg}`}
+                    className={`p-6 rounded-2xl flex justify-between items-center border border-gray-200 dark:border-white/10 ${tier.bg}`}
                   >
                     <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center font-bold text-xl">{i + 1}</div>
+                      <div className="w-12 h-12 rounded-xl bg-gray-100 dark:bg-white/5 flex items-center justify-center font-bold text-xl">{i + 1}</div>
                       <span className="text-2xl font-black">{tier.count}</span>
                     </div>
-                    <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">{tier.reward}</span>
+                    <span className="text-cyan-gradient font-bold">{tier.reward}</span>
                   </motion.div>
                 ))}
               </div>
-              <p className="mt-6 text-sm font-bold text-dimWhite flex items-center gap-2">
-                <Target className="w-4 h-4 text-blue-500" /> Top ambassadors earn ₹5,000–₹10,000/month consistently
+              <p className="mt-6 text-sm font-bold text-gray-500 dark:text-dimWhite flex items-center gap-2">
+                <Target className="w-4 h-4 text-[#33bbcf]" /> Top ambassadors earn ₹5,000–₹10,000/month consistently
               </p>
             </div>
             
-            <div className="p-10 rounded-[2.5rem] backdrop-blur-xl bg-white/5 border border-white/10 bg-gradient-to-br from-blue-600/20 to-transparent relative overflow-hidden">
+            <div className="p-10 rounded-[2.5rem] backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 bg-gradient-to-br from-blue-600/20 to-transparent relative overflow-hidden">
                 <div className="absolute top-0 right-0 p-8 opacity-10"><TrendingUp size={150} /></div>
                 <h3 className="text-2xl font-black mb-6">Why Students Choose US?</h3>
                 <ul className="space-y-4">
@@ -407,17 +407,17 @@ const TCAP = () => {
       <section className={`${styles.paddingX} py-20 bg-red-600/10 border-y border-red-600/20`}>
         <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-10 text-center md:text-left">
           <div>
-            <h2 className="text-3xl font-black text-white mb-1 uppercase italic tracking-tighter">Hurry Up! Time is Running Out ⏰</h2>
+            <h2 className="text-3xl font-black text-gray-900 dark:text-white mb-1 uppercase italic tracking-tighter">Hurry Up! Time is Running Out ⏰</h2>
             <p className="text-red-400 font-bold text-sm uppercase tracking-widest animate-pulse">Only 50 seats left for this month's intake</p>
           </div>
           <div className="flex gap-4">
-            <div className="p-4 rounded-xl backdrop-blur-xl bg-white/5 border border-white/10 border-red-600/30 min-w-[90px] text-center">
+            <div className="p-4 rounded-xl backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 border-red-600/30 min-w-[90px] text-center">
               <span className="text-3xl font-black block">{formatTime(timeLeft).split(' ')[0]}</span>
             </div>
-            <div className="p-4 rounded-xl backdrop-blur-xl bg-white/5 border border-white/10 border-red-600/30 min-w-[90px] text-center">
+            <div className="p-4 rounded-xl backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 border-red-600/30 min-w-[90px] text-center">
               <span className="text-3xl font-black block">{formatTime(timeLeft).split(' ')[1]}</span>
             </div>
-            <div className="p-4 rounded-xl backdrop-blur-xl bg-white/5 border border-white/10 border-red-600/30 min-w-[90px] text-center">
+            <div className="p-4 rounded-xl backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 border-red-600/30 min-w-[90px] text-center">
               <span className="text-3xl font-black block">{formatTime(timeLeft).split(' ')[2]}</span>
             </div>
           </div>
@@ -427,8 +427,8 @@ const TCAP = () => {
       {/* Commission Section */}
       <section id="commissions" className={`${styles.paddingX} py-32 relative bg-blue-600/5`}>
         <div className="text-center mb-16 max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-5xl font-black mb-4 leading-tight">Strong Commission <br className="sm:block hidden" /> Structure <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">💰</span></h2>
-          <p className="text-dimWhite text-base">The more you help others grow, the more you earn. Simple as that.</p>
+          <h2 className="text-3xl sm:text-5xl font-black mb-4 leading-tight">Strong Commission <br className="sm:block hidden" /> Structure <span className="text-cyan-gradient font-bold">�</span></h2>
+          <p className="text-gray-500 dark:text-dimWhite text-base">The more you help others grow, the more you earn. Simple as that.</p>
         </div>
 
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 max-w-7xl mx-auto">
@@ -438,18 +438,18 @@ const TCAP = () => {
               whileHover={{ scale: 1.05 }}
               className={`p-10 rounded-[3rem] border transition-all relative ${plan.highlight
                   ? "bg-gradient-to-b from-blue-600 to-blue-900 border-white/40 shadow-[0_0_50px_rgba(37,99,235,0.3)] z-10 scale-105"
-                  : "bg-white/5 border-white/10 hover:border-white/30"
+                  : "bg-gray-100 dark:bg-white/5 border-gray-200 dark:border-white/10 hover:border-white/30"
                 }`}
             >
               {plan.popular && (
                 <div className="absolute top-[-15px] left-1/2 -translate-x-1/2 bg-yellow-400 text-[#0f172a] px-5 py-1 rounded-full text-xs font-black uppercase tracking-widest">Most Popular</div>
               )}
-              <h4 className={`text-xl font-bold mb-2 ${plan.highlight ? "text-blue-100" : "text-dimWhite"}`}>{plan.name}</h4>
+              <h4 className={`text-xl font-bold mb-2 ${plan.highlight ? "text-blue-100" : "text-gray-500 dark:text-dimWhite"}`}>{plan.name}</h4>
               <div className="flex items-baseline gap-1 mb-8">
                 <span className="text-4xl font-black">{plan.price}</span>
-                <span className={`${plan.highlight ? "text-blue-200" : "text-dimWhite"}`}>/student</span>
+                <span className={`${plan.highlight ? "text-blue-200" : "text-gray-500 dark:text-dimWhite"}`}>/student</span>
               </div>
-              <div className={`p-6 rounded-2xl mb-8 ${plan.highlight ? "bg-white/10" : "bg-white/5"}`}>
+              <div className={`p-6 rounded-2xl mb-8 ${plan.highlight ? "bg-gray-100 dark:bg-white/10" : "bg-gray-100 dark:bg-white/5"}`}>
                 <p className="text-xs uppercase tracking-widest font-black opacity-60 mb-2">Commission Rate</p>
                 <p className="text-3xl font-black text-green-400">{plan.reward}</p>
               </div>
@@ -469,8 +469,8 @@ const TCAP = () => {
       {/* How It Works */}
       <section className={`${styles.paddingX} py-32 relative`}>
         <div className="text-center mb-20 max-w-2xl mx-auto">
-          <h2 className="text-3xl sm:text-5xl font-black mb-4">How It <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">Works</span></h2>
-          <p className="text-dimWhite text-base">Your journey from student to leader in 5 simple steps.</p>
+          <h2 className="text-3xl sm:text-5xl font-black mb-4">How It <span className="text-cyan-gradient font-bold">Works</span></h2>
+          <p className="text-gray-500 dark:text-dimWhite text-base">Your journey from student to leader in 5 simple steps.</p>
         </div>
 
         <div className="relative max-w-5xl mx-auto">
@@ -487,7 +487,7 @@ const TCAP = () => {
                 <div className="w-16 h-16 rounded-full bg-blue-600 flex items-center justify-center text-3xl font-black shrink-0 shadow-[0_0_20px_rgba(37,99,235,0.4)]">{i + 1}</div>
                 <div className="pt-3">
                   <h3 className="text-2xl font-black mb-2">{step.title}</h3>
-                  <p className="text-dimWhite text-base max-w-[550px]">{step.desc}</p>
+                  <p className="text-gray-500 dark:text-dimWhite text-base max-w-[550px]">{step.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -503,15 +503,15 @@ const TCAP = () => {
 
         <div className="grid lg:grid-cols-2 gap-20 items-center max-w-7xl mx-auto relative z-10">
           <div>
-            <h2 className="text-3xl sm:text-5xl font-black mb-6 leading-tight">Performance <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">Rewards 🎯</span></h2>
-            <p className="text-dimWhite text-lg mb-8">Beyond commissions, we celebrate every milestone you hit with game-changing rewards.</p>
+            <h2 className="text-3xl sm:text-5xl font-black mb-6 leading-tight">Performance <br /> <span className="text-cyan-gradient font-bold">Rewards </span></h2>
+            <p className="text-gray-500 dark:text-dimWhite text-lg mb-8">Beyond commissions, we celebrate every milestone you hit with game-changing rewards.</p>
 
             <div className="grid sm:grid-cols-2 gap-6">
               {rewards.map((reward, i) => (
-                <div key={i} className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-white/30 transition-all">
+                <div key={i} className="p-8 rounded-3xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 hover:border-white/30 transition-all">
                   <p className="text-green-400 font-black text-2xl mb-2">{reward.reward}</p>
                   <h4 className="text-xl font-bold mb-2">{reward.title}</h4>
-                  <p className="text-dimWhite text-sm">{reward.desc}</p>
+                  <p className="text-gray-500 dark:text-dimWhite text-sm">{reward.desc}</p>
                 </div>
               ))}
             </div>
@@ -529,8 +529,8 @@ const TCAP = () => {
                   "Connect with tech clubs & student bodies"
                 ].map((task, i) => (
                   <li key={i} className="flex gap-4 items-start">
-                    <UserCheck className="w-6 h-6 text-blue-500 shrink-0" />
-                    <span className="text-lg font-medium text-white/90">{task}</span>
+                    <UserCheck className="w-6 h-6 text-[#33bbcf] shrink-0" />
+                    <span className="text-lg font-medium text-gray-900 dark:text-white/90">{task}</span>
                   </li>
                 ))}
               </ul>
@@ -576,8 +576,8 @@ const TCAP = () => {
       <section className={`${styles.paddingX} py-32 relative bg-black/20`}>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-5xl font-black mb-4">Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">Questions ❓</span></h2>
-            <p className="text-dimWhite text-base sm:text-lg uppercase tracking-widest font-bold">Everything you need to know about TCAP</p>
+            <h2 className="text-3xl sm:text-5xl font-black mb-4">Frequently Asked <span className="text-cyan-gradient font-bold">Questions ❓</span></h2>
+            <p className="text-gray-500 dark:text-dimWhite text-base sm:text-lg uppercase tracking-widest font-bold">Everything you need to know about TCAP</p>
           </div>
           
           <div className="space-y-4">
@@ -588,12 +588,12 @@ const TCAP = () => {
               { q: "Who can apply?", a: "Any college student from any stream who is motivated, has good communication skills, and wants to build a career in technology and sales." },
               { q: "What are the benefits?", a: "Earnings up to ₹10,000/month, official Certificate + LOR, PPO opportunities, free course access, and exclusive welcome kits." }
             ].map((faq, i) => (
-              <details key={i} className="group p-6 rounded-2xl backdrop-blur-xl bg-white/5 border border-white/10 border-white/5 cursor-pointer transition-all hover:bg-white/10">
+              <details key={i} className="group p-6 rounded-2xl backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 border-white/5 cursor-pointer transition-all hover:bg-gray-100 dark:bg-white/10">
                 <summary className="flex justify-between items-center font-bold text-lg list-none">
                   {faq.q}
-                  <ChevronDown className="group-open:rotate-180 transition-transform text-blue-500" />
+                  <ChevronDown className="group-open:rotate-180 transition-transform text-[#33bbcf]" />
                 </summary>
-                <p className="mt-4 text-dimWhite leading-relaxed">{faq.a}</p>
+                <p className="mt-4 text-gray-500 dark:text-dimWhite leading-relaxed">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -608,10 +608,10 @@ const TCAP = () => {
             whileInView={{ scale: 1 }}
             className="w-24 h-24 bg-blue-600 rounded-3xl flex items-center justify-center mx-auto mb-10 shadow-2xl shadow-blue-600/40"
           >
-            <Zap className="w-12 h-12 text-white" />
+            <Zap className="w-12 h-12 text-gray-900 dark:text-white" />
           </motion.div>
-          <h2 className="text-4xl sm:text-7xl font-black mb-6 leading-none">Start Earning <br className="sm:block hidden" /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">Today 💰</span></h2>
-          <p className="text-dimWhite text-xl mb-10 opacity-80 font-medium">Financial independence is just one application away. Join 1,000+ students already winning with TechieHelp.</p>
+          <h2 className="text-4xl sm:text-7xl font-black mb-6 leading-none">Start Earning <br className="sm:block hidden" /> <span className="text-cyan-gradient font-bold">Today �</span></h2>
+          <p className="text-gray-500 dark:text-dimWhite text-xl mb-10 opacity-80 font-medium">Financial independence is just one application away. Join 1,000+ students already winning with TechieHelp.</p>
 
           <div className="flex flex-col items-center gap-6">
             <motion.a
@@ -622,10 +622,10 @@ const TCAP = () => {
               whileTap={{ scale: 0.95 }}
               className="inline-block py-8 px-24 bg-white text-blue-600 font-extrabold text-3xl rounded-full shadow-2xl transition-all"
             >
-              Apply Now & Earn 💰
+              Apply Now & Earn �
             </motion.a>
             
-            <div className="flex items-center gap-3 py-2 px-6 rounded-full backdrop-blur-xl bg-white/5 border border-white/10 border-red-500/30">
+            <div className="flex items-center gap-3 py-2 px-6 rounded-full backdrop-blur-xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 border-red-500/30">
                <div className="w-2 h-2 rounded-full bg-red-500 animate-ping" />
                <span className="text-sm font-black text-red-400 uppercase tracking-[4px]">Deadline approaching soon</span>
             </div>
@@ -645,7 +645,7 @@ const TCAP = () => {
           rel="noopener noreferrer"
           className="w-full py-5 bg-white text-blue-600 font-black text-xl rounded-2xl flex items-center justify-center gap-3 shadow-[0_-10px_30px_rgba(0,0,0,0.5)]"
         >
-          Start Earning Today 💰
+          Start Earning Today �
         </a>
       </motion.div>
 

@@ -55,7 +55,7 @@ const Section = ({ title, children, imgSrc, imgLeft = true }) => {
           />
         </div>
       )}
-      <div className="md:w-1/2 text-white">
+      <div className="md:w-1/2 text-gray-900 dark:text-white">
         <h2 className="text-3xl font-bold mb-4">{title}</h2>
         <div className="space-y-4 text-lg leading-relaxed">{children}</div>
       </div>
@@ -418,7 +418,7 @@ const Python = () => {
           }
         `}
       </style>
-      <section className="relative w-full min-h-screen bg-gradient-to-r from-blue-900 to-blue-800 text-white flex items-center justify-center px-6 md:px-12 pt-32">
+      <section className="btn-primary">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 w-full">
           {/* Left Content */}
           <div className="lg:w-1/2">
@@ -436,32 +436,32 @@ const Python = () => {
                 This is not just a theory course. It’s a specialized internship where you build scalable APIs, automate real-world tasks, and learn modern backend architecture.
               </p>
               <ul className="flex flex-wrap gap-3 mb-3">
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Scalable API Development</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Django & Flask Mastery</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Database & Security Architecture</li>
-                <li className="bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Letter of Recommendation</li>
+                <li className="bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-full text-sm">✔ Scalable API Development</li>
+                <li className="bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-full text-sm">✔ Django & Flask Mastery</li>
+                <li className="bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-full text-sm">✔ Database & Security Architecture</li>
+                <li className="bg-gray-100 dark:bg-white/10 px-3 py-1 rounded-full text-sm">✔ Certificate + Letter of Recommendation</li>
               </ul>
 
               {/* Inline Feature Row */}
               <div className="flex flex-wrap items-center gap-8 mb-4">
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                   <Clock className="w-5 h-5 text-cyan-400" />
                   <span className="text-sm font-medium">1–4 Months Internship</span>
                 </div>
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                   <CheckCircle className="w-5 h-5 text-green-400" />
                   <span className="text-sm font-medium">Industry-Level Datasets</span>
                 </div>
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                   <Briefcase className="w-5 h-5 text-blue-400" />
                   <span className="text-sm font-medium">Career Support & Hackathons</span>
                   <span className="text-sm font-medium">10–16 Weeks Internship</span>
                 </div>
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                   <CheckCircle className="w-5 h-5 text-green-400" />
                   <span className="text-sm font-medium">Placement-Oriented Learning</span>
                 </div>
-                <div className="flex items-center gap-2 text-white">
+                <div className="flex items-center gap-2 text-gray-900 dark:text-white">
                   <Briefcase className="w-5 h-5 text-blue-400" />
                   <span className="text-sm font-medium">24/7 Mentor & Doubt Support</span>
                 </div>
@@ -469,7 +469,7 @@ const Python = () => {
 
               {/* Inline Reviews Row */}
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs text-white">⭐ 4.6/5 Rated by 2,000+ Students | Trusted by Colleges & Recruiters</span>
+                <span className="text-xs text-gray-900 dark:text-white">⭐ 4.6/5 Rated by 2,000+ Students | Trusted by Colleges & Recruiters</span>
               </div>
 
               {/* Inline CTA Buttons */}
@@ -479,7 +479,7 @@ const Python = () => {
                     Start Internship – ₹499/-
                   </button>
                 </a>
-                <button className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2">
+                <button className="border border-white text-gray-900 dark:text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2">
                   <Download className="w-4 h-4" />
                   Download Internship Syllabus
                 </button>
@@ -487,7 +487,7 @@ const Python = () => {
   href="https://drive.google.com/file/d/1KMG5JObcneMBHqcKw_JZmCC2l9lEI3s6/view?usp=drive_link"
   target="_blank"
   rel="noopener noreferrer"
-  className="border border-white text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2"
+  className="border border-white text-gray-900 dark:text-white px-6 py-2 rounded-lg font-bold text-sm transition duration-300 hover:bg-white hover:text-blue-900 flex items-center gap-2"
 >
   <Download className="w-4 h-4" />
   Download Internship Syllabus
@@ -553,7 +553,7 @@ const Python = () => {
 
               {/* CTA Button */}
               <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer" className="block">
-                <button className="w-full bg-blue-900 hover:bg-blue-800 text-white py-4 px-6 rounded-lg font-bold text-lg transition duration-300 transform hover:scale-105">
+                <button className="btn-primary">
                   Enroll Now – ₹499/-
                 </button>
               </a>
@@ -620,7 +620,7 @@ const Python = () => {
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
               <div className="bg-purple-100 rounded-full p-3 flex-shrink-0">
-                <Star className="w-6 h-6 text-purple-600" />
+                <Star className="w-6 h-6 text-[#33bbcf]" />
               </div>
               <div className="text-left">
                 <p className="text-gray-900 font-medium">LinkedIn Badge & Public Verification</p>
@@ -628,7 +628,7 @@ const Python = () => {
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 flex items-start space-x-4">
               <div className="bg-indigo-100 rounded-full p-3 flex-shrink-0">
-                <Clock className="w-6 h-6 text-indigo-600" />
+                <Clock className="w-6 h-6 text-[#33bbcf]" />
               </div>
               <div className="text-left">
                 <p className="text-gray-900 font-medium">Live Classes & Expert Mentor Guidance</p>
@@ -683,7 +683,7 @@ const Python = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🚀 Internship Overview</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"> Internship Overview</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Flexible online & offline internship programs designed for students, freshers, and working professionals to build career-ready skills with industry experts.
             </p>
@@ -716,7 +716,7 @@ const Python = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 cursor-pointer group">
               <div className="text-center">
                 <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
-                  <Star className="w-8 h-8 text-purple-600" />
+                  <Star className="w-8 h-8 text-[#33bbcf]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">3 Months</h3>
                 <p className="text-gray-600 font-medium mb-2">Advanced + Full-Stack Level</p>
@@ -767,7 +767,7 @@ const Python = () => {
               </div>
               <div className="text-center">
                 <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
-                  <Star className="w-8 h-8 text-purple-600" />
+                  <Star className="w-8 h-8 text-[#33bbcf]" />
                 </div>
                 <p className="text-gray-900 font-medium">Intern ID with Public Verification</p>
               </div>
@@ -781,7 +781,7 @@ const Python = () => {
           </div>
 
           {/* Career Outcomes Strip */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+          <div className="btn-primary">
             <h3 className="text-2xl font-bold text-center mb-8">Career Outcomes</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
               <div>
@@ -810,7 +810,7 @@ const Python = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🌟 What You Will Achieve</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">� What You Will Achieve</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Gain tangible career outcomes, industry-recognized certificates, and real-world experience that sets you apart in the competitive job market.
             </p>
@@ -847,7 +847,7 @@ const Python = () => {
             <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
               <div className="flex items-start space-x-4">
                 <div className="bg-purple-100 rounded-full p-3 group-hover:bg-purple-200 transition-colors flex-shrink-0">
-                  <Download className="w-6 h-6 text-purple-600" />
+                  <Download className="w-6 h-6 text-[#33bbcf]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">Internship Offer Letter</h3>
@@ -895,7 +895,7 @@ const Python = () => {
             <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 group">
               <div className="flex items-start space-x-4">
                 <div className="bg-indigo-100 rounded-full p-3 group-hover:bg-indigo-200 transition-colors flex-shrink-0">
-                  <Clock className="w-6 h-6 text-indigo-600" />
+                  <Clock className="w-6 h-6 text-[#33bbcf]" />
                 </div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">LinkedIn Badge & Certificate of Excellence (Top Performers)</h3>
@@ -929,11 +929,11 @@ const Python = () => {
             </div>
 
             {/* Full-width final item */}
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl shadow-lg p-8 text-white md:col-span-2 lg:col-span-3 hover:shadow-xl transition-shadow duration-300">
+            <div className="btn-primary">
               <div className="text-center">
                 <div className="flex justify-center mb-4">
                   <div className="bg-white/20 rounded-full p-4">
-                    <CheckCircle className="w-8 h-8 text-white" />
+                    <CheckCircle className="w-8 h-8 text-gray-900 dark:text-white" />
                   </div>
                 </div>
                 <h3 className="text-2xl font-bold mb-2">Networking with Backend Engineers & Public Recognition</h3>
@@ -959,40 +959,40 @@ const Python = () => {
 
           {/* Placement Support Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+            <div className="bg-gradient-to-br from-gray-100 dark:from-slate-800 to-gray-200 dark:to-slate-900 rounded-xl shadow-lg p-8 text-gray-900 dark:text-white hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
-                  <Briefcase className="w-8 h-8 text-white" />
+                <div className="bg-gray-100 dark:bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Briefcase className="w-8 h-8 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Company-Wise DSA Preparation</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">Curated DSA sheets based on real hiring patterns of top companies.</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+            <div className="bg-gradient-to-br from-gray-100 dark:from-slate-800 to-gray-200 dark:to-slate-900 rounded-xl shadow-lg p-8 text-gray-900 dark:text-white hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
-                  <Download className="w-8 h-8 text-white" />
+                <div className="bg-gray-100 dark:bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Download className="w-8 h-8 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Resume Review & Optimization</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">One-to-one resume reviews to make your profile recruiter-ready.</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+            <div className="bg-gradient-to-br from-gray-100 dark:from-slate-800 to-gray-200 dark:to-slate-900 rounded-xl shadow-lg p-8 text-gray-900 dark:text-white hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
-                  <Star className="w-8 h-8 text-white" />
+                <div className="bg-gray-100 dark:bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <Star className="w-8 h-8 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Mentor-Led Interview Guidance</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">Mock interviews, feedback sessions, and expert mentor support.</p>
               </div>
             </div>
 
-            <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl shadow-lg p-8 text-white hover:shadow-xl transition-shadow duration-300 group">
+            <div className="bg-gradient-to-br from-gray-100 dark:from-slate-800 to-gray-200 dark:to-slate-900 rounded-xl shadow-lg p-8 text-gray-900 dark:text-white hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
-                <div className="bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
-                  <CheckCircle className="w-8 h-8 text-white" />
+                <div className="bg-gray-100 dark:bg-white/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-white/20 transition-colors">
+                  <CheckCircle className="w-8 h-8 text-gray-900 dark:text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-4">Hiring & Placement Assistance</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">Access to job opportunities, referrals, and partner hiring drives.</p>
@@ -1266,7 +1266,7 @@ const Python = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
                 <div className="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-purple-200 transition-colors">
-                  <Star className="w-8 h-8 text-purple-600" />
+                  <Star className="w-8 h-8 text-[#33bbcf]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Django & Flask Prowess</h3>
                 <p className="text-gray-600">Expertise in developing, securing, and optimizing professional web backends.</p>
@@ -1278,7 +1278,7 @@ const Python = () => {
             <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow duration-300 group">
               <div className="text-center">
                 <div className="bg-indigo-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6 group-hover:bg-indigo-200 transition-colors">
-                  <CheckCircle className="w-8 h-8 text-indigo-600" />
+                  <CheckCircle className="w-8 h-8 text-[#33bbcf]" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4">API & Automation</h3>
                 <p className="text-gray-600">Hands-on experience with REST APIs, Task Queues, and Process Automation.</p>
@@ -1292,11 +1292,11 @@ const Python = () => {
           <div className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="https://rzp.io/rzp/techiehelpInternship" target="_blank" rel="noopener noreferrer">
-                <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300 transform hover:scale-105">
+                <button className="btn-primary">
                   Start Your Tech Career
                 </button>
               </a>
-              <button onClick={() => document.getElementById('student-reviews').scrollIntoView({ behavior: 'smooth' })} className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-4 rounded-lg font-bold text-lg transition duration-300">
+              <button onClick={() => document.getElementById('student-reviews').scrollIntoView({ behavior: 'smooth' })} className="btn-primary">
                 View Student Success Stories
               </button>
             </div>
@@ -1449,7 +1449,7 @@ const Python = () => {
         <div className="max-w-7xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">🎓 Student Reviews & Success Stories</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"> Student Reviews & Success Stories</h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto">
               Hear directly from our students about their learning experience, projects, and career growth with TechieHelp.
             </p>
@@ -1538,7 +1538,7 @@ const Python = () => {
                     <span>QR Code / Scanner-Based Verification</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <Shield className="w-5 h-5 text-[#33bbcf] flex-shrink-0" />
                     <span>Public Profile Verification on TechieHelp Website</span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -1546,7 +1546,7 @@ const Python = () => {
                     <span>Unique Certificate ID for Every Intern</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Clock className="w-5 h-5 text-indigo-600 flex-shrink-0" />
+                    <Clock className="w-5 h-5 text-[#33bbcf] flex-shrink-0" />
                     <span>Linked to Internship Duration & Projects Completed</span>
                   </li>
                 </ul>
@@ -1582,7 +1582,7 @@ const Python = () => {
                     <span>Helps in resume shortlisting and HR screening</span>
                   </li>
                   <li className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-purple-600 flex-shrink-0" />
+                    <Shield className="w-5 h-5 text-[#33bbcf] flex-shrink-0" />
                     <span>Linked to the intern’s public TechieHelp profile</span>
                   </li>
                   <li className="flex items-center gap-3">
@@ -1629,7 +1629,7 @@ const Python = () => {
               <button
                 onClick={() => setAutoScroll(true)}
                 className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                  autoScroll ? 'bg-blue-600 text-white' : 'text-blue-600'
+                  autoScroll ? 'bg-blue-600 text-gray-900 dark:text-white' : 'text-blue-600'
                 }`}
               >
                 Auto Scroll
@@ -1637,7 +1637,7 @@ const Python = () => {
               <button
                 onClick={() => setAutoScroll(false)}
                 className={`px-4 py-2 rounded-full font-semibold transition-colors ${
-                  !autoScroll ? 'bg-blue-600 text-white' : 'text-blue-600'
+                  !autoScroll ? 'bg-blue-600 text-gray-900 dark:text-white' : 'text-blue-600'
                 }`}
               >
                 Manual Scroll
@@ -1698,7 +1698,7 @@ const Python = () => {
                 onClick={() => setActiveMonth(index)}
                 className={`px-4 py-2 rounded-lg font-semibold transition-colors ${
                   activeMonth === index
-                    ? 'bg-blue-600 text-white'
+                    ? 'bg-blue-600 text-gray-900 dark:text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
                 }`}
               >
@@ -1711,7 +1711,7 @@ const Python = () => {
           <div className="overflow-x-auto">
             <table className="min-w-full bg-white border border-gray-300 rounded-lg">
               <thead>
-                <tr className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+                <tr className="btn-primary">
                   <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Weeks</th>
                   <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Timeline</th>
                   <th className="px-4 py-2 border border-gray-300 text-left font-semibold">Includes</th>
@@ -1736,7 +1736,7 @@ const Python = () => {
                                   {item.type === 'project' ? (
                                     <div>
                                       <div className={`font-bold ${item.level === 'beginner' ? 'text-yellow-800' : item.level === 'intermediate' ? 'text-blue-800' : 'text-red-800'}`}>
-                                        {item.level === 'beginner' ? '🟡 Beginner Project' : item.level === 'intermediate' ? '🔵 Intermediate Project' : '🔴 Hard Project'}
+                                        {item.level === 'beginner' ? '� Beginner Project' : item.level === 'intermediate' ? '� Intermediate Project' : '� Hard Project'}
                                       </div>
                                       <div className="text-gray-700 font-medium">{item.title}</div>
                                       <div className="text-gray-600 text-sm">{item.subtitle}</div>

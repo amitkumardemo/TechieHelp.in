@@ -237,45 +237,45 @@ const studentData = [
     profilePath: "/intern/rohan-t"
   },
   {
-  "timestamp": "20/08/2025",
-  "fullName": "KAVIYARASAN P",
-  "email": "",
-  "collegeName": "PUDUCHERRY TECHNOLOGICAL UNIVERSITY",
-  "techieHelpStudentID": "TECHIE418413",
-  "linkedInProfile": "",
-  "githubProfile": "",
-  "address": "",
-  "phoneNumber": "",
-  "internshipDomain": "Front End Development",
-  "currentYearBatch": "July 2025 Batch",
-  "passingYear": "2025",
-  "skills": "",
-  "personalQuote": "",
-  "profileImage": "",
-  "idCardStyle": "default",
-  "cardColor": "from-gray-600 to-gray-800",
-  "profilePath": "/intern/kaviyaran-p"
-},
+    "timestamp": "20/08/2025",
+    "fullName": "KAVIYARASAN P",
+    "email": "",
+    "collegeName": "PUDUCHERRY TECHNOLOGICAL UNIVERSITY",
+    "techieHelpStudentID": "TECHIE418413",
+    "linkedInProfile": "",
+    "githubProfile": "",
+    "address": "",
+    "phoneNumber": "",
+    "internshipDomain": "Front End Development",
+    "currentYearBatch": "July 2025 Batch",
+    "passingYear": "2025",
+    "skills": "",
+    "personalQuote": "",
+    "profileImage": "",
+    "idCardStyle": "default",
+    "cardColor": "from-gray-600 to-gray-800",
+    "profilePath": "/intern/kaviyaran-p"
+  },
   {
-  "timestamp": "20/08/2025",
-  "fullName": "GANGA DHAR SHARMA",
-  "email": "2401109070@ptuniv.edu.in",
-  "collegeName": "PUDUCHERRY TECHNOLOGICAL UNIVERSITY",
-  "techieHelpStudentID": "TECHIE426947",
-  "linkedInProfile": "",
-  "githubProfile": "https://github.com/monkeykavi",
-  "address": "Pondicherry ",
-  "phoneNumber": "8883802327",
-  "internshipDomain": "Front End Development",
-  "currentYearBatch": "July 2025 Batch",
-  "passingYear": "2025",
-  "skills": "",
-  "personalQuote": "",
-  "profileImage": "",
-  "idCardStyle": "default",
-  "cardColor": "from-gray-600 to-gray-800",
-  "profilePath": "/intern/ganga-dhar-sharma"
-},
+    "timestamp": "20/08/2025",
+    "fullName": "GANGA DHAR SHARMA",
+    "email": "2401109070@ptuniv.edu.in",
+    "collegeName": "PUDUCHERRY TECHNOLOGICAL UNIVERSITY",
+    "techieHelpStudentID": "TECHIE426947",
+    "linkedInProfile": "",
+    "githubProfile": "https://github.com/monkeykavi",
+    "address": "Pondicherry ",
+    "phoneNumber": "8883802327",
+    "internshipDomain": "Front End Development",
+    "currentYearBatch": "July 2025 Batch",
+    "passingYear": "2025",
+    "skills": "",
+    "personalQuote": "",
+    "profileImage": "",
+    "idCardStyle": "default",
+    "cardColor": "from-gray-600 to-gray-800",
+    "profilePath": "/intern/ganga-dhar-sharma"
+  },
   {
     timestamp: "8/20/2025 20:06:40",
     fullName: "ANKIT KUMAR KESHARI",
@@ -632,7 +632,7 @@ const studentData = [
 
 const Intern = () => {
   const [searchTerm, setSearchTerm] = React.useState('');
-  const [viewMode, setViewMode] = React.useState('cards'); 
+  const [viewMode, setViewMode] = React.useState('cards');
 
   const filteredStudents = React.useMemo(() => {
     return studentData.filter(student =>
@@ -655,7 +655,7 @@ const Intern = () => {
       </Helmet>
       {/* DotGrid Background - Fixed position behind everything */}
       <div className="fixed inset-0 z-0">
-        <DotGrid 
+        <DotGrid
           dotSize={2}
           gap={20}
           baseColor="#5227FF"
@@ -667,7 +667,7 @@ const Intern = () => {
           returnDuration={1.2}
         />
       </div>
-      
+
       <div className="relative z-10 min-h-screen pt-32">
         <div className="container mx-auto px-4 py-12">
 
@@ -780,7 +780,7 @@ const Intern = () => {
                 placeholder="Search by name, college, or domain..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-4 py-2 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 placeholder-gray-400 focus:outline-none focus:border-purple-400 w-full max-w-md text-white"
+                className="px-4 py-2 rounded-lg bg-gray-100 dark:bg-white/10 backdrop-blur-sm border border-gray-300 dark:border-white/20 placeholder-gray-400 focus:outline-none focus:border-purple-400 w-full max-w-md text-gray-900 dark:text-white"
               />
             </motion.div>
 
@@ -790,7 +790,7 @@ const Intern = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
             >
-              
+
               <motion.div
                 className="absolute inset-0 pointer-events-none"
                 initial={{ opacity: 0 }}
@@ -926,7 +926,7 @@ const Intern = () => {
                         initial={{ y: 10 }}
                         whileHover={{ y: 0 }}
                       >
-                        <div className="bg-black/80 text-white text-xs px-2 py-1 rounded-lg whitespace-nowrap">
+                        <div className="bg-black/80 text-gray-900 dark:text-white text-xs px-2 py-1 rounded-lg whitespace-nowrap">
                           {student.fullName.split(' ')[0]}
                         </div>
                       </motion.div>
@@ -974,7 +974,7 @@ const Intern = () => {
                     }}
                   >
                     <motion.svg
-                      className="w-12 h-12 text-white"
+                      className="w-12 h-12 text-gray-900 dark:text-white"
                       fill="currentColor"
                       viewBox="0 0 20 20"
                       animate={{
@@ -1102,7 +1102,7 @@ const Intern = () => {
                         initial={{ y: 10 }}
                         whileHover={{ y: 0 }}
                       >
-                        <div className="bg-black/80 text-white text-xs px-2 py-1 rounded-lg whitespace-nowrap">
+                        <div className="bg-black/80 text-gray-900 dark:text-white text-xs px-2 py-1 rounded-lg whitespace-nowrap">
                           {student.fullName.split(' ')[0]}
                         </div>
                       </motion.div>
@@ -1118,7 +1118,7 @@ const Intern = () => {
                 transition={{ delay: 3 }}
               >
                 <motion.div
-                  className="inline-flex items-center gap-2 text-sm text-gray-400"
+                  className="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400"
                   animate={{
                     x: [0, 10, 0],
                   }}
@@ -1140,159 +1140,159 @@ const Intern = () => {
             </motion.div>
           </motion.div>
 
-        {viewMode === 'cards' ? (
-          <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-            initial="hidden"
-            animate="visible"
-            variants={{
-              hidden: { opacity: 0 },
-              visible: {
-                opacity: 1,
-                transition: {
-                  staggerChildren: 0.1,
+          {viewMode === 'cards' ? (
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                hidden: { opacity: 0 },
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    staggerChildren: 0.1,
+                  },
                 },
-              },
-            }}
-          >
-            {filteredStudents.map((student) => (
-              <motion.div
-                key={student.techieHelpStudentID}
-                className="p-4 rounded-lg shadow-lg hover:shadow-blue-600/70 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-gradient-to-r from-purple-900 via-blue-900 to-black"
-                variants={{
-                  hidden: { opacity: 0, y: 50 },
-                  visible: { opacity: 1, y: 0 },
-                }}
-                whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)" }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="mb-4 flex flex-col items-center rounded-lg p-6 border border-blue-700 bg-gradient-to-r from-purple-700 via-blue-700 to-black shadow-lg relative">
-                  {/* NEW Tag for new students */}
-                  {student.isNew && (
-                    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-xs px-3 py-1 rounded-full font-bold shadow-lg z-20">
-                      NEW
-                    </div>
-                  )}
+              }}
+            >
+              {filteredStudents.map((student) => (
+                <motion.div
+                  key={student.techieHelpStudentID}
+                  className="p-4 rounded-lg shadow-lg hover:shadow-blue-600/70 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-gradient-to-r from-purple-900 via-blue-900 to-black"
+                  variants={{
+                    hidden: { opacity: 0, y: 50 },
+                    visible: { opacity: 1, y: 0 },
+                  }}
+                  whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(59, 130, 246, 0.5)" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="mb-4 flex flex-col items-center rounded-lg p-6 border border-blue-700 bg-gradient-to-r from-purple-700 via-blue-700 to-black shadow-lg relative">
+                    {/* NEW Tag for new students */}
+                    {student.isNew && (
+                      <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-black text-xs px-3 py-1 rounded-full font-bold shadow-lg z-20">
+                        NEW
+                      </div>
+                    )}
 
-                  {!(student.fullName === "Ashok" || student.fullName === "Kameshwar Patel") && (
-                    <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg text-center">
-                      Winter Internship Batch 2025
-                    </div>
-                  )}
+                    {!(student.fullName === "Ashok" || student.fullName === "Kameshwar Patel") && (
+                      <div className="btn-primary">
+                        Winter Internship Batch 2025
+                      </div>
+                    )}
 
-                  {(student.fullName === "Ashok" || student.fullName === "Kameshwar Patel") && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 text-white text-xs px-3 py-1 rounded-full font-semibold shadow-lg">
-                      JIET MCA Intern
+                    {(student.fullName === "Ashok" || student.fullName === "Kameshwar Patel") && (
+                      <div className="btn-primary">
+                        JIET MCA Intern
+                      </div>
+                    )}
+                    <div className="relative">
+                      <img
+                        src={student.profileImage}
+                        alt={student.fullName}
+                        className="w-28 h-28 rounded-full border-4 border-blue-500 mb-4"
+                      />
+                      {/* Verified Blue Tick */}
+                      <div className="absolute top-0 right-0 bg-white rounded-full p-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          className="h-6 w-6 text-blue-600"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={3}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                      </div>
                     </div>
-                  )}
-                  <div className="relative">
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white">{`Name: ${student.fullName}`}</h3>
+                    <p className="text-gray-300">{`College Name: ${student.collegeName}`}</p>
+                    <p className="text-gray-300">{`TechieHelp Student Id: ${student.techieHelpStudentID}`}</p>
+                    <p className="text-gray-300">{`Internship Domain: ${student.internshipDomain}`}</p>
+                  </div>
+                  <div className="flex justify-center gap-4 mt-4">
+                    <a
+                      href={student.profilePath}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                    >
+                      Visit Profile
+                    </a>
+                    <a
+                      href={student.linkedInProfile || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                    >
+                      LinkedIn
+                    </a>
+                    <a
+                      href={student.githubProfile || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary"
+                    >
+                      GitHub
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredStudents.map((student) => (
+                <div
+                  key={student.techieHelpStudentID}
+                  className="p-4 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+                >
+                  <div className="mb-4 flex flex-col items-center bg-black/70 rounded-lg p-6 border border-purple-700">
                     <img
                       src={student.profileImage}
                       alt={student.fullName}
-                      className="w-28 h-28 rounded-full border-4 border-blue-500 mb-4"
+                      className="w-20 h-20 rounded-full border-4 border-purple-500 mb-4"
                     />
-                    {/* Verified Blue Tick */}
-                    <div className="absolute top-0 right-0 bg-white rounded-full p-1">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-6 w-6 text-blue-600"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth={3}
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
+                    <h3 className="text-lg font-bold">{`Name: ${student.fullName}`}</h3>
+                    <p>{`College Name: ${student.collegeName}`}</p>
+                    <p>{`TechieHelp Student Id: ${student.techieHelpStudentID}`}</p>
+                    <p>{`Internship Domain: ${student.internshipDomain}`}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-white">{`Name: ${student.fullName}`}</h3>
-                  <p className="text-gray-300">{`College Name: ${student.collegeName}`}</p>
-                  <p className="text-gray-300">{`TechieHelp Student Id: ${student.techieHelpStudentID}`}</p>
-                  <p className="text-gray-300">{`Internship Domain: ${student.internshipDomain}`}</p>
+                  <div className="flex justify-center gap-4 mt-4">
+                    <a
+                      href={student.profilePath}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 transition"
+                    >
+                      Visit Profile
+                    </a>
+                    <a
+                      href={student.linkedInProfile || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-blue-800 rounded hover:bg-blue-900 transition"
+                    >
+                      LinkedIn
+                    </a>
+                    <a
+                      href={student.githubProfile || '#'}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-50 dark:bg-gray-900 transition"
+                    >
+                      GitHub
+                    </a>
+                  </div>
                 </div>
-                <div className="flex justify-center gap-4 mt-4">
-                  <a
-                    href={student.profilePath}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-600 rounded-full hover:bg-blue-700 transition shadow-md shadow-blue-500/50 text-white"
-                  >
-                    Visit Profile
-                  </a>
-                  <a
-                    href={student.linkedInProfile || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-700 rounded-full hover:bg-blue-800 transition shadow-md shadow-blue-600/60 text-white"
-                  >
-                    LinkedIn
-                  </a>
-                  <a
-                    href={student.githubProfile || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-900 rounded-full hover:bg-blue-950 transition shadow-md shadow-blue-700/70 text-white"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredStudents.map((student) => (
-              <div
-                key={student.techieHelpStudentID}
-                className="p-4 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
-              >
-                <div className="mb-4 flex flex-col items-center bg-black/70 rounded-lg p-6 border border-purple-700">
-                  <img
-                    src={student.profileImage}
-                    alt={student.fullName}
-                    className="w-20 h-20 rounded-full border-4 border-purple-500 mb-4"
-                  />
-                  <h3 className="text-lg font-bold">{`Name: ${student.fullName}`}</h3>
-                  <p>{`College Name: ${student.collegeName}`}</p>
-                  <p>{`TechieHelp Student Id: ${student.techieHelpStudentID}`}</p>
-                  <p>{`Internship Domain: ${student.internshipDomain}`}</p>
-                </div>
-                <div className="flex justify-center gap-4 mt-4">
-                  <a
-                    href={student.profilePath}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 transition"
-                  >
-                    Visit Profile
-                  </a>
-                  <a
-                    href={student.linkedInProfile || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-blue-800 rounded hover:bg-blue-900 transition"
-                  >
-                    LinkedIn
-                  </a>
-                  <a
-                    href={student.githubProfile || '#'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="px-4 py-2 bg-gray-800 rounded hover:bg-gray-900 transition"
-                  >
-                    GitHub
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
-    </div>
     </div>
   );
 };

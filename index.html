@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script>
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="src/assets/icon.png" sizes="64x64" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />

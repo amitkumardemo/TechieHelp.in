@@ -59,7 +59,7 @@ const ServiceFAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section className={`${styles.paddingY} ${styles.flexCenter} bg-primary text-white`}>
+    <section className={`${styles.paddingY} ${styles.flexCenter} bg-white dark:bg-primary text-gray-900 dark:text-white`}>
       <div className={`${styles.boxWidth} w-full max-w-4xl`}>
         <h2 className={`${styles.heading2} text-center mb-8`}>Frequently Asked Questions</h2>
         <div className="space-y-4">

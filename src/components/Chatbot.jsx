@@ -42,14 +42,14 @@ const DATASET_B = {
 const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
 
-    // 🧠 CONTEXT MEMORY
+    //  CONTEXT MEMORY
     const [currentMode, setCurrentMode] = useState(null); // internship | services | company
     const [currentDomain, setCurrentDomain] = useState(null); // web | app | uiux | ...
 
     const [messages, setMessages] = useState([
         {
             id: 1,
-            text: "Hi 👋 I’m TechieHelp AI — your guide for internships, AI services, and automation solutions. How can I assist you today?",
+            text: "Hi � I’m TechieHelp AI — your guide for internships, AI services, and automation solutions. How can I assist you today?",
             sender: 'bot',
         },
     ]);
@@ -78,27 +78,27 @@ const Chatbot = () => {
     const getBotResponse = (query) => {
         const lowQ = query.toLowerCase();
 
-        // 🚀 APPLY NOW ACTION PROMPT
+        //  APPLY NOW ACTION PROMPT
         const applyKeywords = ["apply", "enroll", "join", "payment"];
         if (applyKeywords.some(k => lowQ.includes(k))) {
             if (currentDomain) {
                 const domainInfo = DATASET_A.internships.find(d => d.id === currentDomain || d.title.toLowerCase().includes(currentDomain));
-                return `You're almost in! 🚀
+                return `You're almost in! 
 Here are your official enrollment links for ${domainInfo?.title || currentDomain}:
 
-👉 **Standard Payment Link:**
+� **Standard Payment Link:**
 ${DATASET_A.standardPaymentLink}
 
-👉 **Special Batch Form:**
+� **Special Batch Form:**
 ${DATASET_A.specialBatchForm}`;
             }
         }
 
-        // 🏢 COMPANY INFO PROMPT
+        // � COMPANY INFO PROMPT
         const companyKeywords = ["about", "techiehelp", "company"];
         if (companyKeywords.some(k => lowQ.includes(k))) {
             setCurrentMode('company');
-            return `🏢 **TechieHelp – Official Overview**
+            return `� **TechieHelp – Official Overview**
 
 • AI-first automation & software company
 • MSME Registered | ISO 9001:2015
@@ -111,33 +111,33 @@ Ask next:
 [Internships] | [Services] | [Contact]`;
         }
 
-        // 🎓 INTERNSHIP MODE PROMPT
+        //  INTERNSHIP MODE PROMPT
         if (lowQ.includes("internship") || (currentMode === 'internship' && !currentDomain) || (currentMode === 'internship' && lowQ.length < 25)) {
             if (currentMode !== 'internship') setCurrentMode('internship');
 
             const domainMatch = DATASET_A.internships.find(d => lowQ.includes(d.id) || lowQ.includes(d.title.toLowerCase()));
             if (domainMatch) {
                 setCurrentDomain(domainMatch.id);
-                return `📌 **${domainMatch.title} Internship – TechieHelp**
+                return `� **${domainMatch.title} Internship – TechieHelp**
 
-🔧 **Tech Stack:**
+� **Tech Stack:**
 ${domainMatch.stack}
 
 ⏳ **Duration:**
 1 / 2 / 3 Months
 
-💰 **Pricing:**
+� **Pricing:**
 • Standard Internship – ₹499
 • Special Mentorship Batch – ₹3000
 
-🎓 **You Will Get:**
+ **You Will Get:**
 • ISO Certificate
 • AICTE/NIP aligned structure
 • LinkedIn Digital Badge
 • Real-world Projects
 • LMS + Mentor Support
 
-👉 **Apply Now:**
+� **Apply Now:**
 [Standard Payment Link](${DATASET_A.standardPaymentLink})
 
 [Special Batch Form](${DATASET_A.specialBatchForm})
@@ -147,7 +147,7 @@ Ask:
             }
 
             if (currentMode === 'internship' && !currentDomain) {
-                return `🚀 **Official Internship Mode**
+                return ` **Official Internship Mode**
       
 We offer intensive training in 19+ domains. Which one are you interested in?
 • Web Dev | App Dev | UI/UX
@@ -163,7 +163,7 @@ Each domain includes AICTE-verified certificates and real projects.`;
                 return `You are currently viewing the **${d.title}** internship. Would you like to **Apply Now** or view the **Syllabus**?`;
             }
 
-            return `🚀 **Official Internship Mode**
+            return ` **Official Internship Mode**
       
 We offer intensive training in 19+ domains. Which one are you interested in?
 • Web Dev | App Dev | UI/UX
@@ -171,12 +171,12 @@ We offer intensive training in 19+ domains. Which one are you interested in?
 • Data Science | MERN | Python`;
         }
 
-        // 🛠 SERVICES MODE PROMPT
+        // � SERVICES MODE PROMPT
         if (lowQ.includes("service") || currentMode === 'services') {
             if (currentMode !== 'services') setCurrentMode('services');
             const serviceMatch = DATASET_B.services.find(s => lowQ.includes(s.title.toLowerCase()));
             if (serviceMatch) {
-                return `📦 **${serviceMatch.title} – TechieHelp**
+                return `� **${serviceMatch.title} – TechieHelp**
 
 **Starting From:**
 ₹${serviceMatch.price}
@@ -187,7 +187,7 @@ We offer intensive training in 19+ domains. Which one are you interested in?
 **Next:**
 [Get Quote] | [Talk to Expert]`;
             }
-            return `📦 **Our Official Services**
+            return `� **Our Official Services**
       
 • Web & App Development
 • AI Agents & Automation
@@ -218,14 +218,14 @@ Which service do you want pricing for?`;
                                     <img src={logo} alt="TH" className="w-full h-full object-contain" />
                                 </div>
                                 <div>
-                                    <h3 className="text-white font-bold text-xs tracking-wide">TechieHelp AI • Online</h3>
+                                    <h3 className="text-gray-900 dark:text-white font-bold text-xs tracking-wide">TechieHelp AI • Online</h3>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-1.5 h-1.5 bg-green-500 rounded-full shadow-[0_0_8px_#22c55e]"></div>
-                                        <span className="text-[10px] text-gray-400 font-medium">Always Active</span>
+                                        <span className="text-[10px] text-gray-600 dark:text-gray-400 font-medium">Always Active</span>
                                     </div>
                                 </div>
                             </div>
-                            <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-white transition-colors p-1">
+                            <button onClick={() => setIsOpen(false)} className="text-gray-500 hover:text-gray-900 dark:text-white transition-colors p-1">
                                 <img src={closeIcon} className="w-4 h-4" />
                             </button>
                         </div>
@@ -235,8 +235,8 @@ Which service do you want pricing for?`;
                             {messages.map((m) => (
                                 <div key={m.id} className={`flex ${m.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                                     <div className={`max-w-[85%] p-3.5 text-[13px] leading-relaxed shadow-lg ${m.sender === 'user'
-                                            ? 'bg-blue-600 text-white rounded-[1.2rem] rounded-br-none'
-                                            : 'bg-gray-900 text-gray-200 border border-gray-800 rounded-[1.2rem] rounded-bl-none whitespace-pre-line'
+                                            ? 'bg-blue-600 text-gray-900 dark:text-white rounded-[1.2rem] rounded-br-none'
+                                            : 'bg-gray-50 dark:bg-gray-900 text-gray-200 border border-gray-800 rounded-[1.2rem] rounded-bl-none whitespace-pre-line'
                                         }`}>
                                         {m.text}
                                     </div>
@@ -244,7 +244,7 @@ Which service do you want pricing for?`;
                             ))}
                             {isTyping && (
                                 <div className="flex justify-start">
-                                    <div className="bg-gray-900 border border-gray-800 p-3 rounded-2xl rounded-bl-none flex gap-1">
+                                    <div className="bg-gray-50 dark:bg-gray-900 border border-gray-800 p-3 rounded-2xl rounded-bl-none flex gap-1">
                                         <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce"></div>
                                         <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.2s]"></div>
                                         <div className="w-1 h-1 bg-cyan-400 rounded-full animate-bounce [animation-delay:0.4s]"></div>
@@ -258,15 +258,15 @@ Which service do you want pricing for?`;
                         <div className="px-4 pb-3 flex gap-2 overflow-x-auto no-scrollbar">
                             {currentMode === 'internship' ? (
                                 ['Web Dev', 'App Dev', 'AI/ML', 'Apply Now', 'Pricing'].map(btn => (
-                                    <button key={btn} onClick={() => handleSend(btn)} className="whitespace-nowrap px-3 py-1.5 bg-blue-900/30 border border-blue-500/20 text-cyan-400 rounded-full text-[10px] font-bold hover:bg-blue-700 hover:text-white transition-all">{btn}</button>
+                                    <button key={btn} onClick={() => handleSend(btn)} className="btn-primary">{btn}</button>
                                 ))
                             ) : currentMode === 'services' ? (
                                 ['Web Dev', 'AI Agents', 'LMS', 'Talk to Expert'].map(btn => (
-                                    <button key={btn} onClick={() => handleSend(btn)} className="whitespace-nowrap px-3 py-1.5 bg-gray-800/50 border border-gray-700 text-gray-300 rounded-full text-[10px] font-bold hover:bg-gray-700 hover:text-white transition-all">{btn}</button>
+                                    <button key={btn} onClick={() => handleSend(btn)} className="whitespace-nowrap px-3 py-1.5 bg-gray-800/50 border border-gray-700 text-gray-300 rounded-full text-[10px] font-bold hover:bg-gray-700 hover:text-gray-900 dark:text-white transition-all">{btn}</button>
                                 ))
                             ) : (
                                 ['Internships', 'Services', 'About Company'].map(btn => (
-                                    <button key={btn} onClick={() => handleSend(btn)} className="whitespace-nowrap px-3 py-1.5 bg-gray-800/50 border border-gray-700 text-gray-300 rounded-full text-[10px] font-bold hover:bg-gray-700 hover:text-white transition-all">{btn}</button>
+                                    <button key={btn} onClick={() => handleSend(btn)} className="whitespace-nowrap px-3 py-1.5 bg-gray-800/50 border border-gray-700 text-gray-300 rounded-full text-[10px] font-bold hover:bg-gray-700 hover:text-gray-900 dark:text-white transition-all">{btn}</button>
                                 ))
                             )}
                         </div>
@@ -280,7 +280,7 @@ Which service do you want pricing for?`;
                                     onChange={(e) => setInputValue(e.target.value)}
                                     onKeyPress={(e) => e.key === 'Enter' && handleSend()}
                                     placeholder="Ask about internships, services, or pricing..."
-                                    className="w-full bg-gray-900 border border-gray-800 rounded-xl py-3 px-4 text-sm text-white focus:outline-none focus:border-cyan-500/50"
+                                    className="w-full bg-gray-50 dark:bg-gray-900 border border-gray-800 rounded-xl py-3 px-4 text-sm text-gray-900 dark:text-white focus:outline-none focus:border-cyan-500/50"
                                 />
                                 <button
                                     onClick={() => handleSend()}

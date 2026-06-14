@@ -221,14 +221,14 @@ const TONE_TEMPLATES = {
     inbox2: "Hey Sarah,\n\nYour competitors are taking hours to follow up with security leads. Our AI calling agents dial them *instantly* while they are still warm, qualify their budget, and book meetings directly into your sales reps' calendar.\n\nLet's run a live voice test on your phone tomorrow at 11 AM EST. Get ready to be amazed!\n\nSales Engine,\nQualifyAI"
   },
   Startup: {
-    inbox1: "Hey Rohan! 👋\n\nLove what you guys are building at Nexus! Let's get those 500 daily leads handled by a supercharged AI employee. HubSpot sync? Done. Webhooks? 100% supported.\n\nLet's get this automated. I've blocked out a brief coffee-chat tomorrow at 3 PM to set it up.\n\nCatch you then,\nQualifyAI Team",
-    inbox2: "Hey Sarah! 🚀\n\nSmart security meets smart AI calling agents! Yes, our Vapi pipeline will automatically trigger a custom outbound call to your leads within seconds.\n\nLet's kick things off tomorrow at 11 AM EST with a live dial demonstration.\n\nLet's go!,\nQualifyAI Builder"
+    inbox1: "Hey Rohan! �\n\nLove what you guys are building at Nexus! Let's get those 500 daily leads handled by a supercharged AI employee. HubSpot sync? Done. Webhooks? 100% supported.\n\nLet's get this automated. I've blocked out a brief coffee-chat tomorrow at 3 PM to set it up.\n\nCatch you then,\nQualifyAI Team",
+    inbox2: "Hey Sarah! \n\nSmart security meets smart AI calling agents! Yes, our Vapi pipeline will automatically trigger a custom outbound call to your leads within seconds.\n\nLet's kick things off tomorrow at 11 AM EST with a live dial demonstration.\n\nLet's go!,\nQualifyAI Builder"
   }
 };
 
 export default function QualifyAIDashboard() {
   const [activeTab, setActiveTab] = useState("overview");
-  
+
   // Data States
   const [inboxItems, setInboxItems] = useState(INITIAL_INBOX);
   const [selectedInboxId, setSelectedInboxId] = useState(INITIAL_INBOX[0].id);
@@ -236,13 +236,13 @@ export default function QualifyAIDashboard() {
   const [calls, setCalls] = useState(INITIAL_CALLS);
   const [whatsappChats, setWhatsappChats] = useState(INITIAL_WHATSAPP);
   const [selectedChatId, setSelectedChatId] = useState(INITIAL_WHATSAPP[0].id);
-  
+
   // Workflow States
   const [workflowSteps, setWorkflowSteps] = useState(WORKFLOW_STEPS);
-  
+
   // Timeline State
   const [timeline, setTimeline] = useState(INITIAL_TIMELINE);
-  
+
   // AI Replies Tab Specific States
   const [replyMessageSource, setReplyMessageSource] = useState(INITIAL_INBOX[0].message);
   const [replyTone, setReplyTone] = useState("Professional");
@@ -261,7 +261,7 @@ export default function QualifyAIDashboard() {
   const [inboxFilter, setInboxFilter] = useState("All");
   const [leadsSearch, setLeadsSearch] = useState("");
   const [leadsFilter, setLeadsFilter] = useState("All");
-  
+
   // Integration States
   const [integrationStatuses, setIntegrationStatuses] = useState({
     gmail: "Connected",
@@ -396,7 +396,7 @@ export default function QualifyAIDashboard() {
   const handleTriggerCall = (lead) => {
     const now = new Date();
     const timeStr = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')} ${now.getHours() >= 12 ? 'PM' : 'AM'}`;
-    
+
     // Add call log simulation
     const newCall = {
       id: `call-${Date.now()}`,
@@ -428,9 +428,9 @@ export default function QualifyAIDashboard() {
 
     // Simulate call progress
     setTimeout(() => {
-      setCalls(prev => prev.map(c => c.id === newCall.id ? { 
-        ...c, 
-        status: "Completed", 
+      setCalls(prev => prev.map(c => c.id === newCall.id ? {
+        ...c,
+        status: "Completed",
         duration: "1m 32s",
         transcript: `[AI CallingAgent]: Hello ${lead.name}, this is Sam from TechieHelp. Calling regarding your lead qualification query.\n\n[${lead.name}]: Hey, thanks for calling. Yes, we wanted to see if the AI agent can speak multiple accents.\n\n[AI CallingAgent]: Definitely. We support English (Indian, US, UK), Hindi, and Spanish voices with realistic intonations. Let's arrange a pilot setup call.\n\n[${lead.name}]: Awesome, please schedule it.\n\n[AI CallingAgent]: Setting it up. Talk to you soon!`,
         summary: "Lead verified accent requirements. Outbound test succeeded. Pilot scheduled."
@@ -453,22 +453,22 @@ export default function QualifyAIDashboard() {
   // Filters
   const filteredInbox = inboxItems.filter(item => {
     const matchSearch = item.senderName.toLowerCase().includes(inboxSearch.toLowerCase()) ||
-                        item.email.toLowerCase().includes(inboxSearch.toLowerCase()) ||
-                        item.subject.toLowerCase().includes(inboxSearch.toLowerCase());
+      item.email.toLowerCase().includes(inboxSearch.toLowerCase()) ||
+      item.subject.toLowerCase().includes(inboxSearch.toLowerCase());
     const matchFilter = inboxFilter === "All" || item.source === inboxFilter;
     return matchSearch && matchFilter;
   });
 
   const filteredLeads = leads.filter(lead => {
     const matchSearch = lead.name.toLowerCase().includes(leadsSearch.toLowerCase()) ||
-                        lead.email.toLowerCase().includes(leadsSearch.toLowerCase());
+      lead.email.toLowerCase().includes(leadsSearch.toLowerCase());
     const matchFilter = leadsFilter === "All" || lead.priority === leadsFilter;
     return matchSearch && matchFilter;
   });
 
   return (
     <div className="flex h-screen bg-[#030307] text-[#ebebed] font-sans overflow-hidden antialiased selection:bg-[#38bdf8]/30 selection:text-[#38bdf8]">
-      
+
       {/* Background glow effects */}
       <div className="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] bg-[#0f172a]/30 blur-[150px] rounded-full pointer-events-none -z-10" />
       <div className="fixed bottom-[-10%] right-[-10%] w-[45%] h-[45%] bg-[#0c4a6e]/20 blur-[130px] rounded-full pointer-events-none -z-10" />
@@ -480,10 +480,10 @@ export default function QualifyAIDashboard() {
           {/* Logo Section */}
           <div className="p-6 flex items-center gap-3 border-b border-white/[0.04]">
             <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-[#38bdf8] to-[#6366f1] flex items-center justify-center shadow-lg shadow-[#38bdf8]/20 animate-pulse">
-              <Sparkles className="w-5 h-5 text-white" />
+              <Sparkles className="w-5 h-5 text-gray-900 dark:text-white" />
             </div>
             <div>
-              <h1 className="font-bold text-sm tracking-tight text-white leading-none">QualifyAI</h1>
+              <h1 className="font-bold text-sm tracking-tight text-gray-900 dark:text-white leading-none">QualifyAI</h1>
               <p className="text-[10px] text-gray-500 font-mono tracking-widest uppercase mt-1">TechieHelp</p>
             </div>
           </div>
@@ -496,7 +496,7 @@ export default function QualifyAIDashboard() {
               { id: "leads", label: "Qualified Leads", icon: Flame },
               { id: "replies", label: "AI Replies", icon: Mail },
               { id: "calls", label: "AI Calls", icon: Phone },
-              { id: "whatsapp", label: "WhatsApp", icon: MessageSquare, badge: whatsappChats.filter(w=>w.status==="Unread").length },
+              { id: "whatsapp", label: "WhatsApp", icon: MessageSquare, badge: whatsappChats.filter(w => w.status === "Unread").length },
               { id: "workflows", label: "Workflows", icon: GitFork, activeDot: true },
               { id: "analytics", label: "Analytics", icon: BarChart3 },
               { id: "reports", label: "Reports", icon: FileText },
@@ -509,14 +509,13 @@ export default function QualifyAIDashboard() {
                 <button
                   key={item.id}
                   onClick={() => setActiveTab(item.id)}
-                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 group ${
-                    isActive 
-                      ? "bg-white/[0.05] text-[#38bdf8] border border-white/[0.04] shadow-sm" 
-                      : "text-gray-400 hover:text-white hover:bg-white/[0.02]"
-                  }`}
+                  className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-xs font-medium transition-all duration-200 group ${isActive
+                      ? "bg-white/[0.05] text-[#38bdf8] border border-white/[0.04] shadow-sm"
+                      : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white hover:card-glass-static"
+                    }`}
                 >
                   <div className="flex items-center gap-3">
-                    <Icon className={`w-4 h-4 transition-transform group-hover:scale-105 ${isActive ? "text-[#38bdf8]" : "text-gray-400 group-hover:text-white"}`} />
+                    <Icon className={`w-4 h-4 transition-transform group-hover:scale-105 ${isActive ? "text-[#38bdf8]" : "text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:text-white"}`} />
                     <span>{item.label}</span>
                   </div>
                   {item.badge ? (
@@ -534,20 +533,20 @@ export default function QualifyAIDashboard() {
         </div>
 
         {/* User Footer Panel */}
-        <div className="p-4 border-t border-white/[0.04] bg-white/[0.01] flex items-center justify-between">
+        <div className="p-4 border-t border-white/[0.04] card-glass-static flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center font-bold text-white text-xs shadow-md border border-white/10">
+            <div className="btn-primary">
               AK
             </div>
             <div>
-              <p className="text-xs font-semibold text-white">Amit Kumar</p>
+              <p className="text-xs font-semibold text-gray-900 dark:text-white">Amit Kumar</p>
               <p className="text-[10px] text-green-400 font-mono flex items-center gap-1">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400 inline-block animate-pulse" />
                 AI Online (24/7)
               </p>
             </div>
           </div>
-          <a href="/" className="text-gray-400 hover:text-red-400 transition-colors p-1.5 rounded-lg hover:bg-white/[0.03]" title="Exit Dashboard">
+          <a href="/" className="text-gray-600 dark:text-gray-400 hover:text-red-400 transition-colors p-1.5 rounded-lg hover:bg-white/[0.03]" title="Exit Dashboard">
             <LogOut className="w-4 h-4" />
           </a>
         </div>
@@ -555,17 +554,17 @@ export default function QualifyAIDashboard() {
 
       {/* MAIN CONTENT WORKSPACE & RIGHT ACTIVITY FEED */}
       <div className="flex-1 flex overflow-hidden">
-        
+
         {/* CENTER CONTENT */}
         <main className="flex-1 flex flex-col h-screen overflow-y-auto scrollbar-hide pb-12 relative border-r border-white/[0.04]">
           {/* HEADER BAR */}
           <header className="sticky top-0 bg-[#030307]/70 backdrop-blur-md z-40 border-b border-white/[0.05] py-4 px-8 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <div>
-                <h2 className="text-md font-bold text-white tracking-tight flex items-center gap-2">
-                  Welcome Back, Amit <span className="text-xl">👋</span>
+                <h2 className="text-md font-bold text-gray-900 dark:text-white tracking-tight flex items-center gap-2">
+                  Welcome Back, Amit <span className="text-xl">�</span>
                 </h2>
-                <p className="text-[10px] text-gray-400 font-mono">TechieHelp QualifyAI Operating System</p>
+                <p className="text-[10px] text-gray-600 dark:text-gray-400 font-mono">TechieHelp QualifyAI Operating System</p>
               </div>
               <span className="px-2.5 py-0.5 text-[9px] font-mono font-bold tracking-widest text-[#38bdf8] bg-[#38bdf8]/10 border border-[#38bdf8]/20 rounded-full flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 bg-[#38bdf8] rounded-full animate-ping" />
@@ -576,7 +575,7 @@ export default function QualifyAIDashboard() {
             <div className="flex items-center gap-3">
               <div className="text-right">
                 <p className="text-[10px] text-gray-500">Qualification Confidence</p>
-                <p className="text-xs font-mono text-white font-semibold flex items-center justify-end gap-1">
+                <p className="text-xs font-mono text-gray-900 dark:text-white font-semibold flex items-center justify-end gap-1">
                   <Sparkles className="w-3.5 h-3.5 text-yellow-400" />
                   98.6% Accuracy
                 </p>
@@ -594,7 +593,7 @@ export default function QualifyAIDashboard() {
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.15 }}
               >
-                
+
                 {/* 1. OVERVIEW TAB */}
                 {activeTab === "overview" && (
                   <div className="space-y-8">
@@ -606,8 +605,8 @@ export default function QualifyAIDashboard() {
                           <Sparkles className="w-4 h-4 text-[#38bdf8]" />
                           <span className="text-[10px] uppercase tracking-widest text-[#38bdf8] font-mono font-bold">24/7 Operations</span>
                         </div>
-                        <h2 className="text-xl font-bold text-white tracking-tight">Your AI Employee is running.</h2>
-                        <p className="text-xs text-gray-400 mt-1 max-w-lg leading-relaxed">
+                        <h2 className="text-xl font-bold text-gray-900 dark:text-white tracking-tight">Your AI Employee is running.</h2>
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1 max-w-lg leading-relaxed">
                           QualifyAI is listening on Gmail, Website Form Webhooks, and WhatsApp Business. Automations are active, incoming queries will be scored and qualified instantly.
                         </p>
                       </div>
@@ -627,13 +626,13 @@ export default function QualifyAIDashboard() {
                       ].map((card, i) => {
                         const CardIcon = card.icon;
                         return (
-                          <div key={i} className="relative overflow-hidden rounded-xl border border-white/[0.04] bg-white/[0.01] p-4 shadow-xl group hover:border-white/[0.08] transition-all">
+                          <div key={i} className="card-glass flex flex-col">
                             <div className="flex items-center justify-between mb-2">
-                              <span className="text-[11px] text-gray-400 font-medium">{card.title}</span>
+                              <span className="text-[11px] text-gray-600 dark:text-gray-400 font-medium">{card.title}</span>
                               <CardIcon className="w-3.5 h-3.5 text-gray-500 group-hover:text-[#38bdf8] transition-colors" />
                             </div>
                             <div className="flex items-baseline gap-2">
-                              <span className="text-xl font-bold font-mono text-white">{card.value}</span>
+                              <span className="text-xl font-bold font-mono text-gray-900 dark:text-white">{card.value}</span>
                               <span className="text-[9px] font-mono text-green-400 font-bold">{card.trend}</span>
                             </div>
                             <p className="text-[9px] text-gray-500 font-mono mt-1">{card.subtitle}</p>
@@ -644,11 +643,11 @@ export default function QualifyAIDashboard() {
 
                     {/* Funnel & Conversion split */}
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                      
+
                       {/* Left Block: Funnel */}
-                      <div className="lg:col-span-2 rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl">
+                      <div className="lg:col-span-2 rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl">
                         <div className="flex items-center justify-between border-b border-white/[0.05] pb-3 mb-4">
-                          <h3 className="text-xs font-bold uppercase tracking-wider text-white">Lead Qualification Pipeline</h3>
+                          <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">Lead Qualification Pipeline</h3>
                           <span className="text-[9px] text-gray-500 font-mono">Live View</span>
                         </div>
                         <div className="space-y-3">
@@ -663,7 +662,7 @@ export default function QualifyAIDashboard() {
                               <div className="flex items-center justify-between text-xs relative z-10 font-mono">
                                 <span className="text-gray-300 font-sans">{stage.stage}</span>
                                 <div className="flex items-center gap-3">
-                                  <span className="text-gray-400">{stage.count}</span>
+                                  <span className="text-gray-600 dark:text-gray-400">{stage.count}</span>
                                   <span className="text-[#38bdf8] font-bold">{stage.percent}</span>
                                 </div>
                               </div>
@@ -673,10 +672,10 @@ export default function QualifyAIDashboard() {
                       </div>
 
                       {/* Right Block: Sources */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl flex flex-col justify-between">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl flex flex-col justify-between">
                         <div>
                           <div className="flex items-center justify-between border-b border-white/[0.05] pb-3 mb-4">
-                            <h3 className="text-xs font-bold uppercase tracking-wider text-white">Inbound Lead Sources</h3>
+                            <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">Inbound Lead Sources</h3>
                             <span className="text-[9px] text-[#38bdf8] font-mono">Monthly</span>
                           </div>
                           <div className="space-y-3.5">
@@ -688,7 +687,7 @@ export default function QualifyAIDashboard() {
                               <div key={idx} className="space-y-1">
                                 <div className="flex justify-between text-[11px]">
                                   <span className="text-gray-300">{source.label}</span>
-                                  <span className="font-mono text-white">{source.percentage}%</span>
+                                  <span className="font-mono text-gray-900 dark:text-white">{source.percentage}%</span>
                                 </div>
                                 <div className="h-1.5 w-full bg-white/[0.04] rounded-full overflow-hidden">
                                   <div className={`h-full ${source.color} rounded-full`} style={{ width: `${source.percentage}%` }} />
@@ -698,9 +697,9 @@ export default function QualifyAIDashboard() {
                           </div>
                         </div>
 
-                        <button 
-                          onClick={() => setActiveTab("analytics")} 
-                          className="w-full mt-6 text-center text-[10px] uppercase font-bold tracking-wider text-[#38bdf8] hover:text-white transition-colors"
+                        <button
+                          onClick={() => setActiveTab("analytics")}
+                          className="w-full mt-6 text-center text-[10px] uppercase font-bold tracking-wider text-[#38bdf8] hover:text-gray-900 dark:text-white transition-colors"
                         >
                           View Full Analytics →
                         </button>
@@ -714,7 +713,7 @@ export default function QualifyAIDashboard() {
                 {activeTab === "inbox" && (
                   <div className="space-y-6">
                     {/* Filter & Search Bar */}
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl border border-white/[0.04] bg-white/[0.01]">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl border border-white/[0.04] card-glass-static">
                       <div className="relative w-full sm:max-w-xs">
                         <Search className="w-3.5 h-3.5 text-gray-500 absolute left-3 top-3" />
                         <input
@@ -722,7 +721,7 @@ export default function QualifyAIDashboard() {
                           placeholder="Search inbox..."
                           value={inboxSearch}
                           onChange={(e) => setInboxSearch(e.target.value)}
-                          className="w-full pl-9 pr-3 py-2 bg-white/[0.03] border border-white/[0.06] rounded-lg text-xs text-white outline-none focus:border-[#38bdf8]/40 transition-colors"
+                          className="w-full pl-9 pr-3 py-2 bg-white/[0.03] border border-white/[0.06] rounded-lg text-xs text-gray-900 dark:text-white outline-none focus:border-[#38bdf8]/40 transition-colors"
                         />
                       </div>
                       <div className="flex gap-2">
@@ -730,11 +729,10 @@ export default function QualifyAIDashboard() {
                           <button
                             key={src}
                             onClick={() => setInboxFilter(src)}
-                            className={`px-3 py-1.5 rounded-lg text-[10px] font-mono transition-colors ${
-                              inboxFilter === src 
-                                ? "bg-[#38bdf8]/10 text-[#38bdf8] border border-[#38bdf8]/20" 
-                                : "text-gray-400 bg-white/[0.02] border border-white/[0.04] hover:bg-white/[0.04]"
-                            }`}
+                            className={`px-3 py-1.5 rounded-lg text-[10px] font-mono transition-colors ${inboxFilter === src
+                                ? "bg-[#38bdf8]/10 text-[#38bdf8] border border-[#38bdf8]/20"
+                                : "text-gray-600 dark:text-gray-400 card-glass-static border border-white/[0.04] hover:bg-white/[0.04]"
+                              }`}
                           >
                             {src}
                           </button>
@@ -745,7 +743,7 @@ export default function QualifyAIDashboard() {
                     {/* Split View */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-[500px]">
                       {/* Left: Leads List */}
-                      <div className="lg:col-span-2 rounded-xl border border-white/[0.04] bg-white/[0.01] overflow-y-auto scrollbar-hide flex flex-col divide-y divide-white/[0.03]">
+                      <div className="lg:col-span-2 rounded-xl border border-white/[0.04] card-glass-static overflow-y-auto scrollbar-hide flex flex-col divide-y divide-white/[0.03]">
                         {filteredInbox.map(item => (
                           <div
                             key={item.id}
@@ -754,35 +752,31 @@ export default function QualifyAIDashboard() {
                               // Mark read
                               setInboxItems(prev => prev.map(i => i.id === item.id ? { ...i, read: true } : i));
                             }}
-                            className={`p-4 cursor-pointer transition-colors relative text-left ${
-                              selectedInboxId === item.id ? "bg-white/[0.03]" : "hover:bg-white/[0.01]"
-                            }`}
+                            className={`p-4 cursor-pointer transition-colors relative text-left ${selectedInboxId === item.id ? "bg-white/[0.03]" : "hover:card-glass-static"
+                              }`}
                           >
                             {!item.read && (
                               <div className="absolute top-4 right-4 w-1.5 h-1.5 bg-[#38bdf8] rounded-full" />
                             )}
                             <div className="flex items-center gap-2 mb-1.5">
-                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${
-                                item.source === "Website Form" ? "bg-blue-500/10 text-blue-400" :
-                                item.source === "Gmail" ? "bg-purple-500/10 text-purple-400" : "bg-green-500/10 text-green-400"
-                              }`}>
+                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${item.source === "Website Form" ? "bg-blue-500/10 text-blue-400" :
+                                  item.source === "Gmail" ? "bg-purple-500/10 text-[#33bbcf]" : "bg-green-500/10 text-green-400"
+                                }`}>
                                 {item.source}
                               </span>
-                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${
-                                item.priority === "High" ? "bg-red-500/10 text-red-400 font-bold" :
-                                item.priority === "Medium" ? "bg-yellow-500/10 text-yellow-400" : "bg-blue-500/10 text-blue-400"
-                              }`}>
-                                {item.priority === "High" ? "🔥 High" : item.priority === "Medium" ? "🟡 Medium" : "🔵 Low"}
+                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${item.priority === "High" ? "bg-red-500/10 text-red-400 font-bold" :
+                                  item.priority === "Medium" ? "bg-yellow-500/10 text-yellow-400" : "bg-blue-500/10 text-blue-400"
+                                }`}>
+                                {item.priority === "High" ? " High" : item.priority === "Medium" ? "� Medium" : "� Low"}
                               </span>
                               <span className="text-[10px] text-gray-500 font-mono ml-auto">{item.time}</span>
                             </div>
-                            <h4 className="text-xs font-semibold text-white truncate">{item.senderName}</h4>
-                            <p className="text-[11px] text-gray-400 font-medium truncate mt-0.5">{item.subject}</p>
+                            <h4 className="text-xs font-semibold text-gray-900 dark:text-white truncate">{item.senderName}</h4>
+                            <p className="text-[11px] text-gray-600 dark:text-gray-400 font-medium truncate mt-0.5">{item.subject}</p>
                             <div className="flex items-center gap-2 mt-3">
                               <span className="text-[10px] text-gray-500">Lead Score:</span>
-                              <span className={`text-xs font-mono font-bold ${
-                                item.score >= 85 ? "text-green-400" : "text-yellow-400"
-                              }`}>
+                              <span className={`text-xs font-mono font-bold ${item.score >= 85 ? "text-green-400" : "text-yellow-400"
+                                }`}>
                                 {item.score}/100
                               </span>
                             </div>
@@ -791,13 +785,13 @@ export default function QualifyAIDashboard() {
                       </div>
 
                       {/* Right: Detail Panel */}
-                      <div className="lg:col-span-3 rounded-xl border border-white/[0.04] bg-white/[0.01] p-6 flex flex-col justify-between overflow-y-auto scrollbar-hide text-left">
+                      <div className="lg:col-span-3 rounded-xl border border-white/[0.04] card-glass-static p-6 flex flex-col justify-between overflow-y-auto scrollbar-hide text-left">
                         <div className="space-y-5">
                           {/* Sender details */}
                           <div className="flex items-start justify-between border-b border-white/[0.05] pb-4">
                             <div>
-                              <h3 className="text-sm font-bold text-white">{activeInboxItem.senderName}</h3>
-                              <p className="text-[11px] text-gray-400 font-mono mt-0.5">{activeInboxItem.email}</p>
+                              <h3 className="text-sm font-bold text-gray-900 dark:text-white">{activeInboxItem.senderName}</h3>
+                              <p className="text-[11px] text-gray-600 dark:text-gray-400 font-mono mt-0.5">{activeInboxItem.email}</p>
                             </div>
                             <div className="text-right">
                               <p className="text-[10px] text-gray-500">Qualification Score</p>
@@ -808,7 +802,7 @@ export default function QualifyAIDashboard() {
                           {/* Email Body */}
                           <div className="space-y-1">
                             <h4 className="text-[10px] font-mono text-gray-500 uppercase">Subject: {activeInboxItem.subject}</h4>
-                            <div className="p-4 rounded-lg bg-white/[0.02] border border-white/[0.03] text-xs text-gray-300 leading-relaxed font-sans max-h-36 overflow-y-auto">
+                            <div className="p-4 rounded-lg card-glass-static border border-white/[0.03] text-xs text-gray-300 leading-relaxed font-sans max-h-36 overflow-y-auto">
                               {activeInboxItem.message}
                             </div>
                           </div>
@@ -825,10 +819,10 @@ export default function QualifyAIDashboard() {
                             </div>
 
                             {/* Intent & Sentiment */}
-                            <div className="p-3 rounded-lg bg-white/[0.02] border border-white/[0.03] space-y-2">
+                            <div className="card-glass flex flex-col">
                               <div className="flex items-center justify-between text-[11px]">
                                 <span className="text-gray-500">Intent:</span>
-                                <span className="text-white font-mono font-semibold">{activeInboxItem.intent}</span>
+                                <span className="text-gray-900 dark:text-white font-mono font-semibold">{activeInboxItem.intent}</span>
                               </div>
                               <div className="flex items-center justify-between text-[11px]">
                                 <span className="text-gray-500">Sentiment:</span>
@@ -858,7 +852,7 @@ export default function QualifyAIDashboard() {
                           </button>
                           <button
                             onClick={() => handleTriggerCall(activeInboxItem)}
-                            className="flex-1 bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] text-white py-2 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
+                            className="flex-1 bg-white/[0.03] hover:bg-white/[0.08] border border-white/[0.06] text-gray-900 dark:text-white py-2 rounded-lg text-xs font-bold transition-colors flex items-center justify-center gap-1.5"
                           >
                             <Phone className="w-4 h-4 text-green-400" /> Trigger AI Call
                           </button>
@@ -866,7 +860,7 @@ export default function QualifyAIDashboard() {
                             onClick={() => {
                               alert("Note added to lead record successfully.");
                             }}
-                            className="px-3 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.04] text-gray-300 rounded-lg text-xs font-semibold"
+                            className="px-3 card-glass-static hover:bg-white/[0.04] border border-white/[0.04] text-gray-300 rounded-lg text-xs font-semibold"
                           >
                             + Add Note
                           </button>
@@ -879,7 +873,7 @@ export default function QualifyAIDashboard() {
                 {/* 3. QUALIFIED LEADS TAB */}
                 {activeTab === "leads" && (
                   <div className="space-y-6">
-                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl border border-white/[0.04] bg-white/[0.01]">
+                    <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-4 rounded-xl border border-white/[0.04] card-glass-static">
                       <div className="relative w-full sm:max-w-xs">
                         <Search className="w-3.5 h-3.5 text-gray-500 absolute left-3 top-3" />
                         <input
@@ -887,7 +881,7 @@ export default function QualifyAIDashboard() {
                           placeholder="Search qualified leads..."
                           value={leadsSearch}
                           onChange={(e) => setLeadsSearch(e.target.value)}
-                          className="w-full pl-9 pr-3 py-2 bg-white/[0.03] border border-white/[0.06] rounded-lg text-xs text-white outline-none focus:border-[#38bdf8]/40 transition-colors"
+                          className="w-full pl-9 pr-3 py-2 bg-white/[0.03] border border-white/[0.06] rounded-lg text-xs text-gray-900 dark:text-white outline-none focus:border-[#38bdf8]/40 transition-colors"
                         />
                       </div>
                       <div className="flex gap-2">
@@ -895,11 +889,10 @@ export default function QualifyAIDashboard() {
                           <button
                             key={pr}
                             onClick={() => setLeadsFilter(pr)}
-                            className={`px-3 py-1.5 rounded-lg text-[10px] font-mono transition-colors ${
-                              leadsFilter === pr 
-                                ? "bg-[#38bdf8]/10 text-[#38bdf8] border border-[#38bdf8]/20" 
-                                : "text-gray-400 bg-white/[0.02] border border-white/[0.04] hover:bg-white/[0.04]"
-                            }`}
+                            className={`px-3 py-1.5 rounded-lg text-[10px] font-mono transition-colors ${leadsFilter === pr
+                                ? "bg-[#38bdf8]/10 text-[#38bdf8] border border-[#38bdf8]/20"
+                                : "text-gray-600 dark:text-gray-400 card-glass-static border border-white/[0.04] hover:bg-white/[0.04]"
+                              }`}
                           >
                             {pr} Priority
                           </button>
@@ -908,10 +901,10 @@ export default function QualifyAIDashboard() {
                     </div>
 
                     {/* Pipelines table */}
-                    <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl overflow-x-auto text-left">
+                    <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl overflow-x-auto text-left">
                       <table className="w-full text-left border-collapse text-xs">
                         <thead>
-                          <tr className="border-b border-white/[0.05] text-gray-400 font-mono uppercase text-[9px] tracking-wider">
+                          <tr className="border-b border-white/[0.05] text-gray-600 dark:text-gray-400 font-mono uppercase text-[9px] tracking-wider">
                             <th className="pb-3 font-semibold">Name</th>
                             <th className="pb-3 font-semibold">Email & Phone</th>
                             <th className="pb-3 font-semibold">Source</th>
@@ -925,35 +918,32 @@ export default function QualifyAIDashboard() {
                         <tbody className="divide-y divide-white/[0.02]">
                           {filteredLeads.map((lead) => (
                             <tr key={lead.id} className="hover:bg-white/[0.005] transition-colors">
-                              <td className="py-4 text-white font-medium">{lead.name}</td>
+                              <td className="py-4 text-gray-900 dark:text-white font-medium">{lead.name}</td>
                               <td className="py-4">
                                 <div className="text-gray-300 font-semibold">{lead.email}</div>
                                 <div className="text-gray-500 text-[10px] font-mono mt-0.5">{lead.phone}</div>
                               </td>
-                              <td className="py-4 text-gray-400 font-mono">{lead.source}</td>
+                              <td className="py-4 text-gray-600 dark:text-gray-400 font-mono">{lead.source}</td>
                               <td className="py-4">
                                 <span className="text-green-400 font-mono font-bold">{lead.score}/100</span>
                               </td>
                               <td className="py-4">
-                                <span className={`px-2 py-0.5 rounded text-[10px] font-mono ${
-                                  lead.priority === "High" ? "bg-red-500/10 text-red-400" : "bg-yellow-500/10 text-yellow-400"
-                                }`}>
+                                <span className={`px-2 py-0.5 rounded text-[10px] font-mono ${lead.priority === "High" ? "bg-red-500/10 text-red-400" : "bg-yellow-500/10 text-yellow-400"
+                                  }`}>
                                   {lead.priority}
                                 </span>
                               </td>
                               <td className="py-4">
-                                <span className={`flex items-center gap-1 text-[11px] ${
-                                  lead.status === "Converted" ? "text-green-400" :
-                                  lead.status === "In Progress" ? "text-amber-400" : "text-purple-400"
-                                }`}>
-                                  <span className={`w-1.5 h-1.5 rounded-full ${
-                                    lead.status === "Converted" ? "bg-green-400" :
-                                    lead.status === "In Progress" ? "bg-amber-400" : "bg-purple-400"
-                                  }`} />
+                                <span className={`flex items-center gap-1 text-[11px] ${lead.status === "Converted" ? "text-green-400" :
+                                    lead.status === "In Progress" ? "text-amber-400" : "text-[#33bbcf]"
+                                  }`}>
+                                  <span className={`w-1.5 h-1.5 rounded-full ${lead.status === "Converted" ? "bg-green-400" :
+                                      lead.status === "In Progress" ? "bg-amber-400" : "bg-purple-400"
+                                    }`} />
                                   {lead.status}
                                 </span>
                               </td>
-                              <td className="py-4 font-mono text-white font-semibold">{lead.revenue}</td>
+                              <td className="py-4 font-mono text-gray-900 dark:text-white font-semibold">{lead.revenue}</td>
                               <td className="py-4 text-right">
                                 <div className="flex items-center justify-end gap-2">
                                   <button
@@ -962,14 +952,14 @@ export default function QualifyAIDashboard() {
                                       setReplyDraft(`Dear ${lead.name},\n\nHope you are doing well. I wanted to follow up on your request regarding TechieHelp QualifyAI.\n\nLet's get connected.\n\nBest,\nQualifyAI Assistant`);
                                       setActiveTab("replies");
                                     }}
-                                    className="p-1.5 bg-white/[0.03] hover:bg-white/[0.08] rounded text-gray-400 hover:text-white" 
+                                    className="p-1.5 bg-white/[0.03] hover:bg-white/[0.08] rounded text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
                                     title="Email Reply"
                                   >
                                     <Mail className="w-3.5 h-3.5" />
                                   </button>
                                   <button
                                     onClick={() => handleTriggerCall(lead)}
-                                    className="p-1.5 bg-white/[0.03] hover:bg-white/[0.08] rounded text-green-400 hover:bg-green-500/10" 
+                                    className="p-1.5 bg-white/[0.03] hover:bg-white/[0.08] rounded text-green-400 hover:bg-green-500/10"
                                     title="Call Dial"
                                   >
                                     <Phone className="w-3.5 h-3.5" />
@@ -1008,35 +998,35 @@ export default function QualifyAIDashboard() {
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 text-left">
                       {/* Left: Original Message */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-6 space-y-4">
-                        <h3 className="text-xs font-bold uppercase tracking-wider text-white border-b border-white/[0.05] pb-3">Inbound Inquiry Message</h3>
-                        <div className="p-4 rounded-lg bg-white/[0.02] border border-white/[0.03] text-xs text-gray-300 leading-relaxed font-sans min-h-[180px] overflow-y-auto">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-6 space-y-4">
+                        <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white border-b border-white/[0.05] pb-3">Inbound Inquiry Message</h3>
+                        <div className="p-4 rounded-lg card-glass-static border border-white/[0.03] text-xs text-gray-300 leading-relaxed font-sans min-h-[180px] overflow-y-auto">
                           {replyMessageSource}
                         </div>
-                        
+
                         <div className="p-4 rounded-lg bg-yellow-500/5 border border-yellow-500/10 space-y-1">
-                          <span className="text-[9px] font-mono font-bold text-yellow-500 flex items-center gap-1.5">
+                          <span className="text-[9px] font-mono font-bold text-[#33bbcf] flex items-center gap-1.5">
                             <AlertCircle className="w-3.5 h-3.5" />
                             AI PRE-QUALIFICATION COMPLETED
                           </span>
-                          <p className="text-[11px] text-gray-400">
+                          <p className="text-[11px] text-gray-600 dark:text-gray-400">
                             The system evaluated this inquiry as high alignment with positive intent. Standard draft answers were populated using tone selector overrides below.
                           </p>
                         </div>
                       </div>
 
                       {/* Right: AI Draft Editor */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-6 space-y-4 relative">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-6 space-y-4 relative">
                         <div className="flex items-center justify-between border-b border-white/[0.05] pb-3">
-                          <h3 className="text-xs font-bold uppercase tracking-wider text-white">AI Generated Reply</h3>
-                          
+                          <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">AI Generated Reply</h3>
+
                           {/* Tone Selector */}
                           <div className="flex items-center gap-2">
                             <span className="text-[10px] text-gray-500 font-mono">Tone:</span>
                             <select
                               value={replyTone}
                               onChange={(e) => handleToneChange(e.target.value)}
-                              className="bg-white/[0.03] border border-white/[0.06] text-[10px] text-white rounded p-1 outline-none font-mono cursor-pointer"
+                              className="bg-white/[0.03] border border-white/[0.06] text-[10px] text-gray-900 dark:text-white rounded p-1 outline-none font-mono cursor-pointer"
                             >
                               {["Professional", "Friendly", "Sales", "Startup"].map(t => (
                                 <option key={t} value={t} className="bg-[#05050a]">{t}</option>
@@ -1050,13 +1040,13 @@ export default function QualifyAIDashboard() {
                           {isRegenerating && (
                             <div className="absolute inset-0 bg-black/60 backdrop-blur-sm rounded-lg flex flex-col items-center justify-center gap-2.5 z-10">
                               <RefreshCw className="w-6 h-6 text-[#38bdf8] animate-spin" />
-                              <span className="text-[10px] text-gray-400 font-mono">Regenerating in {replyTone} tone...</span>
+                              <span className="text-[10px] text-gray-600 dark:text-gray-400 font-mono">Regenerating in {replyTone} tone...</span>
                             </div>
                           )}
                           <textarea
                             value={replyDraft}
                             onChange={(e) => setReplyDraft(e.target.value)}
-                            className="w-full h-56 p-4 bg-white/[0.02] border border-white/[0.04] focus:border-[#38bdf8]/40 outline-none rounded-lg text-xs font-mono text-gray-300 leading-relaxed resize-none"
+                            className="w-full h-56 p-4 card-glass-static border border-white/[0.04] focus:border-[#38bdf8]/40 outline-none rounded-lg text-xs font-mono text-gray-300 leading-relaxed resize-none"
                             placeholder="Drafting AI reply..."
                           />
                         </div>
@@ -1065,11 +1055,11 @@ export default function QualifyAIDashboard() {
                         <div className="flex items-center justify-between pt-2">
                           <button
                             onClick={handleRegenerateReply}
-                            className="flex items-center gap-1.5 px-3 py-2 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.04] text-gray-300 rounded-lg text-xs font-semibold transition-colors"
+                            className="flex items-center gap-1.5 px-3 py-2 card-glass-static hover:bg-white/[0.04] border border-white/[0.04] text-gray-300 rounded-lg text-xs font-semibold transition-colors"
                           >
                             <RefreshCw className="w-3.5 h-3.5" /> Regenerate
                           </button>
-                          
+
                           <button
                             onClick={handleSendReply}
                             className="flex items-center gap-1.5 px-6 py-2 bg-[#38bdf8] hover:bg-[#0284c7] text-[#030307] rounded-lg text-xs font-bold transition-all shadow-md"
@@ -1093,9 +1083,9 @@ export default function QualifyAIDashboard() {
                   <div className="space-y-6">
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-[500px]">
                       {/* Left: Call Logs */}
-                      <div className="lg:col-span-2 rounded-xl border border-white/[0.04] bg-white/[0.01] overflow-y-auto scrollbar-hide flex flex-col divide-y divide-white/[0.03] text-left">
+                      <div className="lg:col-span-2 rounded-xl border border-white/[0.04] card-glass-static overflow-y-auto scrollbar-hide flex flex-col divide-y divide-white/[0.03] text-left">
                         <div className="p-4 border-b border-white/[0.04] bg-white/[0.005]">
-                          <h3 className="text-xs font-bold uppercase tracking-wider text-white">Call logs via Vapi</h3>
+                          <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">Call logs via Vapi</h3>
                         </div>
                         {calls.map(log => (
                           <div
@@ -1105,20 +1095,18 @@ export default function QualifyAIDashboard() {
                               setIsPlayingAudio(false);
                               setAudioProgress(0);
                             }}
-                            className={`p-4 cursor-pointer transition-colors ${
-                              activeCallLogId === log.id ? "bg-white/[0.03]" : "hover:bg-white/[0.01]"
-                            }`}
+                            className={`p-4 cursor-pointer transition-colors ${activeCallLogId === log.id ? "bg-white/[0.03]" : "hover:card-glass-static"
+                              }`}
                           >
                             <div className="flex items-center justify-between mb-1">
-                              <h4 className="text-xs font-semibold text-white">{log.leadName}</h4>
+                              <h4 className="text-xs font-semibold text-gray-900 dark:text-white">{log.leadName}</h4>
                               <span className="text-[10px] text-gray-500 font-mono">{log.time}</span>
                             </div>
-                            <p className="text-[10px] text-gray-400 font-mono">{log.phone}</p>
+                            <p className="text-[10px] text-gray-600 dark:text-gray-400 font-mono">{log.phone}</p>
                             <div className="flex items-center gap-3 mt-3">
-                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${
-                                log.status === "Completed" ? "bg-green-500/10 text-green-400" :
-                                log.status === "Voicemail" ? "bg-yellow-500/10 text-yellow-400" : "bg-blue-500/10 text-blue-400"
-                              }`}>
+                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono ${log.status === "Completed" ? "bg-green-500/10 text-green-400" :
+                                  log.status === "Voicemail" ? "bg-yellow-500/10 text-yellow-400" : "bg-blue-500/10 text-blue-400"
+                                }`}>
                                 {log.status}
                               </span>
                               {log.meetingBooked && (
@@ -1133,13 +1121,13 @@ export default function QualifyAIDashboard() {
                       </div>
 
                       {/* Right: Audio Wave, Summary & Transcript */}
-                      <div className="lg:col-span-3 rounded-xl border border-white/[0.04] bg-white/[0.01] p-6 flex flex-col justify-between overflow-y-auto scrollbar-hide text-left">
+                      <div className="lg:col-span-3 rounded-xl border border-white/[0.04] card-glass-static p-6 flex flex-col justify-between overflow-y-auto scrollbar-hide text-left">
                         <div className="space-y-6">
-                          
+
                           {/* Log Info */}
                           <div className="flex items-start justify-between border-b border-white/[0.05] pb-4">
                             <div>
-                              <h3 className="text-sm font-bold text-white">Call Recording: {activeCallLog.leadName}</h3>
+                              <h3 className="text-sm font-bold text-gray-900 dark:text-white">Call Recording: {activeCallLog.leadName}</h3>
                               <p className="text-[10px] text-gray-500 font-mono mt-0.5">Phone: {activeCallLog.phone} | Duration: {activeCallLog.duration}</p>
                             </div>
                             <span className="px-2 py-0.5 bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-mono rounded-full font-bold">
@@ -1148,28 +1136,27 @@ export default function QualifyAIDashboard() {
                           </div>
 
                           {/* Interactive Audio Simulator */}
-                          <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.04] flex items-center gap-4">
+                          <div className="card-glass flex flex-col">
                             <button
                               onClick={() => setIsPlayingAudio(!isPlayingAudio)}
                               className="w-10 h-10 rounded-full bg-[#38bdf8] hover:bg-[#0284c7] text-[#030307] flex items-center justify-center transition-colors"
                             >
                               {isPlayingAudio ? <Pause className="w-5 h-5 fill-current" /> : <Play className="w-5 h-5 fill-current ml-0.5" />}
                             </button>
-                            
+
                             {/* Audio Wave Simulator */}
                             <div className="flex-1 space-y-1">
                               <div className="flex items-center gap-0.5 h-6">
                                 {Array.from({ length: 45 }).map((_, idx) => {
                                   // Random height simulation
-                                  const randomHeight = isPlayingAudio 
-                                    ? Math.sin(idx + audioProgress) * 12 + 14 
+                                  const randomHeight = isPlayingAudio
+                                    ? Math.sin(idx + audioProgress) * 12 + 14
                                     : Math.sin(idx) * 6 + 10;
                                   return (
                                     <div
                                       key={idx}
-                                      className={`w-[3px] rounded-full transition-all duration-150 ${
-                                        idx / 45 * 100 < audioProgress ? "bg-[#38bdf8]" : "bg-white/[0.1]"
-                                      }`}
+                                      className={`w-[3px] rounded-full transition-all duration-150 ${idx / 45 * 100 < audioProgress ? "bg-[#38bdf8]" : "bg-white/[0.1]"
+                                        }`}
                                       style={{ height: `${Math.max(4, randomHeight)}px` }}
                                     />
                                   );
@@ -1196,7 +1183,7 @@ export default function QualifyAIDashboard() {
                             {/* Transcript */}
                             <div className="space-y-2">
                               <h4 className="text-[10px] font-mono text-gray-500 uppercase">Call Transcript Transcript</h4>
-                              <div className="p-4 rounded-lg bg-white/[0.02] border border-white/[0.03] text-xs font-mono text-gray-400 space-y-3 leading-relaxed max-h-48 overflow-y-auto font-sans">
+                              <div className="p-4 rounded-lg card-glass-static border border-white/[0.03] text-xs font-mono text-gray-600 dark:text-gray-400 space-y-3 leading-relaxed max-h-48 overflow-y-auto font-sans">
                                 {activeCallLog.transcript.split("\n\n").map((line, lineIdx) => {
                                   const isAI = line.startsWith("[AI");
                                   return (
@@ -1221,9 +1208,9 @@ export default function QualifyAIDashboard() {
                     {/* Unified Whatsapp Layout */}
                     <div className="grid grid-cols-1 lg:grid-cols-5 gap-6 h-[500px]">
                       {/* Left Sidebar: Unread, Qualified, Follow-up filters */}
-                      <div className="lg:col-span-2 rounded-xl border border-white/[0.04] bg-white/[0.01] overflow-y-auto scrollbar-hide flex flex-col divide-y divide-white/[0.03] text-left">
+                      <div className="lg:col-span-2 rounded-xl border border-white/[0.04] card-glass-static overflow-y-auto scrollbar-hide flex flex-col divide-y divide-white/[0.03] text-left">
                         <div className="p-4 border-b border-white/[0.04] bg-white/[0.005] flex items-center justify-between">
-                          <h3 className="text-xs font-bold uppercase tracking-wider text-white">WhatsApp Chats</h3>
+                          <h3 className="text-xs font-bold uppercase tracking-wider text-gray-900 dark:text-white">WhatsApp Chats</h3>
                           <span className="text-[10px] bg-green-500/10 text-green-400 px-2 py-0.5 rounded font-mono font-bold">API Connected</span>
                         </div>
                         {whatsappChats.map(chat => (
@@ -1234,22 +1221,20 @@ export default function QualifyAIDashboard() {
                               // Mark status as read/qualified
                               setWhatsappChats(prev => prev.map(c => c.id === chat.id && c.status === "Unread" ? { ...c, status: "Follow-up Required" } : c));
                             }}
-                            className={`p-4 cursor-pointer transition-colors ${
-                              selectedChatId === chat.id ? "bg-white/[0.03]" : "hover:bg-white/[0.01]"
-                            }`}
+                            className={`p-4 cursor-pointer transition-colors ${selectedChatId === chat.id ? "bg-white/[0.03]" : "hover:card-glass-static"
+                              }`}
                           >
                             <div className="flex items-center justify-between mb-1.5">
-                              <h4 className="text-xs font-semibold text-white">{chat.senderName}</h4>
+                              <h4 className="text-xs font-semibold text-gray-900 dark:text-white">{chat.senderName}</h4>
                               <span className="text-[9px] text-gray-500 font-mono">{chat.time}</span>
                             </div>
-                            <p className="text-[11px] text-gray-400 truncate font-sans">{chat.message}</p>
-                            
+                            <p className="text-[11px] text-gray-600 dark:text-gray-400 truncate font-sans">{chat.message}</p>
+
                             <div className="flex items-center justify-between mt-3">
                               <span className="text-[10px] text-gray-500 font-mono">{chat.phone}</span>
-                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono font-bold ${
-                                chat.status === "Qualified" ? "bg-emerald-500/10 text-emerald-400" :
-                                chat.status === "Unread" ? "bg-blue-500/10 text-blue-400 animate-pulse" : "bg-yellow-500/10 text-yellow-400"
-                              }`}>
+                              <span className={`text-[9px] px-1.5 py-0.5 rounded font-mono font-bold ${chat.status === "Qualified" ? "bg-emerald-500/10 text-emerald-400" :
+                                  chat.status === "Unread" ? "bg-blue-500/10 text-blue-400 animate-pulse" : "bg-yellow-500/10 text-yellow-400"
+                                }`}>
                                 {chat.status}
                               </span>
                             </div>
@@ -1258,13 +1243,13 @@ export default function QualifyAIDashboard() {
                       </div>
 
                       {/* Right Panel: Chat Thread & AI response builder */}
-                      <div className="lg:col-span-3 rounded-xl border border-white/[0.04] bg-white/[0.01] p-6 flex flex-col justify-between overflow-y-auto scrollbar-hide text-left">
+                      <div className="lg:col-span-3 rounded-xl border border-white/[0.04] card-glass-static p-6 flex flex-col justify-between overflow-y-auto scrollbar-hide text-left">
                         <div className="space-y-6">
-                          
+
                           {/* Active Header */}
                           <div className="flex items-center justify-between border-b border-white/[0.05] pb-4">
                             <div>
-                              <h3 className="text-sm font-bold text-white">{activeChat.senderName}</h3>
+                              <h3 className="text-sm font-bold text-gray-900 dark:text-white">{activeChat.senderName}</h3>
                               <p className="text-[10px] text-gray-500 font-mono mt-0.5">{activeChat.phone}</p>
                             </div>
                             <div className="flex gap-2">
@@ -1314,7 +1299,7 @@ export default function QualifyAIDashboard() {
                                 onChange={(e) => {
                                   setWhatsappChats(prev => prev.map(c => c.id === activeChat.id ? { ...c, aiDraft: e.target.value } : c));
                                 }}
-                                className="w-full h-20 p-3 bg-white/[0.02] border border-white/[0.04] focus:border-[#38bdf8]/40 outline-none rounded-lg text-xs font-sans text-gray-300 leading-relaxed resize-none"
+                                className="w-full h-20 p-3 card-glass-static border border-white/[0.04] focus:border-[#38bdf8]/40 outline-none rounded-lg text-xs font-sans text-gray-300 leading-relaxed resize-none"
                               />
                             </div>
                             <div className="flex gap-2 justify-end">
@@ -1322,7 +1307,7 @@ export default function QualifyAIDashboard() {
                                 onClick={() => {
                                   alert("Broadcast sent successfully to qualified cohorts.");
                                 }}
-                                className="px-3 py-1.5 bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.04] text-gray-400 rounded-lg text-[10px] font-bold"
+                                className="px-3 py-1.5 card-glass-static hover:bg-white/[0.04] border border-white/[0.04] text-gray-600 dark:text-gray-400 rounded-lg text-[10px] font-bold"
                               >
                                 Trigger Broadcast
                               </button>
@@ -1342,7 +1327,7 @@ export default function QualifyAIDashboard() {
                                     ...prev
                                   ]);
                                 }}
-                                className="px-5 py-1.5 bg-green-500 hover:bg-green-600 text-white rounded-lg text-[10px] font-bold flex items-center gap-1.5 shadow-md"
+                                className="px-5 py-1.5 bg-green-500 hover:bg-green-600 text-gray-900 dark:text-white rounded-lg text-[10px] font-bold flex items-center gap-1.5 shadow-md"
                               >
                                 <Send className="w-3 h-3" /> Send Reply
                               </button>
@@ -1360,10 +1345,10 @@ export default function QualifyAIDashboard() {
                   <div className="space-y-8 text-left">
                     <div className="flex items-center justify-between">
                       <div>
-                        <h2 className="text-md font-bold text-white uppercase tracking-wider">Visual Automation Builder</h2>
-                        <p className="text-xs text-gray-400 mt-1">Configure your 24/7 AI Employee workflow pipeline.</p>
+                        <h2 className="text-md font-bold text-gray-900 dark:text-white uppercase tracking-wider">Visual Automation Builder</h2>
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Configure your 24/7 AI Employee workflow pipeline.</p>
                       </div>
-                      
+
                       <button
                         onClick={() => {
                           alert("Testing complete. All 7 pipeline blocks validated successfully with zero compilation errors.");
@@ -1375,9 +1360,9 @@ export default function QualifyAIDashboard() {
                     </div>
 
                     {/* Flowchart Pipeline */}
-                    <div className="relative p-6 rounded-2xl border border-white/[0.05] bg-white/[0.01] shadow-2xl space-y-6 overflow-hidden">
+                    <div className="relative p-6 rounded-2xl border border-white/[0.05] card-glass-static shadow-2xl space-y-6 overflow-hidden">
                       <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 pointer-events-none" />
-                      
+
                       <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-4">
                         {workflowSteps.map((step, idx) => {
                           const isLast = idx === workflowSteps.length - 1;
@@ -1388,16 +1373,14 @@ export default function QualifyAIDashboard() {
                                 onClick={() => {
                                   setWorkflowSteps(prev => prev.map(s => s.id === step.id ? { ...s, active: !s.active } : s));
                                 }}
-                                className={`flex-1 w-full max-w-[140px] p-3 rounded-xl border transition-all cursor-pointer text-center relative group ${
-                                  step.active 
-                                    ? "bg-white/[0.03] border-white/[0.1] shadow-md hover:border-[#38bdf8]/50" 
+                                className={`flex-1 w-full max-w-[140px] p-3 rounded-xl border transition-all cursor-pointer text-center relative group ${step.active
+                                    ? "bg-white/[0.03] border-white/[0.1] shadow-md hover:border-[#38bdf8]/50"
                                     : "bg-black/40 border-white/[0.03] opacity-40 hover:opacity-75"
-                                }`}
+                                  }`}
                               >
                                 {/* Top Active Indicator */}
-                                <div className={`absolute top-2 right-2 w-1.5 h-1.5 rounded-full ${
-                                  step.active ? "bg-green-500" : "bg-red-500"
-                                }`} />
+                                <div className={`absolute top-2 right-2 w-1.5 h-1.5 rounded-full ${step.active ? "bg-green-500" : "bg-red-500"
+                                  }`} />
 
                                 <div className="mx-auto w-7 h-7 rounded-lg bg-white/[0.04] border border-white/[0.06] flex items-center justify-center mb-2 text-[#38bdf8]">
                                   {step.icon === "Globe" && <ExternalLink className="w-4 h-4" />}
@@ -1408,7 +1391,7 @@ export default function QualifyAIDashboard() {
                                   {step.icon === "Phone" && <Phone className="w-4 h-4" />}
                                   {step.icon === "GitFork" && <GitFork className="w-4 h-4" />}
                                 </div>
-                                <h4 className="text-[11px] font-bold text-white truncate">{step.title}</h4>
+                                <h4 className="text-[11px] font-bold text-gray-900 dark:text-white truncate">{step.title}</h4>
                                 <p className="text-[9px] text-gray-500 leading-tight mt-1 line-clamp-2">{step.desc}</p>
                               </div>
 
@@ -1424,8 +1407,8 @@ export default function QualifyAIDashboard() {
                       </div>
 
                       {/* Rule configuration builder */}
-                      <div className="p-4 rounded-xl bg-white/[0.02] border border-white/[0.04] space-y-4 mt-8">
-                        <h3 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
+                      <div className="card-glass flex flex-col">
+                        <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider flex items-center gap-2">
                           <Sliders className="w-4 h-4 text-[#38bdf8]" />
                           Automation Logic Parameters
                         </h3>
@@ -1436,7 +1419,7 @@ export default function QualifyAIDashboard() {
                               type="number"
                               value={settings.qualificationThreshold}
                               onChange={(e) => setSettings(prev => ({ ...prev, qualificationThreshold: Number(e.target.value) }))}
-                              className="w-full bg-white/[0.03] border border-white/[0.06] p-2 rounded text-xs text-white outline-none"
+                              className="w-full bg-white/[0.03] border border-white/[0.06] p-2 rounded text-xs text-gray-900 dark:text-white outline-none"
                             />
                           </div>
                           <div className="space-y-2">
@@ -1456,7 +1439,7 @@ export default function QualifyAIDashboard() {
                             <select
                               value={settings.defaultTone}
                               onChange={(e) => setSettings(prev => ({ ...prev, defaultTone: e.target.value }))}
-                              className="w-full bg-white/[0.03] border border-white/[0.06] p-2 rounded text-xs text-white outline-none font-mono cursor-pointer"
+                              className="w-full bg-white/[0.03] border border-white/[0.06] p-2 rounded text-xs text-gray-900 dark:text-white outline-none font-mono cursor-pointer"
                             >
                               <option value="Professional" className="bg-[#05050a]">Professional</option>
                               <option value="Friendly" className="bg-[#05050a]">Friendly</option>
@@ -1475,16 +1458,16 @@ export default function QualifyAIDashboard() {
                   <div className="space-y-8 text-left">
                     <div className="flex items-center justify-between border-b border-white/[0.05] pb-4">
                       <div>
-                        <h2 className="text-md font-bold text-white uppercase tracking-wider">Operational Analytics Performance</h2>
-                        <p className="text-xs text-gray-400 mt-1">Aggregated statistics across connected data sources.</p>
+                        <h2 className="text-md font-bold text-gray-900 dark:text-white uppercase tracking-wider">Operational Analytics Performance</h2>
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Aggregated statistics across connected data sources.</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {/* Lead growth chart mockup */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl space-y-4">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl space-y-4">
                         <div className="flex justify-between items-center text-xs">
-                          <span className="font-semibold text-white">Lead Volume Growth (Weekly)</span>
+                          <span className="font-semibold text-gray-900 dark:text-white">Lead Volume Growth (Weekly)</span>
                           <span className="text-[10px] text-green-400 font-mono">+28.5% WoW</span>
                         </div>
                         <div className="h-44 w-full bg-white/[0.005] rounded border border-white/[0.02] flex items-end justify-between p-2 relative">
@@ -1492,7 +1475,7 @@ export default function QualifyAIDashboard() {
                           <div className="absolute inset-x-0 top-1/4 border-b border-white/[0.02]" />
                           <div className="absolute inset-x-0 top-2/4 border-b border-white/[0.02]" />
                           <div className="absolute inset-x-0 top-3/4 border-b border-white/[0.02]" />
-                          
+
                           {[32, 45, 60, 52, 75, 95, 128, 148].map((val, idx) => (
                             <div key={idx} className="flex flex-col items-center gap-1.5 w-1/8 z-10">
                               <span className="text-[9px] font-mono text-gray-500">{val}</span>
@@ -1507,9 +1490,9 @@ export default function QualifyAIDashboard() {
                       </div>
 
                       {/* Performance matrix */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl space-y-4">
-                        <h3 className="text-xs font-semibold text-white">Conversion & Reply KPI Splits</h3>
-                        
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl space-y-4">
+                        <h3 className="text-xs font-semibold text-gray-900 dark:text-white">Conversion & Reply KPI Splits</h3>
+
                         <div className="space-y-3">
                           {[
                             { label: "Email Auto-Reply Success Rate", val: "99.2%", rate: "128 of 129 replies sent without failure" },
@@ -1517,12 +1500,12 @@ export default function QualifyAIDashboard() {
                             { label: "AI Voice Call Completed Rate", val: "72.4%", rate: "34 completed of 47 dialed streams" },
                             { label: "Average Screening Call Duration", val: "2m 14s", rate: "Optimal user retention time" }
                           ].map((item, idx) => (
-                            <div key={idx} className="p-3 bg-white/[0.02] border border-white/[0.03] rounded-lg flex justify-between items-center text-xs">
+                            <div key={idx} className="p-3 card-glass-static border border-white/[0.03] rounded-lg flex justify-between items-center text-xs">
                               <div>
-                                <p className="font-semibold text-white">{item.label}</p>
+                                <p className="font-semibold text-gray-900 dark:text-white">{item.label}</p>
                                 <p className="text-[10px] text-gray-500 mt-0.5">{item.rate}</p>
                               </div>
-                              <span className="font-mono text-white font-bold">{item.val}</span>
+                              <span className="font-mono text-gray-900 dark:text-white font-bold">{item.val}</span>
                             </div>
                           ))}
                         </div>
@@ -1536,8 +1519,8 @@ export default function QualifyAIDashboard() {
                   <div className="space-y-6 text-left">
                     <div className="flex items-center justify-between border-b border-white/[0.05] pb-4">
                       <div>
-                        <h2 className="text-md font-bold text-white uppercase tracking-wider">Automated Performance Reports</h2>
-                        <p className="text-xs text-gray-400 mt-1">Download and export system ROI and calling metrics.</p>
+                        <h2 className="text-md font-bold text-gray-900 dark:text-white uppercase tracking-wider">Automated Performance Reports</h2>
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Download and export system ROI and calling metrics.</p>
                       </div>
                     </div>
 
@@ -1549,16 +1532,16 @@ export default function QualifyAIDashboard() {
                         { title: "Vapi Voice Call Log Report", desc: "Detailed calling agent statistics, transcript extracts, and durations.", size: "3.2 MB" },
                         { title: "System ROI & Cost Analysis", desc: "Total API consumption compared to estimated deal revenue values.", size: "1.1 MB" }
                       ].map((report, idx) => (
-                        <div key={idx} className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl flex flex-col justify-between space-y-4">
+                        <div key={idx} className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl flex flex-col justify-between space-y-4">
                           <div>
                             <div className="flex items-center gap-2 mb-2 text-[#38bdf8]">
                               <FileText className="w-4 h-4" />
                               <span className="text-[10px] font-mono uppercase tracking-widest text-[#38bdf8] font-bold">PDF Report</span>
                             </div>
-                            <h4 className="text-xs font-bold text-white">{report.title}</h4>
-                            <p className="text-[11px] text-gray-400 leading-normal mt-1">{report.desc}</p>
+                            <h4 className="text-xs font-bold text-gray-900 dark:text-white">{report.title}</h4>
+                            <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-normal mt-1">{report.desc}</p>
                           </div>
-                          
+
                           <div className="flex items-center justify-between border-t border-white/[0.04] pt-3">
                             <span className="text-[9px] text-gray-500 font-mono">{report.size}</span>
                             <button
@@ -1581,32 +1564,32 @@ export default function QualifyAIDashboard() {
                   <div className="space-y-6 text-left">
                     <div className="flex items-center justify-between border-b border-white/[0.05] pb-4">
                       <div>
-                        <h2 className="text-md font-bold text-white uppercase tracking-wider">Connected SaaS Integrations</h2>
-                        <p className="text-xs text-gray-400 mt-1">Configure database triggers and automation credentials.</p>
+                        <h2 className="text-md font-bold text-gray-900 dark:text-white uppercase tracking-wider">Connected SaaS Integrations</h2>
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Configure database triggers and automation credentials.</p>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                      
+
                       {/* GMAIL CARD */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
                         <div>
                           <div className="flex justify-between items-center mb-3">
-                            <div className="p-2 bg-purple-500/10 text-purple-400 rounded-lg">
+                            <div className="p-2 bg-purple-500/10 text-[#33bbcf] rounded-lg">
                               <Mail className="w-5 h-5" />
                             </div>
                             <span className="text-[9px] font-mono bg-green-500/10 text-green-400 border border-green-500/20 px-1.5 py-0.5 rounded font-bold">Connected</span>
                           </div>
-                          <h4 className="text-xs font-bold text-white">Gmail integration</h4>
-                          <p className="text-[11px] text-gray-400 leading-normal mt-1">Syncs and auto-drafts replies for inbox messages using OAuth. Auto-tag enabled.</p>
+                          <h4 className="text-xs font-bold text-gray-900 dark:text-white">Gmail integration</h4>
+                          <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-normal mt-1">Syncs and auto-drafts replies for inbox messages using OAuth. Auto-tag enabled.</p>
                         </div>
                         <div className="border-t border-white/[0.04] pt-3 text-[10px] text-gray-500 font-mono">
-                          Connected Email: <span className="text-white">amit@techiehelp.in</span>
+                          Connected Email: <span className="text-gray-900 dark:text-white">amit@techiehelp.in</span>
                         </div>
                       </div>
 
                       {/* WEBSITE FORMS CARD */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
                         <div>
                           <div className="flex justify-between items-center mb-3">
                             <div className="p-2 bg-blue-500/10 text-blue-400 rounded-lg">
@@ -1614,28 +1597,28 @@ export default function QualifyAIDashboard() {
                             </div>
                             <span className="text-[9px] font-mono bg-green-500/10 text-green-400 border border-green-500/20 px-1.5 py-0.5 rounded font-bold">Connected</span>
                           </div>
-                          <h4 className="text-xs font-bold text-white">Website Forms</h4>
-                          <p className="text-[11px] text-gray-400 leading-normal mt-1">Ingest lead form details via webhook. Fully compatible with custom HTML and standard builders.</p>
+                          <h4 className="text-xs font-bold text-gray-900 dark:text-white">Website Forms</h4>
+                          <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-normal mt-1">Ingest lead form details via webhook. Fully compatible with custom HTML and standard builders.</p>
                         </div>
-                        
+
                         <div className="border-t border-white/[0.04] pt-3 space-y-2 text-[10px] font-mono">
                           <div className="flex justify-between items-center">
                             <span className="text-gray-500">API Endpoint:</span>
                             <button
                               onClick={() => copyToClipboard("https://api.techiehelp.in/v1/qualifyai/forms", "forms")}
-                              className="text-[#38bdf8] flex items-center gap-1 hover:text-white"
+                              className="text-[#38bdf8] flex items-center gap-1 hover:text-gray-900 dark:text-white"
                             >
                               <Copy className="w-3 h-3" /> {webhookCopied === "forms" ? "Copied" : "Copy"}
                             </button>
                           </div>
-                          <p className="text-[9px] text-gray-400 bg-white/[0.02] p-1.5 rounded truncate">
+                          <p className="text-[9px] text-gray-600 dark:text-gray-400 card-glass-static p-1.5 rounded truncate">
                             https://api.techiehelp.in/v1/qualifyai/forms
                           </p>
                         </div>
                       </div>
 
                       {/* WHATSAPP BUSINESS CARD */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
                         <div>
                           <div className="flex justify-between items-center mb-3">
                             <div className="p-2 bg-green-500/10 text-green-500 rounded-lg">
@@ -1643,17 +1626,17 @@ export default function QualifyAIDashboard() {
                             </div>
                             <span className="text-[9px] font-mono bg-green-500/10 text-green-400 border border-green-500/20 px-1.5 py-0.5 rounded font-bold">Connected</span>
                           </div>
-                          <h4 className="text-xs font-bold text-white">WhatsApp Business API</h4>
-                          <p className="text-[11px] text-gray-400 leading-normal mt-1">Auto-qualifies WhatsApp contacts, triggers templates, and launches interactive dialog broadcasts.</p>
+                          <h4 className="text-xs font-bold text-gray-900 dark:text-white">WhatsApp Business API</h4>
+                          <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-normal mt-1">Auto-qualifies WhatsApp contacts, triggers templates, and launches interactive dialog broadcasts.</p>
                         </div>
                         <div className="border-t border-white/[0.04] pt-3 text-[10px] text-gray-500 font-mono space-y-1">
-                          <div>Number: <span className="text-white">+91 70731 30165</span></div>
-                          <div>AI Replies Sent: <span className="text-white">92</span></div>
+                          <div>Number: <span className="text-gray-900 dark:text-white">+91 70731 30165</span></div>
+                          <div>AI Replies Sent: <span className="text-gray-900 dark:text-white">92</span></div>
                         </div>
                       </div>
 
                       {/* GOOGLE SHEETS CARD */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
                         <div>
                           <div className="flex justify-between items-center mb-3">
                             <div className="p-2 bg-green-600/10 text-green-400 rounded-lg">
@@ -1661,8 +1644,8 @@ export default function QualifyAIDashboard() {
                             </div>
                             <span className="text-[9px] font-mono bg-green-500/10 text-green-400 border border-green-500/20 px-1.5 py-0.5 rounded font-bold">Connected</span>
                           </div>
-                          <h4 className="text-xs font-bold text-white">Google Sheets Integration</h4>
-                          <p className="text-[11px] text-gray-400 leading-normal mt-1">Export qualified leads dynamically to spreadsheets for unified team review and tracking.</p>
+                          <h4 className="text-xs font-bold text-gray-900 dark:text-white">Google Sheets Integration</h4>
+                          <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-normal mt-1">Export qualified leads dynamically to spreadsheets for unified team review and tracking.</p>
                         </div>
                         <div className="border-t border-white/[0.04] pt-3 text-[10px] text-gray-500 font-mono">
                           Target Spreadsheet ID: <span className="text-[#38bdf8] hover:underline cursor-pointer">techie_qualify_2026_sheet</span>
@@ -1670,7 +1653,7 @@ export default function QualifyAIDashboard() {
                       </div>
 
                       {/* VAPI VOICE CARD */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
                         <div>
                           <div className="flex justify-between items-center mb-3">
                             <div className="p-2 bg-orange-500/10 text-orange-400 rounded-lg">
@@ -1678,16 +1661,16 @@ export default function QualifyAIDashboard() {
                             </div>
                             <span className="text-[9px] font-mono bg-green-500/10 text-green-400 border border-green-500/20 px-1.5 py-0.5 rounded font-bold">Connected</span>
                           </div>
-                          <h4 className="text-xs font-bold text-white">Vapi Voice AI Agents</h4>
-                          <p className="text-[11px] text-gray-400 leading-normal mt-1">Automate inbound and outbound phone screening with human-realistic, high-speed latency configurations.</p>
+                          <h4 className="text-xs font-bold text-gray-900 dark:text-white">Vapi Voice AI Agents</h4>
+                          <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-normal mt-1">Automate inbound and outbound phone screening with human-realistic, high-speed latency configurations.</p>
                         </div>
                         <div className="border-t border-white/[0.04] pt-3 text-[10px] text-gray-500 font-mono">
-                          Active Voice ID: <span className="text-white">sam_indian_eng_v3</span>
+                          Active Voice ID: <span className="text-gray-900 dark:text-white">sam_indian_eng_v3</span>
                         </div>
                       </div>
 
                       {/* GEMINI AI CARD */}
-                      <div className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
+                      <div className="rounded-xl border border-white/[0.04] card-glass-static p-5 shadow-2xl flex flex-col justify-between space-y-4 relative">
                         <div>
                           <div className="flex justify-between items-center mb-3">
                             <div className="p-2 bg-blue-600/10 text-[#38bdf8] rounded-lg">
@@ -1695,11 +1678,11 @@ export default function QualifyAIDashboard() {
                             </div>
                             <span className="text-[9px] font-mono bg-green-500/10 text-green-400 border border-green-500/20 px-1.5 py-0.5 rounded font-bold">Connected</span>
                           </div>
-                          <h4 className="text-xs font-bold text-white">Gemini Pro Agent Core</h4>
-                          <p className="text-[11px] text-gray-400 leading-normal mt-1">Drives semantic evaluations, context extraction, intent categorization, and personalized drafts.</p>
+                          <h4 className="text-xs font-bold text-gray-900 dark:text-white">Gemini Pro Agent Core</h4>
+                          <p className="text-[11px] text-gray-600 dark:text-gray-400 leading-normal mt-1">Drives semantic evaluations, context extraction, intent categorization, and personalized drafts.</p>
                         </div>
                         <div className="border-t border-white/[0.04] pt-3 text-[10px] text-gray-500 font-mono">
-                          Model Reference: <span className="text-white">Gemini-1.5-Pro</span>
+                          Model Reference: <span className="text-gray-900 dark:text-white">Gemini-1.5-Pro</span>
                         </div>
                       </div>
 
@@ -1712,16 +1695,16 @@ export default function QualifyAIDashboard() {
                   <div className="space-y-6 text-left">
                     <div className="flex items-center justify-between border-b border-white/[0.05] pb-4">
                       <div>
-                        <h2 className="text-md font-bold text-white uppercase tracking-wider">QualifyAI Configuration Settings</h2>
-                        <p className="text-xs text-gray-400 mt-1">Tune qualification parameters, profiles, and fallback configurations.</p>
+                        <h2 className="text-md font-bold text-gray-900 dark:text-white uppercase tracking-wider">QualifyAI Configuration Settings</h2>
+                        <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Tune qualification parameters, profiles, and fallback configurations.</p>
                       </div>
                     </div>
 
-                    <form onSubmit={handleSaveSettings} className="rounded-xl border border-white/[0.04] bg-white/[0.01] p-6 shadow-2xl space-y-6 max-w-2xl">
-                      
+                    <form onSubmit={handleSaveSettings} className="rounded-xl border border-white/[0.04] card-glass-static p-6 shadow-2xl space-y-6 max-w-2xl">
+
                       {/* Profile & Org */}
                       <div className="space-y-4">
-                        <h3 className="text-xs font-bold text-white uppercase tracking-wider border-b border-white/[0.03] pb-2">Profile & Company</h3>
+                        <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider border-b border-white/[0.03] pb-2">Profile & Company</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="space-y-1.5">
                             <label className="text-[10px] text-gray-500 font-mono uppercase">Full Name</label>
@@ -1729,7 +1712,7 @@ export default function QualifyAIDashboard() {
                               type="text"
                               value={settings.fullName}
                               onChange={(e) => setSettings(prev => ({ ...prev, fullName: e.target.value }))}
-                              className="w-full bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 p-2 rounded text-xs text-white outline-none"
+                              className="w-full bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 p-2 rounded text-xs text-gray-900 dark:text-white outline-none"
                             />
                           </div>
                           <div className="space-y-1.5">
@@ -1738,7 +1721,7 @@ export default function QualifyAIDashboard() {
                               type="text"
                               value={settings.companyName}
                               onChange={(e) => setSettings(prev => ({ ...prev, companyName: e.target.value }))}
-                              className="w-full bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 p-2 rounded text-xs text-white outline-none"
+                              className="w-full bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 p-2 rounded text-xs text-gray-900 dark:text-white outline-none"
                             />
                           </div>
                         </div>
@@ -1746,7 +1729,7 @@ export default function QualifyAIDashboard() {
 
                       {/* Lead Qualification Threshold Rules */}
                       <div className="space-y-4">
-                        <h3 className="text-xs font-bold text-white uppercase tracking-wider border-b border-white/[0.03] pb-2">Qualification Rules</h3>
+                        <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider border-b border-white/[0.03] pb-2">Qualification Rules</h3>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="space-y-1.5">
                             <label className="text-[10px] text-gray-500 font-mono uppercase">Minimum Qualification Score</label>
@@ -1754,7 +1737,7 @@ export default function QualifyAIDashboard() {
                               type="number"
                               value={settings.qualificationThreshold}
                               onChange={(e) => setSettings(prev => ({ ...prev, qualificationThreshold: Number(e.target.value) }))}
-                              className="w-full bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 p-2 rounded text-xs text-white outline-none"
+                              className="w-full bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 p-2 rounded text-xs text-gray-900 dark:text-white outline-none"
                             />
                           </div>
                           <div className="space-y-1.5">
@@ -1762,7 +1745,7 @@ export default function QualifyAIDashboard() {
                             <select
                               value={settings.defaultTone}
                               onChange={(e) => setSettings(prev => ({ ...prev, defaultTone: e.target.value }))}
-                              className="w-full bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 p-2 rounded text-xs text-white outline-none font-mono cursor-pointer"
+                              className="w-full bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 p-2 rounded text-xs text-gray-900 dark:text-white outline-none font-mono cursor-pointer"
                             >
                               <option value="Professional" className="bg-[#05050a]">Professional</option>
                               <option value="Friendly" className="bg-[#05050a]">Friendly</option>
@@ -1775,28 +1758,28 @@ export default function QualifyAIDashboard() {
 
                       {/* Call and Email options */}
                       <div className="space-y-4">
-                        <h3 className="text-xs font-bold text-white uppercase tracking-wider border-b border-white/[0.03] pb-2">Channels & Fallbacks</h3>
-                        
+                        <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider border-b border-white/[0.03] pb-2">Channels & Fallbacks</h3>
+
                         <div className="space-y-3">
                           <div className="flex items-center gap-3">
                             <input
                               type="checkbox"
                               checked={settings.autoCallHighPriority}
                               onChange={(e) => setSettings(prev => ({ ...prev, autoCallHighPriority: e.target.checked }))}
-                              className="w-4 h-4 rounded border-white/[0.06] bg-white/[0.02] text-[#38bdf8] focus:ring-0 cursor-pointer"
+                              className="w-4 h-4 rounded border-white/[0.06] card-glass-static text-[#38bdf8] focus:ring-0 cursor-pointer"
                               id="autoCall"
                             />
                             <label htmlFor="autoCall" className="text-xs text-gray-300 cursor-pointer">
                               Auto-Dial voice calls for High Priority Leads (Score &gt; 85) instantly
                             </label>
                           </div>
-                          
+
                           <div className="flex items-center gap-3">
                             <input
                               type="checkbox"
                               checked={settings.autoReplyEmails}
                               onChange={(e) => setSettings(prev => ({ ...prev, autoReplyEmails: e.target.checked }))}
-                              className="w-4 h-4 rounded border-white/[0.06] bg-white/[0.02] text-[#38bdf8] focus:ring-0 cursor-pointer"
+                              className="w-4 h-4 rounded border-white/[0.06] card-glass-static text-[#38bdf8] focus:ring-0 cursor-pointer"
                               id="autoReply"
                             />
                             <label htmlFor="autoReply" className="text-xs text-gray-300 cursor-pointer">
@@ -1810,7 +1793,7 @@ export default function QualifyAIDashboard() {
                           <textarea
                             value={settings.whatsappGreeting}
                             onChange={(e) => setSettings(prev => ({ ...prev, whatsappGreeting: e.target.value }))}
-                            className="w-full h-16 p-2 bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 outline-none rounded text-xs text-white resize-none"
+                            className="w-full h-16 p-2 bg-white/[0.03] border border-white/[0.06] focus:border-[#38bdf8]/40 outline-none rounded text-xs text-gray-900 dark:text-white resize-none"
                           />
                         </div>
                       </div>
@@ -1822,7 +1805,7 @@ export default function QualifyAIDashboard() {
                         >
                           Save Configurations
                         </button>
-                        
+
                         {settingsSaved && (
                           <span className="text-green-400 text-xs font-mono animate-pulse">
                             ✓ Settings updated and stored successfully!
@@ -1848,7 +1831,7 @@ export default function QualifyAIDashboard() {
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                 </span>
-                <h3 className="text-xs font-bold text-white uppercase tracking-wider">AI Employee Timeline Feed</h3>
+                <h3 className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">AI Employee Timeline Feed</h3>
               </div>
               <span className="text-[9px] text-[#38bdf8] font-mono border border-[#38bdf8]/20 bg-[#38bdf8]/5 px-1.5 py-0.5 rounded animate-pulse">Live</span>
             </div>
@@ -1862,7 +1845,7 @@ export default function QualifyAIDashboard() {
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
-                    className="p-3 bg-white/[0.02] border border-white/[0.03] rounded-lg text-left text-xs space-y-1 relative group hover:border-[#38bdf8]/20 transition-all"
+                    className="p-3 card-glass-static border border-white/[0.03] rounded-lg text-left text-xs space-y-1 relative group hover:border-[#38bdf8]/20 transition-all"
                   >
                     <div className="flex items-center justify-between text-[9px] text-gray-500 font-mono">
                       <span>{event.time}</span>

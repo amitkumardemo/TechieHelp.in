@@ -61,11 +61,11 @@ const Pricing = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-white mb-6 uppercase tracking-tighter drop-shadow-2xl"
+            className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white mb-6 uppercase tracking-tighter drop-shadow-2xl"
           >
-            Flexible <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Pricing Plans</span>
+            Flexible <span className="text-cyan-gradient font-bold">Pricing Plans</span>
           </motion.h2>
-          <p className="text-gray-400 max-w-xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">
             Choose the best plan for your career growth. High quality internships at affordable prices.
           </p>
         </div>
@@ -82,22 +82,22 @@ const Pricing = () => {
               className={`relative flex flex-col p-8 rounded-[2.5rem] border h-full transition-all duration-500 overflow-hidden ${
                 plan.popular 
                 ? 'bg-gradient-to-b from-orange-600/20 to-[#0a0a15] border-orange-500 z-10 shadow-[0_0_50px_rgba(249,115,22,0.3)]' 
-                : 'bg-white/5 border-white/10 hover:border-white/30 backdrop-blur-xl'
+                : 'bg-gray-100 dark:bg-white/5 border-gray-200 dark:border-white/10 hover:border-white/30 backdrop-blur-xl'
               }`}
             >
               {plan.popular && (
                 <>
                   <div className="absolute inset-0 border-2 border-orange-500 rounded-[2.5rem] opacity-50 animate-pulse" />
-                  <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-6 py-2 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-full text-xs font-black uppercase tracking-widest whitespace-nowrap shadow-[0_0_20px_rgba(249,115,22,0.6)]">
+                  <div className="btn-primary">
                     Most Popular
                   </div>
                 </>
               )}
 
               <div className="mb-8">
-                <p className="text-gray-400 font-bold mb-2 uppercase tracking-widest text-xs">{plan.name}</p>
+                <p className="text-gray-600 dark:text-gray-400 font-bold mb-2 uppercase tracking-widest text-xs">{plan.name}</p>
                 <div className="flex items-baseline gap-1">
-                  <span className="text-white text-4xl font-black">₹{plan.price}</span>
+                  <span className="text-gray-900 dark:text-white text-4xl font-black">₹{plan.price}</span>
                   <span className="text-gray-500 text-sm">/one-time</span>
                 </div>
               </div>
@@ -105,10 +105,10 @@ const Pricing = () => {
               <div className="flex-1 space-y-4 mb-10">
                 {plan.features.map((feature, j) => (
                   <div key={j} className="flex items-start gap-4">
-                    <div className={`mt-1 p-1 rounded-full ${plan.popular ? 'bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]' : 'bg-white/10'}`}>
-                      <Check className="w-3 h-3 text-white" />
+                    <div className={`mt-1 p-1 rounded-full ${plan.popular ? 'bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]' : 'bg-gray-100 dark:bg-white/10'}`}>
+                      <Check className="w-3 h-3 text-gray-900 dark:text-white" />
                     </div>
-                    <span className={`text-base font-medium leading-tight ${plan.popular ? 'text-white' : 'text-gray-300'}`}>{feature}</span>
+                    <span className={`text-base font-medium leading-tight ${plan.popular ? 'text-gray-900 dark:text-white' : 'text-gray-300'}`}>{feature}</span>
                   </div>
                 ))}
               </div>
@@ -119,8 +119,8 @@ const Pricing = () => {
                 rel="noopener noreferrer"
                 className={`w-full py-4 rounded-2xl font-bold transition-all duration-300 flex items-center justify-center ${
                 plan.popular 
-                ? 'bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white shadow-[0_0_30px_rgba(249,115,22,0.5)] border-transparent' 
-                : 'bg-[#0a0a15] hover:bg-white/10 text-white border border-white/10'
+                ? 'bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-gray-900 dark:text-white shadow-[0_0_30px_rgba(249,115,22,0.5)] border-transparent' 
+                : 'bg-[#0a0a15] hover:bg-gray-100 dark:bg-white/10 text-gray-900 dark:text-white border border-gray-200 dark:border-white/10'
               }`}
               >
                 Choose {plan.name.split(' ')[0]}
