@@ -197,7 +197,7 @@ export default function Login() {
       <div className="min-h-screen bg-[#02000d] text-gray-900 dark:text-white flex items-center justify-center p-6 selection:bg-purple-500/30 pt-20 relative overflow-hidden">
         <div className="absolute top-[20%] left-[20%] w-[40%] h-[40%] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none -z-10" />
 
-        <div className="max-w-md w-full bg-[#050510]/85 border border-gray-200 dark:border-white/10 p-8 rounded-3xl backdrop-blur-2xl shadow-2xl space-y-6 relative z-10">
+        <div className="max-w-md w-full bg-gray-50 dark:bg-[#050510]/85 border border-gray-200 dark:border-white/10 p-8 rounded-3xl backdrop-blur-2xl shadow-2xl space-y-6 relative z-10">
           <div className="text-center">
             <h1 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">Reset Password</h1>
             <p className="text-xs text-gray-600 dark:text-gray-400 mt-1">Enter your business email to receive reset instructions.</p>
@@ -238,7 +238,7 @@ export default function Login() {
                   onChange={(e) => setResetEmail(e.target.value)}
                   required
                   placeholder="name@company.com"
-                  className="w-full px-3.5 py-2.5 bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-white/[0.04] transition-all"
+                  className="w-full px-3.5 py-2.5 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-gray-50 dark:bg-white/[0.04] transition-all"
                 />
               </div>
 
@@ -272,7 +272,7 @@ export default function Login() {
       <div className="absolute top-[10%] left-[-10%] w-[50%] h-[50%] bg-purple-900/10 blur-[150px] rounded-full pointer-events-none -z-10" />
       <div className="absolute bottom-[10%] right-[-10%] w-[45%] h-[45%] bg-blue-900/10 blur-[130px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-md w-full bg-[#050510]/85 border border-gray-200 dark:border-white/10 p-8 rounded-3xl backdrop-blur-2xl shadow-2xl space-y-6 relative z-10">
+      <div className="max-w-md w-full bg-gray-50 dark:bg-[#050510]/85 border border-gray-200 dark:border-white/10 p-8 rounded-3xl backdrop-blur-2xl shadow-2xl space-y-6 relative z-10">
 
         <div className="text-center">
           <div className="inline-flex items-center gap-1 mb-2 px-2.5 py-0.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-[#33bbcf] text-[9px] font-mono uppercase tracking-wider">
@@ -303,7 +303,7 @@ export default function Login() {
               required
               disabled={lockoutTimeLeft > 0}
               placeholder="name@company.com"
-              className="w-full px-3.5 py-2.5 bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-white/[0.04] transition-all disabled:opacity-40"
+              className="w-full px-3.5 py-2.5 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-gray-50 dark:bg-white/[0.04] transition-all disabled:opacity-40"
             />
           </div>
 
@@ -328,7 +328,7 @@ export default function Login() {
                 required
                 disabled={lockoutTimeLeft > 0}
                 placeholder="••••••••••••"
-                className="w-full pl-3.5 pr-10 py-2.5 bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-white/[0.04] transition-all disabled:opacity-40"
+                className="w-full pl-3.5 pr-10 py-2.5 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/10 rounded-xl text-xs text-gray-900 dark:text-white outline-none focus:border-purple-500/40 focus:bg-gray-50 dark:bg-white/[0.04] transition-all disabled:opacity-40"
               />
               <button
                 type="button"
@@ -349,7 +349,7 @@ export default function Login() {
               name="rememberMe"
               checked={formData.rememberMe}
               onChange={handleChange}
-              className="rounded bg-white/[0.02] border-gray-200 dark:border-white/10 text-[#33bbcf] focus:ring-purple-500/20"
+              className="rounded bg-white dark:bg-white/[0.02] border-gray-200 dark:border-white/10 text-[#33bbcf] focus:ring-purple-500/20"
             />
             <label htmlFor="rememberMe" className="text-xs text-gray-600 dark:text-gray-400 ml-2 select-none cursor-pointer">
               Remember corporate credentials
@@ -358,21 +358,21 @@ export default function Login() {
 
           {/* Turnstile Bot protection */}
           {lockoutTimeLeft === 0 && (
-            <div className="border border-white/5 bg-[#050510]/60 p-4 rounded-xl flex items-center justify-between shadow-inner">
+            <div className="border border-gray-200 dark:border-white/5 bg-gray-50 dark:bg-[#050510]/60 p-4 rounded-xl flex items-center justify-between shadow-inner">
               <div className="flex items-center gap-3">
                 <button
                   type="button"
                   onClick={handleBotShieldClick}
                   className={`w-5 h-5 rounded border flex items-center justify-center transition-all ${botShieldVerified
                     ? "bg-purple-600 border-purple-500 text-gray-900 dark:text-white"
-                    : "bg-white/[0.02] border-gray-300 dark:border-white/20 hover:border-purple-500/40"
+                    : "bg-white dark:bg-white/[0.02] border-gray-300 dark:border-white/20 hover:border-purple-500/40"
                     }`}
                   disabled={botShieldVerified || botShieldLoading}
                 >
                   {botShieldLoading && <Loader2 className="w-3.5 h-3.5 animate-spin text-[#33bbcf]" />}
                   {botShieldVerified && <Check className="w-3.5 h-3.5" />}
                 </button>
-                <span className="text-xs font-medium text-gray-300 select-none cursor-pointer" onClick={handleBotShieldClick}>
+                <span className="text-xs font-medium text-gray-700 dark:text-gray-700 dark:text-gray-300 select-none cursor-pointer" onClick={handleBotShieldClick}>
                   {botShieldLoading ? "Verifying browser request..." : "Verify Business Request"}
                 </span>
               </div>

@@ -157,7 +157,7 @@ const AICallingAgents = () => {
   ];
 
   return (
-    <div className="bg-[#030014] min-h-screen text-gray-300 font-sans selection:bg-purple-500/30 pt-28 pb-20 overflow-hidden relative">
+    <div className="bg-gray-50 dark:bg-[#030014] min-h-screen text-gray-700 dark:text-gray-300 font-sans selection:bg-purple-500/30 pt-28 pb-20 overflow-hidden relative">
       <Helmet>
         <title>AI Calling Agents: 24/7 Automated Phone Sales & CRM | TechieHelp</title>
         <meta name="description" content="Hire AI phone employees that work 24/7. TechieHelp builds custom conversational voice AI agents that call leads in under 60 seconds, qualify prospects, and book calendar meetings." />
@@ -218,7 +218,7 @@ const AICallingAgents = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-y border-white/5 py-6"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-y border-gray-200 dark:border-white/5 py-6"
             >
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-purple-500/10 text-[#33bbcf] flex items-center justify-center">
@@ -304,7 +304,7 @@ const AICallingAgents = () => {
               </div>
 
               {/* Dialer HUD Display */}
-              <div className="bg-black/40 border border-white/5 rounded-2xl p-5 mb-6 space-y-4">
+              <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 rounded-2xl p-5 mb-6 space-y-4">
                 <div className="flex justify-between items-center">
                   <div>
                     <span className="text-[10px] text-gray-500 uppercase tracking-widest block font-mono">Current Lead</span>
@@ -324,11 +324,11 @@ const AICallingAgents = () => {
                 <div className="grid grid-cols-2 gap-4 text-xs">
                   <div>
                     <span className="text-[10px] text-gray-500 uppercase tracking-widest block font-mono">Company</span>
-                    <span className="text-gray-300 font-semibold">{mockCalls[activeCallIdx].company}</span>
+                    <span className="text-gray-700 dark:text-gray-300 font-semibold">{mockCalls[activeCallIdx].company}</span>
                   </div>
                   <div>
                     <span className="text-[10px] text-gray-500 uppercase tracking-widest block font-mono">Phone</span>
-                    <span className="text-gray-300 font-mono">{mockCalls[activeCallIdx].phone}</span>
+                    <span className="text-gray-700 dark:text-gray-300 font-mono">{mockCalls[activeCallIdx].phone}</span>
                   </div>
                 </div>
 
@@ -389,7 +389,7 @@ const AICallingAgents = () => {
         </section>
 
         {/* PROBLEM SECTION */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold block">The Cost of Waiting</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Your Sales Team Can't Be Available 24/7</h2>
@@ -401,7 +401,7 @@ const AICallingAgents = () => {
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 max-w-5xl mx-auto relative">
 
             {/* Journey Card 1 */}
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 relative flex flex-col items-center text-center">
+            <div className="bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-2xl p-6 relative flex flex-col items-center text-center">
               <div className="w-12 h-12 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold mb-4 border border-blue-500/20">
                 1
               </div>
@@ -421,7 +421,7 @@ const AICallingAgents = () => {
             </div>
 
             {/* Journey Card 3 */}
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-6 relative flex flex-col items-center text-center">
+            <div className="bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-2xl p-6 relative flex flex-col items-center text-center">
               <div className="w-12 h-12 rounded-full bg-amber-500/10 text-amber-400 flex items-center justify-center font-bold mb-4 border border-amber-500/20">
                 3
               </div>
@@ -461,7 +461,7 @@ const AICallingAgents = () => {
                     key={idx}
                     onMouseEnter={() => setHoveredSpeedPoint(idx)}
                     onMouseLeave={() => setHoveredSpeedPoint(null)}
-                    className={`p-3.5 rounded-xl border transition-all duration-300 cursor-pointer ${hoveredSpeedPoint === idx ? "bg-gray-100 dark:bg-white/5 border-purple-500/40" : "bg-transparent border-white/5"
+                    className={`p-3.5 rounded-xl border transition-all duration-300 cursor-pointer ${hoveredSpeedPoint === idx ? "bg-gray-100 dark:bg-white/5 border-purple-500/40" : "bg-transparent border-gray-200 dark:border-white/5"
                       }`}
                   >
                     <div className="flex justify-between items-center">
@@ -478,7 +478,7 @@ const AICallingAgents = () => {
 
             {/* Interactive Graph Drawing (SVG) */}
             <div className="lg:col-span-7 flex flex-col justify-center">
-              <div className="border border-white/5 bg-black/40 rounded-2xl p-6">
+              <div className="border border-gray-200 dark:border-white/5 bg-gray-100 dark:bg-black/40 rounded-2xl p-6">
                 <div className="flex justify-between items-center mb-6">
                   <span className="text-xs font-bold uppercase tracking-wider font-mono text-gray-500">Lead Conversion Rate vs Callback Delay</span>
                   <span className="text-[10px] bg-purple-500/20 text-[#33bbcf] px-2 py-0.5 rounded font-mono">Live Stat</span>
@@ -751,7 +751,7 @@ const AICallingAgents = () => {
         </section>
 
         {/* LIVE CONVERSATION DEMO */}
-        <section id="live-demo" className="mb-28 border-t border-white/5 pt-24">
+        <section id="live-demo" className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Live Script</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Listen to AI Calling in Real Time</h2>
@@ -805,7 +805,7 @@ const AICallingAgents = () => {
                   >
                     <div className={`max-w-[85%] rounded-2xl p-4 text-sm ${msg.speaker === "agent"
                         ? "bg-purple-600/10 text-purple-100 border border-purple-500/20 rounded-tl-none"
-                        : "bg-gray-100 dark:bg-white/5 text-gray-200 border border-white/5 rounded-tr-none"
+                        : "bg-gray-100 dark:bg-white/5 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-white/5 rounded-tr-none"
                       }`}>
                       <div className="flex justify-between items-center mb-1.5">
                         <span className="text-[10px] uppercase font-mono tracking-wider font-bold text-[#33bbcf]">
@@ -821,7 +821,7 @@ const AICallingAgents = () => {
             </div>
 
             {/* Soundwave animation */}
-            <div className="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+            <div className="mt-8 pt-6 border-t border-gray-200 dark:border-white/5 flex items-center justify-between">
               <span className="text-[10px] text-gray-500 uppercase tracking-widest font-mono">Voice Activity Indicator</span>
               <div className="flex gap-1 h-5 items-center">
                 <span className={`w-0.5 bg-purple-500 rounded ${isConvPlaying ? "animate-[bounce_0.8s_infinite]" : "h-1"}`} />
@@ -932,7 +932,7 @@ const AICallingAgents = () => {
         </section>
 
         {/* BUSINESS IMPACT SECTION */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Business Outcomes</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Performance Analytics & Business Impact</h2>
@@ -1011,7 +1011,7 @@ const AICallingAgents = () => {
                   onClick={() => setSelectedIndustry(idx)}
                   className={`w-full text-left p-4 rounded-xl font-bold transition-all border flex items-center justify-between ${selectedIndustry === idx
                       ? "bg-purple-600/10 border-purple-500 text-gray-900 dark:text-white shadow-lg"
-                      : "bg-transparent border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white hover:bg-white/[0.02]"
+                      : "bg-transparent border-gray-200 dark:border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white hover:bg-white dark:bg-white/[0.02]"
                     }`}
                 >
                   <span>{ind.title}</span>
@@ -1053,7 +1053,7 @@ const AICallingAgents = () => {
         </section>
 
         {/* VOICE AI CAPABILITIES */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Technical Pillars</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Voice AI Capabilities & Core Strengths</h2>
@@ -1115,7 +1115,7 @@ const AICallingAgents = () => {
         </section>
 
         {/* IMPLEMENTATION TIMELINE */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Implementation Plan</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">How We Deploy Your Agent In 7 Days</h2>
@@ -1202,7 +1202,7 @@ const AICallingAgents = () => {
                   Learn how a premium regional education institute scaled their admissions calling, resolved lead lag times, and automated BANT checks.
                 </p>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-black/30 p-4 rounded-xl border border-white/5">
+                  <div className="bg-black/30 p-4 rounded-xl border border-gray-200 dark:border-white/5">
                     <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Before AI</span>
                     <h4 className="text-sm font-bold text-red-400 mt-1">Manual Follow-Up</h4>
                     <p className="text-xs text-gray-500 mt-1">Average Response Time: 4 Hours</p>
@@ -1217,14 +1217,14 @@ const AICallingAgents = () => {
 
               {/* Case Study Outcomes */}
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-black/40 border border-white/5 p-6 rounded-2xl text-center">
+                <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
                   <span className="text-xs text-gray-500 block font-mono">Admission Conversion Rate</span>
                   <h3 className="text-cyan-gradient font-bold">
                     3.1X Growth
                   </h3>
                   <p className="text-xs text-gray-500">More qualified student leads captured and routed successfully.</p>
                 </div>
-                <div className="bg-black/40 border border-white/5 p-6 rounded-2xl text-center">
+                <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
                   <span className="text-xs text-gray-500 block font-mono">Appointments Booked</span>
                   <h3 className="text-cyan-gradient font-bold">
                     42% Increase
@@ -1307,7 +1307,7 @@ const AICallingAgents = () => {
         </section>
 
         {/* PRICING SECTION */}
-        <section id="pricing" className="mb-28 border-t border-white/5 pt-24">
+        <section id="pricing" className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">Investment Packages</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Transparent Build Pricing</h2>
@@ -1361,7 +1361,7 @@ const AICallingAgents = () => {
                   <span className="text-4xl font-extrabold text-gray-900 dark:text-white">₹45,000</span>
                   <span className="text-xs text-gray-600 dark:text-gray-400">/ setup</span>
                 </div>
-                <ul className="space-y-3.5 text-xs text-gray-300">
+                <ul className="space-y-3.5 text-xs text-gray-700 dark:text-gray-300">
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> Inbound Call Routing & Support</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> Outbound Call Integration</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> Google Calendar Integration</li>
@@ -1412,7 +1412,7 @@ const AICallingAgents = () => {
         </section>
 
         {/* FAQ SECTION */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-[#33bbcf] font-bold block">FAQ</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
@@ -1449,7 +1449,7 @@ const AICallingAgents = () => {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 pt-0 border-t border-white/5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <div className="p-6 pt-0 border-t border-gray-200 dark:border-white/5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                           {faq.a}
                         </div>
                       </motion.div>

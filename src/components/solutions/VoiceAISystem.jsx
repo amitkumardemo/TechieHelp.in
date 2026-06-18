@@ -223,7 +223,7 @@ const VoiceAISystem = () => {
   };
 
   return (
-    <div className="bg-[#050510] min-h-screen text-gray-300 font-sans selection:bg-red-500/30 pt-28 pb-20 overflow-hidden relative">
+    <div className="bg-gray-50 dark:bg-[#050510] min-h-screen text-gray-700 dark:text-gray-700 dark:text-gray-300 font-sans selection:bg-red-500/30 pt-28 pb-20 overflow-hidden relative">
       <Helmet>
         <title>Voice AI Receptionist: 24/7 Phone Automation & Scheduling | TechieHelp</title>
         <meta
@@ -358,7 +358,7 @@ const VoiceAISystem = () => {
                 Interactive Call Center Visualizer
               </div>
 
-              <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-6 pt-2">
+              <div className="flex items-center justify-between border-b border-gray-200 dark:border-white/5 pb-4 mb-6 pt-2">
                 <div className="flex items-center gap-2">
                   <div className="w-3.5 h-3.5 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.8)]" />
                   <span className="text-xs font-mono text-red-400 font-bold uppercase tracking-wider">
@@ -439,7 +439,7 @@ const VoiceAISystem = () => {
                       }}
                       className={`flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 cursor-pointer border ${isActive
                           ? "bg-gradient-to-r from-red-950/20 to-purple-950/20 border-red-500/30 shadow-lg"
-                          : "bg-white/[0.01] border-white/5 opacity-50 hover:opacity-80"
+                          : "bg-white dark:bg-white/[0.01] border-gray-200 dark:border-white/5 opacity-50 hover:opacity-80"
                         }`}
                     >
                       <div className={`p-2.5 rounded-xl transition-all ${isActive ? "bg-red-500/20 text-red-400" : "bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-gray-400"
@@ -461,7 +461,7 @@ const VoiceAISystem = () => {
               </div>
 
               {/* Flowchart Indicator Line */}
-              <div className="mt-6 p-4 rounded-xl bg-black/30 border border-white/5 text-center text-xs font-mono flex items-center justify-center gap-1.5">
+              <div className="mt-6 p-4 rounded-xl bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 text-center text-xs font-mono flex items-center justify-center gap-1.5">
                 <span className="text-gray-500">Pipeline Status:</span>
                 <span className="text-red-400 font-bold uppercase">
                   {heroSimulationSteps[heroStep].label} Active
@@ -472,7 +472,7 @@ const VoiceAISystem = () => {
         </section>
 
         {/* THE PROBLEM SECTION */}
-        <section className="mb-24 border-t border-white/5 pt-20">
+        <section className="mb-24 border-t border-gray-200 dark:border-white/5 pt-20">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold block">
               The Leak in Your Funnel
@@ -550,7 +550,7 @@ const VoiceAISystem = () => {
             {/* ROI Inputs */}
             <div className="space-y-6">
               {/* Slider 1 */}
-              <div className="bg-black/30 border border-white/5 p-5 rounded-2xl space-y-3">
+              <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-5 rounded-2xl space-y-3">
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600 dark:text-gray-400 font-medium">Monthly Calls Received</span>
                   <span className="text-gray-900 dark:text-white font-bold text-lg">{monthlyCalls} Calls</span>
@@ -571,7 +571,7 @@ const VoiceAISystem = () => {
               </div>
 
               {/* Slider 2 */}
-              <div className="bg-black/30 border border-white/5 p-5 rounded-2xl space-y-3">
+              <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-5 rounded-2xl space-y-3">
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600 dark:text-gray-400 font-medium">Estimated Missed Calls %</span>
                   <span className="text-red-400 font-bold text-lg">{missedRate}% Missed</span>
@@ -592,7 +592,7 @@ const VoiceAISystem = () => {
               </div>
 
               {/* Slider 3 */}
-              <div className="bg-black/30 border border-white/5 p-5 rounded-2xl space-y-3">
+              <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-5 rounded-2xl space-y-3">
                 <div className="flex justify-between items-center text-sm">
                   <span className="text-gray-600 dark:text-gray-400 font-medium">Average Customer Value (LTV)</span>
                   <span className="text-green-400 font-bold text-lg">₹{customerValue.toLocaleString("en-IN")}</span>
@@ -636,7 +636,7 @@ const VoiceAISystem = () => {
                     <span>Missed Opportunity Loss</span>
                     <span>100% Impact</span>
                   </div>
-                  <div className="w-full h-3 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden border border-white/5">
+                  <div className="w-full h-3 bg-gray-100 dark:bg-white/5 rounded-full overflow-hidden border border-gray-200 dark:border-white/5">
                     <motion.div
                       className="h-full bg-gradient-to-r from-red-600 to-pink-500"
                       initial={{ width: "0%" }}
@@ -843,7 +843,7 @@ const VoiceAISystem = () => {
         </section>
 
         {/* LIVE CONVERSATION DEMO */}
-        <section id="conversation-demo" className="mb-24 border-t border-white/5 pt-20">
+        <section id="conversation-demo" className="mb-24 border-t border-gray-200 dark:border-white/5 pt-20">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold block">
               Experience the Latency & Tone
@@ -919,7 +919,7 @@ const VoiceAISystem = () => {
                       )}
                       <div
                         className={`max-w-[75%] p-4 rounded-2xl relative ${isAI
-                            ? "bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-200 rounded-tl-none"
+                            ? "bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-800 dark:text-gray-800 dark:text-gray-200 rounded-tl-none"
                             : "bg-red-600 text-gray-900 dark:text-white rounded-tr-none shadow-md shadow-red-900/15"
                           }`}
                       >
@@ -933,7 +933,7 @@ const VoiceAISystem = () => {
 
                         {/* Audio wave animation for voice messages */}
                         {isAI && msg.audioWave && (
-                          <div className="mt-3 flex items-center gap-1.5 bg-black/30 px-3 py-2 rounded-lg border border-white/5">
+                          <div className="mt-3 flex items-center gap-1.5 bg-gray-100 dark:bg-black/30 px-3 py-2 rounded-lg border border-gray-200 dark:border-white/5">
                             <Mic className="w-3.5 h-3.5 text-red-400 animate-pulse" />
                             <div className="flex items-center gap-1 h-4">
                               {[...Array(8)].map((_, i) => (
@@ -975,7 +975,7 @@ const VoiceAISystem = () => {
             </div>
 
             {/* Step triggers manual */}
-            <div className="mt-6 pt-4 border-t border-white/5 flex justify-between items-center">
+            <div className="mt-6 pt-4 border-t border-gray-200 dark:border-white/5 flex justify-between items-center">
               <span className="text-xs text-gray-500 font-mono">
                 Script Progress: {demoStep + 1} / {demoScript.length}
               </span>
@@ -983,14 +983,14 @@ const VoiceAISystem = () => {
                 <button
                   disabled={demoStep === 0}
                   onClick={() => setDemoStep((prev) => Math.max(0, prev - 1))}
-                  className="bg-gray-100 dark:bg-white/5 border border-white/5 hover:border-gray-300 dark:border-white/20 disabled:opacity-40 text-gray-900 dark:text-white text-xs px-3 py-1.5 rounded-lg transition-all"
+                  className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-gray-300 dark:border-white/20 disabled:opacity-40 text-gray-900 dark:text-white text-xs px-3 py-1.5 rounded-lg transition-all"
                 >
                   Prev
                 </button>
                 <button
                   disabled={demoStep === demoScript.length - 1}
                   onClick={() => setDemoStep((prev) => Math.min(demoScript.length - 1, prev + 1))}
-                  className="bg-gray-100 dark:bg-white/5 border border-white/5 hover:border-gray-300 dark:border-white/20 disabled:opacity-40 text-gray-900 dark:text-white text-xs px-3 py-1.5 rounded-lg transition-all"
+                  className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 hover:border-gray-300 dark:border-white/20 disabled:opacity-40 text-gray-900 dark:text-white text-xs px-3 py-1.5 rounded-lg transition-all"
                 >
                   Next
                 </button>
@@ -1059,7 +1059,7 @@ const VoiceAISystem = () => {
                   One-Time Setup <span className="text-sm font-medium text-gray-500">No Monthly Platform Markup</span>
                 </div>
 
-                <ul className="space-y-4 text-sm text-gray-300">
+                <ul className="space-y-4 text-sm text-gray-700 dark:text-gray-700 dark:text-gray-300">
                   <li className="flex items-center gap-3">
                     <span className="text-emerald-400 font-bold text-lg">✓</span>
                     <span>Works 24/7 (Answers calls in under 1 second)</span>
@@ -1144,7 +1144,7 @@ const VoiceAISystem = () => {
         </section>
 
         {/* VOICE AI CAPABILITIES */}
-        <section className="mb-24 border-t border-white/5 pt-20">
+        <section className="mb-24 border-t border-gray-200 dark:border-white/5 pt-20">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold block">
               Core Architecture
@@ -1279,37 +1279,37 @@ const VoiceAISystem = () => {
           </div>
 
           <div className="grid grid-cols-2 lg:grid-cols-6 gap-6 mb-8">
-            <div className="bg-black/30 border border-white/5 p-4 rounded-xl">
+            <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-4 rounded-xl">
               <span className="text-[10px] text-gray-500 uppercase font-mono block">Calls Answered</span>
               <div className="text-xl font-bold text-gray-900 dark:text-white mt-1">99.8%</div>
               <span className="text-[9px] text-green-400 font-mono">100% Target Met</span>
             </div>
 
-            <div className="bg-black/30 border border-white/5 p-4 rounded-xl">
+            <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-4 rounded-xl">
               <span className="text-[10px] text-gray-500 uppercase font-mono block">Booked Sessions</span>
               <div className="text-xl font-bold text-gray-900 dark:text-white mt-1">1,420</div>
               <span className="text-[9px] text-green-400 font-mono">+48% Increase</span>
             </div>
 
-            <div className="bg-black/30 border border-white/5 p-4 rounded-xl">
+            <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-4 rounded-xl">
               <span className="text-[10px] text-gray-500 uppercase font-mono block">Tickets Resolved</span>
               <div className="text-xl font-bold text-gray-900 dark:text-white mt-1">84%</div>
               <span className="text-[9px] text-gray-500 font-mono">No Human Esc.</span>
             </div>
 
-            <div className="bg-black/30 border border-white/5 p-4 rounded-xl">
+            <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-4 rounded-xl">
               <span className="text-[10px] text-gray-500 uppercase font-mono block">Revenue Saved</span>
               <div className="text-xl font-bold text-gray-900 dark:text-white mt-1">₹14,20,000</div>
               <span className="text-[9px] text-green-400 font-mono">Opportunity Secured</span>
             </div>
 
-            <div className="bg-black/30 border border-white/5 p-4 rounded-xl">
+            <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-4 rounded-xl">
               <span className="text-[10px] text-gray-500 uppercase font-mono block">Customer CSAT</span>
               <div className="text-xl font-bold text-gray-900 dark:text-white mt-1">4.9 / 5</div>
               <span className="text-[9px] text-green-400 font-mono">Highly Positive</span>
             </div>
 
-            <div className="bg-black/30 border border-white/5 p-4 rounded-xl">
+            <div className="bg-gray-100 dark:bg-black/30 border border-gray-200 dark:border-white/5 p-4 rounded-xl">
               <span className="text-[10px] text-gray-500 uppercase font-mono block">Resolution Rate</span>
               <div className="text-xl font-bold text-gray-900 dark:text-white mt-1">95%</div>
               <span className="text-[9px] text-green-400 font-mono">Sub-1s Answering</span>
@@ -1317,7 +1317,7 @@ const VoiceAISystem = () => {
           </div>
 
           {/* SVG Performance Chart Mockup */}
-          <div className="bg-black/40 border border-white/5 rounded-2xl p-6">
+          <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 rounded-2xl p-6">
             <div className="flex justify-between items-center mb-4">
               <h4 className="text-xs font-bold uppercase tracking-wider text-gray-600 dark:text-gray-400">
                 Call Volume & Missed Call Collapse Ratio
@@ -1418,7 +1418,7 @@ const VoiceAISystem = () => {
             <div className="bg-gradient-to-b from-red-950/20 to-purple-950/20 border border-red-500/30 p-5 rounded-2xl relative overflow-hidden group shadow-[0_0_15px_rgba(239,68,68,0.1)]">
               <span className="text-xs font-bold font-mono text-emerald-400 block mb-2">Day 7</span>
               <h4 className="text-sm font-bold text-gray-900 dark:text-white mb-2">Go Live</h4>
-              <p className="text-[10px] text-gray-300">Link AI Receptionist to your main phone numbers.</p>
+              <p className="text-[10px] text-gray-700 dark:text-gray-700 dark:text-gray-300">Link AI Receptionist to your main phone numbers.</p>
             </div>
           </div>
         </section>
@@ -1451,7 +1451,7 @@ const VoiceAISystem = () => {
                 <span className="text-[9px] text-emerald-400 block mt-1">100% Handled</span>
               </div>
 
-              <div className="bg-gray-100 dark:bg-white/5 border border-white/5 p-4 rounded-xl flex flex-col justify-center">
+              <div className="bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/5 p-4 rounded-xl flex flex-col justify-center">
                 <span className="text-[10px] uppercase font-mono text-[#33bbcf] block font-bold">Result</span>
                 <div className="text-sm font-bold text-gray-900 dark:text-white mt-1">48% More Bookings</div>
                 <div className="text-[9px] text-gray-500 font-medium">2X Faster Support</div>
@@ -1540,7 +1540,7 @@ const VoiceAISystem = () => {
         </section>
 
         {/* PRICING SECTION */}
-        <section className="mb-24 border-t border-white/5 pt-20">
+        <section className="mb-24 border-t border-gray-200 dark:border-white/5 pt-20">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold block">
               Straightforward Value
@@ -1560,7 +1560,7 @@ const VoiceAISystem = () => {
                 <p className="text-xs text-gray-500 mb-6 uppercase tracking-wider">Inbound Support Only</p>
                 <div className="text-4xl font-black text-gray-900 dark:text-white mb-8">₹30,000</div>
 
-                <ul className="space-y-4 text-xs text-gray-600 dark:text-gray-400 mb-8 border-t border-white/5 pt-6">
+                <ul className="space-y-4 text-xs text-gray-600 dark:text-gray-400 mb-8 border-t border-gray-200 dark:border-white/5 pt-6">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-red-500" />
                     <span>Inbound Call Handling</span>
@@ -1605,7 +1605,7 @@ const VoiceAISystem = () => {
                 <p className="text-xs text-red-400 mb-6 uppercase tracking-wider">Inbound & Outbound Calling</p>
                 <div className="text-4xl font-black text-gray-900 dark:text-white mb-8">₹50,000</div>
 
-                <ul className="space-y-4 text-xs text-gray-300 mb-8 border-t border-white/15 pt-6">
+                <ul className="space-y-4 text-xs text-gray-700 dark:text-gray-700 dark:text-gray-300 mb-8 border-t border-white/15 pt-6">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-red-500" />
                     <span>Voice Cloning (Natural Human Tone)</span>
@@ -1646,7 +1646,7 @@ const VoiceAISystem = () => {
                 <p className="text-xs text-gray-500 mb-6 uppercase tracking-wider">Database Query Routing</p>
                 <div className="text-4xl font-black text-gray-900 dark:text-white mb-8">Custom</div>
 
-                <ul className="space-y-4 text-xs text-gray-600 dark:text-gray-400 mb-8 border-t border-white/5 pt-6">
+                <ul className="space-y-4 text-xs text-gray-600 dark:text-gray-400 mb-8 border-t border-gray-200 dark:border-white/5 pt-6">
                   <li className="flex items-center gap-2">
                     <CheckCircle className="w-4 h-4 text-red-500" />
                     <span>Unlimited Concurrent Call Capacity</span>
@@ -1705,7 +1705,7 @@ const VoiceAISystem = () => {
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-gray-900 dark:text-white hover:bg-white/[0.02] transition-colors"
+                    className="w-full px-6 py-5 flex items-center justify-between text-left font-bold text-gray-900 dark:text-white hover:bg-white dark:bg-white/[0.02] transition-colors"
                   >
                     <span className="text-sm md:text-base pr-4">{faq.q}</span>
                     <span className="shrink-0 text-red-400 transition-transform duration-300">
@@ -1721,7 +1721,7 @@ const VoiceAISystem = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="px-6 pb-5 pt-1 text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-white/5">
+                        <div className="px-6 pb-5 pt-1 text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-200 dark:border-white/5">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -1740,7 +1740,7 @@ const VoiceAISystem = () => {
           <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 tracking-tighter">
             Stop Missing Revenue Because Of Missed Calls.
           </h2>
-          <p className="text-base md:text-lg text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg text-gray-700 dark:text-gray-700 dark:text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
             Deploy your AI Receptionist in 7 days and ensure every customer receives instant attention.
           </p>
 

@@ -60,6 +60,7 @@ import Employee from "./components/Employee";
 import InternProfile from "./components/InternProfile";
 import EmployeeProfile from "./components/EmployeeProfile";
 import AmitKumar from "./components/employees/AmitKumar";
+import AmitKumarNetWorth from "./components/AmitKumarNetWorth";
 
 import AdityaKumarComponent from "./components/employees/AdityaKumar";
 import MdAmzadComponent from "./components/employees/MdAmzad";
@@ -325,6 +326,7 @@ const AppContent = () => {
         <Route path="/interns" element={<Intern />} />
         <Route path="/employees/:employeeId" element={<EmployeeProfile />} />
         <Route path="/team/amit-kumar-founder-ceo-techiehelp" element={<AmitKumar />} />
+        <Route path="/amit-kumar-net-worth-1-crore-age-20" element={<AmitKumarNetWorth />} />
 
         <Route path="/team/aditya-kumar-content-media-specialist-techiehelp" element={<AdityaKumarComponent />} />
         <Route path="/team/md-amzad-machine-learning-engineer-techiehelp" element={<MdAmzadComponent />} />

@@ -146,7 +146,7 @@ const AILeadEngine = () => {
   ];
 
   return (
-    <div className="bg-[#030014] min-h-screen text-gray-300 font-sans selection:bg-blue-500/30 pt-28 pb-20 overflow-x-hidden relative">
+    <div className="bg-gray-50 dark:bg-[#030014] min-h-screen text-gray-700 dark:text-gray-300 font-sans selection:bg-blue-500/30 pt-28 pb-20 overflow-x-hidden relative">
       <Helmet>
         <title>AI Lead Engine - 24/7 Automated Lead Capture Systems | TechieHelp</title>
         <meta name="description" content="Hire AI Employees that work 24/7. TechieHelp helps businesses automate lead qualification, customer replies, AI calling, follow-ups, and operations without increasing headcount." />
@@ -156,14 +156,14 @@ const AILeadEngine = () => {
       </Helmet>
 
       {/* Cinematic Ambient Grid & Glow Effects */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0c0c24_1px,transparent_1px),linear-gradient(to_bottom,#0c0c24_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#e5e7eb_1px,transparent_1px),linear-gradient(to_bottom,#e5e7eb_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#0c0c24_1px,transparent_1px),linear-gradient(to_bottom,#0c0c24_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
       <div className="fixed top-[15%] left-[20%] w-[500px] h-[500px] bg-blue-600/10 blur-[130px] rounded-full pointer-events-none -z-10 animate-pulse" />
       <div className="fixed bottom-[15%] right-[15%] w-[400px] h-[400px] bg-purple-600/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
         {/* Breadcrumbs */}
-        <div className="flex items-center gap-2 text-xs text-gray-500 mb-8 border border-white/5 bg-white/[0.02] backdrop-blur-md w-fit px-4 py-2 rounded-full">
+        <div className="flex items-center gap-2 text-xs text-gray-500 mb-8 border border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.02] backdrop-blur-md w-fit px-4 py-2 rounded-full">
           <span>Home</span>
           <span className="text-[#33bbcf]/50">→</span>
           <span>Services</span>
@@ -212,7 +212,7 @@ const AILeadEngine = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="glass-morphism p-5 border-white/5 rounded-2xl mb-8 flex gap-4 items-center bg-white/[0.02] max-w-xl text-left shadow-2xl relative overflow-hidden group"
+              className="glass-morphism p-5 border-gray-200 dark:border-white/5 rounded-2xl mb-8 flex gap-4 items-center bg-white dark:bg-white/[0.02] max-w-xl text-left shadow-2xl relative overflow-hidden group"
             >
               <div className="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-blue-500 to-purple-600" />
               <Sparkles className="w-10 h-10 text-blue-400 shrink-0 group-hover:rotate-12 transition-transform" />
@@ -231,16 +231,16 @@ const AILeadEngine = () => {
               transition={{ delay: 0.4 }}
               className="grid grid-cols-2 gap-x-8 gap-y-3 mb-8 text-left"
             >
-              <span className="flex items-center gap-2 text-sm font-semibold text-gray-300">
+              <span className="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
                 <Check className="text-green-500 w-5 h-5 stroke-[3]" /> 100% Lead Capture
               </span>
-              <span className="flex items-center gap-2 text-sm font-semibold text-gray-300">
+              <span className="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
                 <Check className="text-green-500 w-5 h-5 stroke-[3]" /> AI Qualification
               </span>
-              <span className="flex items-center gap-2 text-sm font-semibold text-gray-300">
+              <span className="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
                 <Check className="text-green-500 w-5 h-5 stroke-[3]" /> Instant Follow-Up
               </span>
-              <span className="flex items-center gap-2 text-sm font-semibold text-gray-300">
+              <span className="flex items-center gap-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
                 <Check className="text-green-500 w-5 h-5 stroke-[3]" /> 24/7 Operations
               </span>
             </motion.div>
@@ -283,10 +283,10 @@ const AILeadEngine = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
-              className="relative w-full max-w-[460px] glass-morphism border-white/5 bg-white/[0.02] rounded-3xl p-6 backdrop-blur-2xl shadow-2xl relative overflow-hidden"
+              className="relative w-full max-w-[460px] glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.02] rounded-3xl p-6 backdrop-blur-2xl shadow-2xl relative overflow-hidden"
             >
               {/* Card top bar */}
-              <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-gray-200 dark:border-white/5 pb-4 mb-6">
                 <div className="flex items-center gap-2">
                   <div className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                   <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
@@ -311,7 +311,7 @@ const AILeadEngine = () => {
                     onClick={() => setActiveStep(0)}
                     className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${activeStep === 0
                         ? "bg-blue-500/10 border-blue-500/40 shadow-[0_0_20px_rgba(59,130,246,0.2)] opacity-100 scale-[1.02]"
-                        : "bg-white/[0.02] border-white/5 opacity-40 hover:opacity-60"
+                        : "bg-white dark:bg-white/[0.02] border-gray-200 dark:border-white/5 opacity-40 hover:opacity-60"
                       }`}
                   >
                     <div className="flex items-center justify-between mb-2">
@@ -359,7 +359,7 @@ const AILeadEngine = () => {
                     onClick={() => setActiveStep(1)}
                     className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${activeStep === 1
                         ? "bg-purple-500/10 border-purple-500/40 shadow-[0_0_20px_rgba(168,85,247,0.2)] opacity-100 scale-[1.02]"
-                        : "bg-white/[0.02] border-white/5 opacity-40 hover:opacity-60"
+                        : "bg-white dark:bg-white/[0.02] border-gray-200 dark:border-white/5 opacity-40 hover:opacity-60"
                       }`}
                   >
                     <div className="flex items-center justify-between mb-2">
@@ -376,7 +376,7 @@ const AILeadEngine = () => {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 bg-black/40 border border-purple-500/10 rounded-xl p-2.5"
+                          className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1 bg-gray-100 dark:bg-black/40 border border-purple-500/10 rounded-xl p-2.5"
                         >
                           {[
                             { label: "Budget", val: "₹5L+ ✓" },
@@ -413,7 +413,7 @@ const AILeadEngine = () => {
                     onClick={() => setActiveStep(2)}
                     className={`p-4 rounded-2xl border transition-all duration-500 text-left cursor-pointer relative ${activeStep === 2
                         ? "bg-cyan-500/10 border-cyan-500/40 shadow-[0_0_20px_rgba(6,182,212,0.2)] opacity-100 scale-[1.02]"
-                        : "bg-white/[0.02] border-white/5 opacity-40 hover:opacity-60"
+                        : "bg-white dark:bg-white/[0.02] border-gray-200 dark:border-white/5 opacity-40 hover:opacity-60"
                       }`}
                   >
                     <div className="flex items-center justify-between mb-2">
@@ -430,7 +430,7 @@ const AILeadEngine = () => {
                           initial={{ opacity: 0, height: 0 }}
                           animate={{ opacity: 1, height: "auto" }}
                           exit={{ opacity: 0, height: 0 }}
-                          className="mt-3 space-y-2 bg-black/40 border border-cyan-500/10 rounded-xl p-2.5"
+                          className="mt-3 space-y-2 bg-gray-100 dark:bg-black/40 border border-cyan-500/10 rounded-xl p-2.5"
                         >
                           <div className="flex justify-between items-center text-[9px] font-mono">
                             <span className="text-gray-500">Proposal Delivery:</span>
@@ -483,7 +483,7 @@ const AILeadEngine = () => {
             {/* Simulator Controls & Lead Details */}
             <div className="lg:col-span-5 flex flex-col gap-6">
               {/* Lead Details Card */}
-              <div className="glass-morphism border-white/5 bg-white/[0.01] p-6 rounded-3xl flex flex-col justify-between flex-1 relative overflow-hidden shadow-2xl">
+              <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.01] p-6 rounded-3xl flex flex-col justify-between flex-1 relative overflow-hidden shadow-2xl">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-blue-500/10 to-transparent blur-xl pointer-events-none" />
                 <div>
                   <div className="flex items-center justify-between mb-6">
@@ -504,7 +504,7 @@ const AILeadEngine = () => {
                     </div>
                     <div>
                       <p className="text-[10px] uppercase text-gray-500 font-mono">Company / Organization</p>
-                      <p className="text-sm font-semibold text-gray-200">{currentLead.company}</p>
+                      <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">{currentLead.company}</p>
                     </div>
                     <div>
                       <p className="text-[10px] uppercase text-gray-500 font-mono">Reported Budget Range</p>
@@ -519,7 +519,7 @@ const AILeadEngine = () => {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-white/5 flex items-center justify-between text-xs text-gray-500">
+                <div className="mt-8 pt-4 border-t border-gray-200 dark:border-white/5 flex items-center justify-between text-xs text-gray-500">
                   <span>Simulation Cycle</span>
                   <span className="font-mono text-gray-900 dark:text-white">Lead {currentLeadIdx + 1} of {simLeads.length}</span>
                 </div>
@@ -528,7 +528,7 @@ const AILeadEngine = () => {
 
             {/* Processor Actions list */}
             <div className="lg:col-span-7">
-              <div className="glass-morphism border-white/5 bg-white/[0.01] p-6 rounded-3xl h-full shadow-2xl">
+              <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.01] p-6 rounded-3xl h-full shadow-2xl">
                 <h4 className="text-xs font-mono uppercase text-gray-600 dark:text-gray-400 tracking-wider mb-6 text-left">Pipeline Execution Logs</h4>
 
                 <div className="space-y-3">
@@ -540,9 +540,9 @@ const AILeadEngine = () => {
                       <div
                         key={step.title}
                         className={`flex items-start gap-4 p-3.5 rounded-2xl border transition-all duration-500 ${isActive
-                            ? "bg-white/[0.04] border-blue-500/30 shadow-lg"
+                            ? "bg-gray-50 dark:bg-white/[0.04] border-blue-500/30 shadow-lg"
                             : isCompleted
-                              ? "bg-white/[0.01] border-green-500/10 opacity-70"
+                              ? "bg-white dark:bg-white/[0.01] border-green-500/10 opacity-70"
                               : "bg-transparent border-transparent opacity-40"
                           }`}
                       >
@@ -563,7 +563,7 @@ const AILeadEngine = () => {
                         {/* Text and Desc */}
                         <div className="flex-1 text-left min-w-0">
                           <div className="flex items-center justify-between gap-4">
-                            <h5 className={`text-sm font-bold transition-colors duration-500 ${isActive ? "text-gray-900 dark:text-white" : isCompleted ? "text-gray-300" : "text-gray-500"
+                            <h5 className={`text-sm font-bold transition-colors duration-500 ${isActive ? "text-gray-900 dark:text-white" : isCompleted ? "text-gray-700 dark:text-gray-300" : "text-gray-500"
                               }`}>{step.title}</h5>
                             <span className={`text-[8px] font-mono px-2 py-0.5 rounded font-bold ${step.status === "ACTIVE" ? "bg-blue-500/20 text-blue-400" :
                                 step.status === "PROCESSING" ? "bg-purple-500/20 text-[#33bbcf] animate-pulse" :
@@ -675,7 +675,7 @@ const AILeadEngine = () => {
             </p>
           </div>
 
-          <div className="glass-morphism border-white/5 bg-white/[0.01] p-8 rounded-[2rem] max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
+          <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.01] p-8 rounded-[2rem] max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
             <div className="absolute inset-0 bg-grid-pattern opacity-10 pointer-events-none" />
 
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center relative z-10">
@@ -689,7 +689,7 @@ const AILeadEngine = () => {
                   { name: "Facebook Lead Ad", detail: "API Direct Sync", icon: "�" },
                   { name: "Google Business Profile", detail: "GBP inquiries", icon: "�" }
                 ].map((item) => (
-                  <div key={item.name} className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-left flex gap-3 items-center hover:bg-white/[0.04] hover:border-gray-200 dark:border-white/10 transition-all">
+                  <div key={item.name} className="p-3 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-xl text-left flex gap-3 items-center hover:bg-gray-50 dark:bg-white/[0.04] hover:border-gray-200 dark:border-white/10 transition-all">
                     <span className="text-lg">{item.icon}</span>
                     <div>
                       <p className="text-xs font-bold text-gray-900 dark:text-white">{item.name}</p>
@@ -721,7 +721,7 @@ const AILeadEngine = () => {
                   </div>
                 </div>
 
-                <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 text-center flex items-center justify-center gap-2">
+                <div className="p-4 rounded-xl bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 text-center flex items-center justify-center gap-2">
                   <Activity className="w-4 h-4 text-[#33bbcf] animate-pulse" />
                   <span className="text-[10px] font-mono uppercase tracking-widest text-purple-300">AI Qualification Matrix</span>
                 </div>
@@ -743,7 +743,7 @@ const AILeadEngine = () => {
                   { name: "CRM Sync", detail: "Hubspot/Sheets logs", icon: <Database className="w-4 h-4 text-yellow-400" /> },
                   { name: "Sales Team Alert", detail: "Instant Slack notify", icon: <AlertCircle className="w-4 h-4 text-red-400" /> }
                 ].map((item) => (
-                  <div key={item.name} className="p-3 bg-white/[0.02] border border-white/5 rounded-xl text-left flex gap-3 items-center hover:bg-white/[0.04] hover:border-gray-200 dark:border-white/10 transition-all">
+                  <div key={item.name} className="p-3 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-xl text-left flex gap-3 items-center hover:bg-gray-50 dark:bg-white/[0.04] hover:border-gray-200 dark:border-white/10 transition-all">
                     <div className="p-1.5 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10">{item.icon}</div>
                     <div>
                       <p className="text-xs font-bold text-gray-900 dark:text-white">{item.name}</p>
@@ -777,7 +777,7 @@ const AILeadEngine = () => {
               { label: "Manual Work Reduced", value: "90%", icon: <Database className="w-5 h-5 text-yellow-400" />, desc: "Repetitive tasks deleted" },
               { label: "Conversion Increase", value: "3X Growth", icon: <TrendingUp className="w-5 h-5 text-red-400" />, desc: "High conversion speeds" }
             ].map((kpi) => (
-              <div key={kpi.label} className="glass-morphism border-white/5 bg-white/[0.01] p-5 rounded-2xl text-left hover:bg-white/[0.03] transition-all flex flex-col justify-between shadow-lg">
+              <div key={kpi.label} className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.01] p-5 rounded-2xl text-left hover:bg-gray-50 dark:bg-white/[0.03] transition-all flex flex-col justify-between shadow-lg">
                 <div className="p-2 bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-xl w-fit mb-4">{kpi.icon}</div>
                 <div>
                   <h4 className="text-xs text-gray-500 font-semibold mb-1 uppercase tracking-wider">{kpi.label}</h4>
@@ -816,7 +816,7 @@ const AILeadEngine = () => {
               { title: "Team Notifications", desc: "Slack, Discord, or WhatsApp alerts for qualified leads." },
               { title: "Deployment Support", desc: "Complete testing, training, and 7-day post-launch optimization." }
             ].map((item) => (
-              <div key={item.title} className="p-5 bg-white/[0.01] border border-white/5 rounded-2xl text-left hover:border-gray-200 dark:border-white/10 transition-all flex gap-3">
+              <div key={item.title} className="p-5 bg-white dark:bg-white/[0.01] border border-gray-200 dark:border-white/5 rounded-2xl text-left hover:border-gray-200 dark:border-white/10 transition-all flex gap-3">
                 <div className="w-5 h-5 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 flex items-center justify-center shrink-0 mt-0.5">
                   <Check className="w-3.5 h-3.5 stroke-[3]" />
                 </div>
@@ -843,7 +843,7 @@ const AILeadEngine = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Hot Leads */}
-            <div className="glass-morphism border-white/5 bg-[#07021a]/50 p-8 rounded-3xl text-left relative overflow-hidden shadow-2xl">
+            <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-[#07021a]/50 p-8 rounded-3xl text-left relative overflow-hidden shadow-2xl">
               <div className="absolute top-0 right-0 w-24 h-24 bg-red-600/5 blur-xl pointer-events-none" />
               <div className="flex items-center justify-between mb-6">
                 <div className="p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 flex items-center gap-2">
@@ -860,7 +860,7 @@ const AILeadEngine = () => {
             </div>
 
             {/* Warm Leads */}
-            <div className="glass-morphism border-white/5 bg-[#07021a]/50 p-8 rounded-3xl text-left relative overflow-hidden shadow-2xl">
+            <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-[#07021a]/50 p-8 rounded-3xl text-left relative overflow-hidden shadow-2xl">
               <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-600/5 blur-xl pointer-events-none" />
               <div className="flex items-center justify-between mb-6">
                 <div className="p-3 bg-yellow-500/10 border border-yellow-500/20 rounded-xl text-[#33bbcf] flex items-center gap-2">
@@ -877,7 +877,7 @@ const AILeadEngine = () => {
             </div>
 
             {/* Cold Leads */}
-            <div className="glass-morphism border-white/5 bg-[#07021a]/50 p-8 rounded-3xl text-left relative overflow-hidden shadow-2xl">
+            <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-[#07021a]/50 p-8 rounded-3xl text-left relative overflow-hidden shadow-2xl">
               <div className="absolute top-0 right-0 w-24 h-24 bg-blue-600/5 blur-xl pointer-events-none" />
               <div className="flex items-center justify-between mb-6">
                 <div className="p-3 bg-blue-500/10 border border-blue-500/20 rounded-xl text-[#33bbcf] flex items-center gap-2">
@@ -907,7 +907,7 @@ const AILeadEngine = () => {
             </p>
           </div>
 
-          <div className="glass-morphism border-white/5 bg-white/[0.01] rounded-[2rem] p-6 max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
+          <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.01] rounded-[2rem] p-6 max-w-5xl mx-auto shadow-2xl relative overflow-hidden">
             {/* Top Stats Strip */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
               {[
@@ -916,7 +916,7 @@ const AILeadEngine = () => {
                 { title: "AI Replies Sent", val: "1,248", change: "100% Rate", icon: <MessageSquare className="w-4 h-4 text-cyan-400" /> },
                 { title: "Revenue Potential", val: "₹18.4 Lakhs", change: "Est. Value", icon: <DollarSign className="w-4 h-4 text-green-400" /> }
               ].map((stat) => (
-                <div key={stat.title} className="p-4 bg-white/[0.02] border border-white/5 rounded-2xl text-left flex justify-between items-center">
+                <div key={stat.title} className="p-4 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-2xl text-left flex justify-between items-center">
                   <div>
                     <h5 className="text-[10px] text-gray-500 font-semibold mb-1 uppercase tracking-wider">{stat.title}</h5>
                     <p className="text-lg font-black text-gray-900 dark:text-white tracking-tight">{stat.val}</p>
@@ -929,7 +929,7 @@ const AILeadEngine = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
               {/* Chart Mockup (Col 7) */}
-              <div className="lg:col-span-7 p-6 bg-white/[0.02] border border-white/5 rounded-3xl flex flex-col justify-between text-left">
+              <div className="lg:col-span-7 p-6 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-3xl flex flex-col justify-between text-left">
                 <div>
                   <div className="flex justify-between items-center mb-4">
                     <h5 className="text-xs font-mono uppercase text-gray-600 dark:text-gray-400 tracking-wider">Lead Intake Growth</h5>
@@ -959,7 +959,7 @@ const AILeadEngine = () => {
               </div>
 
               {/* Conversion Funnel Mockup (Col 5) */}
-              <div className="lg:col-span-5 p-6 bg-white/[0.02] border border-white/5 rounded-3xl text-left flex flex-col justify-between">
+              <div className="lg:col-span-5 p-6 bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 rounded-3xl text-left flex flex-col justify-between">
                 <h5 className="text-xs font-mono uppercase text-gray-600 dark:text-gray-400 tracking-wider mb-6">Lead-to-Meeting Conversion</h5>
 
                 <div className="space-y-4">
@@ -970,7 +970,7 @@ const AILeadEngine = () => {
                     { label: "4. Deals Closed", val: "8 Customers", w: "w-[8%]", color: "bg-green-500" }
                   ].map((row) => (
                     <div key={row.label} className="space-y-1">
-                      <div className="flex justify-between text-[10px] font-bold text-gray-300">
+                      <div className="flex justify-between text-[10px] font-bold text-gray-700 dark:text-gray-300">
                         <span>{row.label}</span>
                         <span className="font-mono">{row.val}</span>
                       </div>
@@ -1009,7 +1009,7 @@ const AILeadEngine = () => {
                     onClick={() => setActiveIndustry(idx)}
                     className={`p-4 rounded-2xl border text-left transition-all duration-300 flex items-center justify-between ${isActive
                         ? "bg-gradient-to-r from-blue-600/20 to-purple-600/20 border-blue-500/30 text-gray-900 dark:text-white shadow-lg shadow-blue-500/5"
-                        : "bg-white/[0.01] border-white/5 text-gray-600 dark:text-gray-400 hover:bg-white/[0.02] hover:border-gray-200 dark:border-white/10"
+                        : "bg-white dark:bg-white/[0.01] border-gray-200 dark:border-white/5 text-gray-600 dark:text-gray-400 hover:bg-white dark:bg-white/[0.02] hover:border-gray-200 dark:border-white/10"
                       }`}
                   >
                     <span className="text-sm font-bold">{ind.title}</span>
@@ -1028,7 +1028,7 @@ const AILeadEngine = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="glass-morphism border-white/5 bg-[#05021a]/80 p-8 rounded-[2rem] h-full flex flex-col justify-between text-left shadow-2xl relative overflow-hidden"
+                  className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-[#05021a]/80 p-8 rounded-[2rem] h-full flex flex-col justify-between text-left shadow-2xl relative overflow-hidden"
                 >
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-500/10 to-transparent blur-2xl pointer-events-none" />
 
@@ -1046,12 +1046,12 @@ const AILeadEngine = () => {
                       {industriesData[activeIndustry].title}
                     </h4>
 
-                    <p className="text-base text-gray-300 leading-relaxed mb-6">
+                    <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
                       {industriesData[activeIndustry].desc}
                     </p>
                   </div>
 
-                  <div className="pt-6 border-t border-white/5 mt-auto flex items-center justify-between">
+                  <div className="pt-6 border-t border-gray-200 dark:border-white/5 mt-auto flex items-center justify-between">
                     <span className="text-xs text-gray-500 font-semibold uppercase tracking-wider">Projected Outcome:</span>
                     <span className="text-base font-black text-gray-900 dark:text-white tracking-tight bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
                       {industriesData[activeIndustry].outcome}
@@ -1111,7 +1111,7 @@ const AILeadEngine = () => {
             </p>
           </div>
 
-          <div className="glass-morphism border-white/5 bg-[#05021a]/80 p-8 rounded-[2rem] max-w-4xl mx-auto shadow-2xl relative overflow-hidden text-left">
+          <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-[#05021a]/80 p-8 rounded-[2rem] max-w-4xl mx-auto shadow-2xl relative overflow-hidden text-left">
             <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-bl from-green-500/5 to-transparent blur-3xl pointer-events-none" />
 
             <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
@@ -1131,7 +1131,7 @@ const AILeadEngine = () => {
                   <div className="absolute top-0 left-0 w-1 h-full bg-red-500" />
                   <div>
                     <h5 className="text-[10px] uppercase text-red-400 font-mono font-bold tracking-widest mb-1">Before TechieHelp</h5>
-                    <p className="text-sm font-semibold text-gray-300">Manual Staff Follow-Up</p>
+                    <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">Manual Staff Follow-Up</p>
                   </div>
                   <div className="text-right">
                     <p className="text-[10px] uppercase text-gray-500 font-mono">Response Time</p>
@@ -1187,7 +1187,7 @@ const AILeadEngine = () => {
               { title: "Indian Support Team", desc: "Dedicated local developer support available via phone/WhatsApp for any pipeline modifications." },
               { title: "AI Employees Working 24/7", desc: "Zero downtime, zero sick leaves, zero delay. AI handles leads at midnight with the same speed as midday." }
             ].map((item) => (
-              <div key={item.title} className="p-6 bg-white/[0.01] border border-white/5 rounded-2xl text-left hover:border-gray-200 dark:border-white/10 transition-all flex flex-col justify-between shadow-lg">
+              <div key={item.title} className="p-6 bg-white dark:bg-white/[0.01] border border-gray-200 dark:border-white/5 rounded-2xl text-left hover:border-gray-200 dark:border-white/10 transition-all flex flex-col justify-between shadow-lg">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 flex items-center justify-center mb-6">
                   <Sparkles className="w-5 h-5" />
                 </div>
@@ -1214,7 +1214,7 @@ const AILeadEngine = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-stretch">
             {/* Basic Setup */}
-            <div className="glass-morphism border-white/5 bg-[#05021a]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-[#05021a]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden">
               <div>
                 <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Basic Setup</h4>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest font-mono font-bold mb-6">Single Inbound Integration</p>
@@ -1243,7 +1243,7 @@ const AILeadEngine = () => {
             </div>
 
             {/* Standard Engine (Popular) */}
-            <div className="glass-morphism border-blue-500/30 bg-[#0c052d]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden scale-105">
+            <div className="glass-morphism border-blue-500/30 bg-blue-50 dark:bg-[#0c052d]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden scale-105">
               <div className="btn-primary">
                 Popular Plan
               </div>
@@ -1258,7 +1258,7 @@ const AILeadEngine = () => {
                   <span className="text-xs text-gray-600 dark:text-gray-400 font-medium">One-Time Cost</span>
                 </div>
 
-                <ul className="space-y-4 text-xs text-gray-300 mb-8">
+                <ul className="space-y-4 text-xs text-gray-700 dark:text-gray-300 mb-8">
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-[#33bbcf] stroke-[3]" /> Multi-Channel Lead Capture</li>
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-[#33bbcf] stroke-[3]" /> WhatsApp Business Auto-Reply</li>
                   <li className="flex items-center gap-3"><Check className="w-4 h-4 text-[#33bbcf] stroke-[3]" /> Smart AI Lead Qualification</li>
@@ -1278,7 +1278,7 @@ const AILeadEngine = () => {
             </div>
 
             {/* Enterprise Custom */}
-            <div className="glass-morphism border-white/5 bg-[#05021a]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden">
+            <div className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-[#05021a]/60 p-8 rounded-[2rem] text-left flex flex-col justify-between shadow-2xl relative overflow-hidden">
               <div>
                 <h4 className="text-xl font-bold text-gray-900 dark:text-white mb-1">Enterprise Custom</h4>
                 <p className="text-[10px] text-gray-500 uppercase tracking-widest font-mono font-bold mb-6">Tailored AI Reasoning</p>
@@ -1349,10 +1349,10 @@ const AILeadEngine = () => {
             ].map((faq, index) => {
               const isOpen = openFaq === index;
               return (
-                <div key={faq.q} className="glass-morphism border-white/5 bg-white/[0.01] rounded-2xl overflow-hidden transition-all duration-300">
+                <div key={faq.q} className="glass-morphism border-gray-200 dark:border-white/5 bg-white dark:bg-white/[0.01] rounded-2xl overflow-hidden transition-all duration-300">
                   <button
                     onClick={() => toggleFaq(index)}
-                    className="w-full p-5 text-left flex justify-between items-center text-gray-900 dark:text-white font-bold text-sm md:text-base hover:bg-white/[0.02]"
+                    className="w-full p-5 text-left flex justify-between items-center text-gray-900 dark:text-white font-bold text-sm md:text-base hover:bg-white dark:bg-white/[0.02]"
                   >
                     <span>{faq.q}</span>
                     <div className="p-1 rounded-lg bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-600 dark:text-gray-400">
@@ -1367,7 +1367,7 @@ const AILeadEngine = () => {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
                       >
-                        <div className="p-5 pt-0 border-t border-white/5 text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <div className="p-5 pt-0 border-t border-gray-200 dark:border-white/5 text-xs md:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                           {faq.a}
                         </div>
                       </motion.div>
@@ -1410,7 +1410,7 @@ const AILeadEngine = () => {
             </a>
             <a
               href="tel:+917673825079"
-              className="px-6 py-4 text-gray-300 hover:text-gray-900 dark:text-white font-bold transition-colors text-sm flex items-center gap-1.5"
+              className="px-6 py-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:text-white font-bold transition-colors text-sm flex items-center gap-1.5"
             >
               Call Now
             </a>

@@ -157,7 +157,7 @@ const AIWorkflowAutomation = () => {
   ];
 
   return (
-    <div className="bg-[#030014] min-h-screen text-gray-300 font-sans selection:bg-cyan-500/30 pt-28 pb-20 overflow-hidden relative">
+    <div className="bg-gray-50 dark:bg-[#030014] min-h-screen text-gray-700 dark:text-gray-300 font-sans selection:bg-cyan-500/30 pt-28 pb-20 overflow-hidden relative">
       <Helmet>
         <title>AI Operations & Workflow Automation Solutions | TechieHelp</title>
         <meta name="description" content="Build a business that runs itself. TechieHelp builds custom AI operations workflow systems that automate data entry, update CRM, generate invoices, and sync Google Sheets." />
@@ -219,7 +219,7 @@ const AIWorkflowAutomation = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-y border-white/5 py-6"
+              className="grid grid-cols-1 sm:grid-cols-2 gap-4 border-y border-gray-200 dark:border-white/5 py-6"
             >
               <div className="flex items-center gap-3">
                 <div className="w-6 h-6 rounded-full bg-cyan-500/10 text-cyan-400 flex items-center justify-center">
@@ -311,7 +311,7 @@ const AIWorkflowAutomation = () => {
                           ? "bg-cyan-500/10 border-cyan-500/30 shadow-lg shadow-cyan-900/5 scale-[1.02] opacity-100"
                           : isCompleted
                             ? "bg-blue-500/[0.03] border-blue-500/10 opacity-80"
-                            : "bg-transparent border-white/5 opacity-30"
+                            : "bg-transparent border-gray-200 dark:border-white/5 opacity-30"
                         }`}
                     >
                       <div className="flex items-center gap-3">
@@ -352,7 +352,7 @@ const AIWorkflowAutomation = () => {
 
               {/* Moving data particle feed logs */}
               <div className="mt-6 pt-5 border-t border-gray-200 dark:border-white/10 bg-black/30 rounded-xl p-3.5 text-[10px] font-mono text-gray-600 dark:text-gray-400 space-y-1">
-                <p className="text-gray-500 uppercase tracking-widest text-[9px] font-bold pb-1.5 border-b border-white/5 mb-1.5">
+                <p className="text-gray-500 uppercase tracking-widest text-[9px] font-bold pb-1.5 border-b border-gray-200 dark:border-white/5 mb-1.5">
                   Activity Feed Logs
                 </p>
                 <div className="h-10 overflow-hidden relative">
@@ -376,7 +376,7 @@ const AIWorkflowAutomation = () => {
         </section>
 
         {/* PROBLEM SECTION */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-red-500 font-bold block">The Cost of Chores</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Your Team Spends Too Much Time On Repetitive Tasks</h2>
@@ -416,9 +416,9 @@ const AIWorkflowAutomation = () => {
           <div className="max-w-4xl mx-auto bg-red-950/10 border border-red-500/10 rounded-2xl p-6 text-center">
             <p className="text-sm font-mono text-red-400 font-bold uppercase tracking-widest mb-6">Traditional Operational Drain</p>
             <div className="flex flex-col md:flex-row items-center justify-around gap-6 text-gray-900 dark:text-white font-bold">
-              <div className="bg-black/40 border border-white/5 p-4 rounded-xl w-44">Employee</div>
+              <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 p-4 rounded-xl w-44">Employee</div>
               <div className="text-gray-600">↓ Repeating Task</div>
-              <div className="bg-black/40 border border-white/5 p-4 rounded-xl w-44">Lost Time</div>
+              <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 p-4 rounded-xl w-44">Lost Time</div>
               <div className="text-gray-600">↓ Lost Momentum</div>
               <div className="bg-red-500/20 border border-red-500/30 p-4 rounded-xl w-44 text-red-300">Lost Revenue</div>
             </div>
@@ -441,7 +441,7 @@ const AIWorkflowAutomation = () => {
               </p>
 
               {/* Toggle controls */}
-              <div className="flex items-center gap-4 bg-black/40 border border-white/5 p-2 rounded-xl w-fit">
+              <div className="flex items-center gap-4 bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 p-2 rounded-xl w-fit">
                 <button
                   onClick={() => setIsBeforeState(true)}
                   className={`px-4 py-2 rounded-lg font-bold text-xs transition-all ${isBeforeState ? "bg-red-500/20 text-red-400 border border-red-500/20" : "bg-transparent text-gray-500"
@@ -461,7 +461,7 @@ const AIWorkflowAutomation = () => {
 
             {/* Impact chart rendering */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="bg-black/30 border border-white/5 rounded-2xl p-6 space-y-6">
+              <div className="bg-black/30 border border-gray-200 dark:border-white/5 rounded-2xl p-6 space-y-6">
 
                 {/* Metric 1: Hours */}
                 <div>
@@ -657,7 +657,7 @@ const AIWorkflowAutomation = () => {
         </section>
 
         {/* AI DECISION ENGINE */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Logic Branches</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">AI Doesn't Just Move Data. It Makes Decisions.</h2>
@@ -675,7 +675,7 @@ const AIWorkflowAutomation = () => {
                   onClick={() => setActiveDecision(key)}
                   className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${activeDecision === key
                       ? "bg-cyan-600 text-gray-900 dark:text-white border-cyan-500 shadow-md"
-                      : "bg-transparent border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                      : "bg-transparent border-gray-200 dark:border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
                     }`}
                 >
                   {decisions[key].title}
@@ -685,7 +685,7 @@ const AIWorkflowAutomation = () => {
 
             {/* Decision display visualizer */}
             <div className="space-y-6">
-              <div className="bg-black/40 border border-white/5 rounded-2xl p-6 relative overflow-hidden flex flex-col md:flex-row items-center justify-around gap-6">
+              <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 rounded-2xl p-6 relative overflow-hidden flex flex-col md:flex-row items-center justify-around gap-6">
 
                 {/* Condition node */}
                 <div className="bg-cyan-950/20 border border-cyan-500/30 p-5 rounded-2xl text-center w-56 shadow-lg">
@@ -701,14 +701,14 @@ const AIWorkflowAutomation = () => {
                     <CheckCircle className="w-4 h-4 text-green-500 shrink-0 mt-0.5" />
                     <div>
                       <span className="text-[10px] font-mono text-green-400 block font-bold uppercase">YES Branch</span>
-                      <p className="text-xs text-gray-300 mt-0.5">{decisions[activeDecision].yes}</p>
+                      <p className="text-xs text-gray-700 dark:text-gray-300 mt-0.5">{decisions[activeDecision].yes}</p>
                     </div>
                   </div>
                   <div className="bg-red-950/20 border border-red-500/20 p-4 rounded-xl flex items-start gap-3">
                     <AlertCircle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
                     <div>
                       <span className="text-[10px] font-mono text-red-400 block font-bold uppercase">NO Branch</span>
-                      <p className="text-xs text-gray-300 mt-0.5">{decisions[activeDecision].no}</p>
+                      <p className="text-xs text-gray-700 dark:text-gray-300 mt-0.5">{decisions[activeDecision].no}</p>
                     </div>
                   </div>
                 </div>
@@ -719,7 +719,7 @@ const AIWorkflowAutomation = () => {
         </section>
 
         {/* LIVE OPERATIONS CENTER (DASHBOARD PREVIEW) */}
-        <section id="live-operations" className="mb-28 border-t border-white/5 pt-24">
+        <section id="live-operations" className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Live Center</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Operations Center Dashboard</h2>
@@ -729,23 +729,23 @@ const AIWorkflowAutomation = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6 mb-8">
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
+            <div className="bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Tasks Automated Today</span>
               <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">1,420</h3>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
+            <div className="bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Hours Saved</span>
               <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">48 Hrs</h3>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
+            <div className="bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Errors Prevented</span>
               <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">14</h3>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
+            <div className="bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Workflows Executed</span>
               <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">100%</h3>
             </div>
-            <div className="bg-white/[0.02] border border-white/5 p-6 rounded-2xl text-center">
+            <div className="bg-white dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
               <span className="text-[10px] uppercase font-mono text-gray-500 tracking-wider">Revenue Impact</span>
               <h3 className="text-3xl font-extrabold text-gray-900 dark:text-white mt-1">2.4X</h3>
             </div>
@@ -817,7 +817,7 @@ const AIWorkflowAutomation = () => {
                   onClick={() => setSelectedIndustry(idx)}
                   className={`w-full text-left p-4 rounded-xl font-bold transition-all border flex items-center justify-between ${selectedIndustry === idx
                       ? "bg-cyan-600/10 border-cyan-500 text-gray-900 dark:text-white shadow-lg"
-                      : "bg-transparent border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white hover:bg-white/[0.02]"
+                      : "bg-transparent border-gray-200 dark:border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white hover:bg-white dark:bg-white/[0.02]"
                     }`}
                 >
                   <span>{ind.title}</span>
@@ -859,7 +859,7 @@ const AIWorkflowAutomation = () => {
         </section>
 
         {/* AUTOMATION EXAMPLES */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Use Cases</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Example Automation Workflows</h2>
@@ -877,7 +877,7 @@ const AIWorkflowAutomation = () => {
                   onClick={() => setSelectedWorkflowTab(idx)}
                   className={`px-4 py-2 rounded-xl text-xs font-bold transition-all border ${selectedWorkflowTab === idx
                       ? "bg-cyan-600 text-gray-900 dark:text-white border-cyan-500 shadow-md"
-                      : "bg-transparent border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
+                      : "bg-transparent border-gray-200 dark:border-white/5 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:text-white"
                     }`}
                 >
                   {wf.title}
@@ -892,7 +892,7 @@ const AIWorkflowAutomation = () => {
                   <div className="w-8 h-8 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-xs shrink-0">
                     {idx + 1}
                   </div>
-                  <div className="flex-1 bg-black/30 border border-white/5 p-4 rounded-xl">
+                  <div className="flex-1 bg-black/30 border border-gray-200 dark:border-white/5 p-4 rounded-xl">
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">{step}</p>
                   </div>
                 </div>
@@ -902,7 +902,7 @@ const AIWorkflowAutomation = () => {
         </section>
 
         {/* IMPLEMENTATION TIMELINE */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Roadmap</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">How We Deploy Your Autopilot in 7 Days</h2>
@@ -962,7 +962,7 @@ const AIWorkflowAutomation = () => {
                   How a regional consulting agency automated their client scheduling, task assignments, invoicing, and reporting sheets:
                 </p>
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-black/30 p-4 rounded-xl border border-white/5">
+                  <div className="bg-black/30 p-4 rounded-xl border border-gray-200 dark:border-white/5">
                     <span className="text-[10px] uppercase font-mono text-gray-500 block">Before AI</span>
                     <h4 className="text-sm font-bold text-red-400 mt-1">Manual Chores</h4>
                     <p className="text-xs text-gray-500 mt-0.5">5 Hours Daily Manual Work</p>
@@ -977,14 +977,14 @@ const AIWorkflowAutomation = () => {
 
               {/* Case Outcomes */}
               <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-black/40 border border-white/5 p-6 rounded-2xl text-center">
+                <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
                   <span className="text-xs text-gray-500 block font-mono">Operations Time Saved</span>
                   <h3 className="text-cyan-gradient font-bold">
                     20+ Hours / Wk
                   </h3>
                   <p className="text-xs text-gray-500">Redirected back to custom client deliverables.</p>
                 </div>
-                <div className="bg-black/40 border border-white/5 p-6 rounded-2xl text-center">
+                <div className="bg-gray-100 dark:bg-black/40 border border-gray-200 dark:border-white/5 p-6 rounded-2xl text-center">
                   <span className="text-xs text-gray-500 block font-mono">Execution Speed</span>
                   <h3 className="text-cyan-gradient font-bold">
                     3X Faster
@@ -1067,7 +1067,7 @@ const AIWorkflowAutomation = () => {
         </section>
 
         {/* PRICING SECTION */}
-        <section id="pricing" className="mb-28 border-t border-white/5 pt-24">
+        <section id="pricing" className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">Investment Packages</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Transparent Build Pricing</h2>
@@ -1121,7 +1121,7 @@ const AIWorkflowAutomation = () => {
                   <span className="text-4xl font-extrabold text-gray-900 dark:text-white">₹35,000</span>
                   <span className="text-xs text-gray-600 dark:text-gray-400">/ setup</span>
                 </div>
-                <ul className="space-y-3.5 text-xs text-gray-300">
+                <ul className="space-y-3.5 text-xs text-gray-700 dark:text-gray-300">
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> 5 App Connections</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> AI Decision & Branching Logic</li>
                   <li className="flex items-center gap-2"><Check className="w-4 h-4 text-green-400" /> WhatsApp & Email automation</li>
@@ -1172,7 +1172,7 @@ const AIWorkflowAutomation = () => {
         </section>
 
         {/* FAQ SECTION */}
-        <section className="mb-28 border-t border-white/5 pt-24">
+        <section className="mb-28 border-t border-gray-200 dark:border-white/5 pt-24">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-cyan-400 font-bold block">FAQ</span>
             <h2 className="text-3xl md:text-5xl font-extrabold text-gray-900 dark:text-white">Frequently Asked Questions</h2>
@@ -1209,7 +1209,7 @@ const AIWorkflowAutomation = () => {
                         transition={{ duration: 0.2 }}
                         className="overflow-hidden"
                       >
-                        <div className="p-6 pt-0 border-t border-white/5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                        <div className="p-6 pt-0 border-t border-gray-200 dark:border-white/5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
                           {faq.a}
                         </div>
                       </motion.div>

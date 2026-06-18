@@ -19,7 +19,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div className="bg-[#050510] min-h-screen font-sans selection:bg-blue-500/30 overflow-x-hidden">
+    <div className="bg-gray-50 dark:bg-[#050510] min-h-screen font-sans selection:bg-blue-500/30 overflow-x-hidden">
       <Helmet>
         <title>AI Services & Software Development Jodhpur & Jaipur | TechieHelp</title>
         <meta name="description" content="TechieHelp is the #1 AI Services & Software Development agency in Jodhpur & Jaipur. Specializing in AI Calling Agents, workflow automation, and custom dashboards. Backed by global trust, scale, and startup milestones." />
