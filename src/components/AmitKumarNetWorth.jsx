@@ -45,14 +45,14 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "NewsArticle",
-    headline: "Amit Kumar Becomes India's Youngest Billionaire Startup Founder at Age 20",
+    headline: "Amit Kumar Becomes India's Youngest Millionaire Startup Founder at Age 20",
     datePublished: "2026-06-18",
     dateModified: "2026-06-18",
     author: { "@type": "Person", name: "Amit Kumar" },
     publisher: { "@type": "Organization", name: "TechieHelp", logo: { "@type": "ImageObject", url: "https://techiehelp.in/logo.png" } },
     image: "https://techiehelp.in/AmitPhoto.jpg",
     url: "https://techiehelp.in/amit-kumar-net-worth-1-crore-age-20",
-    description: "Amit Kumar, Founder & CEO of TechieHelp, becomes India's Youngest Billionaire Startup Founder at age 20 through AI solutions, software development, and international technology projects.",
+    description: "Amit Kumar, Founder & CEO of TechieHelp, becomes India's Youngest Millionaire Startup Founder at age 20 through AI solutions, software development, and international technology projects.",
     mainEntityOfPage: { "@type": "WebPage", "@id": "https://techiehelp.in/amit-kumar-net-worth-1-crore-age-20" },
   },
   {
@@ -61,7 +61,7 @@ const jsonLd = [
     mainEntity: [
       { "@type": "Question", name: "Who is Amit Kumar?", acceptedAnswer: { "@type": "Answer", text: "Amit Kumar is a 20-year-old entrepreneur, AI Engineer, and Founder & CEO of TechieHelp — an emerging AI and technology company based in Jodhpur, Rajasthan, India." } },
       { "@type": "Question", name: "Who is the founder of TechieHelp?", acceptedAnswer: { "@type": "Answer", text: "Amit Kumar is the Founder & CEO of TechieHelp and TechieHelp Institute of AI, based in Jodhpur, Rajasthan, India." } },
-      { "@type": "Question", name: "What is Amit Kumar's net worth?", acceptedAnswer: { "@type": "Answer", text: "As of 2026, Amit Kumar has become India's Youngest Billionaire Startup Founder at age 20, with an estimated net worth in the billionaire category achieved through AI solutions, software development, and international projects." } },
+      { "@type": "Question", name: "What is Amit Kumar's net worth?", acceptedAnswer: { "@type": "Answer", text: "As of 2026, Amit Kumar has become India's Youngest Millionaire Startup Founder at age 20, with a total net worth of ₹1 Crore+ achieved through AI solutions, software development, and international projects." } },
       { "@type": "Question", name: "What is Amit Kumar's monthly income?", acceptedAnswer: { "@type": "Answer", text: "Amit Kumar's estimated monthly income is ₹4–5 Lakhs, with an annual income of ₹50–60 Lakhs through international clients, software development, AI consulting, and training programs." } },
       { "@type": "Question", name: "What are Amit Kumar's achievements?", acceptedAnswer: { "@type": "Answer", text: "Amit Kumar has 12K+ LinkedIn followers, 72+ GitHub repositories, 1400+ contributions, is a 5-Star Java and Python Developer, top 2% global developer, and has 700+ workshop registrations." } },
       { "@type": "Question", name: "Where is Amit Kumar from?", acceptedAnswer: { "@type": "Answer", text: "Amit Kumar is from Jodhpur, Rajasthan, India. He is currently pursuing B.Tech in AI & ML at JIET Group of Institutions." } },
@@ -190,7 +190,7 @@ const AmitKumarNetWorth = () => {
     { year: "2024", event: "AICTE AI Intern — Government of India" },
     { year: "2025", event: "Project Admin at SSOC (Social Summer of Code)" },
     { year: "2025", event: "Mentor at GSSoC (GirlScript Summer of Code)" },
-    { year: "2026", event: "Became India's Youngest Billionaire Startup Founder at age 20 🏆" },
+    { year: "2026", event: "Became India's Youngest Millionaire Startup Founder at age 20 🏆" },
   ];
 
   const incomeSources = [
@@ -217,19 +217,19 @@ const AmitKumarNetWorth = () => {
   ];
 
   const faqs = [
-    { q: "Who is Amit Kumar?", a: "Amit Kumar is a 20-year-old entrepreneur, AI Engineer, Full Stack Developer, and Founder & CEO of TechieHelp. He is India's Youngest Billionaire Startup Founder, building one of India's fastest-growing AI and technology companies from Jodhpur, Rajasthan, while pursuing B.Tech in AI & ML at JIET Group of Institutions." },
-    { q: "Who is the founder of TechieHelp?", a: "Amit Kumar is the Founder & CEO of TechieHelp and TechieHelp Institute of AI. He founded TechieHelp in 2024 and has grown it into a billion-dollar vision AI and technology company serving international clients globally." },
-    { q: "What is Amit Kumar's net worth?", a: "As of 2026, Amit Kumar has become India's Youngest Billionaire Startup Founder at age 20. His net worth has been built through multiple income streams including international clients, AI consulting, software development, training programs, and digital products." },
+    { q: "Who is Amit Kumar?", a: "Amit Kumar is a 20-year-old entrepreneur, AI Engineer, Full Stack Developer, and Founder & CEO of TechieHelp. He is India's Youngest Millionaire Startup Founder, building one of India's fastest-growing AI and technology companies from Jodhpur, Rajasthan, while pursuing B.Tech in AI & ML at JIET Group of Institutions." },
+    { q: "Who is the founder of TechieHelp?", a: "Amit Kumar is the Founder & CEO of TechieHelp and TechieHelp Institute of AI. He founded TechieHelp in 2024 and has grown it into a million-dollar vision AI and technology company serving international clients globally." },
+    { q: "What is Amit Kumar's net worth?", a: "As of 2026, Amit Kumar has become India's Youngest Millionaire Startup Founder at age 20. His total net worth is ₹1 Crore+, built through multiple income streams including international clients, AI consulting, software development, training programs, and digital products." },
     { q: "What is Amit Kumar's monthly income?", a: "Amit Kumar's estimated monthly income is ₹4–5 Lakhs, translating to an annual income of ₹50–60 Lakhs. His income comes from international client projects, software development, AI consulting, SEO services, and training programs." },
-    { q: "What are Amit Kumar's achievements?", a: "Amit Kumar has 12,000+ LinkedIn followers, 72+ GitHub repositories, 1400+ code contributions, 5-Star ratings as Java & Python Developer, is ranked in the Top 2% of global developers, conducted 700+ workshop registrations, and is now India's Youngest Billionaire Startup Founder at age 20." },
-    { q: "Where is Amit Kumar from?", a: "Amit Kumar is from Jodhpur, Rajasthan, India. He is currently pursuing his B.Tech in AI & ML at JIET Group of Institutions while building TechieHelp into a globally recognized technology empire." },
+    { q: "What are Amit Kumar's achievements?", a: "Amit Kumar has 12,000+ LinkedIn followers, 72+ GitHub repositories, 1400+ code contributions, 5-Star ratings as Java & Python Developer, is ranked in the Top 2% of global developers, conducted 700+ workshop registrations, and is now India's Youngest Millionaire Startup Founder at age 20." },
+    { q: "Where is Amit Kumar from?", a: "Amit Kumar is from Jodhpur, Rajasthan, India. He is currently pursuing his B.Tech in AI & ML at JIET Group of Institutions while building TechieHelp into a globally recognized technology company." },
   ];
 
   const relatedArticles = [
-    { title: "Amit Kumar Biography — From Student to India's Youngest Billionaire", desc: "The complete story of how Amit Kumar built TechieHelp from a college dorm room to a billion-dollar vision company.", href: "/about-us", icon: BookOpen },
+    { title: "Amit Kumar Biography — From Student to India's Youngest Millionaire", desc: "The complete story of how Amit Kumar built TechieHelp from a college dorm room to a ₹1 Crore+ company.", href: "/about-us", icon: BookOpen },
     { title: "TechieHelp Success Story — Building India's AI Empire", desc: "How TechieHelp became one of India's fastest-growing technology companies serving international clients worldwide.", href: "/about-us", icon: Rocket },
-    { title: "How TechieHelp Was Built — The Billionaire Startup Journey", desc: "Behind the scenes of building India's youngest billionaire-led AI and technology startup at age 19–20 in Rajasthan.", href: "/project-portfolio", icon: Building2 },
-    { title: "Journey From Student To Billionaire — Amit Kumar's Blueprint", desc: "From B.Tech student to India's Youngest Billionaire Startup Founder — Amit Kumar's remarkable entrepreneurial path.", href: "/services", icon: Trophy },
+    { title: "How TechieHelp Was Built — The Millionaire Startup Journey", desc: "Behind the scenes of building India's youngest millionaire-led AI and technology startup at age 19–20 in Rajasthan.", href: "/project-portfolio", icon: Building2 },
+    { title: "Journey From Student To Millionaire — Amit Kumar's Blueprint", desc: "From B.Tech student to India's Youngest Millionaire Startup Founder — Amit Kumar's remarkable entrepreneurial path.", href: "/services", icon: Trophy },
   ];
 
   const featuredIn = [
@@ -317,7 +317,7 @@ const AmitKumarNetWorth = () => {
               <div className="flex items-center gap-3 mb-6">
                 <span className="inline-flex items-center gap-2 bg-secondary/10 border border-secondary/30 text-secondary text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wider">
                   <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
-                  Breaking · India's Youngest Billionaire Startup Founder · June 2026
+                  Breaking · India's Youngest Millionaire Startup Founder · June 2026
                 </span>
               </div>
             </FadeIn>
@@ -328,7 +328,7 @@ const AmitKumarNetWorth = () => {
                 <FadeIn delay={0.1}>
                   <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white leading-tight mb-4" itemProp="headline">
                     Amit Kumar Becomes{" "}
-                    <span className="text-gradient">India's Youngest Billionaire</span>{" "}
+                    <span className="text-gradient">India's Youngest Millionaire</span>{" "}
                     Startup Founder at Age 20
                   </h1>
                 </FadeIn>
@@ -401,7 +401,7 @@ const AmitKumarNetWorth = () => {
                     <motion.div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-white dark:bg-gray-900 shadow-xl rounded-full px-4 py-2 flex items-center gap-2 border border-secondary/30"
                       initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}>
                       <Trophy className="w-4 h-4 text-yellow-500" />
-                      <span className="text-xs font-bold text-gray-900 dark:text-white whitespace-nowrap">Youngest Billionaire · Age 20</span>
+                      <span className="text-xs font-bold text-gray-900 dark:text-white whitespace-nowrap">Youngest Millionaire · Age 20</span>
                     </motion.div>
                   </div>
                 </FadeIn>
@@ -425,7 +425,7 @@ const AmitKumarNetWorth = () => {
                 <blockquote className="text-lg sm:text-xl text-gray-700 dark:text-gray-200 leading-relaxed font-medium mb-0">
                   <Quote className="w-8 h-8 text-secondary/30 mb-3" />
                   <p>
-                    Amit Kumar, Founder &amp; CEO of <strong className="text-secondary">TechieHelp</strong> and <strong className="text-secondary">TechieHelp Institute of AI</strong>, has officially announced that he has become <strong className="text-gray-900 dark:text-white">India's Youngest Billionaire Startup Founder</strong> at age 20. Through AI solutions, software development, international projects, and a rapidly growing technology empire, Amit Kumar is redefining what's possible for a young Indian entrepreneur — all while completing his B.Tech in AI &amp; ML.
+                    Amit Kumar, Founder &amp; CEO of <strong className="text-secondary">TechieHelp</strong> and <strong className="text-secondary">TechieHelp Institute of AI</strong>, has officially announced that he has become <strong className="text-gray-900 dark:text-white">India's Youngest Millionaire Startup Founder</strong> at age 20. With a total net worth of <strong className="text-secondary">₹1 Crore+</strong>, built through AI solutions, software development, international projects, and a rapidly growing technology company, Amit Kumar is redefining what's possible for a young Indian entrepreneur — all while completing his B.Tech in AI &amp; ML.
                   </p>
                 </blockquote>
               </div>
