@@ -71,7 +71,7 @@ const ROICalculator = () => {
               <Calculator className="w-6 h-6 text-cyan-500" />
             </div>
           </div>
-          <h2 className="font-poppins font-bold ss:text-[48px] text-[38px] text-gray-900 dark:text-white leading-tight mb-6">
+          <h2 className="font-poppins font-bold ss:text-[36px] text-[28px] text-gray-900 dark:text-white leading-tight mb-6">
             Calculate Your <span className="text-gradient">ROI</span>
           </h2>
           <p className="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">

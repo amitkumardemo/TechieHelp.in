@@ -9,7 +9,7 @@ export const navLinks = [
   },
   {
     id: "services",
-    title: "AI Solutions",
+    title: "Products",
     subLinks: [
       {
         id: "ai-lead-engine",
@@ -43,11 +43,7 @@ export const navLinks = [
       }
     ]
   },
-  {
-    id: "project-portfolio",
-    title: "Portfolio",
-    path: "/project-portfolio"
-  },
+
   {
     id: "careers",
     title: "Careers",

@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getAuthUrl } from "@/lib/gmail";
+import { prisma } from "@/lib/prisma";
 
 /**
  * GET /api/gmail/connect
@@ -12,6 +13,17 @@ export async function GET(req: NextRequest) {
     if (!workspaceId) {
       return NextResponse.json({ error: "workspaceId is required" }, { status: 400 });
     }
+
+    // Ensure workspace exists in the database
+    await prisma.workspace.upsert({
+      where: { id: workspaceId },
+      create: {
+        id: workspaceId,
+        name: "My Workspace",
+        slug: workspaceId,
+      },
+      update: {},
+    });
 
     const authUrl = getAuthUrl(workspaceId);
     return NextResponse.json({ authUrl });

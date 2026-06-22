@@ -46,6 +46,31 @@ export async function POST(req: NextRequest) {
           .join("\n")
       : "Best regards,\nTeam TechieHelp.in";
 
+    // Load CustomerMemory
+    const customerMemory = email.customerMemoryId
+      ? await prisma.customerMemory.findUnique({
+          where: { id: email.customerMemoryId },
+        })
+      : null;
+
+    // Load last 20 emails in the same conversation
+    let conversationHistory: any[] = [];
+    if (email.customerMemoryId) {
+      const dbHistory = await prisma.email.findMany({
+        where: {
+          workspaceId,
+          customerMemoryId: email.customerMemoryId,
+        },
+        orderBy: { receivedAt: "desc" },
+        take: 20,
+      });
+      conversationHistory = dbHistory.reverse().map((h) => ({
+        sender: h.sender,
+        body: h.body || h.snippet || "",
+        receivedAt: h.receivedAt,
+      }));
+    }
+
     // Generate reply with Gemini
     const replyText = await generateEmailReply({
       originalSubject: email.subject ?? "",
@@ -54,6 +79,8 @@ export async function POST(req: NextRequest) {
       intent: email.intent ?? "General Inquiry",
       tone,
       signature: signatureText,
+      customerMemory,
+      conversationHistory,
     });
 
     // Save as draft AIReply

@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  engineType = "library"
 }
 
 datasource db {
@@ -50,6 +51,7 @@ model Workspace {
   vapiIntegration         VapiIntegration?
   aiConfiguration         AIConfiguration?
   emailSignature          EmailSignature?
+  companyKnowledge        CompanyKnowledge?
   leads                   Lead[]
   emails                  Email[]
   workflows               Workflow[]
@@ -58,6 +60,9 @@ model Workspace {
   notifications           Notification[]
   calls                   Call[]
   whatsAppMessages        WhatsAppMessage[]
+  customerMemories        CustomerMemory[]
+  conversations           Conversation[]
+  threads                 Thread[]
 
   @@index([slug])
   @@index([status])
@@ -111,12 +116,20 @@ model GmailIntegration {
   status       String    @default("CONNECTED")
   lastSyncAt   DateTime?
   connectedAt  DateTime  @default(now())
-  tokenExpiry  DateTime?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
+  tokenExpiry           DateTime?
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  // Auto-Reply Settings
+  autoReplyEnabled      Boolean   @default(false)
+  autoReplyTone         String    @default("Professional")
+  autoReplyInstructions String?
+  autoReplyHours        String?
+  autoReplyDelay        Int       @default(5)
+  autoReplySignature    String?
 
   // Relations
-  workspace    Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspace             Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
 
   @@index([workspaceId])
 }
@@ -182,65 +195,75 @@ model AIConfiguration {
 }
 
 model Lead {
-  id               String      @id @default(cuid())
+  id               String          @id @default(cuid())
   workspaceId      String
   name             String
   email            String
   phone            String?
   source           String?
-  leadScore        Int         @default(0)
-  priority         String      @default("MEDIUM")
-  status           LeadStatus  @default(NEW)
-  estimatedRevenue Float       @default(0.0)
+  leadScore        Int             @default(0)
+  priority         String          @default("MEDIUM")
+  status           LeadStatus      @default(NEW)
+  estimatedRevenue Float           @default(0.0)
   intent           String?
   notes            String?
-  createdAt        DateTime    @default(now())
-  updatedAt        DateTime    @updatedAt
+  customerMemoryId String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
 
   // Relations
-  workspace        Workspace   @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  workspace        Workspace       @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
   emails           Email[]
   calls            Call[]
   aiReplies        AIReply[]
+  customerMemory   CustomerMemory? @relation(fields: [customerMemoryId], references: [id], onDelete: SetNull)
 
   @@index([workspaceId])
   @@index([email])
   @@index([status])
   @@index([leadScore])
+  @@index([customerMemoryId])
 }
 
 model Email {
-  id             String    @id @default(cuid())
-  workspaceId    String
-  leadId         String?
-  gmailMessageId String?
-  subject        String?
-  sender         String
-  recipient      String
-  body           String?
-  snippet        String?
-  receivedAt     DateTime  @default(now())
-  isRead         Boolean   @default(false)
-  isArchived     Boolean   @default(false)
-  status         String    @default("RECEIVED")
-  leadScore      Int       @default(0)
-  priority       String?
-  intent         String?
-  sentiment      String?
-  aiSummary      String?
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  id               String          @id @default(cuid())
+  workspaceId      String
+  leadId           String?
+  gmailMessageId   String?
+  subject          String?
+  sender           String
+  recipient        String
+  body             String?
+  snippet          String?
+  receivedAt       DateTime        @default(now())
+  isRead           Boolean         @default(false)
+  isArchived       Boolean         @default(false)
+  status           String          @default("RECEIVED")
+  leadScore        Int             @default(0)
+  priority         String?
+  intent           String?
+  sentiment        String?
+  aiSummary        String?
+  customerMemoryId String?
+  threadId         String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
 
   // Relations
-  workspace      Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
-  lead           Lead?     @relation(fields: [leadId], references: [id], onDelete: SetNull)
-  aiReplies      AIReply[]
+  workspace        Workspace       @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  lead             Lead?           @relation(fields: [leadId], references: [id], onDelete: SetNull)
+  aiReplies        AIReply[]
+  attachments      Attachment[]
+  customerMemory   CustomerMemory? @relation(fields: [customerMemoryId], references: [id], onDelete: SetNull)
+  thread           Thread?         @relation(fields: [threadId], references: [id], onDelete: SetNull)
 
   @@index([workspaceId])
   @@index([leadId])
   @@index([gmailMessageId])
   @@index([isRead])
   @@index([leadScore])
+  @@index([customerMemoryId])
+  @@index([threadId])
 }
 
 model AIReply {
@@ -249,15 +272,24 @@ model AIReply {
   leadId         String?
   generatedReply String
   editedReply    String?
-  sentAt         DateTime?
-  status         String    @default("DRAFT")
-  model          String?
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
+  sentAt           DateTime?
+  status           String    @default("DRAFT")
+  model            String?
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  // Upgraded fields
+  recipient        String?
+  subject          String?
+  threadId         String?
+  tone             String?
+  confidence       Float?    @default(0.85)
+  revenuePotential Float?    @default(0.0)
+  responseReceived Boolean   @default(false)
 
   // Relations
-  email          Email?    @relation(fields: [emailId], references: [id], onDelete: Cascade)
-  lead           Lead?     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+  email            Email?    @relation(fields: [emailId], references: [id], onDelete: Cascade)
+  lead             Lead?     @relation(fields: [leadId], references: [id], onDelete: Cascade)
 
   @@index([emailId])
   @@index([leadId])
@@ -412,4 +444,117 @@ model EmailSignature {
   workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
 
   @@index([workspaceId])
+}
+
+model CustomerMemory {
+  id                String    @id @default(cuid())
+  workspaceId       String
+  email             String    @unique
+  name              String?
+  relationshipScore Int       @default(0)
+  knownSince        DateTime  @default(now())
+  lastSummary       String?
+  budget            String?
+  painPoints        String?
+  requirements      String?
+  lastMeetingAt     DateTime?
+  lifetimeValue     Float     @default(0.0)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  // Relations
+  workspace         Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  leads             Lead[]
+  emails            Email[]
+
+  @@index([workspaceId])
+  @@index([email])
+}
+
+model Conversation {
+  id            String    @id @default(cuid())
+  workspaceId   String
+  customerEmail String
+  status        String    @default("ACTIVE")
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  workspace     Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  threads       Thread[]
+
+  @@index([workspaceId])
+  @@index([customerEmail])
+}
+
+model Thread {
+  id             String        @id @default(cuid())
+  workspaceId    String
+  gmailThreadId  String        @unique
+  conversationId String?
+  snippet        String?
+  subject        String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  // Relations
+  workspace      Workspace     @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  conversation   Conversation? @relation(fields: [conversationId], references: [id], onDelete: SetNull)
+  emails         Email[]
+
+  @@index([workspaceId])
+  @@index([gmailThreadId])
+  @@index([conversationId])
+}
+
+model Attachment {
+  id        String   @id @default(cuid())
+  emailId   String
+  filename  String
+  mimeType  String
+  size      Int
+  createdAt DateTime @default(now())
+
+  // Relations
+  email     Email    @relation(fields: [emailId], references: [id], onDelete: Cascade)
+
+  @@index([emailId])
+}
+
+model CompanyKnowledge {
+  id                       String         @id @default(cuid())
+  workspaceId              String         @unique
+  websiteUrl               String
+  pagesIndexed             Int            @default(0)
+  lastSyncAt               DateTime?
+  knowledgeSize            Int            @default(0)
+  autoSync                 Boolean        @default(true)
+  enableLearning           Boolean        @default(true)
+  enableConversationMemory Boolean        @default(true)
+  status                   String         @default("IDLE")
+  createdAt                DateTime       @default(now())
+  updatedAt                DateTime       @updatedAt
+
+  // Relations
+  workspace                Workspace      @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  pages                    CrawledPage[]
+
+  @@index([workspaceId])
+}
+
+model CrawledPage {
+  id                 String           @id @default(cuid())
+  companyKnowledgeId String
+  url                String
+  title              String?
+  content            String?
+  lastCrawledAt      DateTime         @default(now())
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+
+  // Relations
+  companyKnowledge   CompanyKnowledge @relation(fields: [companyKnowledgeId], references: [id], onDelete: Cascade)
+
+  @@unique([companyKnowledgeId, url])
+  @@index([companyKnowledgeId])
 }

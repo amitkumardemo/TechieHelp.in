@@ -1,5 +1,4 @@
-import { google } from "googleapis";
-import { OAuth2Client } from "google-auth-library";
+import { google, Auth } from "googleapis";
 
 const SCOPES = [
   "openid",
@@ -11,7 +10,7 @@ const SCOPES = [
 ];
 
 /** Creates a configured Google OAuth2 client */
-export function getOAuthClient(): OAuth2Client {
+export function getOAuthClient(): any {
   return new google.auth.OAuth2(
     process.env.GOOGLE_CLIENT_ID!,
     process.env.GOOGLE_CLIENT_SECRET!,
@@ -59,7 +58,7 @@ export async function exchangeCode(
 export function getAuthenticatedClient(
   accessToken: string,
   refreshToken: string
-): OAuth2Client {
+): any {
   const oauth2Client = getOAuthClient();
   oauth2Client.setCredentials({
     access_token: accessToken,
@@ -81,6 +80,12 @@ export async function refreshAccessToken(
   };
 }
 
+export interface ParsedAttachment {
+  filename: string;
+  mimeType: string;
+  size: number;
+}
+
 export interface ParsedEmail {
   gmailMessageId: string;
   subject: string;
@@ -90,11 +95,15 @@ export interface ParsedEmail {
   body: string;
   receivedAt: Date;
   isRead: boolean;
+  gmailThreadId: string;
+  labelIds: string[];
+  attachments: ParsedAttachment[];
 }
 
-/** Fetches unread emails from Gmail inbox */
-export async function fetchInboxEmails(
-  auth: OAuth2Client,
+/** Fetches emails matching a query (e.g. "in:inbox" or "label:SENT") */
+export async function fetchEmailsForQuery(
+  auth: any,
+  query: string,
   maxResults = 20
 ): Promise<ParsedEmail[]> {
   const gmail = google.gmail({ version: "v1", auth });
@@ -102,7 +111,7 @@ export async function fetchInboxEmails(
   const listResponse = await gmail.users.messages.list({
     userId: "me",
     maxResults,
-    q: "in:inbox",
+    q: query,
   });
 
   const messages = listResponse.data.messages ?? [];
@@ -123,20 +132,47 @@ export async function fetchInboxEmails(
         headers.find((h) => h.name?.toLowerCase() === name.toLowerCase())
           ?.value ?? "";
 
-      const subject = getHeader("Subject");
+      const subject = getHeader("Subject") || "(No Subject)";
       const sender = getHeader("From");
       const recipient = getHeader("To");
       const dateStr = getHeader("Date");
 
-      // Extract body text
+      // Extract body recursively
       let body = "";
-      const parts = detail.data.payload?.parts ?? [];
-      const textPart =
-        parts.find((p) => p.mimeType === "text/plain") ??
-        detail.data.payload;
+      const findTextBody = (payloadPart: any): string => {
+        if (payloadPart.mimeType === "text/plain" && payloadPart.body?.data) {
+          return Buffer.from(payloadPart.body.data, "base64").toString("utf-8");
+        }
+        if (payloadPart.parts) {
+          for (const p of payloadPart.parts) {
+            const found = findTextBody(p);
+            if (found) return found;
+          }
+        }
+        return "";
+      };
 
-      if (textPart?.body?.data) {
-        body = Buffer.from(textPart.body.data, "base64").toString("utf-8");
+      body = findTextBody(detail.data.payload ?? {}) || detail.data.snippet || "";
+
+      // Extract attachments
+      const attachments: ParsedAttachment[] = [];
+      const extractParts = (partsList: any[]) => {
+        for (const part of partsList) {
+          if (part.filename && part.body && (part.body.attachmentId || part.body.size)) {
+            attachments.push({
+              filename: part.filename,
+              mimeType: part.mimeType || "application/octet-stream",
+              size: part.body.size || 0,
+            });
+          }
+          if (part.parts) {
+            extractParts(part.parts);
+          }
+        }
+      };
+
+      if (detail.data.payload?.parts) {
+        extractParts(detail.data.payload.parts);
       }
 
       const labelIds = detail.data.labelIds ?? [];
@@ -151,9 +187,12 @@ export async function fetchInboxEmails(
         body: body.slice(0, 5000), // Limit body size
         receivedAt: dateStr ? new Date(dateStr) : new Date(),
         isRead,
+        gmailThreadId: detail.data.threadId ?? "",
+        labelIds,
+        attachments,
       });
-    } catch {
-      // Skip emails that fail to parse
+    } catch (e) {
+      console.error(`Failed to parse email ${msg.id}:`, e);
       continue;
     }
   }
@@ -161,9 +200,17 @@ export async function fetchInboxEmails(
   return emails;
 }
 
+/** Fetches unread emails from Gmail inbox */
+export async function fetchInboxEmails(
+  auth: any,
+  maxResults = 20
+): Promise<ParsedEmail[]> {
+  return fetchEmailsForQuery(auth, "in:inbox", maxResults);
+}
+
 /** Sends an email via Gmail API from the connected account */
 export async function sendEmail(
-  auth: OAuth2Client,
+  auth: any,
   to: string,
   subject: string,
   body: string,

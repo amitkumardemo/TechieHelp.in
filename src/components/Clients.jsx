@@ -1,197 +1,217 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Globe, CheckSquare, ShieldCheck, Award, MapPin, Trophy, ArrowRight, Zap, CheckCircle2, Building2, TrendingUp } from 'lucide-react';
+import { Globe, ShieldCheck, Award, MapPin, Zap, TrendingUp, ArrowRight } from 'lucide-react';
 
-const BentoCard = ({ title, subtitle, desc, metric, metricLabel, icon: Icon, colorClass, spanClass = "md:col-span-1", delay = 0, children }) => (
-  <motion.div 
+// Animated counter hook
+const useCounter = (target, duration = 2000, shouldStart = false) => {
+  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (!shouldStart) return;
+    let startTime = null;
+    const step = (timestamp) => {
+      if (!startTime) startTime = timestamp;
+      const progress = Math.min((timestamp - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.floor(eased * target));
+      if (progress < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }, [target, duration, shouldStart]);
+  return count;
+};
+
+const StatCard = ({ value, suffix = '', label, sublabel, delay = 0, onVisible }) => {
+  const [visible, setVisible] = useState(false);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setVisible(true);
+        if (onVisible) onVisible();
+        observer.disconnect();
+      }
+    }, { threshold: 0.5 });
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  const numericTarget = parseInt(value.replace(/\D/g, ''), 10) || 0;
+  const displayCount = useCounter(numericTarget, 2000, visible);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay }}
+      className="group relative bg-white border border-gray-100 rounded-3xl p-6 md:p-8 overflow-hidden hover:border-gray-200 hover:shadow-[0_8px_40px_rgba(0,0,0,0.06)] transition-all duration-300"
+    >
+      {/* Subtle glow on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#33bbcf]/3 to-indigo-500/3 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+      <div className="relative z-10">
+        <div className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white leading-none mb-2 tabular-nums">
+          {visible ? displayCount : 0}{suffix}
+        </div>
+        <div className="text-sm font-semibold text-gray-700 mb-1">{label}</div>
+        {sublabel && <div className="text-xs text-gray-400">{sublabel}</div>}
+      </div>
+    </motion.div>
+  );
+};
+
+const BadgeCard = ({ icon: Icon, title, subtitle, desc, color, delay = 0 }) => (
+  <motion.div
     initial={{ opacity: 0, y: 20 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay }}
-    className={`bg-white dark:bg-[#0a0a0a] border border-gray-200 dark:border-white/10 rounded-3xl p-6 md:p-8 shadow-sm hover:shadow-xl transition-all relative overflow-hidden group flex flex-col justify-between min-h-[250px] ${spanClass}`}
+    className="group relative bg-white border border-gray-100 rounded-3xl p-6 overflow-hidden hover:border-gray-200 hover:shadow-[0_8px_40px_rgba(0,0,0,0.06)] transition-all duration-300"
   >
-    {/* Subtle Background Glow */}
-    <div className={`absolute -top-20 -right-20 w-64 h-64 bg-gradient-to-br ${colorClass} rounded-full blur-[80px] opacity-5 group-hover:opacity-10 transition-opacity pointer-events-none`} />
-    
-    <div className="relative z-10 flex flex-col h-full">
-      <div className="flex justify-between items-start mb-6">
-        <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-white/5 flex items-center justify-center border border-gray-100 dark:border-white/10 group-hover:scale-110 transition-transform">
-          <Icon className="w-6 h-6 text-gray-800 dark:text-white" />
-        </div>
-        <span className="text-[10px] uppercase font-mono tracking-widest text-[#33bbcf] bg-[#33bbcf]/10 px-3 py-1 rounded-full border border-[#33bbcf]/20">
-          Verified
-        </span>
+    <div
+      className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+      style={{ background: `radial-gradient(ellipse at top right, ${color}08, transparent 70%)` }}
+    />
+    <div className="relative z-10">
+      <div
+        className="w-10 h-10 rounded-2xl flex items-center justify-center mb-4"
+        style={{ backgroundColor: `${color}12`, border: `1px solid ${color}20` }}
+      >
+        <Icon className="w-5 h-5" style={{ color }} />
       </div>
-
-      <div className="flex-1">
-        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-1 leading-tight">
-          {title}
-        </h3>
-        {subtitle && (
-          <p className={`text-sm font-semibold bg-clip-text text-transparent bg-gradient-to-r ${colorClass} mb-3`}>
-            {subtitle}
-          </p>
-        )}
-        <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mt-2 line-clamp-2">
-          {desc}
-        </p>
-      </div>
-
-      {/* Embedded Visuals or Metrics */}
-      <div className="mt-6 pt-6 border-t border-gray-100 dark:border-white/10 flex items-end justify-between">
-        <div>
-          <p className="text-[10px] text-gray-400 dark:text-gray-500 font-mono uppercase tracking-wider mb-1">{metricLabel}</p>
-          <p className="text-gray-900 dark:text-white font-bold text-sm">{metric}</p>
-        </div>
-        {children && (
-          <div className="flex-shrink-0 h-10 flex items-center justify-end">
-            {children}
-          </div>
-        )}
-      </div>
+      <h3 className="text-lg font-bold text-gray-900 mb-0.5">{title}</h3>
+      {subtitle && <p className="text-xs font-semibold mb-2" style={{ color }}>{subtitle}</p>}
+      <p className="text-sm text-gray-500 leading-relaxed">{desc}</p>
     </div>
   </motion.div>
 );
 
-const Clients = () => (
-  <section className="w-full bg-white dark:bg-[#030014] relative py-20 transition-colors duration-300">
-    
-    {/* Header Section */}
-    <div className="max-w-3xl mx-auto text-center px-6 mb-16 relative z-10">
-      <motion.div
-        initial={{ opacity: 0, y: 10 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#33bbcf]/10 border border-[#33bbcf]/20 mb-4"
-      >
-        <Trophy className="w-3 h-3 text-[#33bbcf]" />
-        <span className="text-[10px] font-mono uppercase tracking-widest text-[#33bbcf] font-bold">Milestones</span>
-      </motion.div>
-      
-      <motion.h2
-        initial={{ opacity: 0, y: 15 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.1 }}
-        className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-4 leading-tight tracking-tight"
-      >
-        Global Trust & <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#33bbcf] to-blue-500">Recognition</span>
-      </motion.h2>
-      
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.2 }}
-        className="text-base text-gray-600 dark:text-gray-400"
-      >
-        From global deployments to startup recognition, TechieHelp is building India's emerging AI Workforce Platform.
-      </motion.p>
-    </div>
+const Clients = () => {
+  return (
+    <section className="py-20 md:py-28 bg-gray-50/50 relative overflow-hidden border-t border-gray-100">
+      {/* Background */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#33bbcf]/3 blur-[100px] rounded-full pointer-events-none" />
 
-    {/* Compact Bento Grid Layout */}
-    <div className="max-w-[1100px] mx-auto px-6">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        {/* Row 1 */}
-        <BentoCard
-          title="16+ Countries Served"
-          desc="Supporting businesses across India, USA, UAE, Japan, Brazil, Nigeria, Kenya, Sri Lanka, and more globally."
-          metricLabel="Active Network"
-          metric="Global AI Workforce"
-          icon={Globe}
-          colorClass="from-cyan-400 to-blue-500"
-          spanClass="md:col-span-2"
-          delay={0.1}
-        >
-          <div className="flex gap-1">
-            {[...Array(5)].map((_, i) => (
-              <motion.div key={i} className="w-2 h-2 rounded-full bg-[#33bbcf]" animate={{ opacity: [0.3, 1, 0.3] }} transition={{ duration: 1.5, delay: i * 0.2, repeat: Infinity }} />
-            ))}
-          </div>
-        </BentoCard>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
-        <BentoCard
-          title="100+ Projects"
-          desc="Deployed AI Employees and Workflow Automations across multiple industries."
-          metricLabel="Delivery Status"
-          metric="Live in Production"
-          icon={Building2}
-          colorClass="from-blue-400 to-indigo-500"
-          spanClass="md:col-span-1"
-          delay={0.2}
-        >
-           <TrendingUp className="w-6 h-6 text-indigo-500" />
-        </BentoCard>
+        {/* Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-gray-200 shadow-sm mb-5"
+          >
+            <Globe className="w-3 h-3 text-[#33bbcf]" />
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">GLOBAL TRUST</span>
+          </motion.div>
 
-        {/* Row 2 */}
-        <BentoCard
-          title="ISO 9001 Verified"
-          desc="Recognized for maintaining structured quality processes and operational excellence."
-          metricLabel="Standard"
-          metric="Quality Management"
-          icon={ShieldCheck}
-          colorClass="from-emerald-400 to-teal-500"
-          spanClass="md:col-span-1"
-          delay={0.3}
-        >
-          <CheckCircle2 className="w-6 h-6 text-emerald-500" />
-        </BentoCard>
+          <motion.h2
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.08 }}
+            className="font-poppins font-black text-3xl sm:text-4xl md:text-5xl text-gray-900 dark:text-white tracking-tight leading-tight mb-4"
+          >
+            Trusted Across{' '}
+            <span className="bg-gradient-to-r from-[#33bbcf] to-blue-500 bg-clip-text text-transparent">
+              16+ Countries
+            </span>
+          </motion.h2>
 
-        <BentoCard
-          title="Rajasthan Summit"
-          subtitle="Selected in 2026"
-          desc="Chosen among innovative startups contributing to technology-driven business transformation."
-          metricLabel="Recognition"
-          metric="Innovation Excellence"
-          icon={Award}
-          colorClass="from-orange-400 to-amber-500"
-          spanClass="md:col-span-1"
-          delay={0.4}
-        />
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.15 }}
+            className="text-base text-gray-500 max-w-xl mx-auto"
+          >
+            From enterprise deployments to global summits, LeadAI is redefining how the world's fastest-growing companies automate revenue.
+          </motion.p>
+        </div>
 
-        <BentoCard
-          title="Seaside Summit"
-          subtitle="Armenia 2026"
-          desc="Selected globally for participation among emerging startups building the next gen platforms."
-          metricLabel="Global Reach"
-          metric="International Cohort"
-          icon={MapPin}
-          colorClass="from-pink-400 to-rose-500"
-          spanClass="md:col-span-1"
-          delay={0.5}
-        />
+        {/* Stats Row */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          <StatCard value="16" suffix="+" label="Countries Served" sublabel="Global network" delay={0.1} />
+          <StatCard value="100" suffix="+" label="Deployments" sublabel="Live in production" delay={0.15} />
+          <StatCard value="99" suffix=".99%" label="Uptime SLA" sublabel="Enterprise grade" delay={0.2} />
+          <StatCard value="9001" suffix="" label="ISO Certified" sublabel="Quality management" delay={0.25} />
+        </div>
 
-        {/* Row 3 - Full Width CTA replacing the massive Final Card */}
-        <motion.div 
+        {/* Badge Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+          <BadgeCard
+            icon={Award}
+            title="Rajasthan Startup Summit"
+            subtitle="2026 Innovation Award"
+            desc="Selected among India's most innovative startups driving business transformation through AI."
+            color="#f59e0b"
+            delay={0.2}
+          />
+          <BadgeCard
+            icon={MapPin}
+            title="Seaside Summit Armenia"
+            subtitle="International Cohort 2026"
+            desc="Chosen globally for participation among emerging platforms shaping the next generation of AI."
+            color="#ec4899"
+            delay={0.25}
+          />
+          <BadgeCard
+            icon={ShieldCheck}
+            title="ISO 9001 Verified"
+            subtitle="Quality Assured"
+            desc="Recognized for structured quality processes, operational excellence, and enterprise-grade reliability."
+            color="#10b981"
+            delay={0.3}
+          />
+        </div>
+
+        {/* Bottom CTA Banner */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.6 }}
-          className="md:col-span-3 bg-gradient-to-r from-gray-900 to-black rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-8 border border-[#33bbcf]/20 shadow-lg relative overflow-hidden"
+          transition={{ delay: 0.35 }}
+          className="relative overflow-hidden bg-[#090a0f] rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
+          style={{ backgroundColor: '#090a0f' }}
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[#33bbcf] rounded-full blur-[100px] opacity-10 pointer-events-none" />
-          
-          <div className="flex-1 relative z-10 text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">Building The Future Workforce</h3>
-            <p className="text-gray-400 text-sm md:text-base max-w-xl">
-              TechieHelp helps businesses deploy AI Employees to capture leads, automate workflows, and scale operations without bottlenecks.
+          <div className="absolute top-0 right-0 w-[400px] h-[200px] bg-[#33bbcf]/10 blur-[80px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[200px] h-[200px] bg-indigo-500/10 blur-[60px] rounded-full pointer-events-none" />
+
+          <div className="relative z-10 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <Zap className="w-3.5 h-3.5 text-[#33bbcf]" />
+              <span className="text-[10px] font-bold text-[#33bbcf] uppercase tracking-widest">Autonomous Revenue Platform</span>
+            </div>
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+              Building The Future Of Revenue
+            </h3>
+            <p className="text-gray-400 text-sm max-w-lg">
+              LeadAI helps businesses deploy AI agents to capture leads, automate workflows, and scale revenue without bottlenecks.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 relative z-10 w-full md:w-auto">
-            <a href="https://calendar.app.google/XY3C9NoNJuDAtbZp9" target="_blank" rel="noreferrer" className="w-full sm:w-auto px-6 py-3 rounded-xl bg-white text-black font-bold hover:bg-gray-100 transition-colors text-sm flex items-center justify-center gap-2 whitespace-nowrap">
+          <div className="flex flex-col sm:flex-row gap-3 relative z-10 shrink-0">
+            <a
+              href="https://calendar.app.google/XY3C9NoNJuDAtbZp9"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-bold text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
+            >
               Book Strategy Call <ArrowRight className="w-4 h-4" />
             </a>
-            <a href="/services/ai-lead-engine" className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#33bbcf]/10 text-[#33bbcf] font-bold border border-[#33bbcf]/20 hover:bg-[#33bbcf]/20 transition-colors text-sm flex items-center justify-center gap-2 whitespace-nowrap">
-              Explore Platform <Zap className="w-4 h-4" />
+            <a
+              href="/services/ai-lead-engine"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#33bbcf]/10 text-[#33bbcf] font-bold border border-[#33bbcf]/20 hover:bg-[#33bbcf]/20 transition-colors text-sm whitespace-nowrap"
+            >
+              Explore Platform <TrendingUp className="w-4 h-4" />
             </a>
           </div>
         </motion.div>
-
       </div>
-    </div>
-  </section>
-);
+    </section>
+  );
+};
 
 export default Clients;

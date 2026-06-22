@@ -9,8 +9,17 @@ import { revokeToken } from "@/lib/gmail";
  */
 export async function DELETE(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { workspaceId } = body;
+    const { searchParams } = req.nextUrl;
+    let workspaceId = searchParams.get("workspaceId");
+
+    if (!workspaceId) {
+      try {
+        const body = await req.json();
+        workspaceId = body.workspaceId;
+      } catch {
+        // Body is empty or invalid JSON
+      }
+    }
 
     if (!workspaceId) {
       return NextResponse.json({ error: "workspaceId is required" }, { status: 400 });

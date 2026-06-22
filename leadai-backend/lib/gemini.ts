@@ -88,31 +88,90 @@ export async function generateEmailReply(params: {
   intent: string;
   tone?: string;
   signature?: string;
+  companyKnowledge?: string;
+  customerMemory?: {
+    requirements?: string | null;
+    budget?: string | null;
+    painPoints?: string | null;
+    lastSummary?: string | null;
+  } | null;
+  conversationHistory?: Array<{
+    sender: string;
+    body: string;
+    receivedAt: Date;
+  }>;
 }): Promise<string> {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
 
-  const { originalSubject, originalSender, originalBody, intent, tone = "Professional", signature = "" } = params;
+  const {
+    originalSubject,
+    originalSender,
+    originalBody,
+    intent,
+    tone = "Professional",
+    signature = "",
+    companyKnowledge = "",
+    customerMemory,
+    conversationHistory = [],
+  } = params;
+
+  // Build company knowledge context string
+  let knowledgeCtx = "";
+  if (companyKnowledge) {
+    knowledgeCtx = `
+--- COMPANY KNOWLEDGE CONTEXT ---
+Use this verified information from the company's website to answer queries accurately:
+${companyKnowledge}
+`;
+  }
+
+  // Build memory context string
+  let memoryCtx = "";
+  if (customerMemory) {
+    memoryCtx = `
+--- CUSTOMER RELATIONSHIP CONTEXT ---
+We have interacted with this customer previously. Here is what we remember:
+- Project Requirements: ${customerMemory.requirements || "Unknown"}
+- Budget Context: ${customerMemory.budget || "Unknown"}
+- Key Pain Points: ${customerMemory.painPoints || "Unknown"}
+- Summary of Previous Interactions: ${customerMemory.lastSummary || "None"}
+`;
+  }
+
+  // Build conversation history context string
+  let historyCtx = "";
+  if (conversationHistory.length > 0) {
+    historyCtx = "\n--- CONVERSATION HISTORY (Last 20 messages) ---\n";
+    for (const msg of conversationHistory) {
+      const dateStr = msg.receivedAt.toLocaleString();
+      historyCtx += `[${dateStr}] ${msg.sender}: ${msg.body.slice(0, 500)}\n`;
+    }
+  }
 
   const prompt = `You are an expert business email writer for TechieHelp.in, a software development and digital services company.
 
-Write a professional email reply to the following inquiry.
+Write a complete, ready-to-send email reply to the customer's inquiry.
 
-Original Email:
+${knowledgeCtx}
+${memoryCtx}
+${historyCtx}
+
+--- CURRENT EMAIL INQUIRY ---
 From: ${originalSender}
 Subject: ${originalSubject}
-Body: ${originalBody.slice(0, 2000)}
+Body:
+${originalBody.slice(0, 2000)}
 
 Lead Intent: ${intent}
 Reply Tone: ${tone}
 
 Instructions:
-- Write a complete, ready-to-send email reply
-- Address the sender by name if available from their email
-- Be specific to their inquiry (${intent})
-- Keep it concise (3-4 paragraphs max)
-- Include a call-to-action (schedule a call, share portfolio, etc.)
-- Do NOT include a subject line — just the email body
-- End with the signature below
+- Write a highly personalized, contextual response using the memory profile and history above to show relationship continuity (e.g., reference their budget, pain points, or requirements where relevant).
+- Address the sender by name if available from their email or memory context.
+- Keep it concise (3-4 paragraphs max).
+- Include a call-to-action (schedule a call, share portfolio, etc.).
+- Do NOT include a subject line — just the email body.
+- End with the signature below.
 
 Signature:
 ${signature || "Best regards,\nTeam TechieHelp.in\nhttps://techiehelp.in"}

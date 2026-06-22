@@ -6,7 +6,7 @@ import {
   TrendingUp, Shield
 } from "lucide-react";
 
-const BACKEND = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:3001";
+const BACKEND = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:3000";
 
 const TABS = [
   { id: "all", label: "All", icon: Inbox },

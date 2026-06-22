@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Save, Eye, Edit2, User, Building, Phone, Globe, Mail, CheckCircle, Loader2 } from "lucide-react";
 
-const BACKEND = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:3001";
+const BACKEND = import.meta.env.VITE_BACKEND_URL ?? "http://localhost:3000";
 
 export default function EmailSignatureBuilder({ workspaceId }) {
   const [form, setForm] = useState({

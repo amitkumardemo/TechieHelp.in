@@ -2,11 +2,9 @@
 <html lang="en">
   <head>
     <script>
-      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-      } else {
-        document.documentElement.classList.remove('dark')
-      }
+      // Always force light / white theme — dark mode disabled site-wide
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
     </script>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="src/assets/icon.png" sizes="64x64" />

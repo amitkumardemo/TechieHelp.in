@@ -3,7 +3,7 @@ import bill from "./bill.png";
 import msm from "./msm.png";
 import card from "./card.png";
 import iso from "./iso.webp";
-import logo from "./logo.png";
+import logo from "./logotech.png";
 import quotes from "./quotes.svg";
 import robot from "./robot.png";
 import send from "./Send.svg";

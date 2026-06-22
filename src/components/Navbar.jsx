@@ -6,7 +6,7 @@ import { navLinks } from "../constants";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ChevronDown, LogOut, Sparkles, X, Bot, PhoneCall, Cpu, Mic, LineChart, Grid, GraduationCap, Briefcase, Trophy, FileCheck, LayoutDashboard, Calendar } from "lucide-react";
+import { ArrowRight, ChevronDown, LogOut, Sparkles, X, Bot, PhoneCall, Cpu, Mic, LineChart, Grid, GraduationCap, Briefcase, Trophy, FileCheck, LayoutDashboard, Calendar, Menu } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
 
 const serviceItems = [
@@ -147,12 +147,15 @@ const Navbar = () => {
         className={`${styles.paddingX} fixed top-0 left-0 right-0 w-screen flex items-center py-1 z-50 bg-white/80 dark:bg-black/60 backdrop-blur-md border-b border-gray-200 dark:border-white/5`}
       >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto relative">
-        <Link to="/">
-          <img src={logo} alt="logo" width="220" height="300" className="w-[180px] h-[72px] object-contain" />
-        </Link>
+        {/* LEFT: LOGO */}
+        <div className="flex-1 flex justify-start">
+          <Link to="/">
+            <img src={logo} alt="logo" width="220" height="300" className="w-[180px] h-[72px] object-contain" />
+          </Link>
+        </div>
         
-        {/* DESKTOP MENU */}
-        <ul className="list-none sm:flex hidden justify-end items-center flex-1">
+        {/* CENTER: NAV LINKS */}
+        <ul className="list-none sm:flex hidden justify-center items-center">
           {navLinks.map((nav, index) => {
             const isActive = location.pathname === nav.path || 
               (nav.subLinks && nav.subLinks.some(s => s.path === location.pathname));
@@ -206,7 +209,7 @@ const Navbar = () => {
                                 <div className="border-b border-white/5 pb-2 mb-4 flex items-center justify-between">
                                   <div>
                                     <span className="text-[10px] font-mono uppercase tracking-[0.15em] text-red-400 font-bold block mb-0.5">
-                                      AI Solutions
+                                      Products
                                     </span>
                                     <p className="text-[10px] text-gray-600 dark:text-gray-400 mt-0.5">
                                       Build your AI workforce with intelligent automation.
@@ -241,7 +244,7 @@ const Navbar = () => {
                               </div>
 
                               {/* Right Section: Custom build CTA (cols 9 to 12) */}
-                              <div className="col-span-4 border-l border-white/5 pl-5 flex flex-col justify-between h-full min-h-[160px]">
+                              <div className="col-span-4 border-l border-white/5 pl-5 flex flex-col gap-3 h-full">
                                 <div className="space-y-1.5">
                                   <span className="text-[8px] font-mono text-[#33bbcf] uppercase tracking-[0.15em] block font-bold">
                                     Custom Build
@@ -253,10 +256,79 @@ const Navbar = () => {
                                     Get specialized features tailored for your business.
                                   </p>
                                 </div>
+
+                                {/* ── Mini LeadAI Product Preview ── */}
+                                <div className="relative rounded-xl bg-white/60 dark:bg-white/[0.03] border border-gray-100 dark:border-white/8 p-2.5 overflow-hidden shadow-sm" style={{ minHeight: "148px" }}>
+                                  {/* Soft blue glow */}
+                                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/80 via-indigo-50/40 to-transparent dark:from-blue-500/5 dark:via-indigo-500/5 dark:to-transparent pointer-events-none rounded-xl" />
+                                  <div className="absolute top-0 right-0 w-16 h-16 bg-blue-400/10 rounded-full blur-2xl pointer-events-none" />
+
+                                  {/* Status cards column */}
+                                  <div className="relative z-10 flex flex-col gap-1 mb-2">
+                                    {[
+                                      { label: "New Lead Detected",  color: "#10b981" },
+                                      { label: "AI Reply Generated", color: "#6366f1" },
+                                      { label: "Voice AI Triggered", color: "#8b5cf6" },
+                                      { label: "CRM Updated",        color: "#06b6d4" },
+                                      { label: "Meeting Booked",     color: "#f59e0b" },
+                                    ].map((item, idx) => (
+                                      <motion.div
+                                        key={item.label}
+                                        initial={{ opacity: 0, x: 6 }}
+                                        animate={{ opacity: [0, 1, 1, 0.4, 1], x: 0 }}
+                                        transition={{
+                                          opacity: { duration: 3.5, repeat: Infinity, delay: idx * 0.55, ease: "easeInOut" },
+                                          x: { duration: 0.3, delay: idx * 0.05 },
+                                        }}
+                                        className="flex items-center gap-1.5 bg-white/80 dark:bg-white/5 border border-gray-100 dark:border-white/5 rounded-md px-2 py-0.5 w-full"
+                                      >
+                                        <span className="w-1.5 h-1.5 rounded-full shrink-0 animate-pulse" style={{ backgroundColor: item.color }} />
+                                        <span className="text-[9px] font-medium text-gray-700 dark:text-gray-300 truncate">{item.label}</span>
+                                        <span className="ml-auto text-[8px] text-gray-400">✓</span>
+                                      </motion.div>
+                                    ))}
+                                  </div>
+
+                                  {/* Connector line */}
+                                  <div className="relative z-10 h-px w-full bg-gradient-to-r from-transparent via-indigo-200 dark:via-indigo-500/30 to-transparent mb-2" />
+
+                                  {/* Metrics row */}
+                                  <div className="relative z-10 flex items-center justify-between gap-1">
+                                    {[
+                                      { label: "Lead Score",  value: "92/100" },
+                                      { label: "Reply Time",  value: "1.2s" },
+                                      { label: "Revenue",     value: "₹85K" },
+                                    ].map((m) => (
+                                      <div key={m.label} className="flex flex-col items-center bg-white/70 dark:bg-white/4 border border-gray-100 dark:border-white/5 rounded-lg px-2 py-1 flex-1">
+                                        <span className="text-[10px] font-bold text-gray-900 dark:text-white">{m.value}</span>
+                                        <span className="text-[8px] text-gray-400 leading-none mt-0.5">{m.label}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+
+                                  {/* Mini pipeline bar chart */}
+                                  <div className="relative z-10 flex items-end gap-0.5 mt-2 h-5">
+                                    {[40, 65, 50, 80, 60, 90, 75].map((h, i) => (
+                                      <motion.div
+                                        key={i}
+                                        initial={{ scaleY: 0 }}
+                                        animate={{ scaleY: 1 }}
+                                        transition={{ duration: 0.5, delay: i * 0.07, ease: "easeOut" }}
+                                        style={{ originY: 1, height: `${h}%`, backgroundColor: i === 5 ? "#6366f1" : "#e0e7ff" }}
+                                        className="flex-1 rounded-t-sm dark:opacity-60"
+                                      />
+                                    ))}
+                                  </div>
+                                  <div className="relative z-10 flex items-center gap-1 mt-1">
+                                    <div className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
+                                    <span className="text-[8px] text-gray-400">Pipeline Activity</span>
+                                  </div>
+                                </div>
+
                                 <Link
                                   to="/contacts"
                                   onClick={() => setDropdownOpen(null)}
-                                  className="group mt-4 flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-white/[0.03] hover:bg-white/[0.07] border border-gray-200 dark:border-white/10 hover:border-red-500/30 text-xs font-semibold text-gray-900 dark:text-white hover:text-red-400 transition-all text-center"
+                                  className="group flex items-center justify-center gap-1.5 py-2 px-3 rounded-lg bg-white/[0.03] hover:bg-white/[0.07] border border-gray-200 dark:border-white/10 hover:border-red-500/30 text-xs font-semibold text-gray-900 dark:text-white hover:text-red-400 transition-all text-center"
                                 >
                                   <span>Contact us</span>
                                   <ArrowRight className="w-3.5 h-3.5 text-red-400 group-hover:translate-x-0.5 transition-transform" />
@@ -393,6 +465,10 @@ const Navbar = () => {
           })}
 
           {/* For Business Dropdown (HubSpot Style Option 3) */}
+        </ul>
+
+        {/* RIGHT: ICONS & BUTTONS */}
+        <ul className="list-none sm:flex hidden justify-end items-center flex-1">
           <li
             className="relative font-poppins font-normal cursor-pointer text-[15px] text-gray-900 dark:text-white drop-shadow-md py-2 group ml-6"
             onMouseEnter={() => {
@@ -496,12 +572,17 @@ const Navbar = () => {
 
         {/* MOBILE MENU TOGGLE: Re-using exact verified hamburger png/svg assets */}
         <div className="sm:hidden flex flex-1 justify-end items-center">
-          <img
-            src={toggle ? close : menu}
-            alt="menu"
-            className="w-[28px] h-[28px] object-contain cursor-pointer z-50 relative"
-            onClick={() => setToggle((prev) => !prev)}
-          />
+          {toggle ? (
+            <X
+              className="w-[28px] h-[28px] text-gray-900 dark:text-white cursor-pointer z-50 relative"
+              onClick={() => setToggle((prev) => !prev)}
+            />
+          ) : (
+            <Menu
+              className="w-[28px] h-[28px] text-gray-900 dark:text-white cursor-pointer z-50 relative"
+              onClick={() => setToggle((prev) => !prev)}
+            />
+          )}
         </div>
       </div>
       </nav>

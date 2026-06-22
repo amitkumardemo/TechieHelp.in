@@ -13,14 +13,16 @@ import Chatbot from "./Chatbot";
 import CertificateVerify from "./CertificateVerify";
 
 import LeadAIShowcase from "./LeadAIShowcase";
-import AIEmployeeFeatures from "./AIEmployeeFeatures";
 import BeforeAfterTable from "./BeforeAfterTable";
-import ROICalculator from "./ROICalculator";
 import LeadAIFlow from "./LeadAIFlow";
 import IntegrationStack from "./IntegrationStack";
-import ClientResults from "./ClientResults";
-import WhyTechieHelp from "./WhyTechieHelp";
-import GlobalReachMap from "./GlobalReachMap";
+
+import RevenueStackProblem from "./home/RevenueStackProblem";
+import IntelligentSystem from "./home/IntelligentSystem";
+import LiveFromDayOne from "./home/LiveFromDayOne";
+import LeadJourney from "./home/LeadJourney";
+import BuiltForScale from "./home/BuiltForScale";
+import WhyThisMatters from "./home/WhyThisMatters";
 
 export {
   Navbar,
@@ -36,12 +38,14 @@ export {
   Chatbot,
   CertificateVerify,
   LeadAIShowcase,
-  AIEmployeeFeatures,
   BeforeAfterTable,
-  ROICalculator,
   LeadAIFlow,
   IntegrationStack,
-  ClientResults,
-  WhyTechieHelp,
-  GlobalReachMap
+  RevenueStackProblem,
+  IntelligentSystem,
+  LiveFromDayOne,
+  LeadJourney,
+  BuiltForScale,
+  WhyThisMatters
 };
+

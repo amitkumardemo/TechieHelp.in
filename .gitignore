@@ -25,3 +25,8 @@ dist-ssr
 
 # vscode
 .vscode
+
+# local env files
+.env
+.env.local
+.env.*.local

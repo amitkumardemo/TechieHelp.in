@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import styles from '../style';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Sparkles, Star } from 'lucide-react';
 
 const testimonials = [
   {
@@ -105,114 +105,120 @@ const testimonials = [
   },
 ];
 
-const Testimonials = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+const row1Testimonials = testimonials.slice(0, 10);
+const row2Testimonials = testimonials.slice(10);
 
-  const getInitials = (name) => {
-    return name.split(' ').map(n => n[0]).join('').toUpperCase();
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const getCardStyle = (index) => {
-    const isActive = index === activeIndex;
-    const diff = index - activeIndex;
-
-    if (isActive) {
-      return { zIndex: 10, scale: 1, opacity: 1, x: 0, rotateY: 0 };
-    } else if (Math.abs(diff) === 1 || (activeIndex === 0 && index === testimonials.length - 1) || (activeIndex === testimonials.length - 1 && index === 0)) {
-      const direction = diff > 0 ? 1 : -1;
-      const wrapDirection = (activeIndex === 0 && index === testimonials.length - 1) ? -1 : (activeIndex === testimonials.length - 1 && index === 0) ? 1 : direction;
-      return {
-        zIndex: 5,
-        scale: 0.85,
-        opacity: 0.6,
-        x: wrapDirection * 240,
-        rotateY: wrapDirection * -15
-      };
-    } else {
-      return { zIndex: 1, scale: 0.7, opacity: 0, x: diff > 0 ? 500 : -500, pointerEvents: 'none' };
-    }
+const TestimonialCard = ({ name, role, review }) => {
+  const getInitials = (n) => {
+    return n.split(' ').map(part => part[0]).join('').toUpperCase();
   };
 
   return (
-    <section className={`${styles.paddingY} flex flex-col items-center bg-white dark:bg-primary overflow-hidden`}>
-      <div className={`${styles.boxWidth} relative z-[5]`}>
-        {/* Updated Header */}
-        <div className="text-center mb-16 px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            className="inline-block py-1 px-4 rounded-full border border-secondary text-secondary text-[12px] uppercase tracking-[3px] font-bold mb-4"
-          >
-            Proof of Impact
-          </motion.div>
-          <h2 className={`${styles.heading2} leading-tight`}>
-            Trusted by <span className="text-gradient">Growing Businesses</span>
-          </h2>
-          <p className={`${styles.paragraph} mt-4 max-w-[800px] mx-auto text-[18px]`}>
-            Delivering real automation outcomes through AI agents and intelligent systems.
-          </p>
-        </div>
-
-        {/* Dynamic Testimonial Carousel */}
-        <div className="relative h-[450px] w-full flex items-center justify-center ss:px-0 px-6" style={{ perspective: '1500px' }}>
-          <AnimatePresence mode="wait">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                className="absolute bg-gray-50 dark:bg-gray-900 rounded-[32px] p-8 ss:p-10 shadow-3xl w-full max-w-[450px] glass-morphism border-white/5"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={getCardStyle(index)}
-                transition={{ type: 'spring', stiffness: 200, damping: 25 }}
-                style={{ transformStyle: 'preserve-3d' }}
-              >
-                <div className="absolute top-6 right-8 text-[60px] text-blue-gradient opacity-10 pointer-events-none">"</div>
-
-                <div className="flex items-center mb-8">
-                  <div className="w-14 h-14 bg-blue-gradient rounded-2xl flex items-center justify-center text-primary font-bold text-[20px] shadow-lg shadow-blue-500/20 mr-4">
-                    {getInitials(testimonial.name)}
-                  </div>
-                  <div>
-                    <h3 className="font-poppins font-bold text-gray-900 dark:text-white text-[20px] leading-tight">{testimonial.name}</h3>
-                    <p className="text-secondary text-[13px] font-medium tracking-wide mt-1 uppercase">{testimonial.role}</p>
-                  </div>
-                </div>
-
-                <div className="relative">
-                  <div className="flex gap-1 mb-4">
-                    {[1, 2, 3, 4, 5].map((s) => (
-                      <span key={s} className="text-secondary text-[14px]">★</span>
-                    ))}
-                  </div>
-                  <p className="text-gray-500 dark:text-dimWhite font-poppins text-[16px] ss:text-[18px] leading-[1.6] italic" dangerouslySetInnerHTML={{ __html: testimonial.review }} />
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </div>
-
-        {/* Navigation Dots */}
-        <div className="flex justify-center mt-12 gap-2 flex-wrap max-w-[300px] mx-auto">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className={`h-1.5 rounded-full transition-all duration-300 ${index === activeIndex ? 'w-8 bg-secondary' : 'w-2 bg-white/20 hover:bg-white/40'
-                }`}
-            />
+    <div className="w-[380px] p-6 mx-3 rounded-2xl bg-white/70 dark:bg-slate-900/60 border border-slate-200/50 dark:border-slate-800/40 backdrop-blur-sm shadow-[0_8px_30px_rgb(0,0,0,0.015)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:-translate-y-0.5 transition-all duration-300 select-none flex flex-col justify-between h-[210px] shrink-0">
+      <div>
+        <div className="flex gap-0.5 mb-3">
+          {[...Array(5)].map((_, i) => (
+            <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
           ))}
+        </div>
+        <p className="text-slate-600 dark:text-slate-300 font-poppins text-xs sm:text-[13px] leading-relaxed italic" dangerouslySetInnerHTML={{ __html: review }} />
+      </div>
+      
+      <div className="flex items-center mt-4">
+        <div className="w-9 h-9 rounded-xl bg-blue-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-xs shadow-sm mr-3">
+          {getInitials(name)}
+        </div>
+        <div>
+          <h4 className="font-poppins font-bold text-slate-800 dark:text-white text-xs leading-tight">{name}</h4>
+          <p className="text-slate-400 dark:text-slate-500 text-[10px] font-medium tracking-wide mt-0.5 uppercase">{role}</p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Testimonials = () => {
+  return (
+    <section className="py-20 md:py-32 relative z-10 px-4 sm:px-6 bg-slate-50/50 dark:bg-[#02050c]/20 overflow-hidden border-t border-slate-100 dark:border-slate-900">
+      
+      <style dangerouslySetInnerHTML={{ __html: `
+        @keyframes marqueeLeft {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes marqueeRight {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+        .marquee-track-left {
+          display: flex;
+          width: max-content;
+          animation: marqueeLeft 45s linear infinite;
+        }
+        .marquee-track-right {
+          display: flex;
+          width: max-content;
+          animation: marqueeRight 45s linear infinite;
+        }
+        .marquee-container:hover .marquee-track-left,
+        .marquee-container:hover .marquee-track-right {
+          animation-play-state: paused;
+        }
+      `}} />
+
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none -z-10">
+        <div className="absolute top-[20%] left-[10%] w-[350px] h-[350px] bg-blue-500/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[20%] right-[10%] w-[350px] h-[350px] bg-emerald-500/5 rounded-full blur-[120px]" />
+      </div>
+
+      <div className="w-full max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-16 md:mb-24 px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 text-[11px] font-bold tracking-[0.15em] uppercase mb-5"
+          >
+            <Sparkles className="w-3.5 h-3.5" /> Customer Wall
+          </motion.div>
+          <h2 className="font-poppins font-bold text-3xl sm:text-4xl md:text-5xl text-slate-900 dark:text-white tracking-tight leading-tight">
+            Loved by Builders <span className="bg-gradient-to-r from-blue-600 to-indigo-500 bg-clip-text text-transparent">and Leaders Alike.</span>
+          </h2>
+          <p className="text-slate-500 dark:text-slate-400 mt-4 max-w-lg mx-auto text-sm sm:text-base font-normal">
+            See how teams are scaling their customer relationships with TechieHelp LeadAI.
+          </p>
         </div>
       </div>
 
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none z-[0] opacity-30">
-        <div className="absolute top-[20%] left-[10%] w-[300px] h-[300px] bg-blue-gradient rounded-full blur-[150px]" />
-        <div className="absolute bottom-[20%] right-[10%] w-[300px] h-[300px] bg-pink__gradient rounded-full blur-[150px]" />
+      <div className="w-full flex flex-col gap-6 relative marquee-container overflow-hidden py-4">
+        <div className="absolute inset-y-0 left-0 w-24 sm:w-48 bg-gradient-to-r from-white dark:from-[#02050c] to-transparent z-20 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 sm:w-48 bg-gradient-to-l from-white dark:from-[#02050c] to-transparent z-20 pointer-events-none" />
+
+        <div className="flex overflow-hidden w-full">
+          <div className="marquee-track-left">
+            {[...row1Testimonials, ...row1Testimonials].map((item, index) => (
+              <TestimonialCard
+                key={`r1-${index}`}
+                name={item.name}
+                role={item.role}
+                review={item.review}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="flex overflow-hidden w-full">
+          <div className="marquee-track-right">
+            {[...row2Testimonials, ...row2Testimonials].map((item, index) => (
+              <TestimonialCard
+                key={`r2-${index}`}
+                name={item.name}
+                role={item.role}
+                review={item.review}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

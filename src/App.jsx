@@ -1,5 +1,5 @@
 import styles, { layout } from "./style";
-import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre, Chatbot, CertificateVerify, LeadAIShowcase, AIEmployeeFeatures, BeforeAfterTable, ROICalculator, LeadAIFlow, IntegrationStack, ClientResults, WhyTechieHelp, GlobalReachMap } from "./components";
+import { Billing, Business, CardDeal, Clients, CTA, Footer, Navbar, Stats, Hero, WhoWeAre, Chatbot, CertificateVerify, LeadAIShowcase, BeforeAfterTable, LeadAIFlow, IntegrationStack, RevenueStackProblem, IntelligentSystem, LiveFromDayOne, LeadJourney, BuiltForScale, WhyThisMatters } from "./components";
 import OurServices from "./components/OurServices";
 import Services from "./components/Services";
 import ProjectPortfolio from "./components/ProjectPortfolio";
@@ -125,6 +125,7 @@ import { useAuth } from "./contexts/AuthContext";
 import GalaxyBackground from "./components/GalaxyBackground";
 import LeadAIAdmin from "./components/admin/LeadAIAdmin";
 import LeadAIDashboard from "./components/solutions/LeadAIDashboard";
+import GoogleCallback from "./components/solutions/GoogleCallback";
 import VerificationStatus from "./components/VerificationStatus";
 import NotFound from "./components/NotFound";
 import { db } from "./firebase";
@@ -144,8 +145,8 @@ const LeadProtectedRoute = ({ children }) => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#02000d] flex items-center justify-center text-gray-900 dark:text-white">
-        <Loader2 className="w-8 h-8 animate-spin text-purple-500" />
+      <div className="min-h-screen bg-[#f8fafc] flex items-center justify-center text-slate-800">
+        <Loader2 className="w-8 h-8 animate-spin text-sky-600" />
       </div>
     );
   }
@@ -237,7 +238,7 @@ const AppContent = () => {
   }, [isLeadAdmin]);
 
   return (
-    <div className={`bg-white dark:bg-primary w-full overflow-hidden`}>
+    <div className={`bg-white w-full overflow-hidden`}>
       <ScrollToTop />
       {!isLeadAdmin && <AnimatedCursor />}
       {!isLeadAdmin && (
@@ -257,199 +258,207 @@ const AppContent = () => {
           transition={{ duration: 0.4, ease: "easeInOut" }}
         >
           <Routes location={location} key={location.pathname}>
-        {/* LeadAI Admin Route & Redirects */}
-        <Route path="/leadai-admin" element={<LeadAIAdmin />} />
-        <Route path="/admin/leadai" element={<LeadAIAdmin />} />
-        <Route path="/leadai-dashboard" element={
-          <LeadProtectedRoute>
-            <LeadAIDashboard />
-          </LeadProtectedRoute>
-        } />
-        <Route path="/qualifyai-dashboard" element={<Navigate to="/leadai-dashboard" replace />} />
-        <Route path="/qualifyai-admin" element={<Navigate to="/leadai-admin" replace />} />
-        <Route path="/admin/qualifyai" element={<Navigate to="/admin/leadai" replace />} />
+            {/* LeadAI Admin Route & Redirects */}
+            <Route path="/leadai-admin" element={<LeadAIAdmin />} />
+            <Route path="/admin/leadai" element={<LeadAIAdmin />} />
+            <Route path="/auth/google/callback" element={<GoogleCallback />} />
+            <Route path="/leadai-dashboard" element={
+              <LeadProtectedRoute>
+                <LeadAIDashboard />
+              </LeadProtectedRoute>
+            } />
+            <Route path="/qualifyai-dashboard" element={<Navigate to="/leadai-dashboard" replace />} />
+            <Route path="/qualifyai-admin" element={<Navigate to="/leadai-admin" replace />} />
+            <Route path="/admin/qualifyai" element={<Navigate to="/admin/leadai" replace />} />
 
-        <Route path="/" element={
-          <>
-            <div className={`${styles.flexStart} pt-0`}>
-              <div className={`${styles.boxWidth}`}>
-                <Hero className="hero" />
-              </div>
-            </div>
-
-            <div className={`bg-white dark:bg-primary w-full overflow-hidden`}>
-              <LeadAIShowcase />
-              <AIEmployeeFeatures />
-              <BeforeAfterTable />
-              <ROICalculator />
-              <LeadAIFlow />
-              <IntegrationStack />
-
-              <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-                <div className={`${styles.boxWidth}`}>
-                  <Clients className="clients" />
+            <Route path="/" element={
+              <>
+                <div className={`${styles.flexStart} pt-0`}>
+                  <div className={`${styles.boxWidth}`}>
+                    <Hero className="hero" />
+                  </div>
                 </div>
-              </div>
 
-              <ClientResults />
-              <WhyTechieHelp />
-              <GlobalReachMap />
+                <div className={`bg-white w-full overflow-hidden`}>
+                  <RevenueStackProblem />
+                  <WhyThisMatters />
+                  <LeadAIShowcase />
+                  <IntelligentSystem />
+                  <LiveFromDayOne />
+                  <LeadJourney />
+                  <LeadAIFlow />
+                  <BeforeAfterTable />
+                  <BuiltForScale />
 
-              <div className={`${styles.paddingX} ${styles.flexCenter}`}>
-                <div className={`${styles.boxWidth}`}>
-                  <FAQ />
-                  <Contact />
+                  <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+                    <div className={`${styles.boxWidth}`}>
+                      <Clients className="clients" />
+                    </div>
+                  </div>
+
+                  <Testimonials />
+
+                  <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+                    <div className={`${styles.boxWidth}`}>
+                      <FAQ />
+                      <Contact />
+                    </div>
+                  </div>
+
+                  <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+                    <div className={`${styles.boxWidth}`}>
+                      <CTA />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </>
-        } />
+              </>
+            } />
 
-        <Route path="/verify-certificate" element={<CertificateVerify />} />
+            <Route path="/verify-certificate" element={<CertificateVerify />} />
 
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/hackathon" element={<HackathonLandingPage />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/services/ai-lead-engine" element={<AILeadEngine />} />
-        <Route path="/services/ai-calling-agents" element={<AICallingAgents />} />
-        <Route path="/services/ai-workflow-automation" element={<AIWorkflowAutomation />} />
-        <Route path="/services/ai-business-dashboard" element={<AIBusinessDashboard />} />
-        <Route path="/services/voice-ai-system" element={<VoiceAISystem />} />
-        <Route path="/project-portfolio" element={<ProjectPortfolio />} />
-        <Route path="/web-development-services" element={<WebDevelopmentServices />} />
-        <Route path="/careers/training-internships" element={<Internship />} />
-        <Route path="/special-batch" element={<SpecialBatch />} />
-        <Route path="/campus-ambassador" element={<TCAP />} />
-        <Route path="/community-partnership" element={<CommunityPartnership />} />
-        <Route path="/careers/jobs" element={<Job />} />
-        <Route path="/employees" element={<Employee />} />
-        <Route path="/interns" element={<Intern />} />
-        <Route path="/employees/:employeeId" element={<EmployeeProfile />} />
-        <Route path="/team/amit-kumar-founder-ceo-techiehelp" element={<AmitKumar />} />
-        <Route path="/amit-kumar-net-worth-1-crore-age-20" element={<AmitKumarNetWorth />} />
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/hackathon" element={<HackathonLandingPage />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/ai-lead-engine" element={<AILeadEngine />} />
+            <Route path="/services/ai-calling-agents" element={<AICallingAgents />} />
+            <Route path="/services/ai-workflow-automation" element={<AIWorkflowAutomation />} />
+            <Route path="/services/ai-business-dashboard" element={<AIBusinessDashboard />} />
+            <Route path="/services/voice-ai-system" element={<VoiceAISystem />} />
+            <Route path="/project-portfolio" element={<ProjectPortfolio />} />
+            <Route path="/web-development-services" element={<WebDevelopmentServices />} />
+            <Route path="/careers/training-internships" element={<Internship />} />
+            <Route path="/special-batch" element={<SpecialBatch />} />
+            <Route path="/campus-ambassador" element={<TCAP />} />
+            <Route path="/community-partnership" element={<CommunityPartnership />} />
+            <Route path="/careers/jobs" element={<Job />} />
+            <Route path="/employees" element={<Employee />} />
+            <Route path="/interns" element={<Intern />} />
+            <Route path="/employees/:employeeId" element={<EmployeeProfile />} />
+            <Route path="/team/amit-kumar-founder-ceo-techiehelp" element={<AmitKumar />} />
+            <Route path="/amit-kumar-net-worth-1-crore-age-20" element={<AmitKumarNetWorth />} />
 
-        <Route path="/team/aditya-kumar-content-media-specialist-techiehelp" element={<AdityaKumarComponent />} />
-        <Route path="/team/md-amzad-machine-learning-engineer-techiehelp" element={<MdAmzadComponent />} />
-        <Route path="/team/mahima-panwar-content-creator-techiehelp" element={<MahimaPanwar />} />
-        <Route path="/team/charchita-saini-software-engineer-techiehelp" element={<CharchitaSaini />} />
+            <Route path="/team/aditya-kumar-content-media-specialist-techiehelp" element={<AdityaKumarComponent />} />
+            <Route path="/team/md-amzad-machine-learning-engineer-techiehelp" element={<MdAmzadComponent />} />
+            <Route path="/team/mahima-panwar-content-creator-techiehelp" element={<MahimaPanwar />} />
+            <Route path="/team/charchita-saini-software-engineer-techiehelp" element={<CharchitaSaini />} />
 
-        <Route path="/team/mr-manchal-kumar-full-stack-developer-techiehelp" element={<ManchalKumar />} />
-        <Route path="/team/ananya-sharma-hr-manager-techiehelp" element={<AnanyaSharma />} />
-        <Route path="/webdevelopment" element={<Webdevelopment />} />
-        <Route path="/cybersecurity" element={<Cybersecurity />} />
-        <Route path="/androiddevelopment" element={<Androiddevelopment />} />
-        <Route path="/uiux" element={<UIUX />} />
-        <Route path="/seo" element={<SEO />} />
-        <Route path="/ai" element={<AI />} />
-        <Route path="/machinelearning" element={<MachineLearning />} />
-        <Route path="/frontend" element={<Frontend />} />
-        <Route path="/backend" element={<Backend />} />
-        <Route path="/fullstack" element={<Fullstack />} />
-        <Route path="/mern" element={<MERN />} />
-        <Route path="/python" element={<Python />} />
-        <Route path="/java" element={<Java />} />
-        <Route path="/javafull" element={<JavaFull />} />
-        <Route path="/react" element={<ReactComponent />} />
-        <Route path="/javascript" element={<JavaScript />} />
-        <Route path="/node" element={<Node />} />
-        <Route path="/aiml" element={<AIML />} />
-        <Route path="/datascience" element={<DataScience />} />
-        <Route path="/devops" element={<DevOps />} />
-        <Route path="/app-development-services" element={<AppDevelopmentServices />} />
-        <Route path="/uiuxservices" element={<UIUXServices />} />
-        <Route path="/seooptimizationservices" element={<SEOOptimizationServices />} />
-        <Route path="/digitalmarketingservices" element={<DigitalMarketingServices />} />
-        <Route path="/techconsultingservices" element={<TechConsultingServices />} />
-        <Route path="/maintenancesupportservices" element={<MaintenanceSupportServices />} />
-        <Route path="/aiagentsservices" element={<AIAgentsServices />} />
-        <Route path="/aichatbotsservices" element={<AIChatbotsServices />} />
-        <Route path="/aiautomationservices" element={<AIAutomationServices />} />
-        <Route path="/computervisionservices" element={<ComputerVisionServices />} />
-        <Route path="/predictiveanalyticsservices" element={<PredictiveAnalyticsServices />} />
-        <Route path="/generativeaiservices" element={<GenerativeAIServices />} />
-        <Route path="/aieducationservices" element={<AIEducationServices />} />
-        <Route path="/speechvoiceaiservices" element={<SpeechVoiceAIServices />} />
-        <Route path="/hiring-faq" element={<HiringFAQ />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/placement-booster" element={<PlacementBoosterLanding />} />
-        <Route path="/privacy-policy" element={<SitePolicy />} />
-        <Route path="/terms-and-conditions" element={<SiteTerms />} />
-        <Route path="/pricing-policy" element={<PricingPolicy />} />
-        <Route path="/cookie-policy" element={<CookiePolicy />} />
-        <Route path="/refund-policy" element={<RefundPolicy />} />
-        <Route path="/acceptable-use-policy" element={<AcceptableUsePolicy />} />
-        <Route path="/data-processing-agreement" element={<DataProcessingAgreement />} />
-        <Route path="/security" element={<SecurityOverview />} />
-        <Route path="/compliance" element={<ComplianceCenter />} />
+            <Route path="/team/mr-manchal-kumar-full-stack-developer-techiehelp" element={<ManchalKumar />} />
+            <Route path="/team/ananya-sharma-hr-manager-techiehelp" element={<AnanyaSharma />} />
+            <Route path="/webdevelopment" element={<Webdevelopment />} />
+            <Route path="/cybersecurity" element={<Cybersecurity />} />
+            <Route path="/androiddevelopment" element={<Androiddevelopment />} />
+            <Route path="/uiux" element={<UIUX />} />
+            <Route path="/seo" element={<SEO />} />
+            <Route path="/ai" element={<AI />} />
+            <Route path="/machinelearning" element={<MachineLearning />} />
+            <Route path="/frontend" element={<Frontend />} />
+            <Route path="/backend" element={<Backend />} />
+            <Route path="/fullstack" element={<Fullstack />} />
+            <Route path="/mern" element={<MERN />} />
+            <Route path="/python" element={<Python />} />
+            <Route path="/java" element={<Java />} />
+            <Route path="/javafull" element={<JavaFull />} />
+            <Route path="/react" element={<ReactComponent />} />
+            <Route path="/javascript" element={<JavaScript />} />
+            <Route path="/node" element={<Node />} />
+            <Route path="/aiml" element={<AIML />} />
+            <Route path="/datascience" element={<DataScience />} />
+            <Route path="/devops" element={<DevOps />} />
+            <Route path="/app-development-services" element={<AppDevelopmentServices />} />
+            <Route path="/uiuxservices" element={<UIUXServices />} />
+            <Route path="/seooptimizationservices" element={<SEOOptimizationServices />} />
+            <Route path="/digitalmarketingservices" element={<DigitalMarketingServices />} />
+            <Route path="/techconsultingservices" element={<TechConsultingServices />} />
+            <Route path="/maintenancesupportservices" element={<MaintenanceSupportServices />} />
+            <Route path="/aiagentsservices" element={<AIAgentsServices />} />
+            <Route path="/aichatbotsservices" element={<AIChatbotsServices />} />
+            <Route path="/aiautomationservices" element={<AIAutomationServices />} />
+            <Route path="/computervisionservices" element={<ComputerVisionServices />} />
+            <Route path="/predictiveanalyticsservices" element={<PredictiveAnalyticsServices />} />
+            <Route path="/generativeaiservices" element={<GenerativeAIServices />} />
+            <Route path="/aieducationservices" element={<AIEducationServices />} />
+            <Route path="/speechvoiceaiservices" element={<SpeechVoiceAIServices />} />
+            <Route path="/hiring-faq" element={<HiringFAQ />} />
+            <Route path="/contacts" element={<Contacts />} />
+            <Route path="/placement-booster" element={<PlacementBoosterLanding />} />
+            <Route path="/privacy-policy" element={<SitePolicy />} />
+            <Route path="/terms-and-conditions" element={<SiteTerms />} />
+            <Route path="/pricing-policy" element={<PricingPolicy />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/refund-policy" element={<RefundPolicy />} />
+            <Route path="/acceptable-use-policy" element={<AcceptableUsePolicy />} />
+            <Route path="/data-processing-agreement" element={<DataProcessingAgreement />} />
+            <Route path="/security" element={<SecurityOverview />} />
+            <Route path="/compliance" element={<ComplianceCenter />} />
 
-        {/* Student Profile Routes */}
-        <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
-        <Route path="/intern/sasvanthu-g" element={<SasvanthuG />} />
-        <Route path="/students/ritika-kasat" element={<RitikaKasat />} />
-        <Route path="/intern/ritika-kasat" element={<RitikaKasat />} />
-        <Route path="/students/abhay-raj-singh" element={<AbhayRajSingh />} />
-        <Route path="/intern/abhay-raj-singh" element={<AbhayRajSingh />} />
-        <Route path="/students/aarshdeep-kaur" element={<AarshdeepKaur />} />
-        <Route path="/intern/aarshdeep-kaur" element={<AarshdeepKaur />} />
-        <Route path="/students/sagar-kumar" element={<SagarKumar />} />
-        <Route path="/intern/sagar-kumar" element={<SagarKumar />} />
-        <Route path="/students/simran-kanwar" element={<SimranKanwar />} />
-        <Route path="/intern/simran-kanwar" element={<SimranKanwar />} />
-        <Route path="/students/tanu-singh" element={<TanuSingh />} />
-        <Route path="/intern/tanu-singh" element={<TanuSingh />} />
-        <Route path="/students/rohit-sharma" element={<RohitSharma />} />
-        <Route path="/intern/rohit-sharma" element={<RohitSharma />} />
-        <Route path="/students/rohan-t" element={<RohanT />} />
-        <Route path="/intern/rohan-t" element={<RohanT />} />
-        <Route path="/students/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
-        <Route path="/intern/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
-        <Route path="/students/kaviyaran-p" element={<KaviyaranP />} />
-        <Route path="/intern/kaviyaran-p" element={<KaviyaranP />} />
-        <Route path="/students/ganga-dhar-sharma" element={<GangadharSharma />} />
-        <Route path="/intern/ganga-dhar-sharma" element={<GangadharSharma />} />
-        <Route path="/students/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
-        <Route path="/intern/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
-        <Route path="/students/khiasuthong-t" element={<KhiasuthongT />} />
-        <Route path="/intern/khiasuthong-t" element={<KhiasuthongT />} />
-        <Route path="/students/senchumbeni-c-erui" element={<SenchumbeniCErui />} />
-        <Route path="/intern/senchumbeni-c-erui" element={<SenchumbeniCErui />} />
-        <Route path="/students/kajol-sunar" element={<KajolSunar />} />
-        <Route path="/intern/kajol-sunar" element={<KajolSunar />} />
-        <Route path="/students/susheto-zhimo" element={<SushetoZhimo />} />
-        <Route path="/intern/susheto-zhimo" element={<SushetoZhimo />} />
-        <Route path="/students/neha-begum" element={<NehaBegum />} />
-        <Route path="/intern/neha-begum" element={<NehaBegum />} />
-        <Route path="/students/emanuel-thangthazo" element={<EmanuelThangthazo />} />
-        <Route path="/intern/emanuel-thangthazo" element={<EmanuelThangthazo />} />
-        <Route path="/students/anutalu-rhakho" element={<AnutaluRhakho />} />
-        <Route path="/intern/anutalu-rhakho" element={<AnutaluRhakho />} />
-        <Route path="/students/belo-kapfo" element={<BeloKapfo />} />
-        <Route path="/intern/belo-kapfo" element={<BeloKapfo />} />
-        <Route path="/students/bsden-ephom" element={<Bsdenephom />} />
-        <Route path="/intern/bsden-ephom" element={<Bsdenephom />} />
-        <Route path="/students/thujozo-rhakho" element={<ThujozoRhakho />} />
-        <Route path="/intern/thujozo-rhakho" element={<ThujozoRhakho />} />
-        <Route path="/students/dotsu-t-yimchunger" element={<DotsuTYimchunger />} />
-        <Route path="/intern/dotsu-t-yimchunger" element={<DotsuTYimchunger />} />
-        <Route path="/students/bendangakum-hoki" element={<BendangakumHoki />} />
-        <Route path="/intern/bendangakum-hoki" element={<BendangakumHoki />} />
-        <Route path="/students/pulovi-k-chishi" element={<PuloviKChishi />} />
-        <Route path="/intern/pulovi-k-chishi" element={<PuloviKChishi />} />
-        <Route path="/students/kengimheing-nampeung" element={<KengimheingNampeung />} />
-        <Route path="/intern/kengimheing-nampeung" element={<KengimheingNampeung />} />
+            {/* Student Profile Routes */}
+            <Route path="/students/sasvanthu-g" element={<SasvanthuG />} />
+            <Route path="/intern/sasvanthu-g" element={<SasvanthuG />} />
+            <Route path="/students/ritika-kasat" element={<RitikaKasat />} />
+            <Route path="/intern/ritika-kasat" element={<RitikaKasat />} />
+            <Route path="/students/abhay-raj-singh" element={<AbhayRajSingh />} />
+            <Route path="/intern/abhay-raj-singh" element={<AbhayRajSingh />} />
+            <Route path="/students/aarshdeep-kaur" element={<AarshdeepKaur />} />
+            <Route path="/intern/aarshdeep-kaur" element={<AarshdeepKaur />} />
+            <Route path="/students/sagar-kumar" element={<SagarKumar />} />
+            <Route path="/intern/sagar-kumar" element={<SagarKumar />} />
+            <Route path="/students/simran-kanwar" element={<SimranKanwar />} />
+            <Route path="/intern/simran-kanwar" element={<SimranKanwar />} />
+            <Route path="/students/tanu-singh" element={<TanuSingh />} />
+            <Route path="/intern/tanu-singh" element={<TanuSingh />} />
+            <Route path="/students/rohit-sharma" element={<RohitSharma />} />
+            <Route path="/intern/rohit-sharma" element={<RohitSharma />} />
+            <Route path="/students/rohan-t" element={<RohanT />} />
+            <Route path="/intern/rohan-t" element={<RohanT />} />
+            <Route path="/students/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
+            <Route path="/intern/teja-bhuvaneswari-devi" element={<TejaBhuvaneswariDevi />} />
+            <Route path="/students/kaviyaran-p" element={<KaviyaranP />} />
+            <Route path="/intern/kaviyaran-p" element={<KaviyaranP />} />
+            <Route path="/students/ganga-dhar-sharma" element={<GangadharSharma />} />
+            <Route path="/intern/ganga-dhar-sharma" element={<GangadharSharma />} />
+            <Route path="/students/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
+            <Route path="/intern/ankit-kumar-keshari" element={<AnkitKumarKeshari />} />
+            <Route path="/students/khiasuthong-t" element={<KhiasuthongT />} />
+            <Route path="/intern/khiasuthong-t" element={<KhiasuthongT />} />
+            <Route path="/students/senchumbeni-c-erui" element={<SenchumbeniCErui />} />
+            <Route path="/intern/senchumbeni-c-erui" element={<SenchumbeniCErui />} />
+            <Route path="/students/kajol-sunar" element={<KajolSunar />} />
+            <Route path="/intern/kajol-sunar" element={<KajolSunar />} />
+            <Route path="/students/susheto-zhimo" element={<SushetoZhimo />} />
+            <Route path="/intern/susheto-zhimo" element={<SushetoZhimo />} />
+            <Route path="/students/neha-begum" element={<NehaBegum />} />
+            <Route path="/intern/neha-begum" element={<NehaBegum />} />
+            <Route path="/students/emanuel-thangthazo" element={<EmanuelThangthazo />} />
+            <Route path="/intern/emanuel-thangthazo" element={<EmanuelThangthazo />} />
+            <Route path="/students/anutalu-rhakho" element={<AnutaluRhakho />} />
+            <Route path="/intern/anutalu-rhakho" element={<AnutaluRhakho />} />
+            <Route path="/students/belo-kapfo" element={<BeloKapfo />} />
+            <Route path="/intern/belo-kapfo" element={<BeloKapfo />} />
+            <Route path="/students/bsden-ephom" element={<Bsdenephom />} />
+            <Route path="/intern/bsden-ephom" element={<Bsdenephom />} />
+            <Route path="/students/thujozo-rhakho" element={<ThujozoRhakho />} />
+            <Route path="/intern/thujozo-rhakho" element={<ThujozoRhakho />} />
+            <Route path="/students/dotsu-t-yimchunger" element={<DotsuTYimchunger />} />
+            <Route path="/intern/dotsu-t-yimchunger" element={<DotsuTYimchunger />} />
+            <Route path="/students/bendangakum-hoki" element={<BendangakumHoki />} />
+            <Route path="/intern/bendangakum-hoki" element={<BendangakumHoki />} />
+            <Route path="/students/pulovi-k-chishi" element={<PuloviKChishi />} />
+            <Route path="/intern/pulovi-k-chishi" element={<PuloviKChishi />} />
+            <Route path="/students/kengimheing-nampeung" element={<KengimheingNampeung />} />
+            <Route path="/intern/kengimheing-nampeung" element={<KengimheingNampeung />} />
 
-        {/* Authentication Routes */}
-        <Route path="/login" element={!user ? <Login /> : <Navigate to="/leadai-dashboard" replace />} />
-        <Route path="/signup" element={<Navigate to="/login" replace />} />
-        <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" replace />} />
-        <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" replace />} />
-        <Route path="/verification-status" element={<Navigate to="/leadai-dashboard" replace />} />
+            {/* Authentication Routes */}
+            <Route path="/login" element={!user ? <Login /> : <Navigate to="/leadai-dashboard" replace />} />
+            <Route path="/signup" element={<Navigate to="/login" replace />} />
+            <Route path="/profile" element={user ? <Profile /> : <Navigate to="/login" replace />} />
+            <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" replace />} />
+            <Route path="/verification-status" element={<Navigate to="/leadai-dashboard" replace />} />
 
-        {/* Intern Profile Route */}
-        <Route path="/interns/:internId" element={<InternProfile />} />
+            {/* Intern Profile Route */}
+            <Route path="/interns/:internId" element={<InternProfile />} />
 
-        {/* Catch-all 404 Route */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+            {/* Catch-all 404 Route */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </motion.div>
       </AnimatePresence>
