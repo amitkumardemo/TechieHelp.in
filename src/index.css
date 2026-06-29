@@ -426,3 +426,27 @@
   border-color: rgba(51, 187, 207, 0.3);
   box-shadow: 0 0 15px rgba(51, 187, 207, 0.15);
 }
+/* ==========================================
+   FORCE EDGE-TO-EDGE DARK THEME BACKGROUNDS
+   ========================================== */
+
+html, 
+body, 
+#root, 
+#app,
+.__next {
+  background-color: #f8fafc !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: background-color 300ms ease-in-out !important;
+}
+
+html.dark, 
+html.dark body, 
+html.dark #root, 
+html.dark #app,
+html.dark .__next {
+  background-color: #030014 !important;
+}
